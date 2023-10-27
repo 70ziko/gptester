@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-27T14:17:36.144Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/119.0" etag="-G8_Gi-TqPZZmTXYUl-m" version="22.0.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-27T14:34:52.298Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/119.0" etag="2ApTSPteXpm4PFwu-tqS" version="22.0.8" type="github">
   <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
     <mxGraphModel dx="1434" dy="835" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -63,7 +63,7 @@
         <mxCell id="Ab3tzTa3yzkyZwKfhWyt-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Ab3tzTa3yzkyZwKfhWyt-25" target="Ab3tzTa3yzkyZwKfhWyt-28">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Ab3tzTa3yzkyZwKfhWyt-25" value="&lt;div&gt;LLM&lt;/div&gt;&lt;div&gt;(GPT-4, ...)&lt;br&gt;&lt;/div&gt;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;" vertex="1" parent="1">
+        <mxCell id="Ab3tzTa3yzkyZwKfhWyt-25" value="&lt;div&gt;LLM&lt;/div&gt;&lt;div&gt;(GPT-4, ...)&lt;br&gt;&lt;/div&gt;" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#0D0D0D;strokeColor=#FCFCFC;fontColor=#FAF7F7;" vertex="1" parent="1">
           <mxGeometry x="640" y="250" width="120" height="80" as="geometry" />
         </mxCell>
         <mxCell id="Ab3tzTa3yzkyZwKfhWyt-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=70;entryDy=80;entryPerimeter=0;" edge="1" parent="1" source="Ab3tzTa3yzkyZwKfhWyt-22" target="Ab3tzTa3yzkyZwKfhWyt-25">
