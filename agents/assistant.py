@@ -1,7 +1,7 @@
 from openai import OpenAI
 import asyncio
 from config import Config
-from utils.logger import Logger
+from utils.io import IOlog
 
 CFG = Config()
 client = OpenAI()
@@ -9,15 +9,15 @@ client = OpenAI()
 class Assistant():
 
     
-    def __init__(self, role: str, name: str = "Assistant", model: str = CFG.llm_model, logger: Logger = None, io: IO = None, tools = None, messages = None) -> None:
+    def __init__(self, role: str, name: str = "Assistant", model: str = CFG.llm_model, IOlog: IOlog = None, tools = None, messages = None) -> None:
         """
         Initialize the AI object with empty lists of functions, and performance evaluations.
         """
-        self.logger = logger
-        self.io = io
+        self.IOlog = IOlog
+        self.instructions = role
         self.assistant = client.beta.assistants.create(
             name=name,
-            instructions=role,
+            instructions=self.instructions,
             model=model,
             # seed=dbs.prompts['seed']
             # response_format='json_object',
@@ -29,9 +29,9 @@ class Assistant():
     @staticmethod
     def start(self, system: str, user: str) -> list[dict[str, str]]:
         user_msg = self.fuser(user)
-        role = self.fsystem(system)
+        self.instructions = self.fsystem(system)
 
-        return self.next()
+        return self.next([user_msg])
     
     @staticmethod
     def fassistant(self, msg: str) -> dict[str, str]:
@@ -97,13 +97,13 @@ class Assistant():
         except TypeError:
             print(f"TypeError: run[-1][\"content\"]: {run[-1]['content']}")
 
-        # if self.logger:
-        #     self.logger.log(message=response[-1]['content'], description="AI response to user")
+        # if self.IOlog:
+        #     self.IOlog.log(message=response[-1]['content'], description="AI response to user")
             # response_tokens = num_tokens_from_messages(response)
             # output_tokens = response_tokens - message_tokens
             # self.io.output_tokens_used({"input_tokens": message_tokens, "output_tokens": output_tokens})
-            # self.logger.log(message=f'Number of tokens in conversation: {response_tokens}, in gpt response: {output_tokens}', description="Number of tokens in conversation")
-            # self.logger.log("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+            # self.IOlog.log(message=f'Number of tokens in conversation: {response_tokens}, in gpt response: {output_tokens}', description="Number of tokens in conversation")
+            # self.IOlog.log("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
 
         return messages
     

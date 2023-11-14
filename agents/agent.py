@@ -1,6 +1,6 @@
 import re
 from config import Config
-from utils.logger import Logger
+from utils.IOlog import IOlog
 from utils.utils import openai_call, openai_call_functions, num_tokens_from_messages, prompt_function_call
 
 CFG = Config()
@@ -12,7 +12,7 @@ else:
     from utils.io_classes import IO_sockets as IO
 
 class Agent():
-    def __init__(self, role: str, name: str = "AI", model: str = CFG.llm_model, logger: Logger = None, io: IO = None) -> None:
+    def __init__(self, role: str, name: str = "AI", model: str = CFG.llm_model, IOlog: IOlog = None, io: IO = None) -> None:
         """
         Initialize the AI object with empty lists of functions, and performance evaluations.
         """
@@ -22,7 +22,7 @@ class Agent():
         self.token_limit = CFG.token_limit
         self.functions = []
         self.messages = []
-        self.logger = logger
+        self.IOlog = IOlog
         self.io = io
 
 
@@ -50,11 +50,11 @@ class Agent():
         if prompt:
             messages += [{"role": "user", "content": prompt}]
         message_tokens = num_tokens_from_messages(messages)
-        if self.logger:
-            self.logger.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-            self.logger.log(message=f"name: {self.name}, role: {self.role}", description="AI info")
-            self.logger.log(message=messages[-1]['content'], description="User messages to ai")
-            self.logger.log(message=f'Input tokens: {message_tokens}', description="Number of input tokens in messages")
+        if self.IOlog:
+            self.IOlog.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+            self.IOlog.log(message=f"name: {self.name}, role: {self.role}", description="AI info")
+            self.IOlog.log(message=messages[-1]['content'], description="User messages to ai")
+            self.IOlog.log(message=f'Input tokens: {message_tokens}', description="Number of input tokens in messages")
         # function_tokens = self.num_tokens_from_messages(self.functions)
         total_tokens = message_tokens + 50#+ function_tokens
         max_tokens = int(self.token_limit - total_tokens*1.1)
@@ -74,13 +74,13 @@ class Agent():
                 prompt_function_call(response["function_call"])
         except TypeError:
             print(f"TypeError: response[-1][\"content\"]: {response[-1]['content']}")
-        if self.logger:
-            self.logger.log(message=response[-1]['content'], description="AI response to user")
+        if self.IOlog:
+            self.IOlog.log(message=response[-1]['content'], description="AI response to user")
             response_tokens = num_tokens_from_messages(response)
             output_tokens = response_tokens - message_tokens
             self.io.output_tokens_used({"input_tokens": message_tokens, "output_tokens": output_tokens})
-            self.logger.log(message=f'Number of tokens in conversation: {response_tokens}, in gpt response: {output_tokens}', description="Number of tokens in conversation")
-            self.logger.log("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
+            self.IOlog.log(message=f'Number of tokens in conversation: {response_tokens}, in gpt response: {output_tokens}', description="Number of tokens in conversation")
+            self.IOlog.log("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
         return response
     
     def ask(self, messages: list[dict[str, str]]) -> list[dict[str, str]]:
