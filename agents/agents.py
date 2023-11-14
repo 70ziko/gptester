@@ -5,9 +5,9 @@ from vector_memory.json_file_memory import JSONFileMemory
 from vector_memory.memory import Memory
 from utils.functions_setter import set_functions
 from utils.chat_to_files import to_files
-from utils.scanner import create_tree_with_contents
+from utils.traverser import create_tree_with_contents
 from DB import DBs, create_dbs
-from utils.logger import Logger
+from utils.IOlog import IOlog
 from config import Config
 from typing import List
 import subprocess
@@ -31,7 +31,7 @@ def html_modyfing_agent(html, message, io: IO) -> str:
     output_stream = io.output_stream
     if not CFG.console_mode:
         io.output_stream = io.output_modified_html_stream
-    ai = Agent(role='modify html', name='html_modyfing_agent', logger = None, io = io)
+    ai = Agent(role='modify html', name='html_modyfing_agent', IOlog = None, io = io)
     
     sys_prompt = ai.fsystem(f"""You are an AI who modifies html files based on user's instruction.\n.""")
     user_prompt = ai.fuser(f"""Modify the following html file based on the user's instructions.
@@ -46,9 +46,9 @@ def html_modyfing_agent(html, message, io: IO) -> str:
     
     return response[-1]["content"]
 
-def execution_agent(objective: str, task: Task, logger: Logger, io: IO) -> str:
+def execution_agent(objective: str, task: Task, IOlog: IOlog, io: IO) -> str:
     """ Executes a task"""
-    ai = Agent(role='execute task', name='execution_agent', logger = logger, io = io)
+    ai = Agent(role='execute task', name='execution_agent', IOlog = IOlog, io = io)
     set_functions(ai, [])
 
     sys_prompt = f"""
@@ -60,9 +60,9 @@ def execution_agent(objective: str, task: Task, logger: Logger, io: IO) -> str:
 
     return response[-1]["content"]
 
-def clarify_agent(objective: str = CFG.objective, dbs: DBs = dbs, logger: Logger = None, io: IO = None):
+def clarify_agent(objective: str = CFG.objective, dbs: DBs = dbs, IOlog: IOlog = None, io: IO = None):
     '''Ask the user if they want to clarify anything and save the results to the workspace'''
-    ai = Agent(role='clarify project details with user', name='clarify_agent', logger = logger, io = io)
+    ai = Agent(role='clarify project details with user', name='clarify_agent', IOlog = IOlog, io = io)
 
     messages = [ai.fsystem(dbs.prompts['qa'])]
 
@@ -102,12 +102,12 @@ def clarify_agent(objective: str = CFG.objective, dbs: DBs = dbs, logger: Logger
     return messages
 
 
-def propose_structure_agent(objective: str, specification: str, project_structure: str, logger: Logger = None, io: IO = None) -> str:
+def propose_structure_agent(objective: str, specification: str, project_structure: str, IOlog: IOlog = None, io: IO = None) -> str:
     output_stream = io.output_stream
     if not CFG.console_mode:
         io.output_stream = io.output_directory_content_stream
 
-    ai = Agent(role='propose suitable project structure', name='structure_agent', logger = logger, io = io)
+    ai = Agent(role='propose suitable project structure', name='structure_agent', IOlog = IOlog, io = io)
 
 
     sys_prompt = ai.fsystem(f"""{dbs.prompts['structure']}""")
@@ -137,8 +137,8 @@ def propose_structure_agent(objective: str, specification: str, project_structur
 
     return response[-1]["content"]
 
-def implement_structure_agent(seeds_contents: str, project_structure: str, logger: Logger = None, io: IO = None) -> str:
-    ai = Agent(role='implement the project structure wwth bash commands', name='structure_agent', logger = logger, io = io)
+def implement_structure_agent(seeds_contents: str, project_structure: str, IOlog: IOlog = None, io: IO = None) -> str:
+    ai = Agent(role='implement the project structure wwth bash commands', name='structure_agent', IOlog = IOlog, io = io)
     
     sys_prompt = ai.fsystem("You are a super smart system administrator. Your task is to create a set of bash commands, that will create a project structure based on a given JSON file. \
                             You will be given the contents of the current working directory and the target project structure in JSON format.  \
@@ -167,8 +167,8 @@ def implement_structure_agent(seeds_contents: str, project_structure: str, logge
     response = ai.next(messages)
     return response[-1]["content"]
 
-def technical_plan_agent(objective: str, specification: str, structure: str, logger: Logger = None, io: IO = None) -> str:
-    ai = Agent(role='create technical plan', name='technical_plan_agent', logger = logger, io = io)
+def technical_plan_agent(objective: str, specification: str, structure: str, IOlog: IOlog = None, io: IO = None) -> str:
+    ai = Agent(role='create technical plan', name='technical_plan_agent', IOlog = IOlog, io = io)
 
     sys_prompt = ai.fsystem(dbs.prompts['technical_plan'])
 
@@ -180,8 +180,8 @@ def technical_plan_agent(objective: str, specification: str, structure: str, log
     messages = [sys_prompt, user_prompt]
     return ai.next(messages)[-1]["content"]
 
-def dependency_agent(logger: Logger = None, io: IO = None, dbs=dbs) -> str:
-    ai = Agent(role='create dependency map', name='dependency_agent', logger = logger, io = io, model='gpt-4')
+def dependency_agent(IOlog: IOlog = None, io: IO = None, dbs=dbs) -> str:
+    ai = Agent(role='create dependency map', name='dependency_agent', IOlog = IOlog, io = io, model='gpt-4')
 
     specification = dbs.workspace['specification.md']
     technical = dbs.workspace['technical_plan.md']
@@ -198,8 +198,8 @@ Based on that information return a file dependency map in a json format""")
     return ai.next(messages)[-1]["content"]
 
 
-def feedback_agent(message: list[dict[str, str]], user_feedback: str, logger: Logger = None, io: IO = None):
-    ai = Agent(role='acknowledge feedback', name='feedback_agent', logger = logger, io = io)
+def feedback_agent(message: list[dict[str, str]], user_feedback: str, IOlog: IOlog = None, io: IO = None):
+    ai = Agent(role='acknowledge feedback', name='feedback_agent', IOlog = IOlog, io = io)
 
     system_message = ai.fsystem(f"""Your task is to read the user feedback in the context of your previous message and based on them
     modify the message to account for the feedback.""")
@@ -214,7 +214,7 @@ def feedback_agent(message: list[dict[str, str]], user_feedback: str, logger: Lo
 
     return response[-1]["content"]
 
-def plan_tasks_agent(structure, objective: str, logger: Logger = None, io: IO = None, dbs = dbs):
+def plan_tasks_agent(structure, objective: str, IOlog: IOlog = None, io: IO = None, dbs = dbs):
     """ Writes the initial task list based on clarified information, specification, project structure, and objective"""
     
     # te output_stream'y można by jako parametr (obiektu/funkcji) przekazywać, a nie powtarzać kod...
@@ -222,7 +222,7 @@ def plan_tasks_agent(structure, objective: str, logger: Logger = None, io: IO = 
     if not CFG.console_mode:
         io.output_stream = io.output_task_list_stream
 
-    ai = Agent(role='create task list', name='task_agent', logger = logger, io = io, model='gpt-4')
+    ai = Agent(role='create task list', name='task_agent', IOlog = IOlog, io = io, model='gpt-4')
 
     query = objective
 
@@ -265,13 +265,13 @@ Return a complete task list that will accomplish the objective of your team in t
     return response
 
 
-def specification_agent(objective: str, logger: Logger = None, io: IO = None, add_messages: list[dict[str, str]] = None):
+def specification_agent(objective: str, IOlog: IOlog = None, io: IO = None, add_messages: list[dict[str, str]] = None):
     """ Writes the initial project specification based on clarified information, project structure, and objective"""
     output_stream = io.output_stream
     if not CFG.console_mode:
         io.output_stream = io.output_specification_stream
 
-    ai = Agent(role='specify the project details', name='specification_agent', logger = logger, io = io)
+    ai = Agent(role='specify the project details', name='specification_agent', IOlog = IOlog, io = io)
 
 
     sys_prompt = ai.fsystem(f"""{dbs.prompts['specification']}""")
@@ -292,8 +292,8 @@ This specification will be used later as the basis for the implementation. Retur
     return response
 
 
-def coding_agent(objective: str, task: Task, results: list[Task] = None, logger: Logger = None, io: IO = None):
-    ai = Agent(role='create code', name='coding_agent', logger = logger, io = io)
+def coding_agent(objective: str, task: Task, results: list[Task] = None, IOlog: IOlog = None, io: IO = None):
+    ai = Agent(role='create code', name='coding_agent', IOlog = IOlog, io = io)
 
     tasks = '\n'.join([f"{t.name}\n{t.result}" if hasattr(t, 'name') and hasattr(t, 'result') else str(t) for t in results])
 
@@ -311,8 +311,8 @@ def coding_agent(objective: str, task: Task, results: list[Task] = None, logger:
     return ai.next(messages)[-1]["content"]
 
 
-def code_modifying_agent(objective: str, file: CodeFile, task: Task, results: list[Task], logger: Logger = None, io: IO = None):
-    ai = Agent(role='modify code', name='code_modifying_agent', logger = logger, io = io)
+def code_modifying_agent(objective: str, file: CodeFile, task: Task, results: list[Task], IOlog: IOlog = None, io: IO = None):
+    ai = Agent(role='modify code', name='code_modifying_agent', IOlog = IOlog, io = io)
 
     tasks = '\n'.join([f"{t.name}\n{t.result}" if hasattr(t, 'name') and hasattr(t, 'result') else str(t) for t in results])
 
@@ -327,9 +327,9 @@ def code_modifying_agent(objective: str, file: CodeFile, task: Task, results: li
     return ai.next(messages)[-1]["content"]
 
 
-def setup_agent(directory_contents: str, dbs: DBs, logger: Logger = None, io: IO = None, add_messages: list[dict[str, str]] = None):
+def setup_agent(directory_contents: str, dbs: DBs, IOlog: IOlog = None, io: IO = None, add_messages: list[dict[str, str]] = None):
     ai = Agent(
-        role='finish up the project and give instructions on how to set it up', name='setup_agent', logger=logger, io=io)
+        role='finish up the project and give instructions on how to set it up', name='setup_agent', IOlog=IOlog, io=io)
 
     specification = dbs.workspace['specification.md']
     technical = dbs.workspace['technical_plan.md']
@@ -359,11 +359,11 @@ def setup_agent(directory_contents: str, dbs: DBs, logger: Logger = None, io: IO
         CFG.continuous_limit -= 1
         return response
 
-    feedback_response = feedback_agent(response, logger=logger, io=io)
+    feedback_response = feedback_agent(response, IOlog=IOlog, io=io)
     return feedback_response
 
 
-def execute_entrypoint(dbs: DBs, logger: Logger,  io: IO) -> List[dict]:
+def execute_entrypoint(dbs: DBs, IOlog: IOlog,  io: IO) -> List[dict]:
     command = dbs.workspace["run.sh"]
 
     io.output("Do you want to execute this code?")
@@ -397,8 +397,8 @@ def execute_entrypoint(dbs: DBs, logger: Logger,  io: IO) -> List[dict]:
     return p.stdout or p.stderr  
 
 
-def entrypoint_agent(workspace_full_path: str, dbs: DBs, logger: Logger, io: IO) -> List[dict]:
-    ai = Agent(role="Generate entrypoint", name='entrypoint_agent', logger = logger, io = io)
+def entrypoint_agent(workspace_full_path: str, dbs: DBs, IOlog: IOlog, io: IO) -> List[dict]:
+    ai = Agent(role="Generate entrypoint", name='entrypoint_agent', IOlog = IOlog, io = io)
 
     messages = ai.start(
         system=(
@@ -422,13 +422,13 @@ def entrypoint_agent(workspace_full_path: str, dbs: DBs, logger: Logger, io: IO)
     dbs.workspace["run.sh"] = "\n".join(match.group(1) for match in matches)
     return messages
 
-def debugging_agent(output: str, logger: Logger = None, io: IO = None) -> str:
+def debugging_agent(output: str, IOlog: IOlog = None, io: IO = None) -> str:
     """An agent used to debug the project
     Capabililties: 
         - Working on error messages - With the user (in the future it should be able to run the project and fix it on its own)
         - writing missing code files """
 
-    ai = Agent(role="Debug the project with the user", name='debug_agent', logger = logger, io = io)
+    ai = Agent(role="Debug the project with the user", name='debug_agent', IOlog = IOlog, io = io)
 
     system = ai.fsystem(f"{dbs.prompts['debug']}")
 
@@ -468,11 +468,11 @@ Please fix the codebase so that it runs correctly. You can use bash commands to 
     return messages[-1]['content']
 
 
-def clarify_specification_agent(specification: str, logger: Logger = None, io: IO = None):
+def clarify_specification_agent(specification: str, IOlog: IOlog = None, io: IO = None):
     output_stream = io.output_stream
     if not CFG.console_mode:
         io.output_stream = io.output_questions_from_ai_stream
-    ai = Agent(role='clarify specification with user', name='clarify_specification_agent', logger = logger, io = io)
+    ai = Agent(role='clarify specification with user', name='clarify_specification_agent', IOlog = IOlog, io = io)
     
     system_message = ai.fsystem(f"""You are a part of an AI, that creates code from project specifications. Your jobs is to
     look at the specification document and ask for more information that you need to create the project, 
@@ -492,16 +492,16 @@ def clarify_specification_agent(specification: str, logger: Logger = None, io: I
     
     io.output_stream = output_stream
     io.output_questions_from_ai_stream_done()
-    # feedback_response = ask_feedback(response, logger=logger, io=io)
+    # feedback_response = ask_feedback(response, IOlog=IOlog, io=io)
     
     return response
 
 
-def define_objective_agent(specification: str, logger: Logger = None, io: IO = None):
+def define_objective_agent(specification: str, IOlog: IOlog = None, io: IO = None):
     output_stream = io.output_stream
     if not CFG.console_mode:
         io.output_stream = io.output_objective_stream
-    ai = Agent(role='define objective from specification', name='define_objective_agent', logger = logger, io = io)
+    ai = Agent(role='define objective from specification', name='define_objective_agent', IOlog = IOlog, io = io)
     
     system_message = ai.fsystem(f"""You are a part of an AI, that creates code from project specifications. Your jobs is to
     read a specification provided by user, and define the objective of the project from it.""")
@@ -515,7 +515,7 @@ def define_objective_agent(specification: str, logger: Logger = None, io: IO = N
     io.output_stream = output_stream
     return response[-1]["content"]
 
-def ask_feedback(message: list[dict[str, str]], logger: Logger = None, io: IO = None):
+def ask_feedback(message: list[dict[str, str]], IOlog: IOlog = None, io: IO = None):
     '''Ask the user for feedback on the AI's response'''
 
     while True:
@@ -532,9 +532,9 @@ def ask_feedback(message: list[dict[str, str]], logger: Logger = None, io: IO = 
         # Should we actually exit here?
         sys.exit()
 
-    feedback_from_agent = feedback_agent(message, feedback_from_user, logger, io)
+    feedback_from_agent = feedback_agent(message, feedback_from_user, IOlog, io)
 
-    return ask_feedback(feedback_from_agent, logger, io)
+    return ask_feedback(feedback_from_agent, IOlog, io)
 
 
 def parse_feedback_input(user_input: str):
