@@ -5,7 +5,7 @@ from vector_memory.json_file_memory import JSONFileMemory
 from vector_memory.memory import Memory
 from utils.functions_setter import set_functions
 from utils.chat_to_files import to_files
-from utils.scanner import create_tree_with_contents
+from utils.traverser import create_tree_with_contents
 from DB import DBs, create_dbs
 from utils.logger import Logger
 from config import Config

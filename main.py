@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import argparse
-import argparse
+from colorama import init as colorama_init
+from colorama import Fore
+from colorama import Style
 
 # obsługa programu poprzez argumenty przekazywane w konsoli
 parser = argparse.ArgumentParser(description='Static Code Analysis Agent\n')
@@ -18,7 +20,7 @@ args=parser.parse_args()
 
 def main():
     if args.directory:
-        print("Directory: " + args.directory)
+        print(f"I will now begin scanning: {args.directory})
 
 if __name__ == "__main__":
     main()
