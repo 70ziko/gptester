@@ -80,7 +80,7 @@ class Assistant():
                 assistant_id=self.assistant.id,
                 model=self.assistant.model if self.assistant.model else "gpt-4-1106-preview",
                 instructions=self.instructions,
-                tools=[{"type": "code_interpreter"}, {"type": "retrieval"}]
+                tools=[{"type": "code_interpreter"}]
             )
 
             # Polling mechanism to see if runStatus is completed
@@ -88,6 +88,8 @@ class Assistant():
             while run_status.status != "completed":
                 await asyncio.sleep(2)  # Sleep for 2 seconds before polling again
                 run_status = client.beta.threads.runs.retrieve(thread_id=self.thread.id, run_id=run.id)
+                if run_status.status == "failed":
+                    raise Exception(f"Run failed with reason: {run_status.last_error}")
 
             # Get the last assistant message from the messages list
             messages = client.beta.threads.messages.list(thread_id=self.thread.id)
