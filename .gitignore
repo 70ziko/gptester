@@ -1,3 +1,7 @@
 .venv
 venv
 keys
+.keys
+.env
+__pychache__
+.vscode

@@ -237,6 +237,15 @@ def scan_directory(directory):
 
     return data 
 
+def read_file(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            return file.read()
+    except FileNotFoundError:
+        return "File not found."
+    except Exception as e:
+        return f"An error occurred: {e}"
+
 def walk_directory(directory):
     image_extensions = [
         ".png",

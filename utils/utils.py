@@ -4,12 +4,12 @@ import json
 import subprocess
 import time
 from typing import Dict, List
-import redis
-#from commands import FunctionExecutor
+# import redis
+from config import Config
 
 CFG = Config()
 
-r = redis.StrictRedis(host=CFG.redis_host, port=CFG.redis_port, db=0, decode_responses=True)
+# r = redis.StrictRedis(host=CFG.redis_host, port=CFG.redis_port, db=0, decode_responses=True)
 
 def openai_call(
     messages: list[dict[str, str]],
