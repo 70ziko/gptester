@@ -266,15 +266,6 @@ def walk_directory(directory):
                     ] = f"Error reading file {file}: {str(e)}"
     return code_contents
 
-def main():    
-    path = Path(CFG.workspace+'/6bx5URh6xk-SyXcDAAAB/RecipeSharingWebApp').absolute()
-    result = create_tree_with_contents(path)
-    print(json.dumps(result, indent=4)) 
-    # print(f'tokens: {num_tokens_from_messages(str(result))}') # Django project - całkiem duży, zajmuje 5306 tokenów 
-
-if __name__ == "__main__": 
-    main()  
-
 def get_directory_content(directory: str) -> dict:
     """
     Returns the contents of a directory.
@@ -350,3 +341,12 @@ def get_js_function_code(filename: str, function_name: str) -> str:
 
     function_source = file_content[start_index:end_index + 1]
     return function_source
+
+def main():    
+    path = Path(CFG.workspace+'/6bx5URh6xk-SyXcDAAAB/RecipeSharingWebApp').absolute()
+    result = create_tree_with_contents(path)
+    print(json.dumps(result, indent=4)) 
+    # print(f'tokens: {num_tokens_from_messages(str(result))}') # Django project - całkiem duży, zajmuje 5306 tokenów 
+
+if __name__ == "__main__": 
+    main()  

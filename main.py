@@ -3,7 +3,7 @@
 
 import argparse
 from utils.io import IOlog
-from utils.traverser import scan_directory
+from utils.traverser import scan_directory, walk_directory
 
 # obsługa programu poprzez argumenty przekazywane w konsoli
 parser = argparse.ArgumentParser(description='GPTESTER | Static Code Analysis Agent\n')
@@ -25,8 +25,12 @@ def main():
 
     iol.log(f"Found {len(dir_extract)} files to scan", color="cyan")
     iol.log(dir_extract, color="green")
-    
+
     iol.log(f"Beginning scan...", color="bright_cyan")
+    dir_content = walk_directory(args.directory)
+    iol.log(f"Found {len(dir_content)} files to scan", color="cyan")
+    iol.log(dir_content, color="green")
+    
     iol.log(f"Scan complete!", color="bright_cyan", verbose_only=True)
 
 if __name__ == "__main__":
