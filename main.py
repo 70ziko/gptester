@@ -11,6 +11,7 @@ parser.add_argument('directory', type=str, help='Path to the directory to scan')
 parser.add_argument('-v', '--verbose', help='Wypisz opisy podatności w konsoli, wypisz wszystkie wykonywane kroki', action='store_true')
 parser.add_argument('-c', '--codeql', help='Use codeql to enhance the scan, REQUIRED to install codeql console tool', action='store_true')
 parser.add_argument('-n', '--name', help='Name the generated raport, default: "test"', action='store_true', default="test")
+parser.add_argument('-m', '--model', help='Choose the LLM model for code analysis, default: "gpt-4"', action='store_true', default="gpt-4")
 
 
 # Inicjalizacja

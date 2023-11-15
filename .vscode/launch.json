@@ -11,7 +11,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["Vulnerable-Code-Snippets/Authentication\\ Bypass/", "-v"]
+            "args": ["Vulnerable-Code-Snippets/Authentication_Bypass/", "-v"]
         }
     ]
 }
