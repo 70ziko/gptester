@@ -9,11 +9,11 @@ client = OpenAI()
 class Assistant():
 
     
-    def __init__(self, role: str, name: str = "Assistant", model: str = CFG.llm_model, IOlog: IOlog = None, tools = None, messages = None) -> None:
+    def __init__(self, role: str, name: str = "Assistant", model: str = 'gpt-3.5-turbo-1106', iol: IOlog = None, tools = None, messages = None) -> None:
         """
         Initialize the AI object with empty lists of functions, and performance evaluations.
         """
-        self.IOlog = IOlog
+        self.iol = iol
         self.instructions = role
         self.assistant = client.beta.assistants.create(
             name=name,
@@ -26,14 +26,14 @@ class Assistant():
         self.thread = client.beta.threads.create(messages = messages)
 
 
-    @staticmethod
+    # @staticmethod
     def start(self, system: str, user: str) -> list[dict[str, str]]:
         user_msg = self.fuser(user)
         self.instructions = self.fsystem(system)
 
         return self.next([user_msg])
     
-    @staticmethod
+    # @staticmethod
     def fassistant(self, msg: str) -> dict[str, str]:
         thread_message = client.beta.threads.messages.create(
             self.thread.id,
@@ -42,11 +42,11 @@ class Assistant():
             )
         return thread_message
     
-    @staticmethod
+    # @staticmethod
     def fsystem(self, msg: str) -> dict[str, str]:
         self.assistant.instructions = msg
     
-    @staticmethod
+    # @staticmethod
     def fuser(self, msg: str) -> dict[str, str]:
         thread_message = client.beta.threads.messages.create(
             self.thread.id,
@@ -57,14 +57,17 @@ class Assistant():
     
     def messages_to_thread(self, messages: list[dict[str, str]]):
         for message in messages:
-            if message['role'] == 'user':
-                self.fuser(message)
-            elif message['role'] == 'assistant':
-                self.fassistant(message)
-            elif message['role'] == 'system':
-                self.fsystem(message)
+            if isinstance(message, dict):
+                if message['role'] == 'user':
+                    self.fuser(message)
+                elif message['role'] == 'assistant':
+                    self.fassistant(message)
+                elif message['role'] == 'system':
+                    self.fsystem(message)
+            else:
+                return messages
 
-    def next(self, messages: list[dict[str, str]]=None, prompt=None):
+    async def next(self, messages: list[dict[str, str]]=None, prompt=None):
         if messages:
             self.messages_to_thread(messages)
 
@@ -76,26 +79,26 @@ class Assistant():
                 thread_id=self.thread.id,
                 assistant_id=self.assistant.id,
                 model=self.assistant.model if self.assistant.model else "gpt-4-1106-preview",
-                instructions="additional instructions",
+                instructions=self.instructions,
                 tools=[{"type": "code_interpreter"}, {"type": "retrieval"}]
             )
 
             # Polling mechanism to see if runStatus is completed
             run_status = client.beta.threads.runs.retrieve(thread_id=self.thread.id, run_id=run.id)
             while run_status.status != "completed":
-                asyncio.sleep(2)  # Sleep for 2 seconds before polling again
+                await asyncio.sleep(2)  # Sleep for 2 seconds before polling again
                 run_status = client.beta.threads.runs.retrieve(thread_id=self.thread.id, run_id=run.id)
 
             # Get the last assistant message from the messages list
             messages = client.beta.threads.messages.list(thread_id=self.thread.id)
             response = [message for message in messages if message.run_id == run.id and message.role == "assistant"][-1]
 
-            # If an assistant message is found, print it
+            # If an assistant message is found, iol.log it
             if response:
-                print(f"{response.content[0].text.value} \n")
+                self.iol.log(f"{response.content[0].text.value} \n")
 
         except TypeError:
-            print(f"TypeError: run[-1][\"content\"]: {run[-1]['content']}")
+            self.iol.log(f"TypeError: run[-1][\"content\"]: {run[-1]['content']}")
 
         # if self.IOlog:
         #     self.IOlog.log(message=response[-1]['content'], description="AI response to user")

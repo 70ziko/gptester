@@ -1,6 +1,6 @@
 import hashlib
 from utils.utils import get_embedding
-from openai.embeddings_utils import cosine_similarity
+from scipy.spatial.distance import cosine
 
 class Task:
     """Task object containing the task details as well as its result"""
@@ -23,7 +23,7 @@ class Task:
     def relevance_for(self, query: str) -> float:
         embedding = get_embedding(query)
         task = get_embedding(self.name)
-        score = cosine_similarity(task, embedding)
+        score = cosine(task, embedding)
         return score
     
     def to_dict(self):
@@ -61,6 +61,6 @@ class CodeFile:
     def relevance_for(self, query: str):
         embedding = get_embedding(query)
         file = get_embedding(self.name)
-        score = cosine_similarity(file, embedding)
+        score = cosine(file, embedding)
         return score
     
