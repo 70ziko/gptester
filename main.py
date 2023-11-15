@@ -3,7 +3,7 @@
 
 import argparse
 from utils.io import IOlog
-from utils.traverser import scan_directory
+from utils.traverser import scan_directory, walk_directory
 
 # obsługa programu poprzez argumenty przekazywane w konsoli
 parser = argparse.ArgumentParser(description='GPTESTER | Static Code Analysis Agent\n')
@@ -11,6 +11,7 @@ parser.add_argument('directory', type=str, help='Path to the directory to scan')
 parser.add_argument('-v', '--verbose', help='Wypisz opisy podatności w konsoli, wypisz wszystkie wykonywane kroki', action='store_true')
 parser.add_argument('-c', '--codeql', help='Use codeql to enhance the scan, REQUIRED to install codeql console tool', action='store_true')
 parser.add_argument('-n', '--name', help='Name the generated raport, default: "test"', action='store_true', default="test")
+parser.add_argument('-m', '--model', help='Choose the LLM model for code analysis, default: "gpt-4"', action='store_true', default="gpt-4")
 
 
 # Inicjalizacja
@@ -24,8 +25,12 @@ def main():
 
     iol.log(f"Found {len(dir_extract)} files to scan", color="cyan")
     iol.log(dir_extract, color="green")
-    
+
     iol.log(f"Beginning scan...", color="bright_cyan")
+    dir_content = walk_directory(args.directory)
+    iol.log(f"Found {len(dir_content)} files to scan", color="cyan")
+    iol.log(dir_content, color="green")
+    
     iol.log(f"Scan complete!", color="bright_cyan", verbose_only=True)
 
 if __name__ == "__main__":

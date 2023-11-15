@@ -26,7 +26,10 @@ class IOlog:
         self.log_file = f"{name}_{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}_raport.md"
         
         # Ensure the log directory exists
-        os.makedirs(os.path.dirname(self.log_file), exist_ok=True)
+        # os.makedirs(self.log_file, exist_ok=True)
+        os.makedirs("raports", exist_ok=True)
+        with open(self.log_file, 'w') as file:
+            file.write('#GPTESTER RAPORT\n')
 
     def log(self, message, color=None, verbose_only=False):
         timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
