@@ -11,7 +11,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["Vulnerable-Code-Snippets/Authentication_Bypass/", "-v", "-m", "gpt-4-1106-preview"]
+            "args": ["Vulnerable-Code-Snippets/Buffer_Overflow/", "-v", "-m", "gpt-4-1106-preview"]
         }
     ]
 }

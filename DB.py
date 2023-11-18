@@ -49,18 +49,9 @@ class DB:
 @dataclass
 class DBs:
     prompts: DB
-    memory: DB
-    logs: DB
     workspace: DB
 
-workspace_path = Path(CFG.workspace).absolute()
-
-def create_dbs(sid: Optional[str] = None) -> DBs:
+def create_dbs(project: str = None) -> DBs:
     """Create the DBs for the project"""
-    workspace_full_path = f'{workspace_path}/{sid}' if sid else workspace_path    
-    memory_path = f'{workspace_full_path}/memory'
-                 
-    return DBs(workspace=DB(workspace_full_path),
-               prompts=DB(Path(__file__).parent / "prompts"),
-               memory=DB(memory_path),
-               logs=DB(f"{memory_path}/logs")) 
+    return DBs(workspace=DB(f'{project}_gptester'),
+               prompts=DB(Path(__file__).parent / "prompts"))
