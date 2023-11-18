@@ -1,8 +1,8 @@
 # from agent import Agent
 from ai.assistant import Assistant as Agent
 from vector_memory.models import Task, CodeFile
-from vector_memory.json_file_memory import JSONFileMemory
-from vector_memory.memory import Memory
+# from vector_memory.json_file_memory import JSONFileMemory
+# from vector_memory.memory import Memory
 # from utils.chat_to_files import to_files
 from DB import DBs, create_dbs
 from utils.io import IOlog
@@ -13,7 +13,7 @@ CFG = Config()
 dbs = create_dbs()
 
 # memory = Memory(PineconeMemory(dbs, CFG.pinecone_index, CFG.objective))
-memory = Memory(JSONFileMemory(dbs))
+# memory = Memory(JSONFileMemory(dbs))
 
 def execution_agent(objective: str, task: Task, IOlog: IOlog) -> str:
     """ Executes a task"""
@@ -69,40 +69,30 @@ async def debug_agent(input: str, iol: IOlog = None, model: str = 'gpt-4-1106-pr
         - Working on error messages - With the user (in the future it should be able to run the project and fix it on its own)
         - writing missing code files """
 
-    ai = Agent(role=f"{dbs.prompts['debug']}", name='debug_agent', iol = iol)
 
-    # system = ai.fsystem(f"{dbs.prompts['debug']}")
+    write_file_json = {
+        "name": "write_file",
+        "description": "Writes content to a specified file.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "filename": {"type": "string"},
+                "content": {"type": "string"}
+            },
+            "required": ["filename", "content"]
+        }
+    }
 
-    # The output of running the program with run.sh: {output} \n
+    tools=[
+        {"type": "code_interpreter"},
+        {"type": "retrieval"},
+        {"type": "function", "function": write_file_json},
+    ]
+
+    ai = Agent(role=f"{dbs.prompts['debug']}", name='debug_agent', iol = iol, tools=tools, model=model)
+    
     user = ai.fuser(msg=f"""The project codebase:\n{input}. Please list all the vulnerabilities present in the codebase.
                     Then output possible solutions to fix these vulnerabilities.""")
     
     messages = [user]
     return await ai.next(messages)
-
-    # while True:
-    #     messages = ai.next(messages)
-    #     io.output(messages[-1]['content'])
-
-    #     if messages[-1]['content'] == "No more errors.":
-    #         return messages[-1]['content']
-        
-    #     confirm = io.input("Do you want to implement those changes? (y/n or enter text as feedback)")
-    #     if confirm in ["n", "no"]:
-    #         return messages[-1]['content']
-    #     elif confirm in ['', "y", "yes"]:
-    #         to_files(messages[-1]['content'], dbs.workspace)
-
-    #     result = execute_entrypoint(dbs, io)
-
-    #     user_input = io.input("Do you want to continue debugging? (y/n or enter text as feedback)")
-    #     if user_input in ["n", "no"]:
-    #         break
-    #     elif user_input in ['', "y", "yes"]:
-    #         continue
-    #     else:
-    #         result += user_input
-
-    #     messages.append(ai.fuser(result))
-
-    # return messages[-1]['content']

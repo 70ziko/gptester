@@ -1,5 +1,7 @@
 from openai import OpenAI
 import asyncio
+import json
+import tools
 from config import Config
 from utils.io import IOlog
 
@@ -79,8 +81,7 @@ class Assistant():
                 thread_id=self.thread.id,
                 assistant_id=self.assistant.id,
                 model=self.assistant.model if self.assistant.model else "gpt-4-1106-preview",
-                instructions=self.instructions,
-                tools=[{"type": "code_interpreter"}]
+                instructions=self.instructions
             )
 
             # Polling mechanism to see if runStatus is completed
@@ -88,6 +89,25 @@ class Assistant():
             while run_status.status != "completed":
                 await asyncio.sleep(2)  # Sleep for 2 seconds before polling again
                 run_status = client.beta.threads.runs.retrieve(thread_id=self.thread.id, run_id=run.id)
+                # Check if there is a required action
+                if run_status.required_action and run_status.required_action.type == "submit_tool_outputs":
+                    for tool_call in run_status.required_action.submit_tool_outputs.tool_calls:
+                        name = tool_call.function.name
+                        arguments = json.loads(tool_call.function.arguments)
+
+                        # Check if the function exists in the tools module
+                        if hasattr(tools, name):
+                            function_to_call = getattr(tools, name)
+                            response = function_to_call(**arguments)
+
+                            # Submit tool outputs back
+                            client.beta.threads.runs.submit_tool_outputs(
+                                thread_id=self.thread.id,
+                                run_id=run.id,
+                                tool_outputs=[
+                                    {"tool_call_id": tool_call.id, "output": response}
+                                ]
+                            )
                 if run_status.status == "failed":
                     raise Exception(f"Run failed with reason: {run_status.last_error}")
 
@@ -102,13 +122,6 @@ class Assistant():
         except TypeError:
             self.iol.log(f"TypeError: run[-1][\"content\"]: {run[-1]['content']}")
 
-        # if self.IOlog:
-        #     self.IOlog.log(message=response[-1]['content'], description="AI response to user")
-            # response_tokens = num_tokens_from_messages(response)
-            # output_tokens = response_tokens - message_tokens
-            # self.io.output_tokens_used({"input_tokens": message_tokens, "output_tokens": output_tokens})
-            # self.IOlog.log(message=f'Number of tokens in conversation: {response_tokens}, in gpt response: {output_tokens}', description="Number of tokens in conversation")
-            # self.IOlog.log("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
 
         return messages
     
