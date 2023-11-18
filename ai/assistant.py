@@ -1,6 +1,8 @@
-from openai import OpenAI
+import os
 import asyncio
 import json
+from openai import OpenAI
+
 import tools
 from config import Config
 from utils.io import IOlog
@@ -69,7 +71,7 @@ class Assistant():
             else:
                 return messages
 
-    async def next(self, messages: list[dict[str, str]]=None, prompt=None):
+    async def next(self, messages: list[dict[str, str]]=None, prompt=None, directory: str = 'default'):
         if messages:
             self.messages_to_thread(messages)
 
@@ -89,25 +91,33 @@ class Assistant():
             while run_status.status != "completed":
                 await asyncio.sleep(2)  # Sleep for 2 seconds before polling again
                 run_status = client.beta.threads.runs.retrieve(thread_id=self.thread.id, run_id=run.id)
+
+                tool_outputs = []
                 # Check if there is a required action
                 if run_status.required_action and run_status.required_action.type == "submit_tool_outputs":
                     for tool_call in run_status.required_action.submit_tool_outputs.tool_calls:
                         name = tool_call.function.name
                         arguments = json.loads(tool_call.function.arguments)
+                        if "filename" in arguments: 
+                            filename = os.path.basename(arguments["filename"])
+                            arguments["filename"] = os.path.join('fixed', filename)
 
                         # Check if the function exists in the tools module
                         if hasattr(tools, name):
                             function_to_call = getattr(tools, name)
-                            response = function_to_call(**arguments)
+                            response = await function_to_call(**arguments)
 
-                            # Submit tool outputs back
-                            client.beta.threads.runs.submit_tool_outputs(
-                                thread_id=self.thread.id,
-                                run_id=run.id,
-                                tool_outputs=[
-                                    {"tool_call_id": tool_call.id, "output": response}
-                                ]
-                            )
+                            # Collect tool outputs
+                            tool_outputs.append({"tool_call_id": tool_call.id, "output": response})
+
+
+                # Submit tool outputs back
+                if tool_outputs:
+                    client.beta.threads.runs.submit_tool_outputs(
+                        thread_id=self.thread.id,
+                        run_id=run.id,
+                        tool_outputs=tool_outputs
+                    )
                 if run_status.status == "failed":
                     raise Exception(f"Run failed with reason: {run_status.last_error}")
 

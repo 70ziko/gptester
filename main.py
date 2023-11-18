@@ -39,7 +39,7 @@ async def main():
     if args.codeql:
         iol.log(f"CodeQL is enabled, I will now begin the scan using CodeQL", color="red")
 
-    output = await agents.debug_agent(dir_content, iol, args.model)
+    output = await agents.debug_agent(dir_content, iol, args.model, args.directory)
     for message in output:
     # Each message can have multiple content items, so loop through them
         for content_item in message.content:
