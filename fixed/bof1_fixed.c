@@ -6,16 +6,17 @@
 
 int main(int argc, char *argv[]) {
   char out[S];
-  char buf[N] = {0};
+  char buf[N];
   char msg[] = "Welcome to the argument echoing program\n";
   int len = 0;
-  printf("%s", msg);
-  for (int i = argc - 1; i > 0; --i) {
-    len = snprintf(out, S, "argument %d is %s\n", i, argv[i]);
-    if (len > 0 && len < N - strlen(buf)) {
-      strncat(buf, out, len);
-    }
+  buf[0] = '\0';
+  printf(msg);
+  while (argc) {
+    snprintf(out, sizeof(out), "argument %d is %s\n", argc-1, argv[argc-1]); // use snprintf instead of sprintf
+    argc--;
+    strncat(buf,out,sizeof(buf)-strlen(buf)-1);
+    len = strlen(buf);
   }
-  printf("%s", buf);
+  printf("%s",buf);
   return 0;
 }

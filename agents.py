@@ -63,7 +63,7 @@ def code_modifying_agent(objective: str, file: CodeFile, task: Task, results: li
     return ai.next(messages)[-1]["content"]
 
 
-async def debug_agent(input: str, iol: IOlog = None, model: str = 'gpt-4-1106-preview', directory: str = 'fixed') -> str:
+async def debug_agent(input: str, iol: IOlog = None, model: str = 'gpt-4-1106-preview', directory: str = 'fixes') -> str:
     """An agent used to debug the project
     Capabililties: 
         - Working on error messages - With the user (in the future it should be able to run the project and fix it on its own)
