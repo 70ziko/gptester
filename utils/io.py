@@ -22,12 +22,15 @@ class IOlog:
     }
 
     def __init__(self, verbose=False, name="test"):
+        # self.directory = directory
         self.verbose = verbose
         self.log_file = f"{name}_{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}_raport.md"
         
         # Ensure the log directory exists
         # os.makedirs(self.log_file, exist_ok=True)
         os.makedirs("raports", exist_ok=True)
+        self.log_file = os.path.join('raports', self.log_file)
+
         with open(self.log_file, 'w') as file:
             file.write('#GPTESTER RAPORT\n')
 

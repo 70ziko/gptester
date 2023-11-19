@@ -3,7 +3,7 @@ import sys
 
 def run_codeql_scan(directory):
     # Replace this with the actual command to initialize the CodeQL database
-    init_cmd = ["codeql", "database", "create", "--language=python", "db", "--source-root", directory]
+    init_cmd = ["codeql", "database", "create", "--language=c", "db", "--source-root", directory]
     # Replace this with the actual command to run the analysis
     analyze_cmd = ["codeql", "database", "analyze", "db", "--format=csv", "--output=results.csv"]
 
@@ -20,3 +20,5 @@ def run_codeql_scan(directory):
         sys.exit(f"An error occurred while running CodeQL: {e}")
     except FileNotFoundError:
         sys.exit("Could not find the results file. Did the analysis run correctly?")
+
+run_codeql_scan('Vulnerable-Code-Snippets/Buffer_Overflow')

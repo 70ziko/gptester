@@ -1,6 +1,7 @@
 import os
 import asyncio
 import json
+import datetime
 from openai import OpenAI
 
 import tools
@@ -100,7 +101,8 @@ class Assistant():
                         arguments = json.loads(tool_call.function.arguments)
                         if "filename" in arguments: 
                             filename = os.path.basename(arguments["filename"])
-                            arguments["filename"] = os.path.join('fixed', filename)
+                            timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                            arguments["filename"] = os.path.join(directory, f'fixed_{timestamp}', filename)
 
                         # Check if the function exists in the tools module
                         if hasattr(tools, name):

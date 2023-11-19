@@ -15,17 +15,16 @@ return;
 }
 char hbuf[256];
 const char *cp2 = strrchr(ep->getval(), ':');
-if (!cp2) return;
-int maxlen = sizeof(hbuf)-strlen(cp2)-1;
+int maxlen = sizeof(hbuf) - (cp2 ? strlen(cp2) : 0) - 1;
 gethostname(hbuf, maxlen);
-hbuf[maxlen] = 0;
+hbuf[maxlen] = '\0';
 if (!strchr(hbuf, '.')) {
 struct hostent *h = gethostbyname(hbuf);
 if (h) {
 strncpy(hbuf, h->h_name, maxlen);
-hbuf[maxlen] = 0;
+hbuf[maxlen] = '\0';
 }
 }
-strncat(hbuf, cp2, maxlen - strlen(hbuf));
+strncat(hbuf, cp2, sizeof(hbuf) - strlen(hbuf) - 1);
 ep->define("DISPLAY", hbuf);
 }

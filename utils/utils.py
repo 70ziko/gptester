@@ -202,7 +202,7 @@ def num_tokens_from_string(string: str, encoding_name: str = 'cl100k_base') -> i
     """Returns the number of tokens in a text string."""
 
     encoding = tiktoken.get_encoding(encoding_name)
-    num_tokens = num_tokens_from_messages(encoding.encode(string))
+    num_tokens = len(encoding.encode(str(string)))
     return num_tokens
 
 def num_tokens_from_messages(messages: list, model: str =CFG.llm_model) -> int:
