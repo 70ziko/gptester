@@ -1,0 +1,37 @@
+%!TeX encoding=UTF-8
+%!TeX format=latex
+\RequirePackage[T1]{fontenc}
+%\RequirePackage{textcomp}
+\documentclass{beamer}
+
+\usefonttheme{professionalfonts}
+\usepackage{kpfonts}
+\usepackage[condensed]{tgheros}
+
+% Use your custom 'beamer' outer/inner/color/font theme here:
+% \usecolortheme{testtheme}
+% \usefonttheme{testtheme}
+% \useoutertheme{testtheme}
+% \useinnertheme{testtheme}
+% Or in one file:
+% \usetheme{testtheme}
+\usetheme[horizontal,lang=en,pagenumbers]{NewPwr}
+
+\title[Template Benchmark]{\textsc{beamer}\ Benchmark}
+\subtitle[Test of Templates]{Test of \textsc{beamer} Templates}
+\author[Annonymous]{Annonymous Author}
+\institute[Develop Group]{\textsc{beamer} Develop Group}
+\date{\today}
+
+\AtBeginDocument{%
+  \AtBeginPart{}%
+  \AtBeginSection[]{}%
+  \AtBeginSubsection[]{}%
+  \AtBeginSubsubsection[]{}%
+}
+
+\begin{document}
+
+\input beamer-benchmark-contents.tex
+
+\end{document}

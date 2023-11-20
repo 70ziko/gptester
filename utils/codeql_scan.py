@@ -1,9 +1,9 @@
 import subprocess
 import sys
 
-def run_codeql_scan(directory):
+def run_codeql_scan(directory, language="cpp", command="make"):
     # Replace this with the actual command to initialize the CodeQL database
-    init_cmd = ["codeql", "database", "create", "--language=c", "db", "--source-root", directory]
+    init_cmd = ["codeql", "database", "create", f"--language={language}", f"--command={command}" "db", "--source-root", directory]
     # Replace this with the actual command to run the analysis
     analyze_cmd = ["codeql", "database", "analyze", "db", "--format=csv", "--output=results.csv"]
 

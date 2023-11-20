@@ -3,5 +3,8 @@ venv
 keys
 .keys
 .env
-__pychache__
+__pychache__/
+ai/__pychache__/
 .vscode
+db/
+raports/

@@ -1,0 +1,39 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+
+\bibitem{Beamer}
+Tantau~T., Wright~J., Miletić~V., \emph{The beamer class},
+  \urlprefix\url{http://mirrors.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}
+  2017.
+
+\bibitem{siw2004}
+Janiszewski~G., \emph{System identyfikacji wizualnej},
+  \urlprefix\url{http://kmim.wm.pwr.edu.pl/myszka/wp-content/uploads/sites/2/2017/05/system\_identyfikacji\_wizualnej\_pwr.pdf}
+  2004.
+
+\bibitem{siw2016}
+Janiszewski~G., \emph{System identyfikacji wizualnej},
+  \urlprefix\url{http://kmim.wm.pwr.edu.pl/myszka/wp-content/uploads/sites/2/2017/05/siw\_2016\_popr.pdf}
+  2016.
+
+\bibitem{Logotyp}
+\emph{Logotyp},
+  \urlprefix\url{http://pwr.edu.pl/uczelnia/o-politechnice/materialy-promocyjne/logotyp/}
+  2017.
+
+\bibitem{tds}
+\emph{A directory structure for {{{{\TeX} } } } files},
+  \urlprefix\url{http://tug.org/tds/tds.html} 2004.
+
+\bibitem{miktex}
+Schenk~C., \emph{{MiKTeX} manual},
+  \urlprefix\url{http://docs.miktex.org/manual/localadditions.html} 2017.
+
+\bibitem{Fontspec}
+Robertson~W., \emph{The fontspec package. {{F}ont} selection for {XeLaTeX} and
+  {LuaLaTeX}},
+  \urlprefix\url{http://mirrors.ctan.org/macros/latex/contrib/fontspec/fontspec.pdf}
+  2017.
+
+\end{thebibliography}

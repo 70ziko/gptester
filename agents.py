@@ -16,8 +16,10 @@ dbs = create_dbs()
 # memory = Memory(JSONFileMemory(dbs))
 
 def execution_agent(objective: str, task: Task, IOlog: IOlog) -> str:
-    """ Executes a task"""
-    ai = Agent(role='execute task', name='execution_agent', IOlog = IOlog, io = io)
+    """ Executes a task
+        # not used
+    """
+    ai = Agent(role='execute task', name='execution_agent', iol = IOlog)
 
     sys_prompt = f"""
     You are an AI who performs one task based on the following objective: {objective}\n.
@@ -28,7 +30,10 @@ def execution_agent(objective: str, task: Task, IOlog: IOlog) -> str:
 
     return response[-1]["content"]
 
-def coding_agent(objective: str, task: Task, results: list[Task] = None, IOlog: IOlog = None):
+def coding_agent(objective: str, task: Task, results: list[Task] = None, iol: IOlog = None):
+    """
+        # NOT USED
+    """
     ai = Agent(role='create code', name='coding_agent', IOlog = IOlog)
 
     tasks = '\n'.join([f"{t.name}\n{t.result}" if hasattr(t, 'name') and hasattr(t, 'result') else str(t) for t in results])
@@ -42,13 +47,13 @@ def coding_agent(objective: str, task: Task, results: list[Task] = None, IOlog: 
     The file you will create is located at: {task.filename}""")
 
     messages = [system, user]
-    io.debug(messages)
+    iol.debug(messages)
 
     return ai.next(messages)[-1]["content"]
 
 
-def code_modifying_agent(objective: str, file: CodeFile, task: Task, results: list[Task], IOlog: IOlog = None):
-    ai = Agent(role='modify code', name='code_modifying_agent', IOlog = IOlog, io = io)
+def code_modifying_agent(objective: str, file: CodeFile, task: Task, results: list[Task], iol: IOlog = None):
+    ai = Agent(role='modify code', name='code_modifying_agent', iol = iol)
 
     tasks = '\n'.join([f"{t.name}\n{t.result}" if hasattr(t, 'name') and hasattr(t, 'result') else str(t) for t in results])
 
@@ -95,4 +100,4 @@ async def debug_agent(input: str, iol: IOlog = None, model: str = 'gpt-4-1106-pr
                     Then output possible solutions to fix these vulnerabilities.""")
     
     messages = [user]
-    return await ai.next(messages)
+    return await ai.next(messages, directory=directory)
