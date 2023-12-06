@@ -1,5 +1,8 @@
 \beamer@sectionintoc {1}{Cel pracy}{3}{0}{1}
 \beamer@sectionintoc {2}{Zakres pracy}{4}{0}{2}
 \beamer@sectionintoc {3}{Wyniki realizacji pracy}{5}{0}{3}
-\beamer@sectionintoc {4}{Podsumowanie}{10}{1}{4}
-\beamer@sectionintoc {5}{Literatura}{13}{2}{5}
+\beamer@sectionintoc {4}{Podsumowanie}{5}{0}{4}
+\beamer@sectionintoc {5}{Literatura}{5}{0}{5}
+\beamer@sectionintoc {6}{Wyniki realizacji pracy}{5}{1}{6}
+\beamer@sectionintoc {7}{Podsumowanie}{16}{1}{7}
+\beamer@sectionintoc {8}{Literatura}{18}{2}{8}
