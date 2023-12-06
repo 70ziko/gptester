@@ -8,7 +8,7 @@ import argparse
 from utils.io import IOlog
 from utils.traverser import scan_directory, walk_directory
 from utils.utils import num_tokens_from_string
-from utils.codeql_scan import run_codeql_scan
+# from utils.codeql_scan import run_codeql_scan
 import agents
 
 # obsługa programu poprzez argumenty przekazywane w konsoli
@@ -18,7 +18,7 @@ parser.add_argument('-v', '--verbose', help='Print out all the outputs and steps
 parser.add_argument('-m', '--model', help='Choose the LLM model for code analysis, default: "gpt-4-1106-preview"', default="gpt-4-1106-preview")
 parser.add_argument('-o', '--output', help='Output the results to a file, default: "raports/{name_of_parent_folder}_{timestamp}_raport.md"')
 parser.add_argument('-t', '--tests', help='Provide a path to functional tests to run on the project')
-parser.add_argument('-c', '--codeql', help='Use codeql to enhance the scan, REQUIRED to install CodeQL-CLI console tool', action='store_true')
+parser.add_argument('-c', '--codeql', help='Use codeql to enhance the scan, REQUIRED to install CodeQL-CLI console tool', action='store_true', default=False)
 parser.add_argument('--command', help='Provide a build command to run the project for codeql, if no cmake or other file present in the project root directory, default: "make"', default="make")
 parser.add_argument('--language', help='Provide a programming language of the project for codeql, default: "cpp"', default="cpp")
 # parser.add_argument('-n', '--name', help='Name the generated raport, default: "test"', default="test")
@@ -47,7 +47,7 @@ async def main():
 
     if args.codeql:
         iol.log(f"CodeQL is enabled, I will now begin the scan using CodeQL", color="red")
-        run_codeql_scan(args.directory, args.language, args.command)
+        # run_codeql_scan(args.directory, args.language, args.command)
 
     output = await agents.debug_agent(dir_content, iol, args.model, args.directory)
     for message in output:
