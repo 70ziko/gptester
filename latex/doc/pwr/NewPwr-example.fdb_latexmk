@@ -1,11 +1,11 @@
 # Fdb version 3
-["cusdep tex ltx NewPwr-example"] 1700526034 "NewPwr-example.tex" "NewPwr-example.ltx" "NewPwr-example" 1700526046
-  "NewPwr-example.tex" 1700526042 15829 08b2b7d2a29c2712d2a84f4d2fc0fba4 ""
+["cusdep tex ltx NewPwr-example"] 1702051444 "NewPwr-example.tex" "NewPwr-example.ltx" "NewPwr-example" 1702051444
+  "NewPwr-example.tex" 1702051443 15844 aafb7fe9cc7356e82461ab73b9b741be ""
   (generated)
   "NewPwr-example.ltx"
-["pdflatex"] 1700526042 "/home/paris/projekty/INZYNIERKA/gptester/latex/doc/pwr/NewPwr-example.tex" "NewPwr-example.pdf" "NewPwr-example" 1700526046
+["pdflatex"] 1702051440 "/home/paris/projekty/INZYNIERKA/gptester/latex/doc/pwr/NewPwr-example.tex" "NewPwr-example.pdf" "NewPwr-example" 1702051440
   "/etc/texmf/web2c/texmf.cnf" 1681935773 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/paris/projekty/INZYNIERKA/gptester/latex/doc/pwr/NewPwr-example.tex" 1700526042 15829 08b2b7d2a29c2712d2a84f4d2fc0fba4 ""
+  "/home/paris/projekty/INZYNIERKA/gptester/latex/doc/pwr/NewPwr-example.tex" 1702051440 15844 aafb7fe9cc7356e82461ab73b9b741be ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/carlito/crlt_ynpzot.enc" 1408666177 3095 534643e1ce5e5b89e4b95a9cbbe1a3ef ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecss1095.tfm" 1136768653 3584 8ece407347b270c252c46fdfaef5a9ef ""
@@ -238,12 +238,12 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1700495207 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1700495237 2802234 8877d597e029ddfbeba58efc9b19da2a ""
   "Hr_p2.pdf" 1700496952 8583 d8898764f2bce233ab8517d69bd2b858 ""
-  "NewPwr-example.aux" 1700526046 8516 23040b68a4adbb5db3cbd0f3855871f1 "pdflatex"
+  "NewPwr-example.aux" 1702051440 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
   "NewPwr-example.ltx" 1700496952 689 855f9ac48721d2f92382cf4bbbfe1ed1 "cusdep tex ltx NewPwr-example"
-  "NewPwr-example.nav" 1700526046 3589 9e64623208dc0e466bb8dbf36b5a2d38 "pdflatex"
-  "NewPwr-example.tex" 1700526042 15829 08b2b7d2a29c2712d2a84f4d2fc0fba4 ""
-  "NewPwr-example.toc" 1700526046 401 1bdfa08384794c9e492ada860570599a "pdflatex"
-  "NewPwr-example.vrb" 1700526046 1834 6922394346aac1875e643dfaecb840ff "pdflatex"
+  "NewPwr-example.nav" 0 -1 0 "pdflatex"
+  "NewPwr-example.tex" 1702051443 15844 aafb7fe9cc7356e82461ab73b9b741be ""
+  "NewPwr-example.toc" 0 -1 0 "pdflatex"
+  "NewPwr-example.vrb" 0 -1 0 "pdflatex"
   "beamercolorthemeNewPwr.sty" 1700496952 7022 84cd951203d20bda4afedf1da5617357 ""
   "beamerinnerthemeNewPwr.sty" 1700496952 4897 486064e30e471cb9def7b474a377afcb ""
   "beamerouterthemeNewPwr.sty" 1700496952 119 c78ea96b6e9f712b36d9af8206108675 ""
