@@ -3,7 +3,7 @@
   "nowy_szablon_doc.tex" 1700497268 37557 0b2e4d4387e1781cf46bb51b769cb32a ""
   (generated)
   "nowy_szablon_doc.ltx"
-["pdflatex"] 1700497322 "/home/paris/projekty/INZYNIERKA/gptester/latex/doc/pwr/nowy_szablon_doc.tex" "nowy_szablon_doc.pdf" "nowy_szablon_doc" 1700497322
+["pdflatex"] 1702052823 "/home/paris/projekty/INZYNIERKA/gptester/latex/doc/pwr/nowy_szablon_doc.tex" "nowy_szablon_doc.pdf" "nowy_szablon_doc" 1702052823
   "/etc/texmf/web2c/texmf.cnf" 1681935773 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/paris/projekty/INZYNIERKA/gptester/latex/doc/pwr/nowy_szablon_doc.tex" 1700497268 37557 0b2e4d4387e1781cf46bb51b769cb32a ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -244,17 +244,17 @@
   "image2_p1_pl.png" 1700496952 35811 581c6275f1b99f649949561ca134ef8a ""
   "image2_p2_en.png" 1700496952 56928 624ff29f3f177e17fe375d1dda00f490 ""
   "image2_p2_pl.png" 1700496952 56569 68c990d2f830e65820dbea3bbd9ae860 ""
-  "iwona.pdf" 1700496952 24291 8f6476cf44e5a726607177c67247cfe0 ""
-  "kurier.pdf" 1700496952 23943 83800c666c1971b8194f1797fae9b4b3 ""
+  "iwona.pdf" 1702052812 24291 8f6476cf44e5a726607177c67247cfe0 ""
+  "kurier.pdf" 1702052811 23943 83800c666c1971b8194f1797fae9b4b3 ""
   "lmodern.pdf" 1700496952 22677 4194f6d919cbe9393e97bf0bdc22d243 ""
   "metadane.pdf" 1700496952 97525 48b966bc696b79450e670e11cfdce82a ""
-  "nowy_szablon_doc.aux" 1700497322 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "nowy_szablon_doc.aux" 1702052823 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
   "nowy_szablon_doc.ltx" 1700496952 717 8bfba17386410704a30d755e327f1bf6 "cusdep tex ltx nowy_szablon_doc"
   "nowy_szablon_doc.nav" 0 -1 0 ""
   "nowy_szablon_doc.tex" 1700497268 37557 0b2e4d4387e1781cf46bb51b769cb32a ""
   "nowy_szablon_doc.vrb" 0 -1 0 "pdflatex"
-  "rektorska.pdf" 1700496952 4157219 ede8dd95913e8fadd9deb0a73289b0c6 ""
-  "trebuchet.pdf" 1700496952 10997 836d9b03bb68118f65a68084b36ef091 ""
+  "rektorska.pdf" 1702052810 4157219 ede8dd95913e8fadd9deb0a73289b0c6 ""
+  "trebuchet.pdf" 1702052810 10997 836d9b03bb68118f65a68084b36ef091 ""
   (generated)
   "nowy_szablon_doc.aux"
   "nowy_szablon_doc.log"

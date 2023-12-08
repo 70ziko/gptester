@@ -1475,9 +1475,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/translator/translator-theorem-dict
 INPUT /usr/share/texlive/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
 INPUT /usr/share/texlive/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
 INPUT /usr/share/texlive/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
-INPUT ./NewPwr-example.nav
-INPUT NewPwr-example.nav
-INPUT NewPwr-example.nav
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/typoland/carlito/Carlito-osf-t1.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/typoland/carlito/Carlito-osf-t1.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/typoland/carlito/Carlito-osf-t1.tfm
@@ -1523,12 +1520,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/vf/typoland/carlito/Carlito-osf-t1.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/typoland/carlito/Carlito-osf-t1--base.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/typoland/carlito/Carlito-osf-t1.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/typoland/carlito/Carlito-osf-t1--base.tfm
-INPUT ./NewPwr-example.toc
-INPUT NewPwr-example.toc
-INPUT NewPwr-example.toc
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/typoland/carlito/Carlito-osf-t1.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/typoland/carlito/Carlito-osf-t1.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/typoland/carlito/Carlito-osf-t1--base.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/typoland/carlito/Carlito-osf-t1.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/typoland/carlito/Carlito-osf-t1.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/typoland/carlito/Carlito-osf-t1--base.tfm
@@ -1546,6 +1537,9 @@ INPUT ./gptester.drawio.png
 INPUT gptester.drawio.png
 INPUT ./gptester.drawio.png
 INPUT ./gptester.drawio.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/typoland/carlito/Carlito-osf-t1.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/typoland/carlito/Carlito-osf-t1.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/typoland/carlito/Carlito-osf-t1--base.tfm
 INPUT ./gptester-h.png
 INPUT ./gptester-h.png
 INPUT gptester-h.png

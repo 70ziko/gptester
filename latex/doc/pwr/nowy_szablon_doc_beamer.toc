@@ -1,0 +1,17 @@
+\babel@toc {polish}{}\relax 
+\beamer@sectionintoc {1}{Terminologia}{2}{0}{1}
+\beamer@sectionintoc {2}{Wprowadzenie}{3}{0}{2}
+\beamer@sectionintoc {3}{Jak instalować}{13}{0}{3}
+\beamer@subsectionintoc {3}{1}{Wersja oszczędna}{15}{0}{3}
+\beamer@subsectionintoc {3}{2}{Używane pakiety}{15}{0}{3}
+\beamer@sectionintoc {4}{Jak używać}{16}{0}{4}
+\beamer@subsectionintoc {4}{1}{Personalizacja}{21}{0}{4}
+\beamer@subsectionintoc {4}{2}{Fonty}{22}{0}{4}
+\beamer@subsectionintoc {4}{3}{Efekty „przejścia”}{25}{0}{4}
+\beamer@subsectionintoc {4}{4}{Uwagi}{42}{0}{4}
+\beamer@subsectionintoc {4}{5}{Modyfikacje slajdu tytułowego}{42}{0}{4}
+\beamer@subsectionintoc {4}{6}{Metadane}{43}{0}{4}
+\beamer@sectionintoc {5}{Dokumentacja}{44}{0}{5}
+\beamer@sectionintoc {6}{Materiały informacyjne (handout)}{45}{0}{6}
+\beamer@sectionintoc {7}{Folie}{46}{0}{7}
+\beamer@sectionintoc {8}{Do zrobienia}{47}{0}{8}
