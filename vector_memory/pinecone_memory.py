@@ -4,7 +4,7 @@ import hashlib
 from vector_memory.memory import MemoryBackend
 from typing import Union, List
 from vector_memory.models import Task, CodeFile
-from config import Config
+from utils.config import Config
 from DB import DBs
 from utils.utils import get_embedding
 

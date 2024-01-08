@@ -1,5 +1,5 @@
 import re
-from config import Config
+from utils.config import Config
 from utils.IOlog import IOlog
 from utils.utils import openai_call, openai_call_functions, num_tokens_from_messages, prompt_function_call
 
