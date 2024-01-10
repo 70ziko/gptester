@@ -1,0 +1,7 @@
+int main()
+{
+   int a=2*3;
+   printf("**Ala ma kota\n**");
+   while(!I2C_CheckEvent(I2C1, I2C_EVENT_MASTER_MODE_SELECT)); /* EV5 */
+   return 0;
+}
