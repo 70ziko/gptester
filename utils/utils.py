@@ -5,7 +5,7 @@ import subprocess
 import time
 from typing import Dict, List
 # import redis
-from config import Config
+from utils.config import Config
 
 CFG = Config()
 

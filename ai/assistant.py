@@ -5,7 +5,7 @@ import datetime
 from openai import OpenAI
 
 import tools
-from config import Config
+from utils.config import Config
 from utils.io import IOlog
 
 CFG = Config()

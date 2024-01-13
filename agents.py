@@ -6,7 +6,7 @@ from vector_memory.models import Task, CodeFile
 # from utils.chat_to_files import to_files
 from DB import DBs, create_dbs
 from utils.io import IOlog
-from config import Config
+from utils.config import Config
 
 CFG = Config()
 

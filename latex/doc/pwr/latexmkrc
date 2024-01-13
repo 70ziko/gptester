@@ -1,6 +1,0 @@
-$pdf_mode = 1;
-$clean_ext = ("vrb snm out nav blg synctex.gz");
-@default_files = ('nowy_szablon_doc_article','nowy_szablon_doc_beamer','NewPwr-example');
-$pdflatex = 'pdflatex -shell-escape --synctex=1 %O %S';
-add_cus_dep('tex', 'ltx', 1, 'tex2ltx');
-sub tex2ltx { system ("vc -m '$_[0]'"); };

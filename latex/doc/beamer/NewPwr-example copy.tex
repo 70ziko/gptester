@@ -1,0 +1,179 @@
+\RequirePackage{ifluatex}
+\ifluatex
+\documentclass[lualatex,aspectratio=54,12pt,]{beamer}
+\else
+\documentclass[aspectratio=169,15pt,]{beamer}
+\fi
+%%% aspectratio
+% 1610
+% 169
+% 149
+% 141  (1,41:1)
+% 54
+% 43 (default)
+% 32
+
+\usepackage{lipsum}
+
+\input{\jobname .ltx}
+
+\usefonttheme{professionalfonts} 
+
+\usepackage{pgfpages}
+% \pgfpagesuselayout{4 on 1}[a4paper,landscape,border shrink=10mm]
+\usepackage{lmodern}
+
+\ifluatex
+\usepackage[]{fontspec}
+\setsansfont{Carlito}[Numbers=OldStyle]  % lub Numbers=Lining
+\else
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{carlito}
+\fi
+
+\title{Zastosowanie dużych modeli językowych do wykrywania i naprawiania błędów bezpieczeństwa i podatności w kodzie aplikacji webowych}
+\subtitle{Application of Large Language Models to Detection and Correction Security Breaches and Threats in Web Application Source Codes}
+\author[Patryk Fidler]{Patryk Fidler \\ \texttt{259468@student.pwr.edu.pl}}
+%\coauthor[dr inż. Maciej Piasecki]{Promotor: dr inż. Maciej Piasecki \\Jednostka prowadząca: [Katedra Sztucznej Inteligencji][Wydział Informatyki i Telekomunikacji]}
+\institute{Promotor: dr inż. Maciej Piasecki \\Jednostka prowadząca: Katedra Sztucznej Inteligencji, Wydział Informatyki i Telekomunikacji Department of Artificial Intelligence, Faculty of Computer Science and Telecommunications}
+%\date[ISPN ’80]{Seminarium dyplomowe 2}
+\date{\today}
+\pgfdeclareimage[height=\paperheight,width=\paperwidth]{TG}{flower} 
+%\titlegraphic{\pgfuseimage{TG}}
+\usetheme[vertical,lang=en,hr=true,pagenumbers,navigation]{NewPwr}
+%\usetheme{Warsaw}
+%\setbeamercolor*{block title}{fg=Logo,bg=Logo!20}
+%\setbeamercolor*{block body}{fg=black,bg=Logo!10}
+
+\begin{document}
+
+\begin{frame}
+ \titlepage
+\end{frame}
+
+\frame{\tableofcontents}
+
+\section{Cel pracy}
+
+\begin{frame}{Cel pracy}
+  Zaprojektowanie i implementacja praktycznych rozwiązań statycznej analizy kodu dla programistów aplikacji webowych. 
+  Badanie skuteczności dużych modeli językowych w znajdywaniu podatności i luk bezpieczeństwa w statycznej analizie kodu.
+\end{frame}
+
+\section{Zakres pracy}
+
+\begin{frame}{Zakres pracy}
+  \begin{enumerate}
+    \item Wstęp i motywacja
+    \item Przegląd literatury
+    \item Metodyka oraz projekt rozwiązania
+    \item Implementacja programu do statycznej analizy kodu zasilana modelami OpenAI
+    \item Przygotowanie zbioru danych i testowanie
+    \item Porównanie z obecnymi rozwiązaniami oferowanymi na przykład przez firmę Snyk
+    \item Wyniki i analiza
+    \item Wnioski
+    \item Perspektywy przyszłych badań
+  \end{enumerate}
+\end{frame}
+
+\section{Raz}
+
+\begin{frame}
+ \frametitle{There Is No Largest Prime Number}
+ \framesubtitle{The proof uses \textit{reductio ad absurdum}.}
+ \begin{theorem}
+  There is no largest prime number. 
+  \end{theorem}
+  \begin{proof}%[Dowód]
+ \begin{enumerate}
+  \item<1-| alert@1> Suppose $p$ were the largest prime number.
+  \item<2-> Let $q$ be the product of the first $p$ numbers.
+  \item<3-> Then $q+1$ is not divisible by any of them.
+  \item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime
+        number not in the first $p$ numbers.
+ \end{enumerate}
+ \end{proof}
+\end{frame}
+
+\begin{frame}{A longer title}
+ \begin{itemize}
+  \item one
+  \item two
+ \end{itemize}
+\end{frame}
+
+\section{dwa}
+
+\begin{frame}{Lista punktowana}
+ \begin{itemize}
+  \item
+        Item 1
+  \item
+        Item 2
+  \item
+        Item 3
+  \item
+        \alert{Alerted item}
+ \end{itemize}
+\end{frame}
+
+\subsection{trzy}
+
+\begin{frame}
+ \frametitle{Lista numerowana}
+ \begin{enumerate}
+  \item
+        Item 1
+  \item
+        Item 2
+  \item
+        Item 3
+  \item
+        \alert{Alerted item}
+ \end{enumerate}
+\end{frame}
+
+\subsection{cztery}
+
+\begin{frame}
+ \frametitle{Blok}
+ alertblock:
+ \begin{alertblock}{Tytuł}
+  Zawartość
+ \end{alertblock}
+
+ exampleblock:
+ \begin{exampleblock}{Tytuł}
+  Przykład Przykład Przykład Przykład Przykład Przykład Przykład Przykład Przykład Przykład Przykład Przykład Przykład Przykład Przykład Przykład Przykład Przykład Przykład Przykład
+ \end{exampleblock}
+
+ zwykły blok
+ \begin{block}{Tytuł}
+ Przykład, przykład, przykład…
+ \end{block}
+
+ alertenv:
+ \begin{alertenv}<2>
+  (environment contents)
+ \end{alertenv}
+\end{frame}
+
+\part{Lipsum}
+
+\begin{frame}
+\partpage
+\end{frame}
+
+\begin{frame}[allowframebreaks=0.97]{Długi Tekst}
+ \lipsum
+\end{frame}
+
+\begin{frame}[plain,c]
+plain slide
+\end{frame}
+
+\begin{frame}{Ostatni slajd}
+ala ma 
+\end{frame}
+\end{document}
