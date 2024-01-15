@@ -39,13 +39,12 @@ class Assistant():
         return self.next([user_msg])
     
     # @staticmethod
-    def fassistant(self, msg: str) -> dict[str, str]:
-        thread_message = client.beta.threads.messages.create(
+    def fassistant(self) -> dict[str, str]:
+        client.beta.threads.messages.create(
             self.thread.id,
             role="assistant",
-            content=msg,
-            )
-        return thread_message
+            content=self.instructions,
+        )
     
     # @staticmethod
     def fsystem(self, msg: str) -> dict[str, str]:
@@ -73,6 +72,17 @@ class Assistant():
                 return messages
 
     async def next(self, messages: list[dict[str, str]]=None, prompt=None, directory: str = 'fixes'):
+    def fassistant(self) -> dict[str, str]:
+        client.beta.threads.messages.create(
+            self.thread.id,
+            role="assistant",
+            content=self.instructions,
+        )
+        client.beta.threads.messages.create(
+            self.thread.id,
+            role="assistant",
+            content=self.instructions,
+        )
 
         if prompt:
             self.fuser(self, prompt)
