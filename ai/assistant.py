@@ -73,8 +73,6 @@ class Assistant():
                 return messages
 
     async def next(self, messages: list[dict[str, str]]=None, prompt=None, directory: str = 'fixes'):
-        if messages:
-            self.messages_to_thread(messages)
 
         if prompt:
             self.fuser(self, prompt)
