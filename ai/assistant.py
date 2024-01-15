@@ -84,8 +84,7 @@ class Assistant():
             content=self.instructions,
         )
 
-        if prompt:
-            self.fuser(self, prompt)
+
 
         try:
             run = client.beta.threads.runs.create(
@@ -101,8 +100,7 @@ class Assistant():
                 await asyncio.sleep(2)  # Sleep for 2 seconds before polling again
                 run_status = client.beta.threads.runs.retrieve(thread_id=self.thread.id, run_id=run.id)
 
-                tool_outputs = []
-                # Check if there is a required action
+
                 if run_status.required_action and run_status.required_action.type == "submit_tool_outputs":
                     for tool_call in run_status.required_action.submit_tool_outputs.tool_calls:
                         name = tool_call.function.name
@@ -122,24 +120,19 @@ class Assistant():
 
 
                 # Submit tool outputs back
-                if tool_outputs:
-                    client.beta.threads.runs.submit_tool_outputs(
-                        thread_id=self.thread.id,
-                        run_id=run.id,
-                        tool_outputs=tool_outputs
-                    )
-                if run_status.status == "failed":
-                    raise Exception(f"Run failed with reason: {run_status.last_error}")
+
+:
+)
 
             # Get the last assistant message from the messages list
-            messages = client.beta.threads.messages.list(thread_id=self.thread.id)
+
             response = [message for message in messages if message.run_id == run.id and message.role == "assistant"][-1]
 
             # If an assistant message is found, iol.log it
             if response:
                 self.iol.log(f"{response.content[0].text.value} \n")
 
-        except TypeError:
+    
             self.iol.log(f"TypeError: run[-1][\"content\"]: {run[-1]['content']}")
 
 
