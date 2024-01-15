@@ -138,7 +138,7 @@ class Assistant():
 
         return messages
     
-    def replace_annotations(self, messages: list[dict[str, str]]) -> list[dict[str, str]]:
+    def (self, messages: list[dict[str, str]]) -> list[dict[str, str]]:
         # Retrieve the message object
         message = client.beta.threads.messages.retrieve(
         thread_id=self.trhead.id,
@@ -147,15 +147,15 @@ class Assistant():
 
         # Extract the message content
         message_content = message.content[0].text
-        annotations = message_content.annotations
+        _ = message_content._
         citations = []
 
         # Iterate over the annotations and add footnotes
-        for index, annotation in enumerate(annotations):
+
             # Replace the text with a footnote
             message_content.value = message_content.value.replace(annotation.text, f' [{index}]')
 
-            # Gather citations based on annotation attributes
+    
             if (file_citation := getattr(annotation, 'file_citation', None)):
                 cited_file = client.files.retrieve(file_citation.file_id)
                 citations.append(f'[{index}] {file_citation.quote} from {cited_file.filename}')
@@ -164,6 +164,6 @@ class Assistant():
                 citations.append(f'[{index}] Click <here> to download {cited_file.filename}')
                 # Note: File download functionality not implemented above for brevity
 
-        # Add footnotes to the end of the message before displaying to user
-        message_content.value += '\n' + '\n'.join(citations)
+
+
     
