@@ -48,16 +48,16 @@ class Assistant():
     
     # @staticmethod
     def fsystem(self) -> dict[str, str]:
-        self.assistant.instructions = msg
+        self.assistant.instructions = self.instructions
     
     # @staticmethod
-    def fuser(self, msg: str) -> dict[str, str]:
-        thread_message = client.beta.threads.messages.create(
+    def fuser(self):
+        client.beta.threads.messages.create(
             self.thread.id,
             role="user",
-            content=msg,
+            content=self.instructions,
         )
-        return thread_message
+
     
     def messages_to_thread(self, messages: list[dict[str, str]]):
         for message in messages:
