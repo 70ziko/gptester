@@ -1,7 +1,15 @@
-import subprocess
-import sys
+def run_codeql_scan(directory):
+    # Remove the init_cmd and analyze_cmd assignments
 
-def run_codeql_scan(directory, language="cpp", command="make"):
+    # Remove the try block
+
+    # Remove the subprocess.run calls
+
+    # Remove the with block for reading the results file
+
+    # Remove the return statement
+
+    # Remove the except blocks
     # Replace this with the actual command to initialize the CodeQL database
     init_cmd = ["codeql", "database", "create", f"--language={language}", f"--command={command}" "db", "--source-root", directory]
     # Replace this with the actual command to run the analysis
@@ -22,3 +30,4 @@ def run_codeql_scan(directory, language="cpp", command="make"):
         sys.exit("Could not find the results file. Did the analysis run correctly?")
 
 run_codeql_scan('Vulnerable-Code-Snippets/Buffer_Overflow')
+    pass
