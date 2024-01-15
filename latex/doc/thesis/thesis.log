@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.20)  10 JAN 2024 19:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.20)  13 JAN 2024 15:14
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/paris/projekty/INZYNIERKA/gptester/latex/doc/article/thesis.tex
-(/home/paris/projekty/INZYNIERKA/gptester/latex/doc/article/thesis.tex
+**/home/paris/projekty/INZYNIERKA/gptester/latex/doc/thesis/thesis.tex
+(/home/paris/projekty/INZYNIERKA/gptester/latex/doc/thesis/thesis.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (./dyplom.cls
 Document Class: dyplom 
@@ -581,7 +581,7 @@ LaTeX Info: Redefining \\ on input line 3056.
 \FV@LineWidth=\dimen297
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
-Package shellesc Info: Restricted shell escape enabled on input line 77.
+Package shellesc Info: Unrestricted shell escape enabled on input line 75.
 ) (/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
 Package: ifplatform 2017/10/13 v0.4a Testing for the operating system
  (/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
@@ -599,9 +599,10 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )) (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
+runsystem(uname -s > "thesis.w18")...executed.
 
-Package ifplatform Warning: 
-    shell escape is disabled, so I can only detect \ifwindows.
+ (./thesis.w18)
+runsystem(rm -- "thesis.w18")...executed.
 
 ) (/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
@@ -619,21 +620,9 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \@float@every@listing=\toks53
 \c@listing=\count345
 )
-runsystem(mkdir -p _minted-thesis)...disabled (restricted).
+runsystem(mkdir -p _minted-thesis)...executed.
 
-
-
-./dyplom.cls:261: Package minted Error: You must invoke LaTeX with the -shell-escape flag.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.261 
-      
-Pass the -shell-escape flag to LaTeX. Refer to the minted.sty documentation for more information.
-
-(/usr/share/texlive/texmf-dist/tex/latex/chngcntr/chngcntr.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/chngcntr/chngcntr.sty
 Package: chngcntr 2018/04/09 v1.1a change counter resetting
 Package chngcntr Info: \counterwithout already defined.
 (chngcntr)             Quitting chngcntr on input line 21.
@@ -725,69 +714,156 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
 )
 \Hy@SectionHShift=\skip70
-)) (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty (/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
+\c@tracingmulticols=\count359
+\mult@box=\box87
+\multicol@leftmargin=\dimen306
+\c@unbalance=\count360
+\c@collectmore=\count361
+\doublecol@number=\count362
+\multicoltolerance=\count363
+\multicolpretolerance=\count364
+\full@width=\dimen307
+\page@free=\dimen308
+\premulticols=\dimen309
+\postmulticols=\dimen310
+\multicolsep=\skip71
+\multicolbaselineskip=\skip72
+\partial@page=\box88
+\last@line=\box89
+\maxbalancingoverflow=\dimen311
+\mult@rightbox=\box90
+\mult@grightbox=\box91
+\mult@firstbox=\box92
+\mult@gfirstbox=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\@tempa=\box111
+\@tempa=\box112
+\@tempa=\box113
+\@tempa=\box114
+\@tempa=\box115
+\@tempa=\box116
+\@tempa=\box117
+\@tempa=\box118
+\@tempa=\box119
+\@tempa=\box120
+\@tempa=\box121
+\@tempa=\box122
+\@tempa=\box123
+\@tempa=\box124
+\@tempa=\box125
+\@tempa=\box126
+\@tempa=\box127
+\@tempa=\box128
+\@tempa=\box129
+\c@minrows=\count365
+\c@columnbadness=\count366
+\c@finalcolumnbadness=\count367
+\last@try=\dimen312
+\multicolovershoot=\dimen313
+\multicolundershoot=\dimen314
+\mult@nat@firstbox=\box130
+\colbreak@box=\box131
+\mc@col@check@num=\count368
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/10/26 v3.5g Customizing captions (AR)
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
+\captionmargin=\dimen315
+\captionmargin@=\dimen316
+\captionwidth=\dimen317
+\caption@tempdima=\dimen318
+\caption@indent=\dimen319
+\caption@parindent=\dimen320
+\caption@hangindent=\dimen321
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+Package caption Info: \@makecaption = \long macro:#1#2->\addvspace \abovecaptionskip \bgroup \centeredlast #1.\enspace #2\par \egroup \vskip \belowcaptionskip  on input line 1139.
+)
+
+Package caption Warning: Unknown document class (or package),
+(caption)                standard defaults will be used.
+See the caption package documentation for explanation.
+
+\c@caption@flags=\count369
+\c@continuedfloat=\count370
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+)
+\c@subfigure=\count371
+\c@subtable=\count372
+) (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty (/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2022-01-21 L3 programming layer (loader) 
  (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count359
-\l__pdf_internal_box=\box87
+\l__color_backend_stack_int=\count373
+\l__pdf_internal_box=\box132
 ))
 Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
 )
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count360
-\l__lipsum_a_int=\count361
-\l__lipsum_b_int=\count362
+\g__lipsum_par_int=\count374
+\l__lipsum_a_int=\count375
+\l__lipsum_b_int=\count376
  (/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
-runsystem(which pygmentize && touch thesis.aex)...disabled (restricted).
+runsystem(which pygmentize && touch thesis.aex)...executed.
 
+runsystem(rm thesis.aex)...executed.
 
-
-/home/paris/projekty/INZYNIERKA/gptester/latex/doc/article/thesis.tex:40: Package minted Error: You must have `pygmentize' installed to use this package.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.40 \begin{document}
-                     
-Refer to the installation instructions in the minted documentation for more information.
-
-(./thesis.aux)
+ (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count363
-\scratchdimen=\dimen306
-\scratchbox=\box88
-\nofMPsegments=\count364
-\nofMParguments=\count365
+\scratchcounter=\count377
+\scratchdimen=\dimen322
+\scratchbox=\box133
+\nofMPsegments=\count378
+\nofMParguments=\count379
 \everyMPshowfont=\toks54
-\MPscratchCnt=\count366
-\MPscratchDim=\dimen307
-\MPnumerator=\count367
-\makeMPintoPDFobject=\count368
+\MPscratchCnt=\count380
+\MPscratchDim=\dimen323
+\MPnumerator=\count381
+\makeMPintoPDFobject=\count382
 \everyMPtoPDFconversion=\toks55
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -829,25 +905,25 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 40.
-Package microtype Info: Applying patch `item' on input line 40.
-Package microtype Info: Applying patch `toc' on input line 40.
-Package microtype Info: Applying patch `eqnum' on input line 40.
-Package microtype Info: Applying patch `footnote' on input line 40.
+LaTeX Info: Redefining \microtypecontext on input line 48.
+Package microtype Info: Applying patch `item' on input line 48.
+Package microtype Info: Applying patch `toc' on input line 48.
+Package microtype Info: Applying patch `eqnum' on input line 48.
+Package microtype Info: Applying patch `footnote' on input line 48.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 40.
+LaTeX Info: Redefining \showhyphens on input line 48.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-Package hyperref Info: Link coloring OFF on input line 40.
+Package hyperref Info: Link coloring OFF on input line 48.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -855,15 +931,18 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count369
+\c@section@level=\count383
 )
-LaTeX Info: Redefining \ref on input line 40.
-LaTeX Info: Redefining \pageref on input line 40.
-LaTeX Info: Redefining \nameref on input line 40.
+LaTeX Info: Redefining \ref on input line 48.
+LaTeX Info: Redefining \pageref on input line 48.
+LaTeX Info: Redefining \nameref on input line 48.
+ (./thesis.out) (./thesis.out)
 \@outlinefile=\write6
 \openout6 = `thesis.out'.
 
-Package hyperref Info: Option `pageanchor' set `false' on input line 43.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+Package hyperref Info: Option `pageanchor' set `false' on input line 50.
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -899,13 +978,13 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 43.
  (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 43.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 43.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -916,10 +995,10 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ] (./abstract.tex
-Package hyperref Info: Option `pageanchor' set `true' on input line 36.
+Package hyperref Info: Option `pageanchor' set `true' on input line 37.
 
-Overfull \hbox (20.74304pt too wide) in paragraph at lines 36--36
-\T1/qtm/m/n/12 (-20) Ba-le-egh Ah-mad, Ra-mesh Kar-ri, Bren-dan Dolan-Gavitt (https://arxiv.org/pdf/2112.02125v1.pdf).
+Overfull \hbox (8.92128pt too wide) in paragraph at lines 37--37
+[]\T1/qtm/m/n/12 (-20) Szczególny na-cisk zo-sta-nie po-ªo-»o-ny na wy-ko-rzy-sta-nie tech-nik soft-prompting i in-context
  []
 
 
@@ -931,21 +1010,21 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-Overfull \hbox (8.92128pt too wide) in paragraph at lines 36--36
-[]\T1/qtm/m/n/12 (-20) Szczególny na-cisk zo-sta-nie po-ªo-»o-ny na wy-ko-rzy-sta-nie tech-nik soft-prompting i in-context
+Overfull \hbox (20.74304pt too wide) in paragraph at lines 37--37
+\T1/qtm/m/n/12 (-20) Ba-le-egh Ah-mad, Ra-mesh Kar-ri, Bren-dan Dolan-Gavitt (https://arxiv.org/pdf/2112.02125v1.pdf).
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.36 }
+l.37 }
        [4]pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.36 }
+l.37 }
        [5
 
-])
+]) (./thesis.toc)
 \tf@toc=\write7
 \openout7 = `thesis.toc'.
 
@@ -953,119 +1032,35 @@ l.36 }
 
 
 
-]) (./chapter1.tex [2
+] [2
 
-]
+] [3]) (./chapter1.tex [4]
 Rozdzia\PlPrIeC {\l } 1.
+[5
 
-LaTeX Warning: Citation `docker_compose_reference' on page 3 undefined on input line 6.
-
-[3
-
-]
+] [6]
 Rozdzia\PlPrIeC {\l } 2.
-<img/swarm-network.png, id=47, 1488.56125pt x 707.64375pt>
+<img/swarm-network.png, id=201, 1488.56125pt x 707.64375pt>
 File: img/swarm-network.png Graphic file (type png)
 <use img/swarm-network.png>
-Package pdftex.def Info: img/swarm-network.png  used on input line 19.
+Package pdftex.def Info: img/swarm-network.png  used on input line 81.
 (pdftex.def)             Requested size: 256.07741pt x 121.73395pt.
-
-LaTeX Warning: Reference `rys:network' on page 4 undefined on input line 23.
-
-<img/kotek.pdf, id=48, 36.135pt x 33.12375pt>
+<img/kotek.pdf, id=203, 36.135pt x 33.12375pt>
 File: img/kotek.pdf Graphic file (type pdf)
 <use img/kotek.pdf>
-Package pdftex.def Info: img/kotek.pdf  used on input line 31.
+Package pdftex.def Info: img/kotek.pdf  used on input line 93.
 (pdftex.def)             Requested size: 172.84813pt x 158.48721pt.
 File: img/swarm-network.png Graphic file (type png)
 <use img/swarm-network.png>
-Package pdftex.def Info: img/swarm-network.png  used on input line 36.
+Package pdftex.def Info: img/swarm-network.png  used on input line 98.
 (pdftex.def)             Requested size: 172.84813pt x 82.16016pt.
-
-LaTeX Warning: Reference `fig:lewy' on page 4 undefined on input line 41.
-
-
-LaTeX Warning: Reference `fig:prawy' on page 4 undefined on input line 41.
-
-
-LaTeX Warning: Reference `table:table1' on page 4 undefined on input line 46.
-
-
-LaTeX Warning: Reference `app1' on page 4 undefined on input line 49.
-
-
-LaTeX Warning: Reference `eq:myEquation' on page 4 undefined on input line 66.
-
-
-LaTeX Warning: Reference `listing:myListing' on page 4 undefined on input line 70.
-
-\openout4 = `thesis.pyg'.
-
-runsystem(pygmentize -S default -f latex -P commandprefix=PYG > _minted-thesis/default.pygstyle)...disabled (restricted).
-
-
-./chapter1.tex:82: Package catchfile Error: File `_minted-thesis/default.pygstyle' not found.
-
-See the catchfile package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.82 \end{minted}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-runsystem(pygmentize -S default -f latex -P commandprefix=PYG > _minted-thesis/default.pygstyle)...disabled (restricted).
-
-
-./chapter1.tex:82: Package catchfile Error: File `_minted-thesis/default.pygstyle' not found.
-
-See the catchfile package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.82 \end{minted}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-./chapter1.tex:82: Package minted Error: Cannot find Pygments style default.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.82 \end{minted}
-                 
-Cannot find Pygments style default
-
-runsystem(pygmentize -l c -f latex -P commandprefix=PYG -F tokenmerge -P stripnl=False -o _minted-thesis/97BEF034516176FC4FB47C17364D1029EFB4A75DE218E69C7A5E5F3690949729.pygtex thesis.pyg)...disabled (restricted).
-
-
-./chapter1.tex:82: Package minted Error: Missing Pygments output; \inputminted was
-probably given a file that does not exist--otherwise, you may need 
-the outputdir package option, or may be using an incompatible build tool,
-or may be using frozencache with a missing file.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.82 \end{minted}
-                 
-This could be caused by using -output-directory or -aux-directory 
-without setting minted's outputdir, or by using a build tool that 
-changes paths in ways minted cannot detect, 
-or using frozencache with a missing file.
-
-Package hyperref Info: bookmark level for unknown listing defaults to 0 on input line 83.
-) (./summary.tex [4
-
- <./img/swarm-network.png>] [5 <./img/kotek.pdf>]) (./thesis.bbl [6
+[7
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5.
+\openout4 = `thesis.pyg'.
+
+ (./_minted-thesis/default.pygstyle) (./_minted-thesis/97BEF034516176FC4FB47C17364D1029EFB4A75DE218E69C7A5E5F3690949729.pygtex
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
@@ -1073,66 +1068,102 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-) [7
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 2.
+
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 2.
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 2.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 4.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 4.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 5.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 5.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 6.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 6.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 7.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 7.
+
+)
+Package hyperref Info: bookmark level for unknown listing defaults to 0 on input line 145.
+) (./summary.tex [8 <./img/swarm-network.png> <./img/kotek.pdf>] [9]) (./thesis.bbl [10
 
 ]
+
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
+
+) [11
+
+] (./thesis.lof)
 \tf@lof=\write8
 \openout8 = `thesis.lof'.
 
- [8
+ [12
 
-]
-
-Package hyperref Warning: old lop file detected, not used; run LaTeX again.
-
+] (./thesis.lop)
 \tf@lop=\write9
 \openout9 = `thesis.lop'.
 
-[9
+ [13
 
-]
+] (./thesis.lot)
 \tf@lot=\write10
 \openout10 = `thesis.lot'.
 
- [10
+ [14
 
-] [11
+] [15
 
 ] (./appendix1.tex
 Dodatek A.
-) [12
+) [16
 
 ] (./thesis.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  61BCB5885B9D71FC4C08D6F6DD46DCA9;2200.
-runsystem(rm thesis.pyg)...disabled (restricted).
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 7406081056DA4162ABBC7A5624EA828F;4429.
+runsystem(rm thesis.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 29078 strings out of 478287
- 547337 string characters out of 5849288
- 982182 words of memory out of 5000000
- 46573 multiletter control sequences out of 15000+600000
- 512760 words of font info for 112 fonts, out of 8000000 for 9000
+ 30702 strings out of 478287
+ 577488 string characters out of 5849288
+ 1015227 words of memory out of 5000000
+ 48122 multiletter control sequences out of 15000+600000
+ 511475 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,11n,120p,1062b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on thesis.pdf (17 pages, 241005 bytes).
+ 123i,11n,120p,1061b,727s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfit1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on thesis.pdf (21 pages, 260439 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
- 129 compressed objects within 2 object streams
- 42 named destinations out of 1000 (max. 500000)
- 25111 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 331 PDF objects out of 1000 (max. 8388607)
+ 284 compressed objects within 3 object streams
+ 62 named destinations out of 1000 (max. 500000)
+ 23799 words of extra memory for PDF output out of 24883 (max. 10000000)
 

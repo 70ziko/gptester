@@ -9,7 +9,15 @@
 %\documentclass[magister,druk,en]{dyplom}
 %\documentclass[magister,druk]{dyplom}
 
-\documentclass[magister,druk]{dyplom}
+\documentclass[inzynier,druk]{dyplom}
+
+\usepackage{multicol}
+\usepackage{minted}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amsfonts}
 
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
@@ -28,17 +36,16 @@ fontsize=\small,
 
 \usepackage{lipsum}
 
-% \faculty{Faculty of \dots}                   % Uncomment if applicable
-\fieldofstudy{Cyberbezpieczeńśtwo (CBD)}                          
+\faculty{Wydział informatyki i Telekomunikacji}                   % Uncomment if applicable
+\fieldofstudy{Cyberbezpieczeńśtwo (CBE)}                          
 \author{Patryk Fidler}
 \title{Zastosowanie dużych modeli językowych do wykrywania i naprawiania błędów bezpieczeństwa i podatności w kodzie aplikacji webowych}
 \supervisor{Dr. hab. inż. Maciej Piasecki}
 % \consultant{Consultant's name}               % Uncomment if applicable
-\specialisation{CBD}                         % Uncomment if applicable
+\specialisation{Bezpieczeństwo danych (CBD)}                         % Uncomment if applicable
 \keywords{modele językowe, Sztuczna Inteligencja, statyczna analiza kodu}	% 3-5 keywords  
 
 \begin{document}
-
 \maketitle
 
 \input{abstract}

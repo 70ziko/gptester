@@ -2,21 +2,29 @@
 \contentsline {chapter}{Streszczenie }{}{chapter*.1}%
 \contentsline {chapter}{Abstract }{}{chapter*.2}%
 \setcounter {tocdepth}{2}
-\contentsline {chapter}{Wprowadznie}{2}{chapter*.4}%
-\contentsline {section}{Cel pracy}{2}{section*.5}%
-\contentsline {section}{Zakres pracy}{2}{section*.6}%
-\contentsline {chapter}{\numberline {1\relax .\enspace }Tytuł rozdziału I}{3}{chapter.1}%
-\contentsline {section}{\numberline {1.1\relax .\enspace }Podrozdział}{3}{section.1.1}%
-\contentsline {chapter}{\numberline {2\relax .\enspace }Tytuł rozdziału II}{4}{chapter.2}%
-\contentsline {section}{\numberline {2.1\relax .\enspace }Rysunki}{4}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1\relax .\enspace }Dwa rysunki obok siebie}{4}{subsection.2.1.1}%
-\contentsline {section}{\numberline {2.2\relax .\enspace }Tabele}{4}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1\relax .\enspace }Równania}{4}{subsection.2.2.1}%
-\contentsline {section}{\numberline {2.3\relax .\enspace }Listingi}{4}{section.2.3}%
-\contentsline {chapter}{Podsumowanie}{6}{chapter*.7}%
-\contentsline {chapter}{Bibliografia}{7}{chapter*.8}%
-\contentsline {chapter}{Spis rysunk\'ow}{8}{chapter*.9}%
-\contentsline {chapter}{Spis listingów}{9}{chapter*.10}%
-\contentsline {chapter}{Spis tabel}{10}{chapter*.11}%
-\contentsline {chapter}{Dodatki}{11}{section*.12}%
-\contentsline {chapter}{\numberline {A\relax .\enspace }Dodatek 1}{12}{appendix.A}%
+\contentsline {chapter}{Wprowadzenie}{2}{chapter*.4}%
+\contentsline {section}{Pytania badawcze}{2}{section*.5}%
+\contentsline {section}{Hipotezy}{2}{section*.6}%
+\contentsline {section}{Uzasadnienie tytułu}{3}{section*.7}%
+\contentsline {section}{Omówienie literatury naukowej i stopnia jej przydatności}{3}{section*.8}%
+\contentsline {section}{Cel pracy}{3}{section*.9}%
+\contentsline {section}{Zakres pracy}{3}{section*.10}%
+\contentsline {chapter}{\numberline {1\relax .\enspace }Analiza istniejącej literatury oraz dotychczasowych badań}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1\relax .\enspace }Can OpenAI Codex and Other Large Language Models Help Us Fix Security Bugs?}{5}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1\relax .\enspace }Metodologia}{5}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2\relax .\enspace }Wyniki}{5}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2\relax .\enspace }Examining Zero-Shot Vulnerability Repair with Large Language Models}{5}{section.1.2}%
+\contentsline {section}{\numberline {1.3\relax .\enspace }Różnice między obecną pracą a istniejącą literaturą}{6}{section.1.3}%
+\contentsline {chapter}{\numberline {2\relax .\enspace }Metodyka}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1\relax .\enspace }Rysunki}{7}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1\relax .\enspace }Dwa rysunki obok siebie}{7}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2\relax .\enspace }Tabele}{8}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1\relax .\enspace }Równania}{8}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3\relax .\enspace }Listingi}{8}{section.2.3}%
+\contentsline {chapter}{Podsumowanie}{10}{chapter*.14}%
+\contentsline {chapter}{Bibliografia}{11}{chapter*.15}%
+\contentsline {chapter}{Spis rysunk\'ow}{12}{chapter*.16}%
+\contentsline {chapter}{Spis listingów}{13}{chapter*.17}%
+\contentsline {chapter}{Spis tabel}{14}{chapter*.18}%
+\contentsline {chapter}{Dodatki}{15}{section*.19}%
+\contentsline {chapter}{\numberline {A\relax .\enspace }Dodatek 1}{16}{appendix.A}%
