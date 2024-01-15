@@ -59,6 +59,12 @@ class Assistant():
             content=msg,
         )
         return thread_message
+        thread_message = client.beta.threads.messages.create(
+            self.thread.id,
+            role="user",
+            content=msg,
+        )
+        return thread_message
     
     def messages_to_thread(self, messages: list[dict[str, str]]):
         for message in messages:
@@ -72,7 +78,7 @@ class Assistant():
             else:
                 return messages
 
-    async def next(self, messages: list[dict[str, str]]=None, prompt=None, directory: str = 'fixes'):
+    async def next(self, messages: list[dict[str, str]]=None, prompt=None, directory: str = 'fixes') -> list[dict[str, str]]:
         if messages:
             self.messages_to_thread(messages)
 
