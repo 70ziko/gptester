@@ -47,7 +47,7 @@ class Assistant():
         )
     
     # @staticmethod
-    def fsystem(self, msg: str) -> dict[str, str]:
+    def fsystem(self) -> dict[str, str]:
         self.assistant.instructions = msg
     
     # @staticmethod
