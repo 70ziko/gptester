@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Przykład}\PYG{+w}{ }\PYG{n}{użycia}\PYG{+w}{ }\PYG{n}{podstawowego}
+
+\PYG{n}{cd}\PYG{+w}{ }\PYG{n}{gptester}
+\PYG{n}{python}\PYG{+w}{ }\PYG{n}{main}\PYG{p}{.}\PYG{n}{py}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{h}
+\PYG{n}{Przykład}\PYG{+w}{ }\PYG{n}{użycia}\PYG{+w}{ }\PYG{n}{z}\PYG{+w}{ }\PYG{n}{opcją}\PYG{+w}{ }\PYG{n}{verbose}
+
+\PYG{p}{.}\PYG{o}{/}\PYG{n}{main}\PYG{p}{.}\PYG{n}{py}\PYG{+w}{ }\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{n}{verbose}
+\PYG{n}{Przykład}\PYG{+w}{ }\PYG{n}{użycia}\PYG{+w}{ }\PYG{n}{z}\PYG{+w}{ }\PYG{n}{integracją}\PYG{+w}{ }\PYG{n}{CodeQL}
+
+\PYG{p}{.}\PYG{o}{/}\PYG{n}{main}\PYG{p}{.}\PYG{n}{py}\PYG{+w}{ }\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{n}{codeql}\PYG{+w}{ }\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{n}{command}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}make\PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{n}{language}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}cpp\PYGZdq{}}
+\end{Verbatim}
