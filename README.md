@@ -31,6 +31,17 @@ options:
 
 ## Installation
 ```bash
+
+Workflow: 
+1. Checkout the code
+2. Set up Python
+3. Install dependencies using pip
+4. Run the GitHub Actions workflow
+
+Command for running the GitHub Actions workflow:
+```
+./main.py --help
+```
 pip install -r requirements.txt
 ```
 
