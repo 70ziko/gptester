@@ -96,7 +96,7 @@ class Assistant():
                 tool_outputs = []
                 # Check if there is a required action
                 if run_status.required_action and run_status.required_action.type == "submit_tool_outputs":
-                    for tool_call in run_status.required_action.submit_tool_outputs.tool_calls:
+                    for tool_call in run_status.required_action["submit_tool_outputs"].tool_calls:
                         name = tool_call.function.name
                         arguments = json.loads(tool_call.function.arguments)
                         if "filename" in arguments: 
