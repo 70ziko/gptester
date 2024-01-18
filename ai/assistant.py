@@ -1,15 +1,17 @@
+from tools import tools
 import os
 import asyncio
 import json
 import datetime
 from openai import OpenAI
 
-import tools
+from openai import Client
+from utils import io
 from utils.config import Config
 from utils.io import IOlog
 
 CFG = Config()
-client = OpenAI()
+client = Client()
 
 class Assistant():
 
@@ -80,7 +82,7 @@ class Assistant():
             self.fuser(self, prompt)
 
         try:
-            run = client.beta.threads.runs.create(
+            run = client.beta.threads.runs.create(thread_id=self.thread.id, assistant_id=self.assistant.id, model=self.assistant.model if self.assistant.model else 'gpt-4-1106-preview', instructions=self.instructions)(
                 thread_id=self.thread.id,
                 assistant_id=self.assistant.id,
                 model=self.assistant.model if self.assistant.model else "gpt-4-1106-preview",
