@@ -40,7 +40,7 @@
 \contentsline {section}{\numberline {4.2\relax .\enspace }Proces przygotowania danych}{19}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1\relax .\enspace }Czyszczenie i normalizacja danych}{19}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2\relax .\enspace }Transformacja danych}{19}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3\relax .\enspace }Metody selekcji i wzbogacania danych}{19}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.3\relax .\enspace }Metody selekcji i wzbogacania danych}{20}{subsection.4.2.3}%
 \contentsline {section}{\numberline {4.3\relax .\enspace }Wyzwania i ograniczenia}{20}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1\relax .\enspace }Problemy z jakością danych}{20}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2\relax .\enspace }Ograniczenia zbiorów danych}{20}{subsection.4.3.2}%

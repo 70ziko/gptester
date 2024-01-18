@@ -1,12 +1,12 @@
 # Fdb version 3
 ["bibtex thesis"] 0 "thesis.aux" "thesis.bbl" "thesis" 0
   "./dyplom.bst" 1704815868 28164 46ab484c700c9e84870468f09126caf9 ""
-  "bibliography.bib" 1704815868 7658 5591de0fdbab55f3dbaf76484607137a ""
+  "bibliography.bib" 1705498347 7705 3f91b9f9fc48d7199a263f14ae66fa33 ""
   "thesis.aux" 0 -1 0 "pdflatex"
   (generated)
   "thesis.bbl"
   "thesis.blg"
-["pdflatex"] 1705497073 "/home/paris/projekty/INZYNIERKA/gptester/latex/doc/thesis/thesis.tex" "thesis.pdf" "thesis" 1705497073
+["pdflatex"] 1705502806 "/home/paris/projekty/INZYNIERKA/gptester/latex/doc/thesis/thesis.tex" "thesis.pdf" "thesis" 1705502806
   "/dev/null" 1705490827 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/etc/texmf/web2c/texmf.cnf" 1681935773 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/paris/projekty/INZYNIERKA/gptester/latex/doc/thesis/thesis.tex" 1705497071 1946 d76ae968ea56ef7197937997be0b491d ""
@@ -248,15 +248,15 @@
   "appendix1.tex" 1704815868 44 61ed596936597e243a71aef98faecd31 ""
   "chapter1.tex" 1705419189 8093 e0f844fefaddb89dd2d87257545f0dba ""
   "chapter2.tex" 1705496744 15753 c4fc4b3be92bf3bcee3f4ce8c36db795 ""
-  "chapter3.tex" 1705497061 2500 884756b294c5bda3dd99a594a288f907 ""
+  "chapter3.tex" 1705502804 3001 90d8e81082f0df3216062defd761486f ""
   "dyplom.cls" 1704815868 8259 99a73e2a96fd0fff1710ee85f336e449 ""
   "img/gptester.drawio.png" 1705335878 271532 61ec8b17175750e4f937fc595edd6099 ""
   "img/kotek.pdf" 1704815868 2958 4a4abba86268733d5cc578af67f77373 ""
   "img/swarm-network.png" 1704815868 80539 a649fb3ba3586db6267731803d1076d2 ""
   "introduction.tex" 1705154347 5044 32bad18bdb23d730fa360603416ac464 ""
   "summary.tex" 1704815868 96 d7566dd8c6d0b7a5b0a674d5502f902a ""
-  "thesis.aux" 1705497073 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "thesis.bbl" 1705497071 49 0eba253fc001332e731e8aba3f23127b "bibtex thesis"
+  "thesis.aux" 1705502806 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "thesis.bbl" 1705502804 49 0eba253fc001332e731e8aba3f23127b "bibtex thesis"
   "thesis.lop" 0 -1 0 "pdflatex"
   "thesis.out" 0 -1 0 "pdflatex"
   "thesis.tex" 1705497071 1946 d76ae968ea56ef7197937997be0b491d ""
