@@ -1,0 +1,28 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{Przykład}\PYG{+w}{ }\PYG{n}{użycia}\PYG{+w}{ }\PYG{n}{podstawowego}
+
+\PYG{n}{cd}\PYG{+w}{ }\PYG{n}{gptester}
+\PYG{n}{python}\PYG{+w}{ }\PYG{n}{main}\PYG{p}{.}\PYG{n}{py}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{h}
+\PYG{n}{Przykład}\PYG{+w}{ }\PYG{n}{użycia}\PYG{+w}{ }\PYG{n}{z}\PYG{+w}{ }\PYG{n}{opcją}\PYG{+w}{ }\PYG{n}{verbose}
+
+\PYG{p}{.}\PYG{o}{/}\PYG{n}{main}\PYG{p}{.}\PYG{n}{py}\PYG{+w}{ }\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{n}{verbose}
+\PYG{n}{Przykład}\PYG{+w}{ }\PYG{n}{użycia}\PYG{+w}{ }\PYG{n}{z}\PYG{+w}{ }\PYG{n}{integracją}\PYG{+w}{ }\PYG{n}{CodeQL}
+
+\PYG{p}{.}\PYG{o}{/}\PYG{n}{main}\PYG{p}{.}\PYG{n}{py}\PYG{+w}{ }\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{n}{codeql}\PYG{+w}{ }\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{n}{command}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}make\PYGZdq{}}\PYG{+w}{ }\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{n}{language}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}cpp\PYGZdq{}}
+
+\PYG{err}{\PYGZbs{}}\PYG{n}{end}\PYG{p}{\PYGZob{}}\PYG{n}{listing}\PYG{p}{\PYGZcb{}}
+
+\PYG{err}{\PYGZbs{}}\PYG{n}{section}\PYG{p}{\PYGZob{}}\PYG{n}{Rozwój}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{n}{plany}\PYG{+w}{ }\PYG{n}{na}\PYG{+w}{ }\PYG{n}{przyszłość}\PYG{p}{\PYGZcb{}}
+\PYG{n}{Sekcja}\PYG{+w}{ }\PYG{n}{ta}\PYG{+w}{ }\PYG{n}{omówi}\PYG{+w}{ }\PYG{n}{obecny}\PYG{+w}{ }\PYG{n}{stan}\PYG{+w}{ }\PYG{n}{projektu}\PYG{+w}{ }\PYG{n}{oraz}\PYG{+w}{ }\PYG{n}{planowane}\PYG{+w}{ }\PYG{n}{rozszerzenia}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{n}{ulepszenia}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{zgodnie}\PYG{+w}{ }\PYG{n}{z}\PYG{+w}{ }\PYG{n}{sekcją}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}In development\PYGZdq{}}\PYG{+w}{ }\PYG{n}{w}\PYG{+w}{ }\PYG{n}{README}\PYG{p}{.}\PYG{n}{md}\PYG{p}{.}
+
+\PYG{err}{\PYGZbs{}}\PYG{n}{subsection}\PYG{p}{\PYGZob{}}\PYG{n}{Obecne}\PYG{+w}{ }\PYG{n}{osiągnięcia}\PYG{p}{\PYGZcb{}}
+\PYG{n}{Przedstawienie}\PYG{+w}{ }\PYG{n}{dotychczas}\PYG{+w}{ }\PYG{n}{zrealizowanych}\PYG{+w}{ }\PYG{n}{funkcjonalności}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{takich}\PYG{+w}{ }\PYG{n}{jak}\PYG{+w}{ }\PYG{n}{podstawowa}\PYG{+w}{ }\PYG{n}{funkcjonalność}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{n}{integracja}\PYG{+w}{ }\PYG{n}{CodeQL}\PYG{p}{.}
+
+\PYG{err}{\PYGZbs{}}\PYG{n}{subsection}\PYG{p}{\PYGZob{}}\PYG{n}{Planowane}\PYG{+w}{ }\PYG{n}{rozszerzenia}\PYG{p}{\PYGZcb{}}
+\PYG{n}{Omówienie}\PYG{+w}{ }\PYG{n}{planowanych}\PYG{+w}{ }\PYG{k}{do}\PYG{+w}{ }\PYG{n}{implementacji}\PYG{+w}{ }\PYG{n}{funkcji}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{w}\PYG{+w}{ }\PYG{n}{tym}\PYG{+w}{ }\PYG{n}{wsparcie}\PYG{+w}{ }\PYG{n}{dla}\PYG{+w}{ }\PYG{n}{LaTeX}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{aktualizacji}\PYG{+w}{ }\PYG{n}{bazy}\PYG{+w}{ }\PYG{n}{kodowej}\PYG{+w}{ }\PYG{n}{za}\PYG{+w}{ }\PYG{n}{pomocą}\PYG{+w}{ }\PYG{n}{plików}\PYG{+w}{ }\PYG{n}{git}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{n}{patch}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{dodawania}\PYG{+w}{ }\PYG{n}{więcej}\PYG{+w}{ }\PYG{n}{testów}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{n}{obsługi}\PYG{+w}{ }\PYG{n}{więcej}\PYG{+w}{ }\PYG{n}{języków}\PYG{+w}{ }\PYG{n}{programowania}\PYG{+w}{ }\PYG{n}{dla}\PYG{+w}{ }\PYG{n}{CodeQL}\PYG{p}{.}
+
+\PYG{err}{\PYGZbs{}}\PYG{n}{section}\PYG{p}{\PYGZob{}}\PYG{n}{Podsumowanie}\PYG{p}{\PYGZcb{}}
+\PYG{n}{Podsumowanie}\PYG{+w}{ }\PYG{n}{kluczowych}\PYG{+w}{ }\PYG{n}{aspektów}\PYG{+w}{ }\PYG{n}{projektu}\PYG{+w}{ }\PYG{n}{gptester}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{jego}\PYG{+w}{ }\PYG{n}{aktualnego}\PYG{+w}{ }\PYG{n}{stanu}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{n}{przyszłych}\PYG{+w}{ }\PYG{n}{planów}\PYG{+w}{ }\PYG{n}{rozwoju}\PYG{p}{.}
+
+\PYG{err}{\PYGZbs{}}\PYG{n}{end}\PYG{p}{\PYGZob{}}\PYG{n}{chapter}\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

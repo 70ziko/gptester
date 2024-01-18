@@ -1,0 +1,54 @@
+\setcounter {tocdepth}{-1}
+\contentsline {chapter}{Streszczenie }{}{chapter*.1}%
+\contentsline {chapter}{Abstract }{}{chapter*.2}%
+\setcounter {tocdepth}{2}
+\contentsline {chapter}{Wprowadzenie}{2}{chapter*.4}%
+\contentsline {section}{Pytania badawcze}{2}{section*.5}%
+\contentsline {section}{Hipotezy}{2}{section*.6}%
+\contentsline {section}{Uzasadnienie tytułu}{3}{section*.7}%
+\contentsline {section}{Omówienie literatury naukowej i stopnia jej przydatności}{3}{section*.8}%
+\contentsline {section}{Cel pracy}{3}{section*.9}%
+\contentsline {section}{Zakres pracy}{3}{section*.10}%
+\contentsline {chapter}{\numberline {1\relax .\enspace }Analiza istniejącej literatury oraz dotychczasowych badań}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1\relax .\enspace }Can OpenAI Codex and Other Large Language Models Help Us Fix Security Bugs?}{5}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1\relax .\enspace }Metodologia}{5}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2\relax .\enspace }Wyniki}{5}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2\relax .\enspace }Examining Zero-Shot Vulnerability Repair with Large Language Models}{5}{section.1.2}%
+\contentsline {section}{\numberline {1.3\relax .\enspace }Różnice między obecną pracą a istniejącą literaturą}{6}{section.1.3}%
+\contentsline {chapter}{\numberline {2\relax .\enspace }Metodyka rozwiązania}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1\relax .\enspace }Rysunki}{7}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1\relax .\enspace }Dwa rysunki obok siebie}{7}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2\relax .\enspace }Tabele}{8}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1\relax .\enspace }Równania}{8}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3\relax .\enspace }Listingi}{8}{section.2.3}%
+\contentsline {chapter}{\numberline {3\relax .\enspace }Projekt oraz implementacja rozwiązania}{10}{chapter.3}%
+\contentsline {section}{\numberline {3.1\relax .\enspace }Wstęp}{10}{section.3.1}%
+\contentsline {section}{\numberline {3.2\relax .\enspace }Architektura systemu}{10}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1\relax .\enspace }Ogólny opis}{10}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2\relax .\enspace }Schemat blokowy}{10}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3\relax .\enspace }Proces implementacji}{12}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1\relax .\enspace }Środowisko programistyczne i wymagania}{12}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2\relax .\enspace }Funkcje programu}{12}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4\relax .\enspace }Integracja z CodeQL}{13}{section.3.4}%
+\contentsline {section}{\numberline {3.5\relax .\enspace }Przypadki użycia}{14}{section.3.5}%
+\contentsline {section}{\numberline {3.6\relax .\enspace }Rozwój i plany na przyszłość}{16}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1\relax .\enspace }Obecne osiągnięcia}{16}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2\relax .\enspace }Planowane rozszerzenia}{16}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.7\relax .\enspace }Podsumowanie}{17}{section.3.7}%
+\contentsline {chapter}{\numberline {4\relax .\enspace }Zbiory danych i ich przygotowanie}{19}{chapter.4}%
+\contentsline {section}{\numberline {4.1\relax .\enspace }Przegląd wykorzystanych zbiorów danych}{19}{section.4.1}%
+\contentsline {section}{\numberline {4.2\relax .\enspace }Proces przygotowania danych}{19}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1\relax .\enspace }Czyszczenie i normalizacja danych}{19}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2\relax .\enspace }Transformacja danych}{19}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3\relax .\enspace }Metody selekcji i wzbogacania danych}{20}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3\relax .\enspace }Wyzwania i ograniczenia}{20}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1\relax .\enspace }Problemy z jakością danych}{20}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2\relax .\enspace }Ograniczenia zbiorów danych}{20}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4\relax .\enspace }Podsumowanie}{20}{section.4.4}%
+\contentsline {chapter}{Podsumowanie}{21}{chapter*.15}%
+\contentsline {chapter}{Bibliografia}{22}{chapter*.16}%
+\contentsline {chapter}{Spis rysunk\'ow}{23}{chapter*.17}%
+\contentsline {chapter}{Spis listingów}{24}{chapter*.18}%
+\contentsline {chapter}{Spis tabel}{25}{chapter*.19}%
+\contentsline {chapter}{Dodatki}{26}{section*.20}%
+\contentsline {chapter}{\numberline {A\relax .\enspace }Dodatek 1}{27}{appendix.A}%

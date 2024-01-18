@@ -1,0 +1,32 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+./main.py\PYG{+w}{ }/ścieżka/do/katalogu/projektu\PYG{+w}{ }\PYGZhy{}\PYGZhy{}verbose\PYG{+w}{ }\PYGZhy{}\PYGZhy{}model\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}gpt\PYGZhy{}4\PYGZhy{}1106\PYGZhy{}preview\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}\PYGZhy{}output\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}raport.md\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}\PYGZhy{}tests\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}tests/\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}\PYGZhy{}codeql\PYG{+w}{ }\PYGZhy{}\PYGZhy{}command\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}make\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}\PYGZhy{}language\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}cpp\PYGZdq{}}
+\PYG{l+s+se}{\PYGZbs{}e}nd\PYG{o}{\PYGZob{}}listing\PYG{o}{\PYGZcb{}}
+
+W\PYG{+w}{ }powyższym\PYG{+w}{ }przykładzie,\PYG{+w}{ }gptester\PYG{+w}{ }jest\PYG{+w}{ }uruchamiany\PYG{+w}{ }z\PYG{+w}{ }pełnymi\PYG{+w}{ }informacjami\PYG{+w}{ }wyjściowymi\PYG{+w}{ }\PYG{o}{(}verbose\PYG{o}{)},\PYG{+w}{ }korzystając\PYG{+w}{ }z\PYG{+w}{ }modelu\PYG{+w}{ }GPT\PYGZhy{}4,\PYG{+w}{ }zapisując\PYG{+w}{ }raport\PYG{+w}{ }\PYG{k}{do}\PYG{+w}{ }określonego\PYG{+w}{ }pliku,\PYG{+w}{ }uruchamiając\PYG{+w}{ }testy\PYG{+w}{ }funkcjonalne,\PYG{+w}{ }z\PYG{+w}{ }integracją\PYG{+w}{ }CodeQL,\PYG{+w}{ }używając\PYG{+w}{ }polecenia\PYG{+w}{ }make\PYG{+w}{ }\PYG{k}{do}\PYG{+w}{ }budowy\PYG{+w}{ }projektu\PYG{+w}{ }w\PYG{+w}{ }języku\PYG{+w}{ }C++.
+
+\PYG{l+s+se}{\PYGZbs{}e}nd\PYG{o}{\PYGZob{}}subsection\PYG{o}{\PYGZcb{}}
+
+\PYG{l+s+se}{\PYGZbs{}s}ubsection\PYG{o}{\PYGZob{}}Funkcje\PYG{+w}{ }programu\PYG{o}{\PYGZcb{}}
+Szczegółowe\PYG{+w}{ }przedstawienie\PYG{+w}{ }funkcjonalności\PYG{+w}{ }programu,\PYG{+w}{ }w\PYG{+w}{ }tym\PYG{+w}{ }dostępne\PYG{+w}{ }argumenty\PYG{+w}{ }linii\PYG{+w}{ }poleceń\PYG{+w}{ }oraz\PYG{+w}{ }ich\PYG{+w}{ }opis,\PYG{+w}{ }zgodnie\PYG{+w}{ }z\PYG{+w}{ }README.md.
+
+\PYG{l+s+se}{\PYGZbs{}s}ection\PYG{o}{\PYGZob{}}Integracja\PYG{+w}{ }z\PYG{+w}{ }CodeQL\PYG{o}{\PYGZcb{}}
+Omówienie\PYG{+w}{ }integracji\PYG{+w}{ }\PYG{l+s+sb}{`}gptester\PYG{l+s+sb}{`}\PYG{+w}{ }z\PYG{+w}{ }narzędziem\PYG{+w}{ }CodeQL\PYG{+w}{ }\PYG{k}{do}\PYG{+w}{ }rozszerzonej\PYG{+w}{ }analizy\PYG{+w}{ }kodu,\PYG{+w}{ }w\PYG{+w}{ }tym\PYG{+w}{ }wymagania\PYG{+w}{ }dotyczące\PYG{+w}{ }instalacji\PYG{+w}{ }CodeQL\PYGZhy{}CLI\PYG{+w}{ }oraz\PYG{+w}{ }sposób\PYG{+w}{ }użycia\PYG{+w}{ }w\PYG{+w}{ }kontekście\PYG{+w}{ }projektu.
+
+\PYG{l+s+se}{\PYGZbs{}s}ection\PYG{o}{\PYGZob{}}Przypadki\PYG{+w}{ }użycia\PYG{o}{\PYGZcb{}}
+Przykłady\PYG{+w}{ }uruchomienia\PYG{+w}{ }programu,\PYG{+w}{ }w\PYG{+w}{ }tym\PYG{+w}{ }różne\PYG{+w}{ }scenariusze\PYG{+w}{ }użycia\PYG{+w}{ }z\PYG{+w}{ }różnymi\PYG{+w}{ }argumentami,\PYG{+w}{ }ilustr
+
+ujące\PYG{+w}{ }różnorodność\PYG{+w}{ }opcji\PYG{+w}{ }dostępnych\PYG{+w}{ }w\PYG{+w}{ }gptester.
+
+\PYG{l+s+se}{\PYGZbs{}b}egin\PYG{o}{\PYGZob{}}listing\PYG{o}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{l+s+se}{\PYGZbs{}b}egin\PYG{o}{\PYGZob{}}minted\PYG{o}{\PYGZcb{}\PYGZob{}}c\PYG{o}{\PYGZcb{}}
+Przykład\PYG{+w}{ }użycia\PYG{+w}{ }podstawowego
+
+\PYG{n+nb}{cd}\PYG{+w}{ }gptester
+python\PYG{+w}{ }main.py\PYG{+w}{ }\PYGZhy{}h
+Przykład\PYG{+w}{ }użycia\PYG{+w}{ }z\PYG{+w}{ }opcją\PYG{+w}{ }verbose
+
+./main.py\PYG{+w}{ }\PYGZhy{}\PYGZhy{}verbose
+Przykład\PYG{+w}{ }użycia\PYG{+w}{ }z\PYG{+w}{ }integracją\PYG{+w}{ }CodeQL
+
+./main.py\PYG{+w}{ }\PYGZhy{}\PYGZhy{}codeql\PYG{+w}{ }\PYGZhy{}\PYGZhy{}command\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}make\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}\PYGZhy{}language\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}cpp\PYGZdq{}}
+\end{Verbatim}
