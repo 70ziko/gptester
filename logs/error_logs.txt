@@ -1,0 +1,13 @@
+import os
+
+def create_error_logs_file():
+    # Create the 'logs' directory if it doesn't exist
+    os.makedirs('logs', exist_ok=True)
+
+    # Create the 'error_logs.txt' file
+    with open('logs/error_logs.txt', 'w') as file:
+        # Write any necessary content to the file
+        pass
+
+# Call the function to create the file
+create_error_logs_file()
