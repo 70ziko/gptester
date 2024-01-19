@@ -9,8 +9,8 @@ Narzędzie to wykorzystuje przede wszystkim model GPT-4 do generowania raportów
 
 \section{Architektura systemu}
 \subsection{Ogólny opis}
-`gptester` jest programem napisanym w języku Python, wykorzystującym model GPT-4 (lub GPT-3.5-turbo) dostarczony przez OpenAI. 
-Jest zaprojektowany do uruchamiania z linii poleceń, a wyniki jego pracy są zapisywane w pliku formatu markdown oraz do osobnego katalogu z plikami wynikowymi - poprawionymi. 
+`gptester` jest programem napisanym w języku Python, wykorzystującym model GPT-4 (lub GPT-3.5-turbo) dostarczony przez OpenAI.
+Jest zaprojektowany do uruchamiania z linii poleceń, a wyniki jego pracy są zapisywane w pliku formatu markdown oraz do osobnego katalogu z plikami wynikowymi - poprawionymi.
 W przyszłości planowane jest wprowadzanie poprawek do bazy kodu za pomocą git patch.
 
 \subsection{Schemat blokowy}
@@ -24,6 +24,57 @@ W przyszłości planowane jest wprowadzanie poprawek do bazy kodu za pomocą git
     \label{fig:schemat_blokowy}
 \end{figure}
 \end{landscape}
+
+\subsubsection{Dane wejściowe i wstępne przetwarzanie}
+Proces rozpoczyna się od `oryginalnego kodu z błędami`. Następnie jeśli użytkownik dostarczył wystarczająco danych dla CodeQL zostanie on wykorzsytany do wstępnej analizy, a dane wynikowe zostaną wykorzystane do wzbogacenia monitów(promptów). 
+W przeciwnym wypadku monit(prompt) zostanie skreowany na podstawie danych posiadanych. 
+
+\subsection{Wzbogacanie monitów(prommptów)}
+Dla uzyskania jak najlepszych wyników oraz zapewnienia najnowszej dostępnej wiedzy na temat podatności wykorzystywane zostaje RAG, aby wzbogacić monit o dodatkowe informacje. Są to informacje otrzymane z CodeQL, które zostają użyte do semantycznego wyszukania powiązanych wpisów w bazie danych CVE. 
+Jeżeli CodeQL nie został użyty, monit zostaje wzbogacony o informacje z bazy CVE, które zostały wyszukane semantycznie w wektorowej bazie wiedzy. W tej chwili o użyciu dnaych z bazy wiedzy decyduje wybrany model OpenAI, dzięki nowym możliwością API. 
+Sprawia to, że niniejszy własny kod do wzbogacania monitów jest niepotrzebny, ale w przyszłości może zostać użyty do wzbogacania monitów o dodatkowe informacje dla modeli otwartoźródłowych. 
+\begin{listing}
+    \begin{minted}{python}  
+def get_embedding(text, model="text-embedding-ada-002"): # alternatively use code
+    text = str(text)
+    text = text.replace("\n", " ")
+    if len(text) != 0:
+        return openai.Embedding.create(input=[text], model=model)["data"][0]["embedding"]
+    return [0.0] * 1536
+
+    \end{minted}
+    \caption{Kod tworzący reprezentację wektorową tekstu za pomocą modelu, domyślnie `text-embedding-ada-002', (models.py)} 
+    \label{listing:vector_embedding}
+\end{listing}
+    
+\begin{listing}
+    \begin{minted}{python}  
+    def relevance_for(self, query: str) -> float:
+        embedding = get_embedding(query)
+        task = get_embedding(self.name)
+        score = cosine(task, embedding)
+        return score
+    \end{minted}
+    \caption{Kod porównujący semantyczną odległość (models.py)} 
+    \label{listing:vector_relevance}
+\end{listing}
+    
+
+\subsubsection{Tworzenie monitów i interakcja z LLM}
+Dla każdego zidentyfikowanego problemu, `tworzony jest monit`, który jest następnie przetwarzany przez `duże modele językowe (GPT-4, ...)`. Modele te wykorzystują `szablony monitów` oraz `bazy danych CVE` do tworzenia rozwiązań.
+
+\subsubsection{Generowanie kodu i scalanie}
+LLM generuje `komplecje/generacje kodu`, które są następnie `łączone` w potencjalnie `naprawiony program`. Proces ten wykorzystuje również `narzędzia` i `bazy danych CVE` do weryfikacji i poprawy kodu.
+
+\subsubsection{Testy i weryfikacja}
+Naprawiony kod jest poddawany `testom bezpieczeństwa` oraz `funkcjonalnym testom` w celu zapewnienia, że poprawki nie wprowadzają nowych błędów i że aplikacja nadal działa zgodnie z oczekiwaniami.
+
+\subsubsection{Dokumentacja i raportowanie}
+Wyniki pracy `gptester` są dokumentowane w `raporcie o błędach` i zapisywane w plikach markdown oraz w katalogu z `poprawionymi plikami wynikowymi`. W przyszłości `poprawki będą wprowadzane do bazy kodu za pomocą git patch`.
+
+\subsubsection{Podsumowanie}
+Diagram blokowy przedstawia kompleksowy proces analizy i naprawy kodu, który jest silnie zależny od danych wejściowych (kod źródłowy i testy bezpieczeństwa), zaawansowanych algorytmów przetwarzania (duże modele językowe) oraz dokładności w generowaniu poprawek kodu i ich weryfikacji. Cały proces jest automatyzowany z możliwością ręcznej interwencji na etapie generowania monitów i weryfikacji kodu wynikowego.
+
 
 \section{Proces implementacji}
 \subsection{Środowisko programistyczne i wymagania}
