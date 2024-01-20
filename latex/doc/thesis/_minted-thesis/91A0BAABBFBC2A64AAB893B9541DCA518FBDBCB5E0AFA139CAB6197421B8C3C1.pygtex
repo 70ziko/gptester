@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{get\PYGZus{}embedding}\PYG{p}{(}\PYG{n}{text}\PYG{p}{,} \PYG{n}{model}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}text\PYGZhy{}embedding\PYGZhy{}ada\PYGZhy{}002\PYGZdq{}}\PYG{p}{):} \PYG{c+c1}{\PYGZsh{} alternatively use code\PYGZhy{}embedding\PYGZhy{}ada\PYGZhy{}}
+    \PYG{n}{text} \PYG{o}{=} \PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{text}\PYG{p}{)}
+    \PYG{n}{text} \PYG{o}{=} \PYG{n}{text}\PYG{o}{.}\PYG{n}{replace}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{} \PYGZdq{}}\PYG{p}{)}
+    \PYG{k}{if} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{text}\PYG{p}{)} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{:}
+        \PYG{k}{return} \PYG{n}{openai}\PYG{o}{.}\PYG{n}{Embedding}\PYG{o}{.}\PYG{n}{create}\PYG{p}{(}\PYG{n+nb}{input}\PYG{o}{=}\PYG{p}{[}\PYG{n}{text}\PYG{p}{],} \PYG{n}{model}\PYG{o}{=}\PYG{n}{model}\PYG{p}{)[}\PYG{l+s+s2}{\PYGZdq{}data\PYGZdq{}}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{][}\PYG{l+s+s2}{\PYGZdq{}embedding\PYGZdq{}}\PYG{p}{]}
+    \PYG{k}{return} \PYG{p}{[}\PYG{l+m+mf}{0.0}\PYG{p}{]} \PYG{o}{*} \PYG{l+m+mi}{1536}
+
+\end{Verbatim}

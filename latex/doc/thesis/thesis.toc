@@ -26,29 +26,38 @@
 \contentsline {section}{\numberline {3.2\relax .\enspace }Architektura systemu}{10}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1\relax .\enspace }Ogólny opis}{10}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2\relax .\enspace }Schemat blokowy}{10}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3\relax .\enspace }Proces implementacji}{12}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1\relax .\enspace }Środowisko programistyczne i wymagania}{12}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2\relax .\enspace }Funkcje programu}{12}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4\relax .\enspace }Integracja z CodeQL}{13}{section.3.4}%
-\contentsline {section}{\numberline {3.5\relax .\enspace }Przypadki użycia}{14}{section.3.5}%
-\contentsline {section}{\numberline {3.6\relax .\enspace }Rozwój i plany na przyszłość}{16}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1\relax .\enspace }Obecne osiągnięcia}{16}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2\relax .\enspace }Planowane rozszerzenia}{16}{subsection.3.6.2}%
-\contentsline {section}{\numberline {3.7\relax .\enspace }Podsumowanie}{17}{section.3.7}%
-\contentsline {chapter}{\numberline {4\relax .\enspace }Zbiory danych i ich przygotowanie}{19}{chapter.4}%
-\contentsline {section}{\numberline {4.1\relax .\enspace }Przegląd wykorzystanych zbiorów danych}{19}{section.4.1}%
-\contentsline {section}{\numberline {4.2\relax .\enspace }Proces przygotowania danych}{19}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1\relax .\enspace }Czyszczenie i normalizacja danych}{19}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2\relax .\enspace }Transformacja danych}{19}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3\relax .\enspace }Metody selekcji i wzbogacania danych}{20}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3\relax .\enspace }Wyzwania i ograniczenia}{20}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1\relax .\enspace }Problemy z jakością danych}{20}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2\relax .\enspace }Ograniczenia zbiorów danych}{20}{subsection.4.3.2}%
-\contentsline {section}{\numberline {4.4\relax .\enspace }Podsumowanie}{20}{section.4.4}%
-\contentsline {chapter}{Podsumowanie}{21}{chapter*.15}%
-\contentsline {chapter}{Bibliografia}{22}{chapter*.16}%
-\contentsline {chapter}{Spis rysunk\'ow}{23}{chapter*.17}%
-\contentsline {chapter}{Spis listingów}{24}{chapter*.18}%
-\contentsline {chapter}{Spis tabel}{25}{chapter*.19}%
-\contentsline {chapter}{Dodatki}{26}{section*.20}%
-\contentsline {chapter}{\numberline {A\relax .\enspace }Dodatek 1}{27}{appendix.A}%
+\contentsline {subsection}{\numberline {3.2.3\relax .\enspace }Wzbogacanie monitów(promptów)}{12}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3\relax .\enspace }Implementacja oraz użycie}{15}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1\relax .\enspace }Środowisko programistyczne i wymagania}{15}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2\relax .\enspace }Funkcje programu}{16}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4\relax .\enspace }Integracja z CodeQL}{17}{section.3.4}%
+\contentsline {section}{\numberline {3.5\relax .\enspace }Przypadki użycia}{18}{section.3.5}%
+\contentsline {section}{\numberline {3.6\relax .\enspace }Rozwój i plany na przyszłość}{20}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1\relax .\enspace }Obecne osiągnięcia}{20}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2\relax .\enspace }Planowane rozszerzenia}{20}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.7\relax .\enspace }Podsumowanie}{21}{section.3.7}%
+\contentsline {chapter}{\numberline {4\relax .\enspace }Zbiory danych i ich przygotowanie}{22}{chapter.4}%
+\contentsline {section}{\numberline {4.1\relax .\enspace }Przegląd wykorzystanych zbiorów danych}{22}{section.4.1}%
+\contentsline {section}{\numberline {4.2\relax .\enspace }Proces przygotowania danych}{22}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1\relax .\enspace }Czyszczenie i normalizacja danych}{22}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2\relax .\enspace }Transformacja danych}{23}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3\relax .\enspace }Metody selekcji i wzbogacania danych}{23}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3\relax .\enspace }Wyzwania i ograniczenia}{23}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1\relax .\enspace }Problemy z jakością danych}{23}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2\relax .\enspace }Ograniczenia zbiorów danych}{23}{subsection.4.3.2}%
+\contentsline {section}{\numberline {4.4\relax .\enspace }Podsumowanie}{23}{section.4.4}%
+\contentsline {chapter}{\numberline {5\relax .\enspace }Badania eksperymentalne - wyniki i wnioski}{24}{chapter.5}%
+\contentsline {section}{\numberline {5.1\relax .\enspace }Metodologia badań}{24}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1\relax .\enspace }Konfiguracja środowiska}{24}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2\relax .\enspace }Procedura testowa}{24}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3\relax .\enspace }Wyniki działania programu - przykład}{24}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2\relax .\enspace }Badania na zbiorze \textit {snoopysecurity/Vulnerable-Code-Snippets}}{24}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1\relax .\enspace }Interpretacja wyników}{25}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3\relax .\enspace }Wnioski}{25}{section.5.3}%
+\contentsline {chapter}{Podsumowanie}{26}{chapter*.21}%
+\contentsline {chapter}{Bibliografia}{27}{chapter*.22}%
+\contentsline {chapter}{Spis rysunk\'ow}{28}{chapter*.23}%
+\contentsline {chapter}{Spis listingów}{29}{chapter*.24}%
+\contentsline {chapter}{Spis tabel}{30}{chapter*.25}%
+\contentsline {chapter}{Dodatki}{31}{section*.26}%
+\contentsline {chapter}{\numberline {A\relax .\enspace }Dodatek 1}{32}{appendix.A}%
