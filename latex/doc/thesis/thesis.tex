@@ -32,8 +32,23 @@ frame=lines,
 framesep=3mm,          
 baselinestretch=1.1,   
 fontsize=\small,       
-% linenos              % line numbering
+linenos              % line numbering
 }
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{markdown}
+
+% Define Markdown style
+% \lstdefinestyle{mymarkdown}{
+%     fontsize=\tiny,
+%     backgroundcolor=\color{pink}, % choose the background color
+%     frame=single, % adds a frame around the code
+%     framesep=4pt, % tweak the padding
+%     breaklines=true, % sets automatic line breaking
+%     breakatwhitespace=true, % sets if automatic breaks should only happen at whitespace
+%     postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}, % for breaking lines
+% }
 
 \usepackage{lipsum}
 
@@ -59,6 +74,7 @@ fontsize=\small,
 
 \input{chapter2}
 \input{chapter3}
+\input{badania}
 
 \input{summary}
 

@@ -260,6 +260,8 @@ def walk_directory(directory):
     ]
     code_contents = {}
     for root, dirs, files in os.walk(directory):
+        dirs[:] = [d for d in dirs if not d.startswith('fixed')]
+        
         for file in files:
             if not any(file.endswith(ext) for ext in image_extensions):
                 try:
