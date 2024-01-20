@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{k}{def} \PYG{n+nf}{relevance\PYGZus{}for}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{query}\PYG{p}{:} \PYG{n+nb}{str}\PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n+nb}{float}\PYG{p}{:}
+        \PYG{n}{embedding} \PYG{o}{=} \PYG{n}{get\PYGZus{}embedding}\PYG{p}{(}\PYG{n}{query}\PYG{p}{)}
+        \PYG{n}{task} \PYG{o}{=} \PYG{n}{get\PYGZus{}embedding}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{name}\PYG{p}{)}
+        \PYG{n}{score} \PYG{o}{=} \PYG{n}{cosine}\PYG{p}{(}\PYG{n}{task}\PYG{p}{,} \PYG{n}{embedding}\PYG{p}{)}
+        \PYG{k}{return} \PYG{n}{score}
+\end{Verbatim}

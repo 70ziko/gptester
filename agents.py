@@ -101,3 +101,37 @@ async def debug_agent(input: str, iol: IOlog = None, model: str = 'gpt-4-1106-pr
     
     messages = [user]
     return await ai.next(messages, directory=directory)
+
+async def debug_agent(input: str, iol: IOlog = None, model: str = 'gpt-4-1106-preview', directory: str = 'fixes') -> str:
+    """An agent used to debug the project
+    Capabililties: 
+        - Working on error messages - With the user (in the future it should be able to run the project and fix it on its own)
+        - writing missing code files """
+
+
+    write_file_json = {
+        "name": "write_file",
+        "description": "Writes content to a specified file.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "filename": {"type": "string"},
+                "content": {"type": "string"}
+            },
+            "required": ["filename", "content"]
+        }
+    }
+
+    tools=[
+        {"type": "code_interpreter"},
+        {"type": "retrieval"},
+        {"type": "function", "function": write_file_json},
+    ]
+
+    ai = Agent(role=f"{dbs.prompts['test']}", name='test_agent', iol = iol, tools=tools, model=model)
+    
+    user = ai.fuser(msg=f"""The project codebase:\n{input}. Please list all the vulnerabilities present in the codebase.
+                    Then output possible solutions to fix these vulnerabilities.""")
+    
+    messages = [user]
+    return await ai.next(messages, directory=directory)

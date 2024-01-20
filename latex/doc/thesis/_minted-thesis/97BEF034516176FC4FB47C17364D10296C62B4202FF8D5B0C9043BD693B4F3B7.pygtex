@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{x}{int main()}
+\PYG{x}{\PYGZob{}}
+\PYG{x}{   int a=2*3;}
+\PYG{x}{   printf(\PYGZdq{}**Ala ma kota\PYGZbs{}n**\PYGZdq{});}
+\PYG{x}{   while(!I2C\PYGZus{}CheckEvent(I2C1, I2C\PYGZus{}EVENT\PYGZus{}MASTER\PYGZus{}MODE\PYGZus{}SELECT)); /* EV5 */}
+\PYG{x}{   return 0;}
+\PYG{x}{\PYGZcb{}}
+\end{Verbatim}

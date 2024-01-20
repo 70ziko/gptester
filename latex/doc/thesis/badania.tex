@@ -1,0 +1,84 @@
+\chapter{Badania eksperymentalne - wyniki i wnioski}
+\label{ch:badania_eksperymentalne}
+
+W tym rozdziale omawiamy wyniki i wnioski z przeprowadzonych badań eksperymentalnych. Wszelkie wyniki powinny być opisane w sposób zrozumiały i czytelny, a także powinny być poparte odpowiednimi wykresami i tabelami. Wnioski powinny być wyciągnięte na podstawie wyników i powinny być zgodne z celami projektu.
+
+\section{Metodologia badań}
+\label{sec:metodologia_badan}
+
+W tej sekcji przedstawiamy użyte metody i podejście do przeprowadzenia eksperymentów. Omówione zostaną użyte narzędzia, parametry konfiguracyjne oraz procedura testowa.
+
+\subsection{Konfiguracja środowiska}
+\label{subsec:konfiguracja_srodowiska}
+
+\begin{verbatim}
+    > ./main.py -m 'gpt-4-1106-preview' \
+    Vulnerable-Code-Snippets/Authentication_Bypass/
+\end{verbatim}
+
+\subsection{Procedura testowa}
+\label{subsec:procedura_testowa}
+
+Procedura testowa została zaprojektowana w celu ...
+
+\subsection{Wyniki działania programu - przykład}
+\label{subsec:wyniki_dzialania_programu}
+
+Wynik działania programu został wyświetlony na konsoli oraz zapisany do pliku \texttt{`raports/Authentication_Bypass_20240120120144_raport.md'} i wygląda następująco:
+
+\markdownInput{../raports/Authentication_Bypass_20240120120144_raport.md} 
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{img/accuracy.png}
+%     \caption{Przykładowy wykres z wynikami}
+%     \label{fig:accuracy}
+% \end{figure}
+
+
+\section{Badania na zbiorze \textit{snoopysecurity/Vulnerable-Code-Snippets}}
+\label{sec:badania_na_zbiorze_snoopysecurity}
+
+W tym rozdziale omawiamy wyniki badań przeprowadzonych na zbiorze \textit{snoopysecurity/Vulnerable-Code-Snippets}. Zbiór ten został wybrany ze względu na jego rozmiar, różnorodność i dostępność. Przede wszystkim zawiera on wiele przykładów kodu, które są podatne na ataki XSS, SQL Injection, CSRF i inne.
+Przede wszystkim zawiera on wiele przykładów kodu, które są podatne na ataki XSS, SQL Injection, CSRF i inne.
+Zawiera on łącznie 184 pliki.
+
+Dzięki zastosowaniu algorytmów fragmentacji i filtrowania, mogłem przeprowadzić badania na całym zbiorze danych, a nie tylko na jego części za pomocą jednego zapytania.
+Jako, że pliki w tym zbiorze są dość małe, nie było potrzeby stosowania algorytmów fragmentacji i filtrowania, ponieważ pliki zawierały w sumie jedynie 41831 tokenów.
+Program został wywołany z następującymi parametrami:
+\begin{verbatim}
+    > ./main.py -m 'gpt-4-1106-preview' \
+    Vulnerable-Code-Snippets/
+\end{verbatim}
+\begin{verbatim}
+2024-01-20 12:54:36: Welcome to gptester: the Static Code Analysis Agent
+2024-01-20 12:54:36: I will now begin scanning: Vulnerable-Code-Snippets/, name: Vulnerable-Code-Snippets
+2024-01-20 12:54:36: Beginning scan...
+2024-01-20 12:54:36: Found 184 files to scan
+2024-01-20 12:54:36: Tokens inside the directory: 41831
+2024-01-20 12:54:36: Beginning code analysis...
+2024-01-20 12:54:36: Using model: gpt-4-1106-preview
+\end{verbatim}
+
+Wynik działania programu został wyświetlony na konsoli oraz zapisany do pliku \texttt{`raports/Vulnerable-Code-Snippets_20240120120144_raport.md'} i wygląda następująco:
+
+
+\subsection{Interpretacja wyników}
+\label{subsec:interpretacja_wynikow}
+
+Interpretacja wyników eksperymentów ...
+
+% Tutaj możesz wstawić wykresy i tabele
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{img/accuracy.png}
+%     \caption{Przykładowy wykres z wynikami}
+%     \label{fig:accuracy}
+% \end{figure}
+
+\section{Wnioski}
+\label{sec:wnioski}
+
+Na podstawie przeprowadzonych badań eksperymentalnych, możemy wyciągnąć następujące wnioski: ...
+
+% Tutaj należy wstawić wnioski z badania

@@ -50,7 +50,7 @@ async def main():
     iol.log(f"I will now begin scanning: {args.directory}, name: {project_name}", color="pink")
 
     iol.log(f"Beginning scan...", color="bright_cyan")
-    dir_content = walk_directory(args.directory)
+    dir_content = walk_directory(args.directory)    # excluding directories starting with 'fixed'
 
     iol.log(f"Found {len(dir_content)} files to scan", color="cyan", verbose_only=False)
     for key, value in dir_content.items():
