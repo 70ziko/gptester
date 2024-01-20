@@ -20,7 +20,7 @@ class Assistant():
         """
         self.iol = iol
         self.instructions = role
-        self.assistant = client.beta.assistants.create(
+        self.assistant = client.assistants.create(
             name=name,
             instructions=self.instructions,
             model=model,
@@ -80,7 +80,7 @@ class Assistant():
             self.fuser(self, prompt)
 
         try:
-            run = client.beta.threads.runs.create(
+            run = client.threads.runs.create(
                 thread_id=self.thread.id,
                 assistant_id=self.assistant.id,
                 model=self.assistant.model if self.assistant.model else "gpt-4-1106-preview",
@@ -89,7 +89,7 @@ class Assistant():
 
             # Polling mechanism to see if runStatus is completed
             run_status = client.beta.threads.runs.retrieve(thread_id=self.thread.id, run_id=run.id)
-            while run_status.status != "completed":
+            while run_status.status != "completed" and run_status.status != "failed":
                 await asyncio.sleep(2)  # Sleep for 2 seconds before polling again
                 run_status = client.beta.threads.runs.retrieve(thread_id=self.thread.id, run_id=run.id)
 
@@ -128,7 +128,7 @@ class Assistant():
             response = [message for message in messages if message.run_id == run.id and message.role == "assistant"][-1]
 
             # If an assistant message is found, iol.log it
-            if response:
+            if response and response.content[0].text.value:
                 self.iol.log(f"{response.content[0].text.value} \n")
 
         except TypeError:
