@@ -26,16 +26,43 @@ W przyszłości planowane jest wprowadzanie poprawek do bazy kodu za pomocą git
 \end{landscape}
 
 \subsubsection{Dane wejściowe i wstępne przetwarzanie}
-Proces rozpoczyna się od `oryginalnego kodu z błędami`. Następnie jeśli użytkownik dostarczył wystarczająco danych dla CodeQL zostanie on wykorzsytany do wstępnej analizy, a dane wynikowe zostaną wykorzystane do wzbogacenia monitów(promptów). 
+\begin{figure}[h]
+    \centering
+    % Adjust the clip and trim parameters as needed: {left bottom right top}
+    \includegraphics[clip, trim=0cm 4cm 29cm 6cm, width=0.9\linewidth]{img/gptester.drawio.png}
+    \caption{dane wejściowe w schemacie blokowym}
+    \label{fig:przyciety_obraz}
+\end{figure}
+Proces rozpoczyna się od `oryginalnego kodu z błędami`. Następnie jeśli użytkownik dostarczył wystarczająco danych dla CodeQL zostanie ono wykorzystane do wstępnej analizy, a dane wynikowe zostaną wykorzystane do wzbogacenia monitów(promptów). 
 W przeciwnym wypadku monit(prompt) zostanie skreowany na podstawie danych posiadanych. 
 
-\subsection{Wzbogacanie monitów(prommptów)}
+\subsubsection{Generacja testów funkcjonalnych}
+\begin{figure}[h]
+    \centering
+    % Adjust the clip and trim parameters as needed: {left bottom right top}
+    \includegraphics[clip, trim=0cm 0cm 0cm 13cm, width=0.9\linewidth]{img/gptester.drawio.png}
+    \caption{Część schematu opisująca proces generatora testów funkcjonalnych}
+    \label{fig:przyciety_obraz}
+\end{figure}
+
+Jeżeli testy funkcjonalne dla naszego kodu nie zostały zapewnione, zostaną one wygenerowane za pomocą osobnego agenta.
+
+\subsection{Wzbogacanie monitów(promptów)}
+\begin{figure}[h]
+    \centering
+    % Adjust the clip and trim parameters as needed: {left bottom right top}
+    \includegraphics[clip, trim=3cm 11cm 3cm 0cm, width=0.9\linewidth]{img/gptester.drawio.png}
+    \caption{Część schematu opisująca proces RAG}
+    \label{fig:przyciety_obraz}
+\end{figure}
+
 Dla uzyskania jak najlepszych wyników oraz zapewnienia najnowszej dostępnej wiedzy na temat podatności wykorzystywane zostaje RAG, aby wzbogacić monit o dodatkowe informacje. Są to informacje otrzymane z CodeQL, które zostają użyte do semantycznego wyszukania powiązanych wpisów w bazie danych CVE. 
 Jeżeli CodeQL nie został użyty, monit zostaje wzbogacony o informacje z bazy CVE, które zostały wyszukane semantycznie w wektorowej bazie wiedzy. W tej chwili o użyciu dnaych z bazy wiedzy decyduje wybrany model OpenAI, dzięki nowym możliwością API. 
+Nowe możliwości API jak własne narzędzia dla LLM, code interpreter (interpreter kodu) oraz semantic search (semantyczne wyszukiwanie) zostały wprowadzone 06.11.2023r.
 Sprawia to, że niniejszy własny kod do wzbogacania monitów jest niepotrzebny, ale w przyszłości może zostać użyty do wzbogacania monitów o dodatkowe informacje dla modeli otwartoźródłowych. 
 \begin{listing}
     \begin{minted}{python}  
-def get_embedding(text, model="text-embedding-ada-002"): # alternatively use code
+def get_embedding(text, model="text-embedding-ada-002"): # alternatively use code-embedding-ada
     text = str(text)
     text = text.replace("\n", " ")
     if len(text) != 0:
@@ -43,7 +70,7 @@ def get_embedding(text, model="text-embedding-ada-002"): # alternatively use cod
     return [0.0] * 1536
 
     \end{minted}
-    \caption{Kod tworzący reprezentację wektorową tekstu za pomocą modelu, domyślnie `text-embedding-ada-002', (models.py)} 
+    \caption{Kod tworzący reprezentację wektorową tekstu za pomocą API OpenAI, domyślnie `text-embedding-ada-002', (models.py)} 
     \label{listing:vector_embedding}
 \end{listing}
     
@@ -59,15 +86,40 @@ def get_embedding(text, model="text-embedding-ada-002"): # alternatively use cod
     \label{listing:vector_relevance}
 \end{listing}
     
+Przedstawione zostały rzeczywiste skrawki kodu znajdujące się w projekcie, natomiast w testach oraz podczas działania na modelach komeryjnych OpenAI używane są funkcje dostępne za pomocą API.
 
 \subsubsection{Tworzenie monitów i interakcja z LLM}
-Dla każdego zidentyfikowanego problemu, `tworzony jest monit`, który jest następnie przetwarzany przez `duże modele językowe (GPT-4, ...)`. Modele te wykorzystują `szablony monitów` oraz `bazy danych CVE` do tworzenia rozwiązań.
+\begin{figure}[h]
+    \centering
+    % Adjust the clip and trim parameters as needed: {left bottom right top}
+    \includegraphics[clip, trim=3cm 10cm 3cm 0cm, width=0.9\linewidth]{img/gptester.drawio.png}
+    \caption{Część schematu opisująca proces RAG}
+    \label{fig:przyciety_obraz}
+\end{figure}
+Dla każdej części bazy kodu opdowiednio mieszczącej się w oknie kontekstu dla modeli, `tworzony jest prompt (monit)`, który jest następnie przetwarzany przez `duże modele językowe (GPT-4, ...)`. 
+W tym celu wykorzywane są `szablony monitów` oraz semantycznie wyszukane skrawki z `bazy danych CVE`.
+Tak spreparowane zapytanie jest następnie zadane modelowi językowemu, który identyfikuje podatności oraz proponuje poprawki.
 
 \subsubsection{Generowanie kodu i scalanie}
-LLM generuje `komplecje/generacje kodu`, które są następnie `łączone` w potencjalnie `naprawiony program`. Proces ten wykorzystuje również `narzędzia` i `bazy danych CVE` do weryfikacji i poprawy kodu.
+\begin{figure}[h]
+    \centering
+    % Adjust the clip and trim parameters as needed: {left bottom right top}
+    \includegraphics[clip, trim=12cm 6cm 6cm 0cm, width=0.9\linewidth]{img/gptester.drawio.png}
+    \caption{Czarna skrzynka - LLM (Large Language Model)}
+    \label{fig:przyciety_obraz}
+\end{figure}
+LLM generuje `komplecje/generacje kodu', które są następnie `łączone` w potencjalnie `naprawiony program`. Proces ten wykorzystuje również `narzędzia`(code interpreter, knowledge retrieval, file writing, git patch, ...), aby ułatwić obróbkę wyników oraz wzbogacić generację.
 
 \subsubsection{Testy i weryfikacja}
+\begin{figure}[h]
+    \centering
+    % Adjust the clip and trim parameters as needed: {left bottom right top}
+    \includegraphics[clip, trim=25cm 2cm 0cm 4cm, width=0.9\linewidth]{img/gptester.drawio.png}
+    \caption{Czarna skrzynka - LLM (Large Language Model)}
+    \label{fig:przyciety_obraz}
+\end{figure}
 Naprawiony kod jest poddawany `testom bezpieczeństwa` oraz `funkcjonalnym testom` w celu zapewnienia, że poprawki nie wprowadzają nowych błędów i że aplikacja nadal działa zgodnie z oczekiwaniami.
+Testy bezpieczeństwa są przeprowadzane ręcznie dla potwierdzenia poprawności działania, natomiast testy funkcjonalne są wykonywane automatycznie.
 
 \subsubsection{Dokumentacja i raportowanie}
 Wyniki pracy `gptester` są dokumentowane w `raporcie o błędach` i zapisywane w plikach markdown oraz w katalogu z `poprawionymi plikami wynikowymi`. W przyszłości `poprawki będą wprowadzane do bazy kodu za pomocą git patch`.
@@ -76,7 +128,7 @@ Wyniki pracy `gptester` są dokumentowane w `raporcie o błędach` i zapisywane 
 Diagram blokowy przedstawia kompleksowy proces analizy i naprawy kodu, który jest silnie zależny od danych wejściowych (kod źródłowy i testy bezpieczeństwa), zaawansowanych algorytmów przetwarzania (duże modele językowe) oraz dokładności w generowaniu poprawek kodu i ich weryfikacji. Cały proces jest automatyzowany z możliwością ręcznej interwencji na etapie generowania monitów i weryfikacji kodu wynikowego.
 
 
-\section{Proces implementacji}
+\section{Implementacja oraz użycie}
 \subsection{Środowisko programistyczne i wymagania}
 \label{sec:srodowisko_i_wymagania}
 
