@@ -1,51 +1,57 @@
-import unittest
-import sys
-import subprocess
+import subprocess 
+class TestCommand:
+    def execute(self):
+        raise NotImplementedError("Execute method should be implemented by subclasses.")
 
-def run_python_tests(test_path):
-    # Create a test loader
-    loader = unittest.TestLoader()
-    # Discover and load tests
-    suite = loader.discover(test_path)
+class RunCppTestsCommand(TestCommand):
+    def __init__(self, cpp_test_executable):
+        self.cpp_test_executable = cpp_test_executable
 
-    # Create a test runner that outputs to sys.stderr
-    runner = unittest.TextTestRunner(sys.stderr)
-    # Run the tests
-    result = runner.run(suite)
-    return result.wasSuccessful()
+    def execute(self):
+        subprocess.run([self.cpp_test_executable])
 
-def run_node_tests():
-    # Define the command to run your Node.js tests
-    # This is typically "npm test" or "node <test-runner-script>"
-    command = ["npm", "test"]
+class RunJavaTestsCommand(TestCommand):
+    def execute(self):
+        subprocess.run(["mvn", "test"])
 
-    # Run the command
-    result = subprocess.run(command, capture_output=True, text=True)
+class RunPythonTestsCommand(TestCommand):
+    def execute(self):
+        subprocess.run(["python", "-m", "unittest", "discover"])
 
-    # Output the results
-    print("STDOUT:", result.stdout)
-    print("STDERR:", result.stderr)
+class RunRubyTestsCommand(TestCommand):
+    def execute(self):
+        subprocess.run(["rspec", "--format", "documentation"])
 
-    # Check if the tests were successful
-    if result.returncode == 0:
-        print("Tests passed successfully.")
-    else:
-        print("Tests failed.")
+class RunRubyTestsCommand(TestCommand):
+    def execute(self):
+        subprocess.run(["rspec", "--format", "documentation"])
 
-def run_cpp_tests(command):
-    command = [command]  # Adjust with your test command
-    result = subprocess.run(command, capture_output=True, text=True)
-    print(result.stdout)
-    if result.returncode == 0:
-        print("C++ tests passed successfully.")
-    else:
-        print("C++ tests failed.")
+class RunPhpTestsCommand(TestCommand):
+    def execute(self):
+        subprocess.run(["phpunit"])
 
-def run_java_tests():
-    command = ["mvn", "test"]  # Maven command to run tests
-    result = subprocess.run(command, capture_output=True, text=True)
-    print(result.stdout)
-    if result.returncode == 0:
-        print("Java tests passed successfully.")
-    else:
-        print("Java tests failed.")
+class RunPhpTestsCommand(TestCommand):
+    def execute(self):
+        subprocess.run(["phpunit"])
+
+class TestRunner:
+    def run_test(self, command):
+        command.execute()
+
+if __name__ == "__main__":
+    test_runner = TestRunner()
+
+    cpp_test_command = RunCppTestsCommand()
+    test_runner.run_test(cpp_test_command)
+
+    java_test_command = RunJavaTestsCommand()
+    test_runner.run_test(java_test_command)
+
+    python_test_command = RunPythonTestsCommand()
+    test_runner.run_test(python_test_command)
+
+    ruby_test_command = RunRubyTestsCommand()
+    test_runner.run_test(ruby_test_command)
+
+    php_test_command = RunPhpTestsCommand()
+    test_runner.run_test(php_test_command)
