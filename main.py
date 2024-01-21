@@ -57,6 +57,9 @@ async def main():
         iol.log(f"File: {key}, \n```\n{value}\n```", color="green", verbose_only=True)
 
     iol.log(f'Tokens inside the directory: {num_tokens_from_string(dir_content)}', color='bright_cyan')
+    if args.tests:
+        iol.log(f"Functional tests provided, I will now run them", color="bright_cyan")
+        # run_tests(args.tests, args.directory)
 
     iol.log(f"Beginning code analysis...", color="red")
     iol.log(f"Using model: {args.model}", color="red")
