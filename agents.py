@@ -1,9 +1,6 @@
 # from agent import Agent
 from ai.assistant import Assistant as Agent
 from vector_memory.models import Task, CodeFile
-# from vector_memory.json_file_memory import JSONFileMemory
-# from vector_memory.memory import Memory
-# from utils.chat_to_files import to_files
 from DB import DBs, create_dbs
 from utils.io import IOlog
 from utils.config import Config
@@ -102,12 +99,11 @@ async def debug_agent(input: str, iol: IOlog = None, model: str = 'gpt-4-1106-pr
     messages = [user]
     return await ai.next(messages, directory=directory)
 
-async def debug_agent(input: str, iol: IOlog = None, model: str = 'gpt-4-1106-preview', directory: str = 'fixes') -> str:
-    """An agent used to debug the project
+async def test_agent(input: str, test: str, iol: IOlog = None, model: str = 'gpt-4-1106-preview', directory: str = 'tests') -> str:
+    """An agent used to test the supplied project
     Capabililties: 
         - Working on error messages - With the user (in the future it should be able to run the project and fix it on its own)
         - writing missing code files """
-
 
     write_file_json = {
         "name": "write_file",
@@ -122,16 +118,38 @@ async def debug_agent(input: str, iol: IOlog = None, model: str = 'gpt-4-1106-pr
         }
     }
 
+    run_tests_json = {
+        "name": "run_tests",
+        "description": "Executes test commands for specified programming languages using subprocesses.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "language": {
+                "type": "string",
+                "enum": ["cpp", "java", "python", "ruby", "php"]
+                },
+                "executable": {
+                "type": "string",
+                "description": "Path to the executable for C++ tests or additional command parameters for other languages."
+                }
+            },
+            "required": ["language"]
+        }
+    }
+
+
     tools=[
         {"type": "code_interpreter"},
         {"type": "retrieval"},
         {"type": "function", "function": write_file_json},
+        {"type": "function", "function": run_tests_json},
     ]
 
     ai = Agent(role=f"{dbs.prompts['test']}", name='test_agent', iol = iol, tools=tools, model=model)
     
-    user = ai.fuser(msg=f"""The project codebase:\n{input}. Please list all the vulnerabilities present in the codebase.
-                    Then output possible solutions to fix these vulnerabilities.""")
+    user = ai.fuser(msg=f"""The project codebase starts with (the amount that fits in the context window):\n{input}. User provided the following argument for tests: {test} 
+                    Please run the appropriate tests for the project. If tests are not provided, please write them.
+                    Save them to a file and then run them. Use provided functions to do so.""")
     
     messages = [user]
     return await ai.next(messages, directory=directory)
