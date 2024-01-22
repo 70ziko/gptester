@@ -30,6 +30,8 @@ parser.add_argument('--language', help='Provide a programming language of the pr
 
 
 # Inicjalizacja
+parser = argparse.ArgumentParser(description='GPTESTER | Static Code Analysis Agent\n')
+parser.add_argument('directory', type=str, help='Path to the directory to scan')
 args = parser.parse_args()
 project_name = os.path.basename(args.directory.rstrip('/'))
 iol = IOlog(verbose=args.verbose, name=project_name)
