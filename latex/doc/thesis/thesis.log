@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.20)  22 JAN 2024 08:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.20)  22 JAN 2024 23:38
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -4277,114 +4277,137 @@ l.27 \end{itemize}
                   
 I'm forgetting what you said and using zero instead.
 
-./badania.tex:35: Undefined control sequence.
+./badania.tex:38: Undefined control sequence.
 \enit@endenumerate ->\enit@after 
                                  \endlist \ifx \enit@series \relax \else \if...
-l.35 \end{enumerate}
-                    
+l.38     \end{enumerate}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:35: Undefined control sequence.
+./badania.tex:38: Undefined control sequence.
 \enit@endenumerate ...\else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.35 \end{enumerate}
-                    
+l.38     \end{enumerate}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:35: Missing number, treated as zero.
+./badania.tex:38: Missing number, treated as zero.
 <to be read again> 
                    =
-l.35 \end{enumerate}
-                    
+l.38     \end{enumerate}
+                        
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:35: Undefined control sequence.
+./badania.tex:38: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.35 \end{enumerate}
-                    
+l.38     \end{enumerate}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:35: Undefined control sequence.
+./badania.tex:38: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.35 \end{enumerate}
-                    
+l.38     \end{enumerate}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:35: Missing number, treated as zero.
+./badania.tex:38: Missing number, treated as zero.
 <to be read again> 
                    =
-l.35 \end{enumerate}
-                    
+l.38     \end{enumerate}
+                        
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:35: Undefined control sequence.
+./badania.tex:38: Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.35 \end{enumerate}
-                    
+l.38     \end{enumerate}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:35: Undefined control sequence.
+./badania.tex:38: Undefined control sequence.
 \enit@endenumerate ...t \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.35 \end{enumerate}
-                    
+l.38     \end{enumerate}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:35: Missing number, treated as zero.
+./badania.tex:38: Missing number, treated as zero.
 <to be read again> 
                    =
-l.35 \end{enumerate}
-                    
+l.38     \end{enumerate}
+                        
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:35: Undefined control sequence.
+./badania.tex:38: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.35 \end{enumerate}
-                    
+l.38     \end{enumerate}
+                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:35: Undefined control sequence.
+./badania.tex:38: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.35 \end{enumerate}
+l.38     \end{enumerate}
+                        
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:38: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.38     \end{enumerate}
+                        
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+[24
+
+]
+./badania.tex:41: Undefined control sequence.
+\enit@endenumerate ->\enit@after 
+                                 \endlist \ifx \enit@series \relax \else \if...
+l.41 \end{enumerate}
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4392,20 +4415,124 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:35: Missing number, treated as zero.
+./badania.tex:41: Undefined control sequence.
+\enit@endenumerate ...\else \ifnum \enit@resuming 
+                                                  =\@ne \enit@setresumekeys ...
+l.41 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:41: Missing number, treated as zero.
 <to be read again> 
                    =
-l.35 \end{enumerate}
+l.41 \end{enumerate}
                     
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-Package markdown Info: Including markdown document "../raports/Authentication_Bypass_20240120120144_raport.md" on input line 43.
+./badania.tex:41: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.41 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:41: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.41 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:41: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.41 \end{enumerate}
+                    
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:41: Undefined control sequence.
+<argument> enit@resume@series@\enit@series 
+                                           
+l.41 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:41: Undefined control sequence.
+\enit@endenumerate ...t \fi \ifnum \enit@resuming 
+                                                  =\thr@@ \enit@setresumekey...
+l.41 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:41: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.41 \end{enumerate}
+                    
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:41: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.41 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:41: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.41 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:41: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.41 \end{enumerate}
+                    
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+Package markdown Info: Including markdown document "../raports/Authentication_Bypass_20240120120144_raport.md" on input line 49.
 \openout6 = `thesis.markdown.lua'.
 
-Package markdown Info: Writing a helper Lua script to the file "thesis.markdown.lua" on input line 43.
-Package markdown Info: Executing a helper Lua script from the file "thesis.markdown.lua" and storing the result in the file "thesis.markdown.out" on input line 43.
+Package markdown Info: Writing a helper Lua script to the file "thesis.markdown.lua" on input line 49.
+Package markdown Info: Executing a helper Lua script from the file "thesis.markdown.lua" and storing the result in the file "thesis.markdown.out" on input line 49.
 runsystem(texlua "./thesis.markdown.lua" > "./thesis.markdown.out")...executed.
 
 (./thesis.markdown.out
@@ -4420,31 +4547,351 @@ l.1 ..., examine the file "./thesis.markdown.err"}
                                                   
 For further clues, examine the file "./thesis.markdown.err".
 
-) [24
-
-]
-Overfull \hbox (17.7001pt too wide) in paragraph at lines 67--67
+)
+Overfull \hbox (17.7001pt too wide) in paragraph at lines 73--73
 []\T1/cmtt/m/n/12 2024-01-20 12:54:36: Welcome to gptester: the Static Code Analysis Agent[] 
  []
 
 
-Overfull \hbox (221.42535pt too wide) in paragraph at lines 67--67
+Overfull \hbox (221.42535pt too wide) in paragraph at lines 73--73
 []\T1/cmtt/m/n/12 2024-01-20 12:54:36: I will now begin scanning: Vulnerable-Code-Snippets/, name: Vulnerable-Code-Snippets[] 
  []
 
-) (./summary.tex [25]) (./thesis.bbl [26
+
+Overfull \hbox (27.85298pt too wide) in paragraph at lines 77--78
+[]\T1/qtm/m/n/12 (-20) Pierwsz¡ ana-li-z¡, któ-r¡ prze-pro-wa-dzo-no na zbio-rze \T1/qtm/m/it/12 (-20) snoopysecurity/Vulnerable-Code-Snippets\T1/qtm/m/n/12 (-20) ,
+ []
+
+[25]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69687pt, 56.9055pt)
+* v-part:(T,H,B)=(28.45274pt, 715.18745pt, 101.40665pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69687pt
+* \textheight=715.18745pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-74.81725pt
+* \headheight=14.5pt
+* \headsep=16.5pt
+* \topskip=12.0pt
+* \footskip=29.0pt
+* \marginparwidth=0.0pt
+* \marginparsep=0.0pt
+* \columnsep=25.6802pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\openout4 = `thesis.pyg'.
+
+ (./_minted-thesis/300524C4B6C87F82C758EF731327227FAC0F4BB34297159B73BF05BCA899AAC4.pygtex
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 3.
+
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <8> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 3.
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 3.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 3.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 3.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 7.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 7.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 7.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 7.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 11.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 11.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 12.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 12.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 12.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 12.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 12.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 12.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 16.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 16.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 16.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 16.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 17.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 17.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 18.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 18.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 19.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 19.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 19.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 19.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 24.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 24.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 24.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 24.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 25.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 25.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 27.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 27.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 27.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 27.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 27.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 27.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 27.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 27.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 29.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 29.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 29.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 29.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 30.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 30.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 30.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 30.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 30.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 30.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 30.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 30.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 32.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 32.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 33.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 33.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 35.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 35.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 41.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 41.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 46.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 46.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 46.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 46.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 55.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 55.
+
+)
+
+LaTeX Warning: Float too large for page by 8.84702pt on input line 149.
+
+[26]) (./summary.tex [27
+
+
+]) (./thesis.bbl [28
 
 ]
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [27
+) [29
 
 ]
 \tf@lof=\write10
 \openout10 = `thesis.lof'.
 
- [28
+ [30
 
 ]
 
@@ -4453,19 +4900,19 @@ Package hyperref Warning: old lop file detected, not used; run LaTeX again.
 \tf@lop=\write11
 \openout11 = `thesis.lop'.
 
-[29
+[31
 
 ]
 \tf@lot=\write12
 \openout12 = `thesis.lot'.
 
- [30
+ [32
 
-] [31
+] [33
 
 ] (./appendix1.tex
 Dodatek A.
-) [32
+) [34
 
 ] (./thesis.aux)
 
@@ -4481,23 +4928,23 @@ Package rerunfilecheck Warning: File `thesis.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `thesis.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D1A656B6AECD51E4D53E6762F57881DB;10693.
+(rerunfilecheck)             After:  868D3E3E50DF92978C4895222D970FB9;11636.
 runsystem(rm thesis.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 33535 strings out of 478287
- 638388 string characters out of 5849288
- 1055850 words of memory out of 5000000
- 50765 multiletter control sequences out of 15000+600000
- 525355 words of font info for 149 fonts, out of 8000000 for 9000
+ 33570 strings out of 478287
+ 639360 string characters out of 5849288
+ 1079663 words of memory out of 5000000
+ 50782 multiletter control sequences out of 15000+600000
+ 528732 words of font info for 153 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,13n,120p,1061b,831s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmbi.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfit1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on thesis.pdf (37 pages, 573642 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmbi.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfit1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on thesis.pdf (39 pages, 620720 bytes).
 PDF statistics:
- 398 PDF objects out of 1000 (max. 8388607)
- 316 compressed objects within 4 object streams
- 138 named destinations out of 1000 (max. 500000)
- 33344 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 423 PDF objects out of 1000 (max. 8388607)
+ 337 compressed objects within 4 object streams
+ 149 named destinations out of 1000 (max. 500000)
+ 35904 words of extra memory for PDF output out of 42996 (max. 10000000)
 
