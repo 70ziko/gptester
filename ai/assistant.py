@@ -18,6 +18,7 @@ class Assistant():
         """
         Initialize the AI object with empty lists of functions, and performance evaluations.
         """
+        self.name = name
         self.iol = iol
         self.instructions = role
         self.assistant = client.assistants.create(
@@ -99,7 +100,7 @@ class Assistant():
                     for tool_call in run_status.required_action.submit_tool_outputs.tool_calls:
                         name = tool_call.function.name
                         arguments = json.loads(tool_call.function.arguments)
-                        if "filename" in arguments: 
+                        if "filename" in arguments and self.name == "debug_agent": 
                             filename = os.path.basename(arguments["filename"])
                             timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                             arguments["filename"] = os.path.join(directory, f'fixed_{timestamp}', filename)
