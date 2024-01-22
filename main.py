@@ -13,30 +13,6 @@ from utils.traverser import walk_directory
 from utils.utils import num_tokens_from_string
 from utils.config import Config
 import agents
-from utils.utils import num_tokens_from_string
-from utils.config import Config
-import agents
-
-# obsługa programu poprzez argumenty przekazywane w konsoli
-parser = argparse.ArgumentParser(description='GPTESTER | Static Code Analysis Agent\n')
-parser.add_argument('directory', type=str, help='Path to the directory to scan')
-parser.add_argument('-v', '--verbose', help='Print out all the outputs and steps taken', action='store_true')
-parser.add_argument('-m', '--model', help='Choose the LLM model for code analysis, default: "gpt-4-1106-preview"', default="gpt-4-1106-preview")
-parser.add_argument('-o', '--output', help='Output the results to a file, default: "raports/{name_of_parent_folder}_{timestamp}_raport.md"')
-parser.add_argument('-t', '--tests', help='Provide a path to functional tests to run on the project, if not supplied or found in the workspace directory, the tests will be generated or skipped')
-parser.add_argument('-c', '--codeql', help='Use codeql to enhance the scan, REQUIRED to install CodeQL-CLI console tool', action='store_true', default=False)
-parser.add_argument('--command', help='Provide a build command to run the project for codeql, if no cmake or other file present in the project root directory, default: "make"', default="make")
-parser.add_argument('--language', help='Provide a programming language of the project for codeql, default: "cpp"', default="cpp")
-
-
-# Inicjalizacja
-parser = argparse.ArgumentParser(description='GPTESTER | Static Code Analysis Agent\n')
-parser.add_argument('directory', type=str, help='Path to the directory to scan')
-args = parser.parse_args()
-project_name = os.path.basename(args.directory.rstrip('/'))
-iol = IOlog(verbose=args.verbose, name=project_name)
-CFG = Config()
-
 def split_content(dir_content, max_tokens):
     chunks = []
     chunk = {}
@@ -74,6 +50,29 @@ async def run_agents(args, iol, chunks):
     tasks.extend(debug_tasks)
 
     # Wait for all tasks to complete
+from utils.utils import num_tokens_from_string
+from utils.config import Config
+import agents
+
+# obsługa programu poprzez argumenty przekazywane w konsoli
+parser = argparse.ArgumentParser(description='GPTESTER | Static Code Analysis Agent\n')
+parser.add_argument('directory', type=str, help='Path to the directory to scan')
+parser.add_argument('-v', '--verbose', help='Print out all the outputs and steps taken', action='store_true')
+parser.add_argument('-m', '--model', help='Choose the LLM model for code analysis, default: "gpt-4-1106-preview"', default="gpt-4-1106-preview")
+parser.add_argument('-o', '--output', help='Output the results to a file, default: "raports/{name_of_parent_folder}_{timestamp}_raport.md"')
+parser.add_argument('-t', '--tests', help='Provide a path to functional tests to run on the project, if not supplied or found in the workspace directory, the tests will be generated or skipped')
+parser.add_argument('-c', '--codeql', help='Use codeql to enhance the scan, REQUIRED to install CodeQL-CLI console tool', action='store_true', default=False)
+parser.add_argument('--command', help='Provide a build command to run the project for codeql, if no cmake or other file present in the project root directory, default: "make"', default="make")
+parser.add_argument('--language', help='Provide a programming language of the project for codeql, default: "cpp"', default="cpp")
+
+
+# Inicjalizacja
+parser = argparse.ArgumentParser(description='GPTESTER | Static Code Analysis Agent\n')
+parser.add_argument('directory', type=str, help='Path to the directory to scan')
+args = parser.parse_args()
+project_name = os.path.basename(args.directory.rstrip('/'))
+iol = IOlog(verbose=args.verbose, name=project_name)
+CFG = Config()
     for completed_task in asyncio.as_completed(tasks):
         output = await completed_task
 
