@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kd}{class} \PYG{n+nc}{CVE\PYGZus{}2019\PYGZus{}1937}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kd}{static}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{main}\PYG{p}{(}\PYG{n}{String}\PYG{o}{[]}\PYG{+w}{ }\PYG{n}{args}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{String}\PYG{o}{[]}\PYG{+w}{ }\PYG{n}{cmd}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{l+s}{\PYGZdq{}bash\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}\PYGZhy{}c\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}bash \PYGZhy{}i \PYGZgt{}\PYGZam{} /dev/tcp/}
+\PYG{l+s}{\PYGZbs{}}
+
+\PYG{l+s}{\PYGZbs{}subsection\PYGZob{}Interpretacja wyników\PYGZcb{}}
+\PYG{l+s}{\PYGZbs{}label\PYGZob{}subsec:interpretacja\PYGZus{}wynikow\PYGZcb{}}
+
+\PYG{l+s}{Interpretacja wyników eksperymentów ujawniła istotne spostrzeżenia dotyczące możliwości wykorzystania modeli AI w celu poprawy bezpieczeństwa kodu. Analiza wykazała, że ...}
+
+\PYG{l+s}{\PYGZpc{} Tutaj należy dodać interpretację wyników w kontekście wykresów i tabel (jeśli takowe zostały przygotowane)}
+
+\PYG{l+s}{\PYGZbs{}section\PYGZob{}Wnioski\PYGZcb{}}
+\PYG{l+s}{\PYGZbs{}label\PYGZob{}sec:wnioski\PYGZcb{}}
+
+\PYG{l+s}{Na podstawie przeprowadzonych badań eksperymentalnych udało się zweryfikować założenia dotyczące efektywności wykorzystania modeli AI w procesie identyfikacji i naprawy podatności w kodzie źródłowym. Główne wnioski to:}
+
+\PYG{l+s}{\PYGZpc{} Tutaj należy wstawić wnioski z badania}
+\end{Verbatim}
