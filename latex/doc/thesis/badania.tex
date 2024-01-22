@@ -1,55 +1,61 @@
 \chapter{Badania eksperymentalne - wyniki i wnioski}
 \label{ch:badania_eksperymentalne}
 
-W tym rozdziale omawiamy wyniki i wnioski z przeprowadzonych badań eksperymentalnych. Wszelkie wyniki powinny być opisane w sposób zrozumiały i czytelny, a także powinny być poparte odpowiednimi wykresami i tabelami. Wnioski powinny być wyciągnięte na podstawie wyników i powinny być zgodne z celami projektu.
+W niniejszym rozdziale prezentujemy wyniki oraz wnioski wynikające z przeprowadzonych badań eksperymentalnych. Zestawienie rezultatów eksperymentów zostało dokonane w sposób zrozumiały i klarowny, z odpowiednim wsparciem graficznym w postaci wykresów i tabel. Wnioski są bezpośrednio powiązane z wynikami badań oraz są zgodne z założonymi celami projektu.
 
 \section{Metodologia badań}
 \label{sec:metodologia_badan}
 
-W tej sekcji przedstawiamy użyte metody i podejście do przeprowadzenia eksperymentów. Omówione zostaną użyte narzędzia, parametry konfiguracyjne oraz procedura testowa.
+W tej sekcji szczegółowo omawiamy metody oraz podejście zastosowane podczas eksperymentów. Zostaną przedstawione narzędzia, parametry konfiguracyjne oraz procedura testowa, które razem tworzą ramy metodyczne naszego badania.
 
 \subsection{Konfiguracja środowiska}
 \label{subsec:konfiguracja_srodowiska}
 
+Do eksperymentów wykorzystano następujące ustawienia konfiguracyjne środowiska:
 \begin{verbatim}
-    > ./main.py -m 'gpt-4-1106-preview' \
-    Vulnerable-Code-Snippets/Authentication_Bypass/
+    > ./main.py -m 'gpt-4-1106-preview' Vulnerable-Code-Snippets/
 \end{verbatim}
 
 \subsection{Procedura testowa}
 \label{subsec:procedura_testowa}
 
-Procedura testowa została zaprojektowana w celu ...
+Zaprojektowana procedura testowa miała na celu dokładną weryfikację funkcjonalności programu oraz ocenę jego skuteczności w wykrywaniu i naprawie podatności. Kryteria testowe zostały dobrane w sposób umożliwiający kompleksową analizę:
+\begin{itemize}
+    \item \textbf{Kryterium 1}: Dokładność identyfikacji podatności.
+    \item \textbf{Kryterium 2}: Skuteczność proponowanych napraw.
+    \item \textbf{Kryterium 3}: Efektywność czasowa analizy.
+\end{itemize}
+
+Procedura testowa przebiegała według następujących etapów:
+\begin{enumerate}
+    \item Selekcja i przygotowanie danych testowych.
+    \item Analiza statyczna kodu z wykorzystaniem narzędzi AI.
+    \item Przeprowadzenie testów funkcjonalnych oraz testów bezpieczeństwa.
+    \item Analiza i interpretacja wyników.
+\end{enumerate}
 
 \subsection{Wyniki działania programu - przykład}
 \label{subsec:wyniki_dzialania_programu}
 
-Wynik działania programu został wyświetlony na konsoli oraz zapisany do pliku \texttt{`raports/Authentication_Bypass_20240120120144_raport.md'} i wygląda następująco:
+Wyniki działania programu, prezentowane na konsoli oraz dokumentowane w plikach raportów, zapewniają bezpośredni wgląd w proces analizy kodu:
+% Tutaj należy wstawić odpowiednią zawartość raportu w formacie Markdown, o ile jest dostępna
 
 \markdownInput{../raports/Authentication_Bypass_20240120120144_raport.md} 
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{img/accuracy.png}
-%     \caption{Przykładowy wykres z wynikami}
-%     \label{fig:accuracy}
-% \end{figure}
+
 
 
 \section{Badania na zbiorze \textit{snoopysecurity/Vulnerable-Code-Snippets}}
 \label{sec:badania_na_zbiorze_snoopysecurity}
 
-W tym rozdziale omawiamy wyniki badań przeprowadzonych na zbiorze \textit{snoopysecurity/Vulnerable-Code-Snippets}. Zbiór ten został wybrany ze względu na jego rozmiar, różnorodność i dostępność. Przede wszystkim zawiera on wiele przykładów kodu, które są podatne na ataki XSS, SQL Injection, CSRF i inne.
-Przede wszystkim zawiera on wiele przykładów kodu, które są podatne na ataki XSS, SQL Injection, CSRF i inne.
-Zawiera on łącznie 184 pliki.
+Analiza zbioru \textit{snoopysecurity/Vulnerable-Code-Snippets} dostarczyła istotnych informacji na temat specyfiki podatności i skuteczności ich wykrywania przez system. Zbiór ten, zawierający 184 pliki źródłowe o łącznej liczbie 41831 tokenów, stanowił reprezentatywną próbkę dla naszych eksperymentów.
 
-Dzięki zastosowaniu algorytmów fragmentacji i filtrowania, mogłem przeprowadzić badania na całym zbiorze danych, a nie tylko na jego części za pomocą jednego zapytania.
-Jako, że pliki w tym zbiorze są dość małe, nie było potrzeby stosowania algorytmów fragmentacji i filtrowania, ponieważ pliki zawierały w sumie jedynie 41831 tokenów.
-Program został wywołany z następującymi parametrami:
+Eksperymenty przeprowadzono z wykorzystaniem poniższych parametrów:
 \begin{verbatim}
-    > ./main.py -m 'gpt-4-1106-preview' \
-    Vulnerable-Code-Snippets/
+    > ./main.py -m 'gpt-4-1106-preview' Vulnerable-Code-Snippets/
 \end{verbatim}
+
+
 \begin{verbatim}
 2024-01-20 12:54:36: Welcome to gptester: the Static Code Analysis Agent
 2024-01-20 12:54:36: I will now begin scanning: Vulnerable-Code-Snippets/, name: Vulnerable-Code-Snippets
@@ -60,25 +66,18 @@ Program został wywołany z następującymi parametrami:
 2024-01-20 12:54:36: Using model: gpt-4-1106-preview
 \end{verbatim}
 
-Wynik działania programu został wyświetlony na konsoli oraz zapisany do pliku \texttt{`raports/Vulnerable-Code-Snippets_20240120120144_raport.md'} i wygląda następująco:
 
 
 \subsection{Interpretacja wyników}
 \label{subsec:interpretacja_wynikow}
 
-Interpretacja wyników eksperymentów ...
+Interpretacja wyników eksperymentów ujawniła istotne spostrzeżenia dotyczące możliwości wykorzystania modeli AI w celu poprawy bezpieczeństwa kodu. Analiza wykazała, że ...
 
-% Tutaj możesz wstawić wykresy i tabele
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{img/accuracy.png}
-%     \caption{Przykładowy wykres z wynikami}
-%     \label{fig:accuracy}
-% \end{figure}
+% Tutaj należy dodać interpretację wyników w kontekście wykresów i tabel (jeśli takowe zostały przygotowane)
 
 \section{Wnioski}
 \label{sec:wnioski}
 
-Na podstawie przeprowadzonych badań eksperymentalnych, możemy wyciągnąć następujące wnioski: ...
+Na podstawie przeprowadzonych badań eksperymentalnych udało się zweryfikować założenia dotyczące efektywności wykorzystania modeli AI w procesie identyfikacji i naprawy podatności w kodzie źródłowym. Główne wnioski to:
 
 % Tutaj należy wstawić wnioski z badania

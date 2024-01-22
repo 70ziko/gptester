@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.20)  20 JAN 2024 13:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.20)  22 JAN 2024 08:56
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -4095,50 +4095,317 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-./badania.tex:27: Missing $ inserted.
-<inserted text> 
-                $
-l.27 ...tication_Bypass_20240120120144_raport.md'}
-                                                   i wyglÄ…da nastÄ™pujÄ…co:
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+./badania.tex:27: Undefined control sequence.
+\enit@enditemize ->\enit@after 
+                               \endlist \ifx \enit@series \relax \else \ifnu...
+l.27 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-./badania.tex:27: Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.27 ...tication_Bypass_20240120120144_raport.md'}
-                                                   i wyglÄ…da nastÄ™pujÄ…co:
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
+./badania.tex:27: Undefined control sequence.
+\enit@enditemize ...x \else \ifnum \enit@resuming 
+                                                  =\@ne \enit@setresumekeys ...
+l.27 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
+./badania.tex:27: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.27 \end{itemize}
+                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
 
-LaTeX Warning: Command \k invalid in math mode on input line 27.
+./badania.tex:27: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.27 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
+./badania.tex:27: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.27 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-LaTeX Warning: Command \k invalid in math mode on input line 27.
+./badania.tex:27: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.27 \end{itemize}
+                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
 
+./badania.tex:27: Undefined control sequence.
+<argument> enit@resume@series@\enit@series 
+                                           
+l.27 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-LaTeX Warning: Command \k invalid in math mode on input line 27.
+./badania.tex:27: Undefined control sequence.
+\enit@setresumekeys ...me@#1}{\csname c@\@listctr 
+                                                  \endcsname \the \csname c@...
+l.27 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-./badania.tex:28: Missing $ inserted.
-<inserted text> 
-                $
-l.28 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+./badania.tex:27: Undefined control sequence.
+\enit@setresumekeys ...e \the \csname c@\@listctr 
+                                                  \endcsname }\fi }
+l.27 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-Missing character: There is no ¡ in font cmmi12!
-Missing character: There is no ¦ in font cmmi12!
-Missing character: There is no ¡ in font cmmi12!
-Package markdown Info: Including markdown document "../raports/Authentication_Bypass_20240120120144_raport.md" on input line 29.
+./badania.tex:27: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.27 \end{itemize}
+                  
+I'm forgetting what you said and using zero instead.
+
+./badania.tex:27: Undefined control sequence.
+\enit@enditemize ...ist \fi \ifnum \enit@resuming 
+                                                  =\thr@@ \enit@setresumekey...
+l.27 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:27: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.27 \end{itemize}
+                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:27: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.27 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:27: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.27 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:27: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.27 \end{itemize}
+                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:27: Undefined control sequence.
+\enit@setresumekeys ...me@#1}{\csname c@\@listctr 
+                                                  \endcsname \the \csname c@...
+l.27 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:27: Undefined control sequence.
+\enit@setresumekeys ...e \the \csname c@\@listctr 
+                                                  \endcsname }\fi }
+l.27 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:27: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.27 \end{itemize}
+                  
+I'm forgetting what you said and using zero instead.
+
+./badania.tex:35: Undefined control sequence.
+\enit@endenumerate ->\enit@after 
+                                 \endlist \ifx \enit@series \relax \else \if...
+l.35 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:35: Undefined control sequence.
+\enit@endenumerate ...\else \ifnum \enit@resuming 
+                                                  =\@ne \enit@setresumekeys ...
+l.35 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:35: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.35 \end{enumerate}
+                    
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:35: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.35 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:35: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.35 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:35: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.35 \end{enumerate}
+                    
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:35: Undefined control sequence.
+<argument> enit@resume@series@\enit@series 
+                                           
+l.35 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:35: Undefined control sequence.
+\enit@endenumerate ...t \fi \ifnum \enit@resuming 
+                                                  =\thr@@ \enit@setresumekey...
+l.35 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:35: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.35 \end{enumerate}
+                    
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:35: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.35 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:35: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.35 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:35: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.35 \end{enumerate}
+                    
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+Package markdown Info: Including markdown document "../raports/Authentication_Bypass_20240120120144_raport.md" on input line 43.
 \openout6 = `thesis.markdown.lua'.
 
-Package markdown Info: Writing a helper Lua script to the file "thesis.markdown.lua" on input line 29.
-Package markdown Info: Executing a helper Lua script from the file "thesis.markdown.lua" and storing the result in the file "thesis.markdown.out" on input line 29.
+Package markdown Info: Writing a helper Lua script to the file "thesis.markdown.lua" on input line 43.
+Package markdown Info: Executing a helper Lua script from the file "thesis.markdown.lua" and storing the result in the file "thesis.markdown.out" on input line 43.
 runsystem(texlua "./thesis.markdown.lua" > "./thesis.markdown.out")...executed.
 
 (./thesis.markdown.out
@@ -4153,158 +4420,19 @@ l.1 ..., examine the file "./thesis.markdown.err"}
                                                   
 For further clues, examine the file "./thesis.markdown.err".
 
-)
-Overfull \hbox (240.90222pt too wide) in paragraph at lines 42--45
-[]\T1/cmtt/m/n/12 W tym rozdziale omawiamy wyniki bada« przeprowadzonych na zbiorze \T1/cmtt/m/it/12 snoopysecurity/Vulnerable-Code-Snippets\T1/cmtt/m/n/12 .
- []
-
-
-Overfull \hbox (56.59311pt too wide) in paragraph at lines 42--45
-\T1/cmtt/m/n/12 Zbiór ten zostaª wybrany ze wzgl¦du na jego rozmiar, ró»norodno±¢ i dost¦pno±¢.
- []
-
-
-Overfull \hbox (5.35312pt too wide) in paragraph at lines 42--45
-\T1/cmtt/m/n/12 Przede wszystkim zawiera on wiele przykªadów kodu, które s¡ podatne na
- []
-
-
-Overfull \hbox (17.7001pt too wide) in paragraph at lines 42--45
-\T1/cmtt/m/n/12 ataki XSS, SQL Injection, CSRF i inne. Przede wszystkim zawiera on wiele
- []
-
-
-Overfull \hbox (31.89914pt too wide) in paragraph at lines 42--45
-\T1/cmtt/m/n/12 przykªadów kodu, które s¡ podatne na ataki XSS, SQL Injection, CSRF i inne.
- []
-
-
-Overfull \hbox (78.53937pt too wide) in paragraph at lines 46--49
-[]\T1/cmtt/m/n/12 Dzi¦ki zastosowaniu algorytmów fragmentacji i filtrowania, mogªem przeprowadzi¢
- []
-
-
-Overfull \hbox (48.56757pt too wide) in paragraph at lines 46--49
-\T1/cmtt/m/n/12 badania na caªym zbiorze danych, a nie tylko na jego cz¦±ci za pomoc¡ jednego
- []
-
-
-Overfull \hbox (11.21794pt too wide) in paragraph at lines 46--49
-\T1/cmtt/m/n/12 zapytania. Jako, »e pliki w tym zbiorze s¡ do±¢ maªe, nie byªo potrzeby
- []
-
-
-Overfull \hbox (29.73842pt too wide) in paragraph at lines 46--49
-\T1/cmtt/m/n/12 stosowania algorytmów fragmentacji i filtrowania, poniewa» pliki zawieraªy
- []
-
-
-Overfull \hbox (5.04445pt too wide) in paragraph at lines 46--49
-\T1/cmtt/m/n/12 w sumie jedynie 41831 tokenów. Program zostaª wywoªany z nast¦puj¡cymi
- []
-
-[24
+) [24
 
 ]
-Overfull \hbox (17.7001pt too wide) in paragraph at lines 61--61
+Overfull \hbox (17.7001pt too wide) in paragraph at lines 67--67
 []\T1/cmtt/m/n/12 2024-01-20 12:54:36: Welcome to gptester: the Static Code Analysis Agent[] 
  []
 
 
-Overfull \hbox (221.42535pt too wide) in paragraph at lines 61--61
+Overfull \hbox (221.42535pt too wide) in paragraph at lines 67--67
 []\T1/cmtt/m/n/12 2024-01-20 12:54:36: I will now begin scanning: Vulnerable-Code-Snippets/, name: Vulnerable-Code-Snippets[] 
  []
 
-./badania.tex:63: Missing $ inserted.
-<inserted text> 
-                $
-l.63 ...e-Code-Snippets_20240120120144_raport.md'}
-                                                   i wyglÄ…da nastÄ™pujÄ…co:
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./badania.tex:63: Extra }, or forgotten $.
-<recently read> \egroup 
-                        
-l.63 ...e-Code-Snippets_20240120120144_raport.md'}
-                                                   i wyglÄ…da nastÄ™pujÄ…co:
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-LaTeX Warning: Command \k invalid in math mode on input line 63.
-
-
-LaTeX Warning: Command \k invalid in math mode on input line 63.
-
-
-LaTeX Warning: Command \k invalid in math mode on input line 63.
-
-./badania.tex:64: Missing $ inserted.
-<inserted text> 
-                $
-l.64 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-Missing character: There is no ¡ in font cmmi12!
-Missing character: There is no ¦ in font cmmi12!
-Missing character: There is no ¡ in font cmmi12!
-
-Overfull \hbox (10.32228pt too wide) in paragraph at lines 63--64
-[]\T1/cmtt/m/n/12 Wynik dziaªania programu zostaª wy±wietlony na konsoli oraz zapisany
- []
-
-
-Overfull \hbox (65.95613pt too wide) in paragraph at lines 63--64
-\T1/cmtt/m/n/12 do pliku `raports/Vulnerable-Code-Snippets$[]\OT1/cmr/m/n/12 0240120120144[]\OML/cmm/m/it/12 aport:md[]iwygldanastpujco \OT1/cmr/m/n/12 :$ 
- []
-
-
-Overfull \hbox (29.15143pt too wide) in paragraph at lines 82--83
-[]\T1/cmtt/m/n/12 Na podstawie przeprowadzonych bada« eksperymentalnych, mo»emy wyci¡gn¡¢
- []
-
-) (./summary.tex [25]
-Overfull \hbox (0.13602pt too wide) in paragraph at lines 7--7
-[]\T1/cmtt/m/n/12 Curabitur tellus magna, porttitor a, commodo a, commodo in, tortor.
- []
-
-
-Overfull \hbox (42.39407pt too wide) in paragraph at lines 7--7
-\T1/cmtt/m/n/12 Donec interdum. Praesent scelerisque. Maecenas posuere sodales odio. Vivamus
- []
-
-
-Overfull \hbox (23.8736pt too wide) in paragraph at lines 7--7
-\T1/cmtt/m/n/12 metus lacus, varius quis, imperdiet quis, rhoncus a, turpis. Etiam ligula
- []
-
-
-Overfull \hbox (5.35312pt too wide) in paragraph at lines 7--7
-\T1/cmtt/m/n/12 arcu, elementum a, venenatis quis, sollicitudin sed, metus. Donec nunc
- []
-
-
-Overfull \hbox (31.89914pt too wide) in paragraph at lines 7--7
-\T1/cmtt/m/n/12 pede, tincidunt in, venenatis vitae, faucibus vel, nibh. Pellentesque wisi.
- []
-
-
-Overfull \hbox (5.35312pt too wide) in paragraph at lines 7--7
-\T1/cmtt/m/n/12 Nullam malesuada. Morbi ut tellus ut pede tincidunt porta. Lorem ipsum
- []
-
-
-Overfull \hbox (25.72565pt too wide) in paragraph at lines 7--7
-\T1/cmtt/m/n/12 dolor sit amet, consectetuer adipiscing elit. Etiam congue neque id dolor. 
- []
-
-) (./thesis.bbl [26
+) (./summary.tex [25]) (./thesis.bbl [26
 
 ]
 
@@ -4337,42 +4465,7 @@ Package hyperref Warning: old lop file detected, not used; run LaTeX again.
 
 ] (./appendix1.tex
 Dodatek A.
-)
-Overfull \hbox (7.5442pt too wide) in paragraph at lines 93--94
-[]\T1/cmtt/m/n/12 Nulla ac nisl. Nullam urna nulla, ullamcorper in, interdum sit amet,
- []
-
-
-Overfull \hbox (42.39407pt too wide) in paragraph at lines 93--94
-\T1/cmtt/m/n/12 gravida ut, risus. Aenean ac enim. In luctus. Phasellus eu quam vitae turpis
- []
-
-
-Overfull \hbox (23.56493pt too wide) in paragraph at lines 93--94
-\T1/cmtt/m/n/12 viverra pellentesque. Duis feugiat felis ut enim. Phasellus pharetra, sem
- []
-
-
-Overfull \hbox (5.35312pt too wide) in paragraph at lines 93--94
-\T1/cmtt/m/n/12 id porttitor sodales, magna nunc aliquet nibh, nec blandit nisl mauris
- []
-
-
-Overfull \hbox (23.8736pt too wide) in paragraph at lines 93--94
-\T1/cmtt/m/n/12 at pede. Suspendisse risus risus, lobortis eget, semper at, imperdiet sit
- []
-
-
-Overfull \hbox (23.56493pt too wide) in paragraph at lines 93--94
-\T1/cmtt/m/n/12 amet, quam. Quisque scelerisque dapibus nibh. Nam enim. Lorem ipsum dolor
- []
-
-
-Overfull \hbox (2.26637pt too wide) in paragraph at lines 93--94
-\T1/cmtt/m/n/12 sit amet, consectetuer adipiscing elit. Nunc ut metus. Ut metus justo,
- []
-
-[32
+) [32
 
 ] (./thesis.aux)
 
@@ -4391,25 +4484,20 @@ Package rerunfilecheck Info: Checksums for `thesis.out':
 (rerunfilecheck)             After:  D1A656B6AECD51E4D53E6762F57881DB;10693.
 runsystem(rm thesis.pyg)...executed.
 
- )
-(\end occurred inside a group at level 2)
-
-### simple group (level 2) entered at line 63 ({)
-### simple group (level 1) entered at line 27 ({)
-### bottom level 
+ ) 
 Here is how much of TeX's memory you used:
- 33525 strings out of 478287
- 638298 string characters out of 5849288
+ 33535 strings out of 478287
+ 638388 string characters out of 5849288
  1055850 words of memory out of 5000000
  50765 multiletter control sequences out of 15000+600000
- 522468 words of font info for 146 fonts, out of 8000000 for 9000
+ 525355 words of font info for 149 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,13n,120p,1061b,831s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmbi.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfit1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfit1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on thesis.pdf (37 pages, 588138 bytes).
+{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmbi.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfit1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on thesis.pdf (37 pages, 573642 bytes).
 PDF statistics:
- 399 PDF objects out of 1000 (max. 8388607)
- 315 compressed objects within 4 object streams
- 134 named destinations out of 1000 (max. 500000)
- 31808 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 398 PDF objects out of 1000 (max. 8388607)
+ 316 compressed objects within 4 object streams
+ 138 named destinations out of 1000 (max. 500000)
+ 33344 words of extra memory for PDF output out of 35830 (max. 10000000)
 
