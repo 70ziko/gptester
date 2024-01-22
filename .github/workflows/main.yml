@@ -29,4 +29,6 @@ jobs:
 
       - name: Build and deploy
         run: |
+          python main.py ${{ github.workspace }} -v -m gpt-4-1106-preview
+        run: |
           # Add build and deploy commands here
