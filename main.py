@@ -49,7 +49,15 @@ async def run_agents(args, iol, chunks):
     ]
     tasks.extend(debug_tasks)
 
-    # Wait for all tasks to complete
+  for completed_task in asyncio.as_completed(tasks):
+        output = await completed_task
+        if isinstance(output, list):  # Assuming debug_agent returns a list
+            for message in output:
+                for content_item in message.content:
+                    text = content_item.text.value
+                    iol.log(text, color="white")
+        else:  # Assuming test_agent returns a single completion value
+            iol.log(f"Tests completed: {output}", color="red", verbose_only=True)
 from utils.utils import num_tokens_from_string
 from utils.config import Config
 import agents
