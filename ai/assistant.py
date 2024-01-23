@@ -3,6 +3,8 @@ import asyncio
 import json
 import datetime
 from openai import OpenAI
+from utils.config import Config
+from utils.io import IOlog
 
 import tools
 from utils.config import Config
@@ -12,6 +14,10 @@ CFG = Config()
 client = OpenAI()
 
 class Assistant():
+    
+    client = OpenAI()
+
+    def __init__(self, role: str, name: str = "Assistant", model: str = 'gpt-3.5-turbo-1106', iol: IOlog = None, tools = None, messages = None) -> None:
 
     
     def __init__(self, role: str, name: str = "Assistant", model: str = 'gpt-3.5-turbo-1106', iol: IOlog = None, tools = None, messages = None) -> None:
@@ -27,7 +33,7 @@ class Assistant():
             model=model,
             # seed=dbs.prompts['seed']
             # response_format='json_object',
-            tools=tools if tools else [{"type": "code_interpreter"}, {"type": "retrieval"}]    # przerzucić do argumentów
+            tools=tools if tools else [{"type": "code_interpreter"}, {"type": "retrieval"}]
         )
         self.thread = client.beta.threads.create(messages = messages)
 
