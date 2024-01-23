@@ -9,13 +9,25 @@ You will output the content of the implemented file including ALL code. The code
 Make sure that files contain all imports, types etc. Make sure that code in different files are compatible with each other. 
 
 Each file must strictly follow a code block format, where the following tokens must be replaced such that: 
-FILEPATH is the lowercase file path relative to the project directory including the file extension,
+prompts/code.ts is the lowercase file path relative to the project directory including the file extension,
 LANG is the markup code block language for the code's language, and CODE is the code:
 
-FILEPATH
-```LANG
-CODE
-```
+prompts/code.ts
+```typescript
+// Code snippets for the AI model
+
+ import os
+import asyncio
+import json
+import datetime
+from openai import OpenAI
+
+import tools
+from utils.config import Config
+from utils.io import IOlog
+
+CFG = Config()
+client = OpenAI()
 
 For example, if you have a file named `src/main.py` with the following content:
 

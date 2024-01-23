@@ -51,6 +51,7 @@ class Assistant():
     # @staticmethod
     def fsystem(self, msg: str) -> dict[str, str]:
         self.assistant.instructions = msg
+        return self.assistant.instructions
     
     # @staticmethod
     def fuser(self, msg: str) -> dict[str, str]:
@@ -61,7 +62,7 @@ class Assistant():
         )
         return thread_message
     
-    def messages_to_thread(self, messages: list[dict[str, str]]):
+    def messages_to_thread(self, messages: list[dict[str, str]]) -> list[dict[str, str]]:
         for message in messages:
             if isinstance(message, dict):
                 if message['role'] == 'user':
@@ -70,15 +71,16 @@ class Assistant():
                     self.fassistant(message)
                 elif message['role'] == 'system':
                     self.fsystem(message)
-            else:
-                return messages
+        return messages
 
-    async def next(self, messages: list[dict[str, str]]=None, prompt=None, directory: str = 'fixes'):
+    async def next(self, messages: list[dict[str, str]]=None, directory: str = 'fixes'):
         if messages:
-            self.messages_to_thread(messages)
+		self.messages_to_thread(messages)
 
         if prompt:
             self.fuser(self, prompt)
+
+        return self.messages_to_thread(messages)
 
         try:
             run = client.beta.threads.runs.create(
@@ -129,7 +131,7 @@ class Assistant():
             response = [message for message in messages if message.run_id == run.id and message.role == "assistant"][-1]
 
             # If an assistant message is found, iol.log it
-            if response:
+            if response is not None:
                 self.iol.log(f"{response.content[0].text.value} \n")
 
         except TypeError:
