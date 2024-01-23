@@ -3,15 +3,21 @@ import asyncio
 import json
 import datetime
 from openai import OpenAI
+from utils.config import Config
+from utils.io import IOlog
 
 import tools
 from utils.config import Config
 from utils.io import IOlog
 
 CFG = Config()
-client = OpenAI()
+OpenAI_client = OpenAI()
 
 class Assistant():
+    
+    client = OpenAI()
+
+    def __init__(self, role: str, name: str = "Assistant", model: str = 'gpt-3.5-turbo-1106', iol: IOlog = None, tools = None, messages = None) -> None:
 
     
     def __init__(self, role: str, name: str = "Assistant", model: str = 'gpt-3.5-turbo-1106', iol: IOlog = None, tools = None, messages = None) -> None:
@@ -21,13 +27,13 @@ class Assistant():
         self.name = name
         self.iol = iol
         self.instructions = role
-        self.assistant = client.beta.assistants.create(
+        self.assistant = OpenAI_client.beta.assistants.create(
             name=name,
             instructions=self.instructions,
             model=model,
             # seed=dbs.prompts['seed']
             # response_format='json_object',
-            tools=tools if tools else [{"type": "code_interpreter"}, {"type": "retrieval"}]    # przerzucić do argumentów
+            tools=tools if tools else [{"type": "code_interpreter"}, {"type": "retrieval"}]
         )
         self.thread = client.beta.threads.create(messages = messages)
 
@@ -41,7 +47,7 @@ class Assistant():
     
     # @staticmethod
     def fassistant(self, msg: str) -> dict[str, str]:
-        thread_message = client.beta.threads.messages.create(
+        thread_message = OpenAI_client.beta.threads.messages.create(
             self.thread.id,
             role="assistant",
             content=msg,
@@ -54,7 +60,7 @@ class Assistant():
     
     # @staticmethod
     def fuser(self, msg: str) -> dict[str, str]:
-        thread_message = client.beta.threads.messages.create(
+        thread_message = OpenAI_client.beta.threads.messages.create(
             self.thread.id,
             role="user",
             content=msg,
@@ -81,7 +87,7 @@ class Assistant():
             self.fuser(self, prompt)
 
         try:
-            run = client.beta.threads.runs.create(
+            run = OpenAI_client.beta.threads.runs.create(
                 thread_id=self.thread.id,
                 assistant_id=self.assistant.id,
                 model=self.assistant.model if self.assistant.model else "gpt-4-1106-preview",
@@ -92,7 +98,7 @@ class Assistant():
             run_status = client.beta.threads.runs.retrieve(thread_id=self.thread.id, run_id=run.id)
             while run_status.status != "completed":
                 await asyncio.sleep(2)  # Sleep for 2 seconds before polling again
-                run_status = client.beta.threads.runs.retrieve(thread_id=self.thread.id, run_id=run.id)
+                run_status = OpenAI_client.beta.threads.runs.retrieve(thread_id=self.thread.id, run_id=run.id)
 
                 tool_outputs = []
                 # Check if there is a required action
@@ -105,18 +111,18 @@ class Assistant():
                             timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                             arguments["filename"] = os.path.join(directory, f'fixed_{timestamp}', filename)
 
-                        # Check if the function exists in the tools module
-                        if hasattr(tools, name):
-                            function_to_call = getattr(tools, name)
-                            response = await function_to_call(**arguments)
+                            # Check if the function exists in the tools module
+                            if hasattr(tools, name):
+                                function_to_call = getattr(tools, name)
+                                response = await function_to_call(**arguments)
 
-                            # Collect tool outputs
-                            tool_outputs.append({"tool_call_id": tool_call.id, "output": response})
+                                # Collect tool outputs
+                                tool_outputs.append({"tool_call_id": tool_call.id, "output": response})
 
 
                 # Submit tool outputs back
                 if tool_outputs:
-                    client.beta.threads.runs.submit_tool_outputs(
+                    OpenAI_client.beta.threads.runs.submit_tool_outputs(
                         thread_id=self.thread.id,
                         run_id=run.id,
                         tool_outputs=tool_outputs
@@ -132,8 +138,8 @@ class Assistant():
             if response:
                 self.iol.log(f"{response.content[0].text.value} \n")
 
-        except TypeError:
-            self.iol.log(f"TypeError: run[-1][\"content\"]: {run[-1]['content']}")
+        except TypeError as e:
+            self.iol.log(f"TypeError: {str(e)}")
 
 
         return messages
@@ -151,6 +157,8 @@ class Assistant():
         citations = []
 
         # Iterate over the annotations and add footnotes
+        except Exception as e:
+            self.iol.log(f"Exception: {str(e)}")
         for index, annotation in enumerate(annotations):
             # Replace the text with a footnote
             message_content.value = message_content.value.replace(annotation.text, f' [{index}]')
