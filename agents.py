@@ -2,7 +2,7 @@
 from ai.assistant import Assistant as Agent
 from vector_memory.models import Task, CodeFile
 from DB import DBs, create_dbs
-from utils.io import IOlog
+from utils.io import IOlog, IOlog
 from utils.config import Config
 
 CFG = Config()
@@ -13,6 +13,16 @@ dbs = create_dbs()
 # memory = Memory(JSONFileMemory(dbs))
 
 def execution_agent(objective: str, task: Task, IOlog: IOlog) -> str:
+    ai = Agent(role='execute task', name='execution_agent', iol = IOlog)
+
+    sys_prompt = f"""
+    You are an AI who performs one task based on the following objective: {objective}\n.
+    Use the available functions to apply the changes to the workspace."""
+    user = f"""Your task: {task.name}\n\nResponse:"""
+
+    response = ai.start(system=sys_prompt, user=user)
+
+    return response[-1]["content"]
     """ Executes a task
         # not used
     """
@@ -48,6 +58,29 @@ def coding_agent(objective: str, task: Task, results: list[Task] = None, iol: IO
 
     return ai.next(messages)[-1]["content"]
 
+    tasks = '\n'.join([f"{t.name}\n{t.result}" if hasattr(t, 'name') and hasattr(t, 'result') else str(t) for t in results])
+
+    system = ai.fsystem(f"{dbs.prompts['code']}")
+
+    user = ai.fuser(f"""The objective of the project: {objective}.\n
+    Results of your team's work so far: \n{tasks}. 
+    Always output the whole file with all code implemented and functional. No placeholders.
+    You will code the following task needed to achieve the objective: {task.name}: {task.description}
+    The file you will create is located at: {task.filename}""")
+
+    messages = [system, user]
+    iol.debug(messages)
+
+    return ai.next(messages)[-1]["content"]
+    Results of your team's work so far: \n{tasks}. 
+    Always output the whole file with all code implemented and functional. No placeholders.
+    You will code the following task needed to achieve the objective: {task.name}: {task.description}
+    The file you will create is located at: {task.filename}""")
+
+    messages = [system, user]
+    iol.debug(messages)
+
+    return ai.next(messages)[-1]["content"]
 
 def code_modifying_agent(objective: str, file: CodeFile, task: Task, results: list[Task], iol: IOlog = None):
     ai = Agent(role='modify code', name='code_modifying_agent', iol = iol)
@@ -117,7 +150,6 @@ async def test_agent(input: str, test: str, iol: IOlog = None, model: str = 'gpt
             "required": ["filename", "content"]
         }
     }
-
     run_tests_json = {
         "name": "run_tests",
         "description": "Executes test commands for specified programming languages using subprocesses.",
