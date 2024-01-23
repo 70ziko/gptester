@@ -111,13 +111,13 @@ class Assistant():
                             timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                             arguments["filename"] = os.path.join(directory, f'fixed_{timestamp}', filename)
 
-                        # Check if the function exists in the tools module
-                        if hasattr(tools, name):
-                            function_to_call = getattr(tools, name)
-                            response = await function_to_call(**arguments)
+                            # Check if the function exists in the tools module
+                            if hasattr(tools, name):
+                                function_to_call = getattr(tools, name)
+                                response = await function_to_call(**arguments)
 
-                            # Collect tool outputs
-                            tool_outputs.append({"tool_call_id": tool_call.id, "output": response})
+                                # Collect tool outputs
+                                tool_outputs.append({"tool_call_id": tool_call.id, "output": response})
 
 
                 # Submit tool outputs back
@@ -138,8 +138,8 @@ class Assistant():
             if response:
                 self.iol.log(f"{response.content[0].text.value} \n")
 
-        except TypeError:
-            self.iol.log(f"TypeError: run[-1][\"content\"]: {run[-1]['content']}")
+        except TypeError as e:
+            self.iol.log(f"TypeError: {str(e)}")
 
 
         return messages
@@ -157,6 +157,8 @@ class Assistant():
         citations = []
 
         # Iterate over the annotations and add footnotes
+        except Exception as e:
+            self.iol.log(f"Exception: {str(e)}")
         for index, annotation in enumerate(annotations):
             # Replace the text with a footnote
             message_content.value = message_content.value.replace(annotation.text, f' [{index}]')
