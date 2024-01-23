@@ -51,6 +51,7 @@ class Assistant():
     # @staticmethod
     def fsystem(self, msg: str) -> dict[str, str]:
         self.assistant.instructions = msg
+        return self.assistant.instructions
     
     # @staticmethod
     def fuser(self, msg: str) -> dict[str, str]:
@@ -75,6 +76,7 @@ class Assistant():
 
     async def next(self, messages: list[dict[str, str]]=None, prompt=None, directory: str = 'fixes'):
         if messages:
+        self.messages_to_thread(messages)
             self.messages_to_thread(messages)
 
         if prompt:
