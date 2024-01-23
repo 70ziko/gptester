@@ -146,7 +146,7 @@ class Assistant():
     
     def replace_annotations(self, messages: list[dict[str, str]]) -> list[dict[str, str]]:
         # Retrieve the message object
-        message = OpenAI_client.beta.threads.messages.retrieve(
+        message = client.beta.threads.messages.retrieve(
         thread_id=self.trhead.id,
         message_id="..."
         )
