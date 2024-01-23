@@ -11,7 +11,7 @@ from utils.config import Config
 from utils.io import IOlog
 
 CFG = Config()
-client = OpenAI()
+OpenAI_client = OpenAI()
 
 class Assistant():
     
@@ -27,7 +27,7 @@ class Assistant():
         self.name = name
         self.iol = iol
         self.instructions = role
-        self.assistant = client.beta.assistants.create(
+        self.assistant = OpenAI_client.beta.assistants.create(
             name=name,
             instructions=self.instructions,
             model=model,
@@ -47,7 +47,7 @@ class Assistant():
     
     # @staticmethod
     def fassistant(self, msg: str) -> dict[str, str]:
-        thread_message = client.beta.threads.messages.create(
+        thread_message = OpenAI_client.beta.threads.messages.create(
             self.thread.id,
             role="assistant",
             content=msg,
@@ -60,7 +60,7 @@ class Assistant():
     
     # @staticmethod
     def fuser(self, msg: str) -> dict[str, str]:
-        thread_message = client.beta.threads.messages.create(
+        thread_message = OpenAI_client.beta.threads.messages.create(
             self.thread.id,
             role="user",
             content=msg,
@@ -87,7 +87,7 @@ class Assistant():
             self.fuser(self, prompt)
 
         try:
-            run = client.beta.threads.runs.create(
+            run = OpenAI_client.beta.threads.runs.create(
                 thread_id=self.thread.id,
                 assistant_id=self.assistant.id,
                 model=self.assistant.model if self.assistant.model else "gpt-4-1106-preview",
@@ -98,7 +98,7 @@ class Assistant():
             run_status = client.beta.threads.runs.retrieve(thread_id=self.thread.id, run_id=run.id)
             while run_status.status != "completed":
                 await asyncio.sleep(2)  # Sleep for 2 seconds before polling again
-                run_status = client.beta.threads.runs.retrieve(thread_id=self.thread.id, run_id=run.id)
+                run_status = OpenAI_client.beta.threads.runs.retrieve(thread_id=self.thread.id, run_id=run.id)
 
                 tool_outputs = []
                 # Check if there is a required action
@@ -122,7 +122,7 @@ class Assistant():
 
                 # Submit tool outputs back
                 if tool_outputs:
-                    client.beta.threads.runs.submit_tool_outputs(
+                    OpenAI_client.beta.threads.runs.submit_tool_outputs(
                         thread_id=self.thread.id,
                         run_id=run.id,
                         tool_outputs=tool_outputs
@@ -146,7 +146,7 @@ class Assistant():
     
     def replace_annotations(self, messages: list[dict[str, str]]) -> list[dict[str, str]]:
         # Retrieve the message object
-        message = client.beta.threads.messages.retrieve(
+        message = OpenAI_client.beta.threads.messages.retrieve(
         thread_id=self.trhead.id,
         message_id="..."
         )
