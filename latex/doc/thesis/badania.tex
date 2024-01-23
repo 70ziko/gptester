@@ -157,6 +157,7 @@ Aby potwierdzić tę hipotezę, przeprowadzono analizę kodu zarówno z jak i be
 \dots
 
 \subsection{Przygotowanie środowiska testowego}
+\DOTSB
 
 \subsection{Interpretacja wyników}
 \label{subsec:interpretacja_wynikow}
@@ -164,6 +165,73 @@ Aby potwierdzić tę hipotezę, przeprowadzono analizę kodu zarówno z jak i be
 Interpretacja wyników eksperymentów ujawniła istotne spostrzeżenia dotyczące możliwości wykorzystania modeli AI w celu poprawy bezpieczeństwa kodu. Analiza wykazała, że ...
 
 % Tutaj należy dodać interpretację wyników w kontekście wykresów i tabel (jeśli takowe zostały przygotowane)
+
+\section{Badanie funkcjonalności na aplikacji webowej OWASP VulnerableApp}
+\label{sec:badania_na_aplikacji_webowej_owasp}
+
+Analiza funkcjonalności programu do analizy bezpieczeństwa została przeprowadzona z wykorzystaniem aplikacji webowej OWASP VulnerableApp. Jest to narzędzie celowo zawierające liczne podatności, które mają na celu symulację realnych luk bezpieczeństwa, co pozwala na dogłębne testowanie i ocenę narzędzi do skanowania podatności.
+
+\subsection{Charakterystyka aplikacji OWASP VulnerableApp}
+Aplikacja OWASP VulnerableApp została zaprojektowana z myślą o dostarczeniu platformy edukacyjnej dla deweloperów oraz specjalistów od bezpieczeństwa, którzy pragną zgłębić wiedzę na temat bezpieczeństwa aplikacji webowych. Narzędzie to charakteryzuje się skalowalnością, elastycznością oraz łatwością integracji, czyniąc je idealnym środowiskiem do nauki oraz testowania.
+
+\subsection{Testowane rodzaje podatności}
+OWASP VulnerableApp umożliwia testowanie szerokiego zakresu podatności, w tym, ale nie ograniczając się do:
+
+\begin{itemize}
+    \item Podatności JWT
+    \item Wstrzykiwanie poleceń (Command Injection)
+    \item Podatności związane z przesyłaniem plików (File Upload Vulnerability)
+    \item Przejście ścieżki (Path Traversal)
+    \item Iniekcje SQL (SQL Injection)
+    \item Skrypty międzywitrynowe (XSS)
+    \item Ataki oparte na External XML Entities (XXE)
+    \item Open Redirect
+    \item Server-Side Request Forgery (SSRF)
+\end{itemize}
+
+Zawarte podatności są reprezentatywne dla typowych zagrożeń w aplikacjach internetowych, co pozwala na wszechstronne i realistyczne testowanie narzędzi do ich wykrywania i naprawy.
+
+\subsection{Zawartość znajdująca się w repozytorium}
+Repozytorium aplikacji VulnerableApp zawiera projekt aplikacji webowej napisany w następującym stosie technologicznym:
+\begin{itemize}
+    \item Java 8
+    \item Spring Boot
+    \item Maven 3.6.1
+    \item ReactJS
+    \item Javascript/TypeScript
+\end{itemize} 
+
+\begin{verbatim}
+  > ../gptester/main.py -v VulnerableApp/
+2024-01-23 17:43:32: Welcome to gptester: the Static Code Analysis Agent
+2024-01-23 17:43:32: I will now begin scanning: VulnerableApp/, name: VulnerableApp
+2024-01-23 17:43:32: Beginning scan...
+2024-01-23 17:43:32: Found 231 files to scan
+2024-01-23 17:43:32: Tokens inside the directory: 229119
+2024-01-23 17:43:32: Beginning code analysis...
+2024-01-23 17:43:32: Using model: gpt-4-1106-preview
+2024-01-23 17:43:33: Splitting the content into 49 chunks
+
+\end{verbatim}
+
+Nasz program pokazał nam, że w repozytorium znajduje się 231 plików, które zawierają 229119 tokenów.
+
+\subsection{Procedura przeprowadzenia testów}
+Testy zostały przeprowadzone przy użyciu najnowszej wersji programu, zgodnie z następującymi krokami:
+
+\begin{enumerate}
+    \item Przygotowanie środowiska testowego z wykorzystaniem aplikacji OWASP VulnerableApp.
+    \item Uruchomienie skanowania z wykorzystaniem programu.
+    \item Dokumentacja wykrytych podatności oraz sugerowanych przez program napraw.
+    \item Analiza efektywności napraw i ich wpływ na bezpieczeństwo aplikacji.
+\end{enumerate}
+
+\subsection{Oczekiwane rezultaty}
+W wyniku przeprowadzonych testów oczekujemy uzyskania szczegółowych danych na temat liczby wykrytych podatności, rodzajów podatności, a także czasu potrzebnego na ich wykrycie i naprawę. Dane te zostaną następnie wykorzystane do stworzenia szczegółowych wykresów i tabel ilustrujących skuteczność programu.
+
+\subsection{Wnioski i dalsze kierunki badań}
+Na podstawie zebranych danych zostaną wyciągnięte wnioski dotyczące skuteczności narzędzia w kontekście poszczególnych typów podatności oraz ogólnej wydajności. Dalsze badania mogą również koncentrować się na porównaniu wyników z innymi narzędziami dostępnymi na rynku oraz na rozwoju nowych funkcji i usprawnień w badanym programie.
+
 
 \section{Wnioski}
 \label{sec:wnioski}

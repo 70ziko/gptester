@@ -6,8 +6,8 @@
   (generated)
   "thesis.bbl"
   "thesis.blg"
-["pdflatex"] 1705963124 "/home/paris/projekty/INZYNIERKA/gptester/latex/doc/thesis/thesis.tex" "thesis.pdf" "thesis" 1705963124
-  "/dev/null" 1705913466 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1706028411 "/home/paris/projekty/INZYNIERKA/gptester/latex/doc/thesis/thesis.tex" "thesis.pdf" "thesis" 1706028411
+  "/dev/null" 1706005966 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/etc/texmf/web2c/texmf.cnf" 1681935773 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/paris/projekty/INZYNIERKA/gptester/latex/doc/thesis/thesis.tex" 1705750006 2494 d08428806b94d3c2dfe3eb471130b2d4 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -267,7 +267,7 @@
   "_minted-thesis/default.pygstyle" 1705152361 6365 683ea4fd81022f120108d52c508c17f9 ""
   "abstract.tex" 1704986346 4706 68e5a356e569f07d878dff7c48d18481 ""
   "appendix1.tex" 1704815868 44 61ed596936597e243a71aef98faecd31 ""
-  "badania.tex" 1705959641 9181 2c7f494c9cfb33c9025528c016a92cde ""
+  "badania.tex" 1706028409 13138 7fcc94611f81aefa32ab3c974ff3ab29 ""
   "chapter1.tex" 1705419189 8093 e0f844fefaddb89dd2d87257545f0dba ""
   "chapter2.tex" 1705679603 22279 65879b54f7534a2df8bf413253c71645 ""
   "chapter3.tex" 1705751283 3208 2e431abf44b5b8ea8894f4fdeb636407 ""
@@ -277,10 +277,10 @@
   "img/swarm-network.png" 1704815868 80539 a649fb3ba3586db6267731803d1076d2 ""
   "introduction.tex" 1705154347 5044 32bad18bdb23d730fa360603416ac464 ""
   "summary.tex" 1704815868 96 d7566dd8c6d0b7a5b0a674d5502f902a ""
-  "thesis.aux" 1705963124 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "thesis.bbl" 1705963122 49 0eba253fc001332e731e8aba3f23127b "bibtex thesis"
+  "thesis.aux" 1706028411 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "thesis.bbl" 1706028408 49 0eba253fc001332e731e8aba3f23127b "bibtex thesis"
   "thesis.lop" 0 -1 0 "pdflatex"
-  "thesis.markdown.out" 1705963126 127 0e8eb01476ecccb705c05d1492620abf ""
+  "thesis.markdown.out" 1706028412 127 0e8eb01476ecccb705c05d1492620abf ""
   "thesis.out" 0 -1 0 "pdflatex"
   "thesis.tex" 1705750006 2494 d08428806b94d3c2dfe3eb471130b2d4 ""
   (generated)

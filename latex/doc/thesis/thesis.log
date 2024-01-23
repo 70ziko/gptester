@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.20)  22 JAN 2024 23:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.20)  23 JAN 2024 17:46
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -892,23 +892,7 @@ runsystem(which pygmentize && touch thesis.aex)...executed.
 
 runsystem(rm thesis.aex)...executed.
 
- (./thesis.aux
-
-LaTeX Warning: Label `fig:przyciety_obraz' multiply defined.
-
-
-LaTeX Warning: Label `fig:przyciety_obraz' multiply defined.
-
-
-LaTeX Warning: Label `fig:przyciety_obraz' multiply defined.
-
-
-LaTeX Warning: Label `fig:przyciety_obraz' multiply defined.
-
-
-LaTeX Warning: Label `fig:przyciety_obraz' multiply defined.
-
-)
+ (./thesis.aux)
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
@@ -1015,7 +999,6 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 64.
 LaTeX Info: Redefining \pageref on input line 64.
 LaTeX Info: Redefining \nameref on input line 64.
- (./thesis.out) (./thesis.out)
 \@outlinefile=\write8
 \openout8 = `thesis.out'.
 
@@ -1105,15 +1088,15 @@ l.37 }
 l.37 }
        [5
 
-]) (./thesis.toc [1
-
-
-
 ])
 \tf@toc=\write9
 \openout9 = `thesis.toc'.
 
- (./introduction.tex [2]
+ (./introduction.tex [1
+
+
+
+]
 ./introduction.tex:20: Undefined control sequence.
 \enit@endenumerate ->\enit@after 
                                  \endlist \ifx \enit@series \relax \else \if...
@@ -1362,7 +1345,7 @@ A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-[3
+[2
 
 ]
 ./introduction.tex:46: Undefined control sequence.
@@ -1547,7 +1530,7 @@ l.46 \end{itemize}
                   
 I'm forgetting what you said and using zero instead.
 
-[4]
+[3]
 ./introduction.tex:56: Undefined control sequence.
 \enit@enditemize ->\enit@after 
                                \endlist \ifx \enit@series \relax \else \ifnu...
@@ -1730,9 +1713,9 @@ l.56 \end{itemize}
                   
 I'm forgetting what you said and using zero instead.
 
-) (./chapter1.tex [5]
+) (./chapter1.tex [4]
 Rozdzia\PlPrIeC {\l } 1.
-[6
+[5
 
 ]
 ./chapter1.tex:26: Undefined control sequence.
@@ -2041,7 +2024,7 @@ l.38 \end{itemize}
                   
 I'm forgetting what you said and using zero instead.
 
-[7]
+[6]
 Rozdzia\PlPrIeC {\l } 2.
 ./chapter1.tex:56: Undefined control sequence.
 \enit@enditemize ->\enit@after 
@@ -2407,12 +2390,15 @@ l.71 \end{itemize}
                   
 I'm forgetting what you said and using zero instead.
 
-<img/swarm-network.png, id=392, 1488.56125pt x 707.64375pt>
+<img/swarm-network.png, id=77, 1488.56125pt x 707.64375pt>
 File: img/swarm-network.png Graphic file (type png)
 <use img/swarm-network.png>
 Package pdftex.def Info: img/swarm-network.png  used on input line 81.
 (pdftex.def)             Requested size: 256.07741pt x 121.73395pt.
-<img/kotek.pdf, id=394, 36.135pt x 33.12375pt>
+
+LaTeX Warning: Reference `rys:network' on page 7 undefined on input line 85.
+
+<img/kotek.pdf, id=78, 36.135pt x 33.12375pt>
 File: img/kotek.pdf Graphic file (type pdf)
 <use img/kotek.pdf>
 Package pdftex.def Info: img/kotek.pdf  used on input line 93.
@@ -2421,12 +2407,33 @@ File: img/swarm-network.png Graphic file (type png)
 <use img/swarm-network.png>
 Package pdftex.def Info: img/swarm-network.png  used on input line 98.
 (pdftex.def)             Requested size: 172.84813pt x 82.16016pt.
-[8
+
+LaTeX Warning: Reference `fig:lewy' on page 7 undefined on input line 103.
+
+
+LaTeX Warning: Reference `fig:prawy' on page 7 undefined on input line 103.
+
+
+LaTeX Warning: Reference `table:table1' on page 7 undefined on input line 108.
+
+
+LaTeX Warning: Reference `app1' on page 7 undefined on input line 111.
+
+
+LaTeX Warning: Reference `app1' on page 7 undefined on input line 111.
+
+[7
 
 ]
+
+LaTeX Warning: Reference `eq:myEquation' on page 8 undefined on input line 128.
+
+
+LaTeX Warning: Reference `listing:myListing' on page 8 undefined on input line 132.
+
 \openout4 = `thesis.pyg'.
 
- (./_minted-thesis/default.pygstyle) (./_minted-thesis/97BEF034516176FC4FB47C17364D1029EFB4A75DE218E69C7A5E5F3690949729.pygtex
+(./_minted-thesis/default.pygstyle) (./_minted-thesis/97BEF034516176FC4FB47C17364D1029EFB4A75DE218E69C7A5E5F3690949729.pygtex
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
@@ -2480,17 +2487,17 @@ LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
 
 )
 Package hyperref Info: bookmark level for unknown listing defaults to 0 on input line 145.
-) (./chapter2.tex [9 <./img/swarm-network.png> <./img/kotek.pdf>] [10]
+) (./chapter2.tex [8 <./img/swarm-network.png> <./img/kotek.pdf>] [9]
 Rozdzia\PlPrIeC {\l } 3.
-[11
+[10
 
 ]
-<img/gptester.drawio.png, id=433, 1210.5225pt x 512.91624pt>
+<img/gptester.drawio.png, id=121, 1210.5225pt x 512.91624pt>
 File: img/gptester.drawio.png Graphic file (type png)
 <use img/gptester.drawio.png>
 Package pdftex.def Info: img/gptester.drawio.png  used on input line 22.
 (pdftex.def)             Requested size: 702.78308pt x 297.7812pt.
- [12 <./img/gptester.drawio.png>]
+ [11 <./img/gptester.drawio.png>]
 File: img/gptester.drawio.png Graphic file (type png)
 <use img/gptester.drawio.png>
 Package pdftex.def Info: img/gptester.drawio.png  used on input line 32.
@@ -2550,7 +2557,7 @@ LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
 LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
 (Font)              using `T1/cmtt/bx/n' instead on input line 7.
 
-) [13
+) [12
 
 
 ]
@@ -2582,7 +2589,7 @@ Package pdftex.def Info: img/gptester.drawio.png  used on input line 95.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14]
+[13]
 File: img/gptester.drawio.png Graphic file (type png)
 <use img/gptester.drawio.png>
 Package pdftex.def Info: img/gptester.drawio.png  used on input line 107.
@@ -2595,7 +2602,7 @@ Package pdftex.def Info: img/gptester.drawio.png  used on input line 117.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[15]
+[14]
 ./chapter2.tex:141: Undefined control sequence.
 \enit@enditemize ->\enit@after 
                                \endlist \ifx \enit@series \relax \else \ifnu...
@@ -2607,7 +2614,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[16]
+[15]
 ./chapter2.tex:141: Undefined control sequence.
 \enit@enditemize ...x \else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
@@ -2781,7 +2788,7 @@ I'm forgetting what you said and using zero instead.
 
 \openout4 = `thesis.pyg'.
 
-(./_minted-thesis/7148812419C220FB479111824A8CCE3D29B6FA87C4F30D5FAED46F5FA3B47A41.pygtex) [17]
+(./_minted-thesis/7148812419C220FB479111824A8CCE3D29B6FA87C4F30D5FAED46F5FA3B47A41.pygtex) [16]
 ./chapter2.tex:176: Undefined control sequence.
 \enit@enditemize ->\enit@after 
                                \endlist \ifx \enit@series \relax \else \ifnu...
@@ -3149,14 +3156,14 @@ l.200 \end{itemize}
                    
 I'm forgetting what you said and using zero instead.
 
-[18] [19]
+[17] [18]
 Overfull \hbox (610.35538pt too wide) in paragraph at lines 260--260
 []\T1/cmtt/m/n/12 ./main.py --verbose --model "gpt-4-1106-preview" --output "moj_raport.md" --tests "/±cie»ka/do/testów" --codeql --command "cmake" --language "java" /±cie»ka/do/projektu[] 
  []
 
 \openout4 = `thesis.pyg'.
 
-(./_minted-thesis/14367CA8FD598EA114DBD1A62D7986FBEFB4A75DE218E69C7A5E5F3690949729.pygtex) [20]
+(./_minted-thesis/14367CA8FD598EA114DBD1A62D7986FBEFB4A75DE218E69C7A5E5F3690949729.pygtex) [19]
 ./chapter2.tex:294: Undefined control sequence.
 \enit@enditemize ->\enit@after 
                                \endlist \ifx \enit@series \relax \else \ifnu...
@@ -3521,7 +3528,7 @@ l.307 \end{itemize}
                    
 I'm forgetting what you said and using zero instead.
 
-[21]
+[20]
 ./chapter2.tex:320: Undefined control sequence.
 \enit@enditemize ->\enit@after 
                                \endlist \ifx \enit@series \relax \else \ifnu...
@@ -3886,7 +3893,7 @@ l.327 \end{itemize}
                    
 I'm forgetting what you said and using zero instead.
 
-) (./chapter3.tex [22]
+) (./chapter3.tex [21]
 Rozdzia\PlPrIeC {\l } 4.
 ./chapter3.tex:19: Undefined control sequence.
 \enit@enditemize ->\enit@after 
@@ -4075,9 +4082,9 @@ l.19 \end{itemize}
                   
 I'm forgetting what you said and using zero instead.
 
-[23
+[22
 
-]) (./badania.tex [24]
+]) (./badania.tex [23]
 Rozdzia\PlPrIeC {\l } 5.
 LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 17.
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
@@ -4394,7 +4401,7 @@ A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-[25
+[24
 
 ]
 ./badania.tex:41: Undefined control sequence.
@@ -4555,7 +4562,7 @@ Overfull \hbox (27.85298pt too wide) in paragraph at lines 77--78
 []\T1/qtm/m/n/12 (-20) Pierwsz¡ ana-li-z¡, któ-r¡ prze-pro-wa-dzo-no na zbio-rze \T1/qtm/m/it/12 (-20) snoopysecurity/Vulnerable-Code-Snippets\T1/qtm/m/n/12 (-20) ,
  []
 
-[26]
+[25]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -4667,4 +4674,776 @@ LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
 
 
 LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
-(Font)              using `T1/cmtt/bx/n' inst
+(Font)              using `T1/cmtt/bx/n' instead on input line 16.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 16.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 17.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 17.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 18.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 18.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 19.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 19.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 19.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 19.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 24.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 24.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 24.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 24.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 25.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 25.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 27.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 27.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 27.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 27.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 27.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 27.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 27.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 27.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 29.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 29.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 29.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 29.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 30.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 30.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 30.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 30.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 30.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 30.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 30.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 30.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 32.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 32.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 33.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 33.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 35.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 35.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 41.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 41.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 46.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 46.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 46.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 46.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 55.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/b/n' undefined
+(Font)              using `T1/cmtt/bx/n' instead on input line 55.
+
+)
+
+LaTeX Warning: Float too large for page by 8.84702pt on input line 149.
+
+[26] [27
+
+
+]
+./badania.tex:190: Undefined control sequence.
+\enit@enditemize ->\enit@after 
+                               \endlist \ifx \enit@series \relax \else \ifnu...
+l.190 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:190: Undefined control sequence.
+\enit@enditemize ...x \else \ifnum \enit@resuming 
+                                                  =\@ne \enit@setresumekeys ...
+l.190 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:190: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.190 \end{itemize}
+                   
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:190: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.190 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:190: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.190 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:190: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.190 \end{itemize}
+                   
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:190: Undefined control sequence.
+<argument> enit@resume@series@\enit@series 
+                                           
+l.190 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:190: Undefined control sequence.
+\enit@setresumekeys ...me@#1}{\csname c@\@listctr 
+                                                  \endcsname \the \csname c@...
+l.190 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:190: Undefined control sequence.
+\enit@setresumekeys ...e \the \csname c@\@listctr 
+                                                  \endcsname }\fi }
+l.190 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:190: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.190 \end{itemize}
+                   
+I'm forgetting what you said and using zero instead.
+
+./badania.tex:190: Undefined control sequence.
+\enit@enditemize ...ist \fi \ifnum \enit@resuming 
+                                                  =\thr@@ \enit@setresumekey...
+l.190 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:190: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.190 \end{itemize}
+                   
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:190: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.190 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:190: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.190 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:190: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.190 \end{itemize}
+                   
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:190: Undefined control sequence.
+\enit@setresumekeys ...me@#1}{\csname c@\@listctr 
+                                                  \endcsname \the \csname c@...
+l.190 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:190: Undefined control sequence.
+\enit@setresumekeys ...e \the \csname c@\@listctr 
+                                                  \endcsname }\fi }
+l.190 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:190: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.190 \end{itemize}
+                   
+I'm forgetting what you said and using zero instead.
+
+./badania.tex:202: Undefined control sequence.
+\enit@enditemize ->\enit@after 
+                               \endlist \ifx \enit@series \relax \else \ifnu...
+l.202 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:202: Undefined control sequence.
+\enit@enditemize ...x \else \ifnum \enit@resuming 
+                                                  =\@ne \enit@setresumekeys ...
+l.202 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:202: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.202 \end{itemize}
+                   
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:202: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.202 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:202: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.202 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:202: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.202 \end{itemize}
+                   
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:202: Undefined control sequence.
+<argument> enit@resume@series@\enit@series 
+                                           
+l.202 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:202: Undefined control sequence.
+\enit@setresumekeys ...me@#1}{\csname c@\@listctr 
+                                                  \endcsname \the \csname c@...
+l.202 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:202: Undefined control sequence.
+\enit@setresumekeys ...e \the \csname c@\@listctr 
+                                                  \endcsname }\fi }
+l.202 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:202: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.202 \end{itemize}
+                   
+I'm forgetting what you said and using zero instead.
+
+./badania.tex:202: Undefined control sequence.
+\enit@enditemize ...ist \fi \ifnum \enit@resuming 
+                                                  =\thr@@ \enit@setresumekey...
+l.202 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:202: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.202 \end{itemize}
+                   
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:202: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.202 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:202: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.202 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:202: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.202 \end{itemize}
+                   
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:202: Undefined control sequence.
+\enit@setresumekeys ...me@#1}{\csname c@\@listctr 
+                                                  \endcsname \the \csname c@...
+l.202 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:202: Undefined control sequence.
+\enit@setresumekeys ...e \the \csname c@\@listctr 
+                                                  \endcsname }\fi }
+l.202 \end{itemize}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:202: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.202 \end{itemize}
+                   
+I'm forgetting what you said and using zero instead.
+
+
+Overfull \hbox (17.7001pt too wide) in paragraph at lines 215--215
+[]\T1/cmtt/m/n/12 2024-01-23 17:43:32: Welcome to gptester: the Static Code Analysis Agent[] 
+ []
+
+
+Overfull \hbox (85.60852pt too wide) in paragraph at lines 215--215
+[]\T1/cmtt/m/n/12 2024-01-23 17:43:32: I will now begin scanning: VulnerableApp/, name: VulnerableApp[] 
+ []
+
+./badania.tex:227: Undefined control sequence.
+\enit@endenumerate ->\enit@after 
+                                 \endlist \ifx \enit@series \relax \else \if...
+l.227 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:227: Undefined control sequence.
+\enit@endenumerate ...\else \ifnum \enit@resuming 
+                                                  =\@ne \enit@setresumekeys ...
+l.227 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:227: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.227 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:227: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.227 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:227: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.227 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:227: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.227 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:227: Undefined control sequence.
+<argument> enit@resume@series@\enit@series 
+                                           
+l.227 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:227: Undefined control sequence.
+\enit@endenumerate ...t \fi \ifnum \enit@resuming 
+                                                  =\thr@@ \enit@setresumekey...
+l.227 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:227: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.227 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:227: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.227 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:227: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.227 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:227: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.227 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+[28]) (./summary.tex [29]) (./thesis.bbl [30
+
+]
+
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
+
+) [31
+
+]
+\tf@lof=\write10
+\openout10 = `thesis.lof'.
+
+ [32
+
+]
+
+Package hyperref Warning: old lop file detected, not used; run LaTeX again.
+
+\tf@lop=\write11
+\openout11 = `thesis.lop'.
+
+[33
+
+]
+\tf@lot=\write12
+\openout12 = `thesis.lot'.
+
+ [34
+
+] [35
+
+] (./appendix1.tex
+Dodatek A.
+) [36
+
+] (./thesis.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  564DD965DCE2EC006F96269864AE2EF1;13448.
+runsystem(rm thesis.pyg)...executed.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 33584 strings out of 478287
+ 639549 string characters out of 5849288
+ 1079663 words of memory out of 5000000
+ 50783 multiletter control sequences out of 15000+600000
+ 528732 words of font info for 153 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 123i,13n,120p,1061b,831s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmbi.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfit1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on thesis.pdf (41 pages, 625089 bytes).
+PDF statistics:
+ 444 PDF objects out of 1000 (max. 8388607)
+ 356 compressed objects within 4 object streams
+ 162 named destinations out of 1000 (max. 500000)
+ 35904 words of extra memory for PDF output out of 42996 (max. 10000000)
+

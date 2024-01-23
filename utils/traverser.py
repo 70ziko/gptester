@@ -4,6 +4,8 @@ import re
 import json
 from pathlib import Path
 from utils.config import Config
+from utils.utils import num_tokens_from_string
+
 
 CFG = Config()
 
@@ -257,13 +259,20 @@ def walk_directory(directory):
         ".ico",
         ".tif",
         ".tiff",
+        ".md",
+        ".pdf",
+        ".properties",
+
     ]
+    exclude_list = ["node_modules", "build", "dist", "venv", "env", "migrations", ".git", ".vscode", ".idea", ".pytest_cache", 
+                    ".cache", ".tox", "tests", "test", "docs", "doc", "static", "media", "assets", 
+                    "logs", "log", "raports", "staticfiles"]
     code_contents = {}
     for root, dirs, files in os.walk(directory):
-        dirs[:] = [d for d in dirs if not d.startswith('fixed')]
+        dirs[:] = [d for d in dirs if not d.startswith('fixed') and d not in exclude_list]
         
         for file in files:
-            if not any(file.endswith(ext) for ext in image_extensions):
+            if not any(file.endswith(ext) for ext in image_extensions) and file not in exclude_list:
                 try:
                     relative_filepath = os.path.relpath(
                         os.path.join(root, file), directory
@@ -276,6 +285,47 @@ def walk_directory(directory):
                         relative_filepath
                     ] = f"Error reading file {file}: {str(e)}"
     return code_contents
+
+def split_content(dir_content, max_tokens):
+    chunks = []
+    chunk = {}
+    current_tokens = 0
+    for filename, content in dir_content.items():
+        tokens = num_tokens_from_string(content)
+        if tokens > max_tokens:
+            # Handle the case where a single file exceeds max_tokens
+            content_chunks = split_content_into_chunks(content, max_tokens)
+            for content_chunk in content_chunks:
+                chunks.append({filename: content_chunk})
+        elif current_tokens + tokens <= max_tokens:
+            chunk[filename] = content
+            current_tokens += tokens
+        else:
+            chunks.append(chunk)
+            chunk = {filename: content}
+            current_tokens = tokens
+    chunks.append(chunk)
+    return chunks
+
+def split_content_into_chunks(content, max_tokens):
+    words = content.split(' ')
+    chunks = []
+    current_chunk = []
+    current_tokens = 0
+
+    for word in words:
+        tokens = len(word.split(' '))
+        if current_tokens + tokens > max_tokens:
+            chunks.append(' '.join(current_chunk))
+            current_chunk = [word]
+            current_tokens = tokens
+        else:
+            current_chunk.append(word)
+            current_tokens += tokens
+
+    chunks.append(' '.join(current_chunk))
+
+    return chunks
 
 def get_directory_content(directory: str) -> dict:
     """

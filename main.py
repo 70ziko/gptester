@@ -6,7 +6,7 @@ import asyncio
 import argparse
 
 from utils.io import IOlog
-from utils.traverser import walk_directory
+from utils.traverser import walk_directory, split_content
 from utils.utils import num_tokens_from_string
 from utils.config import Config
 import agents
@@ -29,21 +29,7 @@ project_name = os.path.basename(args.directory.rstrip('/'))
 iol = IOlog(verbose=args.verbose, name=project_name)
 CFG = Config()
 
-def split_content(dir_content, max_tokens):
-    chunks = []
-    chunk = {}
-    current_tokens = 0
-    for filename, content in dir_content.items():
-        tokens = num_tokens_from_string(content)
-        if current_tokens + tokens <= max_tokens:
-            chunk[filename] = content
-            current_tokens += tokens
-        else:
-            chunks.append(chunk)
-            chunk = {filename: content}
-            current_tokens = tokens
-    chunks.append(chunk)
-    return chunks
+
 
 async def run_agents(args, iol, chunks):
     tasks = []
@@ -87,8 +73,8 @@ async def main():
     dir_content = walk_directory(args.directory)    # excluding directories starting with 'fixed'
 
     iol.log(f"Found {len(dir_content)} files to scan", color="cyan", verbose_only=False)
-    for key, value in dir_content.items():
-        iol.log(f"File: {key}, \n```\n{value}\n```", color="green", verbose_only=True)
+    # for key, value in dir_content.items():
+    #     iol.log(f"File: {key}, \n```\n{value}\n```", color="green", verbose_only=True)
 
     iol.log(f'Tokens inside the directory: {num_tokens_from_string(dir_content)}', color='bright_cyan')
 
@@ -107,7 +93,7 @@ async def main():
 
     input("If you want to run tests again on fixed code, press enter...")
 
-    iol.log(f"Scan complete!", color="bright_cyan", verbose_only=True)
+    iol.log(f"Scan complete!", color="bright_cyan")
 
 if __name__ == "__main__":
     loop = asyncio.get_event_loop()
