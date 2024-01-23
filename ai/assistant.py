@@ -62,8 +62,9 @@ class Assistant():
         )
         return thread_message
     
-    def messages_to_thread(self, messages: list[dict[str, str]]):
+    def messages_to_thread(self, messages: list[dict[str, str]]) -> list[dict[str, str]]:
         for message in messages:
+            if isinstance(message, dict):
             if isinstance(message, dict):
                 if message['role'] == 'user':
                     self.fuser(message)
