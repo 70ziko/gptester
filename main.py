@@ -31,6 +31,8 @@ CFG = Config()
 
 
 
+import asyncio
+
 async def run_agents(args, iol, chunks):
     tasks = []
 
@@ -38,18 +40,16 @@ async def run_agents(args, iol, chunks):
     if args.tests:
         iol.log(f"Functional tests provided, I will now run them", color="red")
         test_task = asyncio.create_task(
-            agents.test_agent(chunks[0], args.tests, iol, args.model, args.directory)
+            retry_task(agents.test_agent, chunks[0], args.tests, iol, args.model, args.directory)
         )
         tasks.append(test_task)
 
-    # Add debug agent tasks for each chunk
-    debug_tasks = [
-        asyncio.create_task(
-            agents.debug_agent(chunk, iol, args.model, args.directory)
+    # Add debug agent tasks for each chunk using retry mechanism
+    for chunk in chunks:
+        task = asyncio.create_task(
+            retry_task(agents.debug_agent, chunk, iol, args.model, args.directory)
         )
-        for chunk in chunks
-    ]
-    tasks.extend(debug_tasks)
+        tasks.append(task)
 
     # Wait for all tasks to complete
     for completed_task in asyncio.as_completed(tasks):
@@ -62,7 +62,29 @@ async def run_agents(args, iol, chunks):
                     text = content_item.text.value
                     iol.log(text, color="white")
         else:  # Assuming test_agent returns a single completion value
-            iol.log(f"Tests completed: {output}", color="red", verbose_only=True)
+            iol.log(f"Tests completed!", color="red", verbose_only=True)
+
+# The retry_task function remains the same as in the previous example
+
+async def retry_task(coroutine_func, *args, max_retries=3, delay=1):
+    """
+    Retries a coroutine function if it fails.
+    :param coroutine_func: The coroutine function to execute.
+    :param args: Arguments to pass to the coroutine function.
+    :param max_retries: Maximum number of retries.
+    :param delay: Delay between retries in seconds.
+    """
+    for attempt in range(max_retries):
+        try:
+            return await coroutine_func(*args)
+        except Exception as e:
+            if attempt < max_retries - 1:
+                iol.log(f"Task failed with {e}, retrying... (Attempt {attempt + 1}/{max_retries})", color="yellow")
+                await asyncio.sleep(delay)
+            else:
+                iol.log(f"Task failed after {max_retries} attempts", color="red")
+                raise
+
 
 
 async def main():
