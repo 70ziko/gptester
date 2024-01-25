@@ -1,17 +1,15 @@
-% !TEX encoding = UTF-8 Unicode 
-% !TEX root = praca.tex
 
 \chapter{Projekt oraz implementacja rozwiązania}
 
 \section{Wstęp}
-W ramach pracy inżynierskiej opracowano kompleksowe narzędzie `gptester`, które wykorzystuje zaawansowane modele językowe do analizy statycznej kodu.
-Narzędzie to wykorzystuje przede wszystkim model GPT-4 do generowania raportów na temat jakości kodu oraz proponowania poprawek, ze szczególnym uwzględnieniem bezpieczeństwa kodu.
+W ramach pracy inżynierskiej opracowano kompleksowe narzędzie \textbf{gptester}, które wykorzystuje zaawansowane modele językowe do analizy statycznej kodu.
+Narzędzie to wykorzystuje domyślnie model GPT-4 do generowania raportów na temat jakości kodu oraz proponowania napraw, ze szczególnym uwzględnieniem bezpieczeństwa kodu.
 
 \section{Architektura systemu}
 \subsection{Ogólny opis}
-`gptester` jest programem napisanym w języku Python, wykorzystującym model GPT-4 (lub GPT-3.5-turbo) dostarczony przez OpenAI.
-Jest zaprojektowany do uruchamiania z linii poleceń, a wyniki jego pracy są zapisywane w pliku formatu markdown oraz do osobnego katalogu z plikami wynikowymi - poprawionymi.
-W przyszłości planowane jest wprowadzanie poprawek do bazy kodu za pomocą git patch.
+\textbf{GPTester} jest programem napisanym w języku Python, wykorzystującym model GPT-4 (lub GPT-3.5-turbo) dostarczony przez OpenAI.
+Jest zaprojektowany do uruchamiania z linii poleceń, a wyniki jego pracy są zapisywane w pliku formatu markdown oraz do osobnego katalogu z plikami wynikowymi zawierającymi poprawiony kod.
+W przyszłości planowane jest wprowadzanie poprawek do bazy kodu za pomocą funkcji git, aby znacznie ułatwić wprowadzanie i analizę proponowanych popraw.
 
 \subsection{Schemat blokowy}
 \label{subsec:schemat_blokowy}
@@ -20,7 +18,7 @@ W przyszłości planowane jest wprowadzanie poprawek do bazy kodu za pomocą git
 \begin{figure}[p]
     \centering
     \includegraphics[width=\linewidth]{img/gptester.drawio.png}
-    \caption{Schemat blokowy działania aplikacji `gptester`}
+    \caption{Schemat blokowy działania aplikacji \textit{gptester}}
     \label{fig:schemat_blokowy}
 \end{figure}
 \end{landscape}
@@ -31,10 +29,10 @@ W przyszłości planowane jest wprowadzanie poprawek do bazy kodu za pomocą git
     % Adjust the clip and trim parameters as needed: {left bottom right top}
     \includegraphics[clip, trim=0cm 4cm 29cm 6cm, width=0.9\linewidth]{img/gptester.drawio.png}
     \caption{dane wejściowe w schemacie blokowym}
-    \label{fig:przyciety_obraz}
+    \label{fig:przyciety_obrazek}
 \end{figure}
-Proces rozpoczyna się od `oryginalnego kodu z błędami`. Następnie jeśli użytkownik dostarczył wystarczająco danych dla CodeQL zostanie ono wykorzystane do wstępnej analizy, a dane wynikowe zostaną wykorzystane do wzbogacenia monitów(promptów). 
-W przeciwnym wypadku monit(prompt) zostanie skreowany na podstawie danych posiadanych. 
+Proces rozpoczyna się od \textcolor{red}{oryginalnego kodu z błędami}. Następnie jeśli użytkownik dostarczył wystarczająco danych dla CodeQL zostanie ono wykorzystane do wstępnej analizy, a dane wynikowe zostaną wykorzystane do wzbogacenia poleceń(promptów). 
+W przeciwnym wypadku polecenie(prompt) zostanie skreowany na podstawie danych posiadanych. 
 
 \subsubsection{Generacja testów funkcjonalnych}
 \begin{figure}[h]
@@ -42,10 +40,12 @@ W przeciwnym wypadku monit(prompt) zostanie skreowany na podstawie danych posiad
     % Adjust the clip and trim parameters as needed: {left bottom right top}
     \includegraphics[clip, trim=0cm 0cm 0cm 13cm, width=0.9\linewidth]{img/gptester.drawio.png}
     \caption{Część schematu opisująca proces generatora testów funkcjonalnych}
-    \label{fig:przyciety_obraz}
+    \label{fig:przyciety_obrazz}
 \end{figure}
 
-Jeżeli testy funkcjonalne dla naszego kodu nie zostały zapewnione, zostaną one wygenerowane za pomocą osobnego agenta.
+Jeżeli testy funkcjonalne dla naszego kodu nie zostały zapewnione, zostaną one wygenerowane za pomocą osobnego agenta. 
+Jest to funkcja nadal testowana, która w przyszłości ma za zadanie generować testy funkcjonalne dla kodu, który nie posiada testów funkcjonalnych. 
+Problemem jest ich duża ilość dla średnich i dużych projektów, dlatego zalecane jest dostarczenie własnego modułu testów funkcjonalnych.
 
 \subsection{Wzbogacanie monitów(promptów)}
 \begin{figure}[h]
@@ -53,7 +53,7 @@ Jeżeli testy funkcjonalne dla naszego kodu nie zostały zapewnione, zostaną on
     % Adjust the clip and trim parameters as needed: {left bottom right top}
     \includegraphics[clip, trim=3cm 11cm 3cm 0cm, width=0.9\linewidth]{img/gptester.drawio.png}
     \caption{Część schematu opisująca proces RAG}
-    \label{fig:przyciety_obraz}
+    \label{fig:przyciety_obra}
 \end{figure}
 
 Dla uzyskania jak najlepszych wyników oraz zapewnienia najnowszej dostępnej wiedzy na temat podatności wykorzystywane zostaje RAG, aby wzbogacić monit o dodatkowe informacje. Są to informacje otrzymane z CodeQL, które zostają użyte do semantycznego wyszukania powiązanych wpisów w bazie danych CVE. 
@@ -88,6 +88,8 @@ def get_embedding(text, model="text-embedding-ada-002"): # alternatively use cod
     
 Przedstawione zostały rzeczywiste skrawki kodu znajdujące się w projekcie, natomiast w testach oraz podczas działania na modelach komeryjnych OpenAI używane są funkcje dostępne za pomocą API.
 
+\definecolor{light-blue}{rgb}{0.8,0.85,1}
+
 \subsubsection{Tworzenie monitów i interakcja z LLM}
 \begin{figure}[h]
     \centering
@@ -96,8 +98,9 @@ Przedstawione zostały rzeczywiste skrawki kodu znajdujące się w projekcie, na
     \caption{Część schematu opisująca proces RAG}
     \label{fig:przyciety_obraz}
 \end{figure}
-Dla każdej części bazy kodu opdowiednio mieszczącej się w oknie kontekstu dla modeli, `tworzony jest prompt (monit)`, który jest następnie przetwarzany przez `duże modele językowe (GPT-4, ...)`. 
-W tym celu wykorzywane są `szablony monitów` oraz semantycznie wyszukane skrawki z `bazy danych CVE`.
+Dla każdej części kodu badanego projektu opdowiednio mieszczącej się w oknie kontekstu dla modeli, tworzony jest \textcolor{blue}{PROMPT} (monit), który jest następnie przetwarzany przez `\textcolor{gray}{LLM (GPT-4, \ldots)}`. 
+W tym celu wykorzywane są \textcolor{orange}{Prompt templates (szablony monitów)} oraz semantycznie wyszukane skrawki z \textcolor{orange}{Vector DB with CVEs and documentation (wektorowa baza danych z CVE oraz dokumentacją)}.
+
 Tak spreparowane zapytanie jest następnie zadane modelowi językowemu, który identyfikuje podatności oraz proponuje poprawki.
 
 \subsubsection{Generowanie kodu i scalanie}
@@ -108,7 +111,8 @@ Tak spreparowane zapytanie jest następnie zadane modelowi językowemu, który i
     \caption{Czarna skrzynka - LLM (Large Language Model)}
     \label{fig:przyciety_obraz}
 \end{figure}
-LLM generuje `komplecje/generacje kodu', które są następnie `łączone` w potencjalnie `naprawiony program`. Proces ten wykorzystuje również `narzędzia`(code interpreter, knowledge retrieval, file writing, git patch, ...), aby ułatwić obróbkę wyników oraz wzbogacić generację.
+LLM generuje \textcolor{blue}{uzupełnienie/generacje kodu} oraz raport, które są następnie \textcolor{purple}{łączone (code merging)} w potencjalnie \textcolor{red}{naprawiony program}. Proces ten wykorzystuje również \textcolor{red}{narzędzia}
+(code interpreter, knowledge retrieval, file writing, git patch, \dots), aby ułatwić obróbkę wyników oraz wzbogacić generację.
 
 \subsubsection{Testy i weryfikacja}
 \begin{figure}[h]
@@ -116,23 +120,22 @@ LLM generuje `komplecje/generacje kodu', które są następnie `łączone` w pot
     % Adjust the clip and trim parameters as needed: {left bottom right top}
     \includegraphics[clip, trim=25cm 2cm 0cm 4cm, width=0.9\linewidth]{img/gptester.drawio.png}
     \caption{Czarna skrzynka - LLM (Large Language Model)}
-    \label{fig:przyciety_obraz}
+    \label{fig:przyciety_obraz2}
 \end{figure}
 Naprawiony kod jest poddawany `testom bezpieczeństwa` oraz `funkcjonalnym testom` w celu zapewnienia, że poprawki nie wprowadzają nowych błędów i że aplikacja nadal działa zgodnie z oczekiwaniami.
 Testy bezpieczeństwa są przeprowadzane ręcznie dla potwierdzenia poprawności działania, natomiast testy funkcjonalne są wykonywane automatycznie.
 
 \subsubsection{Dokumentacja i raportowanie}
-Wyniki pracy `gptester` są dokumentowane w `raporcie o błędach` i zapisywane w plikach markdown oraz w katalogu z `poprawionymi plikami wynikowymi`. W przyszłości `poprawki będą wprowadzane do bazy kodu za pomocą git patch`.
+Wyniki pracy \textbf{gptester} są dokumentowane w raporcie o błędach, po czym raport jest zapisywany w plikach markdown, a poprawione pliki z kodem w katalogu z `fixed` z odpowiednim znacznikiem czasowym. W przyszłości poprawki będą wprowadzane do bazy kodu za pomocą git patch.
 
 \subsubsection{Podsumowanie}
-Diagram blokowy przedstawia kompleksowy proces analizy i naprawy kodu, który jest silnie zależny od danych wejściowych (kod źródłowy i testy bezpieczeństwa), zaawansowanych algorytmów przetwarzania (duże modele językowe) oraz dokładności w generowaniu poprawek kodu i ich weryfikacji. Cały proces jest automatyzowany z możliwością ręcznej interwencji na etapie generowania monitów i weryfikacji kodu wynikowego.
+Diagram blokowy przedstawia kompleksowy proces analizy i naprawy kodu, który jest silnie zależny od danych wejściowych (kod źródłowy i testy bezpieczeństwa), zaawansowanych algorytmów przetwarzania (duże modele językowe) oraz dokładności w generowaniu poprawek kodu i ich weryfikacji. Cały proces jest automatyzowany, a weryfikacja jest możliwa na otrzymanych wynikach.
 
 
 \section{Implementacja oraz użycie}
 \subsection{Środowisko programistyczne i wymagania}
-\label{sec:srodowisko_i_wymagania}
 
-Projekt `gptester` został opracowany w środowisku programistycznym Python, z wykorzystaniem modelu GPT-4 dostarczonego przez OpenAI. Proces konfiguracji środowiska rozpoczyna się od przygotowania odpowiedniego środowiska Pythona i zainstalowania niezbędnych zależności.
+Projekt \textbf{gptester} został opracowany w środowisku programistycznym Python, z wykorzystaniem modelu GPT-4 dostarczonego przez OpenAI. Proces konfiguracji środowiska rozpoczyna się od przygotowania odpowiedniego środowiska Pythona i zainstalowania niezbędnych zależności.
 
 Wymagania wstępne:
 \begin{itemize}
@@ -152,7 +155,6 @@ Plik `requirements.txt` zawiera wszystkie niezbędne biblioteki Pythona wymagane
 
 
 \subsection{Funkcje programu}
-\label{sec:funkcje_programu}
 
 Program `gptester` został zaprojektowany jako wszechstronny narzędzie do analizy statycznej kodu, wykorzystując zaawansowane modele językowe do wykrywania i naprawiania błędów bezpieczeństwa w kodzie. Kluczowe funkcje programu są dostępne za pomocą różnorodnych argumentów linii poleceń, umożliwiając szeroką konfigurację i dostosowanie do specyicznych potrzeb analizy.
 
@@ -186,7 +188,6 @@ Przykład użycia z pełną konfiguracją:
 W powyższym przykładzie, gptester analizuje kod znajdujący się w podanej ścieżce, z włączonym trybem szczegółowych informacji, korzystając z modelu GPT-4, zapisując wyniki do określonego pliku raportu, wykonując testy funkcjonalne, integrując z CodeQL, używając polecenia cmake do budowy projektu w języku Java.
 
 \section{Integracja z CodeQL}
-\label{sec:integracja_codeql}
 
 Integracja `gptester` z CodeQL znacznie rozszerza jego funkcjonalność analizy statycznej kodu. CodeQL, opracowany przez GitHub, to zaawansowane narzędzie do semantycznej analizy kodu, które umożliwia wykrywanie złożonych podatności i błędów bezpieczeństwa.
 
@@ -202,7 +203,6 @@ Integracja `gptester` z CodeQL znacznie rozszerza jego funkcjonalność analizy 
 Integracja z CodeQL czyni `gptester` narzędziem nie tylko do wykrywania błędów syntaktycznych i strukturalnych, ale także do efektywnego identyfikowania subtelniejszych problemów bezpieczeństwa, które mogą umknąć podczas standardowych analiz.
 
 \section{Przypadki użycia}
-\label{sec:przypadki_uzycia}
 
 Przypadki użycia programu `gptester` demonstrują jego wszechstronność i elastyczność w różnych scenariuszach analizy kodu. Poniżej przedstawiono kilka przykładowych scenariuszy, które ilustrują, jak `gptester` może być wykorzystywany do osiągnięcia różnych celów w procesie analizy statycznej kodu.
 

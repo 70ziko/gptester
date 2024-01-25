@@ -1,6 +1,5 @@
-% !TEX encoding = UTF-8 Unicode 
-% !TEX root = praca.tex
 
+\addcontentsline{toc}{chapter}{Analiza istniejącej literatury oraz dotychczasowych badań}
 \chapter{Analiza istniejącej literatury oraz dotychczasowych badań}
 
 \section{Can OpenAI Codex and Other Large Language Models Help Us Fix Security Bugs?}
@@ -41,107 +40,45 @@ Takie podejście pozwala nie tylko na zrozumienie teoretycznego potencjału LLM,
 
 \chapter{Metodyka rozwiązania}
 
-W niniejszej pracy dyplomowej zastosowano szereg metod i środków, aby zbadać i ocenić potencjał dużych modeli językowych w kontekście wykrywania i naprawiania błędów bezpieczeństwa w kodzie źródłowym aplikacji.
+W niniejszej pracy dyplomowej zastosowano szereg metod i środków, aby zaimplementować narzędzie do statycznej analizy kodu oraz zbadać i ocenić potencjał dużych modeli językowych w kontekście wykrywania i naprawiania błędów bezpieczeństwa w kodzie źródłowym aplikacji.
 
-\begin{multicols}{2}
-\noindent
-\textbf{Metody:}
-\begin{itemize}
-    \item Algorytmy fragmentowania (własny kod)
-    \item In-context learning (uczenie się w kontekście)
-    \item Retrieval Augmented Generation - RAG (napisany własny kod, dostępny poprzez OpenAI Assistant API)
-    \item Analiza porównawcza
-    \item Programowanie obiektowe oraz funkcyjne 
-    \vfill\null
-\end{itemize}
-
-\columnbreak
-
-\noindent
-\textbf{Środki:}
-\begin{itemize}
-    \item Modele językowe GPT-3.5, GPT-4
-    \item Ollama - środowisko kontenerowe dla modeli językowych, łatwe w użyciu, otwartoźródłowe modele językowe
-    \item OpenAI Assistant API
-    \item Zbiór danych z kodem zawierającym podatności
-    \item Statyczne testy podatności, np. CodeQL
-    \item Istniejące rozwiązania komercyjne, np. Snyk
-    \item Python 3.12
-    \item Komputer osobisty
-\end{itemize}
-\end{multicols}
-
-Metody i środki te zostały wybrane, aby zapewnić efektywne i wszechstronne podejście do analizy i naprawy kodu. Generacja wspomagana odzyskiwaniem danych (RAG ang. Retrieval Augmented Generation) oraz uczenie się w kontekście                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           (in-context learning) umożliwiają efektywną analizę i generowanie kodu. 
-Z kolei analiza porównawcza pozwala na ocenę skuteczności różnych modeli i podejść. 
-Wykorzystanie modeli językowych GPT-3.5 i GPT-4, środowiska Ollama, oraz innych narzędzi i zasobów, zapewnia solidną bazę do przeprowadzenia kompleksowych testów i analiz.
-
-\section{Rysunki}
-
-\begin{figure}
-\centering\includegraphics[width=.6\textwidth]{img/swarm-network}
-\caption{Sieć dokera }  \label{rys:network}
-\end{figure}
-
-Na rysunku \ref{rys:network} \dots
-
-
-\subsection{Dwa rysunki obok siebie}
-
-\begin{figure}[ht] 
-	\centering
-	\begin{minipage}[b]{0.45\textwidth}
-		\centering\includegraphics[width=0.9\textwidth]{img/kotek} % left figure
-		\caption{Lewy rysunek}\label{fig:lewy}
-	\end{minipage}
-	\begin{minipage}[b]{0.45\textwidth}
-		\centering
-		\includegraphics[width=0.9\textwidth]{img/swarm-network} % right figure
-		\caption{Prawy rysunek}\label{fig:prawy}
-	\end{minipage}
-\end{figure}
-
-Na rysunkach \ref{fig:lewy} i \ref{fig:prawy} \dots
-
-
-\section{Tabele}
-
-W tabeli \ref{table:table1} \dots
-
-\begin{table}
-\centering\caption{Tytuł tabeli (patrz dodatek~\ref{app1}) \label{table:table1}}
-\begin{tabular}{|l|l|l|}% table alignment -> l c r - left, center, right
-\hline
-Pierwszy & Drugi & Trzeci \\
-\hline
-Pierwszy & Drugi & Trzeci \\
-\hline
-\end{tabular}
+\begin{table}[H]
+    \begin{adjustwidth}{-2cm}{-2cm}  % Zmniejszenie marginesów z obu stron
+        \centering
+    \begin{tabular}{|>{\bfseries}p{2.5cm}|p{5cm}|>{\bfseries}p{2.5cm}|p{5cm}|}
+    \hline
+    \multicolumn{4}{|c|}{\textbf{Metody i Środki}} \\
+    \hline
+    \textbf{Metoda} & \small{Opis} & \textbf{Środek} & \small{Opis} \\
+    \hline
+    \textbf{Zero-shot learning} & \small{Metoda uczenia maszynowego pozwalająca modelom wykonywać zadania bez wcześniejszego treningu, opierając się na zdolności do rozumienia i generalizacji.} & \textbf{Modele językowe GPT-3.5, GPT-4} & \small{Zaawansowane modele AI OpenAI do generowania tekstu i odpowiadania na zapytania.} \\
+    \hline
+    \textbf{Prompt engineering} & \small{Projektowanie promptów w celu uzyskania trafnych odpowiedzi od AI.} & \textbf{OpenAI Assistant API} & \small{API umożliwiające integrację modeli językowych w aplikacjach.} \\
+    \hline
+    \textbf{In-context learning} & \small{Uczenie się i dostosowywanie modeli AI na podstawie informacji z promptów.} & \textbf{Zbiory danych z kodem} & \small{Zestawy danych z przykładami kodu zawierającymi błędy, używane do trenowania narzędzi do wykrywania podatności.} \\
+    \hline
+    \textbf{Retrieval Augmented Generation} & \small{Technika łącząca generowanie treści z wyszukiwaniem informacji, wspomagana przez OpenAI Assistant API.} & \textbf{Projekty open-source zawierające błędy bezpieczeństwa} & \small{Publiczne projekty mogące zawierać błędy bezpieczeństwa, używane do edukacji.} \\
+    \hline
+    \textbf{Analiza porównawcza} & \small{Ocena różnych technik lub systemów poprzez porównanie.} & \textbf{Statyczne testy podatności} & \small{Narzędzia analizy statycznej kodu, np. CodeQL.} \\
+    \hline
+    \textbf{Programowanie obiektowe i funkcyjne} & \small{Dwa paradygmaty programowania, koncentrujące się odpowiednio na obiektach i funkcjach.} & \textbf{Rozwiązania komercyjne, np. Snyk} & \small{Narzędzia AI do zarządzania bezpieczeństwem oprogramowania.} \\
+    \hline
+    & & \textbf{Python 3.12} & \small{Najnowsza wersja języka Python z zaawansowanymi funkcjami.} \\
+    \hline
+    & & \textbf{Biblioteki: openai, asyncio} & \small{Biblioteki Pythona dla integracji z OpenAI i programowania asynchronicznego.} \\
+    \hline
+    & & \textbf{Komputer osobisty} & \small{Urządzenie do tworzenia i testowania oprogramowania.} \\
+    \hline
+    \end{tabular}
+\end{adjustwidth}
+    \caption{Metody i środki wykorzystane w projekcie i badaniu.}
+    \label{tab:methods_tools}
 \end{table}
 
-\subsection{Równania}
+    
 
-\begin{equation}
-\sum_{i=1}^{\infty}a_i
-\label{eq:myEquation}
-\end{equation}
-
-W równaniu \ref{eq:myEquation} \dots
-
-\section{Listingi}
-
-Na listingu \ref{listing:myListing} \dots
-
-% replace {c} with the appropriate language
-\begin{listing}
-\begin{minted}{c}  
-int main()
-{
-   int a=2*3;
-   printf("**Ala ma kota\n**");
-   while(!I2C_CheckEvent(I2C1, I2C_EVENT_MASTER_MODE_SELECT)); /* EV5 */
-   return 0;
-}
-\end{minted}
-\caption{Język C} \label{listing:myListing}
-\end{listing}
+Metody i środki te zostały wybrane, aby zapewnić efektywne i wszechstronne podejście do analizy i naprawy kodu. Generacja wspomagana pobieraniem danych (RAG ang. Retrieval Augmented Generation) 
+oraz uczenie się w kontekście(in-context learning) umożliwiają efektywną analizę i generowanie kodu. 
+Z kolei analiza porównawcza pozwala na ocenę skuteczności różnych modeli i podejść. 
+Wykorzystanie modeli językowych GPT-3.5 i GPT-4, środowiska Ollama, oraz innych narzędzi i zasobów, zapewnia solidną bazę do przeprowadzenia kompleksowych testów i analiz.
 

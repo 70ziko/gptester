@@ -55,8 +55,7 @@ async def run_agents(args, iol, chunks):
     for completed_task in asyncio.as_completed(tasks):
         output = await completed_task
 
-        # Process output based on the type of task
-        if isinstance(output, list):  # Assuming debug_agent returns a list
+        if isinstance(output, list):
             for message in output:
                 for content_item in message.content:
                     text = content_item.text.value
