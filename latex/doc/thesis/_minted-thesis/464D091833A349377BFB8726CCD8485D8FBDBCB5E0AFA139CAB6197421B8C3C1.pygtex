@@ -1,0 +1,86 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{class} \PYG{n+nc}{Assistant}\PYG{p}{():}
+
+    \PYG{k}{def} \PYG{n+nf+fm}{\PYGZus{}\PYGZus{}init\PYGZus{}\PYGZus{}}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{role}\PYG{p}{:} \PYG{n+nb}{str}\PYG{p}{,} \PYG{n}{name}\PYG{p}{:} \PYG{n+nb}{str} \PYG{o}{=} \PYG{l+s+s2}{\PYGZdq{}Assistant\PYGZdq{}}\PYG{p}{,} \PYG{n}{model}\PYG{p}{:} \PYG{n+nb}{str} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}gpt\PYGZhy{}3.5\PYGZhy{}turbo\PYGZhy{}1106\PYGZsq{}}\PYG{p}{,} \PYG{n}{iol}\PYG{p}{:} \PYG{n}{IOlog} \PYG{o}{=} \PYG{k+kc}{None}\PYG{p}{,} \PYG{n}{tools} \PYG{o}{=} \PYG{k+kc}{None}\PYG{p}{,} \PYG{n}{messages} \PYG{o}{=} \PYG{k+kc}{None}\PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{k+kc}{None}\PYG{p}{:}
+\PYG{+w}{        }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{        Initialize the AI object with empty lists of functions, and performance evaluations.}
+\PYG{l+s+sd}{        \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{name} \PYG{o}{=} \PYG{n}{name}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{iol} \PYG{o}{=} \PYG{n}{iol}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{instructions} \PYG{o}{=} \PYG{n}{role}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{assistant} \PYG{o}{=} \PYG{n}{client}\PYG{o}{.}\PYG{n}{beta}\PYG{o}{.}\PYG{n}{assistants}\PYG{o}{.}\PYG{n}{create}\PYG{p}{(}
+            \PYG{n}{name}\PYG{o}{=}\PYG{n}{name}\PYG{p}{,}
+            \PYG{n}{instructions}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{instructions}\PYG{p}{,}
+            \PYG{n}{model}\PYG{o}{=}\PYG{n}{model}\PYG{p}{,}
+            \PYG{n}{tools}\PYG{o}{=}\PYG{n}{tools} \PYG{k}{if} \PYG{n}{tools} \PYG{k}{else} \PYG{p}{[\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}code\PYGZus{}interpreter\PYGZdq{}}\PYG{p}{\PYGZcb{},} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}retrieval\PYGZdq{}}\PYG{p}{\PYGZcb{}]}
+        \PYG{p}{)}
+        \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{thread} \PYG{o}{=} \PYG{n}{client}\PYG{o}{.}\PYG{n}{beta}\PYG{o}{.}\PYG{n}{threads}\PYG{o}{.}\PYG{n}{create}\PYG{p}{(}\PYG{n}{messages} \PYG{o}{=} \PYG{n}{messages}\PYG{p}{)}
+
+
+    \PYG{o}{//} \PYG{n}{pominięte} \PYG{n}{metody} \PYG{n}{przekształcania} \PYG{n}{wiadomości}\PYG{p}{,} \PYG{n}{pozwalające} \PYG{n}{na} \PYG{n}{łatwą} \PYG{n}{zmianę} \PYG{n}{punktów} \PYG{n}{końcowych} \PYG{n}{API} \PYG{n}{bez} \PYG{n}{modyfikowania} \PYG{n}{funkcji} \PYG{n}{definiujących} \PYG{n}{agentów}
+
+    \PYG{k}{async} \PYG{k}{def} \PYG{n+nf}{next}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{messages}\PYG{p}{:} \PYG{n+nb}{list}\PYG{p}{[}\PYG{n+nb}{dict}\PYG{p}{[}\PYG{n+nb}{str}\PYG{p}{,} \PYG{n+nb}{str}\PYG{p}{]]}\PYG{o}{=}\PYG{k+kc}{None}\PYG{p}{,} \PYG{n}{prompt}\PYG{o}{=}\PYG{k+kc}{None}\PYG{p}{,} \PYG{n}{directory}\PYG{p}{:} \PYG{n+nb}{str} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}fixes\PYGZsq{}}\PYG{p}{):}
+        \PYG{k}{if} \PYG{n}{messages}\PYG{p}{:}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{messages\PYGZus{}to\PYGZus{}thread}\PYG{p}{(}\PYG{n}{messages}\PYG{p}{)}
+
+        \PYG{k}{if} \PYG{n}{prompt}\PYG{p}{:}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{fuser}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{prompt}\PYG{p}{)}
+
+        \PYG{k}{try}\PYG{p}{:}
+            \PYG{n}{run} \PYG{o}{=} \PYG{n}{client}\PYG{o}{.}\PYG{n}{beta}\PYG{o}{.}\PYG{n}{threads}\PYG{o}{.}\PYG{n}{runs}\PYG{o}{.}\PYG{n}{create}\PYG{p}{(}
+                \PYG{n}{thread\PYGZus{}id}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{thread}\PYG{o}{.}\PYG{n}{id}\PYG{p}{,}
+                \PYG{n}{assistant\PYGZus{}id}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{assistant}\PYG{o}{.}\PYG{n}{id}\PYG{p}{,}
+                \PYG{n}{model}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{assistant}\PYG{o}{.}\PYG{n}{model} \PYG{k}{if} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{assistant}\PYG{o}{.}\PYG{n}{model} \PYG{k}{else} \PYG{l+s+s2}{\PYGZdq{}gpt\PYGZhy{}4\PYGZhy{}1106\PYGZhy{}preview\PYGZdq{}}\PYG{p}{,}
+                \PYG{n}{instructions}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{instructions}
+            \PYG{p}{)}
+
+            \PYG{c+c1}{\PYGZsh{} Polling mechanism to see if runStatus is completed}
+            \PYG{n}{run\PYGZus{}status} \PYG{o}{=} \PYG{n}{client}\PYG{o}{.}\PYG{n}{beta}\PYG{o}{.}\PYG{n}{threads}\PYG{o}{.}\PYG{n}{runs}\PYG{o}{.}\PYG{n}{retrieve}\PYG{p}{(}\PYG{n}{thread\PYGZus{}id}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{thread}\PYG{o}{.}\PYG{n}{id}\PYG{p}{,} \PYG{n}{run\PYGZus{}id}\PYG{o}{=}\PYG{n}{run}\PYG{o}{.}\PYG{n}{id}\PYG{p}{)}
+            \PYG{k}{while} \PYG{n}{run\PYGZus{}status}\PYG{o}{.}\PYG{n}{status} \PYG{o}{!=} \PYG{l+s+s2}{\PYGZdq{}completed\PYGZdq{}}\PYG{p}{:}
+                \PYG{k}{await} \PYG{n}{asyncio}\PYG{o}{.}\PYG{n}{sleep}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Sleep for 2 seconds before polling again}
+                \PYG{n}{run\PYGZus{}status} \PYG{o}{=} \PYG{n}{client}\PYG{o}{.}\PYG{n}{beta}\PYG{o}{.}\PYG{n}{threads}\PYG{o}{.}\PYG{n}{runs}\PYG{o}{.}\PYG{n}{retrieve}\PYG{p}{(}\PYG{n}{thread\PYGZus{}id}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{thread}\PYG{o}{.}\PYG{n}{id}\PYG{p}{,} \PYG{n}{run\PYGZus{}id}\PYG{o}{=}\PYG{n}{run}\PYG{o}{.}\PYG{n}{id}\PYG{p}{)}
+
+                \PYG{n}{tool\PYGZus{}outputs} \PYG{o}{=} \PYG{p}{[]}
+                \PYG{c+c1}{\PYGZsh{} Check if there is a required action}
+                \PYG{k}{if} \PYG{n}{run\PYGZus{}status}\PYG{o}{.}\PYG{n}{required\PYGZus{}action} \PYG{o+ow}{and} \PYG{n}{run\PYGZus{}status}\PYG{o}{.}\PYG{n}{required\PYGZus{}action}\PYG{o}{.}\PYG{n}{type} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}submit\PYGZus{}tool\PYGZus{}outputs\PYGZdq{}}\PYG{p}{:}
+                    \PYG{k}{for} \PYG{n}{tool\PYGZus{}call} \PYG{o+ow}{in} \PYG{n}{run\PYGZus{}status}\PYG{o}{.}\PYG{n}{required\PYGZus{}action}\PYG{o}{.}\PYG{n}{submit\PYGZus{}tool\PYGZus{}outputs}\PYG{o}{.}\PYG{n}{tool\PYGZus{}calls}\PYG{p}{:}
+                        \PYG{n}{name} \PYG{o}{=} \PYG{n}{tool\PYGZus{}call}\PYG{o}{.}\PYG{n}{function}\PYG{o}{.}\PYG{n}{name}
+                        \PYG{n}{arguments} \PYG{o}{=} \PYG{n}{json}\PYG{o}{.}\PYG{n}{loads}\PYG{p}{(}\PYG{n}{tool\PYGZus{}call}\PYG{o}{.}\PYG{n}{function}\PYG{o}{.}\PYG{n}{arguments}\PYG{p}{)}
+                        \PYG{k}{if} \PYG{l+s+s2}{\PYGZdq{}filename\PYGZdq{}} \PYG{o+ow}{in} \PYG{n}{arguments} \PYG{o+ow}{and} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{name} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}debug\PYGZus{}agent\PYGZdq{}}\PYG{p}{:}
+                            \PYG{n}{filename} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{basename}\PYG{p}{(}\PYG{n}{arguments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}filename\PYGZdq{}}\PYG{p}{])}
+                            \PYG{n}{timestamp} \PYG{o}{=} \PYG{n}{datetime}\PYG{o}{.}\PYG{n}{datetime}\PYG{o}{.}\PYG{n}{now}\PYG{p}{()}\PYG{o}{.}\PYG{n}{strftime}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZpc{}Y\PYGZhy{}\PYGZpc{}m\PYGZhy{}}\PYG{l+s+si}{\PYGZpc{}d}\PYG{l+s+s1}{ \PYGZpc{}H:\PYGZpc{}M:\PYGZpc{}S\PYGZsq{}}\PYG{p}{)}
+                            \PYG{n}{arguments}\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}filename\PYGZdq{}}\PYG{p}{]} \PYG{o}{=} \PYG{n}{os}\PYG{o}{.}\PYG{n}{path}\PYG{o}{.}\PYG{n}{join}\PYG{p}{(}\PYG{n}{directory}\PYG{p}{,} \PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}fixed\PYGZus{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{timestamp}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{filename}\PYG{p}{)}
+
+                        \PYG{c+c1}{\PYGZsh{} Check if the function exists in the tools module}
+                        \PYG{k}{if} \PYG{n+nb}{hasattr}\PYG{p}{(}\PYG{n}{tools}\PYG{p}{,} \PYG{n}{name}\PYG{p}{):}
+                            \PYG{n}{function\PYGZus{}to\PYGZus{}call} \PYG{o}{=} \PYG{n+nb}{getattr}\PYG{p}{(}\PYG{n}{tools}\PYG{p}{,} \PYG{n}{name}\PYG{p}{)}
+                            \PYG{n}{response} \PYG{o}{=} \PYG{k}{await} \PYG{n}{function\PYGZus{}to\PYGZus{}call}\PYG{p}{(}\PYG{o}{**}\PYG{n}{arguments}\PYG{p}{)}
+
+                            \PYG{c+c1}{\PYGZsh{} Collect tool outputs}
+                            \PYG{n}{tool\PYGZus{}outputs}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}tool\PYGZus{}call\PYGZus{}id\PYGZdq{}}\PYG{p}{:} \PYG{n}{tool\PYGZus{}call}\PYG{o}{.}\PYG{n}{id}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}output\PYGZdq{}}\PYG{p}{:} \PYG{n}{response}\PYG{p}{\PYGZcb{})}
+
+
+                \PYG{c+c1}{\PYGZsh{} Submit tool outputs back}
+                \PYG{k}{if} \PYG{n}{tool\PYGZus{}outputs}\PYG{p}{:}
+                    \PYG{n}{client}\PYG{o}{.}\PYG{n}{beta}\PYG{o}{.}\PYG{n}{threads}\PYG{o}{.}\PYG{n}{runs}\PYG{o}{.}\PYG{n}{submit\PYGZus{}tool\PYGZus{}outputs}\PYG{p}{(}
+                        \PYG{n}{thread\PYGZus{}id}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{thread}\PYG{o}{.}\PYG{n}{id}\PYG{p}{,}
+                        \PYG{n}{run\PYGZus{}id}\PYG{o}{=}\PYG{n}{run}\PYG{o}{.}\PYG{n}{id}\PYG{p}{,}
+                        \PYG{n}{tool\PYGZus{}outputs}\PYG{o}{=}\PYG{n}{tool\PYGZus{}outputs}
+                    \PYG{p}{)}
+                \PYG{k}{if} \PYG{n}{run\PYGZus{}status}\PYG{o}{.}\PYG{n}{status} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}failed\PYGZdq{}}\PYG{p}{:}
+                    \PYG{k}{raise} \PYG{n+ne}{Exception}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}Run failed with reason: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{run\PYGZus{}status}\PYG{o}{.}\PYG{n}{last\PYGZus{}error}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+            \PYG{c+c1}{\PYGZsh{} Get the last assistant message from the messages list}
+            \PYG{n}{messages} \PYG{o}{=} \PYG{n}{client}\PYG{o}{.}\PYG{n}{beta}\PYG{o}{.}\PYG{n}{threads}\PYG{o}{.}\PYG{n}{messages}\PYG{o}{.}\PYG{n}{list}\PYG{p}{(}\PYG{n}{thread\PYGZus{}id}\PYG{o}{=}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{thread}\PYG{o}{.}\PYG{n}{id}\PYG{p}{)}
+            \PYG{n}{response} \PYG{o}{=} \PYG{p}{[}\PYG{n}{message} \PYG{k}{for} \PYG{n}{message} \PYG{o+ow}{in} \PYG{n}{messages} \PYG{k}{if} \PYG{n}{message}\PYG{o}{.}\PYG{n}{run\PYGZus{}id} \PYG{o}{==} \PYG{n}{run}\PYG{o}{.}\PYG{n}{id} \PYG{o+ow}{and} \PYG{n}{message}\PYG{o}{.}\PYG{n}{role} \PYG{o}{==} \PYG{l+s+s2}{\PYGZdq{}assistant\PYGZdq{}}\PYG{p}{][}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}
+
+            \PYG{c+c1}{\PYGZsh{} If an assistant message is found, iol.log it}
+            \PYG{k}{if} \PYG{n}{response}\PYG{p}{:}
+                \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{iol}\PYG{o}{.}\PYG{n}{log}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{response}\PYG{o}{.}\PYG{n}{content}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{text}\PYG{o}{.}\PYG{n}{value}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{ }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+        \PYG{k}{except} \PYG{n+ne}{TypeError}\PYG{p}{:}
+            \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{iol}\PYG{o}{.}\PYG{n}{log}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}TypeError: run[\PYGZhy{}1][}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s+s2}{content}\PYG{l+s+se}{\PYGZbs{}\PYGZdq{}}\PYG{l+s+s2}{]: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{run}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{][}\PYG{l+s+s1}{\PYGZsq{}content\PYGZsq{}}\PYG{p}{]}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}
+
+
+        \PYG{k}{return} \PYG{n}{messages}
+\end{Verbatim}

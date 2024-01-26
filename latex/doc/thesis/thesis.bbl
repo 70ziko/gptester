@@ -1,3 +1,11 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{codex-fix-security-bugs}
+Hammond~Pearce, Benjamin~Tan, B.A.R.K.B.D.G., \emph{Can openai codex and other
+  large language models help us fix security bugs?} 2022.
+
+\bibitem{zero-shot-vuln-repair}
+Hammond~Pearce, Benjamin~Tan, B.A.R.K.B.D.G., \emph{Examining zero-shot
+  vulnerability repair with large language models}. 2022.
 
 \end{thebibliography}

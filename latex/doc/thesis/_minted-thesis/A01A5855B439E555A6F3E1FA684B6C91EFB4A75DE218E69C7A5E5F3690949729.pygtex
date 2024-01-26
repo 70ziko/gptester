@@ -1,0 +1,69 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{//https://github.com/hardik05/Damn\PYGZus{}Vulnerable\PYGZus{}C\PYGZus{}Program/blob/master/imgRead.c}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{c+cpf}{\PYGZlt{}stdio.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{c+cpf}{\PYGZlt{}stdlib.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include}\PYG{c+cpf}{\PYGZlt{}string.h\PYGZgt{}}
+\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{Image}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{header}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{];}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{width}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{height}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{data}\PYG{p}{[}\PYG{l+m+mi}{10}\PYG{p}{];}
+\PYG{p}{\PYGZcb{};}
+
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{ProcessImage}\PYG{p}{(}\PYG{k+kt}{char}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{filename}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{	}\PYG{k+kt}{FILE}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{fp}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{ch}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{Image}\PYG{+w}{ }\PYG{n}{img}\PYG{p}{;}
+
+\PYG{+w}{	}\PYG{n}{fp}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{fopen}\PYG{p}{(}\PYG{n}{filename}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}r\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{	}\PYG{k}{if}\PYG{p}{(}\PYG{n}{fp}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n+nb}{NULL}\PYG{p}{)}
+\PYG{+w}{	}\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{Can\PYGZsq{}t open file or file doesn\PYGZsq{}t exist.\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{		}\PYG{n}{exit}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}t}\PYG{l+s}{Header}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{width}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{height}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{data}\PYG{l+s+se}{\PYGZbs{}t\PYGZbs{}r\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+
+\PYG{+w}{	}\PYG{k}{while}\PYG{p}{(}\PYG{n}{fread}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{img}\PYG{p}{,}\PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{img}\PYG{p}{),}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{fp}\PYG{p}{)}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{		}\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n\PYGZbs{}t}\PYG{l+s}{\PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZpc{}d}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZpc{}d}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{\PYGZpc{}s}\PYG{l+s+se}{\PYGZbs{}r\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{img}\PYG{p}{.}\PYG{n}{header}\PYG{p}{,}\PYG{n}{img}\PYG{p}{.}\PYG{n}{width}\PYG{p}{,}\PYG{n}{img}\PYG{p}{.}\PYG{n}{height}\PYG{p}{,}\PYG{n}{img}\PYG{p}{.}\PYG{n}{data}\PYG{p}{);}
+\PYG{+w}{		}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{size1}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{img}\PYG{p}{.}\PYG{n}{width}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{img}\PYG{p}{.}\PYG{n}{height}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//Vulnerability: integer overflow}
+\PYG{+w}{		}\PYG{k+kt}{char}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{buff1}\PYG{o}{=}\PYG{p}{(}\PYG{k+kt}{char}\PYG{o}{*}\PYG{p}{)}\PYG{n}{malloc}\PYG{p}{(}\PYG{n}{size1}\PYG{p}{);}
+\PYG{+w}{		}\PYG{n}{memcpy}\PYG{p}{(}\PYG{n}{buff1}\PYG{p}{,}\PYG{n}{img}\PYG{p}{.}\PYG{n}{data}\PYG{p}{,}\PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{img}\PYG{p}{.}\PYG{n}{data}\PYG{p}{));}\PYG{+w}{ }\PYG{c+c1}{//Vulnerability: no data buffer size/malloc success check?}
+\PYG{+w}{		}\PYG{n}{free}\PYG{p}{(}\PYG{n}{buff1}\PYG{p}{);}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{size1}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{			}\PYG{n}{free}\PYG{p}{(}\PYG{n}{buff1}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{//Vulnerability: double free}
+\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{		}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+\PYG{+w}{			}\PYG{k}{if}\PYG{p}{(}\PYG{n}{size1}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+m+mi}{123456}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{				}\PYG{n}{buff1}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{=}\PYG{l+s+sc}{\PYGZsq{}a\PYGZsq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//Vulnerability: use after free}
+\PYG{+w}{			}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{		}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{size2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{img}\PYG{p}{.}\PYG{n}{width}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{img}\PYG{p}{.}\PYG{n}{height}\PYG{o}{+}\PYG{l+m+mi}{100}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//Vulnerability: integer underflow}
+\PYG{+w}{		}\PYG{c+c1}{//printf(\PYGZdq{}Size1:\PYGZpc{}d\PYGZdq{},size1);}
+\PYG{+w}{		}\PYG{k+kt}{char}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{buff2}\PYG{o}{=}\PYG{p}{(}\PYG{k+kt}{char}\PYG{o}{*}\PYG{p}{)}\PYG{n}{malloc}\PYG{p}{(}\PYG{n}{size2}\PYG{p}{);}
+\PYG{+w}{		}\PYG{n}{memcpy}\PYG{p}{(}\PYG{n}{buff2}\PYG{p}{,}\PYG{n}{img}\PYG{p}{.}\PYG{n}{data}\PYG{p}{,}\PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{img}\PYG{p}{.}\PYG{n}{data}\PYG{p}{));}
+\PYG{+w}{		}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{size3}\PYG{o}{=}\PYG{+w}{ }\PYG{n}{img}\PYG{p}{.}\PYG{n}{width}\PYG{o}{/}\PYG{n}{img}\PYG{p}{.}\PYG{n}{height}\PYG{p}{;}
+\PYG{+w}{		}\PYG{c+c1}{//printf(\PYGZdq{}Size2:\PYGZpc{}d\PYGZdq{},size3);}
+\PYG{+w}{		}\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{buff3}\PYG{p}{[}\PYG{l+m+mi}{10}\PYG{p}{];}
+\PYG{+w}{		}\PYG{k+kt}{char}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{buff4}\PYG{+w}{ }\PYG{o}{=}\PYG{p}{(}\PYG{k+kt}{char}\PYG{o}{*}\PYG{p}{)}\PYG{n}{malloc}\PYG{p}{(}\PYG{n}{size3}\PYG{p}{);}
+\PYG{+w}{		}\PYG{n}{memcpy}\PYG{p}{(}\PYG{n}{buff4}\PYG{p}{,}\PYG{n}{img}\PYG{p}{.}\PYG{n}{data}\PYG{p}{,}\PYG{k}{sizeof}\PYG{p}{(}\PYG{n}{img}\PYG{p}{.}\PYG{n}{data}\PYG{p}{));}
+\PYG{+w}{		}\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{OOBR\PYGZus{}stack}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{buff3}\PYG{p}{[}\PYG{n}{size3}\PYG{o}{+}\PYG{l+m+mi}{100}\PYG{p}{];}\PYG{+w}{ }\PYG{c+c1}{//Vulnerability: out of bound read (stack)}
+\PYG{+w}{		}\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{OOBR\PYGZus{}heap}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{buff4}\PYG{p}{[}\PYG{l+m+mi}{100}\PYG{p}{];}
+\PYG{+w}{		}\PYG{n}{buff3}\PYG{p}{[}\PYG{n}{size3}\PYG{o}{+}\PYG{l+m+mi}{100}\PYG{p}{]}\PYG{o}{=}\PYG{l+s+sc}{\PYGZsq{}c\PYGZsq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//Vulnerability: out of bound write (Stack)}
+\PYG{+w}{		}\PYG{n}{buff4}\PYG{p}{[}\PYG{l+m+mi}{100}\PYG{p}{]}\PYG{o}{=}\PYG{l+s+sc}{\PYGZsq{}c\PYGZsq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//Vulnerability: out of bound write (Heap)}
+\PYG{+w}{		}\PYG{k}{if}\PYG{p}{(}\PYG{n}{size3}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{10}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{				}\PYG{n}{buff4}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{//memory leak?}
+\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{		}\PYG{k}{else}\PYG{p}{\PYGZob{}}
+\PYG{+w}{			}\PYG{n}{free}\PYG{p}{(}\PYG{n}{buff4}\PYG{p}{);}
+\PYG{+w}{		}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{		}\PYG{n}{free}\PYG{p}{(}\PYG{n}{buff2}\PYG{p}{);}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{n}{fclose}\PYG{p}{(}\PYG{n}{fp}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{main}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{argc}\PYG{p}{,}\PYG{k+kt}{char}\PYG{+w}{ }\PYG{o}{**}\PYG{n}{argv}\PYG{p}{)}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{n}{ProcessImage}\PYG{p}{(}\PYG{n}{argv}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{        }\PYG{n+nb}{cd}\PYG{+w}{ }gptester
+\PYG{+w}{        }chmod\PYG{+w}{ }+x\PYG{+w}{ }main.py
+\PYG{+w}{        }./main.py\PYG{+w}{ }\PYGZhy{}\PYGZhy{}help
+\end{Verbatim}

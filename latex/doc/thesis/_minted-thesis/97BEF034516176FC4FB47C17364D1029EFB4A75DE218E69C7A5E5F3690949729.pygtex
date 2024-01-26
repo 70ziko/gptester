@@ -1,9 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{main}\PYG{p}{()}
-\PYG{p}{\PYGZob{}}
-\PYG{+w}{   }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{a}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{l+m+mi}{3}\PYG{p}{;}
-\PYG{+w}{   }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}**Ala ma kota}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{**\PYGZdq{}}\PYG{p}{);}
-\PYG{+w}{   }\PYG{k}{while}\PYG{p}{(}\PYG{o}{!}\PYG{n}{I2C\PYGZus{}CheckEvent}\PYG{p}{(}\PYG{n}{I2C1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{I2C\PYGZus{}EVENT\PYGZus{}MASTER\PYGZus{}MODE\PYGZus{}SELECT}\PYG{p}{));}\PYG{+w}{ }\PYG{c+cm}{/* EV5 */}
-\PYG{+w}{   }\PYG{k}{return}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
-\PYG{p}{\PYGZcb{}}
-\end{Verbatim}

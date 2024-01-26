@@ -1,0 +1,176 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{ }     diff \PYGZhy{}\PYGZhy{}git a/damnvuln.c b/damnvuln.c
+\PYG{+w}{ }     index e69de29..bb2e3ae 100644
+\PYG{+w}{ }     \PYGZhy{}\PYGZhy{}\PYGZhy{} a/damnvuln.c
+\PYG{+w}{ }     +++ b/damnvuln.c
+\PYG{+w}{ }     @@ \PYGZhy{}20,10 +20,12 @@ int ProcessImage(char* filename)\PYGZob{}
+\PYG{+w}{ }        fp = fopen(filename,\PYGZdq{}r\PYGZdq{});
+
+\PYG{+w}{ }        if(fp == NULL)
+\PYG{+w}{ }        \PYGZob{}
+\PYG{+w}{ }          printf(\PYGZdq{}\PYGZbs{}nCan\PYGZsq{}t open file or file doesn\PYGZsq{}t exist.\PYGZdq{});
+\PYG{+w}{ }          exit(0);
+\PYG{+w}{ }        \PYGZcb{}
+
+\PYG{+w}{ }     \PYGZhy{}	fprintf(\PYGZdq{}\PYGZbs{}n\PYGZbs{}tHeader\PYGZbs{}twidth\PYGZbs{}theight\PYGZbs{}tdata\PYGZbs{}t\PYGZbs{}r\PYGZbs{}n\PYGZdq{});
+\PYG{+w}{ }     +	printf(\PYGZdq{}\PYGZbs{}n\PYGZbs{}tHeader\PYGZbs{}twidth\PYGZbs{}theight\PYGZbs{}tdata\PYGZbs{}n\PYGZdq{});
+
+\PYG{+w}{ }     +	if (sizeof(struct Image) == 0) return 0; // Prevent division by zero in fread
+\PYG{+w}{ }     +
+\PYG{+w}{ }        while(fread(\PYGZam{}img,sizeof(img),1,fp)\PYGZgt{}0)\PYGZob{}
+\PYG{+w}{ }          printf(\PYGZdq{}\PYGZbs{}n\PYGZbs{}t\PYGZpc{}s\PYGZbs{}t\PYGZpc{}d\PYGZbs{}t\PYGZpc{}d\PYGZbs{}t\PYGZpc{}s\PYGZbs{}r\PYGZbs{}n\PYGZdq{},img.header,img.width,img.height,img.data);
+
+\PYG{+w}{ }          int size1 = img.width + img.height; //Vulnerability: integer overflow
+\PYG{+w}{ }     +		if (img.width \PYGZgt{} INT\PYGZus{}MAX \PYGZhy{} img.height) continue; // Prevent integer overflow
+\PYG{+w}{ }          char* buff1=(char*)malloc(size1);
+
+\PYG{+w}{ }          memcpy(buff1,img.data,sizeof(img.data)); //Vulnerability: no data buffer size/malloc success check?
+\PYG{+w}{ }     @@ \PYGZhy{}31,16 +33,15 @@ int ProcessImage(char* filename)\PYGZob{}
+\PYG{+w}{ }            free(buff1); //Vulnerability: double free
+\PYG{+w}{ }          \PYGZcb{}
+\PYG{+w}{ }          else\PYGZob{}
+\PYG{+w}{ }            if(size1 == 123456)\PYGZob{}
+\PYG{+w}{ }              buff1[0]=\PYGZsq{}a\PYGZsq{}; //Vulnerability: use after free
+\PYG{+w}{ }            \PYGZcb{}
+\PYG{+w}{ }          \PYGZcb{}
+
+\PYG{+w}{ }     \PYGZhy{}		int size2 = img.width \PYGZhy{} img.height+100; //Vulnerability: integer underflow
+\PYG{+w}{ }     \PYGZhy{}		//printf(\PYGZdq{}Size1:\PYGZpc{}d\PYGZdq{},size1);
+\PYG{+w}{ }     +		// Removed potential integer underflow by ensuring img.width is always greater than img.height before subtraction
+\PYG{+w}{ }     +		int size2 = img.height \PYGZgt{} img.width ? 100 : img.width \PYGZhy{} img.height + 100;
+\PYG{+w}{ }          char* buff2=(char*)malloc(size2);
+
+\PYG{+w}{ }          memcpy(buff2,img.data,sizeof(img.data));
+
+\PYG{+w}{ }          int size3= img.width/img.height;
+\PYG{+w}{ }     \PYGZhy{}		//printf(\PYGZdq{}Size2:\PYGZpc{}d\PYGZdq{},size3);
+\PYG{+w}{ }     +		// Check for division by zero
+\PYG{+w}{ }     +		if (img.height == 0) continue;
+
+\PYG{+w}{ }          char buff3[10];
+\PYG{+w}{ }     \PYGZhy{}		char* buff4 =(char*)malloc(size3);
+\PYG{+w}{ }     \PYGZhy{}		memcpy(buff4,img.data,sizeof(img.data));
+\PYG{+w}{ }     +		// Check if size3 is within buffer size
+\PYG{+w}{ }     +		if (size3 \PYGZlt{} 0 || size3 \PYGZgt{}= sizeof(buff3)) continue;
+
+\PYG{+w}{ }          char OOBR\PYGZus{}stack = buff3[size3+100]; //Vulnerability: out of bound read (stack)
+\PYG{+w}{ }     \PYGZhy{}		char OOBR\PYGZus{}heap = buff4[100];
+\PYG{+w}{ }     +		char* buff4 = NULL;
+\PYG{+w}{ }     +		if (size3 \PYGZlt{} sizeof(buff3)) \PYGZob{}
+\PYG{+w}{ }     +			buff4 = (char*)malloc(size3);
+\PYG{+w}{ }     +			if (!buff4) continue; // Check malloc success
+\PYG{+w}{ }     +			memcpy(buff4,img.data,sizeof(img.data));
+\PYG{+w}{ }     +		\PYGZcb{}
+
+\PYG{+w}{ }     \PYGZhy{}		buff3[size3+100]=\PYGZsq{}c\PYGZsq{}; //Vulnerability: out of bound write (Stack)
+\PYG{+w}{ }     +		// Prevent out of bound write to buff3
+\PYG{+w}{ }     +		if (size3 + 100 \PYGZlt{} sizeof(buff3)) buff3[size3+100] = \PYGZsq{}c\PYGZsq{};
+
+\PYG{+w}{ }     \PYGZhy{}		buff4[100]=\PYGZsq{}c\PYGZsq{}; //Vulnerability: out of bound write (Heap)
+\PYG{+w}{ }     +		// Prevent out of bound write to buff4 and potential memory leak
+\PYG{+w}{ }     +		if (buff4 \PYGZam{}\PYGZam{} size3 \PYGZgt{}= 0 \PYGZam{}\PYGZam{} size3 \PYGZlt{} 100) buff4[size3] = \PYGZsq{}c\PYGZsq{};
+
+\PYG{+w}{ }          if(size3\PYGZgt{}10)\PYGZob{}
+\PYG{+w}{ }     \PYGZhy{}				buff4=0; //memory leak?
+\PYG{+w}{ }     +				if (buff4) \PYGZob{} free(buff4); buff4 = NULL; \PYGZcb{} // Properly free memory
+\PYG{+w}{ }          \PYGZcb{}
+\PYG{+w}{ }          else\PYGZob{}
+\PYG{+w}{ }            free(buff4);
+\PYG{+w}{ }          \PYGZcb{}
+
+\PYG{+w}{ }          free(buff2);
+\PYG{+w}{ }     @@ \PYGZhy{}50,8 +51,8 @@ int ProcessImage(char* filename)\PYGZob{}
+\PYG{+w}{ }       if(size3\PYGZgt{}10)\PYGZob{}
+\PYG{+w}{ }             buff4=0; //memory leak?
+\PYG{+w}{ }     \PYGZhy{}
+\PYG{+w}{ }        \PYGZcb{}\PYGZcb{}
+\PYG{+w}{ }        fclose(fp);
+\PYG{+w}{ }      \PYGZcb{}
+
+
+
+
+\PYGZbs{}subsection\PYGZob{}Przygotowanie środowiska testowego\PYGZcb{}
+\PYGZbs{}DOTSB
+
+\PYGZbs{}subsection\PYGZob{}Interpretacja wyników\PYGZcb{}
+\PYGZbs{}label\PYGZob{}subsec:interpretacja\PYGZus{}wynikow\PYGZcb{}
+
+Interpretacja wyników eksperymentów ujawniła istotne spostrzeżenia dotyczące możliwości wykorzystania modeli AI w celu poprawy bezpieczeństwa kodu. Analiza wykazała, że ...
+
+\PYGZpc{} Tutaj należy dodać interpretację wyników w kontekście wykresów i tabel (jeśli takowe zostały przygotowane)
+
+\PYGZbs{}section\PYGZob{}Badanie funkcjonalności na aplikacji webowej OWASP VulnerableApp\PYGZcb{}
+\PYGZbs{}label\PYGZob{}sec:badania\PYGZus{}na\PYGZus{}aplikacji\PYGZus{}webowej\PYGZus{}owasp\PYGZcb{}
+
+Analiza funkcjonalności programu do analizy bezpieczeństwa została przeprowadzona z wykorzystaniem aplikacji webowej OWASP VulnerableApp. Jest to narzędzie celowo zawierające liczne podatności, które mają na celu symulację realnych luk bezpieczeństwa, co pozwala na dogłębne testowanie i ocenę narzędzi do skanowania podatności.
+
+\PYGZbs{}subsection\PYGZob{}Charakterystyka aplikacji OWASP VulnerableApp\PYGZcb{}
+Aplikacja OWASP VulnerableApp została zaprojektowana z myślą o dostarczeniu platformy edukacyjnej dla deweloperów oraz specjalistów od bezpieczeństwa, którzy pragną zgłębić wiedzę na temat bezpieczeństwa aplikacji webowych. Narzędzie to charakteryzuje się skalowalnością, elastycznością oraz łatwością integracji, czyniąc je idealnym środowiskiem do nauki oraz testowania.
+
+\PYGZbs{}subsection\PYGZob{}Testowane rodzaje podatności\PYGZcb{}
+OWASP VulnerableApp umożliwia testowanie szerokiego zakresu podatności, w tym, ale nie ograniczając się do:
+
+\PYGZbs{}begin\PYGZob{}itemize\PYGZcb{}
+\PYG{+w}{ }   \PYGZbs{}item Podatności JWT
+\PYG{+w}{ }   \PYGZbs{}item Wstrzykiwanie poleceń (Command Injection)
+\PYG{+w}{ }   \PYGZbs{}item Podatności związane z przesyłaniem plików (File Upload Vulnerability)
+\PYG{+w}{ }   \PYGZbs{}item Przejście ścieżki (Path Traversal)
+\PYG{+w}{ }   \PYGZbs{}item Iniekcje SQL (SQL Injection)
+\PYG{+w}{ }   \PYGZbs{}item Skrypty międzywitrynowe (XSS)
+\PYG{+w}{ }   \PYGZbs{}item Ataki oparte na External XML Entities (XXE)
+\PYG{+w}{ }   \PYGZbs{}item Open Redirect
+\PYG{+w}{ }   \PYGZbs{}item Server\PYGZhy{}Side Request Forgery (SSRF)
+\PYGZbs{}end\PYGZob{}itemize\PYGZcb{}
+
+Zawarte podatności są reprezentatywne dla typowych zagrożeń w aplikacjach internetowych, co pozwala na wszechstronne i realistyczne testowanie narzędzi do ich wykrywania i naprawy.
+
+\PYGZbs{}subsection\PYGZob{}Zawartość znajdująca się w repozytorium\PYGZcb{}
+Repozytorium aplikacji VulnerableApp zawiera projekt aplikacji webowej napisany w następującym stosie technologicznym:
+\PYGZbs{}begin\PYGZob{}itemize\PYGZcb{}
+\PYG{+w}{ }   \PYGZbs{}item Java 8
+\PYG{+w}{ }   \PYGZbs{}item Spring Boot
+\PYG{+w}{ }   \PYGZbs{}item Maven 3.6.1
+\PYG{+w}{ }   \PYGZbs{}item ReactJS
+\PYG{+w}{ }   \PYGZbs{}item Javascript/TypeScript
+\PYGZbs{}end\PYGZob{}itemize\PYGZcb{}
+
+\PYGZbs{}begin\PYGZob{}verbatim\PYGZcb{}
+\PYG{+w}{ } \PYGZgt{} ../gptester/main.py \PYGZhy{}v VulnerableApp/
+2024\PYGZhy{}01\PYGZhy{}23 17:43:32: Welcome to gptester: the Static Code Analysis Agent
+2024\PYGZhy{}01\PYGZhy{}23 17:43:32: I will now begin scanning: VulnerableApp/, name: VulnerableApp
+2024\PYGZhy{}01\PYGZhy{}23 17:43:32: Beginning scan...
+2024\PYGZhy{}01\PYGZhy{}23 17:43:32: Found 231 files to scan
+2024\PYGZhy{}01\PYGZhy{}23 17:43:32: Tokens inside the directory: 229119
+2024\PYGZhy{}01\PYGZhy{}23 17:43:32: Beginning code analysis...
+2024\PYGZhy{}01\PYGZhy{}23 17:43:32: Using model: gpt\PYGZhy{}4\PYGZhy{}1106\PYGZhy{}preview
+2024\PYGZhy{}01\PYGZhy{}23 17:43:33: Splitting the content into 49 chunks
+
+\PYGZbs{}end\PYGZob{}verbatim\PYGZcb{}
+
+Nasz program pokazał nam, że w repozytorium znajduje się 231 plików, które zawierają 229119 tokenów.
+
+\PYGZbs{}subsection\PYGZob{}Procedura przeprowadzenia testów\PYGZcb{}
+Testy zostały przeprowadzone przy użyciu najnowszej wersji programu, zgodnie z następującymi krokami:
+
+\PYGZbs{}begin\PYGZob{}enumerate\PYGZcb{}
+\PYG{+w}{ }   \PYGZbs{}item Przygotowanie środowiska testowego z wykorzystaniem aplikacji OWASP VulnerableApp.
+\PYG{+w}{ }   \PYGZbs{}item Uruchomienie skanowania z wykorzystaniem programu.
+\PYG{+w}{ }   \PYGZbs{}item Dokumentacja wykrytych podatności oraz sugerowanych przez program napraw.
+\PYG{+w}{ }   \PYGZbs{}item Analiza efektywności napraw i ich wpływ na bezpieczeństwo aplikacji.
+\PYGZbs{}end\PYGZob{}enumerate\PYGZcb{}
+
+\PYGZbs{}subsection\PYGZob{}Oczekiwane rezultaty\PYGZcb{}
+W wyniku przeprowadzonych testów oczekujemy uzyskania szczegółowych danych na temat liczby wykrytych podatności, rodzajów podatności, a także czasu potrzebnego na ich wykrycie i naprawę. Dane te zostaną następnie wykorzystane do stworzenia szczegółowych wykresów i tabel ilustrujących skuteczność programu.
+
+\PYGZbs{}subsection\PYGZob{}Wnioski i dalsze kierunki badań\PYGZcb{}
+Na podstawie zebranych danych zostaną wyciągnięte wnioski dotyczące skuteczności narzędzia w kontekście poszczególnych typów podatności oraz ogólnej wydajności. Dalsze badania mogą również koncentrować się na porównaniu wyników z innymi narzędziami dostępnymi na rynku oraz na rozwoju nowych funkcji i usprawnień w badanym programie.
+
+
+\PYGZbs{}section\PYGZob{}Wnioski\PYGZcb{}
+\PYGZbs{}label\PYGZob{}sec:wnioski\PYGZcb{}
+
+Na podstawie przeprowadzonych badań eksperymentalnych udało się zweryfikować założenia dotyczące efektywności wykorzystania modeli AI w procesie identyfikacji i naprawy podatności w kodzie źródłowym. Główne wnioski to:
+
+\PYGZpc{} Tutaj należy wstawić wnioski z badania
+\end{Verbatim}

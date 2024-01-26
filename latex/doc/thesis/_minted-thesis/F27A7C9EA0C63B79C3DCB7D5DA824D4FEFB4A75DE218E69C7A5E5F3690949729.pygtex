@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{k+kt}{unsigned}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{size2}\PYG{p}{;}
+\PYG{+w}{                }\PYG{k}{if}\PYG{p}{(}\PYG{n}{\PYGZus{}\PYGZus{}builtin\PYGZus{}sub\PYGZus{}overflow}\PYG{p}{(}\PYG{n}{img}\PYG{p}{.}\PYG{n}{width}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{img}\PYG{p}{.}\PYG{n}{height}\PYG{p}{,}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{size2}\PYG{p}{))}
+\PYG{+w}{                }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                        }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Integer underflow detected in size2 calculation.\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{                        }\PYG{n}{fclose}\PYG{p}{(}\PYG{n}{fp}\PYG{p}{);}
+\PYG{+w}{                        }\PYG{n}{exit}\PYG{p}{(}\PYG{n}{EXIT\PYGZus{}FAILURE}\PYG{p}{);}
+\PYG{+w}{                }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{                }\PYG{n}{size2}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{l+m+mi}{100}\PYG{p}{;}
+\PYG{+w}{                }\PYG{k+kt}{char}\PYG{o}{*}\PYG{+w}{ }\PYG{n}{buff2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{char}\PYG{o}{*}\PYG{p}{)}\PYG{n}{malloc}\PYG{p}{(}\PYG{n}{size2}\PYG{p}{);}
+\end{Verbatim}

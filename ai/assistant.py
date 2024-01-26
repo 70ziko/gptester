@@ -12,7 +12,6 @@ CFG = Config()
 client = OpenAI()
 
 class Assistant():
-
     
     def __init__(self, role: str, name: str = "Assistant", model: str = 'gpt-3.5-turbo-1106', iol: IOlog = None, tools = None, messages = None) -> None:
         """
@@ -109,7 +108,7 @@ class Assistant():
                         if "filename" in arguments and self.name == "debug_agent": 
                             filename = os.path.basename(arguments["filename"])
                             timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-                            arguments["filename"] = os.path.join(directory, f'fixed_{timestamp}', filename)
+                            arguments["filename"] = os.path.join(directory, 'GPTester', f'fixed_{timestamp}', filename)
 
                         # Check if the function exists in the tools module
                         if hasattr(tools, name):

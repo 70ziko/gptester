@@ -93,8 +93,8 @@ async def debug_agent(input: str, iol: IOlog = None, model: str = 'gpt-4-1106-pr
 
     ai = Agent(role=f"{dbs.prompts['debug']}", name='debug_agent', iol = iol, tools=tools, model=model)
     
-    user = ai.fuser(msg=f"""The project codebase:\n{input}. Please list all the vulnerabilities present in the codebase.
-                    Then output possible solutions to fix these vulnerabilities.""")
+    user = ai.fuser(msg=f"""The project codebase:\n{input}. List all the vulnerabilities present in the codebase.
+                        Then output possible solutions to fix these vulnerabilities.""")
     
     messages = [user]
     return await ai.next(messages, directory=directory)
@@ -102,8 +102,8 @@ async def debug_agent(input: str, iol: IOlog = None, model: str = 'gpt-4-1106-pr
 async def test_agent(input: str, test: str, iol: IOlog = None, model: str = 'gpt-4-1106-preview', directory: str = 'tests') -> str:
     """An agent used to test the supplied project
     Capabililties: 
-        - Working on error messages - With the user (in the future it should be able to run the project and fix it on its own)
-        - writing missing code files """
+        - Execution of tests 
+        - writing missing test files """
 
     write_file_json = {
         "name": "write_file",
@@ -147,7 +147,7 @@ async def test_agent(input: str, test: str, iol: IOlog = None, model: str = 'gpt
 
     ai = Agent(role=f"{dbs.prompts['test']}", name='test_agent', iol = iol, tools=tools, model=model)
     
-    user = ai.fuser(msg=f"""The project codebase starts with (the amount that fits in the context window):\n{input}. User provided the following argument for tests: {test} 
+    user = ai.fuser(msg=f"""The project codebase:\n{input}. User provided the following argument for tests: {test} 
                     Please run the appropriate tests for the project. If tests are not provided, please write them.
                     Save them to a file and then run them. Use provided functions to do so.""")
     

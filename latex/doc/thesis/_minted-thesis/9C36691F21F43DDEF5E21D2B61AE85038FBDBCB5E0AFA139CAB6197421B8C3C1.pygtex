@@ -1,0 +1,63 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYGZbs{}\PYG{n}{end}\PYG{p}{\PYGZob{}}\PYG{n+nb}{enumerate}\PYG{p}{\PYGZcb{}}
+
+
+\PYGZbs{}\PYG{n}{subsection}\PYG{p}{\PYGZob{}}\PYG{n}{Konfiguracja} \PYG{n}{i} \PYG{n}{Optymalizacja}\PYG{p}{\PYGZcb{}}
+\PYG{n}{Użytkownicy} \PYGZbs{}\PYG{n}{textbf}\PYG{p}{\PYGZob{}}\PYG{n}{gptester}\PYG{p}{\PYGZcb{}} \PYG{n}{mogą} \PYG{n}{konfigurować} \PYG{n}{i} \PYG{n}{dostosowywać} \PYG{n}{użycie} \PYG{n}{modeli} \PYG{n}{językowych}\PYG{p}{,} \PYG{n}{wybierając} \PYG{n}{między} \PYG{n}{różnymi} \PYG{n}{wersjami} \PYG{n}{i} \PYG{n}{ustawieniami}\PYG{p}{,} \PYG{n}{co} \PYG{n}{pozwala} \PYG{n}{na} \PYG{n}{optymalizację} \PYG{n}{narzędzia} \PYG{n}{pod} \PYG{n}{kątem} \PYG{n}{konkretnych} \PYG{n}{projektów} \PYG{n}{i} \PYG{n}{wymagań}\PYG{o}{.}
+
+\PYGZbs{}\PYG{n}{subsection}\PYG{p}{\PYGZob{}}\PYG{n}{Przyszłe} \PYG{n}{Rozwój}\PYG{p}{\PYGZcb{}}
+\PYG{n}{Przewiduje} \PYG{n}{się} \PYG{n}{dalszy} \PYG{n}{rozwój} \PYG{n}{i} \PYG{n}{integrację} \PYG{n}{nowszych} \PYG{n}{modeli} \PYG{n}{językowych}\PYG{p}{,} \PYG{n}{jak} \PYG{n}{również} \PYG{n}{ulepszanie} \PYG{n}{procesu} \PYG{n}{inżynierii} \PYG{n}{promptów}\PYG{p}{,} \PYG{n}{co} \PYG{n}{zapewni} \PYG{n}{jeszcze} \PYG{n}{większą} \PYG{n}{skuteczność} \PYG{n}{i} \PYG{n}{precyzję} \PYG{n}{narzędzia} \PYGZbs{}\PYG{n}{textbf}\PYG{p}{\PYGZob{}}\PYG{n}{gptester}\PYG{p}{\PYGZcb{}} \PYG{n}{w} \PYG{n}{przyszłości}\PYG{o}{.}
+
+
+\PYGZbs{}\PYG{n}{section}\PYG{p}{\PYGZob{}}\PYG{n}{Rozwój} \PYG{n}{i} \PYG{n}{plany} \PYG{n}{na} \PYG{n}{przyszłość}\PYG{p}{\PYGZcb{}}
+\PYGZbs{}\PYG{n}{label}\PYG{p}{\PYGZob{}}\PYG{n}{sec}\PYG{p}{:}\PYG{n}{rozwoj\PYGZus{}i\PYGZus{}plany\PYGZus{}na\PYGZus{}przyszlosc}\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{Sekcja} \PYG{n}{ta} \PYG{n}{skupia} \PYG{n}{się} \PYG{n}{na} \PYG{n}{omówieniu} \PYG{n}{obecnego} \PYG{n}{stanu} \PYG{n}{projektu} \PYG{err}{`}\PYG{n}{gptester}\PYG{err}{`} \PYG{n}{oraz} \PYG{n}{planowanych} \PYG{n}{rozszerzeń} \PYG{n}{i} \PYG{n}{ulepszeń}\PYG{p}{,} \PYG{n}{które} \PYG{n}{mają} \PYG{n}{zostać} \PYG{n}{wprowadzone} \PYG{n}{w} \PYG{n}{przyszłości}\PYG{o}{.} \PYG{n}{Planowane} \PYG{n}{działania} \PYG{n}{są} \PYG{n}{zgodne} \PYG{n}{z} \PYG{n}{informacjami} \PYG{n}{zawartymi} \PYG{n}{w} \PYG{n}{sekcji} \PYG{l+s+s2}{\PYGZdq{}In development\PYGZdq{}} \PYG{n}{w} \PYG{n}{README}\PYG{o}{.}\PYG{n}{md}\PYG{o}{.}
+
+\PYGZbs{}\PYG{n}{subsection}\PYG{p}{\PYGZob{}}\PYG{n}{Obecne} \PYG{n}{osiągnięcia}\PYG{p}{\PYGZcb{}}
+\PYGZbs{}\PYG{n}{label}\PYG{p}{\PYGZob{}}\PYG{n}{subsec}\PYG{p}{:}\PYG{n}{obecne\PYGZus{}osiagniecia}\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{Projekt} \PYG{err}{`}\PYG{n}{gptester}\PYG{err}{`} \PYG{n}{osiągnął} \PYG{n}{już} \PYG{n}{kilka} \PYG{n}{kluczowych} \PYG{n}{kamieni} \PYG{n}{milowych} \PYG{n}{w} \PYG{n}{swoim} \PYG{n}{rozwoju}\PYG{p}{:}
+
+\PYGZbs{}\PYG{n}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{itemize}\PYG{p}{\PYGZcb{}}
+    \PYGZbs{}\PYG{n}{item} \PYGZbs{}\PYG{n}{textbf}\PYG{p}{\PYGZob{}}\PYG{n}{Podstawowa} \PYG{n}{funkcjonalność}\PYG{p}{\PYGZcb{}:} \PYG{n}{Program} \PYG{n}{już} \PYG{n}{teraz} \PYG{n}{oferuje} \PYG{n}{podstawowe} \PYG{n}{funkcje} \PYG{n}{analizy} \PYG{n}{statycznej} \PYG{n}{kodu}\PYG{p}{,} \PYG{n}{umożliwiając} \PYG{n}{identyfikację} \PYG{n}{typowych} \PYG{n}{błędów} \PYG{n}{i} \PYG{n}{podatności}\PYG{o}{.}
+    \PYGZbs{}\PYG{n}{item} \PYGZbs{}\PYG{n}{textbf}\PYG{p}{\PYGZob{}}\PYG{n}{Wykorzystanie} \PYG{n}{technik} \PYG{n}{RAG} \PYG{n}{oraz} \PYG{o+ow}{in}\PYG{o}{\PYGZhy{}}\PYG{n}{context} \PYG{n}{learning}\PYG{p}{\PYGZcb{}:} \PYG{err}{`}\PYG{n}{gptester}\PYG{err}{`} \PYG{n}{wykorzystuje} \PYG{n}{zaawansowane} \PYG{n}{techniki} \PYG{n}{generacji} \PYG{n}{wspomaganej} \PYG{n}{odzyskiwaniem} \PYG{n}{danych} \PYG{n}{oraz} \PYG{n}{uczenia} \PYG{n}{się} \PYG{n}{w} \PYG{n}{kontekście}\PYG{p}{,} \PYG{n}{co} \PYG{n}{pozwala} \PYG{n}{na} \PYG{n}{lepsze} \PYG{n}{dostosowanie} \PYG{n}{modeli} \PYG{n}{językowych} \PYG{n}{do} \PYG{n}{specyficznych} \PYG{n}{zadań}\PYG{o}{.}
+    \PYGZbs{}\PYG{n}{item} \PYGZbs{}\PYG{n}{textbf}\PYG{p}{\PYGZob{}}\PYG{n}{Integracja} \PYG{n}{z} \PYG{n}{CodeQL}\PYG{p}{\PYGZcb{}:} \PYG{n}{Znaczącym} \PYG{n}{osiągnięciem} \PYG{n}{jest} \PYG{n}{wdrożenie} \PYG{n}{integracji} \PYG{n}{z} \PYG{n}{CodeQL}\PYG{p}{,} \PYG{n}{co} \PYG{n}{znacznie} \PYG{n}{rozszerza} \PYG{n}{możliwości} \PYG{n}{analizy} \PYG{n}{kodu}\PYG{p}{,} \PYG{n}{szczególnie} \PYG{n}{w} \PYG{n}{zakresie} \PYG{n}{wykrywania} \PYG{n}{złożonych} \PYG{n}{błędów} \PYG{n}{bezpieczeństwa}\PYG{o}{.}
+\PYGZbs{}\PYG{n}{end}\PYG{p}{\PYGZob{}}\PYG{n}{itemize}\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{Te} \PYG{n}{osiągnięcia} \PYG{n}{stanowią} \PYG{n}{solidną} \PYG{n}{podstawę} \PYG{n}{dla} \PYG{n}{dalszego} \PYG{n}{rozwoju} \PYG{n}{i} \PYG{n}{rozbudowy} \PYG{err}{`}\PYG{n}{gptester}\PYG{err}{`}\PYG{p}{,} \PYG{n}{kładąc} \PYG{n}{nacisk} \PYG{n}{na} \PYG{n}{wydajność}\PYG{p}{,} \PYG{n}{dokładność} \PYG{n}{i} \PYG{n}{wszechstronność} \PYG{n}{narzędzia}\PYG{o}{.}
+
+\PYGZbs{}\PYG{n}{subsection}\PYG{p}{\PYGZob{}}\PYG{n}{Planowane} \PYG{n}{rozszerzenia}\PYG{p}{\PYGZcb{}}
+\PYGZbs{}\PYG{n}{label}\PYG{p}{\PYGZob{}}\PYG{n}{subsec}\PYG{p}{:}\PYG{n}{planowane\PYGZus{}rozszerzenia}\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{W} \PYG{n}{ramach} \PYG{n}{dalszego} \PYG{n}{rozwoju}\PYG{p}{,} \PYG{n}{projekt} \PYG{err}{`}\PYG{n}{gptester}\PYG{err}{`} \PYG{n}{ma} \PYG{n}{w} \PYG{n}{planach} \PYG{n}{kilka} \PYG{n}{istotnych} \PYG{n}{rozszerzeń} \PYG{n}{i} \PYG{n}{ulepszeń}\PYG{p}{:}
+
+\PYGZbs{}\PYG{n}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{itemize}\PYG{p}{\PYGZcb{}}
+    \PYGZbs{}\PYG{n}{item} \PYGZbs{}\PYG{n}{textbf}\PYG{p}{\PYGZob{}}\PYG{n}{Aktualizacja} \PYG{n}{kodu} \PYG{n}{za} \PYG{n}{pomocą} \PYG{n}{funkcji} \PYG{n}{git} \PYG{n}{i} \PYG{n}{plików} \PYG{n}{patch}\PYG{p}{\PYGZcb{}:} \PYG{n}{Rozwój} \PYG{n}{funkcjonalności}\PYG{p}{,} \PYG{n}{która} \PYG{n}{pozwoli} \PYG{n}{na} \PYG{n}{automatyczne} \PYG{n}{wprowadzanie} \PYG{n}{poprawek} \PYG{n}{do} \PYG{n}{kodu} \PYG{n}{źródłowego} \PYG{n}{na} \PYG{n}{podstawie} \PYG{n}{wygenerowanych} \PYG{n}{plików} \PYG{n}{git} \PYG{n}{i} \PYG{n}{patch}\PYG{o}{.} \PYG{n}{To} \PYG{n}{ulepszenie} \PYG{n}{ułatwi} \PYG{n}{proces} \PYG{n}{naprawy} \PYG{n}{kodu}\PYG{p}{,} \PYG{n}{umożliwiając} \PYG{n}{automatyczne} \PYG{n}{aplikowanie} \PYG{n}{poprawek} \PYG{n}{oraz} \PYG{n}{interaktywne} \PYG{n}{wybieranie} \PYG{n}{elementów} \PYG{n}{z} \PYG{n}{obu} \PYG{n}{wersji}\PYG{o}{.}
+    \PYGZbs{}\PYG{n}{item} \PYGZbs{}\PYG{n}{textbf}\PYG{p}{\PYGZob{}}\PYG{n}{Dodanie} \PYG{n}{więcej} \PYG{n}{testów} \PYG{n}{oraz} \PYG{n}{automatyzacja} \PYG{n}{testów} \PYG{n}{bezpieczeństwa}\PYG{p}{\PYGZcb{}:} \PYG{n}{Rozbudowa} \PYG{n}{zestawu} \PYG{n}{testów} \PYG{n}{funkcjonalnych}\PYG{p}{,} \PYG{n}{jednostkowych} \PYG{n}{i} \PYG{n}{bezpieczeństwa}\PYG{p}{,} \PYG{n}{co} \PYG{n}{pozwoli} \PYG{n}{na} \PYG{n}{lepsze} \PYG{n}{sprawdzanie} \PYG{n}{niezawodności} \PYG{n}{i} \PYG{n}{efektywności} \PYG{err}{`}\PYG{n}{gptester}\PYG{err}{`}\PYG{o}{.} \PYG{n}{Automatyzacja} \PYG{n}{testów} \PYG{n}{pozwoli} \PYG{n}{na} \PYG{n}{skuteczniejsze} \PYG{n}{wykrywanie} \PYG{n}{błędów} \PYG{n}{oraz} \PYG{n}{ułatwi} \PYG{n}{badania}\PYG{o}{.}
+    \PYGZbs{}\PYG{n}{item} \PYGZbs{}\PYG{n}{textbf}\PYG{p}{\PYGZob{}}\PYG{n}{Obsługa} \PYG{n}{więcej} \PYG{n}{języków} \PYG{n}{programowania} \PYG{n}{dla} \PYG{n}{CodeQL}\PYG{p}{\PYGZcb{}:} \PYG{n}{Rozszerzenie} \PYG{n}{integracji} \PYG{n}{z} \PYG{n}{CodeQL} \PYG{n}{o} \PYG{n}{więcej} \PYG{n}{języków} \PYG{n}{programowania}\PYG{p}{,} \PYG{n}{co} \PYG{n}{zwiększy} \PYG{n}{użyteczność} \PYG{err}{`}\PYG{n}{gptester}\PYG{err}{`} \PYG{n}{w} \PYG{n}{różnorodnych} \PYG{n}{projektach} \PYG{n}{programistycznych}\PYG{o}{.} \PYG{n}{Planowane} \PYG{n}{jest} \PYG{n}{dodanie} \PYG{n}{wsparcia} \PYG{n}{dla} \PYG{n}{popularnych} \PYG{n}{języków} \PYG{n}{takich} \PYG{n}{jak} \PYG{n}{JavaScript}\PYG{p}{,} \PYG{n}{Python} \PYG{n}{czy} \PYG{n}{Ruby}\PYG{o}{.}
+\PYGZbs{}\PYG{n}{end}\PYG{p}{\PYGZob{}}\PYG{n}{itemize}\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{Te} \PYG{n}{planowane} \PYG{n}{rozszerzenia} \PYG{n}{mają} \PYG{n}{na} \PYG{n}{celu} \PYG{n}{nie} \PYG{n}{tylko} \PYG{n}{ulepszenie} \PYG{n}{obecnych} \PYG{n}{funkcjonalności} \PYG{n}{gptester}\PYG{p}{,} \PYG{n}{ale} \PYG{n}{również} \PYG{n}{wprowadzenie} \PYG{n}{nowych} \PYG{n}{możliwości}\PYG{p}{,} \PYG{n}{które} \PYG{n}{uczynią} \PYG{n}{narzędzie} \PYG{n}{jeszcze} \PYG{n}{bardziej} \PYG{n}{wszechstronnym} \PYG{n}{i} \PYG{n}{przydatnym} \PYG{n}{w} \PYG{n}{różnych} \PYG{n}{kontekstach} \PYG{n}{analizy} \PYG{n}{kodu}\PYG{o}{.}
+\PYGZbs{}\PYG{n}{section}\PYG{p}{\PYGZob{}}\PYG{n}{Podsumowanie}\PYG{p}{\PYGZcb{}}
+\PYGZbs{}\PYG{n}{label}\PYG{p}{\PYGZob{}}\PYG{n}{sec}\PYG{p}{:}\PYG{n}{podsumowanie}\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{W} \PYG{n}{niniejszym} \PYG{n}{rozdziale} \PYG{n}{przedstawiono} \PYG{n}{szczegółowy} \PYG{n}{opis} \PYG{n}{projektu} \PYG{err}{`}\PYG{n}{gptester}\PYG{err}{`}\PYG{p}{,} \PYG{n}{jego} \PYG{n}{obecne} \PYG{n}{możliwości} \PYG{n}{oraz} \PYG{n}{plany} \PYG{n}{rozwojowe}\PYG{o}{.} \PYG{err}{`}\PYG{n}{gptester}\PYG{err}{`}\PYG{p}{,} \PYG{n}{jako} \PYG{n}{zaawansowane} \PYG{n}{narzędzie} \PYG{n}{do} \PYG{n}{analizy} \PYG{n}{statycznej} \PYG{n}{kodu}\PYG{p}{,} \PYG{n}{wykorzystujące} \PYG{n}{model} \PYG{n}{GPT}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{4} \PYG{n}{od} \PYG{n}{OpenAI}\PYG{p}{,} \PYG{n}{stanowi} \PYG{n}{znaczący} \PYG{n}{krok} \PYG{n}{naprzód} \PYG{n}{w} \PYG{n}{dziedzinie} \PYG{n}{automatyzacji} \PYG{n}{i} \PYG{n}{poprawy} \PYG{n}{jakości} \PYG{n}{kodu} \PYG{n}{źródłowego}\PYG{o}{.}
+
+\PYGZbs{}\PYG{n}{textbf}\PYG{p}{\PYGZob{}}\PYG{n}{Podstawowe} \PYG{n}{osiągnięcia}\PYG{p}{:\PYGZcb{}}
+\PYGZbs{}\PYG{n}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{itemize}\PYG{p}{\PYGZcb{}}
+    \PYGZbs{}\PYG{n}{item} \PYG{n}{Rozwój} \PYG{n}{podstawowych} \PYG{n}{funkcjonalności} \PYG{n}{analizy} \PYG{n}{statycznej}\PYG{p}{,} \PYG{n}{umożliwiających} \PYG{n}{efektywne} \PYG{n}{wykrywanie} \PYG{n}{i} \PYG{n}{naprawianie} \PYG{n}{błędów} \PYG{n}{w} \PYG{n}{kodzie}\PYG{o}{.}
+    \PYGZbs{}\PYG{n}{item} \PYG{n}{Integracja} \PYG{n}{z} \PYG{n}{CodeQL}\PYG{p}{,} \PYG{n}{dzięki} \PYG{n}{której} \PYG{err}{`}\PYG{n}{gptester}\PYG{err}{`} \PYG{n}{zyskuje} \PYG{n}{zdolność} \PYG{n}{do} \PYG{n}{przeprowadzania} \PYG{n}{bardziej} \PYG{n}{zaawansowanych} \PYG{n}{analiz} \PYG{n}{bezpieczeństwa}\PYG{o}{.}
+    \PYGZbs{}\PYG{n}{item} \PYG{n}{Elastyczność} \PYG{n}{w} \PYG{n}{obsłudze} \PYG{n}{różnorodnych} \PYG{n}{scenariuszy} \PYG{n}{użytkowania} \PYG{n}{poprzez} \PYG{n}{konfigurowalne} \PYG{n}{argumenty} \PYG{n}{linii} \PYG{n}{poleceń}\PYG{o}{.}
+\PYGZbs{}\PYG{n}{end}\PYG{p}{\PYGZob{}}\PYG{n}{itemize}\PYG{p}{\PYGZcb{}}
+
+\PYGZbs{}\PYG{n}{textbf}\PYG{p}{\PYGZob{}}\PYG{n}{Plany} \PYG{n}{rozwojowe}\PYG{p}{:\PYGZcb{}}
+\PYGZbs{}\PYG{n}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{itemize}\PYG{p}{\PYGZcb{}}
+    \PYGZbs{}\PYG{n}{item} \PYG{n}{Rozbudowa} \PYG{n}{funkcjonalności} \PYG{n}{aktualizacji} \PYG{n}{kodu} \PYG{n}{źródłowego} \PYG{n}{za} \PYG{n}{pomocą} \PYG{n}{plików} \PYG{n}{git} \PYG{n}{i} \PYG{n}{patch}\PYG{p}{,} \PYG{n}{co} \PYG{n}{uprości} \PYG{n}{proces} \PYG{n}{wprowadzania} \PYG{n}{poprawek}\PYG{o}{.}
+    \PYGZbs{}\PYG{n}{item} \PYG{n}{Dodanie} \PYG{n}{wsparcia} \PYG{n}{dla} \PYG{n}{dodatkowych} \PYG{n}{języków} \PYG{n}{programowania} \PYG{n}{w} \PYG{n}{integracji} \PYG{n}{z} \PYG{n}{CodeQL}\PYG{p}{,} \PYG{n}{co} \PYG{n}{rozszerzy} \PYG{n}{zakres} \PYG{n}{zastosowania} \PYG{err}{`}\PYG{n}{gptester}\PYG{err}{`}\PYG{o}{.}
+    \PYGZbs{}\PYG{n}{item} \PYG{n}{Automatyzacja} \PYG{n}{testów}\PYG{o}{.}
+\PYGZbs{}\PYG{n}{end}\PYG{p}{\PYGZob{}}\PYG{n}{itemize}\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{Podsumowując}\PYG{p}{,} \PYG{err}{`}\PYG{n}{gptester}\PYG{err}{`} \PYG{n}{już} \PYG{n}{teraz} \PYG{n}{stanowi} \PYG{n}{potężne} \PYG{n}{narzędzie} \PYG{n}{do} \PYG{n}{analizy} \PYG{n}{i} \PYG{n}{poprawy} \PYG{n}{kodu} \PYG{n}{źródłowego}\PYG{p}{,} \PYG{n}{a} \PYG{n}{planowane} \PYG{n}{rozbudowy} \PYG{n}{i} \PYG{n}{ulepszenia} \PYG{n}{sprawią}\PYG{p}{,} \PYG{n}{że} \PYG{n}{będzie} \PYG{n}{ono} \PYG{n}{jeszcze} \PYG{n}{bardziej} \PYG{n}{wszechstronne} \PYG{n}{i} \PYG{n}{skuteczne}\PYG{o}{.} \PYG{n}{Projekt} \PYG{n}{ten} \PYG{n}{pokazuje}\PYG{p}{,} \PYG{n}{jak} \PYG{n}{technologie} \PYG{n}{AI} \PYG{n}{i} \PYG{n}{narzędzia} \PYG{n}{do} \PYG{n}{automatycznej} \PYG{n}{analizy} \PYG{n}{kodu} \PYG{n}{mogą} \PYG{n}{przyczynić} \PYG{n}{się} \PYG{n}{do} \PYG{n}{poprawy} \PYG{n}{jakości} \PYG{n}{oprogramowania} \PYG{n}{oraz} \PYG{n}{efektywności} \PYG{n}{procesów} \PYG{n}{programistycznych}\PYG{o}{.}
+\end{Verbatim}

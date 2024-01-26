@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{img}\PYG{p}{.}\PYG{n}{height}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{img}\PYG{p}{.}\PYG{n}{width}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{100}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{      }\PYG{n}{fprintf}\PYG{p}{(}\PYG{n}{stderr}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}Integer underflow detected}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{      }\PYG{n}{free}\PYG{p}{(}\PYG{n}{buff1}\PYG{p}{);}
+\PYG{+w}{      }\PYG{n}{fclose}\PYG{p}{(}\PYG{n}{fp}\PYG{p}{);}
+\PYG{+w}{      }\PYG{n}{exit}\PYG{p}{(}\PYG{n}{EXIT\PYGZus{}FAILURE}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\PYG{err}{\PYGZbs{}}\PYG{n}{caption}\PYG{p}{\PYGZob{}}\PYG{n}{Fragment}\PYG{+w}{ }\PYG{n}{kodu}\PYG{+w}{ }\PYG{n}{odpowiadający}\PYG{+w}{ }\PYG{n}{za}\PYG{+w}{ }\PYG{n}{wyświetlenie}\PYG{+w}{ }\PYG{n}{informacji}\PYG{+w}{ }\PYG{n}{o}\PYG{+w}{ }\PYG{n}{błędzie}\PYG{p}{\PYGZcb{}}
+\PYG{err}{\PYGZbs{}}\PYG{n}{label}\PYG{p}{\PYGZob{}}\PYG{n}{lst}\PYG{o}{:}\PYG{n}{code3}\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
