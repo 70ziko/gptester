@@ -1,15 +1,10 @@
 import re
 from utils.config import Config
-from utils.IOlog import IOlog
+from utils.io import IOlog
 from utils.utils import openai_call, openai_call_functions, num_tokens_from_messages, prompt_function_call
 
 CFG = Config()
 
-
-if CFG.console_mode:
-    from utils.io_classes import IO_console as IO
-else:
-    from utils.io_classes import IO_sockets as IO
 
 class Agent():
     def __init__(self, role: str, name: str = "AI", model: str = CFG.llm_model, IOlog: IOlog = None, io: IO = None) -> None:

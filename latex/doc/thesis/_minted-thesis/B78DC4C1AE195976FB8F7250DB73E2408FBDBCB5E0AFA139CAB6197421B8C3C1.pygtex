@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+        \PYG{k+kn}{from} \PYG{n+nn}{openai} \PYG{k+kn}{import} \PYG{n}{OpenAI}
+\PYG{n}{client} \PYG{o}{=} \PYG{n}{OpenAI}\PYG{p}{()}
+
+\PYG{n}{response} \PYG{o}{=} \PYG{n}{client}\PYG{o}{.}\PYG{n}{completions}\PYG{o}{.}\PYG{n}{create}\PYG{p}{(}
+  \PYG{n}{model}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}gpt\PYGZhy{}3.5\PYGZhy{}turbo\PYGZhy{}instruct\PYGZdq{}}\PYG{p}{,}
+  \PYG{n}{prompt}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Write a tagline for an ice cream shop.\PYGZdq{}}
+\PYG{p}{)}
+    \PYGZbs{}\PYG{n}{item} \PYGZbs{}\PYG{n}{textbf}\PYG{p}{\PYGZob{}}\PYG{n}{ChatCompletion}\PYG{p}{(}\PYG{n}{Komplecja}\PYG{o}{/}\PYG{n}{Uzupełnienie} \PYG{n}{dialogowe}\PYG{p}{)\PYGZcb{}:} \PYG{n}{Modele} \PYG{n}{czatu} \PYG{n}{przyjmują} \PYG{n}{listę} \PYG{n}{wiadomości} \PYG{n}{jako} \PYG{n}{dane} \PYG{n}{wejściowe} \PYG{n}{i} \PYG{n}{zwracają} \PYG{n}{wiadomość} \PYG{n}{wygenerowaną} \PYG{n}{przez} \PYG{n}{model} \PYG{n}{jako} \PYG{n}{dane} \PYG{n}{wyjściowe}\PYG{o}{.} \PYG{n}{Chociaż} \PYG{n+nb}{format} \PYG{n}{czatu} \PYG{n}{został} \PYG{n}{zaprojektowany} \PYG{n}{tak}\PYG{p}{,} \PYG{n}{aby} \PYG{n}{ułatwić} \PYG{n}{wieloobrotowe} \PYG{n}{rozmowy}\PYG{p}{,} \PYG{n}{jest} \PYG{n}{równie} \PYG{n}{przydatny} \PYG{n}{w} \PYG{n}{przypadku} \PYG{n}{zadań} \PYG{n}{jednoobrotowych} \PYG{n}{bez} \PYG{n}{żadnej} \PYG{n}{rozmowy}\PYG{o}{.}
+
+    \PYG{n}{Przykładowe} \PYG{n}{wywołanie} \PYG{n}{interfejsu} \PYG{n}{API} \PYG{n}{Chat} \PYG{n}{Completions} \PYG{n}{wygląda} \PYG{n}{następująco}\PYG{p}{:}
+    \PYGZbs{}\PYG{n}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{listing}\PYG{p}{\PYGZcb{}}
+        \PYGZbs{}\PYG{n}{begin}\PYG{p}{\PYGZob{}}\PYG{n}{minted}\PYG{p}{\PYGZcb{}\PYGZob{}}\PYG{n}{python}\PYG{p}{\PYGZcb{}}
+\PYG{k+kn}{from} \PYG{n+nn}{openai} \PYG{k+kn}{import} \PYG{n}{OpenAI}
+\PYG{n}{client} \PYG{o}{=} \PYG{n}{OpenAI}\PYG{p}{()}
+
+\PYG{n}{response} \PYG{o}{=} \PYG{n}{client}\PYG{o}{.}\PYG{n}{chat}\PYG{o}{.}\PYG{n}{completions}\PYG{o}{.}\PYG{n}{create}\PYG{p}{(}
+  \PYG{n}{model}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}gpt\PYGZhy{}3.5\PYGZhy{}turbo\PYGZdq{}}\PYG{p}{,}
+  \PYG{n}{messages}\PYG{o}{=}\PYG{p}{[}
+    \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}role\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}system\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}content\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}You are a helpful assistant.\PYGZdq{}}\PYG{p}{\PYGZcb{},}
+    \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}role\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}user\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}content\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Who won the world series in 2020?\PYGZdq{}}\PYG{p}{\PYGZcb{},}
+    \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}role\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}assistant\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}content\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}The Los Angeles Dodgers won the World Series in 2020.\PYGZdq{}}\PYG{p}{\PYGZcb{},}
+    \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}role\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}user\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}content\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Where was it played?\PYGZdq{}}\PYG{p}{\PYGZcb{}}
+  \PYG{p}{]}
+\PYG{p}{)}
+\end{Verbatim}

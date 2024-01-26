@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+./main.py\PYG{+w}{ }/ścieżka/do/projektu\PYG{+w}{ }\PYGZhy{}\PYGZhy{}verbose\PYG{+w}{ }\PYGZhy{}\PYGZhy{}model\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}gpt\PYGZhy{}4\PYGZhy{}1106\PYGZhy{}preview\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}\PYGZhy{}output\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}moj\PYGZus{}raport.md\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}\PYGZhy{}tests\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}/ścieżka/do/testów\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}\PYGZhy{}codeql\PYG{+w}{ }\PYGZhy{}\PYGZhy{}command\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}mvn \PYGZhy{}B \PYGZhy{}DskipTests \PYGZhy{}DskipAssembly\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}\PYGZhy{}language\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}java\PYGZdq{}}
+\end{Verbatim}

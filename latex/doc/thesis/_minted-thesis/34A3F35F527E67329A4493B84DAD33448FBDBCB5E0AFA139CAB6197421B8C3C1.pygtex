@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{assistant} \PYG{o}{=} \PYG{n}{client}\PYG{o}{.}\PYG{n}{beta}\PYG{o}{.}\PYG{n}{assistants}\PYG{o}{.}\PYG{n}{create}\PYG{p}{(}
+    \PYG{n}{name}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}Math Tutor\PYGZdq{}}\PYG{p}{,}
+    \PYG{n}{instructions}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}You are a personal math tutor. Write and run code to answer math questions.\PYGZdq{}}\PYG{p}{,}
+    \PYG{n}{tools}\PYG{o}{=}\PYG{p}{[\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}code\PYGZus{}interpreter\PYGZdq{}}\PYG{p}{\PYGZcb{}],}
+    \PYG{n}{model}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}gpt\PYGZhy{}4\PYGZhy{}1106\PYGZhy{}preview\PYGZdq{}}
+\PYG{p}{)}
+\end{Verbatim}
