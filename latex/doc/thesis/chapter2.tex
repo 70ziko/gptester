@@ -471,7 +471,7 @@ W niniejszym podrozdziale prezentuję przykład implementacji agenta AI, który 
 async def test_agent(input: str, test: str, iol: IOlog = None, model: str = 'gpt-4-1106-preview', directory: str = 'tests') -> str:
     """An agent used to test the supplied project
     Capabililties: 
-        - Working on error messages - With the user (in the future it should be able to run the project and fix it on its own)
+        - Running tests for the project
         - writing missing test files """
     write_file_json = {
         "name": "write_file",

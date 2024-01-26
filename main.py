@@ -19,7 +19,7 @@ parser.add_argument('-m', '--model', help='Choose the LLM model for code analysi
 parser.add_argument('-o', '--output', help='Output the results to a file, default: "raports/{name_of_parent_folder}_{timestamp}_raport.md"')
 parser.add_argument('-t', '--tests', help='Provide a path to functional tests to run on the project, if not supplied or found in the workspace directory, the tests will be generated or skipped')
 parser.add_argument('-c', '--codeql', help='Use codeql to enhance the scan, REQUIRED to install CodeQL-CLI console tool', action='store_true', default=False)
-parser.add_argument('--command', help='Provide a build command to run the project for codeql, if no cmake or other file present in the project root directory, default: "make"', default="make")
+parser.add_argument('--command', help='Provide a build command to run the project for codeql, if no cmake or similiar file present in the project root directory, default: "make"', default="make")
 parser.add_argument('--language', help='Provide a programming language of the project for codeql, default: "cpp"', default="cpp")
 
 
@@ -92,11 +92,9 @@ async def main():
     print(f"""           The static code analysis agent, version: {CFG.version}\n\n""")
 
     iol.log(f"Beginning scan for {args.directory}", color="pink")
-    dir_content = walk_directory(args.directory)    # excluding directories starting with 'fixed'
-
+    dir_content = walk_directory(args.directory)    # excluding directories starting with 'fixed' and other typical .gitignore files
+                                                    # in future it will be possible to point to a custom .gitignore file
     iol.log(f"Found {len(dir_content)} files to scan", color="cyan", verbose_only=False)
-    # for key, value in dir_content.items():
-    #     iol.log(f"File: {key}, \n```\n{value}\n```", color="green", verbose_only=True)
 
     iol.log(f'Tokens inside the directory: {num_tokens_from_string(dir_content)}', color='bright_cyan')
 

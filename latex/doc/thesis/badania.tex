@@ -38,11 +38,90 @@ Procedura testowa przebiegała według następujących etapów:
 \section{Wyniki działania programu - przykład}
 \label{sec:wyniki_dzialania_programu}
 
-Wyniki działania programu, prezentowane na konsoli oraz dokumentowane w plikach raportów, zapewniają bezpośredni wgląd w proces analizy kodu:
+Wyniki działania programu, prezentowane na konsoli oraz dokumentowane w plikach raportów, zapewniają bezpośredni wgląd w proces analizy kodu: \\
 % Tutaj należy wstawić odpowiednią zawartość raportu w formacie Markdown, o ile jest dostępna
 
-\markdownInput{/home/paris/projekty/INZYNIERKA/gptester/raports/Authentication_Bypass_20240120120144_raport.md} 
+\LARGE{\textbf{GPTESTER RAPORT}} \normalsize \\\\
+2024-01-25 21:00:51: Beginning scan for Vulnerable-Code-Snippets/Out of Bounds/\ldots{} \\
+2024-01-25 21:00:51: Found 1 files to scan 2024-01-25 21:00:51: Tokens inside the directory: 701 \\
+2024-01-25 21:00:51: Beginning code analysis\ldots{} \\
+2024-01-25 21:00:51: Using model: gpt-4-1106-preview \\
+2024-01-25 21:00:51: Splitting the content into 1 chunks \\
+2024-01-25 21:03:52: Analyzing the provided  code snippet from \texttt{damnvuln.c}, I have identified several vulnerabilities, which I have listed below along with a brief description of each: 
 
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Integer Overflow}:
+  \texttt{int\ size1\ =\ img.width\ +\ img.height;\ //Vulnerability:\ integer\ overflow}
+  If \texttt{img.width} and \texttt{img.height} are large enough, the
+  sum could overflow, resulting in incorrect behavior or potentially
+  exploitable conditions.
+\item
+  \textbf{No Check for \texttt{malloc} Success}:
+  \texttt{char*\ buff1=(char*)malloc(size1);} There is no check to see
+  if \texttt{malloc} has successfully allocated memory, which could lead
+  to a null pointer dereference if the allocation fails.
+\item
+  \textbf{Double Free}:
+  \texttt{if(size1/2==0)\{\ free(buff1);\ //Vulnerability:\ double\ free\ \}}
+  If \texttt{size1} is even, \texttt{buff1} is freed twice, which is
+  undefined behavior and a critical security vulnerability.
+\item
+  \textbf{Use After Free}:
+  \texttt{if(size1\ ==\ 123456)\{\ buff1{[}0{]}=\textquotesingle{}a\textquotesingle{};\ //Vulnerability:\ use\ after\ free\ \}}
+  Modifying memory after it has been freed could lead to arbitrary code
+  execution or program crashes.
+\item
+  \textbf{Integer Underflow}:
+  \texttt{int\ size2\ =\ img.width\ -\ img.height+100;\ //Vulnerability:\ integer\ underflow}
+  If \texttt{img.height} is greater than \texttt{img.width\ +\ 100},
+  \texttt{size2} could become negative, causing unexpected behavior in
+  \texttt{malloc}.
+\item
+  \textbf{Out of Bounds Read (Stack)}:
+  \texttt{char\ OOBR\_stack\ =\ buff3{[}size3+100{]};\ //Vulnerability:\ out\ of\ bound\ read\ (stack)}
+  Reading values outside the bounds of an array could lead to
+  information disclosure or crashes.
+\item
+  \textbf{Out of Bounds Write (Stack)}:
+  \texttt{buff3{[}size3+100{]}=\textquotesingle{}c\textquotesingle{};\ //Vulnerability:\ out\ of\ bound\ write\ (Stack)}
+  Writing beyond the bounds of the stack buffer can overwrite important
+  data and lead to control-flow hijacking.
+\item
+  \textbf{Out of Bounds Write (Heap)}:
+  \texttt{buff4{[}100{]}=\textquotesingle{}c\textquotesingle{};\ //Vulnerability:\ out\ of\ bound\ write\ (Heap)}
+  Similar to the stack buffer overflow but on the heap, leading to data
+  corruption or arbitrary code execution vulnerabilities.
+\item
+  \textbf{Memory Leak}:
+  \texttt{if(size3\textgreater{}10)\{\ buff4=0;\ //memory\ leak?\ \}}
+  Assigning \texttt{0} to \texttt{buff4} without freeing it first, can
+  lead to a memory leak if \texttt{size3} is greater than 10.
+\item
+  \textbf{No Check for Division by Zero or Negative Results}:
+  \texttt{int\ size3\ =\ img.width\ /\ img.height;} Division by zero can
+  occur if \texttt{img.height} is zero, and if \texttt{img.height} is
+  greater than \texttt{img.width}, the result is a negative integer for
+  \texttt{size3}.
+\item
+  \textbf{Possible Buffer Overflow} (No CodeQL error mentioned, but it's
+  an issue): \texttt{memcpy(buff1,\ img.data,\ sizeof(img.data));} There
+  is no check that the size of the allocated buffer (\texttt{buff1},
+  \texttt{buff2}, \texttt{buff4}) is at least as large as the amount of
+  data being copied, potentially leading to a buffer overflow.
+\end{enumerate}
+
+Now, I will suggest potential fixes and provide the corrected code using
+the git version control format.
+
+2024-01-25 21:03:52: Tests completed! 2024-01-25 21:04:53: Scan complete!
+
+\subsection{Opis przedstawionego wyniku}
+
+Przedstawiony raport zawiera informacje o wykrytych podatnościach, wraz z ich opisem oraz sugestiami napraw. W tym przebiegu aplikacji agent dokonał wyboru zapisania sugestii napraw do pliku o rozszerzeniu diff. Dodatkowo zapisał poprawioną wersję badanego pliku, która jest możliwa do skompilowania. Wszystkie te informacje i pliki zostały wygenerowane przez program, na podstawie analizy kodu źródłowego. Formatowanie markdown zostało zinterpretowane przed umieszczeniem w niniejszej pracy inżynierskiej.
+
+Lokalizacja napraw reprezentowana w formacie diff może zostać przez agenta zapisana zarówno w raporcie jak i w pliku. W tej chwili decyduje o tym model językowy, ale podczas dalszych prac nad projektem, planowane jest dodanie mechanizmów, które pozwolą na wybór preferowanego sposobu prezentacji napraw, co pozwoli na łatwe aplikowanie popraw za pomocą systemów kontroli wersji.
 \newpage
 \section{Badania na zbiorze \textit{snoopysecurity/Vulnerable-Code-Snippets}}
 \label{sec:badania_na_zbiorze_snoopysecurity}
@@ -56,12 +135,14 @@ Eksperymenty przeprowadzono z wykorzystaniem poniższych parametrów:
 
 
 \begin{verbatim}
-   ___  ___  _____           _             
-  / __|| _ \|_   _| ___  ___| |_  ___  _ _ 
- | (_ ||  _/  | |  / -_)(_-/|  _|/ -_)| '_|
-  \___||_|    |_|  \___|/__/ \__|\___||_|  
 
-The static code analysis agent, version: assistant-0.3
+                  ___  ___  _____           _             
+                 / __|| _ \|_   _| ___  ___| |_  ___  _ _ 
+                | (_ ||  _/  | |  / -_)(_-/|  _|/ -_)| '_|
+                 \___||_|    |_|  \___|/__/ \__|\___||_|  
+
+
+           The static code analysis agent, version: assistant-0.3
 
 2024-01-25 21:10:51: Beginning scan for Vulnerable-Code-Snippets/
 2024-01-25 21:10:51: Found 131 files to scan
@@ -72,11 +153,11 @@ The static code analysis agent, version: assistant-0.3
 \end{verbatim}
 
 Program pokazał nam, że w katalogu zawierającym skrawki podatnego kodu znajduje się 131 plików, a łączna liczba tokenów w tych plikach wynosi 30712.
-
+\newpage
 \section{Studium przypadku: Analiza kodu podatnego na błędy typu "Out of Bounds" w zbiorze snoopysecurity/Vulnerable-Code-Snippets}
 \label{sec:analiza_blednego_kodu}
 
-Niniejszy rozdział przedstawia szczegółowe studium przypadku, w którym dokonano analizy specyficznego fragmentu kodu, sklasyfikowanego jako podatny na błędy typu "Out of Bounds". Analiza ta została przeprowadzona na przykładzie wybranym ze zbioru \textit{snoopysecurity/Vulnerable-Code-Snippets}. Omawiany plik źródłowy zawierał kod, który został opatrzony komentarzami zaznaczającymi potencjalne miejsca podatności. Te adnotacje umożliwiają dokonanie porównawczej oceny zachowania się programu w kontekście występowania bądź braku zidentyfikowanych wskazówek dotyczących podatności. Zastosowanie takiego podejścia pozwala na dogłębne zrozumienie dynamiki błędów typu "Out of Bounds" oraz ich wpływu na ogólną bezpieczeństwo i efektywność funkcjonowania analizowanego oprogramowania.
+Niniejszy podrozdział przedstawia szczegółowe studium przypadku, w którym dokonano analizy specyficznego fragmentu kodu, sklasyfikowanego jako zawierający błędy typu "Out of Bounds". Analiza ta została przeprowadzona na przykładzie wybranym ze zbioru \textit{snoopysecurity/Vulnerable-Code-Snippets}. Omawiany plik źródłowy zawierał kod, który został opatrzony komentarzami zaznaczającymi potencjalne miejsca podatności. Te adnotacje umożliwiają dokonanie porównawczej oceny zachowania się programu w kontekście występowania bądź braku zidentyfikowanych wskazówek dotyczących podatności.
 
 \subsection{Dane wejściowe}
 \label{subsec:dane_wejsciowe_i_oczekiwane_wyniki}
@@ -152,11 +233,9 @@ W katalogu znajdował się jeden plik o nazwie \textit{damnvuln.c}, zawierający
 \begin{listing}
   \begin{minted}[fontsize=\scriptsize]{c}
 //https://github.com/hardik05/Damn_Vulnerable_C_Program/blob/master/imgRead.c
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-
 struct Image
 {
 	char header[4];
@@ -171,13 +250,11 @@ int ProcessImage(char* filename){
 	struct Image img;
 
 	fp = fopen(filename,"r"); 
-	if(fp == NULL)
-	{
+	if(fp == NULL){
 		printf("\nCan't open file or file doesn't exist.");
 		exit(0);
 	}
 	printf("\n\tHeader\twidth\theight\tdata\t\r\n");
-
 	while(fread(&img,sizeof(img),1,fp)>0){
 		printf("\n\t%s\t%d\t%d\t%s\r\n",img.header,img.width,img.height,img.data);
 		int size1 = img.width + img.height; //Vulnerability: integer overflow
@@ -215,7 +292,6 @@ int ProcessImage(char* filename){
 	}
 	fclose(fp);
 }
-
 int main(int argc,char **argv)
 {
 	ProcessImage(argv[1]);
@@ -226,25 +302,19 @@ int main(int argc,char **argv)
 \end{listing}
 \restoregeometry
 
-Należy zauważyć, że w kodzie znajdują się komentarze, które mogą być pomocne w analizie dla dużych modeli językowych. 
-Aby potwierdzić tę hipotezę, przeprowadzono analizę kodu zarówno z jak i bez komentarzy oraz ze zmienioną nazwą pliku.
-
-\subsection{Wynik}
+\subsection{Wynik w formacie diff}
 \begin{listing}[H]
-    \begin{minted}[fontsize=\scriptsize]{c}
+    \begin{minted}[fontsize=\tiny]{c}
       diff --git a/damnvuln.c b/damnvuln.c
       index e69de29..bb2e3ae 100644
       --- a/damnvuln.c
       +++ b/damnvuln.c
       @@ -20,10 +20,12 @@ int ProcessImage(char* filename){
          fp = fopen(filename,"r"); 
-       
-         if(fp == NULL)
-         {
+         if(fp == NULL){
            printf("\nCan't open file or file doesn't exist.");
            exit(0);
          }
-       
       -	fprintf("\n\tHeader\twidth\theight\tdata\t\r\n");
       +	printf("\n\tHeader\twidth\theight\tdata\n");
        
@@ -252,11 +322,9 @@ Aby potwierdzić tę hipotezę, przeprowadzono analizę kodu zarówno z jak i be
       +
          while(fread(&img,sizeof(img),1,fp)>0){
            printf("\n\t%s\t%d\t%d\t%s\r\n",img.header,img.width,img.height,img.data);
-         
            int size1 = img.width + img.height; //Vulnerability: integer overflow
       +		if (img.width > INT_MAX - img.height) continue; // Prevent integer overflow
            char* buff1=(char*)malloc(size1);
-       
            memcpy(buff1,img.data,sizeof(img.data)); //Vulnerability: no data buffer size/malloc success check?
       @@ -31,16 +33,15 @@ int ProcessImage(char* filename){
              free(buff1); //Vulnerability: double free
@@ -266,26 +334,21 @@ Aby potwierdzić tę hipotezę, przeprowadzono analizę kodu zarówno z jak i be
                buff1[0]='a'; //Vulnerability: use after free
              }
            }
-         
       -		int size2 = img.width - img.height+100; //Vulnerability: integer underflow
       -		//printf("Size1:%d",size1);
       +		// Removed potential integer underflow by ensuring img.width is always greater than img.height before subtraction
       +		int size2 = img.height > img.width ? 100 : img.width - img.height + 100;
            char* buff2=(char*)malloc(size2);
-       
            memcpy(buff2,img.data,sizeof(img.data));
-       
            int size3= img.width/img.height;
       -		//printf("Size2:%d",size3);
       +		// Check for division by zero
       +		if (img.height == 0) continue;
-       
            char buff3[10];
       -		char* buff4 =(char*)malloc(size3);
       -		memcpy(buff4,img.data,sizeof(img.data));
       +		// Check if size3 is within buffer size
       +		if (size3 < 0 || size3 >= sizeof(buff3)) continue;
-       
            char OOBR_stack = buff3[size3+100]; //Vulnerability: out of bound read (stack)
       -		char OOBR_heap = buff4[100];
       +		char* buff4 = NULL;
@@ -294,23 +357,18 @@ Aby potwierdzić tę hipotezę, przeprowadzono analizę kodu zarówno z jak i be
       +			if (!buff4) continue; // Check malloc success
       +			memcpy(buff4,img.data,sizeof(img.data));
       +		}
-       
       -		buff3[size3+100]='c'; //Vulnerability: out of bound write (Stack)
       +		// Prevent out of bound write to buff3
       +		if (size3 + 100 < sizeof(buff3)) buff3[size3+100] = 'c';
-       
       -		buff4[100]='c'; //Vulnerability: out of bound write (Heap)
       +		// Prevent out of bound write to buff4 and potential memory leak
       +		if (buff4 && size3 >= 0 && size3 < 100) buff4[size3] = 'c';
-       
            if(size3>10){
       -				buff4=0; //memory leak?
       +				if (buff4) { free(buff4); buff4 = NULL; } // Properly free memory
-           }
-           else{
+           } else{
              free(buff4);
            }
-       
            free(buff2);
       @@ -50,8 +51,8 @@ int ProcessImage(char* filename){
         if(size3>10){
@@ -319,32 +377,150 @@ Aby potwierdzić tę hipotezę, przeprowadzono analizę kodu zarówno z jak i be
          }}
          fclose(fp);
        }
-
     \end{minted}
-    \caption{Wynik działania programu na kodzie źródłowym \textit{damnvuln.c}}
+    \caption{Wynik działania programu w formacie diff na kodzie źródłowym \textit{damnvuln.c}}
     \label{lst:code2}
 \end{listing}
 
-
+Oprócz przedstawionego powyżej wyniku, program wygenerował również raport w formacie Markdown, który został przedstawiony w sekcji \ref{sec:wyniki_dzialania_programu} oraz plik \textit{damnvuln\_fixed.c}, który zawiera poprawiony kod źródłowy.
 \subsection{Przygotowanie środowiska testowego}
-\DOTSB
+\label{subsec:przygotowanie_srodowiska_testowego}
+Dla podanego przykładu przygotowanie środowiska testowego polegało na skompilowaniu i uruchomieniu programu. W tym celu należało wykonać następujące kroki:
+\begin{enumerate}
+    \item Skompilowanie programu za pomocą kompilatora \textit{gcc}:
+    \begin{verbatim}
+        > gcc damnvuln.c -o damnvuln
+    \end{verbatim}
+    \item Uruchomienie programu z wykorzystaniem przykładowego pliku wejściowego:
+    \begin{verbatim}
+        > ./damnvuln input.jpg
+    \end{verbatim}
+\end{enumerate}
+
+Jest to aplikacja lokalna dlatego przygotowanie środowiska testowego dla tego przykładu nie wymagało instalacji dodatkowych zależności, ani dopisywania tego kodu do istniejącej aplikacji webowej. Niestety wiele przykładów z tego zbioru do działania wymaga kodu źródłowego całej aplikacji, dlatego przygotowanie środowiska testowego dla tych przykładów było bardziej skomplikowane. W takich przypadkach należało wykonać następujące kroki:
+\begin{enumerate}
+    \item Instalacja zależności.
+    \item Konfiguracja środowiska.
+    \item Dopisanie kodu pozwalającego na wykonanie.
+    \item Uruchomienie aplikacji.
+\end{enumerate}
+
+
+
+\subsection{Przeprowadzenie testów funkcjonalnych}
+\label{subsec:przeprowadzenie_testow_funkcjonalnych}
+Przeprowadzono test funkcjonalny, który polegał na wykonaniu programu z wykorzystaniem przykładowego pliku wejściowego. Program zwrócił błąd Segmentation Fault, co oznacza, że wystąpił błąd podczas wykonywania programu. W tym przypadku błąd ten został spowodowany przez błędy typu "Out of Bounds", które zostały wykryte przez program.
+
+\begin{verbatim}
+    > ./damnvuln ~/Pictures/egzamin_praktyka.png 
+
+	Header	width	height	data	
+
+	�PNG
+�
+	169478669	218103808	IHDR
+Segmentation fault (core dumped)
+\end{verbatim}
+
+Natomiast naprawiony program zwrócił:
+\begin{verbatim}
+  > ./damnvuln_fixed ~/Pictures/egzamin_praktyka.png 
+
+	Header	width	height	data	
+
+	�PNG
+�
+	169478669	218103808	IHDR
+Integer underflow detected
+\end{verbatim}
+
+Oznacza to że program wykrył błąd typu "Out of Bounds" i zwrócił informację o tym błędzie. Niestety sugerowana poprawa tego błędu wprowadziła jedynie kontrolę tych błędów.
+Część odpowiadająca za wyświetloną informację to:
+\begin{listing}
+  \begin{minted}{c}
+    if (img.height > img.width + 100) {
+      fprintf(stderr, "Integer underflow detected\n");
+      free(buff1);
+      fclose(fp);
+      exit(EXIT_FAILURE);
+}
+\end{minted}
+\caption{Fragment kodu odpowiadający za wyświetlenie informacji o błędzie}
+\label{lst:code3}
+\end{listing}
+
+Aby zbadać jak różnorodne są wyniki programu \texttt{gptester} dla tego samego kodu bez zmiany parametrów wykonywania przeprowadzono analizę ponownie. Otrzymano wtedy znacznie inny wynik, który nadal wykrył błędy, ale zaimplementował inne rozwiązanie podatności. 
+
+\begin{verbatim}
+ > gcc -c damnvuln.c -o damnvuln-fixed2
+damnvuln.c: In function ‘ProcessImage’:
+damnvuln.c:44:17: warning: implicit declaration of function ‘memcpy’ [-Wimplicit-function-declaration]
+   44 |                 memcpy(buff1,img.data,sizeof(img.data));
+      |                 ^~~~~~
+damnvuln.c:6:1: note: include ‘<string.h>’ or provide a declaration of ‘memcpy’
+    5 | #include<limits.h>
+  +++ |+#include <string.h>
+    6 | 
+damnvuln.c:44:17: warning: incompatible implicit declaration of built-in function ‘memcpy’ [-Wbuiltin-declaration-mismatch]
+   44 |                 memcpy(buff1,img.data,sizeof(img.data));
+      |                 ^~~~~~
+damnvuln.c:44:17: note: include ‘<string.h>’ or provide a declaration of ‘memcpy’
+
+\end{verbatim}
+
+Tym razem agent zwrócił kod, który się nie kompilował, ponieważ nie był dołączony plik nagłówkowy \texttt{string.h}. Po dopisaniu odpowiedniej biblioteki, program wykonał się poprawnie i zwrócił następujący wynik:
+
+\begin{verbatim}
+  > ./damnvuln3 ~/Pictures/egzamin_praktyka.png 
+
+	Header	width	height	data	
+
+	�PNG
+�
+	169478669	218103808	IHDR
+Integer underflow detected in size2 calculation.
+\end{verbatim}
+
+\begin{listing}
+  \begin{minted}{c}
+    unsigned int size2;
+        if(__builtin_sub_overflow(img.width, img.height, &size2))
+        {
+            printf("Integer underflow detected in size2 calculation.");
+            fclose(fp);
+            exit(EXIT_FAILURE);
+        }
+        size2 += 100;
+        char* buff2 = (char*)malloc(size2);
+\end{minted}
+\caption{Fragment kodu odpowiadający za wyświetlenie informacji o błędzie}
+\label{lst:code4}
+\end{listing}
+
+Dla każdego z podanych przeze mnie danych wejściowych został wyświetlony komunikat o wykryciu błędu Integer Underflow.
 
 \subsection{Interpretacja wyników}
 \label{subsec:interpretacja_wynikow}
 
-Interpretacja wyników eksperymentów ujawniła istotne spostrzeżenia dotyczące możliwości wykorzystania modeli AI w celu poprawy bezpieczeństwa kodu. Analiza wykazała, że ...
+Analiza wyników testów funkcjonalnych przeprowadzonych na programie \texttt{damnvuln} i jego zmodyfikowanych wersjach pozwala na dokonanie istotnych obserwacji dotyczących skuteczności działania narzędzia \texttt{gptester} oraz zdolności modeli językowych do wykrywania i naprawy błędów typu "Out of Bounds".
 
-% Tutaj należy dodać interpretację wyników w kontekście wykresów i tabel (jeśli takowe zostały przygotowane)
+Pierwszy test funkcjonalny, w którym oryginalna wersja programu \texttt{damnvuln} zwróciła błąd Segmentation Fault, wskazuje na obecność poważnego błędu, który uniemożliwia poprawne wykonanie programu. Taki wynik podkreśla znaczenie analizy statycznej kodu w celu identyfikacji potencjalnych zagrożeń i wad, które mogą prowadzić do krytycznych awarii aplikacji.
+
+W przypadku zmodyfikowanej wersji programu, gdzie błąd Segmentation Fault został zastąpiony komunikatem o błędzie Integer Underflow, obserwujemy, że narzędzie \texttt{gptester} było w stanie wykryć i częściowo naprawić błąd. Zmodyfikowany kod, chociaż poprawnie identyfikuje rodzaj błędu, wprowadza jedynie kontrolę tego błędu, nie adresując w pełni jego przyczyny.
+
+Kolejna iteracja testu, z wykorzystaniem innego wyniku generowanego przez \texttt{gptester}, przyniosła kod, który początkowo nie kompilował się z powodu brakującego pliku nagłówkowego. Po jego dołączeniu, program został uruchomiony i ponownie zwrócił informację o wykryciu błędu Integer Underflow, lecz w inny sposób niż poprzednio. Tym razem zastosowano funkcję sprawdzającą przepełnienie dla obliczeń, co stanowi bardziej zaawansowane i technicznie poprawne podejście do problemu.
+
+Wnioski płynące z tych eksperymentów wskazują, że narzędzie \texttt{gptester} i wykorzystane w nim modele językowe posiadają zdolność do identyfikacji i proponowania poprawek dla wybranych rodzajów błędów bezpieczeństwa w kodzie. Jednakże, jakość i kompletność tych poprawek może być zmienna, co wymaga dalszej analizy i możliwej interwencji ze strony użytkownika. W kontekście błędów typu "Out of Bounds", \texttt{gptester} wykazał zdolność do wykrywania potencjalnych problemów, ale rozwiązania oferowane przez narzędzie wymagają dodatkowej weryfikacji i dostosowania, aby w pełni adresować przyczyny tych błędów.
 
 \chapter{Badanie funkcjonalności na aplikacji webowej OWASP VulnerableApp}
 \label{sec:badania_na_aplikacji_webowej_owasp}
 
 Analiza funkcjonalności programu do analizy bezpieczeństwa została przeprowadzona z wykorzystaniem aplikacji webowej OWASP VulnerableApp. Jest to narzędzie celowo zawierające liczne podatności, które mają na celu symulację realnych luk bezpieczeństwa, co pozwala na dogłębne testowanie i ocenę narzędzi do skanowania podatności.
 
-\subsection{Charakterystyka aplikacji OWASP VulnerableApp}
+\section{Charakterystyka aplikacji OWASP VulnerableApp}
 Aplikacja OWASP VulnerableApp została zaprojektowana z myślą o dostarczeniu platformy edukacyjnej dla deweloperów oraz specjalistów od bezpieczeństwa, którzy pragną zgłębić wiedzę na temat bezpieczeństwa aplikacji webowych. Narzędzie to charakteryzuje się skalowalnością, elastycznością oraz łatwością integracji, czyniąc je idealnym środowiskiem do nauki oraz testowania.
 
-\subsection{Testowane rodzaje podatności}
+\section{Testowane rodzaje podatności}
 OWASP VulnerableApp umożliwia testowanie szerokiego zakresu podatności, w tym, ale nie ograniczając się do:
 
 \begin{itemize}
@@ -361,7 +537,7 @@ OWASP VulnerableApp umożliwia testowanie szerokiego zakresu podatności, w tym,
 
 Zawarte podatności są reprezentatywne dla typowych zagrożeń w aplikacjach internetowych, co pozwala na wszechstronne i realistyczne testowanie narzędzi do ich wykrywania i naprawy.
 
-\subsection{Zawartość znajdująca się w repozytorium}
+\section{Zawartość znajdująca się w repozytorium}
 Repozytorium aplikacji VulnerableApp zawiera projekt aplikacji webowej napisany w następującym stosie technologicznym:
 \begin{itemize}
     \item Java 8
@@ -372,34 +548,39 @@ Repozytorium aplikacji VulnerableApp zawiera projekt aplikacji webowej napisany 
 \end{itemize} 
 
 \begin{verbatim}
-  > ../gptester/main.py -v VulnerableApp/
-2024-01-23 17:43:32: Welcome to gptester: the Static Code Analysis Agent
-2024-01-23 17:43:32: I will now begin scanning: VulnerableApp/, name: VulnerableApp
-2024-01-23 17:43:32: Beginning scan...
-2024-01-23 17:43:32: Found 231 files to scan
-2024-01-23 17:43:32: Tokens inside the directory: 229119
-2024-01-23 17:43:32: Beginning code analysis...
-2024-01-23 17:43:32: Using model: gpt-4-1106-preview
-2024-01-23 17:43:33: Splitting the content into 49 chunks
+ > ./main.py ../testing-envs/VulnerableApp/
 
+                  ___  ___  _____           _             
+                 / __|| _ \|_   _| ___  ___| |_  ___  _ _ 
+                | (_ ||  _/  | |  / -_)(_-/|  _|/ -_)| '_|
+                 \___||_|    |_|  \___|/__/ \__|\___||_|  
+
+           The static code analysis agent, version: assistant-0.3
+
+
+2024-01-25 22:05:23: Beginning scan for ../testing-envs/VulnerableApp/
+2024-01-25 22:05:23: Found 97 files to scan
+2024-01-25 22:05:23: Tokens inside the directory: 77513
+2024-01-25 22:05:23: Using model: gpt-4-1106-preview
+2024-01-25 22:05:23: Beginning code analysis...
 \end{verbatim}
 
-Nasz program pokazał nam, że w repozytorium znajduje się 231 plików, które zawierają 229119 tokenów.
+W repozytorium znajduje się 231 plików, które zawierają 229119 tokenów z uwzględnieniem wszystkich plików. Nasz program pokazał wartości dla plików zawierających kod, a dokładnie tych które nie są wyspecjalizowane w liście nazw do ignorowania.
 
-\subsection{Procedura przeprowadzenia testów}
+\section{Procedura przeprowadzenia testów}
 Testy zostały przeprowadzone przy użyciu najnowszej wersji programu, zgodnie z następującymi krokami:
 
 \begin{enumerate}
     \item Przygotowanie środowiska testowego z wykorzystaniem aplikacji OWASP VulnerableApp.
     \item Uruchomienie skanowania z wykorzystaniem programu.
     \item Dokumentacja wykrytych podatności oraz sugerowanych przez program napraw.
-    \item Analiza efektywności napraw i ich wpływ na bezpieczeństwo aplikacji.
+    \item Analiza efektywności napraw i ich wpływ na bezpieczeństwo aplikacji za pomocą innych skanerów podatności.
 \end{enumerate}
 
 \subsection{Oczekiwane rezultaty}
 W wyniku przeprowadzonych testów oczekujemy uzyskania szczegółowych danych na temat liczby wykrytych podatności, rodzajów podatności, a także czasu potrzebnego na ich wykrycie i naprawę. Dane te zostaną następnie wykorzystane do stworzenia szczegółowych wykresów i tabel ilustrujących skuteczność programu.
 
-\subsection{Wnioski i dalsze kierunki badań}
+\section{Wnioski i dalsze kierunki badań}
 Na podstawie zebranych danych zostaną wyciągnięte wnioski dotyczące skuteczności narzędzia w kontekście poszczególnych typów podatności oraz ogólnej wydajności. Dalsze badania mogą również koncentrować się na porównaniu wyników z innymi narzędziami dostępnymi na rynku oraz na rozwoju nowych funkcji i usprawnień w badanym programie.
 
 
