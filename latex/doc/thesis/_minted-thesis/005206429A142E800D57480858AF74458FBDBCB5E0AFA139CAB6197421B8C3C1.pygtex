@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{openai} \PYG{k+kn}{import} \PYG{n}{OpenAI}
+\PYG{n}{client} \PYG{o}{=} \PYG{n}{OpenAI}\PYG{p}{()}
+
+\PYG{n}{response} \PYG{o}{=} \PYG{n}{client}\PYG{o}{.}\PYG{n}{chat}\PYG{o}{.}\PYG{n}{completions}\PYG{o}{.}\PYG{n}{create}\PYG{p}{(}
+  \PYG{n}{model}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}gpt\PYGZhy{}3.5\PYGZhy{}turbo\PYGZdq{}}\PYG{p}{,}
+  \PYG{n}{messages}\PYG{o}{=}\PYG{p}{[}
+    \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}role\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}system\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}content\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}You are a helpful assistant.\PYGZdq{}}\PYG{p}{\PYGZcb{},}
+    \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}role\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}user\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}content\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Who won the world series in 2020?\PYGZdq{}}\PYG{p}{\PYGZcb{},}
+    \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}role\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}assistant\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}content\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}The Los Angeles Dodgers won the World Series in 2020.\PYGZdq{}}\PYG{p}{\PYGZcb{},}
+    \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}role\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}user\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}content\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Where was it played?\PYGZdq{}}\PYG{p}{\PYGZcb{}}
+  \PYG{p}{]}
+\PYG{p}{)}
+\end{Verbatim}

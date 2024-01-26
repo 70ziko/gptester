@@ -1,0 +1,42 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{cd}\PYG{+w}{ }gptester
+python\PYG{+w}{ }main.py\PYG{+w}{ }\PYGZhy{}h
+\PYG{l+s+sb}{```}
+or
+\PYG{l+s+sb}{```}bash
+\PYG{n+nb}{cd}\PYG{+w}{ }gptester
+chmod\PYG{+w}{ }+x\PYG{+w}{ }main.py
+./main.py\PYG{+w}{ }\PYGZhy{}\PYGZhy{}help
+\PYG{l+s+sb}{```}
+
+
+
+\PYG{l+s+se}{\PYGZbs{}s}ubsection\PYG{o}{\PYGZob{}}Funkcje\PYG{+w}{ }programu\PYG{o}{\PYGZcb{}}
+
+Program\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}t}extbf\PYG{o}{\PYGZob{}}gptester\PYG{o}{\PYGZcb{}}\PYG{+w}{ }został\PYG{+w}{ }zaprojektowany\PYG{+w}{ }jako\PYG{+w}{ }wszechstronny\PYG{+w}{ }narzędzie\PYG{+w}{ }\PYG{k}{do}\PYG{+w}{ }analizy\PYG{+w}{ }statycznej\PYG{+w}{ }kodu,\PYG{+w}{ }wykorzystując\PYG{+w}{ }zaawansowane\PYG{+w}{ }modele\PYG{+w}{ }językowe\PYG{+w}{ }\PYG{k}{do}\PYG{+w}{ }wykrywania\PYG{+w}{ }i\PYG{+w}{ }naprawiania\PYG{+w}{ }błędów\PYG{+w}{ }bezpieczeństwa\PYG{+w}{ }w\PYG{+w}{ }kodzie.\PYG{+w}{ }Kluczowe\PYG{+w}{ }funkcje\PYG{+w}{ }programu\PYG{+w}{ }są\PYG{+w}{ }dostępne\PYG{+w}{ }za\PYG{+w}{ }pomocą\PYG{+w}{ }różnorodnych\PYG{+w}{ }argumentów\PYG{+w}{ }linii\PYG{+w}{ }poleceń,\PYG{+w}{ }umożliwiając\PYG{+w}{ }szeroką\PYG{+w}{ }konfigurację\PYG{+w}{ }i\PYG{+w}{ }dostosowanie\PYG{+w}{ }\PYG{k}{do}\PYG{+w}{ }specyficznych\PYG{+w}{ }potrzeb\PYG{+w}{ }analizy.
+
+\PYG{l+s+se}{\PYGZbs{}b}egin\PYG{o}{\PYGZob{}}itemize\PYG{o}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{l+s+se}{\PYGZbs{}i}tem\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}t}extbf\PYG{o}{\PYGZob{}}\PYGZhy{}h,\PYG{+w}{ }\PYGZhy{}\PYGZhy{}help\PYG{o}{\PYGZcb{}}:\PYG{+w}{ }Wyświetla\PYG{+w}{ }pomoc\PYG{+w}{ }programu,\PYG{+w}{ }zawierającą\PYG{+w}{ }informacje\PYG{+w}{ }o\PYG{+w}{ }dostępnych\PYG{+w}{ }opcjach\PYG{+w}{ }i\PYG{+w}{ }ich\PYG{+w}{ }krótki\PYG{+w}{ }opis.\PYG{+w}{ }Jest\PYG{+w}{ }to\PYG{+w}{ }przydatne\PYG{+w}{ }dla\PYG{+w}{ }użytkowników,\PYG{+w}{ }którzy\PYG{+w}{ }chcą\PYG{+w}{ }szybko\PYG{+w}{ }zrozumieć,\PYG{+w}{ }jak\PYG{+w}{ }korzystać\PYG{+w}{ }z\PYG{+w}{ }programu.
+
+\PYG{+w}{    }\PYG{l+s+se}{\PYGZbs{}i}tem\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}t}extbf\PYG{o}{\PYGZob{}}\PYGZhy{}v,\PYG{+w}{ }\PYGZhy{}\PYGZhy{}verbose\PYG{o}{\PYGZcb{}}:\PYG{+w}{ }Aktywuje\PYG{+w}{ }tryb\PYG{+w}{ }szczegółowych\PYG{+w}{ }informacji.\PYG{+w}{ }W\PYG{+w}{ }tym\PYG{+w}{ }trybie,\PYG{+w}{ }\PYG{l+s+sb}{`}gptester\PYG{l+s+sb}{`}\PYG{+w}{ }wyświetla\PYG{+w}{ }dodatkowe\PYG{+w}{ }informacje\PYG{+w}{ }na\PYG{+w}{ }temat\PYG{+w}{ }każdego\PYG{+w}{ }etapu\PYG{+w}{ }przetwarzania,\PYG{+w}{ }co\PYG{+w}{ }jest\PYG{+w}{ }przydatne\PYG{+w}{ }\PYG{k}{do}\PYG{+w}{ }debugowania\PYG{+w}{ }i\PYG{+w}{ }analizy\PYG{+w}{ }szczegółów\PYG{+w}{ }wykonania.
+
+\PYG{+w}{    }\PYG{l+s+se}{\PYGZbs{}i}tem\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}t}extbf\PYG{o}{\PYGZob{}}\PYGZhy{}m\PYG{+w}{ }MODEL,\PYG{+w}{ }\PYGZhy{}\PYGZhy{}model\PYG{+w}{ }MODEL\PYG{o}{\PYGZcb{}}:\PYG{+w}{ }Umożliwia\PYG{+w}{ }wybór\PYG{+w}{ }modelu\PYG{+w}{ }językowego\PYG{+w}{ }używanego\PYG{+w}{ }\PYG{k}{do}\PYG{+w}{ }analizy\PYG{+w}{ }kodu.\PYG{+w}{ }Domyślnie\PYG{+w}{ }ustawiony\PYG{+w}{ }na\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}gpt\PYGZhy{}4\PYGZhy{}1106\PYGZhy{}preview\PYGZdq{}},\PYG{+w}{ }ale\PYG{+w}{ }użytkownik\PYG{+w}{ }może\PYG{+w}{ }wybrać\PYG{+w}{ }inny\PYG{+w}{ }model,\PYG{+w}{ }jeśli\PYG{+w}{ }jest\PYG{+w}{ }dostępny\PYG{+w}{ }i\PYG{+w}{ }lepiej\PYG{+w}{ }odpowiada\PYG{+w}{ }wymaganiom\PYG{+w}{ }projektu.
+
+\PYG{+w}{    }\PYG{l+s+se}{\PYGZbs{}i}tem\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}t}extbf\PYG{o}{\PYGZob{}}\PYGZhy{}o\PYG{+w}{ }OUTPUT,\PYG{+w}{ }\PYGZhy{}\PYGZhy{}output\PYG{+w}{ }OUTPUT\PYG{o}{\PYGZcb{}}:\PYG{+w}{ }Określa\PYG{+w}{ }ścieżkę\PYG{+w}{ }i\PYG{+w}{ }nazwę\PYG{+w}{ }pliku,\PYG{+w}{ }\PYG{k}{do}\PYG{+w}{ }którego\PYG{+w}{ }będą\PYG{+w}{ }zapisane\PYG{+w}{ }wyniki\PYG{+w}{ }analizy.\PYG{+w}{ }Domyślnie,\PYG{+w}{ }raport\PYG{+w}{ }jest\PYG{+w}{ }zapisywany\PYG{+w}{ }w\PYG{+w}{ }pliku\PYG{+w}{ }markdown\PYG{+w}{ }w\PYG{+w}{ }folderze\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}raports\PYGZdq{}}\PYG{+w}{ }z\PYG{+w}{ }nazwą\PYG{+w}{ }opartą\PYG{+w}{ }na\PYG{+w}{ }nazwie\PYG{+w}{ }analizowanego\PYG{+w}{ }folderu\PYG{+w}{ }i\PYG{+w}{ }znaczniku\PYG{+w}{ }czasowym.\PYG{+w}{ }Użytkownik\PYG{+w}{ }może\PYG{+w}{ }dostosować\PYG{+w}{ }tę\PYG{+w}{ }lokalizację\PYG{+w}{ }według\PYG{+w}{ }własnych\PYG{+w}{ }preferencji.
+
+\PYG{+w}{    }\PYG{l+s+se}{\PYGZbs{}i}tem\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}t}extbf\PYG{o}{\PYGZob{}}\PYGZhy{}t\PYG{+w}{ }TESTS,\PYG{+w}{ }\PYGZhy{}\PYGZhy{}tests\PYG{+w}{ }TESTS\PYG{o}{\PYGZcb{}}:\PYG{+w}{ }Pozwala\PYG{+w}{ }na\PYG{+w}{ }podanie\PYG{+w}{ }ścieżki\PYG{+w}{ }\PYG{k}{do}\PYG{+w}{ }testów\PYG{+w}{ }funkcjonalnych,\PYG{+w}{ }które\PYG{+w}{ }mają\PYG{+w}{ }zostać\PYG{+w}{ }wykonane\PYG{+w}{ }na\PYG{+w}{ }analizowanym\PYG{+w}{ }projekcie.\PYG{+w}{ }Ta\PYG{+w}{ }funkcja\PYG{+w}{ }jest\PYG{+w}{ }szczególnie\PYG{+w}{ }przydatna\PYG{+w}{ }w\PYG{+w}{ }środowiskach,\PYG{+w}{ }gdzie\PYG{+w}{ }istnieje\PYG{+w}{ }potrzeba\PYG{+w}{ }zintegrowanego\PYG{+w}{ }podejścia\PYG{+w}{ }\PYG{k}{do}\PYG{+w}{ }testowania\PYG{+w}{ }i\PYG{+w}{ }analizy\PYG{+w}{ }kodu.
+
+\PYG{+w}{    }\PYG{l+s+se}{\PYGZbs{}i}tem\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}t}extbf\PYG{o}{\PYGZob{}}\PYGZhy{}c,\PYG{+w}{ }\PYGZhy{}\PYGZhy{}codeql\PYG{o}{\PYGZcb{}}:\PYG{+w}{ }Włącza\PYG{+w}{ }integrację\PYG{+w}{ }z\PYG{+w}{ }CodeQL,\PYG{+w}{ }zaawansowanym\PYG{+w}{ }narzędziem\PYG{+w}{ }\PYG{k}{do}\PYG{+w}{ }analizy\PYG{+w}{ }kodu.\PYG{+w}{ }Użytkownik\PYG{+w}{ }musi\PYG{+w}{ }mieć\PYG{+w}{ }zainstalowane\PYG{+w}{ }CodeQL\PYGZhy{}CLI,\PYG{+w}{ }aby\PYG{+w}{ }skorzystać\PYG{+w}{ }z\PYG{+w}{ }tej\PYG{+w}{ }funkcji.\PYG{+w}{ }Jest\PYG{+w}{ }to\PYG{+w}{ }szczególnie\PYG{+w}{ }przydatne\PYG{+w}{ }w\PYG{+w}{ }wykrywaniu\PYG{+w}{ }bardziej\PYG{+w}{ }złożonych\PYG{+w}{ }problemów\PYG{+w}{ }w\PYG{+w}{ }kodzie,\PYG{+w}{ }które\PYG{+w}{ }mogą\PYG{+w}{ }umknąć\PYG{+w}{ }prostym\PYG{+w}{ }analizom.
+
+\PYG{+w}{    }\PYG{l+s+se}{\PYGZbs{}i}tem\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}t}extbf\PYG{o}{\PYGZob{}}\PYGZhy{}\PYGZhy{}command\PYG{+w}{ }COMMAND\PYG{o}{\PYGZcb{}}:\PYG{+w}{ }Umożliwia\PYG{+w}{ }określenie\PYG{+w}{ }polecenia\PYG{+w}{ }budującego\PYG{+w}{ }projekt,\PYG{+w}{ }co\PYG{+w}{ }jest\PYG{+w}{ }niezbędne\PYG{+w}{ }dla\PYG{+w}{ }prawidłowej\PYG{+w}{ }integracji\PYG{+w}{ }z\PYG{+w}{ }CodeQL\PYG{+w}{ }w\PYG{+w}{ }przypadku,\PYG{+w}{ }gdy\PYG{+w}{ }projekt\PYG{+w}{ }nie\PYG{+w}{ }zawiera\PYG{+w}{ }pliku\PYG{+w}{ }cmake\PYG{+w}{ }lub\PYG{+w}{ }podobnego\PYG{+w}{ }w\PYG{+w}{ }katalogu\PYG{+w}{ }głównym.\PYG{+w}{ }Domyślnie\PYG{+w}{ }ustawione\PYG{+w}{ }na\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}make\PYGZdq{}}.
+
+\PYG{+w}{    }\PYG{l+s+se}{\PYGZbs{}i}tem\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}t}extbf\PYG{o}{\PYGZob{}}\PYGZhy{}\PYGZhy{}language\PYG{+w}{ }LANGUAGE\PYG{o}{\PYGZcb{}}:\PYG{+w}{ }Pozwala\PYG{+w}{ }na\PYG{+w}{ }określenie\PYG{+w}{ }języka\PYG{+w}{ }programowania\PYG{+w}{ }projektu\PYG{+w}{ }\PYG{k}{do}\PYG{+w}{ }analizy\PYG{+w}{ }w\PYG{+w}{ }CodeQL.\PYG{+w}{ }Domyślnie\PYG{+w}{ }ustawione\PYG{+w}{ }na\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}cpp\PYGZdq{}},\PYG{+w}{ }ale\PYG{+w}{ }można\PYG{+w}{ }dostosować\PYG{+w}{ }\PYG{k}{do}\PYG{+w}{ }innych\PYG{+w}{ }języków\PYG{+w}{ }wspieranych\PYG{+w}{ }przez\PYG{+w}{ }CodeQL,\PYG{+w}{ }co\PYG{+w}{ }rozszerza\PYG{+w}{ }możliwości\PYG{+w}{ }analizy\PYG{+w}{ }na\PYG{+w}{ }różnorodne\PYG{+w}{ }środowiska\PYG{+w}{ }programistyczne.
+
+\PYG{l+s+se}{\PYGZbs{}e}nd\PYG{o}{\PYGZob{}}itemize\PYG{o}{\PYGZcb{}}
+
+Przykład\PYG{+w}{ }użycia\PYG{+w}{ }z\PYG{+w}{ }pełną\PYG{+w}{ }konfiguracją:
+
+\PYG{l+s+se}{\PYGZbs{}b}egin\PYG{o}{\PYGZob{}}listing\PYG{o}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{l+s+se}{\PYGZbs{}b}egin\PYG{o}{\PYGZob{}}minted\PYG{o}{\PYGZcb{}\PYGZob{}}bash\PYG{o}{\PYGZcb{}}
+./main.py\PYG{+w}{ }/ścieżka/do/projektu\PYG{+w}{ }\PYGZhy{}\PYGZhy{}verbose\PYG{+w}{ }\PYGZhy{}\PYGZhy{}model\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}gpt\PYGZhy{}4\PYGZhy{}1106\PYGZhy{}preview\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}\PYGZhy{}output\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}moj\PYGZus{}raport.md\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}\PYGZhy{}tests\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}/ścieżka/do/testów\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}\PYGZhy{}codeql\PYG{+w}{ }\PYGZhy{}\PYGZhy{}command\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}mvn \PYGZhy{}B \PYGZhy{}DskipTests \PYGZhy{}DskipAssembly\PYGZdq{}}\PYG{+w}{ }\PYGZhy{}\PYGZhy{}language\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}java\PYGZdq{}}
+\end{Verbatim}

@@ -50,7 +50,8 @@ chmod +x main.py
 ## In development
 - [x] Basic functionality
 - [x] CodeQL integration
-- [ ] LATEX and writing the thesis
+- [x] LATEX and writing the thesis
 - [ ] Updating the codebase with git and patch files - not practical for research purposes
-- [ ] Adding more tests
+- [ ] 
+- [ ] properly implementing tests
 - [ ] Adding more languages for codeql

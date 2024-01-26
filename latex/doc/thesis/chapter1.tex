@@ -2,19 +2,21 @@
 \addcontentsline{toc}{chapter}{Analiza istniejącej literatury oraz dotychczasowych badań}
 \chapter{Analiza istniejącej literatury oraz dotychczasowych badań}
 
-\section{Can OpenAI Codex and Other Large Language Models Help Us Fix Security Bugs?}
+\section{Can OpenAI Codex and Other Large Language Models Help Us Fix Security Bugs? - \scriptsize\textit{Hammond Pearce, Benjamin Tan, Baleegh Ahmad, Ramesh Karri, Brendan Dolan-Gavitt}}
 % https://arxiv.org/pdf/2112.02125v1.pdf
 
-\subsection{Metodologia}
-W badaniu "Czy OpenAI Codex i inne duże modele językowe mogą pomóc nam naprawić błędy bezpieczeństwa?", autorzy skupili się na wykorzystaniu dużych modeli językowych (LLM) do naprawy podatności w kodzie w sposób zero-shot. Badanie koncentrowało się na projektowaniu monitów skłaniających LLM do generowania poprawionych wersji niebezpiecznego kodu. Przeprowadzono eksperymenty na szeroką skalę, obejmujące różne komercyjne modele LLM oraz lokalnie wytrenowany model.
+\subsection{Metodyka}
+W badaniu "Czy OpenAI Codex i inne duże modele językowe mogą pomóc nam naprawić błędy bezpieczeństwa?"\cite{codex-fix-security-bugs} \url{https://arxiv.org/pdf/2112.02125v1.pdf} napisanym przez Hammond'a Pearce'a, Benjamina Tana, Baleegh'a Ahmad, Ramesh'a Karri oraz Brendan'a Dolan-Gavitt, autorzy skupili się na wykorzystaniu dużych modeli językowych (LLM) do naprawy podatności w kodzie w sposób zero-shot. Badanie koncentrowało się na projektowaniu monitów skłaniających LLM do generowania poprawionych wersji niebezpiecznego kodu. Przeprowadzono eksperymenty na szeroką skalę, obejmujące różne komercyjne modele LLM oraz lokalnie wytrenowany model.
 
 \subsection{Wyniki}
-Wyniki wykazały, że LLM mogą skutecznie naprawić 100\% syntetycznie wygenerowanych scenariuszy oraz 58\% podatności w historycznych błędach rzeczywistych projektów open-source. Odkryto, że różne sposoby formułowania informacji kluczowych w monitach wpływają na wyniki generowane przez modele. Zauważono, że wyższe temperatury generowania kodu przynoszą lepsze wyniki dla niektórych typów podatności, ale gorsze dla innych.
+Wyniki wykazały, że LLM mogą skutecznie naprawić 100\% syntetycznie wygenerowanych scenariuszy oraz 58\% podatności w historycznych błędach rzeczywistych projektów open-source. Odkryto, że różne sposoby formułowania informacji kluczowych w monitach wpływają na wyniki generowane przez modele. Zauważono, że wyższe temperatury generowania kodu przynoszą lepsze wyniki dla niektórych typów podatności, ale gorsze dla innych. 
 
-\section{Examining Zero-Shot Vulnerability Repair with Large Language Models}
+Tak dobrych wyników niestety nie należy interpretować dosłownie, ponieważ z racji, że badanie przeprowadzono na reprezentatywnej próbie, autorzy nie byli w stanie ręcznie sprawdzać poprawności każdej naprawy i wykorzystali w tym celu istniejące narzędzia statycznej analizy kodu, takie jak CodeQL. W związku z powyższym, aby ocenić rzeczywistą skuteczność LLM w naprawianiu podatności, potrzebne są dalsze badania.
+\section{Examining Zero-Shot Vulnerability Repair with Large Language Models - \scriptsize\textit{Hammond Pearce, Benjamin Tan, Baleegh Ahmad, Ramesh Karri, Brendan Dolan-Gavitt}}
 % https://arxiv.org/pdf/2112.02125.pdf
 
-W artykule "Examining Zero-Shot Vulnerability Repair with Large Language Models", autorzy kontynuowali badanie możliwości wykorzystania LLM do naprawy podatności w kodzie, koncentrując się na wyzwaniach związanych z generowaniem funkcjonalnie poprawnego kodu w rzeczywistych scenariuszach. Badanie to rozszerzało wcześniejsze prace, biorąc pod uwagę bardziej złożone przypadki użycia LLM.
+
+W pracy naukowej pt. "Examining Zero-Shot Vulnerability Repair with Large Language Models"\cite{zero-shot-vuln-repair} \url{https://arxiv.org/pdf/2112.02125.pdf}, autorzy przedłużają swoje badania nad potencjałem wykorzystania Large Language Models (LLM) w kontekście naprawy podatności w kodzie źródłowym. Niniejsze badanie koncentruje się na wyzwaniach związanych z generowaniem funkcjonalnie adekwatnego kodu w realistycznych warunkach aplikacyjnych. Rozszerzając zakres swoich wcześniejszych prac, autorzy skupiają się na bardziej skomplikowanych przypadkach użycia LLM, eksplorując ich zdolność do efektywnego i efektywnego adresowania złożonych problemów związanych z bezpieczeństwem oprogramowania.
 
 Podstawowe pytania badawcze były następujące:
 \begin{enumerate}
@@ -45,7 +47,7 @@ W niniejszej pracy dyplomowej zastosowano szereg metod i środków, aby zaimplem
 \begin{table}[H]
     \begin{adjustwidth}{-2cm}{-2cm}  % Zmniejszenie marginesów z obu stron
         \centering
-    \begin{tabular}{|>{\bfseries}p{2.5cm}|p{5cm}|>{\bfseries}p{2.5cm}|p{5cm}|}
+    \begin{tabular}{|>{\bfseries}p{2.7cm}|p{5cm}|>{\bfseries}p{2.5cm}|p{5cm}|}
     \hline
     \multicolumn{4}{|c|}{\textbf{Metody i Środki}} \\
     \hline
@@ -55,9 +57,9 @@ W niniejszej pracy dyplomowej zastosowano szereg metod i środków, aby zaimplem
     \hline
     \textbf{Prompt engineering} & \small{Projektowanie promptów w celu uzyskania trafnych odpowiedzi od AI.} & \textbf{OpenAI Assistant API} & \small{API umożliwiające integrację modeli językowych w aplikacjach.} \\
     \hline
-    \textbf{In-context learning} & \small{Uczenie się i dostosowywanie modeli AI na podstawie informacji z promptów.} & \textbf{Zbiory danych z kodem} & \small{Zestawy danych z przykładami kodu zawierającymi błędy, używane do trenowania narzędzi do wykrywania podatności.} \\
+    \textbf{In-context learning} & \small{Uczenie się i dostosowywanie modeli AI na podstawie informacji zawartych w kontekście zapytań.} & \textbf{Zbiory danych z kodem} & \small{Zestawy danych z przykładami kodu zawierającymi błędy, używane do trenowania narzędzi do wykrywania podatności.} \\
     \hline
-    \textbf{Retrieval Augmented Generation} & \small{Technika łącząca generowanie treści z wyszukiwaniem informacji, wspomagana przez OpenAI Assistant API.} & \textbf{Projekty open-source zawierające błędy bezpieczeństwa} & \small{Publiczne projekty mogące zawierać błędy bezpieczeństwa, używane do edukacji.} \\
+    \textbf{Retrieval Augmented Generation} & \small{Technika łącząca generowanie treści z wyszukiwaniem informacji, wspomagana przez OpenAI Assistant API.} & \textbf{Projekty open-source zawierające podatności} & \small{Publiczne projekty zawierające błędy bezpieczeństwa, używane w testowaniu aplikacji oraz ocenie skuteczności LLM.} \\
     \hline
     \textbf{Analiza porównawcza} & \small{Ocena różnych technik lub systemów poprzez porównanie.} & \textbf{Statyczne testy podatności} & \small{Narzędzia analizy statycznej kodu, np. CodeQL.} \\
     \hline

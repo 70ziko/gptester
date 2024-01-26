@@ -6,3 +6,7 @@
 
 - wstawić cytacje oraz bibliografię
 - opisać agentów - prompty, narzędzia itd.
+
+
+# projekt
+- agent nie widzi nazw plików

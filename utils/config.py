@@ -27,6 +27,7 @@ class Config(metaclass=Singleton):
         """Initialize the Config class"""
         self.debug_mode = False
         self.speak_mode = False
+        self.version = 'assistant-0.3'
         self.workspace = os.getenv("WORKSPACE_DIRECTORY", "workspace")
         self.restart_limit = int(os.getenv("RESTART_LIMIT", "3"))
         self.llm_model = os.getenv("LLM_MODEL", "gpt-4")

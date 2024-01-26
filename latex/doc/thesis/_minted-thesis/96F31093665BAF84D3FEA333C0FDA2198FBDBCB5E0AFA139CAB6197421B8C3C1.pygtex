@@ -1,0 +1,52 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{async} \PYG{k}{def} \PYG{n+nf}{test\PYGZus{}agent}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{:} \PYG{n+nb}{str}\PYG{p}{,} \PYG{n}{test}\PYG{p}{:} \PYG{n+nb}{str}\PYG{p}{,} \PYG{n}{iol}\PYG{p}{:} \PYG{n}{IOlog} \PYG{o}{=} \PYG{k+kc}{None}\PYG{p}{,} \PYG{n}{model}\PYG{p}{:} \PYG{n+nb}{str} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}gpt\PYGZhy{}4\PYGZhy{}1106\PYGZhy{}preview\PYGZsq{}}\PYG{p}{,} \PYG{n}{directory}\PYG{p}{:} \PYG{n+nb}{str} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}tests\PYGZsq{}}\PYG{p}{)} \PYG{o}{\PYGZhy{}\PYGZgt{}} \PYG{n+nb}{str}\PYG{p}{:}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}An agent used to test the supplied project}
+\PYG{l+s+sd}{    Capabililties:}
+\PYG{l+s+sd}{        \PYGZhy{} Working on error messages \PYGZhy{} With the user (in the future it should be able to run the project and fix it on its own)}
+\PYG{l+s+sd}{        \PYGZhy{} writing missing test files \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{n}{write\PYGZus{}file\PYGZus{}json} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s2}{\PYGZdq{}name\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}write\PYGZus{}file\PYGZdq{}}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Writes content to a specified file.\PYGZdq{}}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}parameters\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}object\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}properties\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+                \PYG{l+s+s2}{\PYGZdq{}filename\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}string\PYGZdq{}}\PYG{p}{\PYGZcb{},}
+                \PYG{l+s+s2}{\PYGZdq{}content\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}string\PYGZdq{}}\PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{},}
+            \PYG{l+s+s2}{\PYGZdq{}required\PYGZdq{}}\PYG{p}{:} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}filename\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}content\PYGZdq{}}\PYG{p}{]}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{run\PYGZus{}tests\PYGZus{}json} \PYG{o}{=} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s2}{\PYGZdq{}name\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}run\PYGZus{}tests\PYGZdq{}}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Executes test commands for specified programming languages using subprocesses.\PYGZdq{}}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}parameters\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}object\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}properties\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+                \PYG{l+s+s2}{\PYGZdq{}language\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+                \PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}string\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s+s2}{\PYGZdq{}enum\PYGZdq{}}\PYG{p}{:} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}cpp\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}java\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}python\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}ruby\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}php\PYGZdq{}}\PYG{p}{]}
+                \PYG{p}{\PYGZcb{},}
+                \PYG{l+s+s2}{\PYGZdq{}executable\PYGZdq{}}\PYG{p}{:} \PYG{p}{\PYGZob{}}
+                \PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}string\PYGZdq{}}\PYG{p}{,}
+                \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}Path to the executable for C++ tests or additional command parameters for other languages.\PYGZdq{}}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{},}
+            \PYG{l+s+s2}{\PYGZdq{}required\PYGZdq{}}\PYG{p}{:} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}language\PYGZdq{}}\PYG{p}{]}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{tools}\PYG{o}{=}\PYG{p}{[}
+        \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}code\PYGZus{}interpreter\PYGZdq{}}\PYG{p}{\PYGZcb{},}
+        \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}retrieval\PYGZdq{}}\PYG{p}{\PYGZcb{},}
+        \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}function\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}function\PYGZdq{}}\PYG{p}{:} \PYG{n}{write\PYGZus{}file\PYGZus{}json}\PYG{p}{\PYGZcb{},}
+        \PYG{p}{\PYGZob{}}\PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{p}{:} \PYG{l+s+s2}{\PYGZdq{}function\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}function\PYGZdq{}}\PYG{p}{:} \PYG{n}{run\PYGZus{}tests\PYGZus{}json}\PYG{p}{\PYGZcb{},}
+    \PYG{p}{]}
+
+    \PYG{n}{ai} \PYG{o}{=} \PYG{n}{Agent}\PYG{p}{(}\PYG{n}{role}\PYG{o}{=}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{dbs}\PYG{o}{.}\PYG{n}{prompts}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}test\PYGZsq{}}\PYG{p}{]}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{name}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}test\PYGZus{}agent\PYGZsq{}}\PYG{p}{,} \PYG{n}{iol} \PYG{o}{=} \PYG{n}{iol}\PYG{p}{,} \PYG{n}{tools}\PYG{o}{=}\PYG{n}{tools}\PYG{p}{,} \PYG{n}{model}\PYG{o}{=}\PYG{n}{model}\PYG{p}{)}
+
+    \PYG{n}{user} \PYG{o}{=} \PYG{n}{ai}\PYG{o}{.}\PYG{n}{fuser}\PYG{p}{(}\PYG{n}{msg}\PYG{o}{=}\PYG{l+s+sa}{f}\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}\PYGZdq{}The project codebase:}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{input}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s2}{. User provided the following argument for tests: }\PYG{l+s+si}{\PYGZob{}}\PYG{n}{test}\PYG{l+s+si}{\PYGZcb{}}
+\PYG{l+s+s2}{Please run the appropriate tests for the project. If tests are not provided, please write them.}
+\PYG{l+s+s2}{                    Save them to a file and then run them. Use provided functions to do so.\PYGZdq{}\PYGZdq{}\PYGZdq{}}\PYG{p}{)}
+
+    \PYG{n}{messages} \PYG{o}{=} \PYG{p}{[}\PYG{n}{user}\PYG{p}{]}
+    \PYG{k}{return} \PYG{k}{await} \PYG{n}{ai}\PYG{o}{.}\PYG{n}{next}\PYG{p}{(}\PYG{n}{messages}\PYG{p}{,} \PYG{n}{directory}\PYG{o}{=}\PYG{n}{directory}\PYG{p}{)}
+\end{Verbatim}

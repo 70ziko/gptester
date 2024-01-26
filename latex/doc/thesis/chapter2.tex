@@ -47,13 +47,13 @@ Jeżeli testy funkcjonalne dla naszego kodu nie zostały zapewnione, zostaną on
 Jest to funkcja nadal testowana, która w przyszłości ma za zadanie generować testy funkcjonalne dla kodu, który nie posiada testów funkcjonalnych. 
 Problemem jest ich duża ilość dla średnich i dużych projektów, dlatego zalecane jest dostarczenie własnego modułu testów funkcjonalnych.
 
-\subsection{Wzbogacanie monitów(promptów)}
+\subsection{Wzbogacanie zapytań(promptów)}
 \begin{figure}[h]
     \centering
     % Adjust the clip and trim parameters as needed: {left bottom right top}
     \includegraphics[clip, trim=3cm 11cm 3cm 0cm, width=0.9\linewidth]{img/gptester.drawio.png}
     \caption{Część schematu opisująca proces RAG}
-    \label{fig:przyciety_obra}
+    \label{fig:RAG-schemat}
 \end{figure}
 
 Dla uzyskania jak najlepszych wyników oraz zapewnienia najnowszej dostępnej wiedzy na temat podatności wykorzystywane zostaje RAG, aby wzbogacić monit o dodatkowe informacje. Są to informacje otrzymane z CodeQL, które zostają użyte do semantycznego wyszukania powiązanych wpisów w bazie danych CVE. 
@@ -109,7 +109,7 @@ Tak spreparowane zapytanie jest następnie zadane modelowi językowemu, który i
     % Adjust the clip and trim parameters as needed: {left bottom right top}
     \includegraphics[clip, trim=12cm 6cm 6cm 0cm, width=0.9\linewidth]{img/gptester.drawio.png}
     \caption{Czarna skrzynka - LLM (Large Language Model)}
-    \label{fig:przyciety_obraz}
+    \label{fig:przyciety_obraz-generowanie}
 \end{figure}
 LLM generuje \textcolor{blue}{uzupełnienie/generacje kodu} oraz raport, które są następnie \textcolor{purple}{łączone (code merging)} w potencjalnie \textcolor{red}{naprawiony program}. Proces ten wykorzystuje również \textcolor{red}{narzędzia}
 (code interpreter, knowledge retrieval, file writing, git patch, \dots), aby ułatwić obróbkę wyników oraz wzbogacić generację.
@@ -122,11 +122,10 @@ LLM generuje \textcolor{blue}{uzupełnienie/generacje kodu} oraz raport, które 
     \caption{Czarna skrzynka - LLM (Large Language Model)}
     \label{fig:przyciety_obraz2}
 \end{figure}
-Naprawiony kod jest poddawany `testom bezpieczeństwa` oraz `funkcjonalnym testom` w celu zapewnienia, że poprawki nie wprowadzają nowych błędów i że aplikacja nadal działa zgodnie z oczekiwaniami.
-Testy bezpieczeństwa są przeprowadzane ręcznie dla potwierdzenia poprawności działania, natomiast testy funkcjonalne są wykonywane automatycznie.
-
+W ramach procesu weryfikacyjnego, naprawiony kod jest poddawany \textcolor{purple}{testom bezpieczeństwa} oraz \textcolor{purple}{testom funkcjonalnym}, mając na celu zapewnienie, że wprowadzone poprawki nie generują nowych defektów oraz że aplikacja funkcjonuje zgodnie z założeniami. W literaturze źródłowej, na której opiera się niniejsza praca inżynierska, do realizacji testów bezpieczeństwa stosowane są narzędzia takie jak CodeQL, czy ASAN/UBSAN, które umożliwiają wykrycie podatności w kodzie. Proces ten jest zautomatyzowany, co jest kluczowe dla przeprowadzenia badań w skali naukowej. Jednakże, z powodu specyfiki integracji CodeQL w ramach realizowanego projektu, jego wykorzystanie do testów nie jest rekomendowane, gdyż nie zapewnia wiarygodności wyników. W związku z tym, testy bezpieczeństwa są przeprowadzane manualnie w celu potwierdzenia prawidłowości działania systemu, podczas gdy testy funkcjonalne realizowane są w sposób automatyczny. 
+Zaleca się wskazanie dedykowanego modułu testowego dla skanowanego projektu.
 \subsubsection{Dokumentacja i raportowanie}
-Wyniki pracy \textbf{gptester} są dokumentowane w raporcie o błędach, po czym raport jest zapisywany w plikach markdown, a poprawione pliki z kodem w katalogu z `fixed` z odpowiednim znacznikiem czasowym. W przyszłości poprawki będą wprowadzane do bazy kodu za pomocą git patch.
+Wyniki pracy \textbf{gptester} są dokumentowane w raporcie o błędach, po czym raport jest zapisywany w plikach markdown, a poprawione pliki z kodem w katalogu `fixed` z odpowiednim znacznikiem czasowym. W przyszłości poprawki będą wprowadzane do bazy kodu za pomocą git patch.
 
 \subsubsection{Podsumowanie}
 Diagram blokowy przedstawia kompleksowy proces analizy i naprawy kodu, który jest silnie zależny od danych wejściowych (kod źródłowy i testy bezpieczeństwa), zaawansowanych algorytmów przetwarzania (duże modele językowe) oraz dokładności w generowaniu poprawek kodu i ich weryfikacji. Cały proces jest automatyzowany, a weryfikacja jest możliwa na otrzymanych wynikach.
@@ -139,7 +138,7 @@ Projekt \textbf{gptester} został opracowany w środowisku programistycznym Pyth
 
 Wymagania wstępne:
 \begin{itemize}
-    \item Python w wersji 3.x – Język programowania wykorzystany do napisania `gptester`.
+    \item Python w wersji >3.7 – Język programowania wykorzystany do napisania `gptester`.
     \item Dostęp do internetu – Niezbędny do pobrania zależności i interakcji z modelem GPT-4 przez API OpenAI.
 \end{itemize}
 
@@ -150,13 +149,31 @@ pip install -r requirements.txt
 \end{minted}
 \end{listing}
 
-Plik `requirements.txt` zawiera wszystkie niezbędne biblioteki Pythona wymagane do działania `gptester`. Instalacja zależności jest prosta i może być wykonana w terminalu lub wirtualnym środowisku Pythona, co jest zalecane w celu uniknięcia konfliktów z istniejącymi pakietami.
+Plik `requirements.txt` zawiera wszystkie niezbędne biblioteki Pythona wymagane do działania \textbf{gptester}. 
+Instalacja zależności jest prosta i może być wykonana w terminalu lub wirtualnym środowisku Pythona, co jest zalecane w celu uniknięcia konfliktów z istniejącymi pakietami.
+
+\subsection{Uruchomienie programu}
+
+\begin{listing}
+    \begin{minted}{bash}
+        cd gptester
+        python main.py -h
+    \end{minted}
+\end{listing}
+or 
+\begin{listing}
+    \begin{minted}{bash}
+        cd gptester
+        chmod +x main.py
+        ./main.py --help
+    \end{minted}
+\end{listing}
 
 
 
 \subsection{Funkcje programu}
 
-Program `gptester` został zaprojektowany jako wszechstronny narzędzie do analizy statycznej kodu, wykorzystując zaawansowane modele językowe do wykrywania i naprawiania błędów bezpieczeństwa w kodzie. Kluczowe funkcje programu są dostępne za pomocą różnorodnych argumentów linii poleceń, umożliwiając szeroką konfigurację i dostosowanie do specyicznych potrzeb analizy.
+Program \textbf{gptester} został zaprojektowany jako wszechstronny narzędzie do analizy statycznej kodu, wykorzystując zaawansowane modele językowe do wykrywania i naprawiania błędów bezpieczeństwa w kodzie. Kluczowe funkcje programu są dostępne za pomocą różnorodnych argumentów linii poleceń, umożliwiając szeroką konfigurację i dostosowanie do specyficznych potrzeb analizy.
 
 \begin{itemize}
     \item \textbf{-h, --help}: Wyświetla pomoc programu, zawierającą informacje o dostępnych opcjach i ich krótki opis. Jest to przydatne dla użytkowników, którzy chcą szybko zrozumieć, jak korzystać z programu.
@@ -181,15 +198,15 @@ Przykład użycia z pełną konfiguracją:
 
 \begin{listing}
     \begin{minted}{bash}
-./main.py /ścieżka/do/projektu --verbose --model "gpt-4-1106-preview" --output "moj_raport.md" --tests "/ścieżka/do/testów" --codeql --command "cmake" --language "java"
+./main.py /ścieżka/do/projektu --verbose --model "gpt-4-1106-preview" --output "moj_raport.md" --tests "/ścieżka/do/testów" --codeql --command "mvn -B -DskipTests -DskipAssembly" --language "java"
 \end{minted}
 \end{listing}
 
-W powyższym przykładzie, gptester analizuje kod znajdujący się w podanej ścieżce, z włączonym trybem szczegółowych informacji, korzystając z modelu GPT-4, zapisując wyniki do określonego pliku raportu, wykonując testy funkcjonalne, integrując z CodeQL, używając polecenia cmake do budowy projektu w języku Java.
+W powyższym przykładzie, gptester analizuje kod znajdujący się w podanej ścieżce, z włączonym trybem szczegółowych informacji, korzystając z modelu GPT-4, zapisując wyniki do określonego pliku raportu, wykonując testy funkcjonalne, integrując z CodeQL, używając polecenia cmake do budowy projektu w języku C++. Budowa projektu jest wymagana przez CodeQL, dlatego ten argument jest wykorzystywany jedynie przy integracji z CodeQL.
 
 \section{Integracja z CodeQL}
 
-Integracja `gptester` z CodeQL znacznie rozszerza jego funkcjonalność analizy statycznej kodu. CodeQL, opracowany przez GitHub, to zaawansowane narzędzie do semantycznej analizy kodu, które umożliwia wykrywanie złożonych podatności i błędów bezpieczeństwa.
+Integracja gptester z CodeQL znacznie rozszerza jego funkcjonalność analizy statycznej kodu. CodeQL, opracowany przez Microsoft, a dokładnie GitHub, to zaawansowane narzędzie do semantycznej analizy kodu, które umożliwia wykrywanie złożonych podatności i błędów bezpieczeństwa.
 
 \textbf{Główne cechy integracji z CodeQL:}
 \begin{itemize}
@@ -200,87 +217,314 @@ Integracja `gptester` z CodeQL znacznie rozszerza jego funkcjonalność analizy 
     \item \textbf{Automatyzacja Wykrywania Podatności}: CodeQL automatyzuje proces wykrywania podatności, zwiększając skuteczność i efektywność analizy bezpieczeństwa kodu.
 \end{itemize}
 
-Integracja z CodeQL czyni `gptester` narzędziem nie tylko do wykrywania błędów syntaktycznych i strukturalnych, ale także do efektywnego identyfikowania subtelniejszych problemów bezpieczeństwa, które mogą umknąć podczas standardowych analiz.
+Integracja z CodeQL czyni \textbf{gptester} narzędziem nie tylko do wykrywania błędów syntaktycznych i strukturalnych, ale także do efektywnego identyfikowania subtelniejszych problemów bezpieczeństwa, które mogą umknąć podczas standardowych analiz.
+Do działania CodeQL niezbędne jest zainstalowanie CodeQL CLI, które można pobrać ze strony GitHub.
 
-\section{Przypadki użycia}
+\section{Modele językowe}
+\label{sec:modele_jezykowe}
 
-Przypadki użycia programu `gptester` demonstrują jego wszechstronność i elastyczność w różnych scenariuszach analizy kodu. Poniżej przedstawiono kilka przykładowych scenariuszy, które ilustrują, jak `gptester` może być wykorzystywany do osiągnięcia różnych celów w procesie analizy statycznej kodu.
+W ramach projektu \textbf{gptester} zaimplementowano zaawansowane modele językowe dostarczone przez OpenAI, w szczególności GPT-4, które odegrały kluczową rolę w procesie analizy statycznej kodu. Modele te wykorzystują techniki uczenia maszynowego i sztucznej inteligencji do generowania odpowiedzi na podstawie dostarczonych danych.
 
-\subsubsection{Podstawowa Analiza Kodu}
-W najprostszym przypadku, `gptester` może być używany do przeprowadzenia podstawowej analizy kodu w określonym katalogu. Przykład użycia:
+\subsection{Wykorzystanie Modeli Językowych}
+Modele językowe w projekcie \textbf{gptester} są wykorzystywane do identyfikacji i sugerowania potencjalnych napraw błędów w kodzie źródłowym. Proces ten opiera się na zaawansowanej analizie kontekstu i semantyki kodu, co pozwala na precyzyjne wykrywanie nawet subtelnych podatności.
 
+\subsection{Dostępne Modele}
+Projekt integruje różne wersje modeli GPT, z dominującą rolą GPT-4, który charakteryzuje się wyższą zdolnością do zrozumienia złożonych zapytań i generowania bardziej precyzyjnych odpowiedzi. Dostępność innych modeli, takich jak GPT-3.5, zapewnia elastyczność w doborze narzędzia w zależności od specyficznych wymagań analizy. 
+
+\subsubsection{Modele otwartoźródłowe}
+W przyszłości dostępne będą także modele otwartoźródłowe, za pomocą narzędzia Ollama. Dostępne będą między innymi: Llama2, GPT-J, Mistral, Falcon, czy jakikolwiek model dostępny w repozytoriach Ollama. Narzędzie to pozwala na łatwe pobieranie modeli, konteneryzowane uruchamianie, a także dostęp za pomocą API. Zapewni to jeszcze większą elastyczność i dostosowanie do potrzeb projektu.
+
+\subsection{Inżynieria Poleceń (Promptów)}
+Kluczowym aspektem wykorzystania modeli językowych jest inżynieria promptów, czyli proces projektowania i optymalizowania zapytań w celu uzyskania jak najbardziej trafnych odpowiedzi od modelu. W projekt \textbf{gptester} zaimplementowano zestaw specjalnie opracowanych promptów, które są dostosowane do identyfikacji różnych rodzajów błędów i podatności w kodzie.
+
+Polecenie systemowe używane dla agenta odpowiedzialnego za identyfikację i naprawę błędów wygląda następująco:
 \begin{verbatim}
-./main.py /ścieżka/do/projektu
+You are a top-tier security specialist and developer. You have been 
+tasked with finding vulnerabilities and security bugs in a program. 
+You will be given either a code snippet, a whole codefile or multiple 
+files and optionally a description of errors found by CodeQL. You must 
+find all the errors, especially the ones that weren't found by CodeQL 
+and list them. You will output a potential fix using the git version 
+control format, stating which lines were deleted and which lines were 
+added. Then you will write the fixed code to a file with the same name 
+as the original file in a new folder called "fixed". Always write the 
+new file without asking for confirmation or more context, even when 
+you only have a snippet of code write it to a new file.
+
+write_file = {
+        "name": "write_file",
+        "description": "Writes content to a specified file.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "filename": {"type": "string"},
+                "content": {"type": "string"}
+            },
+            "required": ["filename", "content"]
+        }
+    }
+
 \end{verbatim}
 
-W tym scenariuszu, `gptester` przeanalizuje kod w podanym katalogu, używając domyślnych ustawień dla modelu językowego i zapisze raport w standardowej lokalizacji.
 
-\subsubsection{Analiza z Wysokim Poziomem Detali}
-Dla bardziej szczegółowych informacji, użytkownik może włączyć tryb verbose, co pozwoli na śledzenie szczegółowych informacji o każdym etapie analizy. Przykład użycia:
+Można zauważyć, że prompty są złożone z dwóch części: pierwsza część to opis zadania, które ma wykonać model, a druga część to opis funkcji, która ma zostać użyta do zapisania plików. W ten sposób model jest w stanie zrozumieć kontekst zadania oraz wykonać odpowiednie operacje. Użycie funkcji oraz zwrócenie odpowiedzi przez tę funkcję jest zaimplementowane w ai/assistant.py\ref{api_openai}. Lokalizacja zapisywanych plików jest zmieniana przez kod i niezależna od modelu.
 
-\begin{verbatim}
-./main.py --verbose /ścieżka/do/projektu
-\end{verbatim}
+Prompt dla innych punktów końcowych API będzie wyglądał inaczej. Niezbędna jest wówczas implementacja parsera dla odpowiedzi od modelu językowego, aby wyodrębnić odpowiednie informacje i zapisać do plików.
 
-W tym przypadku, `gptester` dostarczy rozszerzone informacje o przeprowadzanej analizie, co jest szczególnie przydatne do debugowania i zrozumienia procesu analizy.
+\subsection{Integracja z API OpenAI}
+Komunikacja z modelami językowymi odbywa się za pośrednictwem API OpenAI, co umożliwia wykorzystanie najnowszych osiągnięć w dziedzinie sztucznej inteligencji bez konieczności posiadania zasobów obliczeniowych do lokalnego trenowania modeli. 
 
-\subsubsection{Analiza z Integracją CodeQL}
-Dla zaawansowanej analizy bezpieczeństwa, `gptester` może być używany w połączeniu z CodeQL. Przykład użycia:
+Można wyróżnić trzy główne sposoby komunikacji z API OpenAI:
+\begin{enumerate}
+    \item \textbf{Completion(Komplecja/Uzupełnienie)}: Punkt końcowy API zakończenia otrzymał ostateczną aktualizację w lipcu 2023 r. i ma inny interfejs niż nowy punkt końcowy zakończenia czatu. Zamiast danych wejściowych będących listą komunikatów, danymi wejściowymi jest dowolny ciąg tekstowy zwany podpowiedzią.
 
-\begin{verbatim}
-./main.py --codeql --language java /ścieżka/do/projektu
-\end{verbatim}
+    Przykładowe wywołanie starszego interfejsu API Completions wygląda następująco:
+    \begin{listing}
+        \begin{minted}{python}
+from openai import OpenAI
+client = OpenAI()
 
-W tym scenariuszu, `gptester` wykorzystuje CodeQL do przeprowadzenia głębokiej analizy kodu w języku Java, co pozwala na wykrycie bardziej subtelnych i złożonych problemów bezpieczeństwa.
+response = client.completions.create(
+  model="gpt-3.5-turbo-instruct",
+  prompt="Write a tagline for an ice cream shop."
+)
+        \end{minted}
+    \end{listing}
+    \item \textbf{ChatCompletion(Komplecja/Uzupełnienie dialogowe)}: Modele czatu przyjmują listę wiadomości jako dane wejściowe i zwracają wiadomość wygenerowaną przez model jako dane wyjściowe. Chociaż format czatu został zaprojektowany tak, aby ułatwić wieloturowe rozmowy, jest równie przydatny w przypadku zadań jednoturowych bez żadnej rozmowy.
 
-\subsubsection{Analiza Projektu z Konkretnym Modelem Językowym}
-Użytkownik może również wybrać specyficzny model językowy dla analizy. Przykład użycia:
+    Przykładowe wywołanie interfejsu API Chat Completions wygląda następująco:
+    \begin{listing}
+        \begin{minted}{python}
+from openai import OpenAI
+client = OpenAI()
 
-\begin{verbatim}
-./main.py --model "gpt-4-1106-preview" /ścieżka/do/projektu
-\end{verbatim}
+response = client.chat.completions.create(
+  model="gpt-3.5-turbo",
+  messages=[
+    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "user", "content": "Who won the world series in 2020?"},
+    {"role": "assistant", "content": "The Los Angeles Dodgers won the World Series in 2020."},
+    {"role": "user", "content": "Where was it played?"}
+  ]
+)
+            \end{minted}
+        \end{listing}
+        \item \textbf{Assistant(Asystent)}: Punkt końcowy API Asystentów pozwala na tworzenie asystentów AI w ramach własnych aplikacji. Asystent posiada instrukcje i może wykorzystywać modele, narzędzia oraz wiedzę do odpowiadania na zapytania użytkowników. API Asystentów obecnie obsługuje trzy typy narzędzi: Interpreter Kodu, Pobieranie oraz Wywoływanie Funkcji. W przyszłości planujemy udostępnić więcej narzędzi stworzonych przez OpenAI oraz umożliwić dostarczanie własnych narzędzi na naszej platformie.
+        
+        Przykładowe wywołanie interfejsu API Asystentów wygląda następująco:
+        \begin{listing}
+            \begin{minted}{python}
+assistant = client.beta.assistants.create(
+    name="Math Tutor",
+    instructions="You are a personal math tutor. Write and run code to answer math questions.",
+    tools=[{"type": "code_interpreter"}],
+    model="gpt-4-1106-preview"
+)
+            \end{minted}
+        \end{listing}
+\end{enumerate}
 
-Taki wybór modelu może być użyteczny, gdy użytkownik chce skorzystać z określonych cech lub możliwości danego modelu, które mogą być lepiej dostosowane do charakterystyki analizowanego kodu. 
-W przyszłości wybór zostanie poszerzony o modele otwartoźródłowe nieograniczone narzuconymi limitami OpenAI.
+Kod użyty w projekcie został dostosowany do nowego interfejsu Assistant API, który jest zgodny z najnowszymi wersjami modeli językowych. W projekcie znajduje się także kod wykorzystujący starsze interfejsy API, który może być użyty w przypadku starszych wersji modeli językowych. Ten kod oraz własna implementacja bazy wektorowej wynika z daty wprowadzenia punktu końcowego API asystantów, który został wprowadzony 06.11.2023r.
+Kod użyty w projekcie znajduje się w pliku `ai/assistant.py` i wygląda następująco:
+\newgeometry{top=0.5cm, left=2cm,right=2cm, bottom=3cm}
 
-\subsubsection{Kompleksowa Analiza z Wykorzystaniem Testów Funkcjonalnych}
-gptester pozwala na integrację testów funkcjonalnych, co może być użyteczne do bardziej kompleksowej analizy projektu. Przykład użycia:
-
-\begin{verbatim}
-./main.py --tests "/ścieżka/do/testów" /ścieżka/do/projektu
-\end{verbatim}
-
-W tym przypadku, oprócz standardowej analizy kodu, gptester wykonuje również testy funkcjonalne, co pozwala na lepsze zrozumienie, jak zmiany w kodzie wpływają na działanie aplikacji.
-
-\subsubsection{Zaawansowana Konfiguracja dla Specyficznych Wymagań}
-Dla projektów o specyficznych wymaganiach, gptester oferuje szeroki zakres opcji konfiguracyjnych, pozwalając na dostosowanie analizy do indywidualnych potrzeb. Przykład użycia:
-
-\begin{verbatim}
-./main.py --verbose --model "gpt-4-1106-preview" --output "moj_raport.md" --tests "/ścieżka/do/testów" --codeql --command "cmake" --language "java" /ścieżka/do/projektu
-\end{verbatim}
-
-Tutaj, gptester jest konfigurowany do pracy z konkretnym modelem językowym, zapisuje raport w określonym pliku, wykonuje testy funkcjonalne, integruje z CodeQL, korzysta z określonego polecenia budowania projektu i jest dostosowany do analizy kodu w języku Java.
 \begin{listing}
-    \begin{minted}{c}  
-Przykład użycia podstawowego
+    \begin{minted}[fontsize=\scriptsize]{python}
+class Assistant():
+    def __init__(self, role: str, name: str = "Assistant", model: str = 'gpt-3.5-turbo-1106', iol: IOlog = None, tools = None, messages = None) -> None:
+        self.name = name
+        self.iol = iol
+        self.instructions = role
+        self.assistant = client.beta.assistants.create(
+            name=name,
+            instructions=self.instructions,
+            model=model,
+            tools=tools if tools else [{"type": "code_interpreter"}, {"type": "retrieval"}]
+        )
+        self.thread = client.beta.threads.create(messages = messages)
+    # pominięte metody przekształcania wiadomości, pozwalające na łatwą zmianę punktów końcowych API bez modyfikowania funkcji definiujących agentów. Inne punkty końcowe korzystają z osobnych klas
 
-cd gptester
-python main.py -h
-Przykład użycia z opcją verbose
-
-./main.py --verbose
-Przykład użycia z integracją CodeQL
-
-./main.py --codeql --command "make" --language "cpp"
+    async def next(self, messages: list[dict[str, str]]=None, prompt=None, directory: str = 'fixed'):
+        if messages:
+            self.messages_to_thread(messages)
+        if prompt:
+            self.fuser(self, prompt)
+        try:
+            run = client.beta.threads.runs.create(
+                thread_id=self.thread.id,
+                assistant_id=self.assistant.id,
+                model=self.assistant.model if self.assistant.model else "gpt-4-1106-preview",
+                instructions=self.instructions
+            )
+            # Polling mechanism to see if runStatus is completed
+            run_status = client.beta.threads.runs.retrieve(thread_id=self.thread.id, run_id=run.id)
+            while run_status.status != "completed":
+                await asyncio.sleep(2)  # Sleep for 2 seconds before polling again
+                run_status = client.beta.threads.runs.retrieve(thread_id=self.thread.id, run_id=run.id)
+                tool_outputs = []
+                # Check if there is a required action
+                if run_status.required_action and run_status.required_action.type == "submit_tool_outputs":
+                    for tool_call in run_status.required_action.submit_tool_outputs.tool_calls:
+                        name = tool_call.function.name
+                        arguments = json.loads(tool_call.function.arguments)
+                        if "filename" in arguments and self.name == "debug_agent": 
+                            filename = os.path.basename(arguments["filename"])
+                            timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                            arguments["filename"] = os.path.join(directory, f'fixed_{timestamp}', filename)
+                        # Check if the function exists in the tools module
+                        if hasattr(tools, name):
+                            function_to_call = getattr(tools, name)
+                            response = await function_to_call(**arguments)
+                            # Collect tool outputs
+                            tool_outputs.append({"tool_call_id": tool_call.id, "output": response})
+                # Submit tool outputs back
+                if tool_outputs:
+                    client.beta.threads.runs.submit_tool_outputs(
+                        thread_id=self.thread.id,
+                        run_id=run.id,
+                        tool_outputs=tool_outputs
+                    )
+                if run_status.status == "failed":
+                    raise Exception(f"Run failed with reason: {run_status.last_error}")
+            # Get the last assistant message from the messages list
+            messages = client.beta.threads.messages.list(thread_id=self.thread.id)
+            response = [message for message in messages if message.run_id == run.id and message.role == "assistant"][-1]
+            if response:
+                self.iol.log(f"{response.content[0].text.value} \n")
+        except TypeError:
+            self.iol.log(f"TypeError: run[-1][\"content\"]: {run[-1]['content']}")
+        return messages
     \end{minted}
-    \caption{Przykłady użycia programu gptester}
-    \label{lst:przyklady_uzycia}
+    \caption{Kod używany do komunikacji z API OpenAI (ai/assistant.py)}
+    \label{listing:api_openai}
+\end{listing}
+
+\restoregeometry
+
+Przy używaniu punktu końcowego ChatCompletion niezbędna jest implementacja parsera, aby możliwe było wyodrębnienie wiadomości oraz zapisywanie do plików. Taki parser znajduje się w pliku \textit{utils/chat\_to\_files.py}. Przewaga ChatCompletion nad Assistant jest taka, że są to stabilniejsze metody z takimi funkcjami jak przesyłanie strumieniowe, które nie są dostępne w Assistant. 
+
+\subsection{Definicja Agenta AI}
+Agent AI w kontekście projektu \textbf{gptester} definiuje się jako zaawansowany system komputerowy, który wykorzystuje techniki sztucznej inteligencji i uczenia maszynowego do automatyzacji zadań związanych w tym przypadku z analizą statyczną kodu źródłowego. Agent ten jest zaprogramowany do samodzielnego podejmowania decyzji na podstawie dostarczonych mu danych, mając na celu identyfikację i naprawianie błędów oraz podatności bezpieczeństwa w kodzie.
+
+\subsubsection{Cechy Charakterystyczne}
+
+Agent AI charakteryzuje się następującymi cechami:
+
+\begin{itemize}
+    \item \textbf{Autonomia}: Możliwość samodzielnego działania bez bezpośredniej interwencji człowieka, opierając się na zasadach i algorytmach AI.
+    \item \textbf{Interaktywność}: Umiejętność komunikacji z użytkownikami lub innymi systemami w celu wymiany informacji i wykonania zadań.
+    \item \textbf{Narzędzia}: Wykorzystanie różnorodnych narzędzi i funkcji do analizy i generowania rozwiązań.
+    \item \textbf{Pamięć długotrwała}: Możliwość zapamiętywania informacji i wykorzystywania ich w przyszłych zadaniach, Zaimplementowana dzięki technice generowania wspomaganego pobieraniem (RAG), w tym celu możliwe są także inne rozwiązania. Nie wykorzystywana w projekcie.
+\end{itemize}
+
+\subsubsection{Zastosowanie w \textbf{gptester}}
+
+W projekcie \textbf{gptester}, agent AI odgrywa kluczową rolę w:
+
+\begin{itemize}
+    \item \textbf{Wykrywaniu błędów}: Automatyczne identyfikowanie błędów w kodzie źródłowym.
+    \item \textbf{Generowaniu napraw}: Proponowanie rozwiązań naprawczych dla wykrytych problemów.
+    \item \textbf{Optymalizacji kodu}: Sugerowanie ulepszeń w celu zwiększenia efektywności i bezpieczeństwa kodu.
+    \item \textbf{Testowaniu}: Automatyzowanie procesu testowania kodu, w tym pisania testów i ich wykonywania.
+\end{itemize}
+
+Dzięki swojej zaawansowanej konfiguracji i integracji z modelami językowymi GPT-4, agenci AI w \textbf{gptester} pozwalają na nowoczesne podejście do analizy statycznej kodu, zapewniając łatwość w implementacji oraz wysoką skuteczność i efektywność w wykrywaniu oraz naprawianiu błędów programistycznych.
+
+\subsection{Konfiguracja Agentów AI}
+\label{subsec:konfiguracja_agentow}
+
+Projekt \textbf{gptester} wykorzystuje zaawansowanych agentów AI, które są kluczowymi elementami w procesie analizy statycznej kodu. Konfiguracja tych agentów obejmuje szereg parametrów i narzędzi, które są niezbędne do ich efektywnego działania.
+
+\subsubsection{Parametry Konfiguracyjne}
+
+Każdy agent AI jest inicjalizowany z określonymi parametrami konfiguracyjnymi, które definiują jego zachowanie i funkcjonalność:
+
+\begin{itemize}
+    \item \textbf{Rola}: Określa podstawowy zakres działania agenta, np. debugowanie lub testowanie. Jest to odpowiednik polecenia systemowego (system prompt) w interakcji z modelami za pomocą punktu końcowego `ChatCompletion' w OpenAI API.
+    \item \textbf{Nazwa}: Unikalna nazwa agenta, używana do identyfikacji i logowania.
+    \item \textbf{Model Językowy}: Wskazuje na model AI używany przez agenta, domyślnie ustawiony na GPT-4 w najnowszej wersji.
+    \item \textbf{Środowisko I/O (IOlog)}: Mechanizm raportowania, logowania i interakcji z użytkownikiem.
+    \item \textbf{Narzędzia}: Zestaw narzędzi, które agent może wykorzystywać podczas analizy.
+    \item \textbf{Ścieżka do Katalogu (Directory)}: Lokalizacja, gdzie agent zapisuje wyniki swojej pracy.
+\end{itemize}
+
+\subsubsection{Narzędzia i Funkcje}
+
+Agent AI korzysta z różnorodnych narzędzi i funkcji, które wspierają jego działanie w różnych scenariuszach:
+
+\begin{itemize}
+    \item \textbf{Code Interpreter}: Narzędzie do interpretacji, analizy oraz wykonywania kodu źródłowego udostępniony przez OpenAI.
+    \item \textbf{Retrieval}: Mechanizm wyszukiwania i odzyskiwania informacji z zewnętrznych źródeł udostępniony przez OpenAI.
+    \item \textbf{Funkcje Specyficzne}: Takie jak `write\_file' i `run\_tests', które umożliwiają zapisywanie treści do plików i wykonanie testów.
+    \item \textbf{Integracja z CodeQL}: W przypadku agenta ``debug\_agent'', integracja z CodeQL pozwala na głębszą analizę bezpieczeństwa kodu.
+\end{itemize}
+
+
+Każdy agent AI w \textbf{gptester} jest zaprojektowany w taki sposób, aby był elastyczny i mógł być łatwo dostosowany do zmieniających się wymagań projektowych, co umożliwia szerokie zastosowanie w różnych scenariuszach analizy kodu.
+
+\subsubsection{Przykładowa konfiguracja Agenta AI w projekcie}
+W niniejszym podrozdziale prezentuję przykład implementacji agenta AI, który został zaprojektowany do wykonywania zaawansowanych analiz kodu źródłowego oraz generowania odpowiednich rozwiązań naprawczych. Poniższy fragment kodu ilustruje wykorzystanie zestawu narzędzi i funkcji, które umożliwiają agentowi AI efektywne przetwarzanie i interpretację kodu, a także sugerowanie optymalnych metod naprawy wykrytych błędów. \\
+\vfill
+
+\begin{listing}
+    \begin{minted}[fontsize=\scriptsize]{python}
+async def test_agent(input: str, test: str, iol: IOlog = None, model: str = 'gpt-4-1106-preview', directory: str = 'tests') -> str:
+    """An agent used to test the supplied project
+    Capabililties: 
+        - Working on error messages - With the user (in the future it should be able to run the project and fix it on its own)
+        - writing missing test files """
+    write_file_json = {
+        "name": "write_file",
+        "description": "Writes content to a specified file.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "filename": {"type": "string"},
+                "content": {"type": "string"}
+            },
+            "required": ["filename", "content"]
+        }
+    }
+    run_tests_json = {
+        "name": "run_tests",
+        "description": "Executes test commands for specified programming languages using subprocesses.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "language": {
+                "type": "string",
+                "enum": ["cpp", "java", "python", "ruby", "php"]
+                },
+                "executable": {
+                "type": "string",
+                "description": "Path to the executable for C++ tests or additional command parameters for other languages."
+                }
+            },
+            "required": ["language"]
+        }
+    }
+    tools=[
+        {"type": "code_interpreter"},
+        {"type": "retrieval"},
+        {"type": "function", "function": write_file_json},
+        {"type": "function", "function": run_tests_json},
+    ]
+
+    ai = Agent(role=f"{dbs.prompts['test']}", name='test_agent', iol = iol, tools=tools, model=model)
+    
+    user = ai.fuser(msg=f"""The project codebase:\n{input}. User provided the following argument for tests: {test} \nRun appropriate tests for the project. If tests are not provided, please write them. Save them to a file and then run them. Use provided functions to do so.""")
+    
+    messages = [user]
+    return await ai.next(messages, directory=directory)
+\end{minted}
+\caption{Implementacja testującego agenta AI (ai/agents.py)}
+\label{listing:przyklad_agent_ai}
 \end{listing}
 
 \section{Rozwój i plany na przyszłość}
 \label{sec:rozwoj_i_plany_na_przyszlosc}
 
-Sekcja ta skupia się na omówieniu obecnego stanu projektu `gptester` oraz planowanych rozszerzeń i ulepszeń, które mają zostać wprowadzone w przyszłości. Planowane działania są zgodne z informacjami zawartymi w sekcji "In development" w README.md.
+Sekcja ta skupia się na omówieniu obecnego stanu projektu `gptester` oraz planowanych rozszerzeń i ulepszeń, które mają zostać wprowadzone w przyszłości. Planowane działania są zgodne z informacjami zawartymi w sekcji "In development" pliku README.md.
 
 \subsection{Obecne osiągnięcia}
 \label{subsec:obecne_osiagniecia}
@@ -290,7 +534,7 @@ Projekt `gptester` osiągnął już kilka kluczowych kamieni milowych w swoim ro
 \begin{itemize}
     \item \textbf{Podstawowa funkcjonalność}: Program już teraz oferuje podstawowe funkcje analizy statycznej kodu, umożliwiając identyfikację typowych błędów i podatności.
     \item \textbf{Wykorzystanie technik RAG oraz in-context learning}: `gptester` wykorzystuje zaawansowane techniki generacji wspomaganej odzyskiwaniem danych oraz uczenia się w kontekście, co pozwala na lepsze dostosowanie modeli językowych do specyficznych zadań.
-    \item \textbf{Integracja z CodeQL}: Znaczącym osiągnięciem jest wdrożenie integracji z CodeQL, co znacznie rozszerza możliwości analizy kodu, szczególnie w zakresie wykrywania złożonych błędów bezpieczeństwa.
+    \item \textbf{Integracja z CodeQL}: Znaczącym osiągnięciem jest wdrożenie integracji z CodeQL, co znacznie rozszerza możliwości analizy kodu, szczególnie w zakresie wykrywania złożonych błędów bezpieczeństwa. Niestety funkcja jest nadal testowana i stabilizowana.
 \end{itemize}
 
 Te osiągnięcia stanowią solidną podstawę dla dalszego rozwoju i rozbudowy `gptester`, kładąc nacisk na wydajność, dokładność i wszechstronność narzędzia.

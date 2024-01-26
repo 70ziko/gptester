@@ -1,0 +1,88 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{ }   \PYGZgt{} ../gptester/main.py \PYGZhy{}v damnvuln.c
+
+
+\PYGZbs{}subsection\PYGZob{}Przygotowanie środowiska testowego\PYGZcb{}
+\PYGZbs{}DOTSB
+
+\PYGZbs{}subsection\PYGZob{}Interpretacja wyników\PYGZcb{}
+\PYGZbs{}label\PYGZob{}subsec:interpretacja\PYGZus{}wynikow\PYGZcb{}
+
+Interpretacja wyników eksperymentów ujawniła istotne spostrzeżenia dotyczące możliwości wykorzystania modeli AI w celu poprawy bezpieczeństwa kodu. Analiza wykazała, że ...
+
+\PYGZpc{} Tutaj należy dodać interpretację wyników w kontekście wykresów i tabel (jeśli takowe zostały przygotowane)
+
+\PYGZbs{}section\PYGZob{}Badanie funkcjonalności na aplikacji webowej OWASP VulnerableApp\PYGZcb{}
+\PYGZbs{}label\PYGZob{}sec:badania\PYGZus{}na\PYGZus{}aplikacji\PYGZus{}webowej\PYGZus{}owasp\PYGZcb{}
+
+Analiza funkcjonalności programu do analizy bezpieczeństwa została przeprowadzona z wykorzystaniem aplikacji webowej OWASP VulnerableApp. Jest to narzędzie celowo zawierające liczne podatności, które mają na celu symulację realnych luk bezpieczeństwa, co pozwala na dogłębne testowanie i ocenę narzędzi do skanowania podatności.
+
+\PYGZbs{}subsection\PYGZob{}Charakterystyka aplikacji OWASP VulnerableApp\PYGZcb{}
+Aplikacja OWASP VulnerableApp została zaprojektowana z myślą o dostarczeniu platformy edukacyjnej dla deweloperów oraz specjalistów od bezpieczeństwa, którzy pragną zgłębić wiedzę na temat bezpieczeństwa aplikacji webowych. Narzędzie to charakteryzuje się skalowalnością, elastycznością oraz łatwością integracji, czyniąc je idealnym środowiskiem do nauki oraz testowania.
+
+\PYGZbs{}subsection\PYGZob{}Testowane rodzaje podatności\PYGZcb{}
+OWASP VulnerableApp umożliwia testowanie szerokiego zakresu podatności, w tym, ale nie ograniczając się do:
+
+\PYGZbs{}begin\PYGZob{}itemize\PYGZcb{}
+\PYG{+w}{ }   \PYGZbs{}item Podatności JWT
+\PYG{+w}{ }   \PYGZbs{}item Wstrzykiwanie poleceń (Command Injection)
+\PYG{+w}{ }   \PYGZbs{}item Podatności związane z przesyłaniem plików (File Upload Vulnerability)
+\PYG{+w}{ }   \PYGZbs{}item Przejście ścieżki (Path Traversal)
+\PYG{+w}{ }   \PYGZbs{}item Iniekcje SQL (SQL Injection)
+\PYG{+w}{ }   \PYGZbs{}item Skrypty międzywitrynowe (XSS)
+\PYG{+w}{ }   \PYGZbs{}item Ataki oparte na External XML Entities (XXE)
+\PYG{+w}{ }   \PYGZbs{}item Open Redirect
+\PYG{+w}{ }   \PYGZbs{}item Server\PYGZhy{}Side Request Forgery (SSRF)
+\PYGZbs{}end\PYGZob{}itemize\PYGZcb{}
+
+Zawarte podatności są reprezentatywne dla typowych zagrożeń w aplikacjach internetowych, co pozwala na wszechstronne i realistyczne testowanie narzędzi do ich wykrywania i naprawy.
+
+\PYGZbs{}subsection\PYGZob{}Zawartość znajdująca się w repozytorium\PYGZcb{}
+Repozytorium aplikacji VulnerableApp zawiera projekt aplikacji webowej napisany w następującym stosie technologicznym:
+\PYGZbs{}begin\PYGZob{}itemize\PYGZcb{}
+\PYG{+w}{ }   \PYGZbs{}item Java 8
+\PYG{+w}{ }   \PYGZbs{}item Spring Boot
+\PYG{+w}{ }   \PYGZbs{}item Maven 3.6.1
+\PYG{+w}{ }   \PYGZbs{}item ReactJS
+\PYG{+w}{ }   \PYGZbs{}item Javascript/TypeScript
+\PYGZbs{}end\PYGZob{}itemize\PYGZcb{}
+
+\PYGZbs{}begin\PYGZob{}verbatim\PYGZcb{}
+\PYG{+w}{ } \PYGZgt{} ../gptester/main.py \PYGZhy{}v VulnerableApp/
+2024\PYGZhy{}01\PYGZhy{}23 17:43:32: Welcome to gptester: the Static Code Analysis Agent
+2024\PYGZhy{}01\PYGZhy{}23 17:43:32: I will now begin scanning: VulnerableApp/, name: VulnerableApp
+2024\PYGZhy{}01\PYGZhy{}23 17:43:32: Beginning scan...
+2024\PYGZhy{}01\PYGZhy{}23 17:43:32: Found 231 files to scan
+2024\PYGZhy{}01\PYGZhy{}23 17:43:32: Tokens inside the directory: 229119
+2024\PYGZhy{}01\PYGZhy{}23 17:43:32: Beginning code analysis...
+2024\PYGZhy{}01\PYGZhy{}23 17:43:32: Using model: gpt\PYGZhy{}4\PYGZhy{}1106\PYGZhy{}preview
+2024\PYGZhy{}01\PYGZhy{}23 17:43:33: Splitting the content into 49 chunks
+
+\PYGZbs{}end\PYGZob{}verbatim\PYGZcb{}
+
+Nasz program pokazał nam, że w repozytorium znajduje się 231 plików, które zawierają 229119 tokenów.
+
+\PYGZbs{}subsection\PYGZob{}Procedura przeprowadzenia testów\PYGZcb{}
+Testy zostały przeprowadzone przy użyciu najnowszej wersji programu, zgodnie z następującymi krokami:
+
+\PYGZbs{}begin\PYGZob{}enumerate\PYGZcb{}
+\PYG{+w}{ }   \PYGZbs{}item Przygotowanie środowiska testowego z wykorzystaniem aplikacji OWASP VulnerableApp.
+\PYG{+w}{ }   \PYGZbs{}item Uruchomienie skanowania z wykorzystaniem programu.
+\PYG{+w}{ }   \PYGZbs{}item Dokumentacja wykrytych podatności oraz sugerowanych przez program napraw.
+\PYG{+w}{ }   \PYGZbs{}item Analiza efektywności napraw i ich wpływ na bezpieczeństwo aplikacji.
+\PYGZbs{}end\PYGZob{}enumerate\PYGZcb{}
+
+\PYGZbs{}subsection\PYGZob{}Oczekiwane rezultaty\PYGZcb{}
+W wyniku przeprowadzonych testów oczekujemy uzyskania szczegółowych danych na temat liczby wykrytych podatności, rodzajów podatności, a także czasu potrzebnego na ich wykrycie i naprawę. Dane te zostaną następnie wykorzystane do stworzenia szczegółowych wykresów i tabel ilustrujących skuteczność programu.
+
+\PYGZbs{}subsection\PYGZob{}Wnioski i dalsze kierunki badań\PYGZcb{}
+Na podstawie zebranych danych zostaną wyciągnięte wnioski dotyczące skuteczności narzędzia w kontekście poszczególnych typów podatności oraz ogólnej wydajności. Dalsze badania mogą również koncentrować się na porównaniu wyników z innymi narzędziami dostępnymi na rynku oraz na rozwoju nowych funkcji i usprawnień w badanym programie.
+
+
+\PYGZbs{}section\PYGZob{}Wnioski\PYGZcb{}
+\PYGZbs{}label\PYGZob{}sec:wnioski\PYGZcb{}
+
+Na podstawie przeprowadzonych badań eksperymentalnych udało się zweryfikować założenia dotyczące efektywności wykorzystania modeli AI w procesie identyfikacji i naprawy podatności w kodzie źródłowym. Główne wnioski to:
+
+\PYGZpc{} Tutaj należy wstawić wnioski z badania
+\end{Verbatim}

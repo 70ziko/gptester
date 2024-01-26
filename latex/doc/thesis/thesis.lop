@@ -1,4 +1,6 @@
 \contentsline {listing}{\numberline {3.1}{\ignorespaces Kod tworzący reprezentację wektorową tekstu za pomocą API OpenAI, domyślnie `text-embedding-ada-002', (models.py)\relax }}{13}{listing.3.1}%
 \contentsline {listing}{\numberline {3.2}{\ignorespaces Kod porównujący semantyczną odległość (models.py)\relax }}{13}{listing.3.2}%
-\contentsline {listing}{\numberline {3.3}{\ignorespaces Przykłady użycia programu gptester\relax }}{20}{listing.3.3}%
-\contentsline {listing}{\numberline {5.1}{\ignorespaces Kod źródłowy błędnego skrawka kodu \textit {CVE-2019-1937}\relax }}{27}{listing.5.1}%
+\contentsline {listing}{\numberline {3.3}{\ignorespaces Kod używany do komunikacji z API OpenAI (ai/assistant.py)\relax }}{23}{listing.3.3}%
+\contentsline {listing}{\numberline {3.4}{\ignorespaces Implementacja testującego agenta AI (ai/agents.py)\relax }}{27}{listing.3.4}%
+\contentsline {listing}{\numberline {6.1}{\ignorespaces Kod źródłowy błędnego skrawka kodu \textit {damnvuln.c}\relax }}{43}{listing.6.1}%
+\contentsline {listing}{\numberline {6.2}{\ignorespaces Wynik działania programu na kodzie źródłowym \textit {damnvuln.c}\relax }}{46}{listing.6.2}%

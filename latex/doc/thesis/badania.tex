@@ -1,16 +1,14 @@
-\chapter{Badania eksperymentalne - wyniki i wnioski}
-W niniejszym rozdziale prezentujemy wyniki oraz wnioski wynikające z przeprowadzonych badań eksperymentalnych. Zestawienie rezultatów eksperymentów zostało dokonane w sposób zrozumiały i klarowny, z odpowiednim wsparciem graficznym w postaci wykresów i tabel. Wnioski są bezpośrednio powiązane z wynikami badań oraz są zgodne z założonymi celami projektu.
+\chapter{Badania eksperymentalne}
 
-\section{Metodologia badań}
+Niniejszy rozdział jest poświęcony prezentacji wyników badań eksperymentalnych przeprowadzonych w ramach projektu. Wyniki te przedstawione w sposób klarowny, z wykorzystaniem wykresów i tabel dla lepszej interpretacji. 
+Wnioski wynikające z badań są bezpośrednio związane z założonymi celami projektu i opierają się na analizie uzyskanych danych.
 
-W tej sekcji szczegółowo omawiamy metody oraz podejście zastosowane podczas eksperymentów. Zostaną przedstawione narzędzia, parametry konfiguracyjne oraz procedura testowa, które razem tworzą ramy metodyczne naszego badania.
+Zaprezentowana metodyka badań obejmuje szczegółowy opis zastosowanych procedur testowych, co pozwala na ocenę wiarygodności i trafności uzyskanych wyników.
 
-\subsection{Konfiguracja środowiska}
+\section{Metodyka badań}
 
-Do eksperymentów wykorzystano następujące ustawienia konfiguracyjne środowiska:
-\begin{verbatim}
-    > ./main.py -m 'gpt-4-1106-preview' Vulnerable-Code-Snippets/
-\end{verbatim}
+W tej sekcji szczegółowo omawiam metody oraz podejście zastosowane podczas eksperymentów. 
+Zostaną przedstawione narzędzia, parametry konfiguracyjne oraz procedura testowa, które razem tworzą ramy metodyczne naszego badania.
 
 \subsection{Procedura testowa}
 
@@ -30,23 +28,22 @@ Procedura testowa przebiegała według następujących etapów:
     \begin{enumerate}
         \item Instalacja zależności.
         \item Konfiguracja środowiska.
-        \item Dopisanie podatnego kodu do serwera.
+        \item Dopisanie kodu pozwalającego na wykonanie.
+        \item Uruchomienie aplikacji.
     \end{enumerate} 
-    \item Przeprowadzenie testów funkcjonalnych oraz testów bezpieczeństwa.
+    \item Przeprowadzenie testów funkcjonalnych oraz testów bezpieczeństwa poprzez przeprowadzenia eksploatacji.
     \item Analiza i interpretacja wyników.
 \end{enumerate}
 
-\subsection{Wyniki działania programu - przykład}
-\label{subsec:wyniki_dzialania_programu}
+\section{Wyniki działania programu - przykład}
+\label{sec:wyniki_dzialania_programu}
 
 Wyniki działania programu, prezentowane na konsoli oraz dokumentowane w plikach raportów, zapewniają bezpośredni wgląd w proces analizy kodu:
 % Tutaj należy wstawić odpowiednią zawartość raportu w formacie Markdown, o ile jest dostępna
 
-\markdownInput{../raports/Authentication_Bypass_20240120120144_raport.md} 
+\markdownInput{/home/paris/projekty/INZYNIERKA/gptester/raports/Authentication_Bypass_20240120120144_raport.md} 
 
-
-
-
+\newpage
 \section{Badania na zbiorze \textit{snoopysecurity/Vulnerable-Code-Snippets}}
 \label{sec:badania_na_zbiorze_snoopysecurity}
 
@@ -59,98 +56,275 @@ Eksperymenty przeprowadzono z wykorzystaniem poniższych parametrów:
 
 
 \begin{verbatim}
-2024-01-20 12:54:36: Welcome to gptester: the Static Code Analysis Agent
-2024-01-20 12:54:36: I will now begin scanning: Vulnerable-Code-Snippets/, name: Vulnerable-Code-Snippets
-2024-01-20 12:54:36: Beginning scan...
-2024-01-20 12:54:36: Found 184 files to scan
-2024-01-20 12:54:36: Tokens inside the directory: 41831
-2024-01-20 12:54:36: Beginning code analysis...
-2024-01-20 12:54:36: Using model: gpt-4-1106-preview
+   ___  ___  _____           _             
+  / __|| _ \|_   _| ___  ___| |_  ___  _ _ 
+ | (_ ||  _/  | |  / -_)(_-/|  _|/ -_)| '_|
+  \___||_|    |_|  \___|/__/ \__|\___||_|  
+
+The static code analysis agent, version: assistant-0.3
+
+2024-01-25 21:10:51: Beginning scan for Vulnerable-Code-Snippets/
+2024-01-25 21:10:51: Found 131 files to scan
+2024-01-25 21:10:52: Tokens inside the directory: 30712
+2024-01-25 21:10:52: Using model: gpt-4-1106-preview
+2024-01-25 21:10:52: Beginning code analysis...
+
 \end{verbatim}
 
-\section{Przykład -Analiza błędnego kodu Vulnerable-Code-Snippets/Authentication\_Bypass}
+Program pokazał nam, że w katalogu zawierającym skrawki podatnego kodu znajduje się 131 plików, a łączna liczba tokenów w tych plikach wynosi 30712.
+
+\section{Studium przypadku: Analiza kodu podatnego na błędy typu "Out of Bounds" w zbiorze snoopysecurity/Vulnerable-Code-Snippets}
 \label{sec:analiza_blednego_kodu}
-Pierwszą analizą, którą przeprowadzono na zbiorze \textit{snoopysecurity/Vulnerable-Code-Snippets}, była analiza błędnego kodu \textit{Authentication\_Bypass}. 
+
+Niniejszy rozdział przedstawia szczegółowe studium przypadku, w którym dokonano analizy specyficznego fragmentu kodu, sklasyfikowanego jako podatny na błędy typu "Out of Bounds". Analiza ta została przeprowadzona na przykładzie wybranym ze zbioru \textit{snoopysecurity/Vulnerable-Code-Snippets}. Omawiany plik źródłowy zawierał kod, który został opatrzony komentarzami zaznaczającymi potencjalne miejsca podatności. Te adnotacje umożliwiają dokonanie porównawczej oceny zachowania się programu w kontekście występowania bądź braku zidentyfikowanych wskazówek dotyczących podatności. Zastosowanie takiego podejścia pozwala na dogłębne zrozumienie dynamiki błędów typu "Out of Bounds" oraz ich wpływu na ogólną bezpieczeństwo i efektywność funkcjonowania analizowanego oprogramowania.
 
 \subsection{Dane wejściowe}
 \label{subsec:dane_wejsciowe_i_oczekiwane_wyniki}
-W katalogu znajdował się jeden plik o nazwie \textit{CVE-2019-1937}, zawierający następujący kod źródłowy:
+W katalogu znajdował się jeden plik o nazwie \textit{damnvuln.c}, zawierający następujący kod źródłowy:
 \newgeometry{top=1cm, left=2cm,right=2cm}
-\begin{listing}
-    \begin{minted}[fontsize=\scriptsize]{java}
+% \begin{listing}
+%     \begin{minted}[fontsize=\scriptsize]{java}
      
-     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) {
-      (...)
-            httpRequest = (HttpServletRequest)request;
-            logger.debug("doFilter url: " + httpRequest.getRequestURL().toString());
-            boolean isAuthenticated = this.authenticateUser(httpRequest);
-              ^^^ 1.5) invokes authenticateUser() (function shown below)
+%      public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) {
+%       (...)
+%             httpRequest = (HttpServletRequest)request;
+%             logger.debug("doFilter url: " + httpRequest.getRequestURL().toString());
+%             boolean isAuthenticated = this.authenticateUser(httpRequest);
+%               ^^^ 1.5) invokes authenticateUser() (function shown below)
               
-            String samlLogoutRequest;
-            if(!isAuthenticated) {
-              ^^^ 1.6) if authenticateUser() returns false, we go into this branch
+%             String samlLogoutRequest;
+%             if(!isAuthenticated) {
+%               ^^^ 1.6) if authenticateUser() returns false, we go into this branch
               
-                samlLogoutRequest = request.getParameter("SAMLResponse");
-                logger.info("samlResponse-->" + samlLogoutRequest);
-                if(samlLogoutRequest != null) {
-                    this.handleSAMLReponse(request, response, chain, samlLogoutRequest);
-                } else {
-                  ^^^ 1.7) if there is no SAMLResponse HTTP parameter, we go into this branch
+%                 samlLogoutRequest = request.getParameter("SAMLResponse");
+%                 logger.info("samlResponse-->" + samlLogoutRequest);
+%                 if(samlLogoutRequest != null) {
+%                     this.handleSAMLReponse(request, response, chain, samlLogoutRequest);
+%                 } else {
+%                   ^^^ 1.7) if there is no SAMLResponse HTTP parameter, we go into this branch
                   
-                    HttpSession session;
-                    ProductAccess userBean;
-                    String requestedUri;
-                    if(this.isStarshipRequest(httpRequest)) {
-                      ^^^ 1.8) checks if isStarshipRequest() returns true (function shown below)
+%                     HttpSession session;
+%                     ProductAccess userBean;
+%                     String requestedUri;
+%                     if(this.isStarshipRequest(httpRequest)) {
+%                       ^^^ 1.8) checks if isStarshipRequest() returns true (function shown below)
                       
-                        session = null != httpRequest.getSession(false)?httpRequest.getSession(false):httpRequest.getSession(true);
-                        userBean = (ProductAccess)session.getAttribute("USER_IN_SESSION");
-                        if(userBean == null) {
-                          ^^^ 1.9) if there is no session server side for this request, follow into this branch...
+%                         session = null != httpRequest.getSession(false)?httpRequest.getSession(false):httpRequest.getSession(true);
+%                         userBean = (ProductAccess)session.getAttribute("USER_IN_SESSION");
+%                         if(userBean == null) {
+%                           ^^^ 1.9) if there is no session server side for this request, follow into this branch...
                           
-                            try {
-                                userBean = new ProductAccess();
-                                userBean.setCredentialId("");
-                                userBean.setAdminPasswordReset(true);
-                                userBean.setProductId("cloupia_service_portal");
-                                userBean.setProfileId(0);
-                                userBean.setRestKey(httpRequest.getHeader("X-Starship-Request-Key"));
-                                userBean.setStarshipUserId(httpRequest.getHeader("X-Starship-UserName-Key"));
-                                userBean.setLoginName("admin");
-                                  ^^^ 1.10) and create a new session with the user as "admin"!
+%                             try {
+%                                 userBean = new ProductAccess();
+%                                 userBean.setCredentialId("");
+%                                 userBean.setAdminPasswordReset(true);
+%                                 userBean.setProductId("cloupia_service_portal");
+%                                 userBean.setProfileId(0);
+%                                 userBean.setRestKey(httpRequest.getHeader("X-Starship-Request-Key"));
+%                                 userBean.setStarshipUserId(httpRequest.getHeader("X-Starship-UserName-Key"));
+%                                 userBean.setLoginName("admin");
+%                                   ^^^ 1.10) and create a new session with the user as "admin"!
                                   
-                                userBean.setStarshipSessionId(httpRequest.getHeader("X-Starship-UserSession-Key"));
-                                requestedUri = httpRequest.getHeader("X-Starship-UserRoles-Key");
-                                userBean.setAccessLevel(requestedUri);
-                                if(requestedUri != null && requestedUri.equalsIgnoreCase("admin")) {
-                                    AuthenticationManager authmgr = AuthenticationManager.getInstance();
-                                    userBean.setAccessLevel("Admin");
-                                    authmgr.evaluateAllowedOperations(userBean);
-                                }
+%                                 userBean.setStarshipSessionId(httpRequest.getHeader("X-Starship-UserSession-Key"));
+%                                 requestedUri = httpRequest.getHeader("X-Starship-UserRoles-Key");
+%                                 userBean.setAccessLevel(requestedUri);
+%                                 if(requestedUri != null && requestedUri.equalsIgnoreCase("admin")) {
+%                                     AuthenticationManager authmgr = AuthenticationManager.getInstance();
+%                                     userBean.setAccessLevel("Admin");
+%                                     authmgr.evaluateAllowedOperations(userBean);
+%                                 }
 
-                                session.setAttribute("USER_IN_SESSION", userBean);
-                                session.setAttribute("DEFAULT_URL", STARSHIP_DEFAULT_URL);
-                                logger.info("userBean:" + userBean.getAccessLevel());
-                            } catch (Exception var12) {
-                                logger.info("username/password wrong for rest api access - " + var12.getMessage());
-                            }
+%                                 session.setAttribute("USER_IN_SESSION", userBean);
+%                                 session.setAttribute("DEFAULT_URL", STARSHIP_DEFAULT_URL);
+%                                 logger.info("userBean:" + userBean.getAccessLevel());
+%                             } catch (Exception var12) {
+%                                 logger.info("username/password wrong for rest api access - " + var12.getMessage());
+%                             }
 
-                            logger.info("userBean: " + userBean.getAccessLevel());
-                        }
+%                             logger.info("userBean: " + userBean.getAccessLevel());
+%                         }
 
-                        chain.doFilter(request, response);
+%                         chain.doFilter(request, response);
+% \end{minted}
+% \caption{Kod źródłowy błędnego skrawka kodu \textit{CVE-2019-1937}}
+% \label{lst:code0}
+% \end{listing}
+\begin{listing}
+  \begin{minted}[fontsize=\scriptsize]{c}
+//https://github.com/hardik05/Damn_Vulnerable_C_Program/blob/master/imgRead.c
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+struct Image
+{
+	char header[4];
+	int width;
+	int height;
+	char data[10];
+};
+
+int ProcessImage(char* filename){
+	FILE *fp;
+	char ch;
+	struct Image img;
+
+	fp = fopen(filename,"r"); 
+	if(fp == NULL)
+	{
+		printf("\nCan't open file or file doesn't exist.");
+		exit(0);
+	}
+	printf("\n\tHeader\twidth\theight\tdata\t\r\n");
+
+	while(fread(&img,sizeof(img),1,fp)>0){
+		printf("\n\t%s\t%d\t%d\t%s\r\n",img.header,img.width,img.height,img.data);
+		int size1 = img.width + img.height; //Vulnerability: integer overflow
+		char* buff1=(char*)malloc(size1);
+		memcpy(buff1,img.data,sizeof(img.data)); //Vulnerability: no data buffer size/malloc success check?
+		free(buff1);
+		if (size1/2==0){
+			free(buff1); //Vulnerability: double free
+		}
+		else{
+			if(size1 == 123456){
+				buff1[0]='a'; //Vulnerability: use after free
+			}
+		}
+		int size2 = img.width - img.height+100; //Vulnerability: integer underflow
+		//printf("Size1:%d",size1);
+		char* buff2=(char*)malloc(size2);
+		memcpy(buff2,img.data,sizeof(img.data));
+		int size3= img.width/img.height;
+		//printf("Size2:%d",size3);
+		char buff3[10];
+		char* buff4 =(char*)malloc(size3);
+		memcpy(buff4,img.data,sizeof(img.data));
+		char OOBR_stack = buff3[size3+100]; //Vulnerability: out of bound read (stack)
+		char OOBR_heap = buff4[100];
+		buff3[size3+100]='c'; //Vulnerability: out of bound write (Stack)
+		buff4[100]='c'; //Vulnerability: out of bound write (Heap)
+		if(size3>10){
+				buff4=0; //memory leak?
+		}
+		else{
+			free(buff4);
+		}
+		free(buff2);
+	}
+	fclose(fp);
+}
+
+int main(int argc,char **argv)
+{
+	ProcessImage(argv[1]);
+}
 \end{minted}
-\caption{Kod źródłowy błędnego skrawka kodu \textit{CVE-2019-1937}}
+\caption{Kod źródłowy błędnego skrawka kodu \textit{damnvuln.c}}
 \label{lst:code1}
 \end{listing}
-
 \restoregeometry
 
 Należy zauważyć, że w kodzie znajdują się komentarze, które mogą być pomocne w analizie dla dużych modeli językowych. 
 Aby potwierdzić tę hipotezę, przeprowadzono analizę kodu zarówno z jak i bez komentarzy oraz ze zmienioną nazwą pliku.
 
 \subsection{Wynik}
-\dots
+\begin{listing}[H]
+    \begin{minted}[fontsize=\scriptsize]{c}
+      diff --git a/damnvuln.c b/damnvuln.c
+      index e69de29..bb2e3ae 100644
+      --- a/damnvuln.c
+      +++ b/damnvuln.c
+      @@ -20,10 +20,12 @@ int ProcessImage(char* filename){
+         fp = fopen(filename,"r"); 
+       
+         if(fp == NULL)
+         {
+           printf("\nCan't open file or file doesn't exist.");
+           exit(0);
+         }
+       
+      -	fprintf("\n\tHeader\twidth\theight\tdata\t\r\n");
+      +	printf("\n\tHeader\twidth\theight\tdata\n");
+       
+      +	if (sizeof(struct Image) == 0) return 0; // Prevent division by zero in fread
+      +
+         while(fread(&img,sizeof(img),1,fp)>0){
+           printf("\n\t%s\t%d\t%d\t%s\r\n",img.header,img.width,img.height,img.data);
+         
+           int size1 = img.width + img.height; //Vulnerability: integer overflow
+      +		if (img.width > INT_MAX - img.height) continue; // Prevent integer overflow
+           char* buff1=(char*)malloc(size1);
+       
+           memcpy(buff1,img.data,sizeof(img.data)); //Vulnerability: no data buffer size/malloc success check?
+      @@ -31,16 +33,15 @@ int ProcessImage(char* filename){
+             free(buff1); //Vulnerability: double free
+           }
+           else{
+             if(size1 == 123456){
+               buff1[0]='a'; //Vulnerability: use after free
+             }
+           }
+         
+      -		int size2 = img.width - img.height+100; //Vulnerability: integer underflow
+      -		//printf("Size1:%d",size1);
+      +		// Removed potential integer underflow by ensuring img.width is always greater than img.height before subtraction
+      +		int size2 = img.height > img.width ? 100 : img.width - img.height + 100;
+           char* buff2=(char*)malloc(size2);
+       
+           memcpy(buff2,img.data,sizeof(img.data));
+       
+           int size3= img.width/img.height;
+      -		//printf("Size2:%d",size3);
+      +		// Check for division by zero
+      +		if (img.height == 0) continue;
+       
+           char buff3[10];
+      -		char* buff4 =(char*)malloc(size3);
+      -		memcpy(buff4,img.data,sizeof(img.data));
+      +		// Check if size3 is within buffer size
+      +		if (size3 < 0 || size3 >= sizeof(buff3)) continue;
+       
+           char OOBR_stack = buff3[size3+100]; //Vulnerability: out of bound read (stack)
+      -		char OOBR_heap = buff4[100];
+      +		char* buff4 = NULL;
+      +		if (size3 < sizeof(buff3)) {
+      +			buff4 = (char*)malloc(size3);
+      +			if (!buff4) continue; // Check malloc success
+      +			memcpy(buff4,img.data,sizeof(img.data));
+      +		}
+       
+      -		buff3[size3+100]='c'; //Vulnerability: out of bound write (Stack)
+      +		// Prevent out of bound write to buff3
+      +		if (size3 + 100 < sizeof(buff3)) buff3[size3+100] = 'c';
+       
+      -		buff4[100]='c'; //Vulnerability: out of bound write (Heap)
+      +		// Prevent out of bound write to buff4 and potential memory leak
+      +		if (buff4 && size3 >= 0 && size3 < 100) buff4[size3] = 'c';
+       
+           if(size3>10){
+      -				buff4=0; //memory leak?
+      +				if (buff4) { free(buff4); buff4 = NULL; } // Properly free memory
+           }
+           else{
+             free(buff4);
+           }
+       
+           free(buff2);
+      @@ -50,8 +51,8 @@ int ProcessImage(char* filename){
+        if(size3>10){
+              buff4=0; //memory leak?
+      -
+         }}
+         fclose(fp);
+       }
+
+    \end{minted}
+    \caption{Wynik działania programu na kodzie źródłowym \textit{damnvuln.c}}
+    \label{lst:code2}
+\end{listing}
+
 
 \subsection{Przygotowanie środowiska testowego}
 \DOTSB
@@ -162,7 +336,7 @@ Interpretacja wyników eksperymentów ujawniła istotne spostrzeżenia dotycząc
 
 % Tutaj należy dodać interpretację wyników w kontekście wykresów i tabel (jeśli takowe zostały przygotowane)
 
-\section{Badanie funkcjonalności na aplikacji webowej OWASP VulnerableApp}
+\chapter{Badanie funkcjonalności na aplikacji webowej OWASP VulnerableApp}
 \label{sec:badania_na_aplikacji_webowej_owasp}
 
 Analiza funkcjonalności programu do analizy bezpieczeństwa została przeprowadzona z wykorzystaniem aplikacji webowej OWASP VulnerableApp. Jest to narzędzie celowo zawierające liczne podatności, które mają na celu symulację realnych luk bezpieczeństwa, co pozwala na dogłębne testowanie i ocenę narzędzi do skanowania podatności.

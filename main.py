@@ -29,10 +29,6 @@ project_name = os.path.basename(args.directory.rstrip('/'))
 iol = IOlog(verbose=args.verbose, name=project_name)
 CFG = Config()
 
-
-
-import asyncio
-
 async def run_agents(args, iol, chunks):
     tasks = []
 
@@ -87,10 +83,15 @@ async def retry_task(coroutine_func, *args, max_retries=3, delay=1):
 
 
 async def main():
-    iol.log(f"Welcome to gptester: the Static Code Analysis Agent", color="bright_cyan")
-    iol.log(f"I will now begin scanning: {args.directory}, name: {project_name}", color="pink")
+    print(f"""
+                  ___  ___  _____           _             
+                 / __|| _ \|_   _| ___  ___| |_  ___  _ _ 
+                | (_ ||  _/  | |  / -_)(_-/|  _|/ -_)| '_|
+                 \___||_|    |_|  \___|/__/ \__|\___||_|  
+""")
+    print(f"""           The static code analysis agent, version: {CFG.version}\n\n""")
 
-    iol.log(f"Beginning scan...", color="bright_cyan")
+    iol.log(f"Beginning scan for {args.directory}", color="pink")
     dir_content = walk_directory(args.directory)    # excluding directories starting with 'fixed'
 
     iol.log(f"Found {len(dir_content)} files to scan", color="cyan", verbose_only=False)
@@ -100,8 +101,8 @@ async def main():
     iol.log(f'Tokens inside the directory: {num_tokens_from_string(dir_content)}', color='bright_cyan')
 
 
-    iol.log(f"Beginning code analysis...", color="red")
-    iol.log(f"Using model: {args.model}", color="red")
+    iol.log(f"Using model: {args.model}", color="white")
+    iol.log(f"Beginning code analysis...", color="white")
 
     if args.codeql:
         iol.log(f"CodeQL is enabled, I will now begin the scan using CodeQL", color="red")
@@ -112,9 +113,9 @@ async def main():
     
     await run_agents(args, iol, chunks)
 
-    input("If you want to run tests again on fixed code, press enter...")
+    iol.log(f"Scan complete!", color="green")
+    input("If you want to run tests again on fixed code (not available in current version), press enter... (or ctrl+c to exit)")
 
-    iol.log(f"Scan complete!", color="bright_cyan")
 
 if __name__ == "__main__":
     loop = asyncio.get_event_loop()
