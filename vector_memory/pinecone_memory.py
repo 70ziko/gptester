@@ -12,7 +12,7 @@ CFG = Config()
 
 class PineconeMemory(MemoryBackend):
     """Memory backend that uses Pinecone to store and retrieve raports and code files
-    Wektorowa baza danych - pochodzenie: mój wcześniejszy projekt, kod obecnie w procesie integracji"""
+    Wektorowa baza danych - kod pochodzi z mojego wcześniejszego projektu, W PROCESIE INTEGRACJI"""
 
     def __init__(self, dbs: DBs, index_name: str, namespace: str):
         self.dbs = dbs

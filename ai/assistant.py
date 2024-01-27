@@ -13,19 +13,22 @@ client = OpenAI()
 
 class Assistant():
     
-    def __init__(self, role: str, name: str = "Assistant", model: str = 'gpt-3.5-turbo-1106', iol: IOlog = None, tools = None, messages = None) -> None:
+    def __init__(self, role: str, name: str = "Assistant", model: str = 'gpt-3.5-turbo-1106', iol: IOlog = None, tools = None, messages = None, know_file="699.csv") -> None:
         """
         Initialize the AI object with empty lists of functions, and performance evaluations.
         """
         self.name = name
         self.iol = iol
         self.instructions = role
+        self.file_ids = []
+        if CFG.retrieval: self.file_ids.append(self.upload_file(know_file).id)
         self.assistant = client.beta.assistants.create(
             name=name,
             instructions=self.instructions,
             model=model,
             # seed=dbs.prompts['seed']
             # response_format='json_object',
+            file_ids=self.file_ids,
             tools=tools if tools else [{"type": "code_interpreter"}, {"type": "retrieval"}]    # przerzucić do argumentów
         )
         self.thread = client.beta.threads.create(messages = messages)
@@ -60,8 +63,8 @@ class Assistant():
         )
         return thread_message
     
-    def upload_file(self, file_path: str) -> dict[str, str]:
-        file = client.files.create(open(file_path, "rb"), purpose="assistants")
+    def upload_file(self, file_path: str):  # -> OpenAI.File
+        file = client.files.create(file=open(file_path, "rb"), purpose="assistants")
         return file
     
     def messages_to_thread(self, messages: list[dict[str, str]]):

@@ -7,7 +7,8 @@ from vector_memory.models import Raport, CodeFile
     # Wektorowa baza danych - pochodzenie: mój wcześniejszy projekt, kod w trakcie modyfikacji
 
 class JSONFileMemory(MemoryBackend):
-    """Memory backend that uses a JSON file to store and retrieve raports and code files"""
+    """Memory backend that uses a JSON file to store and retrieve raports and code files
+    Wektorowa baza danych - kod pochodzi z mojego wcześniejszego projektu  W PROCESIE INTEGRACJI"""
 
     def __init__(self, dbs):
         self.memory_path = dbs.memory.path
