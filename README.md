@@ -1,6 +1,6 @@
 # gptester
 An AI agent for static code analysis, my engineering thesis. 
-Capable of finding security vulnerabilities in the code and proposing fixes.
+Capable of finding security vulnerabilities in the code and proposing fixes. The program uses the GPT-4 model for code analysis, providing advanced code quality reports and security insights.
 ===
 
 ## Description
@@ -37,7 +37,7 @@ pip install -r requirements.txt
 ## Usage
 ```bash
 cd gptester
-python main.py -h
+gptester -h
 ```
 or 
 ```bash
