@@ -267,7 +267,7 @@ write_file = {
 \end{verbatim}
 
 
-Można zauważyć, że prompty są złożone z dwóch części: pierwsza część to opis zadania, które ma wykonać model, a druga część to opis funkcji, która ma zostać użyta do zapisania plików. W ten sposób model jest w stanie zrozumieć kontekst zadania oraz wykonać odpowiednie operacje. Użycie funkcji oraz zwrócenie odpowiedzi przez tę funkcję jest zaimplementowane w ai/assistant.py\ref{api_openai}. Lokalizacja zapisywanych plików jest zmieniana przez kod i niezależna od modelu.
+Można zauważyć, że prompty są złożone z dwóch części: pierwsza część to opis zadania, które ma wykonać model, a druga część to opis funkcji, która ma zostać użyta do zapisania plików. W ten sposób model jest w stanie zrozumieć kontekst zadania oraz wykonać odpowiednie operacje. Użycie funkcji oraz zwrócenie odpowiedzi przez tę funkcję jest zaimplementowane w ai/assistant.py \ref{lst:api_openai}. Lokalizacja zapisywanych plików jest zmieniana przez kod i niezależna od modelu.
 
 Prompt dla innych punktów końcowych API będzie wyglądał inaczej. Niezbędna jest wówczas implementacja parsera dla odpowiedzi od modelu językowego, aby wyodrębnić odpowiednie informacje i zapisać do plików.
 
@@ -324,6 +324,7 @@ assistant = client.beta.assistants.create(
         \end{listing}
 \end{enumerate}
 
+\subsection{Implementacja w projekcie}
 Kod użyty w projekcie został dostosowany do nowego interfejsu Assistant API, który jest zgodny z najnowszymi wersjami modeli językowych. W projekcie znajduje się także kod wykorzystujący starsze interfejsy API, który może być użyty w przypadku starszych wersji modeli językowych. Ten kod oraz własna implementacja bazy wektorowej wynika z daty wprowadzenia punktu końcowego API asystantów, który został wprowadzony 06.11.2023r.
 Kod użyty w projekcie znajduje się w pliku `ai/assistant.py` i wygląda następująco:
 \newgeometry{top=0.5cm, left=2cm,right=2cm, bottom=3cm}
@@ -396,17 +397,17 @@ class Assistant():
         return messages
     \end{minted}
     \caption{Kod używany do komunikacji z API OpenAI (ai/assistant.py)}
-    \label{listing:api_openai}
+    \label{lst:api_openai}
 \end{listing}
 
 \restoregeometry
 
 Przy używaniu punktu końcowego ChatCompletion niezbędna jest implementacja parsera, aby możliwe było wyodrębnienie wiadomości oraz zapisywanie do plików. Taki parser znajduje się w pliku \textit{utils/chat\_to\_files.py}. Przewaga ChatCompletion nad Assistant jest taka, że są to stabilniejsze metody z takimi funkcjami jak przesyłanie strumieniowe, które nie są dostępne w Assistant. 
 
-\subsection{Definicja Agenta AI}
+\section{Definicja Agenta AI}
 Agent AI w kontekście projektu \textbf{gptester} definiuje się jako zaawansowany system komputerowy, który wykorzystuje techniki sztucznej inteligencji i uczenia maszynowego do automatyzacji zadań związanych w tym przypadku z analizą statyczną kodu źródłowego. Agent ten jest zaprogramowany do samodzielnego podejmowania decyzji na podstawie dostarczonych mu danych, mając na celu identyfikację i naprawianie błędów oraz podatności bezpieczeństwa w kodzie.
 
-\subsubsection{Cechy Charakterystyczne}
+\subsection{Cechy Charakterystyczne}
 
 Agent AI charakteryzuje się następującymi cechami:
 
@@ -417,25 +418,24 @@ Agent AI charakteryzuje się następującymi cechami:
     \item \textbf{Pamięć długotrwała}: Możliwość zapamiętywania informacji i wykorzystywania ich w przyszłych zadaniach, Zaimplementowana dzięki technice generowania wspomaganego pobieraniem (RAG), w tym celu możliwe są także inne rozwiązania. Nie wykorzystywana w projekcie.
 \end{itemize}
 
-\subsubsection{Zastosowanie w \textbf{gptester}}
+\subsection{Zastosowanie w \textbf{gptester}}
 
 W projekcie \textbf{gptester}, agent AI odgrywa kluczową rolę w:
 
 \begin{itemize}
     \item \textbf{Wykrywaniu błędów}: Automatyczne identyfikowanie błędów w kodzie źródłowym.
     \item \textbf{Generowaniu napraw}: Proponowanie rozwiązań naprawczych dla wykrytych problemów.
-    \item \textbf{Optymalizacji kodu}: Sugerowanie ulepszeń w celu zwiększenia efektywności i bezpieczeństwa kodu.
     \item \textbf{Testowaniu}: Automatyzowanie procesu testowania kodu, w tym pisania testów i ich wykonywania.
 \end{itemize}
 
 Dzięki swojej zaawansowanej konfiguracji i integracji z modelami językowymi GPT-4, agenci AI w \textbf{gptester} pozwalają na nowoczesne podejście do analizy statycznej kodu, zapewniając łatwość w implementacji oraz wysoką skuteczność i efektywność w wykrywaniu oraz naprawianiu błędów programistycznych.
 
-\subsection{Konfiguracja Agentów AI}
+\section{Konfiguracja Agentów AI}
 \label{subsec:konfiguracja_agentow}
 
 Projekt \textbf{gptester} wykorzystuje zaawansowanych agentów AI, które są kluczowymi elementami w procesie analizy statycznej kodu. Konfiguracja tych agentów obejmuje szereg parametrów i narzędzi, które są niezbędne do ich efektywnego działania.
 
-\subsubsection{Parametry Konfiguracyjne}
+\subsection{Parametry Konfiguracyjne}
 
 Każdy agent AI jest inicjalizowany z określonymi parametrami konfiguracyjnymi, które definiują jego zachowanie i funkcjonalność:
 
@@ -443,12 +443,11 @@ Każdy agent AI jest inicjalizowany z określonymi parametrami konfiguracyjnymi,
     \item \textbf{Rola}: Określa podstawowy zakres działania agenta, np. debugowanie lub testowanie. Jest to odpowiednik polecenia systemowego (system prompt) w interakcji z modelami za pomocą punktu końcowego `ChatCompletion' w OpenAI API.
     \item \textbf{Nazwa}: Unikalna nazwa agenta, używana do identyfikacji i logowania.
     \item \textbf{Model Językowy}: Wskazuje na model AI używany przez agenta, domyślnie ustawiony na GPT-4 w najnowszej wersji.
-    \item \textbf{Środowisko I/O (IOlog)}: Mechanizm raportowania, logowania i interakcji z użytkownikiem.
     \item \textbf{Narzędzia}: Zestaw narzędzi, które agent może wykorzystywać podczas analizy.
-    \item \textbf{Ścieżka do Katalogu (Directory)}: Lokalizacja, gdzie agent zapisuje wyniki swojej pracy.
 \end{itemize}
 
-\subsubsection{Narzędzia i Funkcje}
+Niestety, w punkcie końcowym API Asystentów nie ma możliwości przekazania parametrów konfigurujących komplecje i generacje, dlatego nie można przekazać parametrów takich jak `temperature' czy `max\_tokens'. W przyszłości, jeśli API Asystentów zostanie rozwinięte, będzie można przekazać te parametry.
+\subsection{Narzędzia i Funkcje}
 
 Agent AI korzysta z różnorodnych narzędzi i funkcji, które wspierają jego działanie w różnych scenariuszach:
 
@@ -462,64 +461,64 @@ Agent AI korzysta z różnorodnych narzędzi i funkcji, które wspierają jego d
 
 Każdy agent AI w \textbf{gptester} jest zaprojektowany w taki sposób, aby był elastyczny i mógł być łatwo dostosowany do zmieniających się wymagań projektowych, co umożliwia szerokie zastosowanie w różnych scenariuszach analizy kodu.
 
-\subsubsection{Przykładowa konfiguracja Agenta AI w projekcie}
-W niniejszym podrozdziale prezentuję przykład implementacji agenta AI, który został zaprojektowany do wykonywania zaawansowanych analiz kodu źródłowego oraz generowania odpowiednich rozwiązań naprawczych. Poniższy fragment kodu ilustruje wykorzystanie zestawu narzędzi i funkcji, które umożliwiają agentowi AI efektywne przetwarzanie i interpretację kodu, a także sugerowanie optymalnych metod naprawy wykrytych błędów. \\
-\vfill
+% \subsection{Przykładowa konfiguracja Agenta AI w projekcie}
+% W niniejszym podrozdziale prezentuję przykład implementacji agenta AI, który został zaprojektowany do wykonywania zaawansowanych analiz kodu źródłowego oraz generowania odpowiednich rozwiązań naprawczych. Poniższy fragment kodu ilustruje wykorzystanie zestawu narzędzi i funkcji, które umożliwiają agentowi AI efektywne przetwarzanie i interpretację kodu, a także sugerowanie optymalnych metod naprawy wykrytych błędów. \\
+% \vfill
 
-\begin{listing}
-    \begin{minted}[fontsize=\scriptsize]{python}
-async def test_agent(input: str, test: str, iol: IOlog = None, model: str = 'gpt-4-1106-preview', directory: str = 'tests') -> str:
-    """An agent used to test the supplied project
-    Capabililties: 
-        - Running tests for the project
-        - writing missing test files """
-    write_file_json = {
-        "name": "write_file",
-        "description": "Writes content to a specified file.",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "filename": {"type": "string"},
-                "content": {"type": "string"}
-            },
-            "required": ["filename", "content"]
-        }
-    }
-    run_tests_json = {
-        "name": "run_tests",
-        "description": "Executes test commands for specified programming languages using subprocesses.",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "language": {
-                "type": "string",
-                "enum": ["cpp", "java", "python", "ruby", "php"]
-                },
-                "executable": {
-                "type": "string",
-                "description": "Path to the executable for C++ tests or additional command parameters for other languages."
-                }
-            },
-            "required": ["language"]
-        }
-    }
-    tools=[
-        {"type": "code_interpreter"},
-        {"type": "retrieval"},
-        {"type": "function", "function": write_file_json},
-        {"type": "function", "function": run_tests_json},
-    ]
+% \begin{listing}
+%     \begin{minted}[fontsize=\scriptsize]{python}
+% async def test_agent(input: str, test: str, iol: IOlog = None, model: str = 'gpt-4-1106-preview', directory: str = 'tests') -> str:
+%     """An agent used to test the supplied project
+%     Capabililties: 
+%         - Running tests for the project
+%         - writing missing test files """
+%     write_file_json = {
+%         "name": "write_file",
+%         "description": "Writes content to a specified file.",
+%         "parameters": {
+%             "type": "object",
+%             "properties": {
+%                 "filename": {"type": "string"},
+%                 "content": {"type": "string"}
+%             },
+%             "required": ["filename", "content"]
+%         }
+%     }
+%     run_tests_json = {
+%         "name": "run_tests",
+%         "description": "Executes test commands for specified programming languages using subprocesses.",
+%         "parameters": {
+%             "type": "object",
+%             "properties": {
+%                 "language": {
+%                 "type": "string",
+%                 "enum": ["cpp", "java", "python", "ruby", "php"]
+%                 },
+%                 "executable": {
+%                 "type": "string",
+%                 "description": "Path to the executable for C++ tests or additional command parameters for other languages."
+%                 }
+%             },
+%             "required": ["language"]
+%         }
+%     }
+%     tools=[
+%         {"type": "code_interpreter"},
+%         {"type": "retrieval"},
+%         {"type": "function", "function": write_file_json},
+%         {"type": "function", "function": run_tests_json},
+%     ]
 
-    ai = Agent(role=f"{dbs.prompts['test']}", name='test_agent', iol = iol, tools=tools, model=model)
+%     ai = Agent(role=f"{dbs.prompts['test']}", name='test_agent', iol = iol, tools=tools, model=model)
     
-    user = ai.fuser(msg=f"""The project codebase:\n{input}. User provided the following argument for tests: {test} \nRun appropriate tests for the project. If tests are not provided, please write them. Save them to a file and then run them. Use provided functions to do so.""")
+%     user = ai.fuser(msg=f"""The project codebase:\n{input}. User provided the following argument for tests: {test} \nRun appropriate tests for the project. If tests are not provided, please write them. Save them to a file and then run them. Use provided functions to do so.""")
     
-    messages = [user]
-    return await ai.next(messages, directory=directory)
-\end{minted}
-\caption{Implementacja testującego agenta AI (ai/agents.py)}
-\label{listing:przyklad_agent_ai}
-\end{listing}
+%     messages = [user]
+%     return await ai.next(messages, directory=directory)
+% \end{minted}
+% \caption{Implementacja testującego agenta AI (ai/agents.py)}
+% \label{listing:przyklad_agent_ai}
+% \end{listing}
 
 \section{Rozwój i plany na przyszłość}
 \label{sec:rozwoj_i_plany_na_przyszlosc}
