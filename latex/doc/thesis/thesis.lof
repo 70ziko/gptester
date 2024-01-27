@@ -4,13 +4,13 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Schemat blokowy działania aplikacji \textit {gptester}\relax }}{11}{figure.caption.11}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces dane wejściowe w schemacie blokowym\relax }}{12}{figure.caption.12}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Część schematu opisująca proces generatora testów funkcjonalnych\relax }}{12}{figure.caption.13}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Część schematu opisująca proces RAG\relax }}{13}{figure.caption.14}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Część schematu opisująca proces RAG\relax }}{14}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Czarna skrzynka - LLM (Large Language Model)\relax }}{14}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Czarna skrzynka - LLM (Large Language Model)\relax }}{15}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Schemat blokowy działania aplikacji \textit {gptester}\relax }}{13}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces dane wejściowe w schemacie blokowym\relax }}{14}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Część schematu opisująca proces generatora testów funkcjonalnych\relax }}{14}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Część schematu opisująca proces RAG\relax }}{15}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Część schematu opisująca proces RAG\relax }}{16}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Czarna skrzynka - LLM (Large Language Model)\relax }}{16}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Czarna skrzynka - LLM (Large Language Model)\relax }}{17}{figure.caption.17}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

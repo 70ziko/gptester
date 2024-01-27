@@ -1,12 +1,12 @@
 # Fdb version 3
 ["bibtex thesis"] 0 "thesis.aux" "thesis.bbl" "thesis" 0
   "./dyplom.bst" 1704815868 28164 46ab484c700c9e84870468f09126caf9 ""
-  "bibliography.bib" 1706276334 10430 95e6e41edf600cf3a0159fae91c57cdf ""
+  "bibliography.bib" 1706398637 10483 6f19028c780954b56509bc9378282db4 ""
   "thesis.aux" 0 -1 0 "pdflatex"
   (generated)
   "thesis.bbl"
   "thesis.blg"
-["pdflatex"] 1706396141 "/home/paris/projekty/INZYNIERKA/gptester/latex/doc/thesis/thesis.tex" "thesis.pdf" "thesis" 1706396141
+["pdflatex"] 1706398807 "/home/paris/projekty/INZYNIERKA/gptester/latex/doc/thesis/thesis.tex" "thesis.pdf" "thesis" 1706398807
   "/dev/null" 1706356944 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/etc/texmf/web2c/texmf.cnf" 1681935773 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/paris/projekty/INZYNIERKA/gptester/latex/doc/thesis/thesis.tex" 1706394572 2844 2be28505588fa91e7d6b325d5befc7d7 ""
@@ -272,7 +272,7 @@
   "_minted-thesis/default.pygstyle" 1705152361 6365 683ea4fd81022f120108d52c508c17f9 ""
   "abstract.tex" 1706125902 4822 0d9e87cf33e26bfa7cd783342435d7cb ""
   "appendix1.tex" 1704815868 44 61ed596936597e243a71aef98faecd31 ""
-  "badania.tex" 1706395004 32826 a8318cd6e9f199d579691250b115a8ce ""
+  "badania.tex" 1706397757 33220 0ec88e1d394137b583230a86e2d06f42 ""
   "chapter1.tex" 1706284772 9033 fef96b324755523ca3d1090459caa853 ""
   "chapter2.tex" 1706395907 39837 571ce4122bf9396a74bba4502a866a78 ""
   "chapter3.tex" 1706396140 5149 ac8471fde2708da11cca86505f8fcb97 ""
@@ -280,8 +280,8 @@
   "img/gptester.drawio.png" 1705335878 271532 61ec8b17175750e4f937fc595edd6099 ""
   "introduction.tex" 1706285167 5132 5a3a5bfea649790069480303df2d10bc ""
   "summary.tex" 1704815868 96 d7566dd8c6d0b7a5b0a674d5502f902a ""
-  "thesis.aux" 1706396141 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "thesis.bbl" 1706396141 385 b07a9c87ff1ed7e927c5f50ab23a2ceb "bibtex thesis"
+  "thesis.aux" 1706398807 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "thesis.bbl" 1706398806 385 b07a9c87ff1ed7e927c5f50ab23a2ceb "bibtex thesis"
   "thesis.lop" 0 -1 0 "pdflatex"
   "thesis.out" 0 -1 0 "pdflatex"
   "thesis.tex" 1706394572 2844 2be28505588fa91e7d6b325d5befc7d7 ""
