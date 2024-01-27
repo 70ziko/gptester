@@ -27,7 +27,7 @@ class Assistant():
             name=name,
             instructions=self.instructions,
             model=model,
-            temperature=CFG.temperature,
+            # temperature=CFG.temperature,
             # seed=dbs.prompts['seed']
             # response_format='json_object',
             file_ids=self.file_ids,
@@ -116,7 +116,7 @@ class Assistant():
                     for tool_call in run_status.required_action.submit_tool_outputs.tool_calls:
                         name = tool_call.function.name
                         arguments = json.loads(tool_call.function.arguments)
-                        self.iol.log(f"Processing tool call: {name} with arguments {arguments} (filename argument will be overwritten with a correct path)", color="bright_black", verbose_only=True)
+                        self.iol.log(f"Processing tool call: {name}", color="bright_black", verbose_only=True)
                         if "filename" in arguments and self.name == "debug_agent": 
                             filename = os.path.basename(arguments["filename"])
                             timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')

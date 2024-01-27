@@ -9,11 +9,7 @@ CFG = Config()
 dbs = create_dbs()
 
 async def debug_agent(input: str, iol: IOlog = None, model: str = 'gpt-4-1106-preview', directory: str = 'fixes', file_to_know: str = '699.csv') -> str:
-    """An agent used to debug the project
-    Capabililties: 
-        - Working on error messages - With the user (in the future it should be able to run the project and fix it on its own)
-        - writing missing code files """
-
+    """An agent used to analyze the project """
 
     write_file_json = {
         "name": "write_file",
@@ -36,8 +32,9 @@ async def debug_agent(input: str, iol: IOlog = None, model: str = 'gpt-4-1106-pr
 
     ai = Agent(role=f"{dbs.prompts['debug']}", name='debug_agent', iol = iol, tools=tools, model=model, know_file=file_to_know)
     
-    user = ai.fuser(msg=f"""The project codebase:\n{input}. List all the vulnerabilities present in the codebase.
-                        Then output possible solutions to fix these vulnerabilities.""")
+    user = ai.fuser(msg=f"""The project codebase:\n{input}. 
+List all the vulnerabilities present in the codebase, when finished write their number. 
+Then output possible solutions to fix these vulnerabilities.""")
     
     messages = [user]
     return await ai.next(messages, directory=directory)

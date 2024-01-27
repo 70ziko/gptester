@@ -35,12 +35,8 @@ Aplikacja webowa zawierająca wiele podatności, używana w testach narzędzi do
 
 Głównym wyzwaniem prezentowanym przez użyte przeze mnie próbki badawcze wynikają z ich charakteru. Zbiór danych Vulnerable-Code-Snippets nie jest reprezentatywne dla rzeczywistych aplikacji, a jedynie zawiera przykłady kodu, które mogą zawierać błędy bezpieczeństwa. W przypadku większości przykładów kodu, nie jest możliwe uruchomienie go bez posiadania kodu całego projektu, co utrudnia ewaluację. W związku z powyższym niektóre skrawki kodu zostały obudowane w aplikacje webową, natomiast inne pominięte. Nie każdy skrawek kodu w repozytorium jest wycięty z aplikacji webowej, te przykłady zostały uwzględnione w badaniach i sprawiały najmniej problemów. 
 
-W przypadku OWASP VulnerableApp, aplikacja jest w pełni uruchamialna i możliwe jest badanie funkcjonalności programu na przykładzie rzeczywistym. Trudnością jest natomiast wczesna wersja 'gptester', w której nie została jeszcze wprowadzona funkcjonalność aktualizowania bazy kodu za pomocą funkcji git. Powoduje to konieczność ręcznego scalania zmian w kodzie z nowymi wersjami aplikacji, co jest czasochłonne i utrudnia badania. Testy bezpieczeństwa zostaną przeprowadzone za pomocą skanerów podatności, przede wszystkim OWASP ZAP, który jest zoptymalizowany do wykrywania podatności w aplikacji OWASP VulnerableApp, co pomoże w faktycznej ocenie skuteczności wprowadzonych korekt.
+W przypadku OWASP VulnerableApp, aplikacja jest w pełni uruchamialna i możliwe jest badanie funkcjonalności programu na przykładzie rzeczywistym. Trudnością jest natomiast wczesna wersja 'gptester', w której nie została jeszcze wprowadzona funkcjonalność aktualizowania bazy kodu za pomocą funkcji systemów kontroli wersji. Powoduje to konieczność ręcznego scalania zmian w kodzie z nowymi wersjami aplikacji, co jest czasochłonne i utrudnia badania. Testy bezpieczeństwa zostaną przeprowadzone za pomocą skanerów podatności, przede wszystkim OWASP ZAP, który jest zoptymalizowany do wykrywania podatności w aplikacji OWASP VulnerableApp, co pomoże w faktycznej ocenie skuteczności wprowadzonych korekt.
 
-\subsection{Ograniczenia zbiorów danych}
-Ograniczająca jest również liczba przykładów kodu w zbiorach danych. Wpływa to 
-
-W przypadku repozytorium Vulnerable-Code-Snippets, niektóre przykłady kodu są bardzo podobne do siebie, co może wpływać na wyniki badań. W przypadku OWASP VulnerableApp, aplikacja zawiera wiele podatności, ale nie wszystkie są wykorzystywane w badaniach. W związku z powyższym, wyniki badań mogą być niepełne i nieodpowiednie do wyciągnięcia wniosków.
 
 \section{Podsumowanie}
 Podsumowujemy, jak przygotowanie i analiza zbiorów danych wpłynęła na projekt `gptester` i jakie wnioski można z tego wyciągnąć.

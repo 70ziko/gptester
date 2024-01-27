@@ -72,6 +72,8 @@ def run_tests(language, executable=None):
     else:
         return {"status": "error", "output": "Unsupported language"}
 
+# JSONs for openai tool calling
+
 run_tests_json = {
   "function": {
     "name": "run_tests",
