@@ -5,7 +5,7 @@ from utils.config import Config
 
 CFG = Config()
 
-# This class represents a simple database that stores its data as files in a directory.
+# This class represents a simple database that stores its data as files in a directory. Useful for chat_to_files parser
 class DB:
     """A simple key-value store, where keys are filenames and values are file contents."""
 
@@ -49,9 +49,10 @@ class DB:
 @dataclass
 class DBs:
     prompts: DB
-    workspace: DB
 
 def create_dbs(project: str = None) -> DBs:
     """Create the DBs for the project"""
-    return DBs(workspace=DB(f'{project}_gptester'),
-               prompts=DB(Path(__file__).parent / "prompts"))
+    return DBs( 
+        prompts=DB(Path(__file__).parent / "prompts")
+        # other file(directory) dbs can be added here
+    )

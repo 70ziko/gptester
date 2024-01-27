@@ -27,19 +27,16 @@ class Config(metaclass=Singleton):
         """Initialize the Config class"""
         self.debug_mode = False
         self.speak_mode = False
-        self.version = 'assistant-0.3'
-        self.workspace = os.getenv("WORKSPACE_DIRECTORY", "workspace")
+        self.version = 'assistant-0.4'
+        self.retrieval = False
         self.restart_limit = int(os.getenv("RESTART_LIMIT", "3"))
-        self.llm_model = os.getenv("LLM_MODEL", "gpt-4")
-        self.token_limit = int(os.getenv("TOKEN_LIMIT", 4097))
-        self.browse_chunk_max_length = int(os.getenv("BROWSE_CHUNK_MAX_LENGTH", 3000))
-        self.browse_spacy_language_model = os.getenv(
-            "BROWSE_SPACY_LANGUAGE_MODEL", "en_core_web_sm"
-        )
+        self.llm_model = os.getenv("LLM_MODEL", "gpt-4-1106-preview")
+        self.token_limit = int(os.getenv("TOKEN_LIMIT", 32000))
 
         self.openai_api_key = os.getenv("OPENAI_API_KEY")
         self.temperature = float(os.getenv("TEMPERATURE", "0"))
-        self.openai_model = os.getenv("OPENAI_MODEL", "gpt-4")
+
+        # to implement
         self.execute_local_commands = (
             os.getenv("EXECUTE_LOCAL_COMMANDS", "False") == "True"
         )
@@ -57,6 +54,7 @@ class Config(metaclass=Singleton):
         self.pinecone_index = os.getenv("PINECONE_INDEX", "")
         # assert self.pinecone_index, "PINECONE_INDEX environment variable is missing from .env"
 
+        # Redis configuration (for the vector memory) not implemented
         self.redis_host = os.getenv("REDIS_HOST", "localhost")
         self.redis_port = os.getenv("REDIS_PORT", "6379")
         self.redis_password = os.getenv("REDIS_PASSWORD", "")
@@ -66,6 +64,10 @@ class Config(metaclass=Singleton):
         self.memory_backend = os.getenv("MEMORY_BACKEND", "local")
         # Initialize the OpenAI API client
         # raise Exception("The 'openai.api_key' option isn't read in the client API. You will need to pass it when you instantiate the client, e.g. 'OpenAI(api_key=self.openai_api_key)'")
+
+    def set_retrieval(self, value: bool) -> None:
+        """Set the retrieval value."""
+        self.retrieval = value
 
     def set_llm_model(self, value: str) -> None:
         """Set the smart LLM model value."""

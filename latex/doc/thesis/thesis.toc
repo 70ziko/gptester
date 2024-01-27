@@ -55,20 +55,7 @@
 \contentsline {section}{\numberline {5.3\relax .\enspace }Badania na zbiorze \textit {snoopysecurity/Vulnerable-Code-Snippets}}{36}{section.5.3}%
 \contentsline {section}{\numberline {5.4\relax .\enspace }Studium przypadku: Analiza kodu podatnego na błędy typu "Out of Bounds" w zbiorze snoopysecurity/Vulnerable-Code-Snippets}{37}{section.5.4}%
 \contentsline {subsection}{\numberline {5.4.1\relax .\enspace }Dane wejściowe}{37}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2\relax .\enspace }Wynik w formacie diff}{39}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.2\relax .\enspace }Wynik w formacie diff - może zmienić na wynik finalny, ponieważ nie ma kolorowych linii dla +/-}{39}{subsection.5.4.2}%
 \contentsline {subsection}{\numberline {5.4.3\relax .\enspace }Przygotowanie środowiska testowego}{40}{subsection.5.4.3}%
 \contentsline {subsection}{\numberline {5.4.4\relax .\enspace }Przeprowadzenie testów funkcjonalnych}{40}{subsection.5.4.4}%
 \contentsline {subsection}{\numberline {5.4.5\relax .\enspace }Interpretacja wyników}{42}{subsection.5.4.5}%
-\contentsline {chapter}{\numberline {6\relax .\enspace }Badanie funkcjonalności na aplikacji webowej OWASP VulnerableApp}{44}{chapter.6}%
-\contentsline {section}{\numberline {6.1\relax .\enspace }Charakterystyka aplikacji OWASP VulnerableApp}{44}{section.6.1}%
-\contentsline {section}{\numberline {6.2\relax .\enspace }Testowane rodzaje podatności}{44}{section.6.2}%
-\contentsline {section}{\numberline {6.3\relax .\enspace }Zawartość znajdująca się w repozytorium}{45}{section.6.3}%
-\contentsline {section}{\numberline {6.4\relax .\enspace }Procedura przeprowadzenia testów}{45}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1\relax .\enspace }Oczekiwane rezultaty}{46}{subsection.6.4.1}%
-\contentsline {section}{\numberline {6.5\relax .\enspace }Wnioski i dalsze kierunki badań}{46}{section.6.5}%
-\contentsline {section}{\numberline {6.6\relax .\enspace }Wnioski}{46}{section.6.6}%
-\contentsline {chapter}{Podsumowanie}{47}{chapter*.18}%
-\contentsline {chapter}{Bibliografia}{48}{chapter*.19}%
-\contentsline {chapter}{Spis listingów}{49}{chapter*.20}%
-\contentsline {chapter}{Dodatki}{50}{section*.21}%
-\contentsline {chapter}{\numberline {A\relax .\enspace }Dodatek 1}{51}{appendix.A}%
