@@ -3,7 +3,7 @@ import pinecone
 import hashlib
 from vector_memory.memory import MemoryBackend
 from typing import Union, List
-from vector_memory.models import Task, CodeFile
+from vector_memory.models import Raport, CodeFile
 from utils.config import Config
 from DB import DBs
 from utils.utils import get_embedding
@@ -11,14 +11,15 @@ from utils.utils import get_embedding
 CFG = Config()
 
 class PineconeMemory(MemoryBackend):
-    """Memory backend that uses Pinecone to store and retrieve tasks and code files"""
+    """Memory backend that uses Pinecone to store and retrieve raports and code files
+    Wektorowa baza danych - kod pochodzi z mojego wcześniejszego projektu, W PROCESIE INTEGRACJI"""
 
     def __init__(self, dbs: DBs, index_name: str, namespace: str):
         self.dbs = dbs
         self.index_name = index_name
-        self.tasks_namespace = "tasks_"+namespace
+        self.raports_namespace = "raports_"+namespace
         self.codefiles_namespace = "codefiles_"+namespace
-        self.all_tasks_ids = []
+        self.all_raports_ids = []
 
         pinecone.init(api_key=CFG.pinecone_api_key, environment=CFG.pinecone_region)
         # Create Pinecone index
@@ -35,32 +36,32 @@ class PineconeMemory(MemoryBackend):
 
         # Clear the codefiles namespace
         self.clear_codefiles()
-        self.clear_tasks()
+        self.clear_raports()
 
     def clear_codefiles(self):
         self.index.delete(deleteAll='true', namespace=self.codefiles_namespace)
     
-    def clear_tasks(self):
-        self.index.delete(deleteAll='true', namespace=self.tasks_namespace)
+    def clear_raports(self):
+        self.index.delete(deleteAll='true', namespace=self.raports_namespace)
 
-    def add_task(self, task: Task):
+    def add_raport(self, raport: Raport):
 
         enriched_result = {
-            "data": str(task.result)
+            "data": str(raport.result)
         }  # This is where you should enrich the result if needed
 
         vector = get_embedding(
             enriched_result["data"]
         )  # get vector of the actual result extracted from the dictionary
 
-        # Upsert the task to the tasks namespace
+        # Upsert the raport to the raports namespace
         self.index.upsert(
-            [(str(task.task_id), vector, {"task": str(task.name), "result": enriched_result["data"]})],
-            namespace=self.tasks_namespace
+            [(str(raport.raport_id), vector, {"raport": str(raport.name), "result": enriched_result["data"]})],
+            namespace=self.raports_namespace
         )
 
-        # Add the task ID to the list of all tasks IDs
-        self.all_tasks_ids.append(task.task_id)
+        # Add the raport ID to the list of all raports IDs
+        self.all_raports_ids.append(raport.raport_id)
 
         return enriched_result
 
@@ -76,20 +77,20 @@ class PineconeMemory(MemoryBackend):
         )
 
 
-    def discard(self, item: Union[Task, CodeFile]):
+    def discard(self, item: Union[Raport, CodeFile]):
         # Remove the item from the Pinecone index here
-        item_id = f"{item.__class__.__name__.lower()}_{item.task_id if isinstance(item, Task) else item.file_name}"
+        item_id = f"{item.__class__.__name__.lower()}_{item.raport_id if isinstance(item, Raport) else item.file_name}"
         # self.index.delete([item_id], namespace=namespace)
 
-    def get_task(self, task_id: int) -> Task:
-        result_id = f"task_{task_id}"
+    def get_raport(self, raport_id: int) -> Raport:
+        result_id = f"raport_{raport_id}"
 
         item = self.index.fetch(
             ids=[result_id], 
-            namespace=self.tasks_namespace
+            namespace=self.raports_namespace
         )[0]
 
-        return Task(int(item.id.split('_')[1]), item.metadata['name'], item.metadata['result'])
+        return Raport(int(item.id.split('_')[1]), item.metadata['name'], item.metadata['result'])
 
 
     def get_codefile(self, file_name: str) -> CodeFile:
@@ -124,24 +125,24 @@ class PineconeMemory(MemoryBackend):
             print(f'File {file_name} not found in Pinecone index')
             return None
         
-    def get_relevant_tasks(self, query: str, k: int) -> List[Task]:
+    def get_relevant_raports(self, query: str, k: int) -> List[Raport]:
         # Get vector representation of the query
         query_vector = get_embedding(query)
         
-        relevant_tasks = []
+        relevant_raports = []
 
         results = self.index.query(
             vector=query_vector,
             top_k=k, 
-            namespace=self.tasks_namespace,  
+            namespace=self.raports_namespace,  
             include_metadata=True 
         )
         
-        # For each match, create a Task object and add it to the list
+        # For each match, create a raport object and add it to the list
         for match in results['matches']:
-            relevant_tasks.append(Task(match['metadata']['task'], result=match['metadata']['result'], score=match['score']))
+            relevant_raports.append(Raport(match['metadata']['raport'], result=match['metadata']['result'], score=match['score']))
         
-        return relevant_tasks
+        return relevant_raports
 
     def get_relevant_codefiles(self, query: str, k: int) -> List[CodeFile]:
         # Get vector representation of the query
@@ -161,32 +162,32 @@ class PineconeMemory(MemoryBackend):
         
         return relevant_codefiles
     
-    def get_task(self, name: str) -> Task:
-        # Create result_id from task_id
-        result_id = f"task_{name}"
+    def get_raport(self, name: str) -> Raport:
+        # Create result_id from raport_id
+        result_id = f"raport_{name}"
 
-        # Fetch the item from the tasks namespace
+        # Fetch the item from the raports namespace
         item = self.index.fetch(
             ids=[result_id], 
-            namespace=self.tasks_namespace
+            namespace=self.raports_namespace
         )[0]
 
-        # Return a Task object
-        return Task(int(item.id.split('_')[1]), item.metadata['name'], item.metadata['result'])
+        # Return a raport object
+        return Raport(int(item.id.split('_')[1]), item.metadata['name'], item.metadata['result'])
     
-    def get_all_tasks(self) -> List[Task]:
-        # Get all tasks from the tasks namespace
-        tasks_raw = self.index.fetch(
-            ids=self.all_tasks_ids,
-            namespace=self.tasks_namespace
+    def get_all_raports(self) -> List[Raport]:
+        # Get all raports from the raports namespace
+        raports_raw = self.index.fetch(
+            ids=self.all_raports_ids,
+            namespace=self.raports_namespace
         )
 
-        tasks = []
-        if tasks_raw and hasattr(tasks_raw, '__iter__'):
-            for task in tasks_raw:
-                tasks.append(Task(int(task.task_id), task.metadata['name'], task.metadata['result']))
+        raports = []
+        if raports_raw and hasattr(raports_raw, '__iter__'):
+            for raport in raports_raw:
+                raports.append(raport(int(raport.raport_id), raport.metadata['name'], raport.metadata['result']))
 
-        return tasks
+        return raports
 
     def upsert_project(self, workspace_path: str = CFG.workspace):
         # Upsert new project files to Pinecone index
