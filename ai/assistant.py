@@ -14,36 +14,7 @@ client = OpenAI()
 
 class Assistant():
     
-    def __init__(self, role: str, name: str, model: str = 'gpt-3.5-turbo-1106', iol: IOlog = IOlog(), tools = tools, messages = []) -> None:
-        """
-        Initialize the AI object with empty lists of functions, and performance evaluations.
-        """
-        self.name = name
-        self.iol = iol
-        self.instructions = role
-        self.file_ids = []
-        if CFG.retrieval: self.file_ids.append(self.upload_file(know_file).id) else: self.iol.log('CFG.retrieval flag is not set correctly.', color='red')
-        self.assistant = client.beta.assistants.create(
-            name=name,
-            instructions=self.instructions,
-            model=model,
-            temperature=CFG.temperature,
-            # seed=dbs.prompts['seed']
-            # response_format='json_object',
-            file_ids=self.file_ids,
-            tools=tools if tools else [{"type": "code_interpreter"}, {"type": "retrieval"}]    # przerzucić do argumentów
-        )
-        self.thread = client.beta.threads.create(messages = messages)
-
-
-    # @staticmethod
-    def start(self, system: str, user: str) -> list[dict[str, str]]:
-        user_msg = self.fuser(user)
-        self.instructions = self.fsystem(system)
-
-        return self.next([user_msg])
-    
-    # @staticmethod
+new line(s) to replace
     def fassistant(self, msg: str) -> dict[str, str]:
         thread_message = client.beta.threads.messages.create(
             self.thread.id,
