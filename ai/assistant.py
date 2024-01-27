@@ -14,7 +14,7 @@ client = OpenAI()
 
 class Assistant():
     
-    def __init__(self, role: str, name: str = "Assistant", model: str = 'gpt-3.5-turbo-1106', iol: IOlog = None, tools = None, messages = None, know_file="699.csv") -> None:
+    def __init__(self, role: str, name: str, model: str = 'gpt-3.5-turbo-1106', iol: IOlog = IOlog(), tools = tools, messages = []) -> None:
         """
         Initialize the AI object with empty lists of functions, and performance evaluations.
         """
@@ -22,7 +22,7 @@ class Assistant():
         self.iol = iol
         self.instructions = role
         self.file_ids = []
-        if CFG.retrieval: self.file_ids.append(self.upload_file(know_file).id)
+        if CFG.retrieval: self.file_ids.append(self.upload_file(know_file).id) else: self.iol.log('CFG.retrieval flag is not set correctly.', color='red')
         self.assistant = client.beta.assistants.create(
             name=name,
             instructions=self.instructions,
@@ -65,7 +65,7 @@ class Assistant():
         )
         return thread_message
     
-    def upload_file(self, file_path: str):  # -> OpenAI.File
+    def upload_file(self, file_path: str) -> OpenAI.File:
         file = client.files.create(file=open(file_path, "rb"), purpose="assistants")
         return file
     
