@@ -13,15 +13,16 @@ import agents
 
 CFG = Config()
 
-# obsługa programu poprzez argumenty przekazywane w konsoli
-parser = argparse.ArgumentParser(description=f"""
+banner = f"""
                   ___  ___  _____           _             
                  / __|| _ \|_   _| ___  ___| |_  ___  _ _ 
                 | (_ ||  _/  | |  / -_)(_-/|  _|/ -_)| '_|
                  \___||_|    |_|  \___|/__/ \__|\___||_|  
 
-           The static code analysis agent, version: {CFG.version}\n\n""",
-                                 formatter_class=argparse.RawTextHelpFormatter)
+           The static code analysis agent, version: {CFG.version}\n\n"""
+
+# obsługa programu poprzez argumenty przekazywane w konsoli
+parser = argparse.ArgumentParser(description=banner, formatter_class=argparse.RawTextHelpFormatter)
 parser.add_argument('directory', type=str, help='Path to the directory to scan')
 parser.add_argument('-v', '--verbose', help='Print out all the outputs and steps taken', action='store_true')
 parser.add_argument('-m', '--model', help='Choose the LLM model for code analysis, default: "gpt-4-1106-preview"', default="gpt-4-1106-preview")
@@ -49,14 +50,14 @@ async def run_agents(args, iol, chunks):
     if args.tests:
         iol.log(f"Functional tests provided, I will now run them", color="red")
         test_task = asyncio.create_task(
-            retry_task(agents.test_agent, chunks[0], args.tests, iol, args.model, args.directory, args.file_to_know)
-        )
+            retry_task(agents.test_agent, chunks[0], args.tests, iol, args.model, args.directory)
+        )   # chunks[0] - only the first chunk is used for tests, this needs changing and rethinking
         tasks.append(test_task)
 
     # Add debug agent tasks for each chunk using retry mechanism
     for chunk in chunks:
         task = asyncio.create_task(
-            retry_task(agents.debug_agent, chunk, iol, args.model, args.directory)
+            retry_task(agents.debug_agent, chunk, iol, args.model, args.directory, args.file_to_know)
         )
         tasks.append(task)
 
@@ -64,17 +65,16 @@ async def run_agents(args, iol, chunks):
     for completed_task in asyncio.as_completed(tasks):
         output = await completed_task
 
-        if isinstance(output, list):
-            for message in output:
+        for message in output:   
+            if message.role == "assistant":
                 for content_item in message.content:
                     text = content_item.text.value
-                    iol.log(text, color="white")
-        else:  # Assuming test_agent returns a single completion value
-            iol.log(f"Tests completed!", color="red", verbose_only=True)
+                    print()
+                    iol.log("\n\n" + text + '\n', color="white")
 
 # The retry_task function remains the same as in the previous example
 
-async def retry_task(coroutine_func, *args, max_retries=CFG.restart_limit, delay=1):    # CFG.restart_limit = 3 in config.py
+async def retry_task(coroutine_func, *args, max_retries=CFG.restart_limit, delay=2):    # CFG.restart_limit = 3 in config.py
     """
     Retries a coroutine function if it fails.
     :param coroutine_func: The coroutine function to execute.
@@ -96,13 +96,7 @@ async def retry_task(coroutine_func, *args, max_retries=CFG.restart_limit, delay
 
 
 async def main():
-    print(f"""
-                  ___  ___  _____           _             
-                 / __|| _ \|_   _| ___  ___| |_  ___  _ _ 
-                | (_ ||  _/  | |  / -_)(_-/|  _|/ -_)| '_|
-                 \___||_|    |_|  \___|/__/ \__|\___||_|  
-""")
-    print(f"""           The static code analysis agent, version: {CFG.version}\n\n""")
+    print(banner)
 
     iol.log(f"Beginning scan for {args.directory}", color="pink")
     dir_content = walk_directory(args.directory)    # excluding directories starting with 'fixed' and other typical .gitignore files
@@ -124,8 +118,9 @@ async def main():
     
     await run_agents(args, iol, chunks)
 
-    iol.log(f"Scan complete!", color="green")
-    input("If you want to run tests again on fixed code (not available in current version), press enter... (or ctrl+c to exit)")
+    print()
+    iol.log(f"\tSCAN COMPLETE!\n", color="green")
+    # input("If you want to run tests on fixed code (not available in current version), press enter... (or ctrl+c to exit)")
 
 
 if __name__ == "__main__":
