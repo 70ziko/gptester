@@ -2,8 +2,8 @@ import hashlib
 from utils.utils import get_embedding
 from scipy.spatial.distance import cosine
 
-class Task:
-    """Task object containing the task details as well as its result"""
+class Raport:
+    """Raport object containing a CodeQL query and its result"""
     
     __next_id__ = 1
     
@@ -13,7 +13,7 @@ class Task:
         self.name = name
         self.description = description
         self.result = result
-        #self.__embedding__ = self._get_embedding()     # błędnie myślałem że ada jest 0,- xdd
+        #self.__embedding__ = self._get_embedding()     # błędnie myślałem że ada jest tańsza xdd
         self.score = score
         self.filename = filename
 

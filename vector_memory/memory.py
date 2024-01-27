@@ -1,12 +1,13 @@
 from abc import ABC, abstractmethod
 from typing import List
-from vector_memory.models import Task, CodeFile
+from vector_memory.models import Raport, CodeFile
 
 class MemoryBackend(ABC):
-    """Abstract base class for a memory backend"""
+    """Abstract base class for a memory backend
+    Wektorowa baza danych - pochodzenie: mój wcześniejszy projekt, kod w trakcie modyfikacji"""
 
     @abstractmethod
-    def add_task(self, task, result):
+    def add_raport(self, raport, result):
         pass
 
     @abstractmethod
@@ -18,7 +19,7 @@ class MemoryBackend(ABC):
         pass
 
     @abstractmethod
-    def get_task(self, task_id: int) -> Task:
+    def get_raport(self, raport_id: int) -> Raport:
         pass
 
     @abstractmethod
@@ -26,7 +27,7 @@ class MemoryBackend(ABC):
         pass
 
     @abstractmethod
-    def get_relevant_tasks(self, query: str, k: int) -> List[Task]:
+    def get_relevant_raports(self, query: str, k: int) -> List[Raport]:
         pass
 
     @abstractmethod
@@ -34,57 +35,58 @@ class MemoryBackend(ABC):
         pass
 
     @abstractmethod
-    def get_all_tasks(self) -> List[Task]:
+    def get_all_raports(self) -> List[Raport]:
         pass
 
 class Memory:
-    """Class to interact with the memory backend"""
+    """Class to interact with the memory backend
+    Wektorowa baza danych - pochodzenie: mój wcześniejszy projekt, kod obecnie w procesie integracji"""
 
     def __init__(self, backend: MemoryBackend):
         self.backend = backend
 
-    def add_task(self, task: Task, result: str = None):
-        if result and isinstance(task, Task):
-            task.result = result
-            self.backend.add_task(task)
+    def add_raport(self, raport: Raport, result: str = None):
+        if result and isinstance(raport, Raport):
+            raport.result = result
+            self.backend.add_raport(raport)
             return
     
-        task_dict = task if isinstance(task, dict) else {}
+        raport_dict = raport if isinstance(raport, dict) else {}
         if result:
-            task_dict['result'] = result
+            raport_dict['result'] = result
         
-        task = Task(
-            task_dict.get('task_id', ''),
-            task_dict.get('name', ''),
-            task_dict.get('task_description', ''),
-            task_dict.get('result', ''),
-            task_dict.get('filename', '')
+        raport = raport(
+            raport_dict.get('raport_id', ''),
+            raport_dict.get('name', ''),
+            raport_dict.get('raport_description', ''),
+            raport_dict.get('result', ''),
+            raport_dict.get('filename', '')
         )
         
-        self.backend.add_task(task)
+        self.backend.add_raport(raport)
 
     def add_code_file(self, file_name: str, content: str):
         code_file = CodeFile(file_name, content)
         self.backend.add_code_file(code_file)
 
-    def get_relevant_task(self, query: str):
-        return self.backend.get_relevant_tasks(query)[0]
+    def get_relevant_raport(self, query: str):
+        return self.backend.get_relevant_raports(query)[0]
 
     def get_relevant_code_file(self, query: str):
         return self.backend.get_relevant_codefiles(query)[0]
 
-    def get_relevant_tasks(self, query: str, k: int):
-        return self.backend.get_relevant_tasks(query, k)
+    def get_relevant_raports(self, query: str, k: int):
+        return self.backend.get_relevant_raports(query, k)
 
     def get_relevant_codefiles(self, query: str, k: int):
         return self.backend.get_relevant_codefiles(query, k)
     
     def popback(self):
-        tasks = self.backend.get_relevant_tasks("", 1000)
-        if not tasks:
-            raise Exception("No tasks to pop in memory")
+        raports = self.backend.get_relevant_raports("", 1000)
+        if not raports:
+            raise Exception("No raports to pop in memory")
         
-        last_task = max(tasks, key=lambda x: x.task_id)
+        last_raport = max(raports, key=lambda x: x.raport_id)
 
-        self.backend.discard(last_task)
-        return last_task
+        self.backend.discard(last_raport)
+        return last_raport
