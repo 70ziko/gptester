@@ -264,7 +264,7 @@ def walk_directory(directory):
         ".properties",
 
     ]
-    exclude_list = ["node_modules", "build", "dist", "venv", "env", "migrations", ".git", ".vscode", ".idea", ".pytest_cache", 
+    exclude_list = ["GPTester", "node_modules", "build", "dist", "venv", "env", "migrations", ".git", ".vscode", ".idea", ".pytest_cache", 
                     ".cache", ".tox", "tests", "test", "docs", "doc", "static", "media", "assets", 
                     "logs", "log", "raports", "staticfiles"]
     code_contents = {}

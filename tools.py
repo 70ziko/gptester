@@ -17,7 +17,7 @@ async def write_file(filename, content):
     """
     try:
         iol.log(f'Writing file {filename}...', color="orange")
-        iol.log(f'content: \n {content}...', color="orange")
+        iol.log(f'content: \n {content}...', color="orange", verbose_only=True)
 
         if os.path.isdir(filename):
             raise Exception(f"Cannot write file: A directory with the name '{filename}' already exists.")
