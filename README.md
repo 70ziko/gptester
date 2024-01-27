@@ -26,6 +26,7 @@ options:
   -c, --codeql          Use codeql to enhance the scan, REQUIRED to install CodeQL-CLI console tool
   --command COMMAND     Provide a build command to run the project for codeql, if no cmake or other file present in the project root directory, default: "make"
   --language LANGUAGE   Provide a programming language of the project for codeql, default: "cpp"
+  -g GITHUB_ACTIONS, --github-actions GITHUB_ACTIONS    Additional arguments for the GitHub Actions workflow
 ```
 ===
 
@@ -37,7 +38,7 @@ pip install -r requirements.txt
 ## Usage
 ```bash
 cd gptester
-python main.py -h
+python main.py -h -g <additional args>
 ```
 or 
 ```bash
