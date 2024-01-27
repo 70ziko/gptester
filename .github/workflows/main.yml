@@ -1,7 +1,12 @@
-name: Static Code Analysis
+- name: set ARGS
+        id: args
+        run: |
+          echo "::set-output name=args::"name: Static Code Analysis
 
 on:
   push:
+    paths:
+      - '**.py'
     branches:
       - main
   pull_request:
@@ -24,7 +29,9 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r requirements.quick
 
       - name: Run static code analysis
-        run: python main.py -h -g <additional args>
+        run: python main.py
+        with:
+          github-actions: ${{ steps.args }}
