@@ -64,6 +64,12 @@ class Assistant():
             content=msg,
         )
         return thread_message
+        thread_message = client.beta.threads.messages.create(
+            self.thread.id,
+            role="user",
+            content=msg,
+        )
+        return thread_message
     
     def upload_file(self, file_path: str):  # -> OpenAI.File
         file = client.files.create(file=open(file_path, "rb"), purpose="assistants")
@@ -81,7 +87,7 @@ class Assistant():
             else:
                 return messages
 
-    async def next(self, messages: list[dict[str, str]]=None, prompt=None, directory: str = 'fixes'):
+    async def next(self, messages: list[dict[str, str]]=None, prompt=None, directory: str = 'fixes') -> list[dict[str, str]]:
         if messages:
             self.messages_to_thread(messages)
             self.iol.log("Messages added to the thread.", color="bright_black", verbose_only=True)

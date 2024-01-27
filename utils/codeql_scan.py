@@ -22,3 +22,4 @@ def run_codeql_scan(directory, language="cpp", command="make"):
         sys.exit("Could not find the results file. Did the analysis run correctly?")
 
 run_codeql_scan('Vulnerable-Code-Snippets/Buffer_Overflow')
+return ''
