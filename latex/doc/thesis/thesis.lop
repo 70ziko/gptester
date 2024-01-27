@@ -1,8 +1,7 @@
-\contentsline {listing}{\numberline {3.1}{\ignorespaces Kod tworzący reprezentację wektorową tekstu za pomocą API OpenAI, domyślnie `text-embedding-ada-002', (models.py)\relax }}{13}{listing.3.1}%
-\contentsline {listing}{\numberline {3.2}{\ignorespaces Kod porównujący semantyczną odległość (models.py)\relax }}{13}{listing.3.2}%
-\contentsline {listing}{\numberline {3.3}{\ignorespaces Kod używany do komunikacji z API OpenAI (ai/assistant.py)\relax }}{23}{listing.3.3}%
-\contentsline {listing}{\numberline {3.4}{\ignorespaces Implementacja testującego agenta AI (ai/agents.py)\relax }}{27}{listing.3.4}%
-\contentsline {listing}{\numberline {5.1}{\ignorespaces Kod źródłowy błędnego skrawka kodu \textit {damnvuln.c}\relax }}{38}{listing.5.1}%
-\contentsline {listing}{\numberline {5.2}{\ignorespaces Wynik działania programu w formacie diff na kodzie źródłowym \textit {damnvuln.c}\relax }}{39}{listing.5.2}%
-\contentsline {listing}{\numberline {5.3}{\ignorespaces Fragment kodu odpowiadający za wyświetlenie informacji o błędzie\relax }}{41}{listing.5.3}%
-\contentsline {listing}{\numberline {5.4}{\ignorespaces Fragment kodu odpowiadający za wyświetlenie informacji o błędzie\relax }}{42}{listing.5.4}%
+\contentsline {listing}{\numberline {3.1}{\ignorespaces Kod tworzący reprezentację wektorową tekstu za pomocą API OpenAI, domyślnie `text-embedding-ada-002', (models.py)\relax }}{15}{listing.3.1}%
+\contentsline {listing}{\numberline {3.2}{\ignorespaces Kod porównujący semantyczną odległość (models.py)\relax }}{15}{listing.3.2}%
+\contentsline {listing}{\numberline {3.3}{\ignorespaces Kod używany do komunikacji z API OpenAI (ai/assistant.py)\relax }}{25}{listing.3.3}%
+\contentsline {listing}{\numberline {5.1}{\ignorespaces Kod źródłowy błędnego skrawka kodu \textit {damnvuln.c}\relax }}{37}{listing.5.1}%
+\contentsline {listing}{\numberline {5.2}{\ignorespaces Wynik działania programu w formacie diff na kodzie źródłowym \textit {damnvuln.c}\relax }}{38}{listing.5.2}%
+\contentsline {listing}{\numberline {5.3}{\ignorespaces Fragment kodu odpowiadający za wyświetlenie informacji o błędzie\relax }}{40}{listing.5.3}%
+\contentsline {listing}{\numberline {5.4}{\ignorespaces Fragment kodu odpowiadający za wyświetlenie informacji o błędzie\relax }}{41}{listing.5.4}%
