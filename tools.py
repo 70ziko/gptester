@@ -1,6 +1,6 @@
 import os
 from utils.io import IOlog
-from testing.tests_runner import TestRunner, RunCppTestsCommand, RunJavaTestsCommand, RunPythonTestsCommand, RunRubyTestsCommand, RunPhpTestsCommand
+from utils.tests_runner import TestRunner, RunCppTestsCommand, RunJavaTestsCommand, RunPythonTestsCommand, RunRubyTestsCommand, RunPhpTestsCommand
 
 iol = IOlog()
 

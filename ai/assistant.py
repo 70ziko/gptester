@@ -60,6 +60,10 @@ class Assistant():
         )
         return thread_message
     
+    def upload_file(self, file_path: str) -> dict[str, str]:
+        file = client.files.create(open(file_path, "rb"), purpose="assistants")
+        return file
+    
     def messages_to_thread(self, messages: list[dict[str, str]]):
         for message in messages:
             if isinstance(message, dict):

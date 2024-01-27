@@ -17,7 +17,12 @@ Zaprojektowana procedura testowa miała na celu dokładną weryfikację funkcjon
 \begin{itemize}
     \item \textbf{Kryterium 1}: Dokładność identyfikacji podatności.
     \item \textbf{Kryterium 2}: Skuteczność proponowanych napraw.
-    \item \textbf{Kryterium 3}: Efektywność czasowa analizy.
+      \begin{itemize}
+        \item \textbf{Kryterium 2.1}: Funkcjonalność naprawy.
+        \item \textbf{Kryterium 2.2}: Bezpieczeństwo naprawy.
+        \item \textbf{Kryterium 2.3}: Efektywność naprawy.
+      \end{itemize}
+    \item \textbf{Kryterium 3}: Efektywność czasowa analizy\footnote{\textit{W tej wersji pracy pominięto}.}
 \end{itemize}
 
 Procedura testowa przebiegała według następujących etapów:
@@ -28,7 +33,7 @@ Procedura testowa przebiegała według następujących etapów:
     \begin{enumerate}
         \item Instalacja zależności.
         \item Konfiguracja środowiska.
-        \item Dopisanie kodu pozwalającego na wykonanie.
+        \item Dopisanie kodu pozwalającego na wykonanie, w razie konieczności.
         \item Uruchomienie aplikacji.
     \end{enumerate} 
     \item Przeprowadzenie testów funkcjonalnych oraz testów bezpieczeństwa poprzez przeprowadzenia eksploatacji.
@@ -302,7 +307,7 @@ int main(int argc,char **argv)
 \end{listing}
 \restoregeometry
 
-\subsection{Wynik w formacie diff}
+\subsection{Wynik w formacie diff - może zmienić na wynik finalny, ponieważ nie ma kolorowych linii dla +/-}
 \begin{listing}[H]
     \begin{minted}[fontsize=\tiny]{c}
       diff --git a/damnvuln.c b/damnvuln.c
@@ -504,13 +509,31 @@ Dla każdego z podanych przeze mnie danych wejściowych został wyświetlony kom
 
 Analiza wyników testów funkcjonalnych przeprowadzonych na programie \texttt{damnvuln} i jego zmodyfikowanych wersjach pozwala na dokonanie istotnych obserwacji dotyczących skuteczności działania narzędzia \texttt{gptester} oraz zdolności modeli językowych do wykrywania i naprawy błędów typu "Out of Bounds".
 
-Pierwszy test funkcjonalny, w którym oryginalna wersja programu \texttt{damnvuln} zwróciła błąd Segmentation Fault, wskazuje na obecność poważnego błędu, który uniemożliwia poprawne wykonanie programu. Taki wynik podkreśla znaczenie analizy statycznej kodu w celu identyfikacji potencjalnych zagrożeń i wad, które mogą prowadzić do krytycznych awarii aplikacji.
+Pierwszy test funkcjonalny, w którym oryginalna wersja programu \texttt{damnvuln} zwróciła błąd Segmentation Fault, wskazuje na obecność poważnego błędu, który uniemożliwia poprawne wykonanie programu. Taki wynik podkreśla znaczenie analizy statycznej kodu w celu identyfikacji potencjalnych zagrożeń i wad, które mogą prowadzić do krytycznych awarii aplikacji. Przede wszystkim wskazuje to na dużą podatność i wysoki potencjał do eksploitacji programu. Złośliwy podmiot może wykorzystać ten błąd do nadpisania miejsca w pamięci inaczej nie dostępnego, prowadząc do wykonania kodu arbitralnego, co może prowadzić do kradzieży danych, utraty poufności, a nawet całkowitego przejęcia kontroli nad systemem, zwłaszcza przy ustawionym bicie lepkim (sticky bit) podatnego programu. 
 
-W przypadku zmodyfikowanej wersji programu, gdzie błąd Segmentation Fault został zastąpiony komunikatem o błędzie Integer Underflow, obserwujemy, że narzędzie \texttt{gptester} było w stanie wykryć i częściowo naprawić błąd. Zmodyfikowany kod, chociaż poprawnie identyfikuje rodzaj błędu, wprowadza jedynie kontrolę tego błędu, nie adresując w pełni jego przyczyny.
+W przypadku zmodyfikowanej wersji programu, gdzie błąd Segmentation Fault został zastąpiony komunikatem o błędzie Integer Underflow, obserwujemy, że narzędzie \texttt{gptester} było w stanie wykryć i częściowo naprawić błąd. Zmodyfikowany kod, chociaż poprawnie identyfikuje rodzaj błędu, wprowadza jedynie kontrolę tego błędu, nie adresując w pełni jego przyczyny. W tym przypadku natomiast nie da się wykorzystać błędu do wykonania kodu arbitralnego, ponieważ nie jest on już krytyczny. Jednakże, w przypadku gdyby błąd ten występował w innym miejscu programu, mógłby on prowadzić do nieprzewidywalnych konsekwencji, takich jak utrata danych, bądź nieprawidłowe działanie programu.
 
 Kolejna iteracja testu, z wykorzystaniem innego wyniku generowanego przez \texttt{gptester}, przyniosła kod, który początkowo nie kompilował się z powodu brakującego pliku nagłówkowego. Po jego dołączeniu, program został uruchomiony i ponownie zwrócił informację o wykryciu błędu Integer Underflow, lecz w inny sposób niż poprzednio. Tym razem zastosowano funkcję sprawdzającą przepełnienie dla obliczeń, co stanowi bardziej zaawansowane i technicznie poprawne podejście do problemu.
 
-Wnioski płynące z tych eksperymentów wskazują, że narzędzie \texttt{gptester} i wykorzystane w nim modele językowe posiadają zdolność do identyfikacji i proponowania poprawek dla wybranych rodzajów błędów bezpieczeństwa w kodzie. Jednakże, jakość i kompletność tych poprawek może być zmienna, co wymaga dalszej analizy i możliwej interwencji ze strony użytkownika. W kontekście błędów typu "Out of Bounds", \texttt{gptester} wykazał zdolność do wykrywania potencjalnych problemów, ale rozwiązania oferowane przez narzędzie wymagają dodatkowej weryfikacji i dostosowania, aby w pełni adresować przyczyny tych błędów.
+Wnioski płynące z tych eksperymentów wskazują, że narzędzie \texttt{gptester} i wykorzystane w nim modele językowe posiadają zdolność do identyfikacji i proponowania poprawek dla wybranych rodzajów błędów bezpieczeństwa w kodzie. Jednakże, jakość i kompletność tych poprawek może być zmienna, co wymaga dalszej analizy i możliwej interwencji ze strony użytkownika. W kontekście błędów typu "Out of Bounds", \texttt{gptester} wykazał zdolność do wykrywania potencjalnych problemów, ale rozwiązania oferowane przez narzędzie wymagają dodatkowej weryfikacji i dostosowania, aby w pełni adresować przyczyny tych błędów. 
+
+Przedstawiony przypadek otrzymuje przeze mnie następujące oceny:
+
+\begin{table}[h]
+  \centering
+  \caption{Vulnerable Code Snippets – oryginał – możliwe podpowiedzi w komentarzach
+  \begin{tabular}{|c|l|c|c|c|c|c|}
+  \hline
+  \textbf{lp.} & \textbf{nazwa podatności} & \textbf{wykryto} & \textbf{max(subiektywne)} & \textbf{funkcjonalność} & \textbf{efektywność} & \textbf{bezpieczeństwo} \\
+  \hline
+  17 & Out of Bounds & 11 & 9 & 1 & 0.5 & 1 \\
+  \hline
+  18 & Open Redirect & ... & ... & ... & ... & ... \\  % Dodaj resztę danych
+  \hline
+  % ... Dodaj kolejne wiersze tabeli
+  \end{tabular}
+  \label{tab:my_label}
+  \end{table}
 
 \chapter{Badanie funkcjonalności na aplikacji webowej OWASP VulnerableApp}
 \label{sec:badania_na_aplikacji_webowej_owasp}
