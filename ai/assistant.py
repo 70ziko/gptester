@@ -14,70 +14,9 @@ client = OpenAI()
 
 class Assistant():
     
-    def __init__(self, role: str, name: str = "Assistant", model: str = 'gpt-3.5-turbo-1106', iol: IOlog = None, tools = None, messages = None, know_file="699.csv") -> None:
-        """
-        Initialize the AI object with empty lists of functions, and performance evaluations.
-        """
-        self.name = name
-        self.iol = iol
-        self.instructions = role
-        self.file_ids = []
-        if CFG.retrieval: self.file_ids.append(self.upload_file(know_file).id)
-        self.assistant = client.beta.assistants.create(
-            name=name,
-            instructions=self.instructions,
-            model=model,
-            # temperature=CFG.temperature,
-            # seed=dbs.prompts['seed']
-            # response_format='json_object',
-            file_ids=self.file_ids,
-            tools=tools if tools else [{"type": "code_interpreter"}, {"type": "retrieval"}]    # przerzucić do argumentów
-        )
-        self.thread = client.beta.threads.create(messages = messages)
-
-
-    # @staticmethod
-    def start(self, system: str, user: str) -> list[dict[str, str]]:
-        user_msg = self.fuser(user)
-        self.instructions = self.fsystem(system)
-
-        return self.next([user_msg])
-    
-    # @staticmethod
-    def fassistant(self, msg: str) -> dict[str, str]:
-        thread_message = client.beta.threads.messages.create(
-            self.thread.id,
-            role="assistant",
-            content=msg,
-            )
-        return thread_message
-    
-    # @staticmethod
-    def fsystem(self, msg: str) -> dict[str, str]:
-        self.assistant.instructions = msg
-    
-    # @staticmethod
-    def fuser(self, msg: str) -> dict[str, str]:
-        thread_message = client.beta.threads.messages.create(
-            self.thread.id,
-            role="user",
-            content=msg,
-        )
-        return thread_message
-    
-    def upload_file(self, file_path: str):  # -> OpenAI.File
-        file = client.files.create(file=open(file_path, "rb"), purpose="assistants")
-        return file
-    
-    def messages_to_thread(self, messages: list[dict[str, str]]):
-        for message in messages:
-            if isinstance(message, dict):
-                if message['role'] == 'user':
-                    self.fuser(message)
-                elif message['role'] == 'assistant':
-                    self.fassistant(message)
-                elif message['role'] == 'system':
-                    self.fsystem(message)
+    def write_file(self, file_path: str, content: str):
+        with open(file_path, 'w') as file:
+            file.write(content)
             else:
                 return messages
 
