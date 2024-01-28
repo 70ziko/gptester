@@ -16,19 +16,26 @@ Następująca sekcja zawiera omówienie źródeł danych, ich specyfikacji oraz 
 
     % \item \textbf{DiverseVul}: \url{https://arxiv.org/abs/2304.00409} Opis kolejnego zbioru danych, jego charakterystyka i zastosowanie w kontekście `gptester`.
     % \item \textbf{CVEfixes}: \url{https://github.com/secureIT-project/CVEfixes}
-    \item \textbf{OWASP VulnerableApp}: Aplikacja webowa zawierająca wiele podatności, używana do testowania narzędzi do testowania bezpieczeństwa aplikacji webowych. \\ \url{https://github.com/SasanLabs/VulnerableApp}
-    % Dodaj więcej zbiorów danych w razie potrzeby
+
+    \item \textbf{OWASP VulnerableApp}: Aplikacja webowa zawierająca szereg podatności, służąca do testowania narzędzi do analizy bezpieczeństwa aplikacji webowych. Napisana w języku PHP, kod źródłowy dostępny w repozytorium umożliwia pobranie obrazu kontenera Docker. \url{https://github.com/SasanLabs/VulnerableApp}
+
+    \item \textbf{Damn Vulnerable NodeJS Application (DVNA)}: Aplikacja napisana w NodeJS, demonstrująca podatności z TOP 10 OWASP, służąca do nauki i testowania narzędzi do analizy bezpieczeństwa aplikacji. Repozytorium zawiera instrukcje uruchomienia i testowania aplikacji. \url{https://github.com/appsecco/dvna}
 \end{itemize}
 
 \section{Proces przygotowania danych}
 \label{sec:proces_przygotowania_danych}
 
 Dobrane przeze mnie zbiory danych zostały tak, by nie trzeba było dostosowywać programu do konkretnego formatu. Oznacza to, że wskazane repozytoria zawierają przykłady kodu zapisane w plikach.
+
 \subsection{snoopysecurity/Vulnerable-Code-Snippets} 
 Repozytorium zawiera wiele plików z przykładami kodu, które mogą zawierać błędy bezpieczeństwa. Pliki te zostały pobrane z różnych źródeł, takich jak blogi, książki, zasoby itp. Pliki te zawierają często komentarze lub nazwy zmiennych, które wskazują na potencjalne błędy bezpieczeństwa. Pozwala to nam na izolację problemu identyfikacji podatności od generowania kodu. W pierwszej kolejności badania zostały przeprowadzone bez wprowadzania zmian w kodzie, aby ocenić skuteczność modeli językowych w korekcji błędów bezpieczeństwa. W kolejnym kroku, w celu przebadania zdolności do identyfikowania błędów, zostały wprowadzone zmiany w kodzie, takie jak usunięcie komentarzy, zmienienie nazw zmiennych, itp. W ten sposób można było sprawdzić, czy modele językowe są w stanie wykryć błędy bezpieczeństwa, gdy mają więcej informacji na temat kodu.
 
+
 \subsection{OWASP VulnerableApp}
-Aplikacja webowa zawierająca wiele podatności, używana w testach narzędzi do testowania bezpieczeństwa aplikacji webowych. Zawiera wiele przykładów kodu, które mogą zawierać błędy bezpieczeństwa. Dzięki użyciu w badaniu przykładu z prawdziwej aplikacji, można było sprawdzić, czy modele językowe są w stanie wykryć błędy bezpieczeństwa w prawdziwym kodzie.
+Jako pełnoprawna aplikacja webowa, VulnerableApp pozwala na testowanie narzędzia `gptester` w realistycznym środowisku, z prawdziwymi podatnościami. Użycie tej aplikacji w badaniach pozwoliło na weryfikację skuteczności modeli językowych w wykrywaniu błędów bezpieczeństwa.
+
+\subsection{Damn Vulnerable NodeJS Application (DVNA)}
+DVNA, jako aplikacja demonstrująca podatności OWASP Top 10, stanowiła cenne źródło do testowania `gptester`. Dzięki dokumentacji i instrukcjom dostępnym w repozytorium, możliwe było efektywne wykorzystanie tej aplikacji do celów badawczych.
 
 \section{Wyzwania i ograniczenia}
 \label{sec:wyzwania_i_ograniczenia}

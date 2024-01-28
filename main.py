@@ -4,12 +4,13 @@
 import os
 import asyncio
 import argparse
+import datetime
 
 from utils.io import IOlog
 from utils.traverser import walk_directory, split_content
 from utils.utils import num_tokens_from_string
+from utils.git_pytcher import generate_patch
 from utils.config import Config
-import agents
 
 CFG = Config()
 
@@ -39,11 +40,15 @@ parser.add_argument('--language', help='Provide a programming language of the pr
 args = parser.parse_args()
 
 project_name = os.path.basename(args.directory.rstrip('/'))
-iol = IOlog(verbose=args.verbose, name=project_name)
+iol = IOlog(args.directory, verbose=args.verbose, name=project_name)
+
+# Import the agents after iol is ready and singletonned
+import agents
+
 
 CFG.set_retrieval(args.retrieval)
 
-async def run_agents(args, iol, chunks):
+async def run_agents(args, iol, chunks, fixed_dir):
     tasks = []
 
     # If tests are provided, add the test agent task
@@ -57,7 +62,7 @@ async def run_agents(args, iol, chunks):
     # Add debug agent tasks for each chunk using retry mechanism
     for chunk in chunks:
         task = asyncio.create_task(
-            retry_task(agents.debug_agent, chunk, iol, args.model, args.directory, args.file_to_know)
+            retry_task(agents.debug_agent, chunk, args.directory, iol, args.model, fixed_dir, args.file_to_know)
         )
         tasks.append(task)
 
@@ -69,7 +74,6 @@ async def run_agents(args, iol, chunks):
             if message.role == "assistant":
                 for content_item in message.content:
                     text = content_item.text.value
-                    print()
                     iol.log("\n\n" + text + '\n', color="white")
 
 # The retry_task function remains the same as in the previous example
@@ -101,6 +105,8 @@ async def main():
     iol.log(f"Beginning scan for {args.directory}", color="pink")
     dir_content = walk_directory(args.directory)    # excluding directories starting with 'fixed' and other typical .gitignore files
                                                     # in future it will be possible to point to a custom .gitignore file
+    fixed_dir = f'fixed_{datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S")}'
+
     iol.log(f"Found {len(dir_content)} files to scan", color="cyan", verbose_only=False)
 
     iol.log(f'Tokens inside the directory: {num_tokens_from_string(dir_content)}', color='bright_cyan')
@@ -116,10 +122,16 @@ async def main():
     chunks = split_content(dir_content, CFG.token_limit)
     iol.log(f"Splitting the content into {len(chunks)} chunks", color="bright_cyan", verbose_only=True)
     
-    await run_agents(args, iol, chunks)
+    await run_agents(args, iol, chunks, fixed_dir)
 
     print()
     iol.log(f"\tSCAN COMPLETE!\n", color="green")
+    iol.log(f"Check the generated raport in {iol.log_file}", color="bright_cyan")
+
+    iol.log(f"Generating patch...", color="bright_cyan")
+    generate_patch(args.directory, iol.log_file)
+
+    iol.log(f"Thank you for using the static code analysis agent!", color="bright_cyan")
     # input("If you want to run tests on fixed code (not available in current version), press enter... (or ctrl+c to exit)")
 
 

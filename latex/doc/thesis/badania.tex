@@ -540,6 +540,36 @@ Przedstawiony przypadek otrzymuje przeze mnie następujące oceny:
 
 Większość przykładów z tego zbioru to aplikacje webowe, dlatego przygotowanie środowiska testowego dla tych przykładów było bardziej skomplikowane. W takich przypadkach należało wykonać następujące kroki:
 
+\chapter{Identyfikacja i naprawa podatności aplikacji Damn Vulnerable NodeJS Application}
+
+\section{Wstęp}
+
+Celem eksperymentalnego badania było zbadanie możliwości narzędzia \texttt{gptester} w kontekście identyfikacji i naprawy podatności w aplikacji Damn Vulnerable NodeJS Application (DVNA). Aplikacja ta, zawierająca szereg celowo wprowadzonych podatności, stanowiła idealne środowisko do testowania i oceny skuteczności zaawansowanych modeli językowych w praktycznym zastosowaniu.
+
+\section{Przygotowanie środowiska}
+
+Przygotowanie środowiska testowego rozpoczęło się od sklonowania repozytorium DVNA i konfiguracji środowiska Docker, co pozwoliło na izolację środowiska testowego i zapewnienie powtarzalności testów. Następnie, aplikacja została poddana wstępnej ocenie bezpieczeństwa za pomocą dwóch renomowanych skanerów podatności: OWASP ZAP oraz Nessus Web Application Scan. Ta wstępna analiza pozwoliła na ustalenie bazowego stanu bezpieczeństwa aplikacji przed wprowadzeniem modyfikacji za pomocą \texttt{gptester}.
+
+\section{Analiza statyczna i naprawa}
+
+Z wykorzystaniem narzędzia \texttt{gptester} przeprowadzono szczegółową analizę statyczną kodu źródłowego DVNA. Proces ten skupiał się na identyfikacji znanych podatności z listy OWASP Top 10 oraz sugerowaniu możliwych napraw. Po zakończeniu analizy, \texttt{gptester} wygenerował zestaw rekomendacji, które zostały zaimplementowane w kodzie źródłowym aplikacji w celu usunięcia zidentyfikowanych słabości.
+
+\section{Weryfikacja i ocena skuteczności}
+
+Po wprowadzeniu sugerowanych zmian, aplikacja DVNA została ponownie poddana skanowaniu przy użyciu skanerów OWASP ZAP i Nessus, aby ocenić skuteczność wprowadzonych modyfikacji. Wyniki tego ponownego skanowania zostały porównane z wynikami początkowymi, co pozwoliło na ocenę efektywności narzędzia \texttt{gptester} w kontekście naprawy podatności.
+
+\section{Wyniki i dyskusja}
+
+Analiza wyników wskazała na zauważalną poprawę bezpieczeństwa aplikacji DVNA po zastosowaniu napraw sugerowanych przez \texttt{gptester}. W większości przypadków narzędzie skutecznie zidentyfikowało podatności i zaproponowało adekwatne rozwiązania, które pozytywnie przyczyniły się do zmniejszenia ogólnego ryzyka bezpieczeństwa aplikacji.
+
+\subsection{Wyzwania i ograniczenia}
+
+Jednakże, nie wszystkie sugerowane zmiany były w pełni skuteczne lub odpowiednie dla specyfiki aplikacji DVNA. W niektórych przypadkach, wprowadzenie zmian wymagało dodatkowej analizy i dostosowania sugerowanych rozwiązań do kontekstu aplikacji. Ponadto, niektóre z bardziej złożonych podatności wymagały bardziej zaawansowanych metod naprawczych, co wykraczało poza możliwości automatycznej analizy statycznej.
+
+\section{Wnioski}
+
+Badanie potwierdziło potencjał wykorzystania narzędzia \texttt{gptester} wspieranego przez zaawansowane modele językowe w procesie identyfikacji i naprawy podatności w aplikacjach webowych. Mimo pewnych ograniczeń, narzędzie to stanowi wartościowe wsparcie w procesie zapewniania bezpieczeństwa aplikacji, szczególnie w kontekście szybkiego wykrywania i łagodzenia powszechnych podatności. Dalszy rozwój narzędzia, w tym lepsza integracja z kontekstem aplikacji i zaawansowane metody naprawcze, może znacznie zwiększyć jego skuteczność i przydatność w praktycznych zastosowaniach.
+
 \chapter{Badanie funkcjonalności na aplikacji webowej OWASP VulnerableApp}
 \label{sec:badania_na_aplikacji_webowej_owasp}
 

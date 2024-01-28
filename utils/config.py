@@ -2,21 +2,11 @@
 import os
 from dotenv import load_dotenv
 import abc
+from utils.singleton import Singleton
 
 load_dotenv(override=True, verbose=True)
 
-class Singleton(abc.ABCMeta, type):
-    """
-    Singleton metaclass for ensuring only one instance of a class.
-    """
 
-    _instances = {}
-
-    def __call__(cls, *args, **kwargs):
-        """Call method for the singleton metaclass."""
-        if cls not in cls._instances:
-            cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
-        return cls._instances[cls]
 
 class Config(metaclass=Singleton):
     """
@@ -27,7 +17,7 @@ class Config(metaclass=Singleton):
         """Initialize the Config class"""
         self.debug_mode = False
         self.speak_mode = False
-        self.version = 'assistant-0.4'
+        self.version = 'assistant-0.4.2-beta'
         self.retrieval = False
         self.restart_limit = int(os.getenv("RESTART_LIMIT", "3"))
         self.llm_model = os.getenv("LLM_MODEL", "gpt-4-1106-preview")

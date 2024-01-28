@@ -13,13 +13,14 @@ CFG = Config()
 client = OpenAI()
 
 class Assistant():
-    
-    def __init__(self, role: str, name: str = "Assistant", model: str = 'gpt-3.5-turbo-1106', iol: IOlog = None, tools = None, messages = None, know_file="699.csv") -> None:
+    def __init__(self, role: str, name: str = "Assistant", model: str = 'gpt-3.5-turbo-1106', iol: IOlog = None, tools = None, messages = None, target_dir:str='fixed', know_file="699.csv") -> None:
         """
-        Initialize the AI object with empty lists of functions, and performance evaluations.
+        Initialize the AI object with empty lists of tool functions and default file for knowledge retrieval.
         """
-        self.name = name
         self.iol = iol
+        self.target_dir = target_dir
+        
+        self.name = name
         self.instructions = role
         self.file_ids = []
         if CFG.retrieval: self.file_ids.append(self.upload_file(know_file).id)
@@ -31,7 +32,7 @@ class Assistant():
             # seed=dbs.prompts['seed']
             # response_format='json_object',
             file_ids=self.file_ids,
-            tools=tools if tools else [{"type": "code_interpreter"}, {"type": "retrieval"}]    # przerzucić do argumentów
+            tools=tools if tools else [{"type": "code_interpreter"}, {"type": "retrieval"}]  
         )
         self.thread = client.beta.threads.create(messages = messages)
 
@@ -81,7 +82,7 @@ class Assistant():
             else:
                 return messages
 
-    async def next(self, messages: list[dict[str, str]]=None, prompt=None, directory: str = 'fixes'):
+    async def next(self, messages: list[dict[str, str]]=None, prompt=None, scan_dir: str = 'fixes'):
         if messages:
             self.messages_to_thread(messages)
             self.iol.log("Messages added to the thread.", color="bright_black", verbose_only=True)
@@ -119,8 +120,8 @@ class Assistant():
                         self.iol.log(f"Processing tool call: {name}", color="bright_black", verbose_only=True)
                         if "filename" in arguments and self.name == "debug_agent": 
                             filename = os.path.basename(arguments["filename"])
-                            timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-                            arguments["filename"] = os.path.join(directory, 'GPTester', f'fixed_{timestamp}', filename)
+                            
+                            arguments["filename"] = os.path.join(scan_dir, 'GPTester', self.target_dir, filename)
 
                         # Check if the function exists in the tools module
                         if hasattr(tools, name):
