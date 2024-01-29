@@ -13,6 +13,21 @@ CFG = Config()
 client = OpenAI()
 
 class Assistant():
+    
+    def __init__(self, openai_key: str, openai_secret: str, role: str, name: str = "Assistant", model: str = 'gpt-3.5-turbo-1106', iol: IOlog = None, tools = None, messages = None, target_dir:str='fixed', know_file="699.csv") -> None:
+        """
+        Initialize the AI object with empty lists of tool functions and default file for knowledge retrieval.
+        """
+        self.openai_key = openai_key
+        self.openai_secret = openai_secret
+        self.iol = iol
+        self.target_dir = target_dir
+        self.name = name
+        self.instructions = role
+        self.file_ids = []
+        if CFG.retrieval: self.file_ids.append(self.upload_file(know_file).id)
+
+class Assistant():
     def __init__(self, role: str, name: str = "Assistant", model: str = 'gpt-3.5-turbo-1106', iol: IOlog = None, tools = None, messages = None, target_dir:str='fixed', know_file="699.csv") -> None:
         """
         Initialize the AI object with empty lists of tool functions and default file for knowledge retrieval.
