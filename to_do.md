@@ -1,6 +1,9 @@
 # GPTESTER
 
-- automate tests    - just fix the code now
-- supply CVEs database into the knowledge base
+- [] automate tests    - just integrate the code now
+- [] stabilize codeql
+- [] add more languages for codeql
+- [] make nice UI for the results
 
-- modele otwarto-źródłowe
+
+- [] modele otwarto-źródłowe

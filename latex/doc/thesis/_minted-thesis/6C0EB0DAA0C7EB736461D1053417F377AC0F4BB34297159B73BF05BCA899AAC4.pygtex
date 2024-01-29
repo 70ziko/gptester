@@ -1,0 +1,63 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+
+\PYG{o}{\PYGZpc{}}\PYG{+w}{      }\PYG{k+kd}{public}\PYG{+w}{ }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{doFilter}\PYG{p}{(}\PYG{n}{ServletRequest}\PYG{+w}{ }\PYG{n}{request}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ServletResponse}\PYG{+w}{ }\PYG{n}{response}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{FilterChain}\PYG{+w}{ }\PYG{n}{chain}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{       }\PYG{p}{(...)}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{             }\PYG{n}{httpRequest}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{HttpServletRequest}\PYG{p}{)}\PYG{n}{request}\PYG{p}{;}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{             }\PYG{n}{logger}\PYG{p}{.}\PYG{n+na}{debug}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}doFilter url: \PYGZdq{}}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{httpRequest}\PYG{p}{.}\PYG{n+na}{getRequestURL}\PYG{p}{().}\PYG{n+na}{toString}\PYG{p}{());}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{             }\PYG{k+kt}{boolean}\PYG{+w}{ }\PYG{n}{isAuthenticated}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{authenticateUser}\PYG{p}{(}\PYG{n}{httpRequest}\PYG{p}{);}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{               }\PYG{o}{\PYGZca{}\PYGZca{}\PYGZca{}}\PYG{+w}{ }\PYG{l+m+mf}{1.5}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{invokes}\PYG{+w}{ }\PYG{n+nf}{authenticateUser}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{function}\PYG{+w}{ }\PYG{n}{shown}\PYG{+w}{ }\PYG{n}{below}\PYG{p}{)}
+
+\PYG{o}{\PYGZpc{}}\PYG{+w}{             }\PYG{n}{String}\PYG{+w}{ }\PYG{n}{samlLogoutRequest}\PYG{p}{;}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{             }\PYG{k}{if}\PYG{p}{(}\PYG{o}{!}\PYG{n}{isAuthenticated}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{               }\PYG{o}{\PYGZca{}\PYGZca{}\PYGZca{}}\PYG{+w}{ }\PYG{l+m+mf}{1.6}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{authenticateUser}\PYG{p}{()}\PYG{+w}{ }\PYG{n}{returns}\PYG{+w}{ }\PYG{k+kc}{false}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{we}\PYG{+w}{ }\PYG{n}{go}\PYG{+w}{ }\PYG{n}{into}\PYG{+w}{ }\PYG{k}{this}\PYG{+w}{ }\PYG{n}{branch}
+
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                 }\PYG{n}{samlLogoutRequest}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{request}\PYG{p}{.}\PYG{n+na}{getParameter}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}SAMLResponse\PYGZdq{}}\PYG{p}{);}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                 }\PYG{n}{logger}\PYG{p}{.}\PYG{n+na}{info}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}samlResponse\PYGZhy{}\PYGZhy{}\PYGZgt{}\PYGZdq{}}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{samlLogoutRequest}\PYG{p}{);}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                 }\PYG{k}{if}\PYG{p}{(}\PYG{n}{samlLogoutRequest}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                     }\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{handleSAMLReponse}\PYG{p}{(}\PYG{n}{request}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{response}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{chain}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{samlLogoutRequest}\PYG{p}{);}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                 }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{else}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                   }\PYG{o}{\PYGZca{}\PYGZca{}\PYGZca{}}\PYG{+w}{ }\PYG{l+m+mf}{1.7}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{there}\PYG{+w}{ }\PYG{n}{is}\PYG{+w}{ }\PYG{n}{no}\PYG{+w}{ }\PYG{n}{SAMLResponse}\PYG{+w}{ }\PYG{n}{HTTP}\PYG{+w}{ }\PYG{n}{parameter}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{we}\PYG{+w}{ }\PYG{n}{go}\PYG{+w}{ }\PYG{n}{into}\PYG{+w}{ }\PYG{k}{this}\PYG{+w}{ }\PYG{n}{branch}
+
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                     }\PYG{n}{HttpSession}\PYG{+w}{ }\PYG{n}{session}\PYG{p}{;}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                     }\PYG{n}{ProductAccess}\PYG{+w}{ }\PYG{n}{userBean}\PYG{p}{;}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                     }\PYG{n}{String}\PYG{+w}{ }\PYG{n}{requestedUri}\PYG{p}{;}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                     }\PYG{k}{if}\PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{isStarshipRequest}\PYG{p}{(}\PYG{n}{httpRequest}\PYG{p}{))}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                       }\PYG{o}{\PYGZca{}\PYGZca{}\PYGZca{}}\PYG{+w}{ }\PYG{l+m+mf}{1.8}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{checks}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{n+nf}{isStarshipRequest}\PYG{p}{()}\PYG{+w}{ }\PYG{n}{returns}\PYG{+w}{ }\PYG{n+nf}{true}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{function}\PYG{+w}{ }\PYG{n}{shown}\PYG{+w}{ }\PYG{n}{below}\PYG{p}{)}
+
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                         }\PYG{n}{session}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{httpRequest}\PYG{p}{.}\PYG{n+na}{getSession}\PYG{p}{(}\PYG{k+kc}{false}\PYG{p}{)}\PYG{o}{?}\PYG{n}{httpRequest}\PYG{p}{.}\PYG{n+na}{getSession}\PYG{p}{(}\PYG{k+kc}{false}\PYG{p}{):}\PYG{n}{httpRequest}\PYG{p}{.}\PYG{n+na}{getSession}\PYG{p}{(}\PYG{k+kc}{true}\PYG{p}{);}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                         }\PYG{n}{userBean}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{ProductAccess}\PYG{p}{)}\PYG{n}{session}\PYG{p}{.}\PYG{n+na}{getAttribute}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}USER\PYGZus{}IN\PYGZus{}SESSION\PYGZdq{}}\PYG{p}{);}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                         }\PYG{k}{if}\PYG{p}{(}\PYG{n}{userBean}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                           }\PYG{o}{\PYGZca{}\PYGZca{}\PYGZca{}}\PYG{+w}{ }\PYG{l+m+mf}{1.9}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{n}{there}\PYG{+w}{ }\PYG{n}{is}\PYG{+w}{ }\PYG{n}{no}\PYG{+w}{ }\PYG{n}{session}\PYG{+w}{ }\PYG{n}{server}\PYG{+w}{ }\PYG{n}{side}\PYG{+w}{ }\PYG{k}{for}\PYG{+w}{ }\PYG{k}{this}\PYG{+w}{ }\PYG{n}{request}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{follow}\PYG{+w}{ }\PYG{n}{into}\PYG{+w}{ }\PYG{k}{this}\PYG{+w}{ }\PYG{n}{branch}\PYG{p}{...}
+
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                             }\PYG{k}{try}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                 }\PYG{n}{userBean}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{ProductAccess}\PYG{p}{();}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                 }\PYG{n}{userBean}\PYG{p}{.}\PYG{n+na}{setCredentialId}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{);}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                 }\PYG{n}{userBean}\PYG{p}{.}\PYG{n+na}{setAdminPasswordReset}\PYG{p}{(}\PYG{k+kc}{true}\PYG{p}{);}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                 }\PYG{n}{userBean}\PYG{p}{.}\PYG{n+na}{setProductId}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}cloupia\PYGZus{}service\PYGZus{}portal\PYGZdq{}}\PYG{p}{);}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                 }\PYG{n}{userBean}\PYG{p}{.}\PYG{n+na}{setProfileId}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                 }\PYG{n}{userBean}\PYG{p}{.}\PYG{n+na}{setRestKey}\PYG{p}{(}\PYG{n}{httpRequest}\PYG{p}{.}\PYG{n+na}{getHeader}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}X\PYGZhy{}Starship\PYGZhy{}Request\PYGZhy{}Key\PYGZdq{}}\PYG{p}{));}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                 }\PYG{n}{userBean}\PYG{p}{.}\PYG{n+na}{setStarshipUserId}\PYG{p}{(}\PYG{n}{httpRequest}\PYG{p}{.}\PYG{n+na}{getHeader}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}X\PYGZhy{}Starship\PYGZhy{}UserName\PYGZhy{}Key\PYGZdq{}}\PYG{p}{));}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                 }\PYG{n}{userBean}\PYG{p}{.}\PYG{n+na}{setLoginName}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}admin\PYGZdq{}}\PYG{p}{);}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                   }\PYG{o}{\PYGZca{}\PYGZca{}\PYGZca{}}\PYG{+w}{ }\PYG{l+m+mf}{1.10}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{and}\PYG{+w}{ }\PYG{n}{create}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{k}{new}\PYG{+w}{ }\PYG{n}{session}\PYG{+w}{ }\PYG{n}{with}\PYG{+w}{ }\PYG{n}{the}\PYG{+w}{ }\PYG{n}{user}\PYG{+w}{ }\PYG{n}{as}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}admin\PYGZdq{}}\PYG{o}{!}
+
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                 }\PYG{n}{userBean}\PYG{p}{.}\PYG{n+na}{setStarshipSessionId}\PYG{p}{(}\PYG{n}{httpRequest}\PYG{p}{.}\PYG{n+na}{getHeader}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}X\PYGZhy{}Starship\PYGZhy{}UserSession\PYGZhy{}Key\PYGZdq{}}\PYG{p}{));}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                 }\PYG{n}{requestedUri}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{httpRequest}\PYG{p}{.}\PYG{n+na}{getHeader}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}X\PYGZhy{}Starship\PYGZhy{}UserRoles\PYGZhy{}Key\PYGZdq{}}\PYG{p}{);}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                 }\PYG{n}{userBean}\PYG{p}{.}\PYG{n+na}{setAccessLevel}\PYG{p}{(}\PYG{n}{requestedUri}\PYG{p}{);}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                 }\PYG{k}{if}\PYG{p}{(}\PYG{n}{requestedUri}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{k+kc}{null}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{requestedUri}\PYG{p}{.}\PYG{n+na}{equalsIgnoreCase}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}admin\PYGZdq{}}\PYG{p}{))}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                     }\PYG{n}{AuthenticationManager}\PYG{+w}{ }\PYG{n}{authmgr}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{AuthenticationManager}\PYG{p}{.}\PYG{n+na}{getInstance}\PYG{p}{();}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                     }\PYG{n}{userBean}\PYG{p}{.}\PYG{n+na}{setAccessLevel}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Admin\PYGZdq{}}\PYG{p}{);}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                     }\PYG{n}{authmgr}\PYG{p}{.}\PYG{n+na}{evaluateAllowedOperations}\PYG{p}{(}\PYG{n}{userBean}\PYG{p}{);}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                 }\PYG{p}{\PYGZcb{}}
+
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                 }\PYG{n}{session}\PYG{p}{.}\PYG{n+na}{setAttribute}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}USER\PYGZus{}IN\PYGZus{}SESSION\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{userBean}\PYG{p}{);}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                 }\PYG{n}{session}\PYG{p}{.}\PYG{n+na}{setAttribute}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}DEFAULT\PYGZus{}URL\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{STARSHIP\PYGZus{}DEFAULT\PYGZus{}URL}\PYG{p}{);}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                 }\PYG{n}{logger}\PYG{p}{.}\PYG{n+na}{info}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}userBean:\PYGZdq{}}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{userBean}\PYG{p}{.}\PYG{n+na}{getAccessLevel}\PYG{p}{());}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                             }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{catch}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Exception}\PYG{+w}{ }\PYG{n}{var12}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                                 }\PYG{n}{logger}\PYG{p}{.}\PYG{n+na}{info}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}username/password wrong for rest api access \PYGZhy{} \PYGZdq{}}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{var12}\PYG{p}{.}\PYG{n+na}{getMessage}\PYG{p}{());}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                             }\PYG{p}{\PYGZcb{}}
+
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                             }\PYG{n}{logger}\PYG{p}{.}\PYG{n+na}{info}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}userBean: \PYGZdq{}}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{userBean}\PYG{p}{.}\PYG{n+na}{getAccessLevel}\PYG{p}{());}
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                         }\PYG{p}{\PYGZcb{}}
+
+\PYG{o}{\PYGZpc{}}\PYG{+w}{                         }\PYG{n}{chain}\PYG{p}{.}\PYG{n+na}{doFilter}\PYG{p}{(}\PYG{n}{request}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{response}\PYG{p}{);}
+\end{Verbatim}

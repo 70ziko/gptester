@@ -540,6 +540,88 @@ Przedstawiony przypadek otrzymuje przeze mnie następujące oceny:
 
 Większość przykładów z tego zbioru to aplikacje webowe, dlatego przygotowanie środowiska testowego dla tych przykładów było bardziej skomplikowane. W takich przypadkach należało wykonać następujące kroki:
 
+\chapter{Identyfikacja i naprawa podatności aplikacji Damn Vulnerable NodeJS Application}
+
+\section{Wstęp}
+
+Celem eksperymentalnego badania było zbadanie możliwości narzędzia \texttt{gptester} w kontekście identyfikacji i naprawy podatności w aplikacji Damn Vulnerable NodeJS Application (DVNA). Aplikacja ta, zawierająca szereg celowo wprowadzonych podatności, stanowiła idealne środowisko do testowania i oceny skuteczności zaawansowanych modeli językowych w praktycznym zastosowaniu.
+
+\section{Przygotowanie środowiska}
+
+Przygotowanie środowiska testowego rozpoczęło się od sklonowania repozytorium DVNA i konfiguracji środowiska Docker, co pozwoliło na izolację środowiska testowego i zapewnienie powtarzalności testów. Następnie, aplikacja została poddana wstępnej ocenie bezpieczeństwa za pomocą dwóch renomowanych skanerów podatności: OWASP ZAP oraz Nessus Web Application Scan. Ta wstępna analiza pozwoliła na ustalenie bazowego stanu bezpieczeństwa aplikacji przed wprowadzeniem modyfikacji za pomocą \texttt{gptester}.
+\newpage
+\section{Identyfikacja podatności za pomocą skanerów}
+Przed przystąpieniem do naprawy podatności, aplikacja DVNA została poddana skanowaniu przy użyciu skanerów OWASP ZAP i Nessus. Wyniki tych skanowań zostały wykorzystane jako punkt odniesienia do oceny skuteczności narzędzia \texttt{gptester} w kontekście naprawy podatności.
+
+
+\subsection{OWASP ZAP}
+\label{subsec:owasp_zap}
+Skanowanie aplikacji DVNA przy użyciu OWASP ZAP wykazało obecność 14 podatności, w tym 2 krytyczne, 2 wysokiego ryzyka, 3 średniego ryzyka oraz 1 niskiego ryzyka. Poniżej przedstawiono listę zidentyfikowanych podatności wraz z ich ryzykiem i opisem.
+
+\begin{table}[H]
+  \begin{tabular}{llllll}
+    \multicolumn{2}{l}{} &
+      \multicolumn{4}{c}{Risk} \\ \cline{3-6} 
+    \multicolumn{2}{l|}{} &
+      \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}High\\ (= High)\end{tabular}} &
+      \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Medium\\ (\textgreater{}= Medium)\end{tabular}} &
+      \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Low\\ (\textgreater{}= Low)\end{tabular}} &
+      \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Informational\\ (\textgreater{}= Informational)\end{tabular}} \\ \cline{2-6} 
+    \multicolumn{1}{l|}{site} &
+      \multicolumn{1}{l|}{http://localhost:9090} &
+      \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}0\\ (0)\end{tabular}} &
+      \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}5\\ (5)\end{tabular}} &
+      \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}4\\ (9)\end{tabular}} &
+      \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}5\\ (14)\end{tabular}} \\ \cline{2-6} 
+    \end{tabular}   
+  \caption{Wyniki skanowania aplikacji DVNA przy użyciu skanera Nessus}
+  \label{tab:zap_before}
+  \end{table}
+
+\subsection{Nessus}
+\label{subsec:nessus}
+Skanowanie aplikacji DVNA przy użyciu Nessus wykazało obecność 21 podatności, w tym 2 średniego ryzyka, 2 niskiego ryzyka oraz 17 informacyjnych. Poniżej przedstawiono listę zidentyfikowanych podatności wraz z ich ryzykiem i opisem.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{img/nessus-dvna-before.png}
+  \caption{Wyniki skanowania aplikacji DVNA przy użyciu skanera Nessus}
+  \label{fig:nessus-dvna-before}
+\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{img/nessus-dvna-before2.png}
+  \caption{Wyniki skanowania aplikacji DVNA przy użyciu skanera Nessus}
+  \label{fig:nessus-dvna-before2}
+\end{figure}
+
+\section{Analiza statyczna i naprawa}
+
+Z wykorzystaniem narzędzia \texttt{gptester} przeprowadzono szczegółową analizę statyczną kodu źródłowego DVNA. Proces ten skupiał się na identyfikacji znanych podatności z listy OWASP Top 10 oraz sugerowaniu możliwych napraw. Po zakończeniu analizy, \texttt{gptester} wygenerował zestaw rekomendacji, które zostały zaimplementowane w kodzie źródłowym aplikacji w celu usunięcia zidentyfikowanych słabości.
+
+\begin{verbatim}
+  Found 77 files to scan
+  Tokens inside the directory: 22694
+\end{verbatim}
+
+\texttt{GPTester} znalazł 77 plików do przeskanowania, zawierających łącznie 22694 tokenów. 
+
+\section{Weryfikacja i ocena skuteczności}
+
+Po wprowadzeniu sugerowanych zmian, aplikacja DVNA została ponownie poddana skanowaniu przy użyciu skanerów OWASP ZAP i Nessus, aby ocenić skuteczność wprowadzonych modyfikacji. Wyniki tego ponownego skanowania zostały porównane z wynikami początkowymi, co pozwoliło na ocenę efektywności narzędzia \texttt{gptester} w kontekście naprawy podatności.
+
+\section{Wyniki i dyskusja}
+
+Analiza wyników wskazała na zauważalną poprawę bezpieczeństwa aplikacji DVNA po zastosowaniu napraw sugerowanych przez \texttt{gptester}. W większości przypadków narzędzie skutecznie zidentyfikowało podatności i zaproponowało adekwatne rozwiązania, które pozytywnie przyczyniły się do zmniejszenia ogólnego ryzyka bezpieczeństwa aplikacji.
+
+\subsection{Wyzwania i ograniczenia}
+
+Jednakże, nie wszystkie sugerowane zmiany były w pełni skuteczne lub odpowiednie dla specyfiki aplikacji DVNA. W niektórych przypadkach, wprowadzenie zmian wymagało dodatkowej analizy i dostosowania sugerowanych rozwiązań do kontekstu aplikacji. Ponadto, niektóre z bardziej złożonych podatności wymagały bardziej zaawansowanych metod naprawczych, co wykraczało poza możliwości automatycznej analizy statycznej.
+
+\section{Wnioski}
+
+Badanie potwierdziło potencjał wykorzystania narzędzia \texttt{gptester} wspieranego przez zaawansowane modele językowe w procesie identyfikacji i naprawy podatności w aplikacjach webowych. Mimo pewnych ograniczeń, narzędzie to stanowi wartościowe wsparcie w procesie zapewniania bezpieczeństwa aplikacji, szczególnie w kontekście szybkiego wykrywania i łagodzenia powszechnych podatności. Dalszy rozwój narzędzia, w tym lepsza integracja z kontekstem aplikacji i zaawansowane metody naprawcze, może znacznie zwiększyć jego skuteczność i przydatność w praktycznych zastosowaniach.
+
 \chapter{Badanie funkcjonalności na aplikacji webowej OWASP VulnerableApp}
 \label{sec:badania_na_aplikacji_webowej_owasp}
 
@@ -550,7 +632,7 @@ Aplikacja OWASP VulnerableApp została zaprojektowana z myślą o dostarczeniu p
 
 \section{Testowane rodzaje podatności}
 OWASP VulnerableApp umożliwia testowanie szerokiego zakresu podatności, w tym, ale nie ograniczając się do:
-
+\relax
 \begin{itemize}
     \item Podatności JWT
     \item Wstrzykiwanie poleceń (Command Injection)

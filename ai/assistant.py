@@ -13,13 +13,13 @@ CFG = Config()
 client = OpenAI()
 
 class Assistant():
-    
-    def __init__(self, role: str, name: str = "Assistant", model: str = 'gpt-3.5-turbo-1106', iol: IOlog = None, tools = None, messages = None, know_file="699.csv") -> None:
+    def __init__(self, role: str, name: str = "Assistant", model: str = 'gpt-3.5-turbo-1106', iol: IOlog = None, tools = None, messages = None, target_dir:str='fixed', know_file="699.csv") -> None:
         """
-        Initialize the AI object with empty lists of functions, and performance evaluations.
+        Initialize the AI object with empty lists of tool functions and default file for knowledge retrieval.
         """
-        self.name = name
         self.iol = iol
+        self.target_dir = target_dir
+        self.name = name
         self.instructions = role
         self.file_ids = []
         if CFG.retrieval: self.file_ids.append(self.upload_file(know_file).id)
@@ -31,19 +31,17 @@ class Assistant():
             # seed=dbs.prompts['seed']
             # response_format='json_object',
             file_ids=self.file_ids,
-            tools=tools if tools else [{"type": "code_interpreter"}, {"type": "retrieval"}]    # przerzucić do argumentów
+            tools=tools if tools else [{"type": "code_interpreter"}, {"type": "retrieval"}]  
         )
         self.thread = client.beta.threads.create(messages = messages)
 
 
-    # @staticmethod
     def start(self, system: str, user: str) -> list[dict[str, str]]:
         user_msg = self.fuser(user)
         self.instructions = self.fsystem(system)
 
         return self.next([user_msg])
     
-    # @staticmethod
     def fassistant(self, msg: str) -> dict[str, str]:
         thread_message = client.beta.threads.messages.create(
             self.thread.id,
@@ -52,11 +50,9 @@ class Assistant():
             )
         return thread_message
     
-    # @staticmethod
     def fsystem(self, msg: str) -> dict[str, str]:
         self.assistant.instructions = msg
     
-    # @staticmethod
     def fuser(self, msg: str) -> dict[str, str]:
         thread_message = client.beta.threads.messages.create(
             self.thread.id,
@@ -81,7 +77,7 @@ class Assistant():
             else:
                 return messages
 
-    async def next(self, messages: list[dict[str, str]]=None, prompt=None, directory: str = 'fixes'):
+    async def next(self, messages: list[dict[str, str]]=None, prompt=None, scan_dir: str = 'fixes'):
         if messages:
             self.messages_to_thread(messages)
             self.iol.log("Messages added to the thread.", color="bright_black", verbose_only=True)
@@ -100,13 +96,14 @@ class Assistant():
             )
             self.iol.log(f"Run created with ID: {run.id}", color="bright_black", verbose_only=True)
 
-            # Polling mechanism to see if runStatus is completed
             stop_signal = asyncio.Event()
-            spinner_task = asyncio.create_task(spinner(" THINKING...", stop_signal))
+            asyncio.create_task(spinner(" THINKING...", stop_signal))
+
+            # Polling mechanism to see if runStatus is completed
             run_status = client.beta.threads.runs.retrieve(thread_id=self.thread.id, run_id=run.id)
             while run_status.status != "completed":
                 # self.iol.log(f"run status: {run_status.status}", color="bright_black", verbose_only=True)
-                await asyncio.sleep(2)  # Sleep for 2 seconds before polling again
+                await asyncio.sleep(2)
                 run_status = client.beta.threads.runs.retrieve(thread_id=self.thread.id, run_id=run.id)
 
                 tool_outputs = []
@@ -119,19 +116,17 @@ class Assistant():
                         self.iol.log(f"Processing tool call: {name}", color="bright_black", verbose_only=True)
                         if "filename" in arguments and self.name == "debug_agent": 
                             filename = os.path.basename(arguments["filename"])
-                            timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-                            arguments["filename"] = os.path.join(directory, 'GPTester', f'fixed_{timestamp}', filename)
+                            arguments["filename"] = os.path.join(scan_dir, self.target_dir, filename)
+                        elif "filename" in arguments and self.name == "test_agent":
+                            filename = os.path.basename(arguments["filename"])
+                            arguments["filename"] = os.path.join(scan_dir, "tests", filename)
 
-                        # Check if the function exists in the tools module
                         if hasattr(tools, name):
                             function_to_call = getattr(tools, name)
                             response = await function_to_call(**arguments)
 
-                            # Collect tool outputs
                             tool_outputs.append({"tool_call_id": tool_call.id, "output": response})
 
-
-                # Submit tool outputs back
                 if tool_outputs:
                     client.beta.threads.runs.submit_tool_outputs(
                         thread_id=self.thread.id,
@@ -152,28 +147,24 @@ class Assistant():
             #     self.iol.log(f"{response.content[0].text.value} \n", verbose_only=True)
 
         except TypeError:
-            self.iol.log(f"TypeError: run[-1][\"content\"]: {run[-1]['content']}")
-
+            self.iol.log(f"TypeError: agent: {self.name}, run: {run} ", color="red")
+        
+        self.iol.log(f"Agent {self.name} finished on Run ID: {run.id}", color="bright_black", verbose_only=True)
         return messages
     
     def replace_annotations(self, messages: list[dict[str, str]]) -> list[dict[str, str]]:
-        # Retrieve the message object
         message = client.beta.threads.messages.retrieve(
         thread_id=self.trhead.id,
         message_id="..."
         )
 
-        # Extract the message content
         message_content = message.content[0].text
         annotations = message_content.annotations
         citations = []
 
-        # Iterate over the annotations and add footnotes
         for index, annotation in enumerate(annotations):
-            # Replace the text with a footnote
             message_content.value = message_content.value.replace(annotation.text, f' [{index}]')
 
-            # Gather citations based on annotation attributes
             if (file_citation := getattr(annotation, 'file_citation', None)):
                 cited_file = client.files.retrieve(file_citation.file_id)
                 citations.append(f'[{index}] {file_citation.quote} from {cited_file.filename}')
@@ -182,6 +173,5 @@ class Assistant():
                 citations.append(f'[{index}] Click <here> to download {cited_file.filename}')
                 # Note: File download functionality not implemented above for brevity
 
-        # Add footnotes to the end of the message before displaying to user
         message_content.value += '\n' + '\n'.join(citations)
     

@@ -8,7 +8,7 @@ CFG = Config()
 
 dbs = create_dbs()
 
-async def debug_agent(input: str, iol: IOlog = None, model: str = 'gpt-4-1106-preview', directory: str = 'fixes', file_to_know: str = '699.csv') -> str:
+async def debug_agent(input: str, scan_dir: str, iol: IOlog = None, model: str = 'gpt-4-1106-preview', fixed_dir:str='fixed', file_to_know: str = '699.csv') -> str:
     """An agent used to analyze the project """
 
     write_file_json = {
@@ -30,14 +30,14 @@ async def debug_agent(input: str, iol: IOlog = None, model: str = 'gpt-4-1106-pr
     ]
     if CFG.retrieval: tools.append({"type": "retrieval"})
 
-    ai = Agent(role=f"{dbs.prompts['debug']}", name='debug_agent', iol = iol, tools=tools, model=model, know_file=file_to_know)
+    ai = Agent(role=f"{dbs.prompts['debug']}", name='debug_agent', iol = iol, tools=tools, model=model, target_dir=fixed_dir, know_file=file_to_know)
     
     user = ai.fuser(msg=f"""The project codebase:\n{input}. 
 List all the vulnerabilities present in the codebase, when finished write their number. 
 Then output possible solutions to fix these vulnerabilities.""")
     
     messages = [user]
-    return await ai.next(messages, directory=directory)
+    return await ai.next(messages, scan_dir=scan_dir)
 
 async def test_agent(input: str, test: str, iol: IOlog = None, model: str = 'gpt-4-1106-preview', directory: str = 'tests') -> str:
     """An agent used to test the supplied project
@@ -92,4 +92,4 @@ async def test_agent(input: str, test: str, iol: IOlog = None, model: str = 'gpt
                     Save them to a file and then run them. Use provided functions to do so.""")
     
     messages = [user]
-    return await ai.next(messages, directory=directory)
+    return await ai.next(messages, scan_dir=directory)

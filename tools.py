@@ -2,7 +2,7 @@ import os
 from utils.io import IOlog
 from utils.tests_runner import TestRunner, RunCppTestsCommand, RunJavaTestsCommand, RunPythonTestsCommand, RunRubyTestsCommand, RunPhpTestsCommand
 
-iol = IOlog()
+iol = IOlog() # singleton
 
 async def write_file(filename, content):
     """
@@ -71,6 +71,7 @@ def run_tests(language, executable=None):
         return {"status": "success", "output": "Tests executed for " + language + " project with " + executable}
     else:
         return {"status": "error", "output": "Unsupported language"}
+
 
 # JSONs for openai tool calling
 
