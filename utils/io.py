@@ -58,8 +58,11 @@ class IOlog(metaclass=Singleton):
         if verbose_only and not self.verbose:
             return
         timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        formatted_message = f"{timestamp}: {message}" if timestamp else message
-
+        if timestamp:
+            formatted_message = f"{timestamp}: {message}"
+        else:
+            formatted_message = message
+            
         color_code = self.COLOR_CODES.get(color)
         if color_code:
             print(f"\033[{color_code}m{formatted_message}\033[0m")

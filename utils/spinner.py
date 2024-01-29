@@ -7,4 +7,4 @@ async def spinner(label: str, stop_signal: asyncio.Event):
     while not stop_signal.is_set():
         print(f'{next(symbols)} {label}')
         await asyncio.sleep(0.1)
-        print('\x1b[1A\x1b[2K', end='')  # Move up one line and clear line
+    print('\r\x1b[2K', end='', flush=True)  # ANSI excape sequence to clear the current line

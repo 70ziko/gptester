@@ -27,65 +27,65 @@
 \contentsline {subsection}{\numberline {3.3.1\relax .\enspace }Środowisko programistyczne i wymagania}{16}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2\relax .\enspace }Uruchomienie programu}{16}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3\relax .\enspace }Funkcje programu}{17}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3.4\relax .\enspace }Integracja z CodeQL}{18}{section.3.4}%
+\contentsline {section}{\numberline {3.4\relax .\enspace }Integracja z CodeQL}{19}{section.3.4}%
 \contentsline {section}{\numberline {3.5\relax .\enspace }Modele językowe}{19}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1\relax .\enspace }Wykorzystanie Modeli Językowych}{19}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2\relax .\enspace }Dostępne Modele}{19}{subsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.5.3\relax .\enspace }Inżynieria Poleceń (Promptów)}{19}{subsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.5.4\relax .\enspace }Integracja z API OpenAI}{20}{subsection.3.5.4}%
+\contentsline {subsection}{\numberline {3.5.2\relax .\enspace }Dostępne Modele}{20}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3\relax .\enspace }Inżynieria Poleceń (Promptów)}{20}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4\relax .\enspace }Integracja z API OpenAI}{21}{subsection.3.5.4}%
 \contentsline {subsection}{\numberline {3.5.5\relax .\enspace }Implementacja w projekcie}{22}{subsection.3.5.5}%
-\contentsline {section}{\numberline {3.6\relax .\enspace }Definicja Agenta AI}{24}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1\relax .\enspace }Cechy Charakterystyczne}{24}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2\relax .\enspace }Zastosowanie w \textbf {gptester}}{24}{subsection.3.6.2}%
-\contentsline {section}{\numberline {3.7\relax .\enspace }Konfiguracja Agentów AI}{25}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1\relax .\enspace }Parametry Konfiguracyjne}{25}{subsection.3.7.1}%
-\contentsline {subsection}{\numberline {3.7.2\relax .\enspace }Narzędzia i Funkcje}{25}{subsection.3.7.2}%
-\contentsline {section}{\numberline {3.8\relax .\enspace }Rozwój i plany na przyszłość}{26}{section.3.8}%
-\contentsline {subsection}{\numberline {3.8.1\relax .\enspace }Obecne osiągnięcia}{26}{subsection.3.8.1}%
-\contentsline {subsection}{\numberline {3.8.2\relax .\enspace }Planowane rozszerzenia}{26}{subsection.3.8.2}%
-\contentsline {section}{\numberline {3.9\relax .\enspace }Podsumowanie}{27}{section.3.9}%
-\contentsline {chapter}{\numberline {4\relax .\enspace }Zbiory danych i ich przygotowanie}{28}{chapter.4}%
-\contentsline {section}{\numberline {4.1\relax .\enspace }Przegląd wykorzystanych zbiorów danych}{28}{section.4.1}%
-\contentsline {section}{\numberline {4.2\relax .\enspace }Proces przygotowania danych}{28}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1\relax .\enspace }snoopysecurity/Vulnerable-Code-Snippets}{29}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2\relax .\enspace }OWASP VulnerableApp}{29}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3\relax .\enspace }Damn Vulnerable NodeJS Application (DVNA)}{29}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3\relax .\enspace }Wyzwania i ograniczenia}{29}{section.4.3}%
-\contentsline {section}{\numberline {4.4\relax .\enspace }Podsumowanie}{30}{section.4.4}%
-\contentsline {chapter}{\numberline {5\relax .\enspace }Badania eksperymentalne}{31}{chapter.5}%
-\contentsline {section}{\numberline {5.1\relax .\enspace }Metodyka badań}{31}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1\relax .\enspace }Procedura testowa}{31}{subsection.5.1.1}%
-\contentsline {section}{\numberline {5.2\relax .\enspace }Wyniki działania programu - przykład}{32}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1\relax .\enspace }Opis przedstawionego wyniku}{33}{subsection.5.2.1}%
-\contentsline {section}{\numberline {5.3\relax .\enspace }Badania na zbiorze \textit {snoopysecurity/Vulnerable-Code-Snippets}}{34}{section.5.3}%
-\contentsline {section}{\numberline {5.4\relax .\enspace }Studium przypadku: Analiza kodu podatnego na błędy typu "Out of Bounds" w zbiorze snoopysecurity/Vulnerable-Code-Snippets}{35}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1\relax .\enspace }Dane wejściowe}{35}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2\relax .\enspace }Wynik w formacie diff - może zmienić na wynik finalny, ponieważ nie ma kolorowych linii dla +/-}{37}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3\relax .\enspace }Przygotowanie środowiska testowego}{38}{subsection.5.4.3}%
-\contentsline {subsection}{\numberline {5.4.4\relax .\enspace }Przeprowadzenie testów funkcjonalnych}{38}{subsection.5.4.4}%
-\contentsline {subsection}{\numberline {5.4.5\relax .\enspace }Interpretacja wyników}{40}{subsection.5.4.5}%
-\contentsline {section}{\numberline {5.5\relax .\enspace }Studium przypadku: Analiza kodu podatnego na błędy typu "File Inclusion" - skrawki kodu PHP, będące częścią aplikacji}{41}{section.5.5}%
-\contentsline {chapter}{\numberline {6\relax .\enspace }Identyfikacja i naprawa podatności aplikacji Damn Vulnerable NodeJS Application}{42}{chapter.6}%
-\contentsline {section}{\numberline {6.1\relax .\enspace }Wstęp}{42}{section.6.1}%
-\contentsline {section}{\numberline {6.2\relax .\enspace }Przygotowanie środowiska}{42}{section.6.2}%
-\contentsline {section}{\numberline {6.3\relax .\enspace }Identyfikacja podatności za pomocą skanerów}{43}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1\relax .\enspace }OWASP ZAP}{43}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2\relax .\enspace }Nessus}{43}{subsection.6.3.2}%
-\contentsline {section}{\numberline {6.4\relax .\enspace }Analiza statyczna i naprawa}{45}{section.6.4}%
-\contentsline {section}{\numberline {6.5\relax .\enspace }Weryfikacja i ocena skuteczności}{45}{section.6.5}%
-\contentsline {section}{\numberline {6.6\relax .\enspace }Wyniki i dyskusja}{45}{section.6.6}%
-\contentsline {subsection}{\numberline {6.6.1\relax .\enspace }Wyzwania i ograniczenia}{46}{subsection.6.6.1}%
-\contentsline {section}{\numberline {6.7\relax .\enspace }Wnioski}{46}{section.6.7}%
-\contentsline {chapter}{\numberline {7\relax .\enspace }Badanie funkcjonalności na aplikacji webowej OWASP VulnerableApp}{47}{chapter.7}%
-\contentsline {section}{\numberline {7.1\relax .\enspace }Charakterystyka aplikacji OWASP VulnerableApp}{47}{section.7.1}%
-\contentsline {section}{\numberline {7.2\relax .\enspace }Testowane rodzaje podatności}{47}{section.7.2}%
-\contentsline {section}{\numberline {7.3\relax .\enspace }Zawartość znajdująca się w repozytorium}{48}{section.7.3}%
-\contentsline {section}{\numberline {7.4\relax .\enspace }Procedura przeprowadzenia testów}{48}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1\relax .\enspace }Oczekiwane rezultaty}{49}{subsection.7.4.1}%
-\contentsline {section}{\numberline {7.5\relax .\enspace }Wnioski i dalsze kierunki badań}{49}{section.7.5}%
-\contentsline {section}{\numberline {7.6\relax .\enspace }Wnioski}{49}{section.7.6}%
-\contentsline {chapter}{Podsumowanie}{50}{chapter*.21}%
-\contentsline {chapter}{Bibliografia}{51}{chapter*.22}%
-\contentsline {chapter}{Spis listingów}{52}{chapter*.23}%
-\contentsline {chapter}{Dodatki}{53}{section*.24}%
-\contentsline {chapter}{\numberline {A\relax .\enspace }Dodatek 1}{54}{appendix.A}%
+\contentsline {section}{\numberline {3.6\relax .\enspace }Definicja Agenta AI}{25}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1\relax .\enspace }Cechy Charakterystyczne}{25}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2\relax .\enspace }Zastosowanie w \textbf {gptester}}{25}{subsection.3.6.2}%
+\contentsline {section}{\numberline {3.7\relax .\enspace }Konfiguracja Agentów AI}{26}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1\relax .\enspace }Parametry Konfiguracyjne}{26}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2\relax .\enspace }Narzędzia i Funkcje}{26}{subsection.3.7.2}%
+\contentsline {section}{\numberline {3.8\relax .\enspace }Rozwój i plany na przyszłość}{27}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1\relax .\enspace }Obecne osiągnięcia}{27}{subsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.8.2\relax .\enspace }Planowane rozszerzenia}{27}{subsection.3.8.2}%
+\contentsline {section}{\numberline {3.9\relax .\enspace }Podsumowanie}{28}{section.3.9}%
+\contentsline {chapter}{\numberline {4\relax .\enspace }Zbiory danych i ich przygotowanie}{29}{chapter.4}%
+\contentsline {section}{\numberline {4.1\relax .\enspace }Przegląd wykorzystanych zbiorów danych}{29}{section.4.1}%
+\contentsline {section}{\numberline {4.2\relax .\enspace }Proces przygotowania danych}{29}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1\relax .\enspace }snoopysecurity/Vulnerable-Code-Snippets}{30}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2\relax .\enspace }OWASP VulnerableApp}{30}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3\relax .\enspace }Damn Vulnerable NodeJS Application (DVNA)}{30}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3\relax .\enspace }Wyzwania i ograniczenia}{30}{section.4.3}%
+\contentsline {section}{\numberline {4.4\relax .\enspace }Podsumowanie}{31}{section.4.4}%
+\contentsline {chapter}{\numberline {5\relax .\enspace }Badania eksperymentalne}{32}{chapter.5}%
+\contentsline {section}{\numberline {5.1\relax .\enspace }Metodyka badań}{32}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1\relax .\enspace }Procedura testowa}{32}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2\relax .\enspace }Wyniki działania programu - przykład}{33}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1\relax .\enspace }Opis przedstawionego wyniku}{34}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3\relax .\enspace }Badania na zbiorze \textit {snoopysecurity/Vulnerable-Code-Snippets}}{35}{section.5.3}%
+\contentsline {section}{\numberline {5.4\relax .\enspace }Studium przypadku: Analiza kodu podatnego na błędy typu "Out of Bounds" w zbiorze snoopysecurity/Vulnerable-Code-Snippets}{36}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1\relax .\enspace }Dane wejściowe}{36}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2\relax .\enspace }Wynik w formacie diff - może zmienić na wynik finalny, ponieważ nie ma kolorowych linii dla +/-}{38}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3\relax .\enspace }Przygotowanie środowiska testowego}{39}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4\relax .\enspace }Przeprowadzenie testów funkcjonalnych}{39}{subsection.5.4.4}%
+\contentsline {subsection}{\numberline {5.4.5\relax .\enspace }Interpretacja wyników}{41}{subsection.5.4.5}%
+\contentsline {section}{\numberline {5.5\relax .\enspace }Studium przypadku: Analiza kodu podatnego na błędy typu "File Inclusion" - skrawki kodu PHP, będące częścią aplikacji}{42}{section.5.5}%
+\contentsline {chapter}{\numberline {6\relax .\enspace }Identyfikacja i naprawa podatności aplikacji Damn Vulnerable NodeJS Application}{43}{chapter.6}%
+\contentsline {section}{\numberline {6.1\relax .\enspace }Wstęp}{43}{section.6.1}%
+\contentsline {section}{\numberline {6.2\relax .\enspace }Przygotowanie środowiska}{43}{section.6.2}%
+\contentsline {section}{\numberline {6.3\relax .\enspace }Identyfikacja podatności za pomocą skanerów}{44}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1\relax .\enspace }OWASP ZAP}{44}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2\relax .\enspace }Nessus}{44}{subsection.6.3.2}%
+\contentsline {section}{\numberline {6.4\relax .\enspace }Analiza statyczna i naprawa}{46}{section.6.4}%
+\contentsline {section}{\numberline {6.5\relax .\enspace }Weryfikacja i ocena skuteczności}{46}{section.6.5}%
+\contentsline {section}{\numberline {6.6\relax .\enspace }Wyniki i dyskusja}{46}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1\relax .\enspace }Wyzwania i ograniczenia}{47}{subsection.6.6.1}%
+\contentsline {section}{\numberline {6.7\relax .\enspace }Wnioski}{47}{section.6.7}%
+\contentsline {chapter}{\numberline {7\relax .\enspace }Badanie funkcjonalności na aplikacji webowej OWASP VulnerableApp}{48}{chapter.7}%
+\contentsline {section}{\numberline {7.1\relax .\enspace }Charakterystyka aplikacji OWASP VulnerableApp}{48}{section.7.1}%
+\contentsline {section}{\numberline {7.2\relax .\enspace }Testowane rodzaje podatności}{48}{section.7.2}%
+\contentsline {section}{\numberline {7.3\relax .\enspace }Zawartość znajdująca się w repozytorium}{49}{section.7.3}%
+\contentsline {section}{\numberline {7.4\relax .\enspace }Procedura przeprowadzenia testów}{49}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1\relax .\enspace }Oczekiwane rezultaty}{50}{subsection.7.4.1}%
+\contentsline {section}{\numberline {7.5\relax .\enspace }Wnioski i dalsze kierunki badań}{50}{section.7.5}%
+\contentsline {section}{\numberline {7.6\relax .\enspace }Wnioski}{50}{section.7.6}%
+\contentsline {chapter}{Podsumowanie}{51}{chapter*.22}%
+\contentsline {chapter}{Bibliografia}{52}{chapter*.23}%
+\contentsline {chapter}{Spis listingów}{53}{chapter*.24}%
+\contentsline {chapter}{Dodatki}{54}{section*.25}%
+\contentsline {chapter}{\numberline {A\relax .\enspace }Dodatek 1}{55}{appendix.A}%

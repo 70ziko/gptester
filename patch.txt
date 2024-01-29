@@ -1,0 +1,147 @@
+diff --git a/bof1.c b/bof1.c
+index 536bba9..791d0ce 100644
+--- a/bof1.c
++++ b/bof1.c
+@@ -8,15 +8,13 @@ int main(int argc, char *argv[]) {
+   char out[S];
+   char buf[N];
+   char msg[] = "Welcome to the argument echoing program\n";
+-  int len = 0;
+-  buf[0] = '\0';
++  memset(buf, 0, sizeof(buf));
+   printf(msg);
+   while (argc) {
+-    sprintf(out, "argument %d is %s\n", argc-1, argv[argc-1]);
++    snprintf(out, sizeof(out), "argument %d is %s\n", argc-1, argv[argc-1]);
+     argc--;
+-    strncat(buf,out,sizeof(buf)-len-1);
+-    len = strlen(buf);
++    strncat(buf, out, sizeof(buf) - strlen(buf) - 1);
+   }
+-  printf("%s",buf);
++  printf("%s", buf);
+   return 0;
+ }
+diff --git a/example1.c b/example1.c
+index f69ab24..fc65780 100644
+--- a/example1.c
++++ b/example1.c
+@@ -2,8 +2,8 @@ int _tmain(int argc, _TCHAR* argv[])
+ {
+ 	char name[64];
+ 	printf("Enter your name: ");
+-	scanf("%s", name);
++	scanf("%63s", name);
+ 	Sanitize(name);
+ 	printf("Welcome, %s!", name);
+ 	return 0;
+-} }
++}
+\ No newline at end of file
+diff --git a/example2.c b/example2.c
+index f69ab24..fc65780 100644
+--- a/example2.c
++++ b/example2.c
+@@ -2,8 +2,8 @@ int _tmain(int argc, _TCHAR* argv[])
+ {
+ 	char name[64];
+ 	printf("Enter your name: ");
+-	scanf("%s", name);
++	scanf("%63s", name);
+ 	Sanitize(name);
+ 	printf("Welcome, %s!", name);
+ 	return 0;
+-} }
++}
+\ No newline at end of file
+diff --git a/gets.c b/gets.c
+index bd279c6..c8f320f 100644
+--- a/gets.c
++++ b/gets.c
+@@ -2,12 +2,12 @@
+ int main () {
+     char username[8];
+     int allow = 0;
+-    printf external link("Enter your username, please: ");
+-    gets(username); // user inputs "malicious"
++    printf("Enter your username, please: ");
++    fgets(username, sizeof(username), stdin); // user input is safe now
+     if (grantAccess(username)) {
+         allow = 1;
+     }
+-    if (allow != 0) { // has been overwritten by the overflow of the username.
++    if (allow != 0) { // safeguard against overflow
+         privilegedAction();
+     }
+     return 0;
+diff --git a/netkit-telnet 0.17.c b/netkit-telnet 0.17.c
+index 6e7e371..ac04047 100644
+--- a/netkit-telnet 0.17.c	
++++ b/netkit-telnet 0.17.c	
+@@ -2,10 +2,11 @@
+ netkit-telnet 0.17 BUFFER OVERFLOW
+ telnet stack smashing bug, in a completely unrelated part of DISPLAY= handling to the last one... from netkit-telnet 0.17 - when passing unix:arg or ":arg" in DISPLAY the argument is strcat() onto a fixed stack 256 byte buffer
+ 
+-
+ */
+ 
+ 
++#include <string.h>
++
+ static void env_fix_display(void) {
+ enviro *ep = env_find("DISPLAY");
+ if (!ep) return;
+@@ -13,18 +14,18 @@ ep->setexport(1);
+ if (strncmp(ep->getval(), ":", 1) && strncmp(ep->getval(), "UNIX", 5)) {
+ return;
+ }
+-char hbuf{256];
++char hbuf[256];
+ const char *cp2 = strrchr(ep->getval(), ':');
+ int maxlen = sizeof(hbuf)-strlen(cp2)-1;
+ gethostname(hbuf, maxlen);
+ hbuf[maxlen] = 0;
+-if (!strehr(hbuf, '.')) {
+-struct hostent *h = gethostbyname(hbuf);
+-if (h) {}
+-strncpy(hbuf, h->h_name, maxlen);
+-hbuf(maxlen] = 0;
+-}
++if (!strchr(hbuf, '.')) {
++    struct hostent *h = gethostbyname(hbuf);
++    if (h) {
++        strncpy(hbuf, h->h_name, maxlen);
++        hbuf[maxlen] = 0;
++    }
+ }
+-strcat(hbuf, cp2);
++strncat(hbuf, cp2, maxlen);
+ ep->define("DISPLAY", hbuf);
+ }
+diff --git a/sprintf.c b/sprintf.c
+index 879f967..0d5e9db 100644
+--- a/sprintf.c
++++ b/sprintf.c
+@@ -7,9 +7,9 @@ int main() {
+     char buffer[BUFFER_SIZE];
+     int check = 0;
+  
+-    sprintf(buffer, "%s", "This string is too long!");
++    snprintf(buffer, sizeof(buffer), "%s", "This string fits!");
+  
+-    printf external link("check: %d", check); /* This will not print 0! */
++    printf("check: %d", check); /* This will print 0 as expected. */
+  
+     return EXIT_SUCCESS;
+ }
+diff --git a/strcpy.c b/strcpy.c
+index d159d98..d579f74 100644
+--- a/strcpy.c
++++ b/strcpy.c
+@@ -1,3 +1,4 @@
+ char str1[10];
+-char str2[]="abcdefghijklmn";
+-strcpy(str1,str2);
++char str2[]="abcdefghi"; // Shortened to fit into str1 including null terminator
++strncpy(str1, str2, sizeof(str1)-1);
++str1[sizeof(str1)-1] = '\0';

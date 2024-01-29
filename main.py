@@ -31,11 +31,11 @@ parser.add_argument('-m', '--model', help='Choose the LLM model for code analysi
 parser.add_argument('-r', '--retrieval', help='Turn on Retrieval Augmented Generation for code analysis, default: False\n', action='store_true', default=False)
 parser.add_argument('-f', '--file-to-know', help='Point to a file to be uploaded to the knowledge base for retrieval\n default: "699.csv" - CVE database in csv \n!CURRENT VERSION SUPPORTS ONE FILE!\n', default="699.csv")
 parser.add_argument('-i', '--ignore', help='Provide a path to a .gitignore file to ignore files from the scan, \na typical lists of files will be ignored by default\n')
-parser.add_argument('-p', '--patch-file', help='Provide a path for the generated patch file\n default: "{your_project_dir}/GPTested/{timestamp}_patch.diff"\n', default=f"GPTested/{timestamp}_patch.diff")
-parser.add_argument('-o', '--output', help='Output the results to a specified directory\n default: "{your_project_dir}/GPTested/raports/{name_of_project_folder}_{timestamp}_raport.md"\n')
-parser.add_argument('-t', '--tests', help='Provide a path to functional tests to run on the project\n if not supplied or found in the workspace directory, the tests will be generated or skipped\n')
-parser.add_argument('-c', '--codeql', help='!IN TESTING!NOT STABLE! Use codeql to enhance the scan\n REQUIRED to install CodeQL-CLI console tool\n', action='store_true', default=False)
-parser.add_argument('--command', help='Provide a build command to run the project for codeql\n if no cmake or similiar file present in the project root directory, default: "make"\n', default="make")
+parser.add_argument('-p', '--patch-file', help='Provide a path for the generated patch file \ndefault: "{your_project_dir}/GPTested/{timestamp}_patch.diff"\n', default=f"GPTested/{timestamp}_patch.diff")
+parser.add_argument('-o', '--output', help='Output the results to a specified directory\n')
+parser.add_argument('-t', '--tests', help='Provide a path to functional tests to run on the project \nif you want to generate tests provide a prompt for the LLM like "generate"\n')
+parser.add_argument('-c', '--codeql', help='!IN TESTING!NOT STABLE! Use codeql to enhance the scan \nREQUIRED to install CodeQL-CLI console tool\n', action='store_true', default=False)
+parser.add_argument('--command', help='Provide a build command to run the project for codeql if no configuration file, \nlike cmake present in the project root directory, default: "make"\n', default="make")
 parser.add_argument('--language', help='Provide a programming language of the project for codeql, default: "cpp"\n', default="cpp")
 
 
@@ -100,7 +100,6 @@ async def retry_task(coroutine_func, *args, max_retries=CFG.restart_limit, delay
                 raise
 
 
-
 async def main():
     fixed_dir = f'GPTested/fixed_{timestamp}'
     
@@ -109,8 +108,7 @@ async def main():
     iol.log(f"Beginning scan for {args.directory}", color="pink")
 
     ignore_content = open(args.ignore, 'r').read() if args.ignore else '.gitignore'
-    dir_content = walk_directory(args.directory, ignore_content)    # excluding directories starting with 'fixed' and other typical .gitignore files
-                                                    # in future it will be possible to point to a custom .gitignore file
+    dir_content = walk_directory(args.directory, ignore_content)    
 
     iol.log(f"Found {len(dir_content)} files to scan", color="cyan", verbose_only=False)
     iol.log(f'Tokens inside the directory: {num_tokens_from_string(dir_content)}', color='bright_cyan')
@@ -122,7 +120,7 @@ async def main():
         # run_codeql_scan(args.directory, args.language, args.command)
 
     chunks = split_content(dir_content, CFG.token_limit)                                # Assistant API ogranicza liczbę ZNAKÓW do 32k XD! 
-    iol.log(f"Splitting the content into {len(chunks)} chunks", color="bright_cyan")    # więc nie ma sensu liczyć tokenów XDDDD
+    iol.log(f"Splitting the content into {len(chunks)} chunks", color="bright_cyan")    # więc nie ma sensu liczyć tokenów XDD
     
     await run_agents(args, iol, chunks, fixed_dir)
 

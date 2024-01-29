@@ -287,6 +287,7 @@ def walk_directory(directory, append_ignore:str=None):
     return code_contents
 
 def split_content(dir_content, max_tokens):
+    """Split directory content into chunks of max_tokens"""
     chunks = []
     chunk = {}
     current_tokens = 0
@@ -308,6 +309,7 @@ def split_content(dir_content, max_tokens):
     return chunks
 
 def split_content_into_chunks(content, max_tokens):
+    "split one file if exceeds the token limit"
     words = content.split(' ')
     chunks = []
     current_chunk = []

@@ -31,7 +31,7 @@ Praktyczną funkcjonalność zapewnia wykorzystanie metod git, takich jak tworze
     \caption{dane wejściowe w schemacie blokowym}
     \label{fig:przyciety_obrazek}
 \end{figure}
-Proces rozpoczyna się od \textcolor{red}{oryginalnego kodu z błędami}. Następnie jeśli użytkownik dostarczył wystarczająco danych dla CodeQL zostanie ono wykorzystane do wstępnej analizy, a dane wynikowe zostaną wykorzystane do wzbogacenia poleceń(promptów). 
+Proces rozpoczyna się od dostarczenia \texttt{oryginalnego kodu z błędami}. Następnie jeśli użytkownik przygotował środowisko dla CodeQL zostanie ono wykorzystane do wstępnej analizy, a dane wynikowe zostaną wykorzystane do wzbogacenia poleceń(promptów). 
 W przeciwnym wypadku polecenie(prompt) zostanie skreowany na podstawie danych posiadanych. 
 
 \subsubsection{Generacja testów funkcjonalnych}
@@ -44,8 +44,8 @@ W przeciwnym wypadku polecenie(prompt) zostanie skreowany na podstawie danych po
 \end{figure}
 
 Jeżeli testy funkcjonalne dla naszego kodu nie zostały zapewnione, zostaną one wygenerowane za pomocą osobnego agenta. 
-Jest to funkcja nadal testowana, która w przyszłości ma za zadanie generować testy funkcjonalne dla kodu, który nie posiada testów funkcjonalnych. 
-Problemem jest ich duża ilość dla średnich i dużych projektów, dlatego zalecane jest dostarczenie własnego modułu testów funkcjonalnych.
+Jest to funkcja nadal testowana, która w przyszłości ma za zadanie generować testy funkcjonalne dla kodu, który ich nie posiada. 
+Problemem jest duża ilość kodu dla średnich i dużych projektów, dlatego zalecane jest dostarczenie własnego modułu testów funkcjonalnych.
 
 \subsection{Wzbogacanie zapytań(promptów)}
 \begin{figure}[h]
@@ -57,7 +57,7 @@ Problemem jest ich duża ilość dla średnich i dużych projektów, dlatego zal
 \end{figure}
 
 Dla uzyskania jak najlepszych wyników oraz zapewnienia najnowszej dostępnej wiedzy na temat podatności wykorzystywane zostaje RAG, aby wzbogacić monit o dodatkowe informacje. Są to informacje otrzymane z CodeQL, które zostają użyte do semantycznego wyszukania powiązanych wpisów w bazie danych CVE. 
-Jeżeli CodeQL nie został użyty, monit zostaje wzbogacony o informacje z bazy CVE, które zostały wyszukane semantycznie w wektorowej bazie wiedzy. W tej chwili o użyciu dnaych z bazy wiedzy decyduje wybrany model OpenAI, dzięki nowym możliwością API. 
+Jeżeli CodeQL nie został użyty, monit zostaje wzbogacony o informacje z bazy CVE, które zostały wyszukane semantycznie w wektorowej bazie wiedzy. W tej chwili o użyciu danych z bazy wiedzy decyduje wybrany model OpenAI, dzięki nowym możliwością API. 
 Nowe możliwości API jak własne narzędzia dla LLM, code interpreter (interpreter kodu) oraz semantic search (semantyczne wyszukiwanie) zostały wprowadzone 06.11.2023r.
 Sprawia to, że niniejszy własny kod do wzbogacania monitów jest niepotrzebny, ale w przyszłości może zostać użyty do wzbogacania monitów o dodatkowe informacje dla modeli otwartoźródłowych. 
 \begin{listing}
@@ -98,8 +98,8 @@ Przedstawione zostały rzeczywiste skrawki kodu znajdujące się w projekcie, na
     \caption{Część schematu opisująca proces RAG}
     \label{fig:przyciety_obraz}
 \end{figure}
-Dla każdej części kodu badanego projektu opdowiednio mieszczącej się w oknie kontekstu dla modeli, tworzony jest \textcolor{blue}{PROMPT} (monit), który jest następnie przetwarzany przez `\textcolor{gray}{LLM (GPT-4, \ldots)}`. 
-W tym celu wykorzywane są \textcolor{orange}{Prompt templates (szablony monitów)} oraz semantycznie wyszukane skrawki z \textcolor{orange}{Vector DB with CVEs and documentation (wektorowa baza danych z CVE oraz dokumentacją)}.
+Dla każdej części kodu badanego projektu opdowiednio mieszczącej się w oknie kontekstu dla modeli, tworzony jest \textbf{PROMPT} (monit), który jest następnie przetwarzany przez `\textbf{LLM (GPT-4, \ldots)}`. 
+W tym celu wykorzywane są \textbf{Prompt templates} (szablony monitów) oraz semantycznie wyszukane skrawki z \textbf{Vector DB with CVEs and documentation} (wektorowa baza danych z CVE oraz dokumentacją).
 
 Tak spreparowane zapytanie jest następnie zadane modelowi językowemu, który identyfikuje podatności oraz proponuje poprawki.
 
@@ -111,8 +111,8 @@ Tak spreparowane zapytanie jest następnie zadane modelowi językowemu, który i
     \caption{Czarna skrzynka - LLM (Large Language Model)}
     \label{fig:przyciety_obraz-generowanie}
 \end{figure}
-LLM generuje \textcolor{blue}{uzupełnienie/generacje kodu} oraz raport, które są następnie \textcolor{purple}{łączone (code merging)} w potencjalnie \textcolor{red}{naprawiony program}. Proces ten wykorzystuje również \textcolor{red}{narzędzia}
-(code interpreter, knowledge retrieval, file writing, git patch, \dots), aby ułatwić obróbkę wyników oraz wzbogacić generację.
+LLM generuje \texttt{uzupełnienie/generacje kodu} oraz raport, które są następnie łączone \textbf{(code merging)} w potencjalnie \texttt{naprawiony program}. Proces ten wykorzystuje również \textbf{narzędzia}
+(code interpreter, knowledge retrieval, file writing, running tests, \dots), aby ułatwić obróbkę wyników oraz wzbogacić generację.
 
 \subsubsection{Testy i weryfikacja}
 \begin{figure}[h]
@@ -122,7 +122,7 @@ LLM generuje \textcolor{blue}{uzupełnienie/generacje kodu} oraz raport, które 
     \caption{Czarna skrzynka - LLM (Large Language Model)}
     \label{fig:przyciety_obraz2}
 \end{figure}
-W ramach procesu weryfikacyjnego, naprawiony kod jest poddawany \textcolor{purple}{testom bezpieczeństwa} oraz \textcolor{purple}{testom funkcjonalnym}, mając na celu zapewnienie, że wprowadzone poprawki nie generują nowych defektów oraz że aplikacja funkcjonuje zgodnie z założeniami. W literaturze źródłowej, na której opiera się niniejsza praca inżynierska, do realizacji testów bezpieczeństwa stosowane są narzędzia takie jak CodeQL, czy ASAN/UBSAN, które umożliwiają wykrycie podatności w kodzie. Proces ten jest zautomatyzowany, co jest kluczowe dla przeprowadzenia badań w skali naukowej. Jednakże, z powodu specyfiki integracji CodeQL w ramach realizowanego projektu, jego wykorzystanie do testów nie jest rekomendowane, gdyż nie zapewnia wiarygodności wyników. W związku z tym, testy bezpieczeństwa są przeprowadzane manualnie w celu potwierdzenia prawidłowości działania systemu, podczas gdy testy funkcjonalne realizowane są w sposób automatyczny. 
+W ramach procesu weryfikacyjnego, naprawiony kod jest poddawany \textbf{testom bezpieczeństwa} oraz \textbf{testom funkcjonalnym}, mając na celu zapewnienie, że wprowadzone poprawki nie generują nowych defektów oraz że aplikacja funkcjonuje zgodnie z założeniami. W literaturze źródłowej, na której opiera się niniejsza praca inżynierska, do realizacji testów bezpieczeństwa stosowane są narzędzia takie jak CodeQL, czy ASAN/UBSAN, które umożliwiają wykrycie podatności w kodzie. Proces ten jest zautomatyzowany, co jest kluczowe dla przeprowadzenia badań w skali naukowej. Jednakże, z powodu specyfiki integracji CodeQL w ramach realizowanego projektu, jego wykorzystanie do testów nie jest rekomendowane, gdyż nie zapewnia wiarygodności wyników. W związku z tym, testy bezpieczeństwa są przeprowadzane manualnie w celu potwierdzenia prawidłowości działania systemu, podczas gdy testy funkcjonalne realizowane są w sposób automatyczny. 
 Zaleca się wskazanie dedykowanego modułu testowego dla skanowanego projektu.
 \subsubsection{Dokumentacja i raportowanie}
 Wyniki pracy \textbf{gptester} są dokumentowane w raporcie o błędach, po czym raport jest zapisywany w plikach markdown, a poprawione pliki z kodem w katalogu `fixed` z odpowiednim znacznikiem czasowym. W przyszłości poprawki będą wprowadzane do bazy kodu za pomocą git patch.
@@ -160,7 +160,7 @@ Instalacja zależności jest prosta i może być wykonana w terminalu lub wirtua
         python main.py -h
     \end{minted}
 \end{listing}
-or 
+lub 
 \begin{listing}
     \begin{minted}{bash}
         cd gptester
@@ -173,26 +173,28 @@ or
 
 \subsection{Funkcje programu}
 
-Program \textbf{gptester} został zaprojektowany jako wszechstronny narzędzie do analizy statycznej kodu, wykorzystując zaawansowane modele językowe do wykrywania i naprawiania błędów bezpieczeństwa w kodzie. Kluczowe funkcje programu są dostępne za pomocą różnorodnych argumentów linii poleceń, umożliwiając szeroką konfigurację i dostosowanie do specyficznych potrzeb analizy.
+Program \textbf{gptester} został zaprojektowany jako wszechstronne narzędzie do analizy statycznej kodu, korzystając z zaawansowanych modeli językowych do wykrywania i naprawiania błędów bezpieczeństwa w kodzie. Wersja \texttt{assistant-0.5.2-beta} programu oferuje szereg funkcji, które są dostępne za pomocą argumentów linii poleceń, umożliwiając szeroką konfigurację i dostosowanie do specyficznych potrzeb analizy.
 
 \begin{itemize}
-    \item \textbf{-h, --help}: Wyświetla pomoc programu, zawierającą informacje o dostępnych opcjach i ich krótki opis. Jest to przydatne dla użytkowników, którzy chcą szybko zrozumieć, jak korzystać z programu.
-    
-    \item \textbf{-v, --verbose}: Aktywuje tryb szczegółowych informacji. W tym trybie, `gptester` wyświetla dodatkowe informacje na temat każdego etapu przetwarzania, co jest przydatne do debugowania i analizy szczegółów wykonania.
-    
-    \item \textbf{-m MODEL, --model MODEL}: Umożliwia wybór modelu językowego używanego do analizy kodu. Domyślnie ustawiony na "gpt-4-1106-preview", ale użytkownik może wybrać inny model, jeśli jest dostępny i lepiej odpowiada wymaganiom projektu.
-    
-    \item \textbf{-o OUTPUT, --output OUTPUT}: Określa ścieżkę i nazwę pliku, do którego będą zapisane wyniki analizy. Domyślnie, raport jest zapisywany w pliku markdown w folderze "raports" z nazwą opartą na nazwie analizowanego folderu i znaczniku czasowym. Użytkownik może dostosować tę lokalizację według własnych preferencji.
-
-    \item \textbf{-t TESTS, --tests TESTS}: Pozwala na podanie ścieżki do testów funkcjonalnych, które mają zostać wykonane na analizowanym projekcie. Ta funkcja jest szczególnie przydatna w środowiskach, gdzie istnieje potrzeba zintegrowanego podejścia do testowania i analizy kodu.
-
-    \item \textbf{-c, --codeql}: Włącza integrację z CodeQL, zaawansowanym narzędziem do analizy kodu. Użytkownik musi mieć zainstalowane CodeQL-CLI, aby skorzystać z tej funkcji. Jest to szczególnie przydatne w wykrywaniu bardziej złożonych problemów w kodzie, które mogą umknąć prostym analizom.
-
-    \item \textbf{--command COMMAND}: Umożliwia określenie polecenia budującego projekt, co jest niezbędne dla prawidłowej integracji z CodeQL w przypadku, gdy projekt nie zawiera pliku cmake lub podobnego w katalogu głównym. Domyślnie ustawione na "make".
-
-    \item \textbf{--language LANGUAGE}: Pozwala na określenie języka programowania projektu do analizy w CodeQL. Domyślnie ustawione na "cpp", ale można dostosować do innych języków wspieranych przez CodeQL, co rozszerza możliwości analizy na różnorodne środowiska programistyczne.
-
+    \item \textbf{-h, --help}: Wyświetla pomoc programu, prezentując dostępne opcje i ich krótki opis, co ułatwia szybkie zrozumienie możliwości programu.
+    \item \textbf{-v, --verbose}: Aktywuje tryb szczegółowych informacji, dzięki czemu \texttt{gptester} prezentuje dodatkowe informacje o każdym etapie przetwarzania, co jest przydatne do debugowania i głębszej analizy działania.
+    \item \textbf{-m MODEL, --model MODEL}: Umożliwia wybór modelu językowego do analizy kodu, z domyślnym ustawieniem na "gpt-4-1106-preview". Pozwala na dostosowanie narzędzia do specyficznych wymagań projektu poprzez wybór innego dostępnego modelu.
+    \item \textbf{-r, --retrieval}: Włącza Generację Wspomaganą Odnajdywaniem (Retrieval Augmented Generation - RAG) dla analizy kodu, zwiększając precyzję identyfikacji podatności przez odwołanie się do zewnętrznych baz wiedzy.
+    \item \textbf{-f FILE\_TO\_KNOW, --file-to-know FILE\_TO\_KNOW}: Pozwala na wskazanie pliku, który ma być załączony do bazy wiedzy, co może pomóc w poprawie kontekstu analizy. Domyślnie ustawione na bazę danych CVE w formacie CSV.
+    \item \textbf{-i IGNORE, --ignore IGNORE}: Umożliwia podanie ścieżki do pliku .gitignore, aby zignorować określone pliki podczas skanowania, co pomaga skupić się na kluczowych elementach kodu.
+    \item \textbf{-p PATCH\_FILE, --patch-file PATCH\_FILE}: Określa ścieżkę dla wygenerowanego pliku z poprawkami, umożliwiając łatwe śledzenie i aplikowanie sugerowanych zmian w kodzie.
+    \item \textbf{-o OUTPUT, --output OUTPUT}: Określa ścieżkę i nazwę pliku, do którego zostaną zapisane wyniki analizy. Pozwala na elastyczne zarządzanie dokumentacją wyników.
+    \item \textbf{-t TESTS, --tests TESTS}: Wskazuje ścieżkę do testów funkcjonalnych, które mają być wykonane na projekcie. Ułatwia integrację z istniejącymi procedurami testowymi i pozwala na automatyczne generowanie testów, jeśli nie zostaną dostarczone.
+    \item \textbf{-c, --codeql}: Włącza integrację z CodeQL, zaawansowanym narzędziem do analizy kodu. Wymaga zainstalowania narzędzia CodeQL-CLI i jest przeznaczone do wykrywania bardziej złożonych podatności.
+    \item \textbf{--command COMMAND}: Umożliwia określenie polecenia budowania projektu, co jest niezbędne do prawidłowej integracji z CodeQL, szczególnie gdy w projekcie nie ma pliku cmake lub podobnego. Domyślnie ustawione na "make".
+    \item \textbf{--language LANGUAGE}: Pozwala na określenie języka programowania projektu dla analizy CodeQL, z domyślnym ustawieniem na "cpp". Umożliwia dostosowanie analizy do różnych środowisk programistycznych.
 \end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{img/gptester-help.png}
+    \caption{Wiadomość pomocnicza aplikacji \textit{gptester}}
+    \label{fig:gptester-help}
+\end{figure}
 
 Przykład użycia z pełną konfiguracją:
 
@@ -206,7 +208,7 @@ W powyższym przykładzie, gptester analizuje kod znajdujący się w podanej śc
 
 \section{Integracja z CodeQL}
 
-Integracja gptester z CodeQL znacznie rozszerza jego funkcjonalność analizy statycznej kodu. CodeQL, opracowany przez Microsoft, a dokładnie GitHub, to zaawansowane narzędzie do semantycznej analizy kodu, które umożliwia wykrywanie złożonych podatności i błędów bezpieczeństwa.
+Integracja GPTester z CodeQL znacznie rozszerza jego funkcjonalność analizy statycznej kodu. CodeQL, opracowany przez Microsoft, a dokładnie GitHub, to zaawansowane narzędzie do semantycznej analizy kodu, które umożliwia wykrywanie złożonych podatności i błędów bezpieczeństwa.
 
 \textbf{Główne cechy integracji z CodeQL:}
 \begin{itemize}
@@ -232,12 +234,14 @@ Modele językowe w projekcie \textbf{gptester} są wykorzystywane do identyfikac
 Projekt integruje różne wersje modeli GPT, z dominującą rolą GPT-4, który charakteryzuje się wyższą zdolnością do zrozumienia złożonych zapytań i generowania bardziej precyzyjnych odpowiedzi. Dostępność innych modeli, takich jak GPT-3.5, zapewnia elastyczność w doborze narzędzia w zależności od specyficznych wymagań analizy. 
 
 \subsubsection{Modele otwartoźródłowe}
-W przyszłości dostępne będą także modele otwartoźródłowe, za pomocą narzędzia Ollama. Dostępne będą między innymi: Llama2, GPT-J, Mistral, Falcon, czy jakikolwiek model dostępny w repozytoriach Ollama. Narzędzie to pozwala na łatwe pobieranie modeli, konteneryzowane uruchamianie, a także dostęp za pomocą API. Zapewni to jeszcze większą elastyczność i dostosowanie do potrzeb projektu.
+W przyszłości wdrożone zostaną także modele otwartoźródłowe, za pomocą narzędzia Ollama. Dostępne będą między innymi: Llama2, GPT-J, Mistral, Falcon, czy jakikolwiek model dostępny w repozytoriach Ollama. Narzędzie to pozwala na łatwe pobieranie modeli, konteneryzowane uruchamianie, a także dostęp za pomocą API. Zapewni to jeszcze większą elastyczność i dostosowanie do potrzeb projektu.
 
 \subsection{Inżynieria Poleceń (Promptów)}
 Kluczowym aspektem wykorzystania modeli językowych jest inżynieria promptów, czyli proces projektowania i optymalizowania zapytań w celu uzyskania jak najbardziej trafnych odpowiedzi od modelu. W projekt \textbf{gptester} zaimplementowano zestaw specjalnie opracowanych promptów, które są dostosowane do identyfikacji różnych rodzajów błędów i podatności w kodzie.
 
 Polecenie systemowe używane dla agenta odpowiedzialnego za identyfikację i naprawę błędów wygląda następująco:
+
+\textbf{ZAMIEŃ NA AKTUALNE POLECENIE}
 \begin{verbatim}
 You are a top-tier security specialist and developer. You have been 
 tasked with finding vulnerabilities and security bugs in a program. 
@@ -402,7 +406,7 @@ class Assistant():
 
 \restoregeometry
 
-Przy używaniu punktu końcowego ChatCompletion niezbędna jest implementacja parsera, aby możliwe było wyodrębnienie wiadomości oraz zapisywanie do plików. Taki parser znajduje się w pliku \textit{utils/chat\_to\_files.py}. Przewaga ChatCompletion nad Assistant jest taka, że są to stabilniejsze metody z takimi funkcjami jak przesyłanie strumieniowe, które nie są dostępne w Assistant. 
+Przy używaniu punktu końcowego ChatCompletion niezbędna jest implementacja parsera, aby możliwe było wyodrębnienie wiadomości oraz zapisywanie do plików. Taki parser znajduje się w pliku \textit{utils/chat\_to\_files.py}. Przewaga ChatCompletion nad Assistant jest taka, że są to stabilniejsze metody z takimi funkcjami jak przesyłanie strumieniowe, czy parametry generowania komplecji, które nie są dostępne w Assistant. 
 
 \section{Definicja Agenta AI}
 Agent AI w kontekście projektu \textbf{gptester} definiuje się jako zaawansowany system komputerowy, który wykorzystuje techniki sztucznej inteligencji i uczenia maszynowego do automatyzacji zadań związanych w tym przypadku z analizą statyczną kodu źródłowego. Agent ten jest zaprogramowany do samodzielnego podejmowania decyzji na podstawie dostarczonych mu danych, mając na celu identyfikację i naprawianie błędów oraz podatności bezpieczeństwa w kodzie.
@@ -440,13 +444,13 @@ Projekt \textbf{gptester} wykorzystuje zaawansowanych agentów AI, które są kl
 Każdy agent AI jest inicjalizowany z określonymi parametrami konfiguracyjnymi, które definiują jego zachowanie i funkcjonalność:
 
 \begin{itemize}
-    \item \textbf{Rola}: Określa podstawowy zakres działania agenta, np. debugowanie lub testowanie. Jest to odpowiednik polecenia systemowego (system prompt) w interakcji z modelami za pomocą punktu końcowego `ChatCompletion' w OpenAI API.
+    \item \textbf{Instrukcje (Rola/Prompt Systemowy)}: Określa podstawowy zakres działania agenta, np. debugowanie lub testowanie. Jest to odpowiednik polecenia systemowego (system prompt) w interakcji z modelami za pomocą punktu końcowego `ChatCompletion' w OpenAI API.
     \item \textbf{Nazwa}: Unikalna nazwa agenta, używana do identyfikacji i logowania.
     \item \textbf{Model Językowy}: Wskazuje na model AI używany przez agenta, domyślnie ustawiony na GPT-4 w najnowszej wersji.
     \item \textbf{Narzędzia}: Zestaw narzędzi, które agent może wykorzystywać podczas analizy.
 \end{itemize}
 
-Niestety, w punkcie końcowym API Asystentów nie ma możliwości przekazania parametrów konfigurujących komplecje i generacje, dlatego nie można przekazać parametrów takich jak `temperature' czy `max\_tokens'. W przyszłości, jeśli API Asystentów zostanie rozwinięte, będzie można przekazać te parametry.
+Niestety, w punkcie końcowym API Asystentów nie ma możliwości przekazania parametrów konfigurujących komplecji, czy generacji, dlatego nie można przekazać parametrów takich jak `temperature' czy `max\_tokens'. W przyszłości, jeśli API Asystentów zostanie rozwinięte, będzie można przekazać te parametry i zbadać ich wpływ.
 \subsection{Narzędzia i Funkcje}
 
 Agent AI korzysta z różnorodnych narzędzi i funkcji, które wspierają jego działanie w różnych scenariuszach:
@@ -534,6 +538,8 @@ Projekt `gptester` osiągnął już kilka kluczowych kamieni milowych w swoim ro
     \item \textbf{Podstawowa funkcjonalność}: Program już teraz oferuje podstawowe funkcje analizy statycznej kodu, umożliwiając identyfikację typowych błędów i podatności.
     \item \textbf{Wykorzystanie technik RAG oraz in-context learning}: `gptester` wykorzystuje zaawansowane techniki generacji wspomaganej odzyskiwaniem danych oraz uczenia się w kontekście, co pozwala na lepsze dostosowanie modeli językowych do specyficznych zadań.
     \item \textbf{Integracja z CodeQL}: Znaczącym osiągnięciem jest wdrożenie integracji z CodeQL, co znacznie rozszerza możliwości analizy kodu, szczególnie w zakresie wykrywania złożonych błędów bezpieczeństwa. Niestety funkcja jest nadal testowana i stabilizowana.
+    \item \textbf{Automatyzacja testów}: `gptester` automatyzuje proces testowania kodu, w tym pisania testów i ich wykonywania, co pozwala na efektywne sprawdzanie poprawności kodu.
+    \item \textbf{Aktualizacja kodu za pomocą funkcji git patch i plików diff}: Funkcjohnalność, która pozwola na automatyczne wprowadzanie poprawek do kodu źródłowego na podstawie wygenerowanych plików diff. To ulepszenie ułatwia proces naprawy kodu, umożliwiając automatyczne aplikowanie poprawek oraz interaktywne wybieranie elementów z obu wersji za pomocą systemu kontroli wersji git.
 \end{itemize}
 
 Te osiągnięcia stanowią solidną podstawę dla dalszego rozwoju i rozbudowy `gptester`, kładąc nacisk na wydajność, dokładność i wszechstronność narzędzia.
@@ -544,9 +550,9 @@ Te osiągnięcia stanowią solidną podstawę dla dalszego rozwoju i rozbudowy `
 W ramach dalszego rozwoju, projekt `gptester` ma w planach kilka istotnych rozszerzeń i ulepszeń:
 
 \begin{itemize}
-    \item \textbf{Aktualizacja kodu za pomocą funkcji git i plików patch}: Rozwój funkcjonalności, która pozwoli na automatyczne wprowadzanie poprawek do kodu źródłowego na podstawie wygenerowanych plików git i patch. To ulepszenie ułatwi proces naprawy kodu, umożliwiając automatyczne aplikowanie poprawek oraz interaktywne wybieranie elementów z obu wersji.
-    \item \textbf{Dodanie więcej testów oraz automatyzacja testów bezpieczeństwa}: Rozbudowa zestawu testów funkcjonalnych, jednostkowych i bezpieczeństwa, co pozwoli na lepsze sprawdzanie niezawodności i efektywności `gptester`. Automatyzacja testów pozwoli na skuteczniejsze wykrywanie błędów oraz ułatwi badania.
-    \item \textbf{Obsługa więcej języków programowania dla CodeQL}: Rozszerzenie integracji z CodeQL o więcej języków programowania, co zwiększy użyteczność `gptester` w różnorodnych projektach programistycznych. Planowane jest dodanie wsparcia dla popularnych języków takich jak JavaScript, Python czy Ruby.
+    \item \textbf{Wsparcie dla modeli otwartoźródłowych}: Wdrożenie modeli otwartoźródłowych, takich jak GPT-J, Falcon, Mistral, czy Llama2, co pozwoli na jeszcze większą elastyczność i dostosowanie do różnych zastosowań.
+    \item \textbf{Rozbudowa i stabilizacja modułu testowania}: Rozbudowa zestawu testów funkcjonalnych, jednostkowych i bezpieczeństwa, co pozwoli na lepsze sprawdzanie niezawodności i efektywności `gptester`. Automatyzacja testów pozwoli na skuteczniejsze wykrywanie błędów oraz ułatwi badania.
+    \item \textbf{Obsługa większej ilości języków programowania dla CodeQL}: Rozszerzenie integracji z CodeQL o więcej języków programowania, co zwiększy użyteczność `gptester` w różnorodnych projektach programistycznych. Planowane jest dodanie wsparcia dla popularnych języków takich jak JavaScript, Python czy Ruby.
 \end{itemize}
 
 Te planowane rozszerzenia mają na celu nie tylko ulepszenie obecnych funkcjonalności gptester, ale również wprowadzenie nowych możliwości, które uczynią narzędzie jeszcze bardziej wszechstronnym i przydatnym w różnych kontekstach analizy kodu.
