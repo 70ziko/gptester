@@ -17,11 +17,11 @@ class Config(metaclass=Singleton):
         """Initialize the Config class"""
         self.debug_mode = False
         self.speak_mode = False
-        self.version = 'assistant-0.4.2-beta'
+        self.version = 'assistant-0.5.2-beta'
         self.retrieval = False
         self.restart_limit = int(os.getenv("RESTART_LIMIT", "3"))
         self.llm_model = os.getenv("LLM_MODEL", "gpt-4-1106-preview")
-        self.token_limit = int(os.getenv("TOKEN_LIMIT", 32000))
+        self.token_limit = int(os.getenv("TOKEN_LIMIT", 30000))
 
         self.openai_api_key = os.getenv("OPENAI_API_KEY")
         self.temperature = float(os.getenv("TEMPERATURE", "0"))

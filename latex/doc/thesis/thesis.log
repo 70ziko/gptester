@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.20)  28 JAN 2024 19:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.20)  29 JAN 2024 17:37
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1132,10 +1132,10 @@ l.36 }
 
 
 ]
-./introduction.tex:17: Undefined control sequence.
+./introduction.tex:19: Undefined control sequence.
 \enit@endenumerate ->\enit@after 
                                  \endlist \ifx \enit@series \relax \else \if...
-l.17 \end{enumerate}
+l.19 \end{enumerate}
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1143,10 +1143,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:17: Undefined control sequence.
+./introduction.tex:19: Undefined control sequence.
 \enit@endenumerate ...\else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.17 \end{enumerate}
+l.19 \end{enumerate}
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1154,19 +1154,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:17: Missing number, treated as zero.
+./introduction.tex:19: Missing number, treated as zero.
 <to be read again> 
                    =
-l.17 \end{enumerate}
+l.19 \end{enumerate}
                     
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./introduction.tex:17: Undefined control sequence.
+./introduction.tex:19: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.17 \end{enumerate}
+l.19 \end{enumerate}
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1174,10 +1174,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:17: Undefined control sequence.
+./introduction.tex:19: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.17 \end{enumerate}
+l.19 \end{enumerate}
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1185,19 +1185,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:17: Missing number, treated as zero.
+./introduction.tex:19: Missing number, treated as zero.
 <to be read again> 
                    =
-l.17 \end{enumerate}
+l.19 \end{enumerate}
                     
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./introduction.tex:17: Undefined control sequence.
+./introduction.tex:19: Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.17 \end{enumerate}
+l.19 \end{enumerate}
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1205,10 +1205,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:17: Undefined control sequence.
+./introduction.tex:19: Undefined control sequence.
 \enit@endenumerate ...t \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.17 \end{enumerate}
+l.19 \end{enumerate}
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1216,19 +1216,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:17: Missing number, treated as zero.
+./introduction.tex:19: Missing number, treated as zero.
 <to be read again> 
                    =
-l.17 \end{enumerate}
+l.19 \end{enumerate}
                     
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./introduction.tex:17: Undefined control sequence.
+./introduction.tex:19: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.17 \end{enumerate}
+l.19 \end{enumerate}
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1236,10 +1236,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:17: Undefined control sequence.
+./introduction.tex:19: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.17 \end{enumerate}
+l.19 \end{enumerate}
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1247,33 +1247,33 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:17: Missing number, treated as zero.
+./introduction.tex:19: Missing number, treated as zero.
 <to be read again> 
                    =
-l.17 \end{enumerate}
+l.19 \end{enumerate}
                     
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
-
-./introduction.tex:24: Undefined control sequence.
-\enit@endenumerate ->\enit@after 
-                                 \endlist \ifx \enit@series \relax \else \if...
-l.24 \end{enumerate}
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 [2
 
 ]
-./introduction.tex:24: Undefined control sequence.
+./introduction.tex:26: Undefined control sequence.
+\enit@endenumerate ->\enit@after 
+                                 \endlist \ifx \enit@series \relax \else \if...
+l.26 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./introduction.tex:26: Undefined control sequence.
 \enit@endenumerate ...\else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.24 \end{enumerate}
+l.26 \end{enumerate}
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1281,19 +1281,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:24: Missing number, treated as zero.
+./introduction.tex:26: Missing number, treated as zero.
 <to be read again> 
                    =
-l.24 \end{enumerate}
+l.26 \end{enumerate}
                     
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./introduction.tex:24: Undefined control sequence.
+./introduction.tex:26: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.24 \end{enumerate}
+l.26 \end{enumerate}
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1301,10 +1301,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:24: Undefined control sequence.
+./introduction.tex:26: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.24 \end{enumerate}
+l.26 \end{enumerate}
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1312,19 +1312,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:24: Missing number, treated as zero.
+./introduction.tex:26: Missing number, treated as zero.
 <to be read again> 
                    =
-l.24 \end{enumerate}
+l.26 \end{enumerate}
                     
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./introduction.tex:24: Undefined control sequence.
+./introduction.tex:26: Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.24 \end{enumerate}
+l.26 \end{enumerate}
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1332,10 +1332,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:24: Undefined control sequence.
+./introduction.tex:26: Undefined control sequence.
 \enit@endenumerate ...t \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.24 \end{enumerate}
+l.26 \end{enumerate}
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1343,19 +1343,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:24: Missing number, treated as zero.
+./introduction.tex:26: Missing number, treated as zero.
 <to be read again> 
                    =
-l.24 \end{enumerate}
+l.26 \end{enumerate}
                     
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./introduction.tex:24: Undefined control sequence.
+./introduction.tex:26: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.24 \end{enumerate}
+l.26 \end{enumerate}
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1363,10 +1363,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:24: Undefined control sequence.
+./introduction.tex:26: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.24 \end{enumerate}
+l.26 \end{enumerate}
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1374,202 +1374,20 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:24: Missing number, treated as zero.
+./introduction.tex:26: Missing number, treated as zero.
 <to be read again> 
                    =
-l.24 \end{enumerate}
+l.26 \end{enumerate}
                     
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
-
-./introduction.tex:43: Undefined control sequence.
-\enit@enditemize ->\enit@after 
-                               \endlist \ifx \enit@series \relax \else \ifnu...
-l.43 \end{itemize}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./introduction.tex:43: Undefined control sequence.
-\enit@enditemize ...x \else \ifnum \enit@resuming 
-                                                  =\@ne \enit@setresumekeys ...
-l.43 \end{itemize}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./introduction.tex:43: Missing number, treated as zero.
-<to be read again> 
-                   =
-l.43 \end{itemize}
-                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-./introduction.tex:43: Undefined control sequence.
-\enit@setresumekeys ...xpandafter {\enit@savekeys 
-                                                  }\xdef \enit@afterlist {#2...
-l.43 \end{itemize}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./introduction.tex:43: Undefined control sequence.
-\enit@setresumekeys ...it@toks }\ifnum \enit@type 
-                                                  =\z@ #3\def \enit@noexcs {...
-l.43 \end{itemize}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./introduction.tex:43: Missing number, treated as zero.
-<to be read again> 
-                   =
-l.43 \end{itemize}
-                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-./introduction.tex:43: Undefined control sequence.
-<argument> enit@resume@series@\enit@series 
-                                           
-l.43 \end{itemize}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./introduction.tex:43: Undefined control sequence.
-\enit@setresumekeys ...me@#1}{\csname c@\@listctr 
-                                                  \endcsname \the \csname c@...
-l.43 \end{itemize}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./introduction.tex:43: Undefined control sequence.
-\enit@setresumekeys ...e \the \csname c@\@listctr 
-                                                  \endcsname }\fi }
-l.43 \end{itemize}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./introduction.tex:43: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.43 \end{itemize}
-                  
-I'm forgetting what you said and using zero instead.
-
-./introduction.tex:43: Undefined control sequence.
-\enit@enditemize ...ist \fi \ifnum \enit@resuming 
-                                                  =\thr@@ \enit@setresumekey...
-l.43 \end{itemize}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./introduction.tex:43: Missing number, treated as zero.
-<to be read again> 
-                   =
-l.43 \end{itemize}
-                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-./introduction.tex:43: Undefined control sequence.
-\enit@setresumekeys ...xpandafter {\enit@savekeys 
-                                                  }\xdef \enit@afterlist {#2...
-l.43 \end{itemize}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./introduction.tex:43: Undefined control sequence.
-\enit@setresumekeys ...it@toks }\ifnum \enit@type 
-                                                  =\z@ #3\def \enit@noexcs {...
-l.43 \end{itemize}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./introduction.tex:43: Missing number, treated as zero.
-<to be read again> 
-                   =
-l.43 \end{itemize}
-                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-./introduction.tex:43: Undefined control sequence.
-\enit@setresumekeys ...me@#1}{\csname c@\@listctr 
-                                                  \endcsname \the \csname c@...
-l.43 \end{itemize}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./introduction.tex:43: Undefined control sequence.
-\enit@setresumekeys ...e \the \csname c@\@listctr 
-                                                  \endcsname }\fi }
-l.43 \end{itemize}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-./introduction.tex:43: You can't use `\relax' after \the.
-<recently read> \c@ 
-                    
-l.43 \end{itemize}
-                  
-I'm forgetting what you said and using zero instead.
 
 [3]
-./introduction.tex:53: Undefined control sequence.
+./introduction.tex:46: Undefined control sequence.
 \enit@enditemize ->\enit@after 
                                \endlist \ifx \enit@series \relax \else \ifnu...
-l.53 \end{itemize}
+l.46 \end{itemize}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1577,10 +1395,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:53: Undefined control sequence.
+./introduction.tex:46: Undefined control sequence.
 \enit@enditemize ...x \else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.53 \end{itemize}
+l.46 \end{itemize}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1588,19 +1406,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:53: Missing number, treated as zero.
+./introduction.tex:46: Missing number, treated as zero.
 <to be read again> 
                    =
-l.53 \end{itemize}
+l.46 \end{itemize}
                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./introduction.tex:53: Undefined control sequence.
+./introduction.tex:46: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.53 \end{itemize}
+l.46 \end{itemize}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1608,10 +1426,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:53: Undefined control sequence.
+./introduction.tex:46: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.53 \end{itemize}
+l.46 \end{itemize}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1619,19 +1437,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:53: Missing number, treated as zero.
+./introduction.tex:46: Missing number, treated as zero.
 <to be read again> 
                    =
-l.53 \end{itemize}
+l.46 \end{itemize}
                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./introduction.tex:53: Undefined control sequence.
+./introduction.tex:46: Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.53 \end{itemize}
+l.46 \end{itemize}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1639,10 +1457,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:53: Undefined control sequence.
+./introduction.tex:46: Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.53 \end{itemize}
+l.46 \end{itemize}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1650,10 +1468,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:53: Undefined control sequence.
+./introduction.tex:46: Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.53 \end{itemize}
+l.46 \end{itemize}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1661,17 +1479,17 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:53: You can't use `\relax' after \the.
+./introduction.tex:46: You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.53 \end{itemize}
+l.46 \end{itemize}
                   
 I'm forgetting what you said and using zero instead.
 
-./introduction.tex:53: Undefined control sequence.
+./introduction.tex:46: Undefined control sequence.
 \enit@enditemize ...ist \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.53 \end{itemize}
+l.46 \end{itemize}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1679,19 +1497,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:53: Missing number, treated as zero.
+./introduction.tex:46: Missing number, treated as zero.
 <to be read again> 
                    =
-l.53 \end{itemize}
+l.46 \end{itemize}
                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./introduction.tex:53: Undefined control sequence.
+./introduction.tex:46: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.53 \end{itemize}
+l.46 \end{itemize}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1699,10 +1517,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:53: Undefined control sequence.
+./introduction.tex:46: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.53 \end{itemize}
+l.46 \end{itemize}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1710,19 +1528,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:53: Missing number, treated as zero.
+./introduction.tex:46: Missing number, treated as zero.
 <to be read again> 
                    =
-l.53 \end{itemize}
+l.46 \end{itemize}
                   
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./introduction.tex:53: Undefined control sequence.
+./introduction.tex:46: Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.53 \end{itemize}
+l.46 \end{itemize}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1730,10 +1548,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:53: Undefined control sequence.
+./introduction.tex:46: Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.53 \end{itemize}
+l.46 \end{itemize}
                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1741,10 +1559,192 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./introduction.tex:53: You can't use `\relax' after \the.
+./introduction.tex:46: You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.53 \end{itemize}
+l.46 \end{itemize}
+                  
+I'm forgetting what you said and using zero instead.
+
+./introduction.tex:55: Undefined control sequence.
+\enit@enditemize ->\enit@after 
+                               \endlist \ifx \enit@series \relax \else \ifnu...
+l.55 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./introduction.tex:55: Undefined control sequence.
+\enit@enditemize ...x \else \ifnum \enit@resuming 
+                                                  =\@ne \enit@setresumekeys ...
+l.55 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./introduction.tex:55: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.55 \end{itemize}
+                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./introduction.tex:55: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.55 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./introduction.tex:55: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.55 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./introduction.tex:55: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.55 \end{itemize}
+                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./introduction.tex:55: Undefined control sequence.
+<argument> enit@resume@series@\enit@series 
+                                           
+l.55 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./introduction.tex:55: Undefined control sequence.
+\enit@setresumekeys ...me@#1}{\csname c@\@listctr 
+                                                  \endcsname \the \csname c@...
+l.55 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./introduction.tex:55: Undefined control sequence.
+\enit@setresumekeys ...e \the \csname c@\@listctr 
+                                                  \endcsname }\fi }
+l.55 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./introduction.tex:55: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.55 \end{itemize}
+                  
+I'm forgetting what you said and using zero instead.
+
+./introduction.tex:55: Undefined control sequence.
+\enit@enditemize ...ist \fi \ifnum \enit@resuming 
+                                                  =\thr@@ \enit@setresumekey...
+l.55 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./introduction.tex:55: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.55 \end{itemize}
+                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./introduction.tex:55: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.55 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./introduction.tex:55: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.55 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./introduction.tex:55: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.55 \end{itemize}
+                  
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./introduction.tex:55: Undefined control sequence.
+\enit@setresumekeys ...me@#1}{\csname c@\@listctr 
+                                                  \endcsname \the \csname c@...
+l.55 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./introduction.tex:55: Undefined control sequence.
+\enit@setresumekeys ...e \the \csname c@\@listctr 
+                                                  \endcsname }\fi }
+l.55 \end{itemize}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./introduction.tex:55: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.55 \end{itemize}
                   
 I'm forgetting what you said and using zero instead.
 
@@ -2152,18 +2152,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--66
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--70
-[]|\T1/qtm/b/n/12 (+20) Biblioteki:
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+[]|\T1/qtm/m/n/10.95 (+20) Najnowsza wer-sja j¦-zy-ka
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--70
-\T1/qtm/b/n/12 (+20) ope-nai,
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+\T1/qtm/m/n/10.95 (+20) Py-thon z za-awan-so-wa-ny-mi
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--72
-[]|\T1/qtm/b/n/12 (+20) Komputer
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+\T1/qtm/m/n/10.95 (+20) funk-cja-mi. Wy-ko-rzy-sty-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+\T1/qtm/m/n/10.95 (+20) wa-ne bi-blio-te-ki: \T1/cmtt/m/n/10.95 openai,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+\T1/cmtt/m/n/10.95 asyncio, tiktoken, scipy,
  []
 
 
@@ -2176,7 +2186,7 @@ Rozdzia\PlPrIeC {\l } 3.
 [10
 
 ]
-<img/gptester.drawio.png, id=104, 1210.5225pt x 512.91624pt>
+<img/gptester.drawio.png, id=105, 1210.5225pt x 512.91624pt>
 File: img/gptester.drawio.png Graphic file (type png)
 <use img/gptester.drawio.png>
 Package pdftex.def Info: img/gptester.drawio.png  used on input line 20.
@@ -6371,12 +6381,33 @@ Overfull \hbox (0.16031pt too wide) in paragraph at lines 514--515
 Rozdzia\PlPrIeC {\l } 6.
 [42
 
-] [43]
+]
+Overfull \hbox (6.7807pt too wide) in paragraph at lines 562--577
+[][] 
+ []
+
+<img/nessus-dvna-before.png, id=365, 1501.61pt x 1906.12125pt>
+File: img/nessus-dvna-before.png Graphic file (type png)
+<use img/nessus-dvna-before.png>
+Package pdftex.def Info: img/nessus-dvna-before.png  used on input line 587.
+(pdftex.def)             Requested size: 426.79135pt x 541.76688pt.
+<img/nessus-dvna-before2.png, id=366, 1501.61pt x 530.98375pt>
+File: img/nessus-dvna-before2.png Graphic file (type png)
+<use img/nessus-dvna-before2.png>
+Package pdftex.def Info: img/nessus-dvna-before2.png  used on input line 593.
+(pdftex.def)             Requested size: 426.79135pt x 150.91872pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [43]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [44 <./img/nessus-dvna-before.png>] [45 <./img/nessus-dvna-before2.png>] [46]
 Rozdzia\PlPrIeC {\l } 7.
-./badania.tex:594: Undefined control sequence.
+./badania.tex:646: Undefined control sequence.
 \enit@enditemize ->\enit@after 
                                \endlist \ifx \enit@series \relax \else \ifnu...
-l.594 \end{itemize}
+l.646 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6384,10 +6415,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:594: Undefined control sequence.
+./badania.tex:646: Undefined control sequence.
 \enit@enditemize ...x \else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.594 \end{itemize}
+l.646 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6395,19 +6426,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:594: Missing number, treated as zero.
+./badania.tex:646: Missing number, treated as zero.
 <to be read again> 
                    =
-l.594 \end{itemize}
+l.646 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:594: Undefined control sequence.
+./badania.tex:646: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.594 \end{itemize}
+l.646 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6415,10 +6446,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:594: Undefined control sequence.
+./badania.tex:646: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.594 \end{itemize}
+l.646 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6426,19 +6457,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:594: Missing number, treated as zero.
+./badania.tex:646: Missing number, treated as zero.
 <to be read again> 
                    =
-l.594 \end{itemize}
+l.646 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:594: Undefined control sequence.
+./badania.tex:646: Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.594 \end{itemize}
+l.646 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6446,10 +6477,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:594: Undefined control sequence.
+./badania.tex:646: Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.594 \end{itemize}
+l.646 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6457,10 +6488,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:594: Undefined control sequence.
+./badania.tex:646: Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.594 \end{itemize}
+l.646 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6468,17 +6499,17 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:594: You can't use `\relax' after \the.
+./badania.tex:646: You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.594 \end{itemize}
+l.646 \end{itemize}
                    
 I'm forgetting what you said and using zero instead.
 
-./badania.tex:594: Undefined control sequence.
+./badania.tex:646: Undefined control sequence.
 \enit@enditemize ...ist \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.594 \end{itemize}
+l.646 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6486,19 +6517,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:594: Missing number, treated as zero.
+./badania.tex:646: Missing number, treated as zero.
 <to be read again> 
                    =
-l.594 \end{itemize}
+l.646 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:594: Undefined control sequence.
+./badania.tex:646: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.594 \end{itemize}
+l.646 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6506,10 +6537,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:594: Undefined control sequence.
+./badania.tex:646: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.594 \end{itemize}
+l.646 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6517,19 +6548,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:594: Missing number, treated as zero.
+./badania.tex:646: Missing number, treated as zero.
 <to be read again> 
                    =
-l.594 \end{itemize}
+l.646 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:594: Undefined control sequence.
+./badania.tex:646: Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.594 \end{itemize}
+l.646 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6537,10 +6568,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:594: Undefined control sequence.
+./badania.tex:646: Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.594 \end{itemize}
+l.646 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6548,20 +6579,20 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:594: You can't use `\relax' after \the.
+./badania.tex:646: You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.594 \end{itemize}
+l.646 \end{itemize}
                    
 I'm forgetting what you said and using zero instead.
 
-[44
+[47
 
 ]
-./badania.tex:606: Undefined control sequence.
+./badania.tex:658: Undefined control sequence.
 \enit@enditemize ->\enit@after 
                                \endlist \ifx \enit@series \relax \else \ifnu...
-l.606 \end{itemize}
+l.658 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6569,10 +6600,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:606: Undefined control sequence.
+./badania.tex:658: Undefined control sequence.
 \enit@enditemize ...x \else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.606 \end{itemize}
+l.658 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6580,19 +6611,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:606: Missing number, treated as zero.
+./badania.tex:658: Missing number, treated as zero.
 <to be read again> 
                    =
-l.606 \end{itemize}
+l.658 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:606: Undefined control sequence.
+./badania.tex:658: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.606 \end{itemize}
+l.658 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6600,10 +6631,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:606: Undefined control sequence.
+./badania.tex:658: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.606 \end{itemize}
+l.658 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6611,19 +6642,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:606: Missing number, treated as zero.
+./badania.tex:658: Missing number, treated as zero.
 <to be read again> 
                    =
-l.606 \end{itemize}
+l.658 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:606: Undefined control sequence.
+./badania.tex:658: Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.606 \end{itemize}
+l.658 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6631,10 +6662,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:606: Undefined control sequence.
+./badania.tex:658: Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.606 \end{itemize}
+l.658 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6642,10 +6673,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:606: Undefined control sequence.
+./badania.tex:658: Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.606 \end{itemize}
+l.658 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6653,17 +6684,17 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:606: You can't use `\relax' after \the.
+./badania.tex:658: You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.606 \end{itemize}
+l.658 \end{itemize}
                    
 I'm forgetting what you said and using zero instead.
 
-./badania.tex:606: Undefined control sequence.
+./badania.tex:658: Undefined control sequence.
 \enit@enditemize ...ist \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.606 \end{itemize}
+l.658 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6671,19 +6702,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:606: Missing number, treated as zero.
+./badania.tex:658: Missing number, treated as zero.
 <to be read again> 
                    =
-l.606 \end{itemize}
+l.658 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:606: Undefined control sequence.
+./badania.tex:658: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.606 \end{itemize}
+l.658 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6691,10 +6722,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:606: Undefined control sequence.
+./badania.tex:658: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.606 \end{itemize}
+l.658 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6702,19 +6733,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:606: Missing number, treated as zero.
+./badania.tex:658: Missing number, treated as zero.
 <to be read again> 
                    =
-l.606 \end{itemize}
+l.658 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:606: Undefined control sequence.
+./badania.tex:658: Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.606 \end{itemize}
+l.658 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6722,10 +6753,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:606: Undefined control sequence.
+./badania.tex:658: Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.606 \end{itemize}
+l.658 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6733,22 +6764,22 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:606: You can't use `\relax' after \the.
+./badania.tex:658: You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.606 \end{itemize}
+l.658 \end{itemize}
                    
 I'm forgetting what you said and using zero instead.
 
 
-Overfull \hbox (4.11842pt too wide) in paragraph at lines 624--624
+Overfull \hbox (4.11842pt too wide) in paragraph at lines 676--676
 []\T1/cmtt/m/n/12 2024-01-25 22:05:23: Beginning scan for ../testing-envs/VulnerableApp/[] 
  []
 
-./badania.tex:636: Undefined control sequence.
+./badania.tex:688: Undefined control sequence.
 \enit@endenumerate ->\enit@after 
                                  \endlist \ifx \enit@series \relax \else \if...
-l.636 \end{enumerate}
+l.688 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6756,10 +6787,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:636: Undefined control sequence.
+./badania.tex:688: Undefined control sequence.
 \enit@endenumerate ...\else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.636 \end{enumerate}
+l.688 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6767,19 +6798,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:636: Missing number, treated as zero.
+./badania.tex:688: Missing number, treated as zero.
 <to be read again> 
                    =
-l.636 \end{enumerate}
+l.688 \end{enumerate}
                      
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:636: Undefined control sequence.
+./badania.tex:688: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.636 \end{enumerate}
+l.688 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6787,10 +6818,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:636: Undefined control sequence.
+./badania.tex:688: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.636 \end{enumerate}
+l.688 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6798,19 +6829,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:636: Missing number, treated as zero.
+./badania.tex:688: Missing number, treated as zero.
 <to be read again> 
                    =
-l.636 \end{enumerate}
+l.688 \end{enumerate}
                      
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:636: Undefined control sequence.
+./badania.tex:688: Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.636 \end{enumerate}
+l.688 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6818,10 +6849,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:636: Undefined control sequence.
+./badania.tex:688: Undefined control sequence.
 \enit@endenumerate ...t \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.636 \end{enumerate}
+l.688 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6829,19 +6860,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:636: Missing number, treated as zero.
+./badania.tex:688: Missing number, treated as zero.
 <to be read again> 
                    =
-l.636 \end{enumerate}
+l.688 \end{enumerate}
                      
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:636: Undefined control sequence.
+./badania.tex:688: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.636 \end{enumerate}
+l.688 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6849,10 +6880,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:636: Undefined control sequence.
+./badania.tex:688: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.636 \end{enumerate}
+l.688 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6860,16 +6891,16 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:636: Missing number, treated as zero.
+./badania.tex:688: Missing number, treated as zero.
 <to be read again> 
                    =
-l.636 \end{enumerate}
+l.688 \end{enumerate}
                      
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-[45]) (./summary.tex [46]
+[48]) (./summary.tex [49]
 ./summary.tex:6: Undefined control sequence.
 l.6 \lipsum
            [17]
@@ -6879,13 +6910,13 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-) (./thesis.bbl [47
+) (./thesis.bbl [50
 
 ])
 \tf@lof=\write10
 \openout10 = `thesis.lof'.
 
- [48
+ [51
 
 ]
 
@@ -6897,9 +6928,9 @@ Package hyperref Warning: old lop file detected, not used; run LaTeX again.
 \tf@lot=\write12
 \openout12 = `thesis.lot'.
 
-[49
+[52
 
-] [50
+] [53
 
 ] (./appendix1.tex
 Dodatek A.
@@ -6912,7 +6943,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-) [51
+) [54
 
 ] (./thesis.aux)
 
@@ -6931,23 +6962,23 @@ Package rerunfilecheck Warning: File `thesis.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `thesis.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  76ABF79A13750CB33A8F0AE1C987F80A;18836.
+(rerunfilecheck)             After:  C86C50FAD69D19CDA5F55B4C425051B9;19329.
 runsystem(rm thesis.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 33721 strings out of 478287
- 641050 string characters out of 5849288
+ 33748 strings out of 478287
+ 641679 string characters out of 5849288
  1003880 words of memory out of 5000000
- 50785 multiletter control sequences out of 15000+600000
- 555123 words of font info for 207 fonts, out of 8000000 for 9000
+ 50803 multiletter control sequences out of 15000+600000
+ 555017 words of font info for 206 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,13n,120p,1101b,887s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 123i,16n,120p,1101b,887s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmbi.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfit0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfit1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on thesis.pdf (56 pages, 587072 bytes).
+Output written on thesis.pdf (59 pages, 850116 bytes).
 PDF statistics:
- 528 PDF objects out of 1000 (max. 8388607)
- 433 compressed objects within 5 object streams
- 207 named destinations out of 1000 (max. 500000)
- 53302 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 551 PDF objects out of 1000 (max. 8388607)
+ 449 compressed objects within 5 object streams
+ 216 named destinations out of 1000 (max. 500000)
+ 53312 words of extra memory for PDF output out of 61914 (max. 10000000)
 

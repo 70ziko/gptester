@@ -4,7 +4,7 @@
 \setcounter {tocdepth}{2}
 \contentsline {chapter}{Wprowadzenie}{2}{chapter*.3}%
 \contentsline {section}{Pytania badawcze}{2}{section*.4}%
-\contentsline {section}{Hipotezy}{2}{section*.5}%
+\contentsline {section}{Hipotezy}{3}{section*.5}%
 \contentsline {section}{Uzasadnienie tytułu}{3}{section*.6}%
 \contentsline {section}{Omówienie literatury naukowej i stopnia jej przydatności}{3}{section*.7}%
 \contentsline {section}{Cel pracy}{3}{section*.8}%
@@ -68,21 +68,24 @@
 \contentsline {chapter}{\numberline {6\relax .\enspace }Identyfikacja i naprawa podatności aplikacji Damn Vulnerable NodeJS Application}{42}{chapter.6}%
 \contentsline {section}{\numberline {6.1\relax .\enspace }Wstęp}{42}{section.6.1}%
 \contentsline {section}{\numberline {6.2\relax .\enspace }Przygotowanie środowiska}{42}{section.6.2}%
-\contentsline {section}{\numberline {6.3\relax .\enspace }Analiza statyczna i naprawa}{42}{section.6.3}%
-\contentsline {section}{\numberline {6.4\relax .\enspace }Weryfikacja i ocena skuteczności}{42}{section.6.4}%
-\contentsline {section}{\numberline {6.5\relax .\enspace }Wyniki i dyskusja}{43}{section.6.5}%
-\contentsline {subsection}{\numberline {6.5.1\relax .\enspace }Wyzwania i ograniczenia}{43}{subsection.6.5.1}%
-\contentsline {section}{\numberline {6.6\relax .\enspace }Wnioski}{43}{section.6.6}%
-\contentsline {chapter}{\numberline {7\relax .\enspace }Badanie funkcjonalności na aplikacji webowej OWASP VulnerableApp}{44}{chapter.7}%
-\contentsline {section}{\numberline {7.1\relax .\enspace }Charakterystyka aplikacji OWASP VulnerableApp}{44}{section.7.1}%
-\contentsline {section}{\numberline {7.2\relax .\enspace }Testowane rodzaje podatności}{44}{section.7.2}%
-\contentsline {section}{\numberline {7.3\relax .\enspace }Zawartość znajdująca się w repozytorium}{45}{section.7.3}%
-\contentsline {section}{\numberline {7.4\relax .\enspace }Procedura przeprowadzenia testów}{45}{section.7.4}%
-\contentsline {subsection}{\numberline {7.4.1\relax .\enspace }Oczekiwane rezultaty}{46}{subsection.7.4.1}%
-\contentsline {section}{\numberline {7.5\relax .\enspace }Wnioski i dalsze kierunki badań}{46}{section.7.5}%
-\contentsline {section}{\numberline {7.6\relax .\enspace }Wnioski}{46}{section.7.6}%
-\contentsline {chapter}{Podsumowanie}{47}{chapter*.18}%
-\contentsline {chapter}{Bibliografia}{48}{chapter*.19}%
-\contentsline {chapter}{Spis listingów}{49}{chapter*.20}%
-\contentsline {chapter}{Dodatki}{50}{section*.21}%
-\contentsline {chapter}{\numberline {A\relax .\enspace }Dodatek 1}{51}{appendix.A}%
+\contentsline {section}{\numberline {6.3\relax .\enspace }Identyfikacja podatności za pomocą skanerów}{43}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1\relax .\enspace }OWASP ZAP}{43}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2\relax .\enspace }Nessus}{43}{subsection.6.3.2}%
+\contentsline {section}{\numberline {6.4\relax .\enspace }Analiza statyczna i naprawa}{45}{section.6.4}%
+\contentsline {section}{\numberline {6.5\relax .\enspace }Weryfikacja i ocena skuteczności}{45}{section.6.5}%
+\contentsline {section}{\numberline {6.6\relax .\enspace }Wyniki i dyskusja}{45}{section.6.6}%
+\contentsline {subsection}{\numberline {6.6.1\relax .\enspace }Wyzwania i ograniczenia}{46}{subsection.6.6.1}%
+\contentsline {section}{\numberline {6.7\relax .\enspace }Wnioski}{46}{section.6.7}%
+\contentsline {chapter}{\numberline {7\relax .\enspace }Badanie funkcjonalności na aplikacji webowej OWASP VulnerableApp}{47}{chapter.7}%
+\contentsline {section}{\numberline {7.1\relax .\enspace }Charakterystyka aplikacji OWASP VulnerableApp}{47}{section.7.1}%
+\contentsline {section}{\numberline {7.2\relax .\enspace }Testowane rodzaje podatności}{47}{section.7.2}%
+\contentsline {section}{\numberline {7.3\relax .\enspace }Zawartość znajdująca się w repozytorium}{48}{section.7.3}%
+\contentsline {section}{\numberline {7.4\relax .\enspace }Procedura przeprowadzenia testów}{48}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1\relax .\enspace }Oczekiwane rezultaty}{49}{subsection.7.4.1}%
+\contentsline {section}{\numberline {7.5\relax .\enspace }Wnioski i dalsze kierunki badań}{49}{section.7.5}%
+\contentsline {section}{\numberline {7.6\relax .\enspace }Wnioski}{49}{section.7.6}%
+\contentsline {chapter}{Podsumowanie}{50}{chapter*.21}%
+\contentsline {chapter}{Bibliografia}{51}{chapter*.22}%
+\contentsline {chapter}{Spis listingów}{52}{chapter*.23}%
+\contentsline {chapter}{Dodatki}{53}{section*.24}%
+\contentsline {chapter}{\numberline {A\relax .\enspace }Dodatek 1}{54}{appendix.A}%

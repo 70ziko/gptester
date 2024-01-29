@@ -32,8 +32,8 @@ class IOlog(metaclass=Singleton):
             self.verbose = verbose
             self.log_file = f"{name}_{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}_raport.md"
             
-            os.makedirs(os.path.join(self.directory, "GPTester", "raports"), exist_ok=True)
-            self.log_file = os.path.join(self.directory, "GPTester", "raports", self.log_file)
+            os.makedirs(os.path.join(self.directory, "GPTested", "raports"), exist_ok=True)
+            self.log_file = os.path.join(self.directory, "GPTested", "raports", self.log_file)
 
             with open(self.log_file, 'w') as file:
                 file.write('# GPTESTER RAPORT\n')
@@ -47,6 +47,18 @@ class IOlog(metaclass=Singleton):
 
         if verbose_only and not self.verbose:
             return
+
+        color_code = self.COLOR_CODES.get(color)
+        if color_code:
+            print(f"\033[{color_code}m{formatted_message}\033[0m")
+        else:
+            print(formatted_message)
+
+    def print(self, message, color=None, verbose_only=False, timestamp=True):
+        if verbose_only and not self.verbose:
+            return
+        timestamp = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        formatted_message = f"{timestamp}: {message}" if timestamp else message
 
         color_code = self.COLOR_CODES.get(color)
         if color_code:

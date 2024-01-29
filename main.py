@@ -13,6 +13,7 @@ from utils.git_pytcher import generate_patch
 from utils.config import Config
 
 CFG = Config()
+timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
 
 banner = f"""
                   ___  ___  _____           _             
@@ -20,20 +21,22 @@ banner = f"""
                 | (_ ||  _/  | |  / -_)(_-/|  _|/ -_)| '_|
                  \___||_|    |_|  \___|/__/ \__|\___||_|  
 
-           The static code analysis agent, version: {CFG.version}\n\n"""
+         The static code analysis agent, version: {CFG.version}\n\n"""
 
 # obsługa programu poprzez argumenty przekazywane w konsoli
 parser = argparse.ArgumentParser(description=banner, formatter_class=argparse.RawTextHelpFormatter)
-parser.add_argument('directory', type=str, help='Path to the directory to scan')
-parser.add_argument('-v', '--verbose', help='Print out all the outputs and steps taken', action='store_true')
+parser.add_argument('directory', type=str, help='Path to the directory to scan\n')
+parser.add_argument('-v', '--verbose', help='Print out all the outputs and steps taken\n', action='store_true')
 parser.add_argument('-m', '--model', help='Choose the LLM model for code analysis, default: "gpt-4-1106-preview"', default="gpt-4-1106-preview")
-parser.add_argument('-r', '--retrieval', help='Turn on Retrieval Augmented Generation for code analysis, default: False', action='store_true', default=False)
-parser.add_argument('-f', '--file_to_know', help='Point to a file to be uploaded to the knowledge base for retrieval, default: "699.csv" - CVE database in csv \n!CURRENT VERSION SUPPORTS ONE FILE!', default="699.csv")
-parser.add_argument('-o', '--output', help='Output the results to a file, default: "raports/{name_of_parent_folder}_{timestamp}_raport.md"')
-parser.add_argument('-t', '--tests', help='Provide a path to functional tests to run on the project, if not supplied or found in the workspace directory, the tests will be generated or skipped')
-parser.add_argument('-c', '--codeql', help='Use codeql to enhance the scan, REQUIRED to install CodeQL-CLI console tool', action='store_true', default=False)
-parser.add_argument('--command', help='Provide a build command to run the project for codeql, if no cmake or similiar file present in the project root directory, default: "make"', default="make")
-parser.add_argument('--language', help='Provide a programming language of the project for codeql, default: "cpp"', default="cpp")
+parser.add_argument('-r', '--retrieval', help='Turn on Retrieval Augmented Generation for code analysis, default: False\n', action='store_true', default=False)
+parser.add_argument('-f', '--file-to-know', help='Point to a file to be uploaded to the knowledge base for retrieval\n default: "699.csv" - CVE database in csv \n!CURRENT VERSION SUPPORTS ONE FILE!\n', default="699.csv")
+parser.add_argument('-i', '--ignore', help='Provide a path to a .gitignore file to ignore files from the scan, \na typical lists of files will be ignored by default\n')
+parser.add_argument('-p', '--patch-file', help='Provide a path for the generated patch file\n default: "{your_project_dir}/GPTested/{timestamp}_patch.diff"\n', default=f"GPTested/{timestamp}_patch.diff")
+parser.add_argument('-o', '--output', help='Output the results to a specified directory\n default: "{your_project_dir}/GPTested/raports/{name_of_project_folder}_{timestamp}_raport.md"\n')
+parser.add_argument('-t', '--tests', help='Provide a path to functional tests to run on the project\n if not supplied or found in the workspace directory, the tests will be generated or skipped\n')
+parser.add_argument('-c', '--codeql', help='!IN TESTING!NOT STABLE! Use codeql to enhance the scan\n REQUIRED to install CodeQL-CLI console tool\n', action='store_true', default=False)
+parser.add_argument('--command', help='Provide a build command to run the project for codeql\n if no cmake or similiar file present in the project root directory, default: "make"\n', default="make")
+parser.add_argument('--language', help='Provide a programming language of the project for codeql, default: "cpp"\n', default="cpp")
 
 
 # Inicjalizacja
@@ -42,9 +45,8 @@ args = parser.parse_args()
 project_name = os.path.basename(args.directory.rstrip('/'))
 iol = IOlog(args.directory, verbose=args.verbose, name=project_name)
 
-# Import the agents after iol is ready and singletonned
+# Import agents after iol is ready and singletonned
 import agents
-
 
 CFG.set_retrieval(args.retrieval)
 
@@ -100,38 +102,43 @@ async def retry_task(coroutine_func, *args, max_retries=CFG.restart_limit, delay
 
 
 async def main():
+    fixed_dir = f'GPTested/fixed_{timestamp}'
+    
     print(banner)
 
     iol.log(f"Beginning scan for {args.directory}", color="pink")
-    dir_content = walk_directory(args.directory)    # excluding directories starting with 'fixed' and other typical .gitignore files
+
+    ignore_content = open(args.ignore, 'r').read() if args.ignore else '.gitignore'
+    dir_content = walk_directory(args.directory, ignore_content)    # excluding directories starting with 'fixed' and other typical .gitignore files
                                                     # in future it will be possible to point to a custom .gitignore file
-    fixed_dir = f'fixed_{datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S")}'
 
     iol.log(f"Found {len(dir_content)} files to scan", color="cyan", verbose_only=False)
-
     iol.log(f'Tokens inside the directory: {num_tokens_from_string(dir_content)}', color='bright_cyan')
-
-
     iol.log(f"Using model: {args.model}", color="white")
-    iol.log(f"Beginning code analysis...", color="white")
+    iol.print(f"Beginning code analysis...", color="white")
 
     if args.codeql:
         iol.log(f"CodeQL is enabled, I will now begin the scan using CodeQL", color="red")
         # run_codeql_scan(args.directory, args.language, args.command)
 
-    chunks = split_content(dir_content, CFG.token_limit)
-    iol.log(f"Splitting the content into {len(chunks)} chunks", color="bright_cyan", verbose_only=True)
+    chunks = split_content(dir_content, CFG.token_limit)                                # Assistant API ogranicza liczbę ZNAKÓW do 32k XD! 
+    iol.log(f"Splitting the content into {len(chunks)} chunks", color="bright_cyan")    # więc nie ma sensu liczyć tokenów XDDDD
     
     await run_agents(args, iol, chunks, fixed_dir)
 
     print()
     iol.log(f"\tSCAN COMPLETE!\n", color="green")
-    iol.log(f"Check the generated raport in {iol.log_file}", color="bright_cyan")
+    print(f"\nCheck the generated raport in {iol.log_file} and fixed files in the {fixed_dir}\n")
 
-    iol.log(f"Generating patch...", color="bright_cyan")
-    generate_patch(args.directory, iol.log_file)
+    iol.print(f"Generating patch file...", color="bright_black", verbose_only=True)
+    generate_patch(args.directory, os.path.join(args.directory, fixed_dir), os.path.join(args.directory, args.patch_file))
+    iol.log(f"Patch generated in {args.patch_file}", color="bright_cyan")
 
-    iol.log(f"Thank you for using the static code analysis agent!", color="bright_cyan")
+    iol.print(f"To apply the changes with a git commit, run: \ngit am --directory={args.directory} {args.patch_file}\n", color="bright_cyan", timestamp=False)
+    iol.print(f"or:\n\t cd {args.directory} \n\t git am {args.patch_file}", color="bright_cyan", timestamp=False)
+    iol.print(f"To apply the changes overwritting the file contents !ORIGINAL CONTENT WILL BE LOST!, run: \n\tgit apply --directory={args.directory} {args.patch_file}", color='red', timestamp=False)
+
+    iol.print(f"Thank you for using the static code analysis agent!", color="bright_cyan")
     # input("If you want to run tests on fixed code (not available in current version), press enter... (or ctrl+c to exit)")
 
 

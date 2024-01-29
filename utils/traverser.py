@@ -248,7 +248,7 @@ def read_file(file_path):
     except Exception as e:
         return f"An error occurred: {e}"
 
-def walk_directory(directory):
+def walk_directory(directory, append_ignore:str=None):
     image_extensions = [
         ".png",
         ".jpg",
@@ -264,9 +264,9 @@ def walk_directory(directory):
         ".properties",
 
     ]
-    exclude_list = ["GPTester", "node_modules", "build", "dist", "venv", "env", "migrations", ".git", ".vscode", ".idea", ".pytest_cache", 
-                    ".cache", ".tox", "tests", "test", "docs", "doc", "static", "media", "assets", 
-                    "logs", "log", "raports", "staticfiles"]
+    exclude_list = ["GPTested","GPTester", "tests", "node_modules", "build", "dist", "venv", "env", "migrations", ".git", ".vscode", ".idea", ".pytest_cache", 
+                    ".cache", ".tox", "docs", "doc", "static", "media", "assets", "logs", "log", "raports", "staticfiles"]
+    if append_ignore: exclude_list.append(append_ignore)
     code_contents = {}
     for root, dirs, files in os.walk(directory):
         dirs[:] = [d for d in dirs if not d.startswith('fixed') and d not in exclude_list]

@@ -92,4 +92,4 @@ async def test_agent(input: str, test: str, iol: IOlog = None, model: str = 'gpt
                     Save them to a file and then run them. Use provided functions to do so.""")
     
     messages = [user]
-    return await ai.next(messages, directory=directory)
+    return await ai.next(messages, scan_dir=directory)
