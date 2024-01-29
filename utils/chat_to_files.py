@@ -40,7 +40,7 @@ def parse_chat(chat):
     
     return files
 
-def eval_path(directories, path):
+def eval_path(directories, path=None):
     """Check path againt all dirs in workspace"""
     for dir in directories:
         if dir.endswith(path):
