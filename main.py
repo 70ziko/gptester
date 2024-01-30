@@ -7,7 +7,7 @@ import argparse
 import datetime
 
 from utils.io import IOlog
-from utils.traverser import walk_directory, split_content
+from utils.traverser import walk_directory, split_content, split_content_char
 from utils.utils import num_tokens_from_string
 from utils.git_pytcher import generate_patch
 from utils.config import Config
@@ -45,7 +45,7 @@ args = parser.parse_args()
 project_name = os.path.basename(args.directory.rstrip('/'))
 iol = IOlog(args.directory, verbose=args.verbose, name=project_name)
 
-# Import agents after iol is ready and singletonned
+# Import agents after iol is ready and singleton'ned
 import agents
 
 CFG.set_retrieval(args.retrieval)
@@ -53,7 +53,6 @@ CFG.set_retrieval(args.retrieval)
 async def run_agents(args, iol, chunks, fixed_dir):
     tasks = []
 
-    # If tests are provided, add the test agent task
     if args.tests:
         iol.log(f"Functional tests provided, I will now run them", color="red")
         test_task = asyncio.create_task(
@@ -61,14 +60,12 @@ async def run_agents(args, iol, chunks, fixed_dir):
         )   # chunks[0] - only the first chunk is used for tests, this needs changing and rethinking
         tasks.append(test_task)
 
-    # Add debug agent tasks for each chunk using retry mechanism
     for chunk in chunks:
         task = asyncio.create_task(
             retry_task(agents.debug_agent, chunk, args.directory, iol, args.model, fixed_dir, args.file_to_know)
         )
         tasks.append(task)
 
-    # Wait for all tasks to complete
     for completed_task in asyncio.as_completed(tasks):
         output = await completed_task
 
@@ -78,7 +75,6 @@ async def run_agents(args, iol, chunks, fixed_dir):
                     text = content_item.text.value
                     iol.log("\n\n" + text + '\n', color="white")
 
-# The retry_task function remains the same as in the previous example
 
 async def retry_task(coroutine_func, *args, max_retries=CFG.restart_limit, delay=2):    # CFG.restart_limit = 3 in config.py
     """
@@ -119,9 +115,13 @@ async def main():
         iol.log(f"CodeQL is enabled, I will now begin the scan using CodeQL", color="red")
         # run_codeql_scan(args.directory, args.language, args.command)
 
-    chunks = split_content(dir_content, CFG.token_limit)                                # Assistant API ogranicza liczbę ZNAKÓW do 32k XD! 
-    iol.log(f"Splitting the content into {len(chunks)} chunks", color="bright_cyan")    # więc nie ma sensu liczyć tokenów XDD
+    chunks = split_content(dir_content, CFG.token_limit)                                # Assistant API ogranicza liczbę ZNAKÓW(char) do ~32k XD! 
+    iol.log(f"Splitting the content into {len(chunks)} chunks", color="bright_cyan")    # więc nie ma sensu liczyć tokenów XDD (zostawiam dla innych modeli i API)
     
+    # chunks = split_content_char(dir_content, 32500)                             
+    # iol.log(f"Splitting the content into {len(chunks)} chunks", color="bright_cyan")    
+    
+
     await run_agents(args, iol, chunks, fixed_dir)
 
     print()

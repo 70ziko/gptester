@@ -507,9 +507,9 @@ Dla każdego z podanych przeze mnie danych wejściowych został wyświetlony kom
 \subsection{Interpretacja wyników}
 \label{subsec:interpretacja_wynikow}
 
-Analiza wyników testów funkcjonalnych przeprowadzonych na programie \texttt{damnvuln} i jego zmodyfikowanych wersjach pozwala na dokonanie istotnych obserwacji dotyczących skuteczności działania narzędzia \texttt{gptester} oraz zdolności modeli językowych do wykrywania i naprawy błędów typu "Out of Bounds".
+Analiza wyników testów funkcjonalnych przeprowadzonych na skrypcie \texttt{damnvuln} i jego zmodyfikowanych wersjach pozwala na dokonanie istotnych obserwacji dotyczących skuteczności działania narzędzia \texttt{gptester} oraz zdolności modeli językowych do wykrywania i naprawy błędów typu "Out of Bounds".
 
-Pierwszy test funkcjonalny, w którym oryginalna wersja programu \texttt{damnvuln} zwróciła błąd Segmentation Fault, wskazuje na obecność poważnego błędu, który uniemożliwia poprawne wykonanie programu. Taki wynik podkreśla znaczenie analizy statycznej kodu w celu identyfikacji potencjalnych zagrożeń i wad, które mogą prowadzić do krytycznych awarii aplikacji. Przede wszystkim wskazuje to na dużą podatność i wysoki potencjał do eksploitacji programu. Złośliwy podmiot może wykorzystać ten błąd do nadpisania miejsca w pamięci inaczej nie dostępnego, prowadząc do wykonania kodu arbitralnego, co może prowadzić do kradzieży danych, utraty poufności, a nawet całkowitego przejęcia kontroli nad systemem, zwłaszcza przy ustawionym bicie lepkim (sticky bit) podatnego programu. 
+Pierwszy test funkcjonalny, w którym oryginalna wersja skryptu \texttt{damnvuln} zwróciła błąd Segmentation Fault, wskazuje na obecność poważnego błędu, który uniemożliwia poprawne wykonanie programu. Taki wynik podkreśla znaczenie analizy statycznej kodu w celu identyfikacji potencjalnych zagrożeń i wad, które mogą prowadzić do krytycznych awarii aplikacji. Przede wszystkim wskazuje to na dużą podatność i wysoki potencjał do eksploitacji programu. Złośliwy podmiot może wykorzystać ten błąd do nadpisania miejsca w pamięci inaczej nie dostępnego, prowadząc do wykonania kodu arbitralnego, co może prowadzić do kradzieży danych, utraty poufności, a nawet całkowitego przejęcia kontroli nad systemem, zwłaszcza przy ustawionym bicie lepkim (sticky bit) podatnego programu. 
 
 W przypadku zmodyfikowanej wersji programu, gdzie błąd Segmentation Fault został zastąpiony komunikatem o błędzie Integer Underflow, obserwujemy, że narzędzie \texttt{gptester} było w stanie wykryć i częściowo naprawić błąd. Zmodyfikowany kod, chociaż poprawnie identyfikuje rodzaj błędu, wprowadza jedynie kontrolę tego błędu, nie adresując w pełni jego przyczyny. W tym przypadku natomiast nie da się wykorzystać błędu do wykonania kodu arbitralnego, ponieważ nie jest on już krytyczny. Jednakże, w przypadku gdyby błąd ten występował w innym miejscu programu, mógłby on prowadzić do nieprzewidywalnych konsekwencji, takich jak utrata danych, bądź nieprawidłowe działanie programu.
 
@@ -539,6 +539,17 @@ Przedstawiony przypadek otrzymuje przeze mnie następujące oceny:
 \label{sec:analiza_blednego_kodu_php}
 
 Większość przykładów z tego zbioru to aplikacje webowe, dlatego przygotowanie środowiska testowego dla tych przykładów było bardziej skomplikowane. W takich przypadkach należało wykonać następujące kroki:
+
+\section{Automatyzacja procesu testowania dla Vulnerable-Code-Snippets}
+\label{sec:automatyzacja_procesu_testowania}
+Z uwagi na dużą liczbę przykładów w zbiorze \textit{snoopysecurity/Vulnerable-Code-Snippets}, konieczne było zautomatyzowanie procesu testowania. W tym celu został wykorzystany CodeQL, który pozwala na przeprowadzenie analizy statycznej kodu w sposób automatyczny. W tym celu należało wykonać następujące kroki:
+\begin{enumerate}
+    \item Zainstalowanie CodeQL.
+    \item Skompilowanie przykładów podatnego kodu.
+    \item Przeprowadzenie analizy statycznej kodu.
+\end{enumerate}
+
+
 
 \chapter{Identyfikacja i naprawa podatności aplikacji Damn Vulnerable NodeJS Application}
 
@@ -693,6 +704,191 @@ W wyniku przeprowadzonych testów oczekujemy uzyskania szczegółowych danych na
 \section{Wnioski i dalsze kierunki badań}
 Na podstawie zebranych danych zostaną wyciągnięte wnioski dotyczące skuteczności narzędzia w kontekście poszczególnych typów podatności oraz ogólnej wydajności. Dalsze badania mogą również koncentrować się na porównaniu wyników z innymi narzędziami dostępnymi na rynku oraz na rozwoju nowych funkcji i usprawnień w badanym programie.
 
+\chapter{Przeprowadzenie testów na aplikacji NodeGoat}
+
+\section{Wstęp}
+\label{sec:wstep}
+\dots
+
+\section{Przygotowanie środowiska testowego}
+\label{sec:przygotowanie_srodowiska_testowego}
+
+Aby przygotować aplikację do lokalnego uruchomienia bez korzystania z konteneryzacji, niezbędne było poprawienie wersji paczek w pliku package.json oraz obniżenie używanej wersji npm i node do node v16.0.0 (npm v7.10.0). Następnie należało zainstalować wszystkie zależności za pomocą komendy npm install. Po wykonaniu tych kroków aplikacja była gotowa do uruchomienia komendą npm run.
+
+
+\section{Identyfikacja podatności za pomocą tradycyjnych skanerów}
+Przed przystąpieniem do naprawy podatności, aplikacja DVNA została poddana skanowaniu przy użyciu skanerów OWASP ZAP i Nessus. Wyniki tych skanowań zostały wykorzystane jako punkt odniesienia do oceny skuteczności narzędzia \texttt{gptester} w kontekście naprawy podatności.
+
+
+\subsection{OWASP ZAP}
+\label{subsec:owasp_zap}
+Skanowanie aplikacji NodeGoat przy użyciu OWASP ZAP wykazało obecność 14 podatności, w tym 2 krytyczne, 2 wysokiego ryzyka, 3 średniego ryzyka oraz 1 niskiego ryzyka. Poniżej przedstawiono listę zidentyfikowanych podatności wraz z ich ryzykiem i opisem.
+
+\begin{table}[H]
+  \begin{tabular}{llllll}
+    \multicolumn{2}{l}{} &
+      \multicolumn{4}{c}{Risk} \\ \cline{3-6} 
+    \multicolumn{2}{l|}{} &
+      \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}High\\ (= High)\end{tabular}} &
+      \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Medium\\ (\textgreater{}= Medium)\end{tabular}} &
+      \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Low\\ (\textgreater{}= Low)\end{tabular}} &
+      \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Informational\\ (\textgreater{}= Informational)\end{tabular}} \\ \cline{2-6} 
+    \multicolumn{1}{l|}{site} &
+      \multicolumn{1}{l|}{http://localhost:4000} &
+      \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}3\\ (3)\end{tabular}} &
+      \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}5\\ (8)\end{tabular}} &
+      \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}5\\ (13)\end{tabular}} &
+      \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}7\\ (20)\end{tabular}} \\ \cline{2-6} 
+    \end{tabular}   
+  \caption{Wyniki skanowania aplikacji NodeGoat przy użyciu skanera \texttt{OWASP-zap}}
+  \label{tab:zap_before}
+  \end{table}
+
+\subsection{Nessus}
+\label{subsec:nessus}
+Skanowanie aplikacji DVNA przy użyciu Nessus wykazało obecność 21 podatności, w tym 2 średniego ryzyka, 2 niskiego ryzyka oraz 17 informacyjnych. Poniżej przedstawiono listę zidentyfikowanych podatności wraz z ich ryzykiem i opisem.
+
+
+\subsection{Statyczny analizator CodeQL}\label{subsec:codeql}
+
+\subsubsection{Proces przeprowadzenia testu}
+
+\begin{enumerate}
+    \item Przygotowanie środowiska testowego dla aplikacji NodeGoat.
+    
+    
+
+    \item Uruchomienie skanowania z wykorzystaniem programu.
+    Przed przystąpieniem do skanowania należy utworzyć bazę danych CodeQL. W tym celu należy wykonać następujące kroki:
+    \begin{enumerate}
+        \item Zainstalować CodeQL CLI.
+        \item Zainicjalizować i zbudować bazę danych CodeQL.
+        \begin{verbatim}
+        > codeql database create GoatQL-db --language=javascript  
+        Initializing database at /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/GoatQL-db.
+        Running build command: []
+        [2024-01-25 19:33:30] [build-stdout] Single-threaded extraction.
+        [2024-01-25 19:33:34] [build-stdout] package.json: Main file set to server.js
+        [2024-01-25 19:33:34] [build-stdout] Extracting /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/app/views/tutorial/a1.html
+        [2024-01-25 19:33:34] [build-stdout] Done extracting /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/app/views/tutorial/a1.html (91 ms)
+        [2024-01-25 19:33:34] [build-stdout] Extracting /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/app/views/tutorial/a10.html
+        [2024-01-25 19:33:34] [build-stdout] Done extracting /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/app/views/tutorial/a10.html (5 ms)
+        [2024-01-25 19:33:34] [build-stdout] Extracting /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/app/views/tutorial/a2.html
+        .
+        .
+        .
+        [2024-01-30 19:33:38] [build-stdout] Extracting /home/paris/Downloads/tar/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/vm.js
+        [2024-01-30 19:33:38] [build-stdout] Done extracting /home/paris/Downloads/tar/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/vm.js (8 ms)
+        Finalizing database at /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/GoatQL-db.
+        Successfully created database at /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/GoatQL-db.
+        \end{verbatim}
+
+        \item Uruchomić wybrane zapytania na bazie danych wyszukujące podatności.
+        
+        W tym celu uruchomiłem domyślne pakiety zapytań dostępne w CodeQL CLI. W celu uruchomienia zapytania należy wykonać następującą komendę:
+        \begin{verbatim}
+          > codeql database analyze GoatQL-db javascript-code-scanning.qls --format=csv --output=default-goat-QLresults.csv
+Running queries.
+[1/88] Loaded /home/paris/Downloads/tar/codeql-bundle-linux64/codeql/qlpacks/codeql/javascript-queries/0.8.2/AngularJS/InsecureUrlWhitelist.qlx.
+        \end{verbatim}
+        Komenda zakończyła się sukcesem, a w katalogu pojawił się plik z wynikami analizy.
+        \begin{verbatim}
+          PrototypePollutingFunction.ql            : [83/88 eval 25ms] Results written to codeql/javascript-queri
+PrototypePollutingMergeCall.ql           : [84/88 eval 260ms] Results written to codeql/javascript-quer
+InsufficientPasswordHash.ql              : [85/88 eval 5ms] Results written to codeql/javascript-querie
+RequestForgery.ql                        : [86/88 eval 143ms] Results written to codeql/javascript-quer
+LinesOfCode.ql                           : [87/88 eval 3ms] Results written to codeql/javascript-querie
+LinesOfUserCode.ql                       : [88/88 eval 644ms] Results written to codeql/javascript-quer
+Shutting down query evaluator.
+Interpreting results.
+Analysis produced the following diagnostic data:
+
+|          Diagnostic          |  Summary   |
++------------------------------+------------+
+| Successfully extracted files | 77 results |
+
+Analysis produced the following metric data:
+
+|                                   Metric                                   | Value |
++----------------------------------------------------------------------------+-------+
+| Total lines of user written JavaScript and TypeScript code in the database |  2926 |
+| Total lines of JavaScript and TypeScript code in the database              |  2932 |
+\end{verbatim}
+
+Na aplikacji został również uruchomiony pakiet kwerend javascript-extended-security.qls 
+    \end{enumerate}
+
+    \item Dokumentacja wykrytych podatności oraz sugerowanych przez program napraw.
+    \item Analiza efektywności napraw i ich wpływ na bezpieczeństwo aplikacji za pomocą innych skanerów podatności.
+\end{enumerate}
+
+\subsection{Wyniki otrzymane z analizy CodeQL}
+\begin{table}[H]
+  \centering
+  \footnotesize
+  % \resizebox{\textwidth}{!}{%
+  \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+  \hline
+      "Inefficient regular expression" & "A regular expression that requires exponential time to match certain inputs can be a performance bottleneck, and may be vulnerable to denial-of-service attacks." & "error" & "This part of the regular expression may cause exponential backtracking on strings containing many repetitions of '0'." & "/app/routes/profile.js" & "59" & "32" & "59" & "37" & ~ \\ \hline
+      "Polynomial regular expression used on uncontrolled data" & "A regular expression that can require polynomial time to match may be vulnerable to denial-of-service attacks." & "warning" & "This [[""regular expression""|""relative:///app/routes/profile.js:59:32:59:37""]] that depends on [[""a user-provided value""|""relative:///app/routes/profile.js:50:13:50:20""]] may run slow on strings with many repetitions of '0'." & "/app/routes/profile.js" & "61" & "44" & "61" & "73" & ~ \\ \hline
+      "Polynomial regular expression used on uncontrolled data" & "A regular expression that can require polynomial time to match may be vulnerable to denial-of-service attacks." & "warning" & "This [[""regular expression""|""relative:///app/routes/session.js:143:34:143:38""]] that depends on [[""a user-provided value""|""relative:///app/routes/session.js:198:13:198:20""]] may run slow on strings starting with '$\backslash$t@' and with many repetitions of '$\backslash$t@'. & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+      This [[""regular expression""|""relative:///app/routes/session.js:143:41:143:45""]] that depends on [[""a user-provided value""|""relative:///app/routes/session.js:198:13:198:20""]] may run slow on strings starting with '$\backslash$t@$\backslash$t.' and with many repetitions of '$\backslash$t.'." & "/app/routes/session.js" & "181" & "18" & "181" & "37" & ~ & ~ & ~ & ~ \\ \hline
+      "Database query built from user-controlled sources" & "Building a database query from user-controlled sources is vulnerable to insertion of malicious code by the user." & "error" & "This query object depends on a [[""user-provided value""|""relative:///app/routes/session.js:57:13:57:20""]]." & "/app/data/user-dao.js" & "91" & "26" & "93" & "9" & ~ \\ \hline
+      "Database query built from user-controlled sources" & "Building a database query from user-controlled sources is vulnerable to insertion of malicious code by the user." & "error" & "This query object depends on a [[""user-provided value""|""relative:///app/routes/session.js:198:13:198:20""]]." & "/app/data/user-dao.js" & "104" & "26" & "106" & "9" & ~ \\ \hline
+      "Clear text transmission of sensitive cookie" & "Sending sensitive information in a cookie without requring SSL encryption can expose the cookie to an attacker." & "warning" & "Sensitive cookie sent without enforcing SSL encryption." & "/server.js" & "78" & "13" & "102" & "6" & ~ \\ \hline
+      "Missing CSRF middleware" & "Using cookies without CSRF protection may allow malicious websites to submit requests on behalf of the user." & "error" & "This cookie middleware is serving a [[""request handler""|""relative:///app/routes/index.js:34:24:34:56""]] without CSRF protection. & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+      This cookie middleware is serving a [[""request handler""|""relative:///app/routes/index.js:38:25:38:51""]] without CSRF protection. & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+      This cookie middleware is serving a [[""request handler""|""relative:///app/routes/index.js:48:26:48:35""]] without CSRF protection. & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+      This cookie middleware is serving a [[""request handler""|""relative:///app/routes/index.js:48:38:48:71""]] without CSRF protection. & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+      This cookie middleware is serving a [[""request handler""|""relative:///app/routes/index.js:52:32:52:41""]] without CSRF protection. & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+      This cookie middleware is serving a [[""request handler""|""relative:///app/routes/index.js:52:44:52:89""]] without CSRF protection. & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+      This cookie middleware is serving a [[""request handler""|""relative:///app/routes/index.js:56:27:56:36""]] without CSRF protection. & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+      This cookie middleware is serving a [[""request handler""|""relative:///app/routes/index.js:67:24:67:33""]] without CSRF protection. & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ & ~ \\ \hline
+      This cookie middleware is serving a [[""request handler""|""relative:///app/routes/index.js:67:36:67:56""]] without CSRF protection." & "/server.js" & "78" & "13" & "102" & "6" & ~ & ~ & ~ & ~ \\ \hline
+      "Server-side URL redirect" & "Server-side URL redirection based on unvalidated user input may cause redirection to malicious web sites." & "warning" & "Untrusted URL redirection depends on a [[""user-provided value""|""relative:///app/routes/index.js:72:29:72:41""]]." & "/app/routes/index.js" & "72" & "29" & "72" & "41" & ~ \\ \hline
+      "Code injection" & "Interpreting unsanitized user input as code allows a malicious user arbitrary code execution." & "error" & "This code execution depends on a [[""user-provided value""|""relative:///app/routes/allocations.js:20:13:20:21""]]." & "/app/data/allocations-dao.js" & "78" & "29" & "78" & "92" & ~ \\ \hline
+      "Code injection" & "Interpreting unsanitized user input as code allows a malicious user arbitrary code execution." & "error" & "This code execution depends on a [[""user-provided value""|""relative:///app/routes/contributions.js:32:29:32:36""]]." & "/app/routes/contributions.js" & "32" & "29" & "32" & "43" & ~ \\ \hline
+      "Code injection" & "Interpreting unsanitized user input as code allows a malicious user arbitrary code execution." & "error" & "This code execution depends on a [[""user-provided value""|""relative:///app/routes/contributions.js:33:31:33:38""]]." & "/app/routes/contributions.js" & "33" & "31" & "33" & "47" & ~ \\ \hline
+      "Code injection" & "Interpreting unsanitized user input as code allows a malicious user arbitrary code execution." & "error" & "This code execution depends on a [[""user-provided value""|""relative:///app/routes/contributions.js:34:27:34:34""]]." & "/app/routes/contributions.js" & "34" & "27" & "34" & "39" & ~ \\ \hline
+      "Missing rate limiting" & "An HTTP request handler that performs expensive operations without restricting the rate at which operations can be carried out is vulnerable to denial-of-service attacks." & "warning" & "This route handler performs [[""authorization""|""relative:///app/routes/session.js:58:9:118:10""]] & but is not rate-limited." & "/app/routes/index.js" & "34" & "24" & "34" & "56" \\ \hline
+      "Server-side request forgery" & "Making a network request with user-controlled data in the URL allows for request forgery attacks." & "error" & "The [[""URL""|""relative:///app/routes/research.js:16:31:16:33""]] of this request depends on a [[""user-provided value""|""relative:///app/routes/research.js:15:25:15:37""]]." & "/app/routes/research.js" & "16" & "20" & "28" & "14" & ~ \\ \hline
+      "DOM text reinterpreted as HTML" & "Reinterpreting text from the DOM as HTML can lead to a cross-site scripting vulnerability." & "warning" & "[[""DOM text""|""relative:///app/assets/vendor/bootstrap/bootstrap.js:11:200:11:220""]] is reinterpreted as HTML without escaping meta-characters." & "/app/assets/vendor/bootstrap/bootstrap.js" & "11" & "288" & "11" & "288" & ~ \\ \hline
+      "DOM text reinterpreted as HTML" & "Reinterpreting text from the DOM as HTML can lead to a cross-site scripting vulnerability." & "warning" & "[[""DOM text""|""relative:///app/assets/vendor/bootstrap/bootstrap.js:11:5190:11:5210""]] is reinterpreted as HTML without escaping meta-characters." & "/app/assets/vendor/bootstrap/bootstrap.js" & "11" & "5190" & "11" & "5262" & ~ \\ \hline
+      "DOM text reinterpreted as HTML" & "Reinterpreting text from the DOM as HTML can lead to a cross-site scripting vulnerability." & "warning" & "[[""DOM text""|""relative:///app/assets/vendor/bootstrap/bootstrap.js:11:5822:11:5842""]] is reinterpreted as HTML without escaping meta-characters." & "/app/assets/vendor/bootstrap/bootstrap.js" & "11" & "5926" & "11" & "5926" & ~ \\ \hline
+      "DOM text reinterpreted as HTML" & "Reinterpreting text from the DOM as HTML can lead to a cross-site scripting vulnerability." & "warning" & "[[""DOM text""|""relative:///app/assets/vendor/bootstrap/bootstrap.js:11:10957:11:10977""]] is reinterpreted as HTML without escaping meta-characters." & "/app/assets/vendor/bootstrap/bootstrap.js" & "11" & "10957" & "11" & "11012" & ~ \\ \hline
+      "DOM text reinterpreted as HTML" & "Reinterpreting text from the DOM as HTML can lead to a cross-site scripting vulnerability." & "warning" & "[[""DOM text""|""relative:///app/assets/vendor/bootstrap/bootstrap.js:11:16632:11:16660""]] is reinterpreted as HTML without escaping meta-characters." & "/app/assets/vendor/bootstrap/bootstrap.js" & "11" & "15401" & "11" & "15401" & ~ \\ \hline
+      "DOM text reinterpreted as HTML" & "Reinterpreting text from the DOM as HTML can lead to a cross-site scripting vulnerability." & "warning" & "[[""DOM text""|""relative:///app/assets/vendor/bootstrap/bootstrap.js:11:19467:11:19487""]] is reinterpreted as HTML without escaping meta-characters." & "/app/assets/vendor/bootstrap/bootstrap.js" & "11" & "19722" & "11" & "19722" & ~ \\ \hline
+      "DOM text reinterpreted as HTML" & "Reinterpreting text from the DOM as HTML can lead to a cross-site scripting vulnerability." & "warning" & "[[""DOM text""|""relative:///app/assets/vendor/bootstrap/bootstrap.js:11:24674:11:24694""]] is reinterpreted as HTML without escaping meta-characters." & "/app/assets/vendor/bootstrap/bootstrap.js" & "11" & "24772" & "11" & "24772" & ~ \\ \hline
+      "DOM text reinterpreted as HTML" & "Reinterpreting text from the DOM as HTML can lead to a cross-site scripting vulnerability." & "warning" & "[[""DOM text""|""relative:///app/assets/vendor/bootstrap/bootstrap.js:11:24823:11:24843""]] is reinterpreted as HTML without escaping meta-characters." & "/app/assets/vendor/bootstrap/bootstrap.js" & "11" & "24852" & "11" & "24852" & ~ \\ \hline
+      "Unsafe jQuery plugin" & "A jQuery plugin that unintentionally constructs HTML from some of its options may be unsafe to use for clients." & "warning" & "Potential XSS vulnerability in the [[""'\$.fn.tooltip' plugin""|""relative:///app/assets/vendor/bootstrap/bootstrap.js:11:17473:11:17642""]]." & "/app/assets/vendor/bootstrap/bootstrap.js" & "11" & "13968" & "11" & "13989" & ~ \\ \hline
+      "Unsafe jQuery plugin" & "A jQuery plugin that unintentionally constructs HTML from some of its options may be unsafe to use for clients." & "warning" & "Potential XSS vulnerability in the [[""'\$.fn.collapse' plugin""|""relative:///app/assets/vendor/bootstrap/bootstrap.js:11:24276:11:24480""]]." & "/app/assets/vendor/bootstrap/bootstrap.js" & "11" & "22543" & "11" & "22561" & ~ \\ \hline
+      "Unsafe jQuery plugin" & "A jQuery plugin that unintentionally constructs HTML from some of its options may be unsafe to use for clients." & "warning" & "Potential XSS vulnerability in the [[""'\$.fn.scrollspy' plugin""|""relative:///app/assets/vendor/bootstrap/bootstrap.js:11:26745:11:26918""]]." & "/app/assets/vendor/bootstrap/bootstrap.js" & "11" & "26431" & "11" & "26443" & ~ \\ \hline
+      "Unsafe jQuery plugin" & "A jQuery plugin that unintentionally constructs HTML from some of its options may be unsafe to use for clients." & "warning" & "Potential XSS vulnerability in the [[""'\$.fn.scrollspy' plugin""|""relative:///app/assets/vendor/bootstrap/bootstrap.js:11:26745:11:26918""]]." & "/app/assets/vendor/bootstrap/bootstrap.js" & "11" & "26567" & "11" & "26567" & ~ \\ \hline
+  \end{tabular}
+\end{table}
+Rozszerzony pakiet kwerend rozszerzył wyniki o następujące wpisy:
+
+\begin{table}[!ht]
+  \centering
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{|l|l|l|l|l|l|l|l|}
+    \hline
+    \textbf{Issue} & \textbf{Description} & \textbf{Severity} & \textbf{Details} & \textbf{File} & \textbf{Start Line} & \textbf{Start Column} & \textbf{End Line} & \textbf{End Column} \\ \hline
+    "Failure to abandon session" & "Reusing an existing session as a different user could allow an attacker to access someone else's account by using their session." & "warning" & "Route handler does not invalidate session following login." & "/app/routes/index.js" & "34" & "5" & "34" & "57" \\ \hline
+    "Log injection" & "Building log entries from user-controlled sources is vulnerable to insertion of forged log entries by a malicious user." & "error" & "Log entry depends on a [[""user-provided value""|""relative:///app/routes/session.js:57:13:57:20""]]." & "/app/routes/session.js" & "64" & "80" & "64" & "87" \\ \hline
+    "Indirect uncontrolled command line" & "Forwarding command-line arguments to a child process executed within a shell may indirectly introduce command-line injection vulnerabilities." & "warning" & "This command depends on an unsanitized [[""environment variable""|""relative:///Gruntfile.js:159:24:159:34""]]." & "/Gruntfile.js" & "166" & "13" & "166" & "46" \\ \hline
+  \end{tabular}}
+  \caption{Rozszerzone wyniki skanowania aplikacji NodeGoat przy użyciu skanera \texttt{CodeQL}}
+\end{table}
+
+
+\section{Analiza GPTester z wykorzsytaniem RAG}
+Z uwagi na wielkość projektu i limit dla API asystentów wynoszący 32768 znaków (nie tokenów), kod był przetwarzany przez aplikację w aż 50 częściach asynchronicznie. Wykorzystana została dodatkowo funkcja generacji wspomaganej pobieraniem danych. 
+
+Niestety firmowy klucz API OpenAI, z którego korzystałem by wykonać skan został pod sam koniec wycofany, prawdopobnie przez dużą liczbę zapytań. W związku z tym, udało się przeprowadzić skanowanie tylko dla ~45 części kodu, co stanowiło około 9/10 kodu aplikacji. Skanowanych było o 10 plików więcej niż uwzględniał CodeQL, co wynikało z faktu, że CodeQL nie uwzględniał plików konfiguracyjnych i tych z rozszerzeniem .ejs, które zawierały kod HTML.
+Pozwoliło to agentowi na aktualizację wersji oprogramowania
+\section{Analiza GPTester bez RAG}
+Następnie uruchomiłem proces analizy kodu za pomocą GPTester bez użycia RAG. W tym celu wykorzystałem prywatny klucz API OpenAI, dzięki czemu mogłem dowiedzieć się jakie koszty są generowane podczas skanowania. 
 
 \section{Wnioski}
 \label{sec:wnioski}
