@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.20)  29 JAN 2024 19:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.20)  30 JAN 2024 23:24
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -860,30 +860,48 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 \cftbeforetabskip=\skip104
 \cfttabindent=\skip105
 \cfttabnumwidth=\skip106
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
+\LTleft=\skip107
+\LTright=\skip108
+\LTpre=\skip109
+\LTpost=\skip110
+\LTchunksize=\count377
+\LTcapwidth=\dimen322
+\LT@head=\box132
+\LT@firsthead=\box133
+\LT@foot=\box134
+\LT@lastfoot=\box135
+\LT@gbox=\box136
+\LT@cols=\count378
+\LT@rows=\count379
+\c@LT@tables=\count380
+\c@LT@chunks=\count381
+\LT@p@ftn=\toks54
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count377
-\lst@gtempboxa=\box132
-\lst@token=\toks54
-\lst@length=\count378
-\lst@currlwidth=\dimen322
-\lst@column=\count379
-\lst@pos=\count380
-\lst@lostspace=\dimen323
-\lst@width=\dimen324
-\lst@newlines=\count381
-\lst@lineno=\count382
-\lst@maxwidth=\dimen325
+\lst@mode=\count382
+\lst@gtempboxa=\box137
+\lst@token=\toks55
+\lst@length=\count383
+\lst@currlwidth=\dimen323
+\lst@column=\count384
+\lst@pos=\count385
+\lst@lostspace=\dimen324
+\lst@width=\dimen325
+\lst@newlines=\count386
+\lst@lineno=\count387
+\lst@maxwidth=\dimen326
  (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count383
-\lst@skipnumbers=\count384
-\lst@framebox=\box133
+\c@lstnumber=\count388
+\lst@skipnumbers=\count389
+\lst@framebox=\box138
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
  (/usr/share/texlive/texmf-dist/tex/latex/markdown/markdown.sty (/usr/share/texlive/texmf-dist/tex/generic/markdown/markdown.tex
-\markdownFrozenCacheCounter=\count385
+\markdownFrozenCacheCounter=\count390
 \markdownInputFileStream=\read5
 \markdownOutputFileStream=\write6
 Package markdown Info: Using mode 0: Shell escape via write18 on input line 604.
@@ -891,17 +909,17 @@ Package markdown Info: Using mode 0: Shell escape via write18 on input line 604.
 Package: markdown 2022/01/30 v2.13.0-0-g1f680a8 markdown renderer
  (/usr/share/texlive/texmf-dist/tex/latex/paralist/paralist.sty
 Package: paralist 2017/01/22 v2.7 Extended list environments
-\pltopsep=\skip107
-\plpartopsep=\skip108
-\plitemsep=\skip109
-\plparsep=\skip110
-\pl@lab=\toks55
+\pltopsep=\skip111
+\plpartopsep=\skip112
+\plitemsep=\skip113
+\plparsep=\skip114
+\pl@lab=\toks56
 ) (/usr/share/texlive/texmf-dist/tex/latex/csvsimple/csvsimple.sty (/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2022-01-21 L3 programming layer (loader) 
  (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count386
-\l__pdf_internal_box=\box134
+\l__color_backend_stack_int=\count391
+\l__pdf_internal_box=\box139
 ))
 Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
 )
@@ -909,22 +927,22 @@ Package: csvsimple 2022/02/01 v2.3.0 LaTeX CSV file processing
 ) (/usr/share/texlive/texmf-dist/tex/latex/csvsimple/csvsimple-legacy.sty
 Package: csvsimple-legacy 2022/02/01 version 2.3.0 LaTeX2e CSV file processing
 \csv@file=\read6
-\c@csvinputline=\count387
-\c@csvrow=\count388
-\c@csvcol=\count389
+\c@csvinputline=\count392
+\c@csvrow=\count393
+\c@csvcol=\count394
 \csv@out=\write7
 )
-\markdownLaTeXCitationsCounter=\count390
+\markdownLaTeXCitationsCounter=\count395
  (/usr/share/texlive/texmf-dist/tex/generic/gobble/gobble.sty
 Package: gobble 2019/01/04 v0.2 Provides more gobble macros
  (/usr/share/texlive/texmf-dist/tex/generic/gobble/gobble.tex))
-\markdownLaTeXRowCounter=\count391
-\markdownLaTeXRowTotal=\count392
-\markdownLaTeXColumnCounter=\count393
-\markdownLaTeXColumnTotal=\count394
-\markdownLaTeXTable=\toks56
-\markdownLaTeXTableAlignment=\toks57
-\markdownLaTeXTableEnd=\toks58
+\markdownLaTeXRowCounter=\count396
+\markdownLaTeXRowTotal=\count397
+\markdownLaTeXColumnCounter=\count398
+\markdownLaTeXColumnTotal=\count399
+\markdownLaTeXTable=\toks57
+\markdownLaTeXTableAlignment=\toks58
+\markdownLaTeXTableEnd=\toks59
 )
 runsystem(which pygmentize && touch thesis.aex)...executed.
 
@@ -933,39 +951,39 @@ runsystem(rm thesis.aex)...executed.
  (./thesis.aux)
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 79.
+LaTeX Font Info:    ... okay on input line 79.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count395
-\scratchdimen=\dimen326
-\scratchbox=\box135
-\nofMPsegments=\count396
-\nofMParguments=\count397
-\everyMPshowfont=\toks59
-\MPscratchCnt=\count398
-\MPscratchDim=\dimen327
-\MPnumerator=\count399
-\makeMPintoPDFobject=\count400
-\everyMPtoPDFconversion=\toks60
+\scratchcounter=\count400
+\scratchdimen=\dimen327
+\scratchbox=\box140
+\nofMPsegments=\count401
+\nofMParguments=\count402
+\everyMPshowfont=\toks60
+\MPscratchCnt=\count403
+\MPscratchDim=\dimen328
+\MPnumerator=\count404
+\makeMPintoPDFobject=\count405
+\everyMPtoPDFconversion=\toks61
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -1006,25 +1024,25 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 78.
-Package microtype Info: Applying patch `item' on input line 78.
-Package microtype Info: Applying patch `toc' on input line 78.
-Package microtype Info: Applying patch `eqnum' on input line 78.
-Package microtype Info: Applying patch `footnote' on input line 78.
+LaTeX Info: Redefining \microtypecontext on input line 79.
+Package microtype Info: Applying patch `item' on input line 79.
+Package microtype Info: Applying patch `toc' on input line 79.
+Package microtype Info: Applying patch `eqnum' on input line 79.
+Package microtype Info: Applying patch `footnote' on input line 79.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 78.
+LaTeX Info: Redefining \showhyphens on input line 79.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-Package hyperref Info: Link coloring OFF on input line 78.
+Package hyperref Info: Link coloring OFF on input line 79.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1032,22 +1050,26 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count401
+\c@section@level=\count406
 )
-LaTeX Info: Redefining \ref on input line 78.
-LaTeX Info: Redefining \pageref on input line 78.
-LaTeX Info: Redefining \nameref on input line 78.
+LaTeX Info: Redefining \ref on input line 79.
+LaTeX Info: Redefining \pageref on input line 79.
+LaTeX Info: Redefining \nameref on input line 79.
 \@outlinefile=\write8
 \openout8 = `thesis.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: changepage package is loaded.
-\caption@adjustwidth@hsize=\dimen328
-\caption@adjustwidth@linewidth=\dimen329
+\caption@adjustwidth@hsize=\dimen329
+\caption@adjustwidth@linewidth=\dimen330
 Package caption Info: listings package is loaded.
+Package caption Info: longtable package is loaded.
+ (/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
+)
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count402
-Package hyperref Info: Option `pageanchor' set `false' on input line 80.
+\c@lstlisting=\count407
+Package hyperref Info: Option `pageanchor' set `false' on input line 81.
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1083,13 +1105,13 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 80.
  (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 80.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 81.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 80.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 81.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -6377,37 +6399,170 @@ Overfull \hbox (0.16031pt too wide) in paragraph at lines 514--515
 \T1/qtm/m/n/12 (-20) zast¡piony komunikatem o bª¦dzie Integer Underflow, obserwujemy, »e narz¦dzie \T1/cmtt/m/n/12 gptester
  []
 
-[42]
+
+Overfull \hbox (1.32892pt too wide) in paragraph at lines 545--547
+[]\T1/qtm/m/n/12 (-20) Z uwa-gi na du-»¡ licz-b¦ przy-kªa-dów w zbio-rze \T1/qtm/m/it/12 (-20) snoopysecurity/Vulnerable-Code-Snippets\T1/qtm/m/n/12 (-20) ,
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [42]
+./badania.tex:550: Undefined control sequence.
+\enit@endenumerate ->\enit@after 
+                                 \endlist \ifx \enit@series \relax \else \if...
+l.550 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:550: Undefined control sequence.
+\enit@endenumerate ...\else \ifnum \enit@resuming 
+                                                  =\@ne \enit@setresumekeys ...
+l.550 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:550: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.550 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:550: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.550 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:550: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.550 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:550: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.550 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:550: Undefined control sequence.
+<argument> enit@resume@series@\enit@series 
+                                           
+l.550 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:550: Undefined control sequence.
+\enit@endenumerate ...t \fi \ifnum \enit@resuming 
+                                                  =\thr@@ \enit@setresumekey...
+l.550 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:550: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.550 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:550: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.550 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:550: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.550 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:550: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.550 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+[43]
 Rozdzia\PlPrIeC {\l } 6.
-[43
+[44
 
 ]
-Overfull \hbox (6.7807pt too wide) in paragraph at lines 562--577
+Overfull \hbox (6.7807pt too wide) in paragraph at lines 573--588
 [][] 
  []
 
-<img/nessus-dvna-before.png, id=372, 1501.61pt x 1906.12125pt>
+<img/nessus-dvna-before.png, id=381, 1501.61pt x 1906.12125pt>
 File: img/nessus-dvna-before.png Graphic file (type png)
 <use img/nessus-dvna-before.png>
-Package pdftex.def Info: img/nessus-dvna-before.png  used on input line 587.
+Package pdftex.def Info: img/nessus-dvna-before.png  used on input line 598.
 (pdftex.def)             Requested size: 426.79135pt x 541.76688pt.
-<img/nessus-dvna-before2.png, id=373, 1501.61pt x 530.98375pt>
+<img/nessus-dvna-before2.png, id=382, 1501.61pt x 530.98375pt>
 File: img/nessus-dvna-before2.png Graphic file (type png)
 <use img/nessus-dvna-before2.png>
-Package pdftex.def Info: img/nessus-dvna-before2.png  used on input line 593.
+Package pdftex.def Info: img/nessus-dvna-before2.png  used on input line 604.
 (pdftex.def)             Requested size: 426.79135pt x 150.91872pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [44]
+ [45]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45 <./img/nessus-dvna-before.png>] [46 <./img/nessus-dvna-before2.png>] [47]
+ [46 <./img/nessus-dvna-before.png>] [47 <./img/nessus-dvna-before2.png>] [48]
 Rozdzia\PlPrIeC {\l } 7.
-./badania.tex:646: Undefined control sequence.
+./badania.tex:657: Undefined control sequence.
 \enit@enditemize ->\enit@after 
                                \endlist \ifx \enit@series \relax \else \ifnu...
-l.646 \end{itemize}
+l.657 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6415,10 +6570,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:646: Undefined control sequence.
+./badania.tex:657: Undefined control sequence.
 \enit@enditemize ...x \else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.646 \end{itemize}
+l.657 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6426,19 +6581,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:646: Missing number, treated as zero.
+./badania.tex:657: Missing number, treated as zero.
 <to be read again> 
                    =
-l.646 \end{itemize}
+l.657 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:646: Undefined control sequence.
+./badania.tex:657: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.646 \end{itemize}
+l.657 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6446,10 +6601,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:646: Undefined control sequence.
+./badania.tex:657: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.646 \end{itemize}
+l.657 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6457,19 +6612,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:646: Missing number, treated as zero.
+./badania.tex:657: Missing number, treated as zero.
 <to be read again> 
                    =
-l.646 \end{itemize}
+l.657 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:646: Undefined control sequence.
+./badania.tex:657: Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.646 \end{itemize}
+l.657 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6477,10 +6632,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:646: Undefined control sequence.
+./badania.tex:657: Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.646 \end{itemize}
+l.657 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6488,10 +6643,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:646: Undefined control sequence.
+./badania.tex:657: Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.646 \end{itemize}
+l.657 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6499,17 +6654,17 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:646: You can't use `\relax' after \the.
+./badania.tex:657: You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.646 \end{itemize}
+l.657 \end{itemize}
                    
 I'm forgetting what you said and using zero instead.
 
-./badania.tex:646: Undefined control sequence.
+./badania.tex:657: Undefined control sequence.
 \enit@enditemize ...ist \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.646 \end{itemize}
+l.657 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6517,19 +6672,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:646: Missing number, treated as zero.
+./badania.tex:657: Missing number, treated as zero.
 <to be read again> 
                    =
-l.646 \end{itemize}
+l.657 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:646: Undefined control sequence.
+./badania.tex:657: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.646 \end{itemize}
+l.657 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6537,10 +6692,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:646: Undefined control sequence.
+./badania.tex:657: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.646 \end{itemize}
+l.657 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6548,19 +6703,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:646: Missing number, treated as zero.
+./badania.tex:657: Missing number, treated as zero.
 <to be read again> 
                    =
-l.646 \end{itemize}
+l.657 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:646: Undefined control sequence.
+./badania.tex:657: Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.646 \end{itemize}
+l.657 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6568,10 +6723,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:646: Undefined control sequence.
+./badania.tex:657: Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.646 \end{itemize}
+l.657 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6579,20 +6734,20 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:646: You can't use `\relax' after \the.
+./badania.tex:657: You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.646 \end{itemize}
+l.657 \end{itemize}
                    
 I'm forgetting what you said and using zero instead.
 
-[48
+[49
 
 ]
-./badania.tex:658: Undefined control sequence.
+./badania.tex:669: Undefined control sequence.
 \enit@enditemize ->\enit@after 
                                \endlist \ifx \enit@series \relax \else \ifnu...
-l.658 \end{itemize}
+l.669 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6600,10 +6755,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:658: Undefined control sequence.
+./badania.tex:669: Undefined control sequence.
 \enit@enditemize ...x \else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.658 \end{itemize}
+l.669 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6611,19 +6766,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:658: Missing number, treated as zero.
+./badania.tex:669: Missing number, treated as zero.
 <to be read again> 
                    =
-l.658 \end{itemize}
+l.669 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:658: Undefined control sequence.
+./badania.tex:669: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.658 \end{itemize}
+l.669 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6631,10 +6786,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:658: Undefined control sequence.
+./badania.tex:669: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.658 \end{itemize}
+l.669 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6642,19 +6797,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:658: Missing number, treated as zero.
+./badania.tex:669: Missing number, treated as zero.
 <to be read again> 
                    =
-l.658 \end{itemize}
+l.669 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:658: Undefined control sequence.
+./badania.tex:669: Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.658 \end{itemize}
+l.669 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6662,10 +6817,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:658: Undefined control sequence.
+./badania.tex:669: Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.658 \end{itemize}
+l.669 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6673,10 +6828,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:658: Undefined control sequence.
+./badania.tex:669: Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.658 \end{itemize}
+l.669 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6684,17 +6839,17 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:658: You can't use `\relax' after \the.
+./badania.tex:669: You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.658 \end{itemize}
+l.669 \end{itemize}
                    
 I'm forgetting what you said and using zero instead.
 
-./badania.tex:658: Undefined control sequence.
+./badania.tex:669: Undefined control sequence.
 \enit@enditemize ...ist \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.658 \end{itemize}
+l.669 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6702,19 +6857,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:658: Missing number, treated as zero.
+./badania.tex:669: Missing number, treated as zero.
 <to be read again> 
                    =
-l.658 \end{itemize}
+l.669 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:658: Undefined control sequence.
+./badania.tex:669: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.658 \end{itemize}
+l.669 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6722,10 +6877,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:658: Undefined control sequence.
+./badania.tex:669: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.658 \end{itemize}
+l.669 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6733,19 +6888,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:658: Missing number, treated as zero.
+./badania.tex:669: Missing number, treated as zero.
 <to be read again> 
                    =
-l.658 \end{itemize}
+l.669 \end{itemize}
                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:658: Undefined control sequence.
+./badania.tex:669: Undefined control sequence.
 \enit@setresumekeys ...me@#1}{\csname c@\@listctr 
                                                   \endcsname \the \csname c@...
-l.658 \end{itemize}
+l.669 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6753,10 +6908,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:658: Undefined control sequence.
+./badania.tex:669: Undefined control sequence.
 \enit@setresumekeys ...e \the \csname c@\@listctr 
                                                   \endcsname }\fi }
-l.658 \end{itemize}
+l.669 \end{itemize}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6764,22 +6919,22 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:658: You can't use `\relax' after \the.
+./badania.tex:669: You can't use `\relax' after \the.
 <recently read> \c@ 
                     
-l.658 \end{itemize}
+l.669 \end{itemize}
                    
 I'm forgetting what you said and using zero instead.
 
 
-Overfull \hbox (4.11842pt too wide) in paragraph at lines 676--676
+Overfull \hbox (4.11842pt too wide) in paragraph at lines 687--687
 []\T1/cmtt/m/n/12 2024-01-25 22:05:23: Beginning scan for ../testing-envs/VulnerableApp/[] 
  []
 
-./badania.tex:688: Undefined control sequence.
+./badania.tex:699: Undefined control sequence.
 \enit@endenumerate ->\enit@after 
                                  \endlist \ifx \enit@series \relax \else \if...
-l.688 \end{enumerate}
+l.699 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6787,10 +6942,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:688: Undefined control sequence.
+./badania.tex:699: Undefined control sequence.
 \enit@endenumerate ...\else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.688 \end{enumerate}
+l.699 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6798,19 +6953,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:688: Missing number, treated as zero.
+./badania.tex:699: Missing number, treated as zero.
 <to be read again> 
                    =
-l.688 \end{enumerate}
+l.699 \end{enumerate}
                      
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:688: Undefined control sequence.
+./badania.tex:699: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.688 \end{enumerate}
+l.699 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6818,10 +6973,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:688: Undefined control sequence.
+./badania.tex:699: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.688 \end{enumerate}
+l.699 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6829,19 +6984,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:688: Missing number, treated as zero.
+./badania.tex:699: Missing number, treated as zero.
 <to be read again> 
                    =
-l.688 \end{enumerate}
+l.699 \end{enumerate}
                      
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:688: Undefined control sequence.
+./badania.tex:699: Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.688 \end{enumerate}
+l.699 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6849,10 +7004,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:688: Undefined control sequence.
+./badania.tex:699: Undefined control sequence.
 \enit@endenumerate ...t \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.688 \end{enumerate}
+l.699 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6860,19 +7015,19 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:688: Missing number, treated as zero.
+./badania.tex:699: Missing number, treated as zero.
 <to be read again> 
                    =
-l.688 \end{enumerate}
+l.699 \end{enumerate}
                      
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-./badania.tex:688: Undefined control sequence.
+./badania.tex:699: Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.688 \end{enumerate}
+l.699 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6880,10 +7035,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:688: Undefined control sequence.
+./badania.tex:699: Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.688 \end{enumerate}
+l.699 \end{enumerate}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6891,16 +7046,451 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./badania.tex:688: Missing number, treated as zero.
+./badania.tex:699: Missing number, treated as zero.
 <to be read again> 
                    =
-l.688 \end{enumerate}
+l.699 \end{enumerate}
                      
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-[49]) (./summary.tex [50]
+[50] [51]
+Rozdzia\PlPrIeC {\l } 8.
+
+Overfull \hbox (6.7807pt too wide) in paragraph at lines 728--743
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [52
+
+]
+Overfull \hbox (3.5618pt too wide) in paragraph at lines 784--784
+ []        \T1/cmtt/m/n/12 > codeql database create GoatQL-db --language=javascript[] 
+ []
+
+
+Overfull \hbox (202.9656pt too wide) in paragraph at lines 784--784
+ []        \T1/cmtt/m/n/12 Initializing database at /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/GoatQL-db.[] 
+ []
+
+
+Overfull \hbox (48.6283pt too wide) in paragraph at lines 784--784
+ []        \T1/cmtt/m/n/12 [2024-01-25 19:33:30] [build-stdout] Single-threaded extraction.[] 
+ []
+
+
+Overfull \hbox (133.20514pt too wide) in paragraph at lines 784--784
+ []        \T1/cmtt/m/n/12 [2024-01-25 19:33:34] [build-stdout] package.json: Main file set to server.js[] 
+ []
+
+
+Overfull \hbox (448.05325pt too wide) in paragraph at lines 784--784
+ []        \T1/cmtt/m/n/12 [2024-01-25 19:33:34] [build-stdout] Extracting /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/app/views/tutorial/a1.html[] 
+ []
+
+
+Overfull \hbox (527.07396pt too wide) in paragraph at lines 784--784
+ []        \T1/cmtt/m/n/12 [2024-01-25 19:33:34] [build-stdout] Done extracting /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/app/views/tutorial/a1.html (91 ms)[] 
+ []
+
+
+Overfull \hbox (454.22675pt too wide) in paragraph at lines 784--784
+ []        \T1/cmtt/m/n/12 [2024-01-25 19:33:34] [build-stdout] Extracting /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/app/views/tutorial/a10.html[] 
+ []
+
+
+Overfull \hbox (527.07396pt too wide) in paragraph at lines 784--784
+ []        \T1/cmtt/m/n/12 [2024-01-25 19:33:34] [build-stdout] Done extracting /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/app/views/tutorial/a10.html (5 ms)[] 
+ []
+
+
+Overfull \hbox (448.05325pt too wide) in paragraph at lines 784--784
+ []        \T1/cmtt/m/n/12 [2024-01-25 19:33:34] [build-stdout] Extracting /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/app/views/tutorial/a2.html[] 
+ []
+
+
+Overfull \hbox (553.00262pt too wide) in paragraph at lines 784--784
+ []        \T1/cmtt/m/n/12 [2024-01-30 19:33:38] [build-stdout] Extracting /home/paris/Downloads/tar/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/vm.js[] 
+ []
+
+
+Overfull \hbox (625.84984pt too wide) in paragraph at lines 784--784
+ []        \T1/cmtt/m/n/12 [2024-01-30 19:33:38] [build-stdout] Done extracting /home/paris/Downloads/tar/codeql-bundle-linux64/codeql/javascript/tools/data/externs/nodejs/vm.js (8 ms)[] 
+ []
+
+
+Overfull \hbox (190.61862pt too wide) in paragraph at lines 784--784
+ []        \T1/cmtt/m/n/12 Finalizing database at /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/GoatQL-db.[] 
+ []
+
+
+Overfull \hbox (252.35355pt too wide) in paragraph at lines 784--784
+ []        \T1/cmtt/m/n/12 Successfully created database at /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/GoatQL-db.[] 
+ []
+
+[53]
+Overfull \hbox (367.48918pt too wide) in paragraph at lines 793--793
+ []          \T1/cmtt/m/n/12 > codeql database analyze GoatQL-db javascript-code-scanning.qls --format=csv --output=default-goat-QLresults.csv[] 
+ []
+
+
+Overfull \hbox (493.11975pt too wide) in paragraph at lines 793--793
+ []\T1/cmtt/m/n/12 [1/88] Loaded /home/paris/Downloads/tar/codeql-bundle-linux64/codeql/qlpacks/codeql/javascript-queries/0.8.2/AngularJS/InsecureUrlWhitelist.qlx.[] 
+ []
+
+
+Overfull \hbox (306.06293pt too wide) in paragraph at lines 816--816
+ []          \T1/cmtt/m/n/12 PrototypePollutingFunction.ql            : [83/88 eval 25ms] Results written to codeql/javascript-queri[] 
+ []
+
+
+Overfull \hbox (244.01933pt too wide) in paragraph at lines 816--816
+ []\T1/cmtt/m/n/12 PrototypePollutingMergeCall.ql           : [84/88 eval 260ms] Results written to codeql/javascript-quer[] 
+ []
+
+
+Overfull \hbox (244.328pt too wide) in paragraph at lines 816--816
+ []\T1/cmtt/m/n/12 InsufficientPasswordHash.ql              : [85/88 eval 5ms] Results written to codeql/javascript-querie[] 
+ []
+
+
+Overfull \hbox (244.01933pt too wide) in paragraph at lines 816--816
+ []\T1/cmtt/m/n/12 RequestForgery.ql                        : [86/88 eval 143ms] Results written to codeql/javascript-quer[] 
+ []
+
+
+Overfull \hbox (244.328pt too wide) in paragraph at lines 816--816
+ []\T1/cmtt/m/n/12 LinesOfCode.ql                           : [87/88 eval 3ms] Results written to codeql/javascript-querie[] 
+ []
+
+
+Overfull \hbox (244.01933pt too wide) in paragraph at lines 816--816
+ []\T1/cmtt/m/n/12 LinesOfUserCode.ql                       : [88/88 eval 644ms] Results written to codeql/javascript-quer[] 
+ []
+
+
+Overfull \hbox (139.37863pt too wide) in paragraph at lines 816--816
+ []\T1/cmtt/m/n/12 |                                   Metric                                   | Value |[] 
+ []
+
+
+Overfull \hbox (136.29187pt too wide) in paragraph at lines 816--816
+ []\T1/cmtt/m/n/12 +----------------------------------------------------------------------------+-------+[] 
+ []
+
+
+Overfull \hbox (139.37863pt too wide) in paragraph at lines 816--816
+ []\T1/cmtt/m/n/12 | Total lines of user written JavaScript and TypeScript code in the database |  2926 |[] 
+ []
+
+
+Overfull \hbox (139.37863pt too wide) in paragraph at lines 816--816
+ []\T1/cmtt/m/n/12 | Total lines of JavaScript and TypeScript code in the database              |  2932 |[] 
+ []
+
+./badania.tex:819: Undefined control sequence.
+\enit@endenumerate ->\enit@after 
+                                 \endlist \ifx \enit@series \relax \else \if...
+l.819     \end{enumerate}
+                         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (21.22664pt too wide) in paragraph at lines 818--819
+[]\T1/qtm/m/n/12 (-20) Na apli-ka-cji zo-staª rów-nie» uru-cho-mio-ny pa-kiet kwe-rend javascript-extended-security.qls 
+ []
+
+./badania.tex:819: Undefined control sequence.
+\enit@endenumerate ...\else \ifnum \enit@resuming 
+                                                  =\@ne \enit@setresumekeys ...
+l.819     \end{enumerate}
+                         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:819: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.819     \end{enumerate}
+                         
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:819: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.819     \end{enumerate}
+                         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:819: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.819     \end{enumerate}
+                         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:819: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.819     \end{enumerate}
+                         
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:819: Undefined control sequence.
+<argument> enit@resume@series@\enit@series 
+                                           
+l.819     \end{enumerate}
+                         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:819: Undefined control sequence.
+\enit@endenumerate ...t \fi \ifnum \enit@resuming 
+                                                  =\thr@@ \enit@setresumekey...
+l.819     \end{enumerate}
+                         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:819: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.819     \end{enumerate}
+                         
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:819: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.819     \end{enumerate}
+                         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:819: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.819     \end{enumerate}
+                         
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:819: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.819     \end{enumerate}
+                         
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:823: Undefined control sequence.
+\enit@endenumerate ->\enit@after 
+                                 \endlist \ifx \enit@series \relax \else \if...
+l.823 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:823: Undefined control sequence.
+\enit@endenumerate ...\else \ifnum \enit@resuming 
+                                                  =\@ne \enit@setresumekeys ...
+l.823 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:823: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.823 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:823: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.823 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:823: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.823 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:823: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.823 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:823: Undefined control sequence.
+<argument> enit@resume@series@\enit@series 
+                                           
+l.823 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:823: Undefined control sequence.
+\enit@endenumerate ...t \fi \ifnum \enit@resuming 
+                                                  =\thr@@ \enit@setresumekey...
+l.823 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:823: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.823 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./badania.tex:823: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.823 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:823: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.823 \end{enumerate}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./badania.tex:823: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.823 \end{enumerate}
+                     
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+Overfull \hbox (2865.39764pt too wide) in paragraph at lines 830--868
+ [][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [54]
+./badania.tex:880: Extra alignment tab has been changed to \cr.
+<template> ...{\relax }{8}{\z@ /\z@ }\endtemplate 
+                                                  
+l.880   \end{tabular}}
+                      
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+./badania.tex:880: Extra alignment tab has been changed to \cr.
+<template> ...{\relax }{8}{\z@ /\z@ }\endtemplate 
+                                                  
+l.880   \end{tabular}}
+                      
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+./badania.tex:880: Extra alignment tab has been changed to \cr.
+<template> ...{\relax }{8}{\z@ /\z@ }\endtemplate 
+                                                  
+l.880   \end{tabular}}
+                      
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+./badania.tex:880: Extra alignment tab has been changed to \cr.
+<template> ...{\relax }{8}{\z@ /\z@ }\endtemplate 
+                                                  
+l.880   \end{tabular}}
+                      
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+[55]) (./summary.tex [56]
 ./summary.tex:6: Undefined control sequence.
 l.6 \lipsum
            [17]
@@ -6910,13 +7500,13 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-) (./thesis.bbl [51
+) (./thesis.bbl [57
 
 ])
 \tf@lof=\write10
 \openout10 = `thesis.lof'.
 
- [52
+ [58
 
 ]
 
@@ -6928,9 +7518,9 @@ Package hyperref Warning: old lop file detected, not used; run LaTeX again.
 \tf@lot=\write12
 \openout12 = `thesis.lot'.
 
-[53
+[59
 
-] [54
+] [60
 
 ] (./appendix1.tex
 Dodatek A.
@@ -6943,7 +7533,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-) [55
+) [61
 
 ] (./thesis.aux)
 
@@ -6962,23 +7552,23 @@ Package rerunfilecheck Warning: File `thesis.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `thesis.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  8F0CA50016F649CD78E1ECBFB78C0C4C;19329.
+(rerunfilecheck)             After:  3DDC56B5C5D132CA7FA9F7AC58FD2FAD;21737.
 runsystem(rm thesis.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 33768 strings out of 478287
- 641986 string characters out of 5849288
- 1003939 words of memory out of 5000000
- 50810 multiletter control sequences out of 15000+600000
+ 33951 strings out of 478287
+ 645021 string characters out of 5849288
+ 1037281 words of memory out of 5000000
+ 50957 multiletter control sequences out of 15000+600000
  555532 words of font info for 211 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,16n,120p,1088b,887s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmbi.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfit0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfit1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on thesis.pdf (60 pages, 1094097 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmbi.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfit0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfit1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on thesis.pdf (66 pages, 1116471 bytes).
 PDF statistics:
- 562 PDF objects out of 1000 (max. 8388607)
- 457 compressed objects within 5 object streams
- 218 named destinations out of 1000 (max. 500000)
+ 623 PDF objects out of 1000 (max. 8388607)
+ 509 compressed objects within 6 object streams
+ 249 named destinations out of 1000 (max. 500000)
  53317 words of extra memory for PDF output out of 61914 (max. 10000000)
 
