@@ -286,6 +286,49 @@ def walk_directory(directory, append_ignore:str=None):
                     ] = f"Error reading file {file}: {str(e)}"
     return code_contents
 
+def split_content_char(dir_content, max_chars):
+    """Split directory content into chunks of max_chars"""
+    chunks = []
+    chunk = {}
+    current_chars = 0
+    for filename, content in dir_content.items():
+        chars = len(content)
+        if chars > max_chars:
+            # Handle the case where a single file exceeds max_chars
+            content_chunks = split_file_into_chunks_char(content, max_chars)
+            for content_chunk in content_chunks:
+                chunks.append({filename: content_chunk})
+        elif current_chars + chars <= max_chars:
+            chunk[filename] = content
+            current_chars += chars
+        else:
+            chunks.append(chunk)
+            chunk = {filename: content}
+            current_chars = chars
+    chunks.append(chunk)
+    return chunks
+
+def split_file_into_chunks_char(content, max_chars):
+    "split one file if exceeds the char limit"
+    words = content.split(' ')
+    chunks = []
+    current_chunk = []
+    current_chars = 0
+
+    for word in words:
+        chars = len(word)
+        if current_chars + chars + 1 > max_chars:  # +1 for the space
+            chunks.append(' '.join(current_chunk))
+            current_chunk = [word]
+            current_chars = chars
+        else:
+            current_chunk.append(word)
+            current_chars += chars + 1  # +1 for the space
+
+    chunks.append(' '.join(current_chunk))
+
+    return chunks
+
 def split_content(dir_content, max_tokens):
     """Split directory content into chunks of max_tokens"""
     chunks = []

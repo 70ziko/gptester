@@ -8,8 +8,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Wyniki skanowania aplikacji DVNA przy użyciu skanera Nessus\relax }}{44}{table.caption.19}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Wyniki skanowania aplikacji DVNA przy użyciu skanera Nessus\relax }}{45}{table.caption.19}%
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {8.1}{\ignorespaces Wyniki skanowania aplikacji NodeGoat przy użyciu skanera \texttt {OWASP-zap}\relax }}{53}{table.caption.22}%
+\contentsline {table}{\numberline {8.2}{\ignorespaces Rozszerzone wyniki skanowania aplikacji NodeGoat przy użyciu skanera \texttt {CodeQL}\relax }}{55}{table.caption.24}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
