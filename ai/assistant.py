@@ -88,6 +88,8 @@ class Assistant():
 
 
         try:
+        # Add error handling for API communication
+        
             run = client.beta.threads.runs.create(
                 thread_id=self.thread.id,
                 assistant_id=self.assistant.id,
@@ -108,6 +110,10 @@ class Assistant():
 
                 tool_outputs = []
                 # Check if there is a required action
+                try:
+                    # Check if the run status is completed
+                    run_status = client.beta.threads.runs.retrieve(thread_id=self.thread.id, run_id=run.id)
+                    while run_status.status != "completed":
                 if run_status.required_action and run_status.required_action.type == "submit_tool_outputs":
                     self.iol.log("Required action detected: submit_tool_outputs", color="bright_black", verbose_only=True)
                     for tool_call in run_status.required_action.submit_tool_outputs.tool_calls:
