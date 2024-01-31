@@ -262,8 +262,7 @@ def walk_directory(directory, append_ignore:str=None):
         ".md",
         ".pdf",
         ".properties",
-
-    ]
+    ] + [f".{ext}" for ext in CFG.ignore_extensions]
     exclude_list = ["GPTested","GPTester", "tests", "node_modules", "build", "dist", "venv", "env", "migrations", ".git", ".vscode", ".idea", ".pytest_cache", 
                     ".cache", ".tox", "docs", "doc", "static", "media", "assets", "logs", "log", "raports", "staticfiles"]
     if append_ignore: exclude_list.append(append_ignore)

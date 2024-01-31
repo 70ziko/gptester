@@ -715,6 +715,15 @@ Na podstawie zebranych danych zostaną wyciągnięte wnioski dotyczące skuteczn
 
 Aby przygotować aplikację do lokalnego uruchomienia bez korzystania z konteneryzacji, niezbędne było poprawienie wersji paczek w pliku package.json oraz obniżenie używanej wersji npm i node do node v16.0.0 (npm v7.10.0). Następnie należało zainstalować wszystkie zależności za pomocą komendy npm install. Po wykonaniu tych kroków aplikacja była gotowa do uruchomienia komendą npm run.
 
+\section{Testy funkcjonalne przed zmianami}
+\label{sec:testy_funkcjonalne_przed_zmianami}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{img/func-test-goat-before.png}
+  \caption{Wyniki testów funkcjonalnych aplikacji NodeGoat przed wprowadzeniem zmian}
+  \label{fig:nodegoat-before}
+\end{figure}
 
 \section{Identyfikacja podatności za pomocą tradycyjnych skanerów}
 Przed przystąpieniem do naprawy podatności, aplikacja DVNA została poddana skanowaniu przy użyciu skanerów OWASP ZAP i Nessus. Wyniki tych skanowań zostały wykorzystane jako punkt odniesienia do oceny skuteczności narzędzia \texttt{gptester} w kontekście naprawy podatności.
@@ -722,9 +731,10 @@ Przed przystąpieniem do naprawy podatności, aplikacja DVNA została poddana sk
 
 \subsection{OWASP ZAP}
 \label{subsec:owasp_zap}
-Skanowanie aplikacji NodeGoat przy użyciu OWASP ZAP wykazało obecność 14 podatności, w tym 2 krytyczne, 2 wysokiego ryzyka, 3 średniego ryzyka oraz 1 niskiego ryzyka. Poniżej przedstawiono listę zidentyfikowanych podatności wraz z ich ryzykiem i opisem.
+Skanowanie aplikacji NodeGoat przy użyciu OWASP ZAP wykazało obecność 20 podatności, w tym 3 krytyczne, 5 wysokiego ryzyka, 5 średniego ryzyka oraz 7 niskiego ryzyka. Poniżej przedstawiono listę zidentyfikowanych podatności wraz z ich ryzykiem i opisem.
 
 \begin{table}[H]
+  \caption{Wyniki skanowania aplikacji NodeGoat przy użyciu skanera \texttt{OWASP-zap}}
   \begin{tabular}{llllll}
     \multicolumn{2}{l}{} &
       \multicolumn{4}{c}{Risk} \\ \cline{3-6} 
@@ -740,9 +750,44 @@ Skanowanie aplikacji NodeGoat przy użyciu OWASP ZAP wykazało obecność 14 pod
       \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}5\\ (13)\end{tabular}} &
       \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}7\\ (20)\end{tabular}} \\ \cline{2-6} 
     \end{tabular}   
-  \caption{Wyniki skanowania aplikacji NodeGoat przy użyciu skanera \texttt{OWASP-zap}}
   \label{tab:zap_before}
   \end{table}
+
+  \begin{table}[htbp]
+    \centering
+    \scriptsize
+    \caption{Podsumowanie typów alertów i powiązanych zagrożeń}
+    \label{tab:alert_summary}
+    \begin{tabular}{|l|l|r|}
+    \hline
+    \textbf{Alert Type} & \textbf{Risk} & \textbf{Count (\%)} \\
+    \hline
+    Cross Site Scripting (Reflected) & High & 3 (15.0\%) \\
+    External Redirect & High & 1 (5.0\%) \\
+    Open Redirect & High & 1 (5.0\%) \\
+    CSP: Wildcard Directive & Medium & 16 (80.0\%) \\
+    Content Security Policy (CSP) Header Not Set & Medium & 24 (120.0\%) \\
+    Directory Browsing & Medium & 2 (10.0\%) \\
+    Missing Anti-clickjacking Header & Medium & 24 (120.0\%) \\
+    Vulnerable JS Library & Medium & 2 (10.0\%) \\
+    Cookie without SameSite Attribute & Low & 5 (25.0\%) \\
+    Cross-Domain JavaScript Source File Inclusion & Low & 24 (120.0\%) \\
+    Server Leaks Information via "X-Powered-By" HTTP Response Header Field(s) & Low & 63 (315.0\%) \\
+    Timestamp Disclosure - Unix & Low & 1 (5.0\%) \\
+    X-Content-Type-Options Header Missing & Low & 37 (185.0\%) \\
+    Authentication Request Identified & Informational & 1 (5.0\%) \\
+    Information Disclosure - Suspicious Comments & Informational & 26 (130.0\%) \\
+    Loosely Scoped Cookie & Informational & 5 (25.0\%) \\
+    Modern Web Application & Informational & 23 (115.0\%) \\
+    Session Management Response Identified & Informational & 8 (40.0\%) \\
+    User Agent Fuzzer & Informational & 290 (1,450.0\%) \\
+    User Controllable HTML Element Attribute (Potential XSS) & Informational & 2 (10.0\%) \\
+    \hline
+    \textbf{Total} & & \textbf{Various} \\
+    \hline
+    \end{tabular}
+    \end{table}
+    
 
 \subsection{Nessus}
 \label{subsec:nessus}

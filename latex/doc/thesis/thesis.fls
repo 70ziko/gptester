@@ -1860,6 +1860,11 @@ INPUT ./img/nessus-dvna-before2.png
 INPUT img/nessus-dvna-before2.png
 INPUT ./img/nessus-dvna-before2.png
 INPUT ./img/nessus-dvna-before2.png
+INPUT ./img/func-test-goat-before.png
+INPUT ./img/func-test-goat-before.png
+INPUT img/func-test-goat-before.png
+INPUT ./img/func-test-goat-before.png
+INPUT ./img/func-test-goat-before.png
 INPUT ./summary.tex
 INPUT ./summary.tex
 INPUT ./summary.tex
