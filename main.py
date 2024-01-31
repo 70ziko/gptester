@@ -8,8 +8,8 @@ import datetime
 
 from utils.io import IOlog
 from utils.traverser import walk_directory, split_content, split_content_char
-from utils.utils import num_tokens_from_string
-from utils.git_pytcher import generate_patch
+from utils.chatCompletion import num_tokens_from_string
+from utils.git_pytcher import generate_patch, check_patch
 from utils.config import Config
 
 CFG = Config()
@@ -116,7 +116,7 @@ async def main():
         # run_codeql_scan(args.directory, args.language, args.command)
 
     chunks = split_content(dir_content, CFG.token_limit)                                # Assistant API ogranicza liczbę ZNAKÓW(char) do ~32k XD! 
-    iol.log(f"Splitting the content into {len(chunks)} chunks", color="bright_cyan")    # więc nie ma sensu liczyć tokenów XDD (zostawiam dla innych modeli i API)
+    iol.log(f"Splitting the content into {len(chunks)} chunks (OpenAI Assistant API char limit = ~32k chars)", color="bright_cyan")    # więc nie ma sensu liczyć tokenów XDD (zostawiam dla innych modeli i API)
     
     # chunks = split_content_char(dir_content, 32500)                             
     # iol.log(f"Splitting the content into {len(chunks)} chunks", color="bright_cyan")    
@@ -132,10 +132,14 @@ async def main():
     generate_patch(args.directory, os.path.join(args.directory, fixed_dir), os.path.join(args.directory, args.patch_file))
     iol.log(f"Patch generated in {args.patch_file}", color="bright_cyan")
 
+    iol.print(f"Checking patch file...", color="bright_black", verbose_only=True)
+    check_patch(os.path.join(args.directory, args.patch_file), iol)
+
     iol.print(f"To apply the changes with a git commit, run: \ngit am --directory={args.directory} {args.patch_file}\n", color="bright_cyan", timestamp=False)
     iol.print(f"or:\n\t cd {args.directory} \n\t git am {args.patch_file}", color="bright_cyan", timestamp=False)
     iol.print(f"To apply the changes overwritting the file contents !ORIGINAL CONTENT WILL BE LOST!, run: \n\tgit apply --directory={args.directory} {args.patch_file}", color='red', timestamp=False)
 
+    # iol.print(f"currently the patch files might be wrong, use the utils/replace_files.sh script to automatically apply changes", color="bright_black")
     iol.print(f"Thank you for using the static code analysis agent!", color="bright_cyan")
     # input("If you want to run tests on fixed code (not available in current version), press enter... (or ctrl+c to exit)")
 
