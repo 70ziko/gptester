@@ -4,23 +4,22 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Schemat blokowy działania aplikacji \textit {gptester}\relax }}{11}{figure.caption.11}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces dane wejściowe w schemacie blokowym\relax }}{12}{figure.caption.12}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Część schematu opisująca proces generatora testów funkcjonalnych\relax }}{12}{figure.caption.13}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Część schematu opisująca proces RAG\relax }}{13}{figure.caption.14}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Część schematu opisująca proces RAG\relax }}{14}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Czarna skrzynka - LLM (Large Language Model)\relax }}{14}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Czarna skrzynka - LLM (Large Language Model)\relax }}{15}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Wiadomość pomocnicza aplikacji \textit {gptester}\relax }}{18}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Schemat blokowy działania aplikacji \textit {gptester}\relax }}{13}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces dane wejściowe w schemacie blokowym\relax }}{14}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Część schematu opisująca proces generatora testów funkcjonalnych\relax }}{14}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Część schematu opisująca proces RAG\relax }}{15}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Część schematu opisująca proces RAG\relax }}{16}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Czarna skrzynka - LLM (Large Language Model)\relax }}{16}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Czarna skrzynka - LLM (Large Language Model)\relax }}{17}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Wiadomość pomocnicza aplikacji \textit {gptester}\relax }}{20}{figure.caption.18}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Wyniki skanowania aplikacji DVNA przy użyciu skanera Nessus\relax }}{46}{figure.caption.20}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Wyniki skanowania aplikacji DVNA przy użyciu skanera Nessus\relax }}{47}{figure.caption.21}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Wyniki testów funkcjonalnych aplikacji NodeGoat przed wprowadzeniem zmian\relax }}{52}{figure.caption.22}%
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Wyniki testów funkcjonalnych aplikacji NodeGoat przed wprowadzeniem zmian\relax }}{46}{figure.caption.20}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Błąd uruchomienia aplikacji NodeGoat po wprowadzeniu zmian\relax }}{52}{figure.caption.25}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Błąd uruchomienia aplikacji NodeGoat po wprowadzeniu zmian ręcznie\relax }}{53}{figure.caption.26}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Błąd konfiguracji MongoDB po wprowadzeniu zmian ręcznie\relax }}{54}{figure.caption.27}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Poprawne uruchomienie aplikacji NodeGoat po wprowadzeniu zmian ręcznie\relax }}{54}{figure.caption.28}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

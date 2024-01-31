@@ -33,7 +33,8 @@ async def write_file(filename, content):
     except Exception as e:
         iol.log(f"Error writing file: {e}", color="red")
         return f"Error writing file: {e}"
-
+    
+# JSON for openai tool calling
 write_file_json = {
         "name": "write_file",
         "description": "Writes content to a specified file.",
@@ -73,7 +74,7 @@ def run_tests(language, executable=None):
         return {"status": "error", "output": "Unsupported language"}
 
 
-# JSONs for openai tool calling
+# JSON for openai tool calling
 
 run_tests_json = {
   "function": {

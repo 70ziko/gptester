@@ -3,18 +3,21 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Metody i środki wykorzystane w projekcie i badaniu.\relax }}{9}{table.caption.10}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Metody i środki wykorzystane w projekcie i badaniu.\relax }}{11}{table.caption.10}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Vulnerable Code Snippets – oryginał – możliwe podpowiedzi w komentarzach\relax }}{44}{table.caption.19}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Wyniki skanowania aplikacji DVNA przy użyciu skanera Nessus\relax }}{45}{table.caption.19}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {8.1}{\ignorespaces Wyniki skanowania aplikacji NodeGoat przy użyciu skanera \texttt {OWASP-zap}\relax }}{53}{table.caption.23}%
-\contentsline {table}{\numberline {8.2}{\ignorespaces Podsumowanie typów alertów i powiązanych zagrożeń\relax }}{53}{table.caption.24}%
-\contentsline {table}{\numberline {8.3}{\ignorespaces Rozszerzone wyniki skanowania aplikacji NodeGoat przy użyciu skanera \texttt {CodeQL}\relax }}{56}{table.caption.26}%
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Wyniki skanowania aplikacji NodeGoat przy użyciu skanera \texttt {OWASP-zap}\relax }}{47}{table.caption.21}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Podsumowanie typów alertów i powiązanych zagrożeń\relax }}{47}{table.caption.22}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Podsumowanie wyników analizy CodeQL\relax }}{49}{table.caption.23}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces Extended Scanning Results with CodeQL\relax }}{49}{table.caption.24}%
+\contentsline {table}{\numberline {6.5}{\ignorespaces Wyniki testów funkcjonalnych aplikacji NodeGoat po wprowadzeniu zmian ręcznie\relax }}{55}{table.caption.29}%
+\contentsline {table}{\numberline {6.6}{\ignorespaces Test Results Summary\relax }}{56}{table.caption.30}%
+\contentsline {table}{\numberline {6.7}{\ignorespaces Wyniki skanowania aplikacji NodeGoat przy użyciu skanera \texttt {OWASP-zap}\relax }}{56}{table.caption.32}%
+\contentsline {table}{\numberline {6.8}{\ignorespaces Summary of Security Alert Types, Risks, and Counts\relax }}{57}{table.caption.33}%
+\contentsline {table}{\numberline {6.9}{\ignorespaces Streszczone wyniki skanowania aplikacji NodeGoat przy użyciu skanera \texttt {CodeQL}\relax }}{57}{table.caption.35}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

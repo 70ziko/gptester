@@ -6,7 +6,7 @@ from typing import Union, List
 from vector_memory.models import Raport, CodeFile
 from utils.config import Config
 from DB import DBs
-from utils.utils import get_embedding
+from utils.chatCompletion import get_embedding
 
 CFG = Config()
 
