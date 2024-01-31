@@ -1,3 +1,541 @@
 \chapter{Dodatek 1}\label{app1}
 
-\lipsum[20]
+{\large\textbf{Surowe wyniki analizy kodu aplikacji NodeGoat bez podpowiedzi w kodzie}}
+\normalsize
+\begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \item
+    \textbf{MongoClient Connection String Exposure}: The \texttt{db}
+    variable likely contains the connection string to MongoDB, which
+    includes credentials. This sensitive information can be exposed if the
+    configuration file is not properly secured.
+  \item
+    \textbf{Insecure Express Session Configuration}: The session
+    middleware in \texttt{server.js} uses a cookieSecret from a config
+    file for signing cookies, but it does not have secure attributes such
+    as \texttt{httpOnly}, \texttt{secure}, \texttt{sameSite}, as well as
+    not using a store which can lead to security issues.
+  \item
+    \textbf{SWIG Template Auto-Escape Disabled}: In \texttt{server.js},
+    the SWIG template engine is used with \texttt{autoescape:\ false},
+    making it vulnerable to Cross-Site Scripting (XSS) attacks if user
+    input is included in templates.
+  \item
+    \textbf{Use of Marked Library for Markdown Parsing}: The marked
+    library is being used in \texttt{server.js} with the \texttt{sanitize}
+    option set to \texttt{true}, which is good for preventing XSS.
+    However, if library updates change the default behavior, it could lead
+    to vulnerabilities.
+  \item
+    \textbf{Database Reset Script}: In \texttt{db-reset.js}, the process
+    exits with a different status code in case of an error. This can lead
+    to inconsistent behavior and potentially leak information about the
+    database status or structure.
+  \item
+    \textbf{Lack of HTTPS}: The server in \texttt{server.js} is started
+    with HTTP and not HTTPS, leading to the exposure of data in transit.
+  \item
+    \textbf{Open Docker Ports in Development}: The
+    \texttt{docker-compose.yml} file shows ports open which should not be
+    exposed in a production environment.
+  \item
+    \textbf{Hardcoded Credentials in \texttt{db-reset.js}}: Usernames and
+    passwords are hardcoded in the \texttt{db-reset.js} script, which is a
+    bad practice for managing credentials.
+  \end{enumerate}
+  
+  Here are the corrected segments of code for each vulnerability found:
+  
+  \textbf{1. MongoClient Connection String Exposure}:
+  
+  \begin{framed}\scriptsize
+  \begin{Highlighting}[]
+  \NormalTok{// No diffs displayed as it requires infrastructural practices like environment variable management or secret management systems, which can\textquotesingle{}t be presented in source code directly.}
+  \end{Highlighting}
+  \end{framed}\normalsize
+  
+  \textbf{2. Insecure Express Session Configuration}:
+  
+  \begin{framed}\scriptsize 
+  \begin{verbatim}
+  -    app.use(session({
+  -        secret: cookieSecret,
+  -        saveUninitialized: true,
+  -        resave: true
+  -    }));
+  +    app.use(session({
+  +        secret: cookieSecret,
+  +        saveUninitialized: true,
+  +        resave: false,
+  +        cookie: {
+  +            httpOnly: true,
+  +            secure: true,
+  +            sameSite: "lax"
+  +        },
+  +        store: /* instance of secure session storage */
+  +    }));
+  \end{verbatim}
+  \end{framed}
+  
+  \textbf{3. SWIG Template Auto-Escape Disabled}:
+
+  \begin{framed}\scriptsize 
+  \begin{verbatim}
+  -   swig.setDefaults({
+  -       // Autoescape disabled
+  -       autoescape: false
+  -   });
+  +   swig.setDefaults({
+  +       % Autoescape enabled
+  +       autoescape: true
+  +   });
+  \end{verbatim}
+  \end{framed}
+
+  
+  \textbf{4. Use of Marked Library for Markdown Parsing}: The current code
+  has correctly set the \texttt{sanitize} option, but developers should
+  remain vigilant for future library updates.
+  
+  \textbf{5. Database Reset Script (no explicit fix, informational only)}:
+  Ensure consistent process exit codes and safeguard against information
+  leakage.
+  
+  \textbf{6. Lack of HTTPS}:
+  
+  \begin{framed}\scriptsize
+  \begin{verbatim}[]
+-    http.createServer(app).listen(port, () => {
++   const https = require('https');
++   const fs = require('fs');
++
++   const options = {
++     key: fs.readFileSync('path/to/key.pem'),
++     cert: fs.readFileSync('path/to/cert.pem')
++   };
++
++   https.createServer(options, app).listen(port, () => {
+        console.log(`Express http server listening on port ${port}`);
+    });
+  \end{verbatim}
+  \end{framed}
+  
+  \textbf{7. Open Docker Ports in Development}: Adjust the
+  \texttt{docker-compose.yml} configuration for production to not expose
+  sensitive ports publicly.
+  
+  \textbf{8. Hardcoded Credentials in \texttt{db-reset.js}}:
+  
+  \begin{framed}\scriptsize
+  \begin{verbatim}
+-       "password": "Admin_123",
++       // Use environment variable or secure secrets management 
++       // to retrieve password
++       "password": process.env.ADMIN_PASSWORD,
+  \end{verbatim}
+  \end{framed}
+  
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \item
+    \textbf{Insecure Password Storage (user-dao.js)}: Passwords should not
+    be stored in plaintext. The \texttt{addUser} method currently stores
+    the password received from the user directly into the database.
+  
+
+
+  \begin{framed}
+    \scriptsize
+  \begin{verbatim} % Use the 'lstlisting' environment for code highlighting
+  - password %received from request param
+  + password: bcrypt.hashSync(password, bcrypt.genSaltSync(8)) % Hash the password
+  \end{verbatim}
+  \end{framed}
+
+  \item
+    \textbf{Insecure Password Verification (user-dao.js)}: The
+    \texttt{validateLogin} method uses a simple string comparison to
+    validate passwords, which would only be secure if the passwords were
+    properly hashed and salted before storage and then compared using a
+    secure function.
+  
+  \begin{framed}
+    \scriptsize
+  \begin{verbatim}
+- const comparePassword = (fromDB, fromUser) => { 
+-  return fromDB === fromUser; 
+-  }; 
++ const comparePassword = (fromDB, fromUser) => { 
++   return bcrypt.compareSync(fromUser, fromDB); 
++ };
+  \end{verbatim}
+  \end{framed}
+  \item
+    \textbf{Potential NoSQL Injection (research-dao.js, getBySymbol)}: The
+    \texttt{getBySymbol} method creates a query without proper sanitation
+    or parameterized queries, which may open up the application to NoSQL
+    injection attacks.
+  
+  \begin{framed}
+    \scriptsize
+    \begin{verbatim}
+-    symbol
++    symbol: symbol
++    // The searchCriteria function should return the properly constructed query object
++    db.collection('research').find(searchCriteria()).toArray(callback);
+  \end{verbatim}
+  \end{framed}
+  \item
+    \textbf{Potential NoSQL Injection (profile-dao.js, updateUser)}: The
+    \texttt{updateUser} method directly uses the incoming parameter
+    \texttt{userId} after parsing it as an integer. Although this reduces
+    the risk, it's still a good habit to use a parameterized query.
+  \begin{framed}
+    \scriptsize
+    \begin{verbatim}
+-                    symbol
++                    symbol: symbol
++                // The searchCriteria function should return the properly constructed query object
++                db.collection('research').find(searchCriteria()).toArray(callback);
+    \end{verbatim}
+  \end{framed}
+  \item
+    \textbf{Lack of Input Validation}: Across various DAO functions, there
+    is a lack of input validation to ensure that the values passed to the
+    database operations do not contain malicious input.
+  
+    For this point, code modifications would be more extensive and not as
+    straightforward to display in a patch format because proper input
+    validation would need to be implemented throughout each function that
+    takes external input.
+  \end{enumerate}
+  
+  \hypertarget{vulnerability-6-nosql-injection-in-allocations}{%
+  \paragraph{Vulnerability 6: NoSQL Injection in
+  Allocations}\label{vulnerability-6-nosql-injection-in-allocations}}
+  
+  File: NodeGoat/app/data/allocations-dao.js
+  
+  Issue: The method \texttt{getByUserIdAndThreshold} is susceptible to
+  NoSQL injection as it constructs a query using a \texttt{\$where}
+  operator with user input, which can be manipulated.
+  
+  Vulnerability Fix:
+  
+  \begin{framed}
+  \begin{verbatim}
+this.getByUserIdAndThreshold = (userId, threshold, callback) => {
+-    const parsedUserId = parseInt(userId);
+-    const searchCriteria = () => {
+-        if (threshold) {
+-            return {
+-                $where: `this.userId == ${parsedUserId} && this.stocks > '${threshold}'`
+-            };
++    const parsedUserId = parseInt(userId)
++    let query = { userId: parsedUserId };
++
++    if (threshold) {
++        let numericThreshold = parseFloat(threshold);
++        if (!isNaN(numericThreshold)) {
++            query.stocks = { $gt: numericThreshold };
+          }
+-        return {
+-            userId: parsedUserId
+-        };
+-    };
++    }
+-    allocationsCol.find(searchCriteria()).toArray(...);
++    allocationsCol.find(query).toArray(...);
+  };
+  \end{verbatim}
+  \end{framed}
+  
+  \hypertarget{vulnerability-7-insecure-configuration-in-github-workflow}{%
+  \paragraph{Vulnerability 7: Insecure Configuration in Github
+  Workflow}\label{vulnerability-7-insecure-configuration-in-github-workflow}}
+  \\
+  File: NodeGoat/.github/workflows/e2e-test.yml
+  
+  Issue: The configuration file uses hardcoded version \texttt{"4.0"} for
+  the MongoDB Docker image, which might be outdated and contain known
+  vulnerabilities.
+  
+  Vulnerability Fix:
+  
+  \begin{verbatim}
+    - docker run -d -p 27017:27017 mongo:4.0
+    + docker run -d -p 27017:27017 mongo:latest
+    \end{verbatim}
+    
+  
+  \hypertarget{vulnerability-8-arbitrary-redirect-in-index-route}{%
+  \paragraph{Vulnerability 8: Arbitrary Redirect in Index
+  Route}\label{vulnerability-8-arbitrary-redirect-in-index-route}}
+  
+  File: NodeGoat/app/routes/index.js
+  
+  Issue: The \texttt{/learn} route redirects to a user-specified URL
+  without validation, which can be exploited for phishing attacks.
+  
+  Vulnerability Fix:
+  
+  \scriptsize
+  \begin{verbatim}
+app.get("/learn", isLoggedIn, (req, res) => {
+-    return res.redirect(req.query.url);
++    const allowedUrls = ["https://trustedresource.com/learn", "https://anothertrustedsource.com/resources"];
++    const requestedUrl = req.query.url;
++    if (allowedUrls.includes(requestedUrl)) {
++        return res.redirect(requestedUrl);
++    } else {
++        return res.status(400).send("Invalid URL provided for redirection.");
++    }
+    });
+    \end{verbatim}
+    \normalsize
+  
+  \hypertarget{vulnerability-9-insufficient-logging-and-monitoring-in-error-handler}{%
+  \paragraph{Vulnerability 9: Insufficient Logging and Monitoring in Error
+  Handler}\label{vulnerability-9-insufficient-logging-and-monitoring-in-error-handler}}
+  
+  File: NodeGoat/app/routes/error.js
+  
+  Issue: The error handling middleware logs the error message but doesn't
+  notify the team or use a centralized logging system.
+  
+  Vulnerability Fix:
+  
+  \begin{framed}\scriptsize
+    \begin{verbatim}
++ const {logger} = require("../log"); // Hypothetical logging module that should be created
+
+const errorHandler = (err, req, res,next) => {
+-    console.error(err.message);
+-    console.error(err.stack);
++    logger.error(err.message, {stack: err.stack, req});
+// ...
+      };
+      \end{verbatim}
+  \end{framed}\normalsize
+  
+  \hypertarget{vulnerability-10-cross-site-scripting-xss-in-profile-data-rendering}{%
+  \paragraph{Vulnerability 10: Cross-Site Scripting (XSS) in Profile Data
+  Rendering}\label{vulnerability-10-cross-site-scripting-xss-in-profile-data-rendering}}
+  
+  File: NodeGoat/app/routes/profile.js
+  
+  Issue: Directly embedding user input from \texttt{doc.website} in the
+  HTML without encoding it, which can lead to Cross-Site Scripting
+  attacks.
+  
+  Vulnerability Fix:
+  
+  \begin{framed}\scriptsize
+    \begin{verbatim}
+this.displayProfile = (req, res, next) => {
+    // ...
+    doc.userId = userId;
+-   doc.website = ESAPI.encoder().encodeForHTML(doc.website);
++   doc.website = ESAPI.encoder().encodeForURL(doc.website);
+    // ...
+      };
+      \end{verbatim}
+  \end{framed}\normalsize
+  
+  \hypertarget{vulnerability-11-insufficient-password-strength-validation}{%
+  \paragraph{Vulnerability 11: Insufficient Password Strength
+  Validation}\label{vulnerability-11-insufficient-password-strength-validation}}
+  
+  File: NodeGoat/app/routes/session.js
+  
+  Issue: The \texttt{PASS\_RE} regex allows for weak passwords that do not
+  require a mix of character types.
+  
+  Vulnerability Fix:
+  
+  \begin{framed}\scriptsize
+    \begin{verbatim}
+const validateSignup = (...) => {
++    const PASS_RE = /^.*(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,18}$/;
+-    const PASS_RE = /^.{1,20}$/;
+
+-    if (!PASS_RE.test(password)) {
++    if (!PASS_RE.test(password)) {
+        errors.passwordError = "Password must be 8 to 18 characters" +
+-            " including numbers, lowercase and uppercase letters.";
++            " including at least one number, one lowercase letter, and one uppercase letter.";
+        return false;
+    }
+    // ...
+};
+     \end{verbatim}
+     
+  \end{framed}\normalsize
+  
+  \hypertarget{analyzing-vulnerabilities}{%
+  \subsubsection{Analyzing
+  Vulnerabilities}\label{analyzing-vulnerabilities}}
+  
+  \hypertarget{vulnerability-1-remote-code-execution-in-config-file}{%
+  \paragraph{Vulnerability 1: Remote Code Execution in Config
+  File}\label{vulnerability-1-remote-code-execution-in-config-file}}
+  
+  File: NodeGoat/config/config.js
+  
+  Issue: User input (\texttt{finalEnv}) is used to construct a file path
+  without proper validation, which could allow an attacker to traverse the
+  filesystem or execute arbitrary code.
+  
+  Vulnerability Fix:
+  
+  \begin{framed}\scriptsize
+    \begin{verbatim}
+const validateSignup = (...) => {
++    const PASS_RE = /^.*(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,18}$/;
+-    const PASS_RE = /^.{1,20}$/;
+
+-    if (!PASS_RE.test(password)) {
++    if (!PASS_RE.test(password)) {
+        errors.passwordError = "Password must be 8 to 18 characters" +
+-            " including numbers, lowercase and uppercase letters.";
++            " including at least one number, one lowercase letter, and one uppercase letter.";
+        return false;
+    }
+    // ...
+};
+     \end{verbatim}
+     
+  \end{framed}\normalsize
+  
+  \hypertarget{vulnerability-2-insecure-direct-object-references-idor-in-allocations}{%
+  \paragraph{Vulnerability 2: Insecure Direct Object References (IDOR) in
+  Allocations}\label{vulnerability-2-insecure-direct-object-references-idor-in-allocations}}
+  
+  File: NodeGoat/app/routes/allocations.js
+  
+  Issue: User input from \texttt{req.params.userId} is used directly to
+  query the database, which could allow an unauthorized user to access
+  other users' data.
+  
+  Vulnerability Fix:
+  
+  \begin{framed}\scriptsize
+    \begin{verbatim}
+this.displayAllocations = (req, res, next) => {
+    
+    const {
+-        userId
++        userId: rawUserId
+    } = req.params;
++
++    // Verify the user ID from the session
++    const {
++        userId: sessionUserId
++    } = req.session;
++
++    const isAuthorized = rawUserId == sessionUserId; // Use proper authorization check
++    if (!isAuthorized) {
++        return res.status(403).json({ error: "Unauthorized access" });
++    }
+
+    const {
+        threshold
+    } = req.query;
+// ...
+      \end{verbatim}
+      
+  \end{framed}\normalsize
+  
+  \hypertarget{vulnerability-3-server-side-request-forgery-ssrf-in-research}{%
+  \paragraph{Vulnerability 3: Server-Side Request Forgery (SSRF) in
+  Research}\label{vulnerability-3-server-side-request-forgery-ssrf-in-research}}
+  
+  File: NodeGoat/app/routes/research.js
+  
+  Issue: The \texttt{url} and \texttt{symbol} parameters from user input
+  are concatenated and used in a GET request without validation, allowing
+  SSRF attacks.
+  
+  Vulnerability Fix:
+  
+  \begin{framed}\scriptsize
+    \begin{verbatim}
+this.displayResearch = (req, res) => {
+
+    if (req.query.symbol) {
+-       const url = req.query.url + req.query.symbol;
++       const allowedDomains = ["https://api.example.com"]; // Replace with the actual domain you want to allow
++       const defaultResearchUrl = allowedDomains[0] + "/stock_info"
++       const safeSymbol = encodeURIComponent(req.query.symbol); // URI encode the symbol to avoid manipulation
++       const url = defaultResearchUrl + "?symbol=" + safeSymbol;
+
+        return needle.get(url, ...);
+    }
+// ...
+      \end{verbatim}
+      
+  \end{framed}\normalsize
+  
+  \hypertarget{vulnerability-4-cross-site-scripting-xss-in-memos}{%
+  \paragraph{Vulnerability 4: Cross-Site Scripting (XSS) in
+  Memos}\label{vulnerability-4-cross-site-scripting-xss-in-memos}}
+  
+  File: NodeGoat/app/routes/memos.js
+  
+  Issue: User input \texttt{req.body.memo} is directly inserted into the
+  database and later rendered without proper encoding.
+  
+  Vulnerability Fix:
+  
+  \begin{framed}\scriptsize
+\begin{verbatim}
+const MemosDAO = require("../data/memos-dao").MemosDAO;
+const {
+    environmentalScripts
+} = require("../../config/config");
++const ESAPI = require("node-esapi");
++
+function MemosHandler(db) {
+// ...
+    this.addMemos = (req, res, next) => {
++
++        // Encode memo content to avoid XSS
++        const encodedMemo = ESAPI.encoder().encodeForHTML(req.body.memo);
+
+-        memosDAO.insert(req.body.memo, (err, docs) => {
++        memosDAO.insert(encodedMemo, (err, docs) => {
+// ...
+\end{verbatim}
+      
+  \end{framed}\normalsize
+  
+  \hypertarget{vulnerability-5-command-injection-in-contributions}{%
+  \paragraph{Vulnerability 5: Command Injection in
+  Contributions}\label{vulnerability-5-command-injection-in-contributions}}
+  
+  File: NodeGoat/app/routes/contributions.js
+  
+  Issue: Use of \texttt{eval} with user input \texttt{req.body.preTax},
+  \texttt{req.body.afterTax}, and \texttt{req.body.roth}, enabling command
+  injection attacks.
+  
+  Vulnerability Fix:
+  
+  \begin{framed}\scriptsize
+\begin{verbatim}
+  this.handleContributionsUpdate = (req, res, next) => {
+  
+  -        const preTax = eval(req.body.preTax);
+  -        const afterTax = eval(req.body.afterTax);
+  -        const roth = eval(req.body.roth);
+  +        const preTax = parseFloat(req.body.preTax);
+  +        const afterTax = parseFloat(req.body.afterTax);
+  +        const roth = parseFloat(req.body.roth);
+  
+          const {
+              userId
+          } = req.session;
+  // ...
+  \end{verbatim}
+      
+  \end{framed}\normalsize

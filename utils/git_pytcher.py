@@ -49,7 +49,7 @@ def generate_patch(original_dir: str, fixed_dir: str, patch_file_path: str):
         print(f'Patch file created at: {patch_file_path}')
 
 
-def check_patch(patch_file_path):
+def check_patch(patch_file_path, iol):
     # Construct the git apply command with the --check flag
     command = ["git", "apply", "--check", patch_file_path]
 
@@ -59,16 +59,16 @@ def check_patch(patch_file_path):
 
         # If the command was successful, there are no errors, and the patch can be applied cleanly
         if result.returncode == 0:
-            print("The patch can be applied cleanly.")
+            iol.log("The patch can be applied cleanly.")
         else:
             # This branch might not be reached because a non-zero return code will raise a CalledProcessError
-            print("There might be issues applying the patch.")
-            print(result.stdout)
-            print(result.stderr)
+            iol.log("There might be issues applying the patch.")
+            iol.log(result.stdout)
+            iol.log(result.stderr)
 
     except subprocess.CalledProcessError as e:
         # If there's an error (e.g., patch cannot be applied), print the error message
-        print(f"Error checking patch: {e.stderr}")
+        iol.log(f"Error checking patch: {e.stderr}")
 
 def apply_patch(patch_file_path):
     # Construct the git apply command

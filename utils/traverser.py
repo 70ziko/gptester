@@ -4,7 +4,7 @@ import re
 import json
 from pathlib import Path
 from utils.config import Config
-from utils.utils import num_tokens_from_string
+from utils.chatCompletion import num_tokens_from_string
 
 
 CFG = Config()
@@ -263,7 +263,7 @@ def walk_directory(directory, append_ignore:str=None):
         ".pdf",
         ".properties",
     ] + [f".{ext}" for ext in CFG.ignore_extensions]
-    exclude_list = ["GPTested","GPTester", "tests", "node_modules", "build", "dist", "venv", "env", "migrations", ".git", ".vscode", ".idea", ".pytest_cache", 
+    exclude_list = ["GPTested","GPTester", "tests", "test", "node_modules", "build", "dist", "venv", "env", "migrations", ".git", ".vscode", ".idea", ".pytest_cache", 
                     ".cache", ".tox", "docs", "doc", "static", "media", "assets", "logs", "log", "raports", "staticfiles"]
     if append_ignore: exclude_list.append(append_ignore)
     code_contents = {}
@@ -273,9 +273,7 @@ def walk_directory(directory, append_ignore:str=None):
         for file in files:
             if not any(file.endswith(ext) for ext in image_extensions) and file not in exclude_list:
                 try:
-                    relative_filepath = os.path.relpath(
-                        os.path.join(root, file), directory
-                    )
+                    relative_filepath = os.path.join(root, file)
                     code_contents[relative_filepath] = read_file(
                         os.path.join(root, file)
                     )

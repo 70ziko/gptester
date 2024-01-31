@@ -17,9 +17,11 @@ Następująca sekcja zawiera omówienie źródeł danych, ich specyfikacji oraz 
     % \item \textbf{DiverseVul}: \url{https://arxiv.org/abs/2304.00409} Opis kolejnego zbioru danych, jego charakterystyka i zastosowanie w kontekście `gptester`.
     % \item \textbf{CVEfixes}: \url{https://github.com/secureIT-project/CVEfixes}
 
-    \item \textbf{OWASP VulnerableApp}: Aplikacja webowa zawierająca szereg podatności, służąca do testowania narzędzi do analizy bezpieczeństwa aplikacji webowych. Napisana w języku PHP, kod źródłowy dostępny w repozytorium umożliwia pobranie obrazu kontenera Docker. \url{https://github.com/SasanLabs/VulnerableApp}
+    % \item \textbf{OWASP VulnerableApp}: Aplikacja webowa zawierająca szereg podatności, służąca do testowania narzędzi do analizy bezpieczeństwa aplikacji webowych. Napisana w języku PHP, kod źródłowy dostępny w repozytorium umożliwia pobranie obrazu kontenera Docker. \url{https://github.com/SasanLabs/VulnerableApp}
 
-    \item \textbf{Damn Vulnerable NodeJS Application (DVNA)}: Aplikacja napisana w NodeJS, demonstrująca podatności z TOP 10 OWASP, służąca do nauki i testowania narzędzi do analizy bezpieczeństwa aplikacji. Repozytorium zawiera instrukcje uruchomienia i testowania aplikacji. \url{https://github.com/appsecco/dvna}
+    % \item \textbf{Damn Vulnerable NodeJS Application (DVNA)}: Aplikacja napisana w NodeJS, demonstrująca podatności z TOP 10 OWASP, służąca do nauki i testowania narzędzi do analizy bezpieczeństwa aplikacji. Repozytorium zawiera instrukcje uruchomienia i testowania aplikacji. \url{https://github.com/appsecco/dvna}
+    \item \textbf{OWASP/NodeGoat}: Repozytorium zawierające aplikację webową, która została stworzona w celu demonstracji podatności z TOP 10 OWASP. Aplikacja została napisana w NodeJS, a jej kod źródłowy jest dostępny w serwisie Github. \url{https://github.com/OWASP/NodeGoat}
+
 \end{itemize}
 
 \section{Proces przygotowania danych}
@@ -31,20 +33,26 @@ Dobrane przeze mnie zbiory danych zostały tak, by nie trzeba było dostosowywa�
 Repozytorium zawiera wiele plików z przykładami kodu, które mogą zawierać błędy bezpieczeństwa. Pliki te zostały pobrane z różnych źródeł, takich jak blogi, książki, zasoby itp. Pliki te zawierają często komentarze lub nazwy zmiennych, które wskazują na potencjalne błędy bezpieczeństwa. Pozwala to nam na izolację problemu identyfikacji podatności od generowania kodu. W pierwszej kolejności badania zostały przeprowadzone bez wprowadzania zmian w kodzie, aby ocenić skuteczność modeli językowych w korekcji błędów bezpieczeństwa. W kolejnym kroku, w celu przebadania zdolności do identyfikowania błędów, zostały wprowadzone zmiany w kodzie, takie jak usunięcie komentarzy, zmienienie nazw zmiennych, itp. W ten sposób można było sprawdzić, czy modele językowe są w stanie wykryć błędy bezpieczeństwa, gdy mają więcej informacji na temat kodu.
 
 
-\subsection{OWASP VulnerableApp}
-Jako pełnoprawna aplikacja webowa, VulnerableApp pozwala na testowanie narzędzia `gptester` w realistycznym środowisku, z prawdziwymi podatnościami. Użycie tej aplikacji w badaniach pozwoliło na weryfikację skuteczności modeli językowych w wykrywaniu błędów bezpieczeństwa.
+% \subsection{OWASP VulnerableApp}
+% Jako pełnoprawna aplikacja webowa, VulnerableApp pozwala na testowanie narzędzia `gptester` w realistycznym środowisku, z prawdziwymi podatnościami. Użycie tej aplikacji w badaniach pozwoliło na weryfikację skuteczności modeli językowych w wykrywaniu błędów bezpieczeństwa.
 
-\subsection{Damn Vulnerable NodeJS Application (DVNA)}
-DVNA, jako aplikacja demonstrująca podatności OWASP Top 10, stanowiła cenne źródło do testowania `gptester`. Dzięki dokumentacji i instrukcjom dostępnym w repozytorium, możliwe było efektywne wykorzystanie tej aplikacji do celów badawczych.
+\subsection{OWASP/NodeGoat}
+NodeGoat, jako aplikacja demonstrująca podatności OWASP Top 10, stanowiła cenne źródło do testowania `gptester`. Dzięki dokumentacji i instrukcjom dostępnym w repozytorium, możliwe było efektywne wykorzystanie tej aplikacji do celów badawczych.
 
 \section{Wyzwania i ograniczenia}
 \label{sec:wyzwania_i_ograniczenia}
 
 Głównym wyzwaniem prezentowanym przez użyte przeze mnie próbki badawcze wynikają z ich charakteru. Zbiór danych Vulnerable-Code-Snippets nie jest reprezentatywne dla rzeczywistych aplikacji, a jedynie zawiera przykłady kodu, które mogą zawierać błędy bezpieczeństwa. W przypadku większości przykładów kodu, nie jest możliwe uruchomienie go bez posiadania kodu całego projektu, co utrudnia ewaluację. W związku z powyższym niektóre skrawki kodu zostały obudowane w aplikacje webową, natomiast inne pominięte. Nie każdy skrawek kodu w repozytorium jest wycięty z aplikacji webowej, te przykłady zostały uwzględnione w badaniach i sprawiały najmniej problemów. 
 
-W przypadku OWASP VulnerableApp, aplikacja jest w pełni uruchamialna i możliwe jest badanie funkcjonalności programu na przykładzie rzeczywistym. Trudnością jest natomiast wczesna wersja 'gptester', w której nie została jeszcze wprowadzona funkcjonalność aktualizowania bazy kodu za pomocą funkcji systemów kontroli wersji. Powoduje to konieczność ręcznego scalania zmian w kodzie z nowymi wersjami aplikacji, co jest czasochłonne i utrudnia badania. Testy bezpieczeństwa zostaną przeprowadzone za pomocą skanerów podatności, przede wszystkim OWASP ZAP, który jest zoptymalizowany do wykrywania podatności w aplikacji OWASP VulnerableApp, co pomoże w faktycznej ocenie skuteczności wprowadzonych korekt.
+W kontekście OWASP NodeGoat, aplikacja ta była w pełni funkcjonalna i umożliwiała realistyczne testowanie podatności. Jednakże, wyzwaniem okazało się wykorzystanie wczesnej wersji \texttt{gptester}, która nie posiadała jeszcze możliwości aktualizacji bazy kodu przez systemy kontroli wersji. To z kolei wymuszało ręczne łączenie zmian w kodzie z nowymi wersjami aplikacji, co było procesem czasochłonnym i komplikowało przeprowadzenie badań. Testy bezpieczeństwa przeprowadzone przy użyciu skanerów podatności, zwłaszcza OWASP ZAP - zoptymalizowanego do wykrywania podatności w aplikacjach takich jak NodeGoat - miały za zadanie ocenić skuteczność proponowanych przez \texttt{gptester} korekt.
 
 
 \section{Podsumowanie}
-Podsumowujemy, jak przygotowanie i analiza zbiorów danych wpłynęła na projekt `gptester` i jakie wnioski można z tego wyciągnąć.
 
+W rozdziale \ref{ch:zbiory_danych} przedstawiono i dokładnie przeanalizowano zbiory danych wykorzystane w badaniach nad skutecznością dużych modeli językowych (LLM) za pomocą programu \textbf{gptester}. Kluczowe znaczenie miało tutaj szczegółowe przygotowanie i przetwarzanie tych zbiorów, co miało bezpośredni wpływ na efektywność analizy statycznej kodu oraz kalibrację narzędzia.
+
+Repozytorium \textit{snoopysecurity/Vulnerable-Code-Snippets} dostarczyło przykłady kodu zawierające potencjalne luki bezpieczeństwa, które umożliwiły testowanie zdolności \textbf{gptester} do identyfikacji i sugerowania napraw błędów bezpieczeństwa. Z kolei aplikacja \textit{OWASP/NodeGoat}, demonstrująca podatności z listy OWASP Top 10, posłużyła jako realistyczne środowisko do testowania skuteczności LLM w wykrywaniu podatności.
+
+Wyzwaniem okazała się natura wykorzystanych próbek kodu, które często nie były reprezentatywne dla rzeczywistych aplikacji i wymagały dodatkowej pracy, aby mogły być użyte w testach. Wczesna wersja \textbf{gptester} również nałożyła ograniczenia na proces badawczy, szczególnie w kontekście aktualizacji bazy kodu i ręcznego scalania zmian.
+
+Pomimo tych wyzwań, analiza zbiorów danych pozwoliła na zgłębienie możliwości i ograniczeń LLM w kontekście analizy bezpieczeństwa aplikacji webowych. Przeprowadzone badania podkreśliły znaczenie interdyscyplinarnego podejścia łączącego technologie LLM z wiedzą ekspercką w dziedzinie bezpieczeństwa, aby maksymalizować efektywność narzędzi typu \textbf{gptester} w wykrywaniu i naprawianiu podatności w oprogramowaniu.

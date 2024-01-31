@@ -80,11 +80,11 @@ class Assistant():
     async def next(self, messages: list[dict[str, str]]=None, prompt=None, scan_dir: str = 'fixes'):
         if messages:
             self.messages_to_thread(messages)
-            self.iol.log("Messages added to the thread.", color="bright_black", verbose_only=True)
+            self.iol.print("Messages added to the thread.", color="bright_black", verbose_only=True)
 
         if prompt:
             self.fuser(self, prompt)
-            self.iol.log("Prompt processed.", color="bright_black", verbose_only=True)
+            self.iol.print("Prompt processed.", color="bright_black", verbose_only=True)
 
 
         try:
@@ -133,7 +133,7 @@ class Assistant():
                         run_id=run.id,
                         tool_outputs=tool_outputs
                     )
-                    self.iol.log("Tool outputs submitted.", color="bright_black", verbose_only=True)
+                    self.iol.print("Tool outputs submitted.", color="bright_black", verbose_only=True)
 
                 if run_status.status == "failed":
                     raise Exception(f"Run failed with reason: {run_status.last_error}")
