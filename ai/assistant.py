@@ -126,6 +126,8 @@ class Assistant():
                             response = await function_to_call(**arguments)
 
                             tool_outputs.append({"tool_call_id": tool_call.id, "output": response})
+                            if response:
+                                self.iol.log(f"{response.content[0].text.value} \n", verbose_only=True)
 
                 if tool_outputs:
                     client.beta.threads.runs.submit_tool_outputs(
@@ -164,7 +166,6 @@ class Assistant():
 
         for index, annotation in enumerate(annotations):
             message_content.value = message_content.value.replace(annotation.text, f' [{index}]')
-
             if (file_citation := getattr(annotation, 'file_citation', None)):
                 cited_file = client.files.retrieve(file_citation.file_id)
                 citations.append(f'[{index}] {file_citation.quote} from {cited_file.filename}')
