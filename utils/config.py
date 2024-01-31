@@ -26,13 +26,8 @@ class Config(metaclass=Singleton):
         self.openai_api_key = os.getenv("OPENAI_API_KEY")
         self.temperature = float(os.getenv("TEMPERATURE", "0"))
 
-        # to implement
-        self.execute_local_commands = (
-            os.getenv("EXECUTE_LOCAL_COMMANDS", "False") == "True"
-        )
-        self.restrict_to_workspace = (
-            os.getenv("RESTRICT_TO_WORKSPACE", "True") == "True"
-        )
+
+        self.ignore_extensions = ['md', 'csv', 'key', 'crt', 'css', 'html', 'json']    # image extensions are ignored by default in traverser.walk_directory 
 
         self.pinecone_api_key = os.getenv("PINECONE_API_KEY")
         # assert self.pinecone_api_key, "Missing PINECONE_API_KEY environment variable"

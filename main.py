@@ -103,7 +103,7 @@ async def main():
 
     iol.log(f"Beginning scan for {args.directory}", color="pink")
 
-    ignore_content = open(args.ignore, 'r').read() if args.ignore else '.gitignore'
+    ignore_content = open(args.ignore, 'r').read().splitlines() if args.ignore else ['.gitignore']
     dir_content = walk_directory(args.directory, ignore_content)    
 
     iol.log(f"Found {len(dir_content)} files to scan", color="cyan", verbose_only=False)
