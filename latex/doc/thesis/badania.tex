@@ -993,7 +993,7 @@ Z uwagi na ciągłe dopracowywanie funkcji aktualizacji kodu za pomocą funkcji 
   \label{fig:nodegoat-error-after}
 \end{figure}
 
-Przykład pokazuje jak ważne jest, aby zawsze sprawdzić wyjście wygenerowane przez Szcztuczną Inteligencję, ponieważ są to algorytmy niedetermistyczne, co oznacza, że nie można przewidzieć dokładnie jakie będzie wyjście programu dla danego wejścia. W tym przypadku, program wygenerował kod, który nie był w pełni funkcjonalny, co uniemożliwiło uruchomienie aplikacji. Sprytne metody wprowadzania zmian or
+Przykład pokazuje jak ważne jest, aby zawsze sprawdzić wyjście wygenerowane przez Szcztuczną Inteligencję, ponieważ są to algorytmy niedetermistyczne, co oznacza, że nie można przewidzieć dokładnie jakie będzie wyjście programu dla danego wejścia. W tym przypadku, program wygenerował kod, który nie był w pełni funkcjonalny, co uniemożliwiło uruchomienie aplikacji. Zaawansowane metody wprowadzania zmian w bazie kodu wejściowego przewidziane w dalszych pracach nad projektem ułatwią proces scalania kodu oraz umożliwią łatwą weryfikację wyników.
 
 \subsection{Wprowadzenie zmian ręcznie}
 Aby uniknąć konfliktów i zamieniania plików nie posiadających pełnego kodu, zdecydowałem się na ręczne wprowadzenie zmian. W tym celu skopiowałem pliki z nowej wersji do katalogu z aplikacją NodeGoat, uważnie sprawdzając ich treść i ręcznie łącząc kod. Niestety wiele zmian było gruntownych wymagających generowania certyfikatów, implementacji systemów hashujących i tym podobnych co utrudnia wprowadzenie zmian w krótkim czasie.
@@ -1051,7 +1051,7 @@ Po aktualizacji konfiguracji, aplikacja uruchomiła się poprawnie. Następnie p
   \end{table}
 \normalsize
 
-Niestety konfiguracje nadal nie były poprawne, a w plikach znajdowały się błędy typu not defined. W związku z tym, należało ręcznie wprowadzić zmiany w plikach konfiguracyjnych i zdebugować aplikację (przede wszystkim poprawne definicje zewnętrznych bibliotek oraz użycie mongodb zgodnie z dokumentacją nowej wersji sterownika). Problemem była również  Po wprowadzeniu zmian, aplikacja uruchomiła się. Następnie przeprowadziłem testy funkcjonalne, które wykazały wiele błędów aplikacji.
+Niestety konfiguracje nadal nie były poprawne, a w plikach znajdowały się błędy typu not defined. W związku z tym, należało ręcznie wprowadzić zmiany w plikach konfiguracyjnych i zdebugować aplikację (przede wszystkim poprawne definicje zewnętrznych bibliotek oraz użycie mongodb zgodnie z dokumentacją nowej wersji sterownika). Problemem była również implementacja funkcji skrótu mających na celu umieszczanie bezpieczne przechowywanie haseł w bazie danych. Po wprowadzeniu zmian, aplikacja uruchomiła się. Następnie przeprowadziłem testy funkcjonalne, które wykazały wiele błędów aplikacji.
 
 \begin{table}[H]
   \centering
@@ -1077,7 +1077,7 @@ Niestety konfiguracje nadal nie były poprawne, a w plikach znajdowały się bł
   \end{tabular}
   \end{table}
 
-Problematyczna okazała się implementacja porównania haseł w pliku \texttt{user-dao.js}. W nowej wersji aplikacji, hasła były zapisywane w bazie danych w postaci hashu, co wymagało zmiany sposobu porównywania haseł. Błędy mogły wynikać z różnych implementacji tych funkcji kryptograficznych, które wynikały z podzielenia projektu do analizy na części.
+Problematyczna okazała się implementacja porównania haseł w pliku \texttt{user-dao.js}. W nowej wersji aplikacji, hasła były zapisywane w bazie danych w postaci hashu, co wymagało zmiany sposobu porównywania haseł. Błędy mogły wynikać z różnych sposobów implementacji tych funkcji kryptograficznych w różnych plikach, które wynikały z podzielenia projektu do analizy na części.
 
 \subsection{Testy bezpieczeństwa po wpowadzeniu zmian}
 Po wprowadzeniu zmian, przeprowadziłem testy bezpieczeństwa aplikacji. W tym celu wykorzystałem narzędzie OWASP ZAP, które pozwala na przeprowadzenie testów bezpieczeństwa aplikacji internetowych. 

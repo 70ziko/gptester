@@ -82,9 +82,10 @@
 \contentsline {subsection}{\numberline {6.7.4\relax .\enspace }Testy bezpieczeństwa po wpowadzeniu zmian}{56}{subsection.6.7.4}%
 \contentsline {section}{\numberline {6.8\relax .\enspace }Identyfikacja podatności bez podpowiedzi w kodzie}{58}{section.6.8}%
 \contentsline {section}{\numberline {6.9\relax .\enspace }Wnioski z analizy NodeGoat}{60}{section.6.9}%
-\contentsline {section}{Podsumowanie}{60}{section*.36}%
-\contentsline {section}{Wnioski}{61}{section*.37}%
-\contentsline {chapter}{Bibliografia}{62}{chapter*.38}%
-\contentsline {chapter}{Spis listingów}{63}{chapter*.39}%
-\contentsline {chapter}{Dodatki}{64}{section*.40}%
-\contentsline {chapter}{\numberline {A\relax .\enspace }Dodatek 1}{65}{appendix.A}%
+\contentsline {chapter}{Podsumowanie i wnioski}{61}{chapter*.36}%
+\contentsline {section}{Podsumowanie}{61}{section*.37}%
+\contentsline {section}{Wnioski}{61}{section*.38}%
+\contentsline {chapter}{Bibliografia}{63}{chapter*.39}%
+\contentsline {chapter}{Spis listingów}{64}{chapter*.40}%
+\contentsline {chapter}{Dodatki}{65}{section*.41}%
+\contentsline {chapter}{\numberline {A\relax .\enspace }Dodatek 1}{66}{appendix.A}%
