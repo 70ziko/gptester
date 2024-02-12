@@ -1,6 +1,6 @@
-\chapter{Dodatek 1}\label{app1}
+\chapter{Surowe wyniki analizy kodu aplikacji NodeGoat bez podpowiedzi w kodzie w formacie Markdown przetłumaczonym na LaTex}\label{app1}
 
-{\large\textbf{Surowe wyniki analizy kodu aplikacji NodeGoat bez podpowiedzi w kodzie}}
+% {\large\textbf{}}
 \normalsize
 \begin{enumerate}
   \def\labelenumi{\arabic{enumi}.}
@@ -229,7 +229,8 @@ this.getByUserIdAndThreshold = (userId, threshold, callback) => {
 -    const searchCriteria = () => {
 -        if (threshold) {
 -            return {
--                $where: `this.userId == ${parsedUserId} && this.stocks > '${threshold}'`
+-                $where: `this.userId == ${parsedUserId} && \
+                          this.stocks > '${threshold}'`
 -            };
 +    const parsedUserId = parseInt(userId)
 +    let query = { userId: parsedUserId };
@@ -464,9 +465,11 @@ this.displayResearch = (req, res) => {
 
     if (req.query.symbol) {
 -       const url = req.query.url + req.query.symbol;
-+       const allowedDomains = ["https://api.example.com"]; // Replace with the actual domain you want to allow
++       const allowedDomains = ["https://api.example.com"]; // Replace with the 
+                                                           // actual domain you want to allow
 +       const defaultResearchUrl = allowedDomains[0] + "/stock_info"
-+       const safeSymbol = encodeURIComponent(req.query.symbol); // URI encode the symbol to avoid manipulation
++       const safeSymbol = encodeURIComponent(req.query.symbol); // URI encode the symbol to avoid 
+                                                                // manipulation
 +       const url = defaultResearchUrl + "?symbol=" + safeSymbol;
 
         return needle.get(url, ...);

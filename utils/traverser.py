@@ -4,7 +4,7 @@ import re
 import json
 from pathlib import Path
 from utils.config import Config
-from utils.chatCompletion import num_tokens_from_string
+from utils.chat_completion import num_tokens_from_string
 
 
 CFG = Config()

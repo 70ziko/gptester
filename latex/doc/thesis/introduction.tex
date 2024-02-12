@@ -1,25 +1,25 @@
 
 \chapter*{Wprowadzenie}
 
-Niniejsza praca inżynierska nosi tytuł "Zastosowanie dużych modeli językowych do wykrywania i naprawiania błędów bezpieczeństwa i podatności w kodzie aplikacji webowych". Celem tej pracy jest zbadanie, jak skutecznie zaawansowane modele językowe, takie jak GPT-3.5, GPT-4 oraz w w przyszłych iteracjach badania modele otwarto-źródłowe między innymi Mistral 7B i Falcon-7B-instruct, mogą być wykorzystane do automatycznego wykrywania i naprawy błędów bezpieczeństwa w kodzie zarówno aplikacji webowych jak i lokalnych. 
+Ostatnie lata przyniosły niebywały rozwój w dziedzinie Sztucznej Inteligencji, a w szczególności w obszarze dużych modeli językowych (LLM), takich jak GPT (Generative Pre-trained Transformer) od OpenAI, BERT (Bidirectional Encoder Representations from Transformers) od Google czy Transformerów od innych wiodących instytucji badawczych i firm technologicznych. Niezwykle obiecujące są także inicjatywy otwarto-źródłowe, które umożliwiają społeczności naukowej i technologicznej trenowanie oraz dostosowywanie modeli Sztucznej Inteligencji do specyficznych potrzeb i zastosowań. Postęp ten, zauważalny szczególnie na przełomie ostatnich dwóch lat, zrewolucjonizował wiele aspektów technologii, wprowadzając znaczące innowacje w przetwarzaniu języka naturalnego (NLP), generowaniu tekstu i kodu, rozumieniu kontekstu oraz interakcji maszyna-człowiek.
 
-W tym celu zostanie opracowane i zaimplementowane narzędzie do statycznej analizy kodu, które będzie wykorzystywać modele językowe do detekcji podatności i naprawy błędów.
-Narzędzie to zostanie przetestowane i porównane z innymi rozwiązaniami, takimi jak Snyk, które oferują podobne funkcjonalności, a także z tradycyjnymi skanerami podatności.
+Warto zauważyć, że wiodące zespoły badawcze i firmy technologiczne, mające dostęp do najwyższej jakości danych i znacznych zasobów obliczeniowych, utrzymują przewagę nad rozproszonymi grupami działającymi na ograniczonych zasobach. Ta centralizacja zasobów i danych sprzyja szybkiemu rozwojowi i komercjalizacji dużych modeli językowych jako produktów i usług, co dodatkowo napędza ich popularność i umożliwia gromadzenie coraz większej ilości danych do treningu. Z kolei dla społeczności otwarto-źródłowej, mimo ogromnego potencjału i wkładu w rozwój technologii, dogonienie rozwiniętych komercyjnie modeli stanowi znaczące wyzwanie, które prawdopodobnie będzie wymagało dodatkowego czasu i zasobów. Obecnie na rynku bezspornie dominuje najpotężniejszy i najnowszy model własnościowy od OpenAI nazwany GPT-4-turbo, który oprócz dużych zdolności jest rozbudowany o funkcje niedostępne w innych produktach, jak dostęp do narzędzi i funkcji, które pozwalają zwiększyć możliwości Sztucznej Inteligencji w zastosowaniach autonomicznych i praktycznych. 
 
-W pracy zostaną przedstawione wyniki badań, które mają na celu odpowiedzieć na pytanie, czy modele językowe mogą być wykorzystane do tego celu, oraz jak skuteczne są one w porównaniu z innymi rozwiązaniami.
-W ramach pracy zostaną również zbadane ograniczenia i wyzwania związane z wykorzystaniem tych technologii w kontekście cyberbezpieczeństwa.
+Zastosowanie LLM w cyberbezpieczeństwie otwiera drogę do bardziej dynamicznych i inteligentnych systemów detekcji błędów, które mogą adaptować się do ewoluujących zagrożeń i technik ataku. Poprzez analizę kodu w poszukiwaniu wzorców znanych podatności, a następnie generowanie propozycji ich naprawy, LLM mogą znacząco przyspieszyć proces zapewniania bezpieczeństwa aplikacji webowych, minimalizując ryzyko eksploatacji przez potencjalnych atakujących. Co więcej, zdolność LLM do uczenia się w kontekście (in-context learning) oraz wykorzystania metod wzbogacania generacji (retrieval-augmented generation - RAG) umożliwia tworzenie bardziej precyzyjnych i efektywnych rozwiązań, dostosowanych do specyfiki danego problemu bezpieczeństwa.
+
+W kontekście niniejszej pracy inżynierskiej, rola LLM w cyberbezpieczeństwie zostanie poddana szczegółowej analizie, z uwzględnieniem zarówno potencjału, jak i wyzwań związanych z ich zastosowaniem. Badanie to ma na celu nie tylko ocenę skuteczności LLM w wykrywaniu i naprawianiu błędów bezpieczeństwa, ale także zrozumienie, w jaki sposób te zaawansowane narzędzia mogą być integrowane z istniejącymi procesami deweloperskimi i systemami zapewniania jakości, w celu stworzenia bardziej zabezpieczonych i odpornych na ataki aplikacji webowych.
+
 
 \section*{Pytania badawcze}
-W ramach pracy stawiam następujące pytania badawcze:
+W ramach pracy postawione zostają następujące pytania badawcze:
 \begin{enumerate}
     \item Czy duże modele językowe mogą być wykorzystane do wykrywania i naprawiania błędów bezpieczeństwa w kodzie aplikacji webowych?
     \item Jak skuteczne są te modele w porównaniu z innymi rozwiązaniami?
     \item W jakim stopniu metody wzbogacania generacji (RAG) i uczenia się w kontekście (in-context learning) mogą poprawić skuteczność tych modeli?
     \item Jakie są ograniczenia i wyzwania związane z wykorzystaniem tych technologii w kontekście cyberbezpieczeństwa?
 \end{enumerate}
-\newpage
+
 \section*{Hipotezy}
-Hipotezy pracy to:
 \begin{enumerate}
     \item Duże modele językowe, dzięki swojej zdolności do analizy i generowania kodu, mogą skutecznie identyfikować i naprawiać błędy bezpieczeństwa w kodzie źródłowym.
     \item Mimo obiecującego potencjału, modele te mogą napotykać ograniczenia, szczególnie w bardziej złożonych i specyficznych scenariuszach związanych z cyberbezpieczeństwem.
@@ -38,7 +38,7 @@ Praca ta ma na celu kontynuację i poszerzenie zakresu tych badań, wykorzystuj�
 Różnica między tą pracą, a literaturą naukową polega na tym, że praca skupia się na praktycznym zastosowaniu modeli językowych w statycznej analizie kodu, podczas gdy literatura naukowa skupia się na badaniu możliwości Sztucznej Inteligencji w tym zakresie.
 
 \section*{Cel pracy}
-Głównym celem pracy jest zbadanie skuteczności wykorzystania dużych modeli językowych do wykrywania i naprawiania błędów bezpieczeństwa i podatności w kodzie źródłowym aplikacji webowych. 
+Głównym celem pracy jest zbadanie skuteczności dużych modeli językowych w wykrywaniu i naprawie błędów bezpieczeństwa i podatności w kodzie źródłowym aplikacji webowych. 
 W tym kontekście można wyróżnić następujące cele pośrednie:
 \begin{itemize}
     \item Opracowanie praktycznego rozwiązania do statycznej analizy kodu dla aplikacji webowych oraz lokalnych.
@@ -50,6 +50,6 @@ Zakres pracy obejmuje:
     \item Analizę istniejącej literatury i badań, w szczególności artykułu 'Can OpenAI Codex and Other Large Language Models Help Us Fix Security Bugs?'.
     \item Projekt i implementację narzędzia do statycznej analizy kodu opartego na modelach OpenAI.
     \item Przygotowanie zbiorów danych i przykładów z kodem zawierającym potencjalne podatności.
-    \item Testowanie i porównanie skuteczności z innymi rozwiązaniami, np. oferowanymi przez firmę Snyk.
+    \item Testowanie i porównanie skuteczności z innymi rozwiązaniami
     \item Analiza wyników i formułowanie wniosków.
 \end{itemize}
