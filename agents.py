@@ -1,4 +1,4 @@
-# from agent import Agent
+# from agent import Agent   #ChatCompletion
 from ai.assistant import Assistant as Agent
 from DB import create_dbs
 from utils.io import IOlog
@@ -23,14 +23,37 @@ async def debug_agent(input: str, scan_dir: str, iol: IOlog = None, model: str =
             "required": ["filename", "content"]
         }
     }
-
+    append_to_csv = {
+        "name": "append_to_csv",
+        "description": "Appends a row to an existing CSV file using a semicolon as the delimiter.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "file_path": {
+                    "type": "string",
+                    "description": "The path to the CSV file to which the row will be appended."
+                },
+                "row_data": {
+                    "type": "array",
+                    "description": "A list of values to be formatted into a CSV row and appended to the file.",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": ["file_path", "row_data"]
+        }
+    }
     tools=[
         {"type": "code_interpreter"},
         {"type": "function", "function": write_file_json},
     ]
+    if CFG.output_format=='csv': tools.append({"type": "function", "function": append_to_csv})
     if CFG.retrieval: tools.append({"type": "retrieval"})
 
-    ai = Agent(role=f"{dbs.prompts['debug']}", name='debug_agent', iol = iol, tools=tools, model=model, target_dir=fixed_dir, know_file=file_to_know)
+    # prompt in prompts directory - debug
+    system_prompt = f"{dbs.prompts['debug-csv']}" if CFG.output_format=="csv" else f"{dbs.prompts['debug']}"
+    ai = Agent(role=system_prompt, name='debug_agent', iol = iol, tools=tools, model=model, target_dir=fixed_dir, know_file=file_to_know)
     
     user = ai.fuser(msg=f"""The project codebase:\n{input}. 
 List all the vulnerabilities present in the codebase, when finished write their number. 

@@ -1,36 +1,37 @@
 \abstract{
 % Polish abstract 
-Praca inżynierska zatytułowana "Zastosowanie dużych modeli językowych do wykrywania i naprawiania błędów bezpieczeństwa i podatności w kodzie aplikacji webowych" koncentruje się na zastosowaniu zaawansowanych modeli językowych, takich jak GPT-3.5, GPT-4, a w przyszłości także modele otwartoźródłowe, takie jak Mistral, do automatycznego wykrywania i naprawiania błędów bezpieczeństwa w kodzie oprogramowania i aplikacji webowych.
+Praca inżynierska zatytułowana "Zastosowanie dużych modeli językowych do wykrywania i naprawiania błędów bezpieczeństwa i podatności w kodzie aplikacji webowych" koncentruje się na zastosowaniu zaawansowanych modeli językowych, takich jak GPT-3.5, GPT-4, a w przyszłości także modeli otwartoźródłowych, takich jak Mistral, do automatycznego wykrywania i naprawiania błędów bezpieczeństwa w kodzie oprogramowania i aplikacji webowych.
 
-Motywacja tej pracy wynika z rosnącej roli dużych modeli językowych (LLM) w różnych dziedzinach, w tym w cyberbezpieczeństwie. W kontekście tych działań, badana jest możliwość wykorzystania tych modeli do wykrywania i naprawiania podatności takich jak XSS, SQL Injection, CSRF, Buffer Overflow i tym podobne.
+Motywacja tej pracy wynika z rosnącej roli dużych modeli językowych (LLM) w różnych dziedzinach, w tym w cyberbezpieczeństwie. W kontekście tych działań, badana jest możliwość wykorzystania tych modeli do wykrywania i naprawiania podatności takich jak XSS\footnote{Cross-Site Scripting}, SQL Injection\footnote{Iniekcja SQL}, CSRF\footnote{Cross-Site Request Forgery}, Buffer Overflow\footnote{Przepełnienie bufora} i tym podobne.
 
 Punktem wyjścia dla pracy dyplomowej jest artykuł napisany w 2021 roku 
-"Can OpenAI Codex and Other Large Language Models Help Us Fix Security Bugs?"
-- Hammond Pearce, Benjamin Tan, Baleegh Ahmad, Ramesh Karri, Brendan Dolan-Gavitt (https://arxiv.org/pdf/2112.02125v1.pdf). Autorzy podkreślają znaczący potencjał tych modeli, a niniejsza praca ma na celu kontynuację tych badań i poszerzenie ich zakresu.
+"Can OpenAI Codex and Other Large Language Models Help Us Fix Security Bugs?" \cite{codex-fix-security-bugs}
+- Hammond Pearce, Benjamin Tan, Baleegh Ahmad, Ramesh Karri, Brendan Dolan-Gavitt \url{https://arxiv.org/pdf/2112.02125v1.pdf}. Autorzy podkreślają znaczący potencjał tych modeli, a niniejsza praca ma na celu kontynuację tych badań i poszerzenie ich zakresu.
 
-Planowane działania obejmują przygotowanie zbioru danych zawierającego podatne bazy kodu źródłowego, testowanie zdolności detekcji błędów przez modele językowe OpenAI, oraz porównanie tych wyników z istniejącymi rozwiązaniami, oferowanymi przez firmę Snyk. 
+Planowane działania obejmują zaprojektowanie oraz implementację praktycznego narzędzia dla programistów do statycznej analizy kodu, przygotowanie zbioru danych zawierającego podatne kod źródłowy, testowanie zdolności detekcji błędów przez modele językowe OpenAI, oraz porównanie tych wyników z istniejącymi rozwiązaniami.
 
-Szczególny nacisk zostanie położony na wykorzystanie technik uczenia się w kontekście (in-context learning) oraz generowanie wspomagane pobieraniem (RAG - Retrieval Augmented Generation), które mogą pomóc w udoskonaleniu detekcji i wyników, nawet przy ograniczonych zasobach. 
+Szczególny nacisk zostanie położony na wykorzystanie technik uczenia się w kontekście oraz generowanie wspomagane odnajdywaniem danych (RAG), które mogą pomóc w udoskonaleniu detekcji i wyników, nawet przy ograniczonych zasobach. 
 Praca przewiduje implementację autonomicznego agenta AI zdolnego do analizy kodu, wykonania testów bezpieczeństwa i podejmowania decyzji na podstawie wyników tych testów i kontekstu.
 
-Opcjonalnie, badane będą możliwości detekcji błędów przez otwarte modele językowe, a w dalszej perspektywie, możliwości specjalizacji modeli w zakresie cyberbezpieczeństwa za pomocą fine-tuning'u. Wszystkie te działania mają na celu nie tylko badanie, ale także poprawienie możliwości LLM w kontekście cyberbezpieczeństwa.
+W przyszłości badane będą możliwości detekcji błędów przez otwarte modele językowe, a w dalszej perspektywie, możliwości specjalizacji modeli w zakresie cyberbezpieczeństwa za pomocą dostrajania \footnote{fine-tuning}. Wszystkie te działania mają na celu nie tylko badanie, ale także poprawienie możliwości LLM w kontekście cyberbezpieczeństwa.
 
-Głównym celem pracy jest zwiększenie świadomości na temat potencjału dużych modeli językowych w cyberbezpieczeństwie oraz proponowanie praktycznych rozwiązań, które mogą pomóc programistom w tworzeniu bardziej bezpiecznych aplikacji.
+Głównym celem pracy jest zaproponowanie praktycznych rozwiązań, które mogą pomóc programistom w tworzeniu bardziej bezpiecznych aplikacji.
 
 }{
 % Abstract translated into English
-The engineering thesis titled "Application of Large Language Models for Detecting and Fixing Security Bugs and Vulnerabilities in Web Application Code" focuses on the utilization of advanced language models, such as GPT-3.5, GPT-4, and if possible, Falcon, for automated detection and rectification of security bugs in the code of software and web applications.
+The engineering thesis titled "Application of Large Language Models for Detecting and Repairing Security Errors and Vulnerabilities in Web Application Code" focuses on the use of advanced language models such as GPT-3.5, GPT-4, and in the future, open-source models like Mistral, for automatically detecting and repairing security errors in software code and web applications.
 
-The motivation for this work stems from the growing role of Large Language Models (LLMs) in various fields, including cybersecurity. In the context of these efforts, the possibility of using these models to detect and fix vulnerabilities such as XSS, SQL Injection, CSRF, Buffer Overflow, and the like is being investigated.
+The motivation for this work stems from the growing role of large language models (LLMs) in various fields, including cybersecurity. In this context, the possibility of using these models to detect and repair vulnerabilities such as Cross-Site Scripting (XSS), SQL Injection, Cross-Site Request Forgery (CSRF), Buffer Overflow, and similar issues is explored.
 
-The starting point for this dissertation is the 2021 article "Can OpenAI Codex and Other Large Language Models Help Us Fix Security Bugs?" by Hammond Pearce, Benjamin Tan, Baleegh Ahmad, Ramesh Karri, Brendan Dolan-Gavitt (https://arxiv.org/pdf/2112.02125v1.pdf). The authors emphasize the significant potential of these models, and this work aims to continue this research and broaden its scope.
+The starting point for the thesis is the 2021 article "Can OpenAI Codex and Other Large Language Models Help Us Fix Security Bugs?" by Hammond Pearce, Benjamin Tan, Baleegh Ahmad, Ramesh Karri, Brendan Dolan-Gavitt. The authors highlight the significant potential of these models, and this work aims to continue their research and expand its scope.
 
-Planned activities include preparing a dataset containing vulnerable source code databases, testing the error detection capabilities of OpenAI language models, and comparing these results with existing solutions offered by Snyk.
+Planned activities include the design and implementation of a practical tool for developers for static code analysis, preparation of a dataset containing vulnerable source code, testing the error detection capabilities of OpenAI language models, and comparing these results with existing solutions.
 
-Particular emphasis will be placed on the use of soft-prompting and in-context learning techniques, which can help improve detection and results, even with limited resources. The work also envisages the implementation of an autonomous AI agent capable of analyzing code, performing security tests, and making decisions based on the results of these tests and context.
+Special emphasis will be placed on the use of context-aware learning techniques and Retrieval-Augmented Generation (RAG), which can help improve detection and results, even with limited resources. The work anticipates the implementation of an autonomous AI agent capable of analyzing code, performing security tests, and proposing code fixes on the results of these tests and context.
 
-Optionally, the possibilities of error detection by open language models will be explored, and in the longer term, the possibilities of specializing models in the field of cybersecurity through fine-tuning. All these actions aim not only to understand but also to improve the capabilities of LLMs in the context of cybersecurity.
+Future research will explore the error detection capabilities of open language models, and in the longer term, the potential for specializing models in cybersecurity through fine-tuning. All these activities aim not only to study but also to improve the capabilities of LLMs in the context of cybersecurity.
 
-The main goal of the work is to increase awareness of the potential of large language models in cybersecurity and to propose practical solutions that can help developers create more secure applications.
+The main goal of the thesis is to propose practical solutions that can help developers create more secure applications.
+
 
 }

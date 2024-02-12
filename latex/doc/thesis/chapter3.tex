@@ -7,8 +7,7 @@ W kontekście niniejszego rozdziału dokonano prezentacji oraz analizy zbiorów 
 \section{Przegląd wykorzystanych zbiorów danych}
 \label{sec:przeglad_zbiorow}
 
-Następująca sekcja zawiera omówienie źródeł danych, ich specyfikacji oraz roli, jaką odgrywają w kontekście projektu. Analiza ta obejmuje zarówno otwarte zbiory danych, repozytoria kodu, jak i bazy danych podatności.
-
+Następująca sekcja zawiera omówienie źródeł danych, ich specyfikacji oraz roli, jaką odgrywają w kontekście projektu. Analiza ta obejmuje zarówno repozytoria kodu, jak i bazy danych przykładowych podatności.
 
 \begin{itemize}
     \item \textbf{snoopysecurity/Vulnerable-Code-Snippets}: Repozytorium w serwisie Github zawierające zbiór fragmentów kodu zawierających luki bezpieczeństwa. Fragmenty pobrane z różnych wpisów na blogach, książek, zasobów itp. 
@@ -20,7 +19,7 @@ Następująca sekcja zawiera omówienie źródeł danych, ich specyfikacji oraz 
     % \item \textbf{OWASP VulnerableApp}: Aplikacja webowa zawierająca szereg podatności, służąca do testowania narzędzi do analizy bezpieczeństwa aplikacji webowych. Napisana w języku PHP, kod źródłowy dostępny w repozytorium umożliwia pobranie obrazu kontenera Docker. \url{https://github.com/SasanLabs/VulnerableApp}
 
     % \item \textbf{Damn Vulnerable NodeJS Application (DVNA)}: Aplikacja napisana w NodeJS, demonstrująca podatności z TOP 10 OWASP, służąca do nauki i testowania narzędzi do analizy bezpieczeństwa aplikacji. Repozytorium zawiera instrukcje uruchomienia i testowania aplikacji. \url{https://github.com/appsecco/dvna}
-    \item \textbf{OWASP/NodeGoat}: Repozytorium zawierające aplikację webową, która została stworzona w celu demonstracji podatności z TOP 10 OWASP. Aplikacja została napisana w NodeJS, a jej kod źródłowy jest dostępny w serwisie Github. \url{https://github.com/OWASP/NodeGoat}
+    \item \textbf{OWASP/NodeGoat}: Repozytorium zawierające aplikację webową, która została stworzona w celu demonstracji podatności z TOP 10 OWASP. Aplikacja została napisana w NodeJS, a jej kod źródłowy jest dostępny w serwisie Github.\\ \url{https://github.com/OWASP/NodeGoat}
 
 \end{itemize}
 
@@ -30,7 +29,7 @@ Następująca sekcja zawiera omówienie źródeł danych, ich specyfikacji oraz 
 Dobrane przeze mnie zbiory danych zostały tak, by nie trzeba było dostosowywać programu do konkretnego formatu. Oznacza to, że wskazane repozytoria zawierają przykłady kodu zapisane w plikach.
 
 \subsection{snoopysecurity/Vulnerable-Code-Snippets} 
-Repozytorium zawiera wiele plików z przykładami kodu, które mogą zawierać błędy bezpieczeństwa. Pliki te zostały pobrane z różnych źródeł, takich jak blogi, książki, zasoby itp. Pliki te zawierają często komentarze lub nazwy zmiennych, które wskazują na potencjalne błędy bezpieczeństwa. Pozwala to nam na izolację problemu identyfikacji podatności od generowania kodu. W pierwszej kolejności badania zostały przeprowadzone bez wprowadzania zmian w kodzie, aby ocenić skuteczność modeli językowych w korekcji błędów bezpieczeństwa. W kolejnym kroku, w celu przebadania zdolności do identyfikowania błędów, zostały wprowadzone zmiany w kodzie, takie jak usunięcie komentarzy, zmienienie nazw zmiennych, itp. W ten sposób można było sprawdzić, czy modele językowe są w stanie wykryć błędy bezpieczeństwa, gdy mają więcej informacji na temat kodu.
+Repozytorium zawiera wiele plików z przykładami kodu, które mogą zawierać błędy bezpieczeństwa. Pliki te zostały pobrane z różnych źródeł, takich jak blogi, książki, zasoby itp. Pliki te zawierają często komentarze lub nazwy zmiennych, które wskazują na potencjalne błędy bezpieczeństwa. Pozwala to nam na izolację problemu identyfikacji podatności od zadania generowania kodu. W pierwszej kolejności badania zostały przeprowadzone bez wprowadzania zmian w kodzie, aby ocenić skuteczność modeli językowych w korekcji błędów bezpieczeństwa. W kolejnym kroku, w celu przebadania zdolności do identyfikowania błędów, zostały wprowadzone zmiany w kodzie, takie jak usunięcie komentarzy, zmienienie nazw katalogów, plików i zmiennych. W ten sposób można było sprawdzić, czy modele językowe są w stanie wykryć błędy bezpieczeństwa, gdy mają różną ilość informacji na temat kodu.
 
 
 % \subsection{OWASP VulnerableApp}

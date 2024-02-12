@@ -1,13 +1,12 @@
 \chapter{Badania eksperymentalne}
 
-Niniejszy rozdział jest poświęcony prezentacji wyników badań eksperymentalnych przeprowadzonych w ramach projektu. Wyniki te przedstawione w sposób klarowny, z wykorzystaniem wykresów i tabel dla lepszej interpretacji. 
-Wnioski wynikające z badań są bezpośrednio związane z założonymi celami projektu i opierają się na analizie uzyskanych danych.
+Niniejszy rozdział jest poświęcony prezentacji wyników badań eksperymentalnych przeprowadzonych w ramach projektu. Przedstawiony zostanie zarówno proces przeprowadzania badań, jak i uzyskane wyniki, wraz z ich analizą i interpretacją.
 
 Zaprezentowana metodyka badań obejmuje szczegółowy opis zastosowanych procedur testowych, co pozwala na ocenę wiarygodności i trafności uzyskanych wyników.
 
 \section{Metodyka badań}
 
-W tej sekcji szczegółowo omawiam metody oraz podejście zastosowane podczas eksperymentów. 
+W tej sekcji szczegółowo omówiono metody oraz podejście zastosowane podczas eksperymentów. 
 Zostaną przedstawione narzędzia, parametry konfiguracyjne oraz procedura testowa, które razem tworzą ramy metodyczne naszego badania.
 
 \subsection{Procedura testowa}
@@ -40,13 +39,15 @@ Procedura testowa przebiegała według następujących etapów:
     \item Analiza i interpretacja wyników.
 \end{enumerate}
 
-\section{Wyniki działania programu - przykład}
+\section{Wyniki działania programu - przykład - format Markdown}
 \label{sec:wyniki_dzialania_programu}
 
-Wyniki działania programu, prezentowane na konsoli oraz dokumentowane w plikach raportów, zapewniają bezpośredni wgląd w proces analizy kodu: \\
-% Tutaj należy wstawić odpowiednią zawartość raportu w formacie Markdown, o ile jest dostępna
+Wyniki działania programu, prezentowane na konsoli oraz dokumentowane w plikach raportów o wybranym formacie, tutaj markdown, zapewniają bezpośredni wgląd w proces analizy kodu: \\
 
-\LARGE{\textbf{GPTESTER RAPORT}} \normalsize \\\\
+\begin{adjustwidth}
+{-2em}{-2em}
+\begin{tcolorbox}[breakable, colback=gray!10!white,colframe=gray!50!black,title=Wynik działania programu w formacie Markdown, left=2mm, right=2mm, top=1mm, bottom=1mm]
+  \LARGE{\textbf{GPTESTER RAPORT}} \normalsize \\\\
 2024-01-25 21:00:51: Beginning scan for Vulnerable-Code-Snippets/Out of Bounds/\ldots{} \\
 2024-01-25 21:00:51: Found 1 files to scan 2024-01-25 21:00:51: Tokens inside the directory: 701 \\
 2024-01-25 21:00:51: Beginning code analysis\ldots{} \\
@@ -121,7 +122,8 @@ Now, I will suggest potential fixes and provide the corrected code using
 the git version control format.
 
 2024-01-25 21:03:52: Tests completed! 2024-01-25 21:04:53: Scan complete!
-
+\end{tcolorbox}
+\end{adjustwidth}
 \subsection{Opis przedstawionego wyniku}
 
 Przedstawiony raport zawiera informacje o wykrytych podatnościach, wraz z ich opisem oraz sugestiami napraw. W tym przebiegu aplikacji agent dokonał wyboru zapisania sugestii napraw do pliku o rozszerzeniu diff. Dodatkowo zapisał poprawioną wersję badanego pliku, która jest możliwa do skompilowania. Wszystkie te informacje i pliki zostały wygenerowane przez program, na podstawie analizy kodu źródłowego. Formatowanie markdown zostało zinterpretowane przed umieszczeniem w niniejszej pracy inżynierskiej.
@@ -134,31 +136,156 @@ Lokalizacja napraw reprezentowana w formacie diff może zostać przez agenta zap
 Analiza zbioru \textit{snoopysecurity/Vulnerable-Code-Snippets} dostarczyła istotnych informacji na temat specyfiki podatności i skuteczności ich wykrywania przez system. Zbiór ten, zawierający 184 pliki źródłowe o łącznej liczbie 41831 tokenów, stanowił reprezentatywną próbkę dla naszych eksperymentów.
 
 Eksperymenty przeprowadzono z wykorzystaniem poniższych parametrów:
+\begin{framed}
 \begin{verbatim}
     > ./main.py -m 'gpt-4-1106-preview' Vulnerable-Code-Snippets/
 \end{verbatim}
 
-
+\hline
 \begin{verbatim}
 
-                  ___  ___  _____           _             
-                 / __|| _ \|_   _| ___  ___| |_  ___  _ _ 
-                | (_ ||  _/  | |  / -_)(_-/|  _|/ -_)| '_|
-                 \___||_|    |_|  \___|/__/ \__|\___||_|  
 
 
-           The static code analysis agent, version: assistant-0.3
+               ___  ___  _____           _             
+              / __|| _ \|_   _| ___  ___| |_  ___  _ _ 
+             | (_ ||  _/  | |  / -_)(_-/|  _|/ -_)| '_|
+              \___||_|    |_|  \___|/__/ \__|\___||_|  
 
-2024-01-25 21:10:51: Beginning scan for Vulnerable-Code-Snippets/
-2024-01-25 21:10:51: Found 131 files to scan
-2024-01-25 21:10:52: Tokens inside the directory: 30712
-2024-01-25 21:10:52: Using model: gpt-4-1106-preview
-2024-01-25 21:10:52: Beginning code analysis...
+  The static code analysis agent, version: assistant-0.6.3-beta
 
+
+2024-01-01 21:26:33: Beginning scan for Vulnerable-Code-Snippets/
+2024-01-01 21:26:33: Found 158 files to scan
+2024-01-01 21:26:34: Tokens inside the directory: 35467
+2024-01-01 21:26:34: Using model: gpt-4-1106-preview
+2024-01-01 21:26:34: Beginning code analysis...
+2024-01-01 21:26:34: Splitting the content into 5 chunks 
+(OpenAI Assistant API char limit = ~32k chars)
 \end{verbatim}
+\end{framed}
 
 Program pokazał nam, że w katalogu zawierającym skrawki podatnego kodu znajduje się 131 plików, a łączna liczba tokenów w tych plikach wynosi 30712.
-\newpage
+
+\section{Wyniki skanowania zbioru \textit{snoopysecurity/Vulnerable-Code-Snippets} po usunięciu podpowiedzi}
+% {|l{1cm}|l{4cm}|l{4cm}|l{3cm}|l|l{7cm}|l|l|}
+\begin{landscape}
+  \begin{table}[!htbp]
+    % \centering
+  % \begin{adjustwidth}{-2.5cm}{-.5cm}
+    \scriptsize
+    % \setlength\tabcolsep{2pt}
+  \caption{Wyniki skanowania zbioru \textit{snoopysecurity/Vulnerable-Code-Snippets}}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{|l|p{4cm}|p{3cm}|p{2cm}|p{1.5cm}|p{12cm}|p{9cm}|}
+  \hline
+      Lp. & Vulnerability & File & Line numbers & Severity & Description & Solution \\ \hline
+      1 & Insecure Direct Object References(IDOR) & PHP-joomla.php & CODE SNIPPET & High & The direct use of \$\_SERVER['HTTP\_USER\_AGENT'] can lead to security vulnerabilities if the user agent string is not properly handled or validated. & Implement proper input validation for the 'HTTP\_USER\_AGENT' header to ensure that the input conforms to expected or allowed user agent formats. Also  consider maintaining a whitelist of allowed user agent strings. \\ \hline
+      3 & Session Fixation & PHP-joomla.php & CODE SNIPPET & High & The session identifier is not regenerated after a successful login & allowing session fixation attacks where an attacker can hijack a user's session. Regenerate session identifiers using session\_regenerate\_id() after login or when the user's state changes significantly.  \\ \hline
+      4 & Cross-site Scripting (XSS) & PHP-joomla.php & CODE SNIPPET & High & The code inserts unfiltered data directly into the SESSION which is then rendered as HTML. This could lead to stored XSS attacks. & Ensure proper encoding  validation and sanitization of all user-supplied data before inserting it into the HTML content.  \\ \hline
+      5 & Code Injection & PHP-joomla.php & CODE SNIPPET & Critical & The session value is directly taken from the user agent and if manipulated can lead to remote code execution or other serious impacts. & Do not trust the data received from user agents. Always validate and sanitize the input. If possible  do not pass user-controllable input into critical functions or SQL queries. \\ \hline
+      6 & SQL Injection & PHP-joomla.php & CODE SNIPPET & Critical & The SQL query is constructed using direct user input without proper sanitization potentially leading to SQL injection attacks. & Use prepared statements with parameterized queries to prevent SQL injection vulnerabilities.  \\ \hline
+      7 & Unvalidated Redirects and Forwards & PP/lodash.js & 20 & Medium & The server redirects the user to a URL received in the request without any validation which can lead to phishing attacks. & Validate and/or sanitize the URLs before using them for redirections. Utilize a whitelist of allowed URLs when possible. \\ \hline
+      8 & Arbitrary Code Execution & PP/lodash.js & 8 & Critical & User input from 'req.body.config' is parsed as JSON without any validation and directly passed to a sensitive function 'lodash.defaultsDeep' which can lead to arbitrary code execution if the input is malicious. & Validate all user-supplied JSON input and avoid directly passing it to sensitive functions. Employ a secure parsing pattern that ensures only expected and safe data is accepted. \\ \hline
+      9 & Insecure Direct Object References(IDOR) & PostMessage/challenge3.js & 8 & High & The script blindly trusts the 'SERVER\_DOMAIN' without validating if it is a trusted domain potentially leading to cross-site scripting attacks if 'SERVER\_DOMAIN' is controlled by an attacker. & Ensure that the 'SERVER\_DOMAIN' is configured with a trusted domain and implement checks to validate it before using it in the script. \\ \hline
+      10 & Cross-Site Scripting (XSS) & PostMessage/challenge\_2.js & 3 & Medium & The 'receiveMessage' function inserts message data directly into the DOM without any sanitation. This might allow an attacker to perform cross-site scripting (XSS) attacks. & Properly sanitize and encode the message content before inserting it into the DOM to prevent XSS attacks. \\ \hline
+      11 & DOM-based Cross-Site Scripting (XSS) & PostMessage/challenge1.js & 11 & High & The user input from 'username\_obj' is inserted directly into the DOM using innerHTML which could lead to DOM-based XSS attacks. & Use text-based DOM methods like 'textContent' instead of 'innerHTML' or properly sanitize the input before inserting it into the DOM to prevent XSS. \\ \hline
+      12 & Unsafe Deserialization & pickle2.py & Multiple & High & Use of insecure deserialization functions 'cPickle.dumps' and 'cPickle.loads' which could allow arbitrary code execution & Replace the 'cPickle' module with a safer serialization module like 'json' and use 'json.dumps' and 'json.loads' accordingly. \\ \hline
+      13 & Server-Side Template Injection (SSTI) & SSTI/asis\_ssti\_pt.py & 26 & Critical & The code uses 'render\_template\_string' with unsanitized user input leading to Server-Side Template Injection (SSTI) potentially allowing an attacker to execute arbitrary code on the server. & Use 'render\_template' instead of 'render\_template\_string' and ensure all user input is sanitized before being passed into the template engine. Do not allow direct inclusion of user input in the rendering context. \\ \hline
+      14 & Insecure Deserialization & Deserialization/vault.py & 8 & High & The class method 'load' uses 'yaml.load' which can execute arbitrary code if the input is not trusted. Loading untrusted input can lead to remote code execution. & Use 'yaml.safe\_load' instead of 'yaml.load' to prevent executing arbitrary code during the deserialization process. \\ \hline
+      15 & Path Traversal & Deserialization/unsafe.js & 8 & High & Untrusted data from cookies is deserialized without any validation which might lead to arbitrary code execution if the serialized data is manipulated. & Implement strict data validation before deserialization. Alternatively  use serialization formats that do not allow code execution \\ \hline
+      16 & Remote Code Execution through Deserialization & Deserialization/unserialize.php & 8 & Critical & The application deserializes user-controllable data without proper sanitization which can be exploited to perform remote code execution or other attacks. & Do not unserialize data from untrusted sources. If deserialization is necessary ensure that the data is properly sanitized and validate it against a strict schema. \\ \hline
+      17 & Cross-site Scripting (XSS) & XDD/XSS.cs & 11 & High & The method 'xss' in the 'XSS' controller does not sanitize the user input before writing it to the response leading to a reflected XSS vulnerability. & Encode or sanitize user input before including it in the response to prevent XSS attacks. \\ \hline
+      18 & Insecure Cookie Handling & XDD/Cookie Security/sc.cs & 22 & Medium & The cookie is created without specifying the 'Secure' or 'HttpOnly' attributes which could make it susceptible to interception or access by scripts. & Set the 'Secure' attribute for cookies that should only be sent over HTTPS. Set the 'HttpOnly' attribute to prevent access to cookie values via JavaScript. \\ \hline
+      19 & Unvalidated Redirects and Forwards & OR/redirect.js & 11 & Medium & The redirect URL is taken from the request parameters without validation making it possible to redirect users to malicious sites. & Validate and sanitize the URL before performing the redirect. Preferably whitelist allowed URLs. \\ \hline
+      20 & Open Redirect & OR/koa.js & 8 & High & The application redirects to a URL provided in the user input without validation which can be exploited to redirect users to malicious sites. & Implement input validation to ensure the URL is safe before performing the redirection. \\ \hline
+      21 & Remote Code Execution & RCE-apt-get & 7 & Critical & The application reflects user input directly into the system output which can be manipulated by an attacker to execute arbitrary commands. & Never directly reflect user input into system outputs or commands. Implement proper input validation and output encoding to prevent code injection attacks. \\ \hline
+      22 & Insecure Deserialization & SerializeToFile.java & Multiple lines & High & The SerializeToFile function directly serializes objects without any security checks. This practice can lead to deserialization of untrusted data resulting in code execution. & Add security mechanisms to ensure that only trusted objects are serialized/deserialized. Use serialization filtering techniques to limit the types that are deserialized. \\ \hline
+    \end{tabular}}
+    \normalsize
+    \label{tab:badania_na_zbiorze_snoopysecurity}
+    % \end{adjustwidth}
+  \end{table}
+  \begin{table}[H]
+    % \centering
+  % \begin{adjustwidth}{-2.5cm}{-.5cm}
+    \scriptsize
+    % \setlength\tabcolsep{2pt}
+  \caption{Wyniki skanowania zbioru \textit{snoopysecurity/Vulnerable-Code-Snippets}}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{|l|p{4cm}|p{3cm}|p{2cm}|p{1.5cm}|p{12cm}|p{9cm}|}
+  \hline
+      23 & Insecure Deserialization with Side Effects & LogFile.java & Inside readObject method & High & The readObject method in LogFile class has side-effects of writing content to files which can be abused. An attacker can craft malicious serialized objects to write arbitrary files on the server. & Avoid executing code with side-effects in the readObject method. Perform validation and whitelisting of the content being deserialized. \\ \hline
+      24 & Command Injection & exec.js & 7 & High & The 'exec' function is called with unsanitized input from 'req.body.url' allowing command injection. & Sanitize the input or use spawn with an array of arguments to prevent command injection. \\ \hline
+      25 & Command Injection & exec.js & 13 & High & The 'exec' function is called with unsanitized input from 'req.query.file\_path' allowing command injection. & Sanitize the input or use safe command execution methods that prevent command injection. \\ \hline
+      26 & Command Injection & cmd5.php & ~ & High & The PHP 'system' function is used with unsanitized '\$\_GET' parameters leading to command injection. & Use escapeshellarg() to escape arguments and mitigate command injection. \\ \hline
+      27 & Command Injection & cmd3.php & ~ & High & The PHP 'system' function is used with unsanitized '\$\_GET' parameters leading to command injection. & Use escapeshellarg() to escape arguments and mitigate command injection. \\ \hline
+      28 & Command Injection & cmd4.php & ~ & High & The PHP 'system' function is used with unsanitized '\$\_POST' parameters leading to command injection. & Use escapeshellarg() to escape arguments and mitigate command injection. \\ \hline
+      29 & Command Injection & cmd1.php & ~ & High & The PHP 'system' function is used with unsanitized user input leading to command injection. & Use escapeshellarg() to escape arguments and mitigate command injection. \\ \hline
+      30 & Arbitrary File Access & CVE-2019-16663.php & ~ & Critical & The 'exec' function is called with unsanitized user input enabling arbitrary file access or privilege escalation. & Validate and sanitize input before use and restrict file access to only allowed directories. \\ \hline
+      31 & Arbitrary File Access & CVE-2019-16662.php & ~ & Critical & User-controlled input is used in commands run with elevated privileges enabling arbitrary file access or privilege escalation. & Employ least privilege principle and strictly sanitize any input used in system-level commands. \\ \hline
+      32 & Command Injection & tainted.py & 8 & High & The application executes a system command with unsanitized 'request.remote\_addr' leading to command injection. & Do not construct system commands from user-controllable sources. Use safer APIs or sanitize inputs. \\ \hline
+      33 & OS Command Injection & OSI.cs & 7 & High & User input 'binFile' is executed without any validation resulting in OS command injection. & Never execute user-supplied file paths directly. Use a predefined list of allowed paths or sanitize input. \\ \hline
+      34 & SQL Injection & Cryptolog.php & ~ & High & Unsanitized POST input is used directly in SQL commands allowing for SQL injection. & Use prepared statements with parameterized queries to avoid SQL injection. \\ \hline
+      35 & Insecure Deserialization & myApp.cs & 16 & High & Files are extracted without validating their source which can be exploited for path traversal attacks. & Validate the source zip file and the paths within it before extraction. Consider limiting extraction to specific directories. \\ \hline
+      36 & Insecure Direct Object References & IDOR/example1.php & 10 & High & SQL query includes unsanitized input leading to IDOR vulnerabilities. & Use parameterized queries and enforce proper access control checks. \\ \hline
+      37 & XPath Injection & XPATH/xpath.cs & 11 & High & Unsanitized 'user' input is directly used in an XPath query leading to injection. & Use secure coding practices to construct XPath queries such as using parameterized XPath interfaces. \\ \hline
+      38 & Regular Expression Denial of Service & regex/regex.js & 6 & Medium & The regular expression used in 'regex.js' can cause catastrophic backtracking leading to denial of service. & Rewrite the regular expression to avoid ambiguity and ensure it is safe against denial-of-service attacks. \\ \hline
+      39 & Format String Vulnerability & FSA/FormatString.c & 6 & High & Using 'printf' with user-controlled format strings can pose a security risk. & Do not pass unsanitized user input as the format string for printf or any other formatting functions. \\ \hline
+      40 & Format String Vulnerability & FSA/vuln.c & 74 & High & User input is directly used as format string in 'printf' leading to potential security issues. & Use proper format specifiers and avoid using user input as format strings in printf-like functions. \\ \hline
+      41 & Buffer Overflow & IO/damnvuln.c & 22 & Critical & Unsafe memory operations like 'memcpy' without bounds checking can lead to buffer overflows. & Ensure all buffer operations are bounded and verify the sizes to prevent overflows. \\ \hline
+      42 & Connection String Injection & CSI/example3.asp & ~ & High & User-supplied input is used in a DB connection string without sanitization leading to injection risks. & Use parameterized queries or ORM frameworks to mitigate injection risks in connection strings. \\ \hline
+      43 & Connection String Injection & CSI/example1.c & ~ & High & Unsanitized command-line argument is used as part of a connection string which may lead to injection. & Enforce strict input validation and sanitization before appending to connection strings. \\ \hline
+      44 & Connection String Injection & CSI/example2.java & ~ & High & User-supplied input from request parameters is used in database connection strings. & Always validate and sanitize user input before including it in database connection strings.  \\ \hline
+      45 & NoSQL Injection & NoSQL/mongodb.js & ~ & High & Constructing MongoDB queries using unsanitized user input can lead to NoSQL injection attacks. & Use parameterized MongoDB queries to safeguard against NoSQL injection.  \\ \hline
+      46 & Insecure Deserialization & Deserialization/de.js & 7 & High & The application uses 'jsyaml.safeLoad' with a custom schema that includes dangerous types allowing for the potential execution of arbitrary code. & Use the default 'SAFE\_SCHEMA' provided by 'jsyaml' to avoid the execution of arbitrary code during the YAML deserialization process. \\ \hline
+      47 & Cross-Site Scripting (XSS) & XDD/express.js & 5 & High & The application directly includes user input into the server's response without proper sanitization leading to a reflected XSS vulnerability. & Sanitize user input before including it in the server's response to prevent XSS attacks. \\ \hline
+      48 & Cross-Site Scripting (XSS) & XDD/example.php & 5 & High & The application echoes user input directly without sanitization leading to a reflected XSS vulnerability. & Sanitize user input before echoing it back to the client to prevent XSS attacks. \\ \hline
+      49 & DOM-based Cross-Site Scripting (XSS) & XDD/dom.php & 12 & High & The application indirectly executes unsanitized script URLs through DOM manipulation which may lead to DOM-based XSS attacks. & Sanitize and validate external script URLs before appending them to the DOM to prevent the execution of untrusted scripts. \\ \hline
+      50 & Authentication Bypass via Assumed-Immutable Data & AB/CVE-2019-1937.java & 28 & Critical & The application may allow authentication bypass due to assumed-immutable session data being mutable and controllable by an attacker. & Ensure all session data is properly validated on every request and do not assume it cannot be modified by an attacker. Use robust server-side authentication and authorization checks. \\ \hline
+    \end{tabular}}
+    \normalsize
+    \label{tab:badania_na_zbiorze_snoopysecurity}
+    % \end{adjustwidth}
+  \end{table}
+  \begin{table}[H]
+    % \centering
+  % \begin{adjustwidth}{-2.5cm}{-.5cm}
+    \scriptsize
+    % \setlength\tabcolsep{2pt}
+  \caption{Wyniki skanowania zbioru \textit{snoopysecurity/Vulnerable-Code-Snippets}}
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{|l|p{4cm}|p{3cm}|p{2cm}|p{1.5cm}|p{12cm}|p{9cm}|}
+  \hline
+      51 & Insecure File Upload & Insomnihack\_2019\_l33t-hoster.php & Varies & High & File upload functionality allows the uploading of potentially malicious files that can lead to remote code execution or other attacks. & Implement robust file validation both on the client and server side to ensure only safe files are uploaded. Do not rely on the file extension or MIME type alone. Check file contents and avoid uploading executables. \\ \hline
+      52 & Local File Inclusion & lfi14.php & Varies & High & The application is vulnerable to local file inclusion attacks allowing an attacker to include local files which may lead to remote code execution or disclosure of sensitive information. & Sanitize user input and employ proper input validation. Avoid passing user-controlled input to filesystem API calls and consider using a whitelist approach to handle file inclusions. \\ \hline
+      53 & PHP Object Injection & tarlogic1.php & Varies & High & The application is prone to PHP object injection vulnerabilities because it deserializes user-controllable input without adequately verifying the data. & Avoid deserializing user-controllable input without proper validation and sanitation. If object deserialization is necessary ensure that it is done securely and that injected objects cannot be abused. \\ \hline
+      54 & Insecure Deserialization & py\_ctf.py & 20 & High & Deserialization of untrusted data can lead to security flaws. & Avoid using insecure deserialization functions or implement strict type checking and validation before deserializing objects.  \\ \hline
+      55 & Arbitrary File Write & expresstest.js & 6 & High & The application writes data to a file using unsanitized user input which may allow an attacker to write arbitrary files on the server. & Ensure that user-controlled input is not utilized for file paths without thorough validation. \\ \hline
+      56 & Arbitrary File Read & gq.js & 28 & High & The application reads data from a file using unsanitized user input which may allow an attacker to read arbitrary files on the server. & Validate user input before using it to determine file paths. Use a whitelist approach where only permitted filenames and paths are accessible. \\ \hline
+      57 & Path Traversal & PT2.cs & 11 & High & The application constructs a file path with user-controlled input without proper validation leading to possible path traversal attacks. & Employ proper input validation to ensure the constructed path does not escape the intended directory by using 'Path.Combine' and checking with 'Path.GetFullPath'. \\ \hline
+      58 & Path Traversal & PT4.cs & 10 & High & The application writes to a file with a name and path based on user input without adequate sanitization which may lead to arbitrary file access/write vulnerability. & Strip or encode special characters from user input to safeguard against path traversal. Utilize 'Path.GetFileName' to safely handle file names. \\ \hline
+      59 & OS Command Injection & exec.js & Varies & High & Unsanitized input directly used in exec leading to potential OS command injection. & Use child\_process.spawn() with argument arrays or validate and sanitize inputs strictly. \\ \hline
+      60 & Hardcoded Credentials & example\_file.py & 4 & High & Password is hardcoded in the source code. & Store the password in environment variables or a configuration file with restricted access. \\ \hline
+      61 & Use of eval & example\_file.py & 5 & Critical & The eval function can execute arbitrary code and lead to code injection vulnerabilities. & Avoid the use of eval and instead use safer alternatives like literal\_eval or other specific parsers. \\ \hline
+      62 & Unsafe Deserialization with cPickle & example\_file.py & 6 & Critical & Deserialization of untrusted data can lead to arbitrary code execution. & Use safe deserialization patterns such as only allowing certain classes or verifying the source of the data before deserialization. \\ \hline
+      63 & Java Object Deserialization & example\_file.java & 7 & Critical & Java Object deserialization of untrusted data can lead to remote code execution. & Avoid deserialization of untrusted data or use safer alternatives such as JSON instead of binary serialization formats. \\ \hline
+      64 & PHP File Uploads with move\_uploaded\_file & example\_file.php & 8 & Medium & Improper file upload handling can lead to unauthorized file access or execution. & Implement extensive checks on file types size and ensure proper permission settings for the upload directory. \\ \hline
+      65 & Unsafe unserialize in PHP & example\_file.php & 9 & Critical & Unserializing untrusted input without validation can lead to PHP object injection. & Do not unpickle data from untrusted or unauthenticated sources.  \\ \hline
+      66 & Improper Input Validation & PHP-joomla.php & 3-11 & High & The application uses the user-agent header without proper validation exposing it to session fixation attacks and other user-agent related vulnerabilities. & Implement a whitelist of allowed user-agents or proper input validation checks to verify that the value does not contain malicious input before using it to make important decisions. \\ \hline
+      67 & PHP Object Injection & PHP-joomla.php & 17-27 & Critical & The user class JUser is involved in object serialization and if user input is not properly validated it can lead to PHP object injection. & Avoid using serialization when storing user input. If you must use serialization consider signing the serialized data or using other forms of ensuring data integrity and authenticity such as HMAC. \\ \hline
+  \end{tabular}}
+  \normalsize
+  \label{tab:badania_na_zbiorze_snoopysecurity}
+  % \end{adjustwidth}
+\end{table}
+\end{landscape}
+
+\subsection{Interpretacja wyników}
+Dzięki naturze programu GPTester skoncentrowanej na obsłudze dużych projektów baza przykładów podatnego kodu została przeskananowan jedną komendą, a skrawki kodu nie musiały być kompilowane.
+Podczas analizy kodu źródłowego, udało się wykryć 67 potencjalnych podatności w 131 plikach. Wśród nich, 11 zostało sklasyfikowanych jako krytyczne, 20 jako wysokie, 14 jako średnie, a 22 jako niskie. Warto zauważyć, że w przypadku 67 wykrytych podatności, program zaproponował 67 rozwiązań, które mogą być wykorzystane do naprawy kodu. Kod tych rozwiązań został zapisany w plikach folderu fixed oraz pliku łatki\footnote{ang. patch} o rozszerzeniu diff, co pozwala na łatwe zastosowanie ich do kodu źródłowego. W przypadku, gdyby model językowy nie był w stanie zaproponować rozwiązania, prawdopodobnie generował halucynację.
+
+Niestety zbadanie ilości fałszywych pozytywów nie było możliwe, ponieważ nie było dostępnych danych referencyjnych, które mogłyby posłużyć do porównania wyników. Większość skrawków kodu jest też niemożliwa do skompilowania. W związku z tym, aby ocenić program pod względem skuteczności potrzebne są dalsze badania.
+
 \section{Studium przypadku: Analiza kodu podatnego na błędy typu "Out of Bounds" w zbiorze snoopysecurity/Vulnerable-Code-Snippets}
 \label{sec:analiza_blednego_kodu}
 
@@ -537,10 +664,10 @@ Przedstawiony przypadek otrzymuje przeze mnie następujące oceny:
   \end{adjustwidth}
 \end{table}
 
-\section{Studium przypadku: Analiza kodu podatnego na błędy typu "File Inclusion" - skrawki kodu PHP, będące częścią aplikacji}
-\label{sec:analiza_blednego_kodu_php}
+% \section{Studium przypadku: Analiza kodu podatnego na błędy typu "File Inclusion" - skrawki kodu PHP, będące częścią aplikacji}
+% \label{sec:analiza_blednego_kodu_php}
 
-Większość przykładów z tego zbioru to skrawki aplikacji webowych, dlatego przygotowanie środowiska testowego dla tych przykładów było bardziej skomplikowane. 
+% Większość przykładów z tego zbioru to skrawki aplikacji webowych, dlatego przygotowanie środowiska testowego dla tych przykładów było bardziej skomplikowane. 
 % W takich przypadkach należało wykonać następujące kroki:
 
 % \section{Automatyzacja procesu testowania dla Vulnerable-Code-Snippets}
@@ -711,19 +838,19 @@ Większość przykładów z tego zbioru to skrawki aplikacji webowych, dlatego p
 
 \section{Wstęp}
 \label{sec:wstep}
-W ramach niniejszego rozdziału zostanie omówiona aplikacja NodeGoat, służąca do edukacji w zakresie zabezpieczeń aplikacji internetowych opartych na platformie Node.js. NodeGoat, będąc projektowaną z myślą o nauce i praktyce, oferuje środowisko, w którym użytkownicy mogą eksplorować i naprawiać najczęściej występujące luki bezpieczeństwa określone w ramach OWASP Top 10 dla aplikacji webowych.
+W ramach niniejszego rozdziału zostanie przeanalizowana aplikacja NodeGoat, służąca do edukacji w zakresie zabezpieczeń aplikacji internetowych opartych na platformie Node.js. NodeGoat, będąc projektowaną z myślą o nauce i praktyce, oferuje środowisko, w którym użytkownicy mogą eksplorować i naprawiać najczęściej występujące luki bezpieczeństwa określone w ramach OWASP Top 10 dla aplikacji webowych.
 
-Node.js, jako lekka, szybka i skalowalna platforma, zyskuje coraz większą popularność wśród deweloperów aplikacji internetowych. Z tego względu narzędzia takie jak NodeGoat odgrywają kluczową rolę w edukacji z zakresu bezpieczeństwa, umożliwiając użytkownikom praktyczne zrozumienie zagrożeń i metod ich przeciwdziałania.
+Node.js, jako lekka, szybka i skalowalna platforma, która zyskuje coraz większą popularność wśród deweloperów aplikacji internetowych. Z tego względu narzędzia takie jak NodeGoat odgrywają kluczową rolę w edukacji z zakresu bezpieczeństwa, umożliwiając użytkownikom praktyczne zrozumienie zagrożeń i metod ich przeciwdziałania.
 \\
 
-\textbf{Zrozumienie OWASP Top 10}
+\textbf{Przeznaczenie aplikacji}
 
 NodeGoat zapewnia kompleksowy tutorial, który opisuje poszczególne zagrożenia z listy OWASP Top 10, demonstrując je na przykładzie działającej aplikacji. Użytkownicy mają możliwość nie tylko zapoznania się z teorią, ale również praktycznego przetestowania każdego z zagrożeń, co stanowi cenny element edukacyjny.
 \\
 
 \textbf{Praktyczne testowanie zabezpieczeń}
 
-Aplikacja NodeGoat została zaprojektowana z celowymi słabościami bezpieczeństwa, dzięki czemu użytkownicy mogą w bezpiecznym środowisku przeprowadzać ataki i testować różne techniki obronne. Dostęp do aplikacji jest możliwy lokalnie, co umożliwia dogłębne badanie kodu oraz modyfikowanie go w celu naprawy istniejących luk.
+Aplikacja NodeGoat została zaprojektowana z celowymi słabościami bezpieczeństwa, dzięki czemu użytkownicy mogą w bezpiecznym środowisku przeprowadzać ataki i testować różne techniki obronne. Dostęp do aplikacji jest możliwy lokalnie, co umożliwia dogłębne badanie kodu oraz modyfikowanie go w celu naprawy istniejących luk. Zaimplemntowano również zaawansowany moduł testów funkcjonalnych, który pozwala na automatyczne przeprowadzanie testów funkcjonalności i ocenę poprawności zastosowanych metod naprawczych.
 \\
 
 \textbf{Konta użytkowników}
@@ -735,7 +862,7 @@ W niniejszym rozdziale szczegółowo przedstawione zostaną metody testowania ap
 \section{Przygotowanie środowiska testowego}
 \label{sec:przygotowanie_srodowiska_testowego}
 
-Aby przygotować aplikację do lokalnego uruchomienia bez korzystania z konteneryzacji, niezbędne było poprawienie wersji paczek w pliku package.json oraz obniżenie używanej wersji npm i node do node v16.0.0 (npm v7.10.0). Następnie należało zainstalować wszystkie zależności za pomocą komendy npm install. Po wykonaniu tych kroków aplikacja była gotowa do uruchomienia komendą npm run.
+Aby przygotować aplikację do lokalnego uruchomienia bez korzystania z konteneryzacji, niezbędne było poprawienie wersji paczek w pliku package.json oraz obniżenie używanej wersji npm i node do node v16.0.0 (npm v7.10.0). Następnie należało zainstalować wszystkie zależności za pomocą komendy npm install. Po wykonaniu tych kroków aplikacja była gotowa do uruchomienia komendą \texttt{npm start}.
 
 \section{Testy funkcjonalne przed zmianami}
 \label{sec:testy_funkcjonalne_przed_zmianami}
@@ -810,12 +937,7 @@ Skanowanie aplikacji NodeGoat przy użyciu OWASP ZAP wykazało obecność 20 pod
     \end{tabular}
     \end{table}
     
-
-\subsection{Nessus}
-\label{subsec:nessus}
-Skanowanie aplikacji DVNA przy użyciu Nessus wykazało obecność 21 podatności, w tym 2 średniego ryzyka, 2 niskiego ryzyka oraz 17 informacyjnych. Poniżej przedstawiono listę zidentyfikowanych podatności wraz z ich ryzykiem i opisem.
-
-
+\normalsize
 \subsection{Statyczny analizator CodeQL}\label{subsec:codeql}
 
 \subsubsection{Proces przeprowadzenia testu}
@@ -847,8 +969,8 @@ Running build command: []
 .
 .
 .
-[2024-01-30 19:33:38] [build-stdout] Extracting .../codeql/javascript/tools/data/externs/nodejs/vm.js
-[2024-01-30 19:33:38] [build-stdout] Done extracting .../codeql/javascript/tools/data/externs/nodejs/vm.js (8 ms)
+[2024-01-25 19:33:38] [build-stdout] Extracting .../codeql/javascript/tools/data/externs/nodejs/vm.js
+[2024-01-25 19:33:38] [build-stdout] Done extracting .../codeql/javascript/tools/data/externs/nodejs/vm.js (8 ms)
 Finalizing database at /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/GoatQL-db.
 Successfully created database at /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/GoatQL-db.
         \end{verbatim}
@@ -963,13 +1085,13 @@ W sumie GPTester znalazł 21 podatności, bez określania ich ryzyka. Wśród ni
   \item[4.] \textbf{Insecure Direct Object References (IDOR)}: The \texttt{allocations.js} file uses \texttt{req.params.userId} directly from the URL, which allows users to access other users' allocation data without proper authorization.
   \item[5.] \textbf{Server-Side JavaScript Injection (SSJI)}: The \texttt{contributions.js} file uses an insecure \texttt{eval()} function to parse user inputs, which could allow an attacker to run arbitrary code on the server.
   \item[6.] \textbf{Cross-Site Scripting (XSS)}: The \texttt{profile.js} file attempts to encode user-supplied input with \texttt{ESAPI.encoder().encodeForHTML(doc.website)} which could lead to XSS attacks if not properly encoded for the context in which it is rendered.
-  \item[7.] \textbf{Regular Expression Denial of Service (ReDoS)}: The \texttt{profile.js} file uses a vulnerable regular expression that may cause the application to freeze with specially crafted input.
+  \item[7.] \textbf{Regular Expression Denial of Service (ReDoS)}: The \texttt{profile.js} file uses a vulnerable regular expression that may cause the application to freeze with specially crafted input. \\
   \item[1.] Log Injection Vulnerability - In the \texttt{handleLoginRequest} method in \texttt{session.js}, user input (\texttt{userName}) is being logged without proper sanitization, which can be exploited by an attacker to forge logs or execute code.
   \item[2.] Insecure Password Storage - In \texttt{user-dao.js}, the \texttt{addUser} method stores passwords as plain text, which is insecure as it can be easily read if the database is compromised.
   \item[3.] Session Fixation - In \texttt{session.js}, the method \texttt{handleLoginRequest} doesn't regenerate the session ID after a successful login, making the application vulnerable to session fixation attacks.
   \item[4.] NoSQL Injection - The method \texttt{getByUserIdAndThreshold} in \texttt{allocations-dao.js} constructs a query using string concatenation without properly sanitizing the \texttt{threshold} parameter, making it susceptible to NoSQL injection attacks.
   \item[5.] Insufficient Password Strength Validation - The \texttt{validateSignup} method in \texttt{session.js} uses a regular expression for password validation, but the commented out regex suggests that a stronger password policy was considered and not implemented.
-  \item[6.] Sensitive Data Exposure - In \texttt{profile-dao.js}, sensitive information like \texttt{ssn} and \texttt{dob} are stored without encryption, which makes them vulnerable to exposure if there is a data breach.
+  \item[6.] Sensitive Data Exposure - In \texttt{profile-dao.js}, sensitive information like \texttt{ssn} and \texttt{dob} are stored without encryption, which makes them vulnerable to exposure if there is a data breach. \\
   \item[1.] Insecure Database Connection (\texttt{../testing-envs/NodeGoat/server.js}) - The \texttt{MongoClient.connect} call uses a connection string that might not be secure. The code for setting up the database connection does not include SSL/TLS configuration options which are important for secure transmission of data over the network.
   \item[2.] Server-Side Template Injection (\texttt{../testing-envs/NodeGoat/server.js}) - The template engine Swig is used without autoescaping enabled, this could lead to Server-Side Template Injection (SSTI) if the template rendering includes user input.
   \item[3.] HTTP Connection (\texttt{../testing-envs/NodeGoat/server.js}) - The server is started with an insecure HTTP connection instead of HTTPS, which exposes the transmitted data to potential interception and tampering.
@@ -979,7 +1101,7 @@ W sumie GPTester znalazł 21 podatności, bez określania ich ryzyka. Wśród ni
   \item[7.] Insecure Static File Permissions (\texttt{../testing-envs/NodeGoat/docker-compose.yml}) - The Dockerfile setup for the NodeGoat container runs commands as the root user, which can be a security risk if the container is compromised.
   \item[8.] Incomplete Logging Configuration (\texttt{../testing-envs/NodeGoat/Gruntfile.js}) - The Grunt configuration does not include tasks for security logging or monitoring, which can leave the application without proper tracking of security-related events.
 \end{enumerate}
-Wyniki zostały przedstawione w częściach, tak jak były przetwarzane. Dla klarowności przedstawionych wyników funkcjonalność wyboru formatu wyjścia będzie rozwijana w przyszłych wersjach aplikacji.
+Wyniki zostały przedstawione w częściach, tak jak były przetwarzane, bez modyfikacji ani tłumaczenia. Dla klarowności przedstawionych wyników została dodana funkcjonalność zapisu do pliku csv.
 
 \section{Wprowadzanie zmian w kodzie}
 Po przeprowadzeniu analiz kodu, należało wprowadzić zmiany w kodzie, które miały naprawić wykryte podatności. W tej wersji program dostarczył 38 nowych plików. W nowych wersjach ilość analizowanych plików została zoptymalizowana ze względu na koszty.
@@ -993,7 +1115,7 @@ Z uwagi na ciągłe dopracowywanie funkcji aktualizacji kodu za pomocą funkcji 
   \label{fig:nodegoat-error-after}
 \end{figure}
 
-Przykład pokazuje jak ważne jest, aby zawsze sprawdzić wyjście wygenerowane przez Szcztuczną Inteligencję, ponieważ są to algorytmy niedetermistyczne, co oznacza, że nie można przewidzieć dokładnie jakie będzie wyjście programu dla danego wejścia. W tym przypadku, program wygenerował kod, który nie był w pełni funkcjonalny, co uniemożliwiło uruchomienie aplikacji. Sprytne metody wprowadzania zmian or
+Przykład pokazuje jak ważne jest, aby zawsze sprawdzić wyjście wygenerowane przez Szcztuczną Inteligencję, ponieważ są to algorytmy niedetermistyczne, co oznacza, że nie można przewidzieć dokładnie jakie będzie wyjście programu dla danego wejścia. W tym przypadku, program wygenerował kod, który nie był w pełni funkcjonalny, co uniemożliwiło uruchomienie aplikacji. Zaawansowane metody wprowadzania zmian w bazie kodu wejściowego przewidziane w dalszych pracach nad projektem ułatwią proces scalania kodu oraz umożliwią łatwą weryfikację wyników.
 
 \subsection{Wprowadzenie zmian ręcznie}
 Aby uniknąć konfliktów i zamieniania plików nie posiadających pełnego kodu, zdecydowałem się na ręczne wprowadzenie zmian. W tym celu skopiowałem pliki z nowej wersji do katalogu z aplikacją NodeGoat, uważnie sprawdzając ich treść i ręcznie łącząc kod. Niestety wiele zmian było gruntownych wymagających generowania certyfikatów, implementacji systemów hashujących i tym podobnych co utrudnia wprowadzenie zmian w krótkim czasie.
@@ -1051,7 +1173,7 @@ Po aktualizacji konfiguracji, aplikacja uruchomiła się poprawnie. Następnie p
   \end{table}
 \normalsize
 
-Niestety konfiguracje nadal nie były poprawne, a w plikach znajdowały się błędy typu not defined. W związku z tym, należało ręcznie wprowadzić zmiany w plikach konfiguracyjnych i zdebugować aplikację (przede wszystkim poprawne definicje zewnętrznych bibliotek oraz użycie mongodb zgodnie z dokumentacją nowej wersji sterownika). Problemem była również  Po wprowadzeniu zmian, aplikacja uruchomiła się. Następnie przeprowadziłem testy funkcjonalne, które wykazały wiele błędów aplikacji.
+Niestety konfiguracje nadal nie były poprawne, a w plikach znajdowały się błędy typu not defined. W związku z tym, należało ręcznie wprowadzić zmiany w plikach konfiguracyjnych i zdebugować aplikację (przede wszystkim poprawne definicje zewnętrznych bibliotek oraz użycie mongodb zgodnie z dokumentacją nowej wersji sterownika). Problemem była również implementacja funkcji skrótu mających na celu umieszczanie bezpieczne przechowywanie haseł w bazie danych. Po wprowadzeniu zmian, aplikacja uruchomiła się. Następnie przeprowadziłem testy funkcjonalne, które wykazały wiele błędów aplikacji.
 
 \begin{table}[H]
   \centering
@@ -1077,7 +1199,7 @@ Niestety konfiguracje nadal nie były poprawne, a w plikach znajdowały się bł
   \end{tabular}
   \end{table}
 
-Problematyczna okazała się implementacja porównania haseł w pliku \texttt{user-dao.js}. W nowej wersji aplikacji, hasła były zapisywane w bazie danych w postaci hashu, co wymagało zmiany sposobu porównywania haseł. Błędy mogły wynikać z różnych implementacji tych funkcji kryptograficznych, które wynikały z podzielenia projektu do analizy na części.
+Problematyczna okazała się implementacja porównania haseł w pliku \texttt{user-dao.js}. W nowej wersji aplikacji, hasła były zapisywane w bazie danych w postaci hashu, co wymagało zmiany sposobu porównywania haseł. Błędy mogły wynikać z różnych sposobów implementacji tych funkcji kryptograficznych w różnych plikach, które wynikały z podzielenia projektu do analizy na części.
 
 \subsection{Testy bezpieczeństwa po wpowadzeniu zmian}
 Po wprowadzeniu zmian, przeprowadziłem testy bezpieczeństwa aplikacji. W tym celu wykorzystałem narzędzie OWASP ZAP, które pozwala na przeprowadzenie testów bezpieczeństwa aplikacji internetowych. 

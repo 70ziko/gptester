@@ -1,5 +1,5 @@
 import hashlib
-from utils.chatCompletion import get_embedding
+from utils.chat_completion import get_embedding
 from scipy.spatial.distance import cosine
 
 class Raport:

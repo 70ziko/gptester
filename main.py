@@ -8,7 +8,7 @@ import datetime
 
 from utils.io import IOlog
 from utils.traverser import walk_directory, split_content, split_content_char
-from utils.chatCompletion import num_tokens_from_string
+from utils.chat_completion import num_tokens_from_string
 from utils.git_pytcher import generate_patch, check_patch
 from utils.config import Config
 
@@ -27,9 +27,10 @@ banner = f"""
 parser = argparse.ArgumentParser(description=banner, formatter_class=argparse.RawTextHelpFormatter)
 parser.add_argument('directory', type=str, help='Path to the directory to scan\n')
 parser.add_argument('-v', '--verbose', help='Print out all the outputs and steps taken\n', action='store_true')
+parser.add_argument('-f', '--format', help='Specify the file format for the vulnerability raport, options: "md, csv"', default="csv")
 parser.add_argument('-m', '--model', help='Choose the LLM model for code analysis, default: "gpt-4-1106-preview"', default="gpt-4-1106-preview")
 parser.add_argument('-r', '--retrieval', help='Turn on Retrieval Augmented Generation for code analysis, default: False\n', action='store_true', default=False)
-parser.add_argument('-f', '--file-to-know', help='Point to a file to be uploaded to the knowledge base for retrieval\n default: "699.csv" - CVE database in csv \n!CURRENT VERSION SUPPORTS ONE FILE!\n', default="699.csv")
+parser.add_argument('-k', '--file-to-know', help='Point to a file to be uploaded to the knowledge base for retrieval\n default: "699.csv" - CVE database in csv \n!CURRENT VERSION SUPPORTS ONE FILE!\n', default="699.csv")
 parser.add_argument('-i', '--ignore', help='Provide a path to a .gitignore file to ignore files from the scan, \na typical lists of files will be ignored by default\n')
 parser.add_argument('-p', '--patch-file', help='Provide a path for the generated patch file \ndefault: "{your_project_dir}/GPTested/{timestamp}_patch.diff"\n', default=f"GPTested/{timestamp}_patch.diff")
 parser.add_argument('-o', '--output', help='Output the results to a specified directory\n')
@@ -49,6 +50,7 @@ iol = IOlog(args.directory, verbose=args.verbose, name=project_name)
 import agents
 
 CFG.set_retrieval(args.retrieval)
+CFG.set_output_format(args.format)
 
 async def run_agents(args, iol, chunks, fixed_dir):
     tasks = []
@@ -75,18 +77,17 @@ async def run_agents(args, iol, chunks, fixed_dir):
                     text = content_item.text.value
                     iol.log("\n\n" + text + '\n', color="white")
 
-
-async def retry_task(coroutine_func, *args, max_retries=CFG.restart_limit, delay=2):    # CFG.restart_limit = 3 in config.py
-    """
-    Retries a coroutine function if it fails.
-    :param coroutine_func: The coroutine function to execute.
-    :param args: Arguments to pass to the coroutine function.
-    :param max_retries: Maximum number of retries.
-    :param delay: Delay between retries in seconds.
-    """
+async def retry_task(coroutine_func, *args, max_retries=3, delay=2, timeout=420): # timeout=7min
     for attempt in range(max_retries):
         try:
-            return await coroutine_func(*args)
+            return await asyncio.wait_for(coroutine_func(*args), timeout)
+        except asyncio.TimeoutError:
+            if attempt < max_retries - 1:
+                iol.log(f"Task timed out after {timeout} seconds, retrying... (Attempt {attempt + 1}/{max_retries})", color="orange")
+                await asyncio.sleep(delay)
+            else:
+                iol.log(f"Task timed out after {timeout} seconds on final attempt", color="red")
+                raise
         except Exception as e:
             if attempt < max_retries - 1:
                 iol.log(f"Task failed with {e}, retrying... (Attempt {attempt + 1}/{max_retries})", color="yellow")
@@ -94,6 +95,7 @@ async def retry_task(coroutine_func, *args, max_retries=CFG.restart_limit, delay
             else:
                 iol.log(f"Task failed after {max_retries} attempts", color="red")
                 raise
+
 
 
 async def main():
@@ -109,19 +111,19 @@ async def main():
     iol.log(f"Found {len(dir_content)} files to scan", color="cyan", verbose_only=False)
     iol.log(f'Tokens inside the directory: {num_tokens_from_string(dir_content)}', color='bright_cyan')
     iol.log(f"Using model: {args.model}", color="white")
+    iol.log(f"Output format: {args.format}", color="white", verbose_only=True)
     iol.print(f"Beginning code analysis...", color="white")
 
     if args.codeql:
         iol.log(f"CodeQL is enabled, I will now begin the scan using CodeQL", color="red")
         # run_codeql_scan(args.directory, args.language, args.command)
 
-    chunks = split_content(dir_content, CFG.token_limit)                                # Assistant API ogranicza liczbę ZNAKÓW(char) do ~32k XD! 
-    iol.log(f"Splitting the content into {len(chunks)} chunks (OpenAI Assistant API char limit = ~32k chars)", color="bright_cyan")    # więc nie ma sensu liczyć tokenów XDD (zostawiam dla innych modeli i API)
+    chunks = split_content(dir_content, CFG.token_limit)                                                                                 # Assistant API ogranicza liczbę ZNAKÓW(char) do ~32k XD! 
+    iol.log(f"Splitting the content into {len(chunks)} chunks \n(OpenAI Assistant API char limit = ~32k chars)", color="bright_cyan")    # więc nie ma sensu liczyć tokenów XDD (zostawiam dla innych modeli i API)
     
     # chunks = split_content_char(dir_content, 32500)                             
     # iol.log(f"Splitting the content into {len(chunks)} chunks", color="bright_cyan")    
     
-
     await run_agents(args, iol, chunks, fixed_dir)
 
     print()
@@ -139,7 +141,6 @@ async def main():
     iol.print(f"or:\n\t cd {args.directory} \n\t git am {args.patch_file}", color="bright_cyan", timestamp=False)
     iol.print(f"To apply the changes overwritting the file contents !ORIGINAL CONTENT WILL BE LOST!, run: \n\tgit apply --directory={args.directory} {args.patch_file}", color='red', timestamp=False)
 
-    # iol.print(f"currently the patch files might be wrong, use the utils/replace_files.sh script to automatically apply changes", color="bright_black")
     iol.print(f"Thank you for using the static code analysis agent!", color="bright_cyan")
     # input("If you want to run tests on fixed code (not available in current version), press enter... (or ctrl+c to exit)")
 
