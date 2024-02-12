@@ -19,6 +19,8 @@ class Assistant():
         """
         self.iol = iol
         self.target_dir = target_dir
+        self.timestamp = target_dir.split('_')[1]+'_'+target_dir.split('_')[2]
+
         self.name = name
         self.instructions = role
         self.file_ids = []
@@ -27,7 +29,7 @@ class Assistant():
             name=name,
             instructions=self.instructions,
             model=model,
-            # temperature=CFG.temperature,
+            # temperature=CFG.temperature,  # not available in beta assistant api
             # seed=dbs.prompts['seed']
             # response_format='json_object',
             file_ids=self.file_ids,
@@ -114,9 +116,14 @@ class Assistant():
                         name = tool_call.function.name
                         arguments = json.loads(tool_call.function.arguments)
                         self.iol.log(f"Processing tool call: {name}", color="bright_black", verbose_only=True)
+                        
+                        # overwrite filepaths to be relative to the scan_dir
                         if "filename" in arguments and self.name == "debug_agent": 
                             filename = os.path.basename(arguments["filename"])
-                            arguments["filename"] = os.path.join(scan_dir, self.target_dir, filename)
+                            arguments["filename"] = os.path.join(scan_dir, self.target_dir, filename)   # needs fixing for file hierarchy - correct tree structure
+                        elif name == "append_to_csv" and "file_path" in arguments and self.name == "debug_agent":
+                            filename = "results_"+ self.timestamp + ".csv"
+                            arguments["file_path"] = os.path.join(scan_dir, "GPTested/raports", filename)
                         elif "filename" in arguments and self.name == "test_agent":
                             filename = os.path.basename(arguments["filename"])
                             arguments["filename"] = os.path.join(scan_dir, "tests", filename)

@@ -2,24 +2,31 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Zastosowane modele językowe w badaniu.\relax }}{7}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Przykład polecenia w badaniu\cite {codex-fix-security-bugs}.\relax }}{8}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Scenariusze oraz szablony zapytań obu badań.\relax }}{9}{figure.caption.12}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Wyniki przy użyciu modeli LLM typu black-box do łatania błędów utworzonych syntetycznie. Scenariusze pochodzą z zestawu danych "Diversity of Weakness". Wyniki są sortowane według rankingu "Top 25 CWE" MITRE\dots \relax }}{10}{figure.caption.13}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces \dots Dla każdej temperatury \{0,00, 0,25, 0,50, 0,75, 1,00\} × top p = \{1,00\} żądano 10 programów (5 dla modeli AI21), dając 50 (25 dla AI21) możliwych programów. Wyniki przedstawiono jako 'bezpieczne i funkcjonalne'/'poprawne (kompilujące się) programy'.\relax }}{10}{figure.caption.13}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Wyniki przy użyciu modeli LLM typu black-box do łatania błędów utworzonych syntetycznie. Scenariusze pochodzą z zestawu danych "Diversity of Weakness". Wyniki są sortowane według rankingu "Top 25 CWE" MITRE\dots \relax }}{11}{figure.caption.14}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces \dots Dla każdej temperatury {0,00, 0,25, 0,50, 0,75, 1,00} × top p {1,00} żądano 10 programów (5 dla modeli AI21), dając 50 (25 dla AI21) możliwych programów. Wyniki przedstawiono jako 'bezpieczne i funkcjonalne'/'poprawne (kompilujące się) programy'.\relax }}{11}{figure.caption.14}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Schemat blokowy działania aplikacji \textit {gptester}\relax }}{13}{figure.caption.11}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces dane wejściowe w schemacie blokowym\relax }}{14}{figure.caption.12}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Część schematu opisująca proces generatora testów funkcjonalnych\relax }}{14}{figure.caption.13}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Część schematu opisująca proces RAG\relax }}{15}{figure.caption.14}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Część schematu opisująca proces RAG\relax }}{16}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Czarna skrzynka - LLM (Large Language Model)\relax }}{16}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Czarna skrzynka - LLM (Large Language Model)\relax }}{17}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Wiadomość pomocnicza aplikacji \textit {gptester}\relax }}{20}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Schemat blokowy działania aplikacji \textit {gptester}\relax }}{16}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces dane wejściowe w schemacie blokowym\relax }}{17}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Część schematu opisująca proces generatora testów funkcjonalnych\relax }}{17}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Część schematu opisująca proces RAG\relax }}{18}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Część schematu opisująca proces RAG\relax }}{19}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Czarna skrzynka - LLM (Large Language Model)\relax }}{19}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Czarna skrzynka - LLM (Large Language Model)\relax }}{20}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Wiadomość pomocnicza aplikacji \textit {gptester}\relax }}{23}{figure.caption.23}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Wyniki testów funkcjonalnych aplikacji NodeGoat przed wprowadzeniem zmian\relax }}{46}{figure.caption.20}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Błąd uruchomienia aplikacji NodeGoat po wprowadzeniu zmian\relax }}{52}{figure.caption.25}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Błąd uruchomienia aplikacji NodeGoat po wprowadzeniu zmian ręcznie\relax }}{53}{figure.caption.26}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Błąd konfiguracji MongoDB po wprowadzeniu zmian ręcznie\relax }}{54}{figure.caption.27}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Poprawne uruchomienie aplikacji NodeGoat po wprowadzeniu zmian ręcznie\relax }}{54}{figure.caption.28}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Wyniki testów funkcjonalnych aplikacji NodeGoat przed wprowadzeniem zmian\relax }}{52}{figure.caption.28}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Błąd uruchomienia aplikacji NodeGoat po wprowadzeniu zmian\relax }}{58}{figure.caption.33}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Błąd uruchomienia aplikacji NodeGoat po wprowadzeniu zmian ręcznie\relax }}{59}{figure.caption.34}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Błąd konfiguracji MongoDB po wprowadzeniu zmian ręcznie\relax }}{60}{figure.caption.35}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Poprawne uruchomienie aplikacji NodeGoat po wprowadzeniu zmian ręcznie\relax }}{60}{figure.caption.36}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

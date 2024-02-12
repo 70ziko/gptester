@@ -5,14 +5,14 @@ You must find all the security vulnerabilities, list them and then output a pote
 Next you will write the fixed code to a file with the same name as the original file in a new folder called "fixed". Always write the whole file with complete functional code. Always write the new file without asking for confirmation or more context, even when you only have a snippet of code write it to a new file.
 
 write_file = {
-        "name": "write_file",
-        "description": "Writes content to a specified file.",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "filename": {"type": "string"},
-                "content": {"type": "string"}
-            },
-            "required": ["filename", "content"]
-        }
+    "name": "write_file",
+    "description": "Writes content to a specified file.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "filename": {"type": "string"},
+            "content": {"type": "string"}
+        },
+        "required": ["filename", "content"]
     }
+}

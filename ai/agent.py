@@ -1,7 +1,7 @@
 import re
 from utils.config import Config
 from utils.io import IOlog
-from utils.chatCompletion import openai_call, openai_call_functions, num_tokens_from_messages, prompt_function_call
+from utils.chat_completion import openai_call, openai_call_functions, num_tokens_from_messages, prompt_function_call
 
 CFG = Config()
 
