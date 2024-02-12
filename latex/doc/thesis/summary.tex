@@ -1,9 +1,24 @@
 % !TEX encoding = UTF-8 Unicode 
 % !TEX root = praca.tex
 
+\chapter*{Podsumowanie i wnioski}
 
 \section*{Podsumowanie}
-W pracy zbadano wykorzystanie dużych modeli językowych (LLM) w kontekście statycznej analizy kodu, skupiając się na ich zdolnościach do identyfikacji i naprawy błędów programistycznych. Rozpatrzono różne aspekty stosowania LLM, w tym ich integrację z istniejącymi narzędziami do analizy kodu, potencjał w automatyzacji procesów weryfikacji kodu oraz wyzwania związane z ich praktycznym zastosowaniem. Praca porusza również kwestie związane z ograniczeniami modeli językowych, takie jak ich zależność od jakości i zakresu danych treningowych oraz konieczność humanitarnej nadzoru i weryfikacji wyników generowanych przez te systemy.
+W pracy zbadano wykorzystanie dużych modeli językowych (LLM) w kontekście statycznej analizy kodu, skupiając się na ich zdolnościach do identyfikacji i naprawy błędów bezpieczeństwa. Rozpatrzono różne aspekty stosowania LLM, w tym ich integrację z istniejącymi narzędziami do analizy kodu, potencjał w automatyzacji procesów weryfikacji kodu oraz wyzwania związane z ich praktycznym zastosowaniem. Praca porusza również kwestie związane z ograniczeniami modeli językowych, takie jak ich zależność od złożoności danych wejściowych oraz konieczność humanitarnego nadzoru i weryfikacji wyników generowanych przez te systemy.
+
+\section*{Odpowiedzi na pytania badawcze}
+\begin{enumerate}
+    \item \textbf{Wykorzystanie do wykrywania i naprawiania błędów:} LLM mogą efektywnie identyfikować i naprawiać standardowe błędy bezpieczeństwa w kodzie, jednak ich skuteczność maleje w bardziej złożonych scenariuszach.
+    \item \textbf{Skuteczność w porównaniu z innymi rozwiązaniami:} LLM oferują obiecujące możliwości, ale wymagają ludzkiej ekspertyzy do weryfikacji i poprawy kodu, co sugeruje, że nie zastępują one całkowicie istniejących narzędzi, ale mogą je skutecznie uzupełniać.
+    \item \textbf{Wpływ RAG i in-context learning:} Metody te mogą poprawić skuteczność LLM, jednak konieczne są dalsze badania nad optymalizacją ich zastosowania.
+    \item \textbf{Ograniczenia i wyzwania:} Największe ograniczenia LLM to ograniczenia wielkości kontekstu, potencjalne halucynacje oraz niedetermistyczna natura, co może prowadzić do generowania nieoptymalnych, fałszywych a nawet niebezpiecznych sugestii.
+\end{enumerate}
+
+\section*{Weryfikacja hipotez}
+\begin{enumerate}
+    \item \textbf{Skuteczność w identyfikacji i naprawie błędów:} Zdolność LLM do identyfikowania podatności przerosła oczekiwania, niestety dokładne zbadanie skuteczeności sugerowanych napraw nie powiodło się. Ich zdolność do generowania funkcjonalnych napraw w rzeczywistych warunkach jest ograniczona.
+    \item \textbf{Ograniczenia w złożonych scenariuszach:} Zdolność LLM do generowania funkcjonalnych napraw w rzeczywistych warunkach jest ograniczona, co potwierdza drugą hipotezę. Do poprawnego zastosowania LLM konieczna jest ludzka ekspertyza.
+\end{enumerate}
 
 \section*{Wnioski}
 Duże modele językowe oferują obiecujące możliwości w analizie i naprawie kodu, jednak ich skuteczność jest ograniczona w złożonych scenariuszach cyberbezpieczeństwa. Wyniki badań podkreślają konieczność ludzkiej ekspertyzy w procesie weryfikacji i poprawy kodu. Dalsze badania są potrzebne do rozwoju metodologii i narzędzi, które pozwolą na pełniejsze wykorzystanie potencjału LLM w poprawie bezpieczeństwa aplikacji. 
@@ -11,12 +26,13 @@ Duże modele językowe oferują obiecujące możliwości w analizie i naprawie k
 \textbf{Na podstawie przeprowadzonych badań, można wyciągnąć następujące wnioski:}
 
 \begin{enumerate}
-    \item LLM mogą efektywnie identyfikować i proponować naprawy dla standardowych błędów w kodzie, ale ich skuteczność maleje wraz ze wzrostem złożoności zadania.
+    \item LLM mogą efektywnie identyfikować podatności dla standardowych błędów w kodzie, ale ich skuteczność maleje wraz ze wzrostem złożoności zadania.
+    \item Niezbadane pozostają błędy w identyfikacji podatności, pod względem zarówno fałszywie pozytywnych, jak i fałszywie negatywnych.
+    \item LLM mogą być wykorzystywane do automatycznego generowania poprawek kodu, ale ich skuteczność jest ograniczona do prostych przypadków. W złożonych przypadkach konieczna jest ludzka ekspertyza, ale stosując optymalizacje przedstawionych metod oraz w dalszym ciągu rozwijając modele językowe, można zwiększyć skuteczność generowanych napraw.
     \item Modele te wymagają precyzyjnie sformułowanych zapytań i dobrze zdefiniowanych kontekstów, aby generować użyteczne wyniki. Konieczne są dodatkowe badania nad metodami wyboru i przygotowania danych wejściowych.
-    \item Ograniczenia LLM, takie jak brak głębokiego zrozumienia logiki programistycznej i kontekstu biznesowego, mogą prowadzić do nieoptymalnych lub niebezpiecznych sugestii.
+    \item Ograniczenia LLM, takie jak brak głębokiego zrozumienia logiki programistycznej i kontekstu biznesowego, mogą prowadzić do nieoptymalnych, niefunkcjonalnych lub niebezpiecznych sugestii. Wynika to między innymi z ograniczeń wielkości kontekstu, co uniemożliwia modelom zrozumienie złożonych zależności między kodem.
     \item Istotna jest ciągła interakcja i weryfikacja przez doświadczonych programistów, aby zapewnić bezpieczeństwo i poprawność proponowanych rozwiązań.
     \item Rozwój narzędzi wspomagających, które integrują LLM z tradycyjnymi metodami statycznej analizy kodu, może zwiększyć skuteczność wykrywania i naprawy błędów.
     \item Należy zachować ostrożność w kwestii etycznej i prawnej odpowiedzialności za błędy wprowadzone lub niezauważone przez modele językowe.
-    \item Dalsze badania powinny skupić się na usprawnieniu interakcji między LLM a programistami, zwłaszcza w kontekście uczenia się z interakcji i feedbacku.
     \item Konieczne jest badanie wpływu na wydajność i jakość pracy programistów, w tym potencjalnych ryzyk związanych z nadmiernym poleganiem na automatycznych sugestiach.
 \end{enumerate}

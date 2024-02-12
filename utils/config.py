@@ -17,11 +17,12 @@ class Config(metaclass=Singleton):
         """Initialize the Config class"""
         self.debug_mode = False
         self.speak_mode = False
-        self.version = 'assistant-0.6.1-beta'
+        self.version = 'assistant-0.6.3-beta'
         self.retrieval = False
         self.restart_limit = int(os.getenv("RESTART_LIMIT", "3"))
         self.llm_model = os.getenv("LLM_MODEL", "gpt-4-1106-preview")
         self.token_limit = int(os.getenv("TOKEN_LIMIT", 30000))
+        self.output_format = os.getenv("OUTPUT_FORMAT", "csv")
 
         self.openai_api_key = os.getenv("OPENAI_API_KEY")
         self.temperature = float(os.getenv("TEMPERATURE", "0"))
@@ -53,6 +54,10 @@ class Config(metaclass=Singleton):
     def set_retrieval(self, value: bool) -> None:
         """Set the retrieval value."""
         self.retrieval = value
+
+    def set_output_format(self, value: str) -> None:
+        """Set the output format value."""
+        self.output_format = value
 
     def set_llm_model(self, value: str) -> None:
         """Set the smart LLM model value."""

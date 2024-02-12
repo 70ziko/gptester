@@ -1,20 +1,23 @@
 import os
+import csv
 from utils.io import IOlog
 from utils.tests_runner import TestRunner, RunCppTestsCommand, RunJavaTestsCommand, RunPythonTestsCommand, RunRubyTestsCommand, RunPhpTestsCommand
 
-iol = IOlog() # singleton
+iol = IOlog('testing') # singleton
 
 async def write_file(filename, content):
-    """
-    Writes the provided content to a file.
-    
-    Args:
-    filename (str): The name of the file to write.
-    content (str): The content to write into the file.
-    
-    Returns:
-    str: A message indicating success or failure.
-    """
+    """{
+        "name": "write_file",
+        "description": "Writes content to a specified file.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "filename": {"type": "string"},
+                "content": {"type": "string"}
+            },
+            "required": ["filename", "content"]
+        }
+    }"""
     try:
         iol.log(f'Writing file {filename}...', color="orange")
         iol.log(f'content: \n {content}...', color="orange", verbose_only=True)
@@ -33,23 +36,69 @@ async def write_file(filename, content):
     except Exception as e:
         iol.log(f"Error writing file: {e}", color="red")
         return f"Error writing file: {e}"
-    
-# JSON for openai tool calling
-write_file_json = {
-        "name": "write_file",
-        "description": "Writes content to a specified file.",
+
+
+async def append_to_csv(file_path, row_data):
+    """{
+        "name": "append_to_csv",
+        "description": "Appends a row to an existing CSV file using a semicolon as the delimiter.",
         "parameters": {
             "type": "object",
             "properties": {
-                "filename": {"type": "string"},
-                "content": {"type": "string"}
+                "file_path": {
+                    "type": "string",
+                    "description": "The path to the CSV file to which the row will be appended."
+                },
+                "row_data": {
+                    "type": "array",
+                    "description": "A list of values to be formatted into a CSV row and appended to the file.",
+                    "items": {
+                        "type": "string"
+                    }
+                }
             },
-            "required": ["filename", "content"]
+            "required": ["file_path", "row_data"]
         }
-    }
+    }"""
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    next_id = 1
 
+    # Check if file exists before reading
+    if os.path.exists(file_path):
+        with open(file_path, 'r', newline='', encoding='utf-8') as csvfile:
+            reader = csv.reader(csvfile, delimiter=';', quotechar='*')
+            for row in reader:
+                next_id += 1
+    else:
+        with open(file_path, 'w', newline='', encoding='utf-8') as csvfile:
+            writer = csv.writer(csvfile, delimiter=';', quotechar='*', quoting=csv.QUOTE_MINIMAL)
+            writer.writerow("Lp.;Vulnerability;File;Line;Severity;Description;Solution")
 
-def run_tests(language, executable=None):
+    with open(file_path, 'a', newline='', encoding='utf-8') as csvfile:
+        writer = csv.writer(csvfile, delimiter=';', quotechar='*', quoting=csv.QUOTE_MINIMAL)
+        writer.writerow([next_id] + row_data)
+        return f"Row appended to '{file_path}'."
+        
+
+async def run_tests(language, executable=None):
+    """{
+        "name": "run_tests",
+        "description": "Executes test commands for specified programming languages using subprocesses.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "language": {
+                "type": "string",
+                "enum": ["cpp", "java", "python", "ruby", "php"]
+                },
+                "executable": {
+                "type": "string",
+                "description": "Path to the executable for C++ tests or additional command parameters for other languages."
+                }
+            },
+            "required": ["language"]
+        }
+    }"""
     test_runner = TestRunner()
     command = None
 
@@ -72,40 +121,3 @@ def run_tests(language, executable=None):
         return {"status": "success", "output": "Tests executed for " + language + " project with " + executable}
     else:
         return {"status": "error", "output": "Unsupported language"}
-
-
-# JSON for openai tool calling
-
-run_tests_json = {
-  "function": {
-    "name": "run_tests",
-    "description": "Executes test commands for specified programming languages using subprocesses.",
-    "parameters": {
-      "type": "object",
-      "properties": {
-        "language": {
-          "type": "string",
-          "enum": ["cpp", "java", "python", "ruby", "php"]
-        },
-        "executable": {
-          "type": "string",
-          "description": "Path to the executable for C++ tests or additional command parameters for other languages."
-        }
-      },
-      "required": ["language"]
-    },
-    "returns": {
-      "type": "object",
-      "properties": {
-        "status": {
-          "type": "string",
-          "description": "The status of the test execution."
-        },
-        "output": {
-          "type": "string",
-          "description": "Output generated by the test command."
-        }
-      }
-    }
-  }
-}
