@@ -3,5 +3,12 @@
 \contentsline {listing}{\numberline {3.3}{\ignorespaces Kod używany do komunikacji z API OpenAI (ai/assistant.py), wersja programu: assistant-0.2.2-beta\relax }}{29}{listing.3.3}%
 \contentsline {listing}{\numberline {5.1}{\ignorespaces Kod źródłowy błędnego skrawka kodu \textit {damnvuln.c}\relax }}{45}{listing.5.1}%
 \contentsline {listing}{\numberline {5.2}{\ignorespaces Wynik działania programu w formacie diff na kodzie źródłowym \textit {damnvuln.c}\relax }}{46}{listing.5.2}%
-\contentsline {listing}{\numberline {5.3}{\ignorespaces Fragment kodu odpowiadający za wyświetlenie informacji o błędzie\relax }}{48}{listing.5.3}%
-\contentsline {listing}{\numberline {5.4}{\ignorespaces Fragment kodu odpowiadający za wyświetlenie informacji o błędzie\relax }}{49}{listing.5.4}%
+\contentsline {listing}{\numberline {5.3}{\ignorespaces Krytyczny błąd segmentacji\relax }}{48}{listing.5.3}%
+\contentsline {listing}{\numberline {5.4}{\ignorespaces Wiadomość obsługi błędu\relax }}{48}{listing.5.4}%
+\contentsline {listing}{\numberline {5.5}{\ignorespaces Fragment kodu odpowiadający za wyświetlenie informacji o błędzie\relax }}{48}{listing.5.5}%
+\contentsline {listing}{\numberline {5.6}{\ignorespaces Wiadomość o błędzie kompilatora gcc\relax }}{49}{listing.5.6}%
+\contentsline {listing}{\numberline {5.7}{\ignorespaces Wynik programu dla zmodyfikowanego kodu\relax }}{49}{listing.5.7}%
+\contentsline {listing}{\numberline {5.8}{\ignorespaces Fragment kodu odpowiadający za wyświetlenie informacji o błędzie\relax }}{50}{listing.5.8}%
+\contentsline {listing}{\numberline {6.1}{\ignorespaces Inicjalizacja bazy danych CodeQL\relax }}{55}{listing.6.1}%
+\contentsline {listing}{\numberline {6.2}{\ignorespaces Uruchomienie zapytań CodeQL\relax }}{55}{listing.6.2}%
+\contentsline {listing}{\numberline {6.3}{\ignorespaces Wyniki analizy zapytań CodeQL\relax }}{56}{listing.6.3}%

@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZgt{}\PYG{+w}{ }codeql\PYG{+w}{ }database\PYG{+w}{ }analyze\PYG{+w}{ }GoatQL\PYGZhy{}db\PYG{+w}{ }javascript\PYGZhy{}code\PYGZhy{}scanning.qls\PYG{+w}{ }\PYGZhy{}\PYGZhy{}format\PYG{o}{=}csv\PYG{+w}{ }\PYGZhy{}\PYGZhy{}output\PYG{o}{=}default\PYGZhy{}goat\PYGZhy{}QLresults.csv
+Running\PYG{+w}{ }queries.
+\PYG{o}{[}\PYG{l+m}{1}/88\PYG{o}{]}\PYG{+w}{ }Loaded\PYG{+w}{ }.../codeql/javascript\PYGZhy{}queries/0.8.2/AngularJS/InsecureUrlWhitelist.qlx.
+\end{Verbatim}
