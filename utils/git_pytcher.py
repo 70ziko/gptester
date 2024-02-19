@@ -8,9 +8,9 @@ def generate_patch(original_dir: str, fixed_dir: str, patch_file_path: str):
     """Generates a patch file for the changes between the original and fixed files. Uses a temporary git repository to create the patch file.
 
     Args:
-        original_dir (str): directory containing the original files, use args.directory
-        fixed_dir (str): directory containing the fixed files, use main.fixed_dir
-        patch_file_path (str): location for the patch file, use args.patch_file
+        original_dir (str): directory containing the original files, use args['directory']
+        fixed_dir (str): directory containing the fixed files, use args['main.fixed_dir']
+        patch_file_path (str): location for the patch file, use args['patch_file']
     """
 
     with tempfile.TemporaryDirectory() as tempdir:
@@ -55,7 +55,7 @@ def check_patch(patch_file_path, iol):
 
     try:
         # Run the command using subprocess
-        result = subprocess.run(command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        result = subprocess.run(command, check=True, capture_output=True, text=True)
 
         # If the command was successful, there are no errors, and the patch can be applied cleanly
         if result.returncode == 0:
