@@ -1,0 +1,22 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+PrototypePollutingFunction.ql\PYG{+w}{            }:\PYG{+w}{ }\PYG{o}{[}\PYG{l+m}{83}/88\PYG{+w}{ }\PYG{n+nb}{eval}\PYG{+w}{ }25ms\PYG{o}{]}\PYG{+w}{ }Results\PYG{+w}{ }written\PYG{+w}{ }to\PYG{+w}{ }codeql/javascript\PYGZhy{}queri
+PrototypePollutingMergeCall.ql\PYG{+w}{           }:\PYG{+w}{ }\PYG{o}{[}\PYG{l+m}{84}/88\PYG{+w}{ }\PYG{n+nb}{eval}\PYG{+w}{ }260ms\PYG{o}{]}\PYG{+w}{ }Results\PYG{+w}{ }written\PYG{+w}{ }to\PYG{+w}{ }codeql/javascript\PYGZhy{}quer
+InsufficientPasswordHash.ql\PYG{+w}{              }:\PYG{+w}{ }\PYG{o}{[}\PYG{l+m}{85}/88\PYG{+w}{ }\PYG{n+nb}{eval}\PYG{+w}{ }5ms\PYG{o}{]}\PYG{+w}{ }Results\PYG{+w}{ }written\PYG{+w}{ }to\PYG{+w}{ }codeql/javascript\PYGZhy{}querie
+RequestForgery.ql\PYG{+w}{                        }:\PYG{+w}{ }\PYG{o}{[}\PYG{l+m}{86}/88\PYG{+w}{ }\PYG{n+nb}{eval}\PYG{+w}{ }143ms\PYG{o}{]}\PYG{+w}{ }Results\PYG{+w}{ }written\PYG{+w}{ }to\PYG{+w}{ }codeql/javascript\PYGZhy{}quer
+LinesOfCode.ql\PYG{+w}{                           }:\PYG{+w}{ }\PYG{o}{[}\PYG{l+m}{87}/88\PYG{+w}{ }\PYG{n+nb}{eval}\PYG{+w}{ }3ms\PYG{o}{]}\PYG{+w}{ }Results\PYG{+w}{ }written\PYG{+w}{ }to\PYG{+w}{ }codeql/javascript\PYGZhy{}querie
+LinesOfUserCode.ql\PYG{+w}{                       }:\PYG{+w}{ }\PYG{o}{[}\PYG{l+m}{88}/88\PYG{+w}{ }\PYG{n+nb}{eval}\PYG{+w}{ }644ms\PYG{o}{]}\PYG{+w}{ }Results\PYG{+w}{ }written\PYG{+w}{ }to\PYG{+w}{ }codeql/javascript\PYGZhy{}quer
+Shutting\PYG{+w}{ }down\PYG{+w}{ }query\PYG{+w}{ }evaluator.
+Interpreting\PYG{+w}{ }results.
+Analysis\PYG{+w}{ }produced\PYG{+w}{ }the\PYG{+w}{ }following\PYG{+w}{ }diagnostic\PYG{+w}{ }data:
+
+\PYG{p}{|}\PYG{+w}{          }Diagnostic\PYG{+w}{          }\PYG{p}{|}\PYG{+w}{  }Summary\PYG{+w}{   }\PYG{p}{|}
++\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}+\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}+
+\PYG{p}{|}\PYG{+w}{ }Successfully\PYG{+w}{ }extracted\PYG{+w}{ }files\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }\PYG{l+m}{77}\PYG{+w}{ }results\PYG{+w}{ }\PYG{p}{|}
+
+Analysis\PYG{+w}{ }produced\PYG{+w}{ }the\PYG{+w}{ }following\PYG{+w}{ }metric\PYG{+w}{ }data:
+
+\PYG{p}{|}\PYG{+w}{                                   }Metric\PYG{+w}{                                   }\PYG{p}{|}\PYG{+w}{ }Value\PYG{+w}{ }\PYG{p}{|}
++\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}+\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}+
+\PYG{p}{|}\PYG{+w}{ }Total\PYG{+w}{ }lines\PYG{+w}{ }of\PYG{+w}{ }user\PYG{+w}{ }written\PYG{+w}{ }JavaScript\PYG{+w}{ }and\PYG{+w}{ }TypeScript\PYG{+w}{ }code\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }the\PYG{+w}{ }database\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{  }\PYG{l+m}{2926}\PYG{+w}{ }\PYG{p}{|}
+\PYG{p}{|}\PYG{+w}{ }Total\PYG{+w}{ }lines\PYG{+w}{ }of\PYG{+w}{ }JavaScript\PYG{+w}{ }and\PYG{+w}{ }TypeScript\PYG{+w}{ }code\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }the\PYG{+w}{ }database\PYG{+w}{              }\PYG{p}{|}\PYG{+w}{  }\PYG{l+m}{2932}\PYG{+w}{ }\PYG{p}{|}
+\end{Verbatim}

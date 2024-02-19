@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{  }\PYGZgt{}\PYG{+w}{ }./damnvuln3\PYG{+w}{ }\PYGZti{}/Pictures/egzamin\PYGZus{}praktyka.png
+
+\PYG{+w}{	}Header\PYG{+w}{	}width\PYG{+w}{	}height\PYG{+w}{	}data\PYG{+w}{	}
+
+\PYG{+w}{	}�PNG
+�
+\PYG{+w}{	}\PYG{l+m}{169478669}\PYG{+w}{	}\PYG{l+m}{218103808}\PYG{+w}{	}IHDR
+Integer\PYG{+w}{ }underflow\PYG{+w}{ }detected\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }size2\PYG{+w}{ }calculation.
+\end{Verbatim}

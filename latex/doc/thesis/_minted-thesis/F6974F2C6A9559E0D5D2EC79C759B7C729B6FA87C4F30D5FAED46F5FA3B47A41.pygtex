@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZgt{}\PYG{+w}{ }codeql\PYG{+w}{ }database\PYG{+w}{ }create\PYG{+w}{ }GoatQL\PYGZhy{}db\PYG{+w}{ }\PYGZhy{}\PYGZhy{}language\PYG{o}{=}javascript
+Initializing\PYG{+w}{ }database\PYG{+w}{ }at\PYG{+w}{ }/home/paris/projekty/INZYNIERKA/testing\PYGZhy{}envs/NodeGoat/GoatQL\PYGZhy{}db.
+Running\PYG{+w}{ }build\PYG{+w}{ }command:\PYG{+w}{ }\PYG{o}{[]}
+\PYG{o}{[}\PYG{l+m}{2024}\PYGZhy{}01\PYGZhy{}25\PYG{+w}{ }\PYG{l+m}{19}:33:30\PYG{o}{]}\PYG{+w}{ }\PYG{o}{[}build\PYGZhy{}stdout\PYG{o}{]}\PYG{+w}{ }Single\PYGZhy{}threaded\PYG{+w}{ }extraction.
+\PYG{o}{[}\PYG{l+m}{2024}\PYGZhy{}01\PYGZhy{}25\PYG{+w}{ }\PYG{l+m}{19}:33:34\PYG{o}{]}\PYG{+w}{ }\PYG{o}{[}build\PYGZhy{}stdout\PYG{o}{]}\PYG{+w}{ }package.json:\PYG{+w}{ }Main\PYG{+w}{ }file\PYG{+w}{ }\PYG{n+nb}{set}\PYG{+w}{ }to\PYG{+w}{ }server.js
+\PYG{o}{[}\PYG{l+m}{2024}\PYGZhy{}01\PYGZhy{}25\PYG{+w}{ }\PYG{l+m}{19}:33:34\PYG{o}{]}\PYG{+w}{ }\PYG{o}{[}build\PYGZhy{}stdout\PYG{o}{]}\PYG{+w}{ }Extracting\PYG{+w}{ }.../NodeGoat/app/views/tutorial/a1.html
+\PYG{o}{[}\PYG{l+m}{2024}\PYGZhy{}01\PYGZhy{}25\PYG{+w}{ }\PYG{l+m}{19}:33:34\PYG{o}{]}\PYG{+w}{ }\PYG{o}{[}build\PYGZhy{}stdout\PYG{o}{]}\PYG{+w}{ }Done\PYG{+w}{ }extracting\PYG{+w}{ }.../NodeGoat/app/views/tutorial/a1.html\PYG{+w}{ }\PYG{o}{(}\PYG{l+m}{91}\PYG{+w}{ }ms\PYG{o}{)}
+\PYG{o}{[}\PYG{l+m}{2024}\PYGZhy{}01\PYGZhy{}25\PYG{+w}{ }\PYG{l+m}{19}:33:34\PYG{o}{]}\PYG{+w}{ }\PYG{o}{[}build\PYGZhy{}stdout\PYG{o}{]}\PYG{+w}{ }Extracting\PYG{+w}{ }.../NodeGoat/app/views/tutorial/a10.html
+\PYG{o}{[}\PYG{l+m}{2024}\PYGZhy{}01\PYGZhy{}25\PYG{+w}{ }\PYG{l+m}{19}:33:34\PYG{o}{]}\PYG{+w}{ }\PYG{o}{[}build\PYGZhy{}stdout\PYG{o}{]}\PYG{+w}{ }Done\PYG{+w}{ }extracting\PYG{+w}{ }.../NodeGoat/app/views/tutorial/a10.html\PYG{+w}{ }\PYG{o}{(}\PYG{l+m}{5}\PYG{+w}{ }ms\PYG{o}{)}
+\PYG{o}{[}\PYG{l+m}{2024}\PYGZhy{}01\PYGZhy{}25\PYG{+w}{ }\PYG{l+m}{19}:33:34\PYG{o}{]}\PYG{+w}{ }\PYG{o}{[}build\PYGZhy{}stdout\PYG{o}{]}\PYG{+w}{ }Extracting\PYG{+w}{ }.../NodeGoat/app/views/tutorial/a2.html
+.
+.
+.
+\PYG{o}{[}\PYG{l+m}{2024}\PYGZhy{}01\PYGZhy{}25\PYG{+w}{ }\PYG{l+m}{19}:33:38\PYG{o}{]}\PYG{+w}{ }\PYG{o}{[}build\PYGZhy{}stdout\PYG{o}{]}\PYG{+w}{ }Extracting\PYG{+w}{ }.../codeql/javascript/tools/data/externs/nodejs/vm.js
+\PYG{o}{[}\PYG{l+m}{2024}\PYGZhy{}01\PYGZhy{}25\PYG{+w}{ }\PYG{l+m}{19}:33:38\PYG{o}{]}\PYG{+w}{ }\PYG{o}{[}build\PYGZhy{}stdout\PYG{o}{]}\PYG{+w}{ }Done\PYG{+w}{ }extracting\PYG{+w}{ }.../codeql/javascript/tools/data/externs/nodejs/vm.js\PYG{+w}{ }\PYG{o}{(}\PYG{l+m}{8}\PYG{+w}{ }ms\PYG{o}{)}
+Finalizing\PYG{+w}{ }database\PYG{+w}{ }at\PYG{+w}{ }/home/paris/projekty/INZYNIERKA/testing\PYGZhy{}envs/NodeGoat/GoatQL\PYGZhy{}db.
+Successfully\PYG{+w}{ }created\PYG{+w}{ }database\PYG{+w}{ }at\PYG{+w}{ }/home/paris/projekty/INZYNIERKA/testing\PYGZhy{}envs/NodeGoat/GoatQL\PYGZhy{}db.
+\end{Verbatim}

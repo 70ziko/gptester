@@ -1,0 +1,35 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYGZgt{}\PYG{+w}{ }./damnvuln\PYG{+w}{ }\PYGZti{}/Pictures/egzamin\PYGZus{}praktyka.png
+
+\PYG{+w}{	}Header\PYG{+w}{	}width\PYG{+w}{	}height\PYG{+w}{	}data\PYG{+w}{	}
+
+\PYG{+w}{	}�PNG
+�
+\PYG{+w}{	}\PYG{l+m}{169478669}\PYG{+w}{	}\PYG{l+m}{218103808}\PYG{+w}{	}IHDR
+Segmentation\PYG{+w}{ }fault\PYG{+w}{ }\PYG{o}{(}core\PYG{+w}{ }dumped\PYG{o}{)}
+\PYG{l+s+se}{\PYGZbs{}e}nd\PYG{o}{\PYGZob{}}verbatim\PYG{o}{\PYGZcb{}}
+
+Natomiast\PYG{+w}{ }naprawiony\PYG{+w}{ }program\PYG{+w}{ }zwrócił:
+\PYG{l+s+se}{\PYGZbs{}b}egin\PYG{o}{\PYGZob{}}listing\PYG{o}{\PYGZcb{}[}H\PYG{o}{]}
+\PYG{+w}{  }\PYG{l+s+se}{\PYGZbs{}b}egin\PYG{o}{\PYGZob{}}minted\PYG{o}{\PYGZcb{}\PYGZob{}}bash\PYG{o}{\PYGZcb{}}
+\PYG{+w}{  }\PYGZgt{}\PYG{+w}{ }./damnvuln\PYGZus{}fixed\PYG{+w}{ }\PYGZti{}/Pictures/egzamin\PYGZus{}praktyka.png
+
+\PYG{+w}{	}Header\PYG{+w}{	}width\PYG{+w}{	}height\PYG{+w}{	}data\PYG{+w}{	}
+
+\PYG{+w}{	}�PNG
+�
+\PYG{+w}{	}\PYG{l+m}{169478669}\PYG{+w}{	}\PYG{l+m}{218103808}\PYG{+w}{	}IHDR
+Integer\PYG{+w}{ }underflow\PYG{+w}{ }detected
+\PYG{l+s+se}{\PYGZbs{}e}nd\PYG{o}{\PYGZob{}}verbatim\PYG{o}{\PYGZcb{}}
+
+Oznacza\PYG{+w}{ }to\PYG{+w}{ }że\PYG{+w}{ }program\PYG{+w}{ }wykrył\PYG{+w}{ }błąd\PYG{+w}{ }typu\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Out of Bounds\PYGZdq{}}\PYG{+w}{ }i\PYG{+w}{ }zwrócił\PYG{+w}{ }informację\PYG{+w}{ }o\PYG{+w}{ }tym\PYG{+w}{ }błędzie.\PYG{+w}{ }Niestety\PYG{+w}{ }sugerowana\PYG{+w}{ }poprawa\PYG{+w}{ }tego\PYG{+w}{ }błędu\PYG{+w}{ }wprowadziła\PYG{+w}{ }jedynie\PYG{+w}{ }kontrolę\PYG{+w}{ }tych\PYG{+w}{ }błędów.
+Część\PYG{+w}{ }odpowiadająca\PYG{+w}{ }za\PYG{+w}{ }wyświetloną\PYG{+w}{ }informację\PYG{+w}{ }to:
+\PYG{l+s+se}{\PYGZbs{}b}egin\PYG{o}{\PYGZob{}}listing\PYG{o}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{l+s+se}{\PYGZbs{}b}egin\PYG{o}{\PYGZob{}}minted\PYG{o}{\PYGZcb{}\PYGZob{}}c\PYG{o}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{o}{(}img.height\PYG{+w}{ }\PYGZgt{}\PYG{+w}{ }img.width\PYG{+w}{ }+\PYG{+w}{ }\PYG{l+m}{100}\PYG{o}{)}\PYG{+w}{ }\PYG{o}{\PYGZob{}}
+\PYG{+w}{      }fprintf\PYG{o}{(}stderr,\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Integer underflow detected\PYGZbs{}n\PYGZdq{}}\PYG{o}{)}\PYG{p}{;}
+\PYG{+w}{      }free\PYG{o}{(}buff1\PYG{o}{)}\PYG{p}{;}
+\PYG{+w}{      }fclose\PYG{o}{(}fp\PYG{o}{)}\PYG{p}{;}
+\PYG{+w}{      }exit\PYG{o}{(}EXIT\PYGZus{}FAILURE\PYG{o}{)}\PYG{p}{;}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

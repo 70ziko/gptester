@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.20)  2 FEB 2024 20:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.11.20)  15 FEB 2024 11:56
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1154,7 +1154,30 @@ File: tikzlibraryfadings.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 File: pgflibraryfadings.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ))) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
 Library (tcolorbox): 'tcbposter.code.tex' version '5.0.2'
-)) (/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty
+)) (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2022/01/29 v0.5u Insert pages of external PDF documents (AM)
+
+(/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
+\ESO@tempdima=\dimen329
+\ESO@tempdimb=\dimen330
+)
+\AM@pagewidth=\dimen331
+\AM@pageheight=\dimen332
+\AM@fboxrule=\dimen333
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2022/01/29 v0.5u Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count393
+\AM@pagebox=\box147
+\AM@global@opts=\toks57
+\AM@pagecnt=\count394
+\AM@toc@title=\toks58
+\c@AM@survey=\count395
+\AM@templatesizebox=\box148
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 51.
 \cftparskip=\skip73
@@ -1186,8 +1209,8 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 \cftbeforefigskip=\skip99
 \cftfigindent=\skip100
 \cftfignumwidth=\skip101
-\c@lofdepth=\count393
-\c@lotdepth=\count394
+\c@lofdepth=\count396
+\c@lotdepth=\count397
 \cftbeforelottitleskip=\skip102
 \cftafterlottitleskip=\skip103
 \cftbeforetabskip=\skip104
@@ -1200,22 +1223,22 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LTright=\skip108
 \LTpre=\skip109
 \LTpost=\skip110
-\LTchunksize=\count395
-\LTcapwidth=\dimen329
-\LT@head=\box147
-\LT@firsthead=\box148
-\LT@foot=\box149
-\LT@lastfoot=\box150
-\LT@gbox=\box151
-\LT@cols=\count396
-\LT@rows=\count397
-\c@LT@tables=\count398
-\c@LT@chunks=\count399
-\LT@p@ftn=\toks57
+\LTchunksize=\count398
+\LTcapwidth=\dimen334
+\LT@head=\box149
+\LT@firsthead=\box150
+\LT@foot=\box151
+\LT@lastfoot=\box152
+\LT@gbox=\box153
+\LT@cols=\count399
+\LT@rows=\count400
+\c@LT@tables=\count401
+\c@LT@chunks=\count402
+\LT@p@ftn=\toks59
 )
 (/usr/share/texlive/texmf-dist/tex/latex/markdown/markdown.sty
 (/usr/share/texlive/texmf-dist/tex/generic/markdown/markdown.tex
-\markdownFrozenCacheCounter=\count400
+\markdownFrozenCacheCounter=\count403
 \markdownInputFileStream=\read6
 \markdownOutputFileStream=\write6
 Package markdown Info: Using mode 0: Shell escape via write18 on input line 604
@@ -1229,7 +1252,7 @@ Package: paralist 2017/01/22 v2.7 Extended list environments
 \plpartopsep=\skip112
 \plitemsep=\skip113
 \plparsep=\skip114
-\pl@lab=\toks58
+\pl@lab=\toks60
 )
 (/usr/share/texlive/texmf-dist/tex/latex/csvsimple/csvsimple.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
@@ -1240,24 +1263,24 @@ Package: csvsimple 2022/02/01 v2.3.0 LaTeX CSV file processing
 (/usr/share/texlive/texmf-dist/tex/latex/csvsimple/csvsimple-legacy.sty
 Package: csvsimple-legacy 2022/02/01 version 2.3.0 LaTeX2e CSV file processing
 \csv@file=\read7
-\c@csvinputline=\count401
-\c@csvrow=\count402
-\c@csvcol=\count403
+\c@csvinputline=\count404
+\c@csvrow=\count405
+\c@csvcol=\count406
 \csv@out=\write7
 )
-\markdownLaTeXCitationsCounter=\count404
+\markdownLaTeXCitationsCounter=\count407
 
 (/usr/share/texlive/texmf-dist/tex/generic/gobble/gobble.sty
 Package: gobble 2019/01/04 v0.2 Provides more gobble macros
 
 (/usr/share/texlive/texmf-dist/tex/generic/gobble/gobble.tex))
-\markdownLaTeXRowCounter=\count405
-\markdownLaTeXRowTotal=\count406
-\markdownLaTeXColumnCounter=\count407
-\markdownLaTeXColumnTotal=\count408
-\markdownLaTeXTable=\toks59
-\markdownLaTeXTableAlignment=\toks60
-\markdownLaTeXTableEnd=\toks61
+\markdownLaTeXRowCounter=\count408
+\markdownLaTeXRowTotal=\count409
+\markdownLaTeXColumnCounter=\count410
+\markdownLaTeXColumnTotal=\count411
+\markdownLaTeXTable=\toks61
+\markdownLaTeXTableAlignment=\toks62
+\markdownLaTeXTableEnd=\toks63
 )
 runsystem(which pygmentize && touch thesis.aex)...executed.
 
@@ -1279,42 +1302,45 @@ LaTeX Warning: Label `tab:badania_na_zbiorze_snoopysecurity' multiply defined.
 
 LaTeX Warning: Label `tab:badania_na_zbiorze_snoopysecurity' multiply defined.
 
+
+LaTeX Warning: Label `lst:code4' multiply defined.
+
 )
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 83.
+LaTeX Font Info:    ... okay on input line 83.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count409
-\scratchdimen=\dimen330
-\scratchbox=\box152
-\nofMPsegments=\count410
-\nofMParguments=\count411
-\everyMPshowfont=\toks62
-\MPscratchCnt=\count412
-\MPscratchDim=\dimen331
-\MPnumerator=\count413
-\makeMPintoPDFobject=\count414
-\everyMPtoPDFconversion=\toks63
+\scratchcounter=\count412
+\scratchdimen=\dimen335
+\scratchbox=\box154
+\nofMPsegments=\count413
+\nofMParguments=\count414
+\everyMPshowfont=\toks64
+\MPscratchCnt=\count415
+\MPscratchDim=\dimen336
+\MPnumerator=\count416
+\makeMPintoPDFobject=\count417
+\everyMPtoPDFconversion=\toks65
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1358,25 +1384,25 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 82.
-Package microtype Info: Applying patch `item' on input line 82.
-Package microtype Info: Applying patch `toc' on input line 82.
-Package microtype Info: Applying patch `eqnum' on input line 82.
-Package microtype Info: Applying patch `footnote' on input line 82.
+LaTeX Info: Redefining \microtypecontext on input line 83.
+Package microtype Info: Applying patch `item' on input line 83.
+Package microtype Info: Applying patch `toc' on input line 83.
+Package microtype Info: Applying patch `eqnum' on input line 83.
+Package microtype Info: Applying patch `footnote' on input line 83.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 82.
+LaTeX Info: Redefining \showhyphens on input line 83.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-Package hyperref Info: Link coloring OFF on input line 82.
+Package hyperref Info: Link coloring OFF on input line 83.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1387,11 +1413,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count415
+\c@section@level=\count418
 )
-LaTeX Info: Redefining \ref on input line 82.
-LaTeX Info: Redefining \pageref on input line 82.
-LaTeX Info: Redefining \nameref on input line 82.
+LaTeX Info: Redefining \ref on input line 83.
+LaTeX Info: Redefining \pageref on input line 83.
+LaTeX Info: Redefining \nameref on input line 83.
 
 (./thesis.out) (./thesis.out)
 \@outlinefile=\write8
@@ -1399,8 +1425,8 @@ LaTeX Info: Redefining \nameref on input line 82.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: changepage package is loaded.
-\caption@adjustwidth@hsize=\dimen332
-\caption@adjustwidth@linewidth=\dimen333
+\caption@adjustwidth@hsize=\dimen337
+\caption@adjustwidth@linewidth=\dimen338
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
 
@@ -1408,8 +1434,8 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count416
-Package hyperref Info: Option `pageanchor' set `false' on input line 84.
+\c@lstlisting=\count419
+Package hyperref Info: Option `pageanchor' set `false' on input line 85.
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1447,7 +1473,7 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 84.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 84.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 85.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1456,7 +1482,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 84.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 85.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -2959,11 +2985,6 @@ I'm forgetting what you said and using zero instead.
 
 (./_minted-thesis/7148812419C220FB479111824A8CCE3D29B6FA87C4F30D5FAED46F5FA3B47
 A41.pygtex)
-Overfull \hbox (21.78429pt too wide) in paragraph at lines 155--156
-[]\T1/qtm/m/n/12 (-20) Do po-praw-ne-go dzia-ªa-nia wspie-ra-ne-go Co-de-QL na-
-le-»y za-in-sta-lo-wa¢ na-rz¦-dzie CodeQL-CLI,
- []
-
 \openout4 = `thesis.pyg'.
 
 
@@ -6507,6 +6528,11 @@ A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
+\openout4 = `thesis.pyg'.
+
+
+(./_minted-thesis/DEE3F4D57B8AC063BDBE4D699563EA3029B6FA87C4F30D5FAED46F5FA3B47
+A41.pygtex
 
 ! LaTeX Error: Unicode character ï¿½ (U+FFFD)
                not set up for use with LaTeX.
@@ -6515,8 +6541,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.551 	ï¿½PNG
-             
+l.6 \PYG{+w}{	}ï¿½PNG
+                     
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
@@ -6528,22 +6554,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.552 ï¿½
-         
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-[47]
-
-! LaTeX Error: Unicode character ï¿½ (U+FFFD)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.563 	ï¿½PNG
-             
+l.6 \PYG{+w}{	}ï¿½PNG
+                     
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
@@ -6555,40 +6567,101 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.564 ï¿½
-         
+l.7 ï¿½
+       
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
+
+! LaTeX Error: Unicode character ï¿½ (U+FFFD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 ï¿½
+       
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+)
+Underfull \vbox (badness 5147) has occurred while \output is active []
+
+ [47]
+\openout4 = `thesis.pyg'.
+
+
+(./_minted-thesis/8C864916257656D5CDBACB00705A4AD329B6FA87C4F30D5FAED46F5FA3B47
+A41.pygtex
+
+! LaTeX Error: Unicode character ï¿½ (U+FFFD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \PYG{+w}{	}ï¿½PNG
+                     
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ï¿½ (U+FFFD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \PYG{+w}{	}ï¿½PNG
+                     
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ï¿½ (U+FFFD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 ï¿½
+       
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ï¿½ (U+FFFD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 ï¿½
+       
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+)
 \openout4 = `thesis.pyg'.
 
 
 (./_minted-thesis/3303584F70C5227C914463E4BFFC7053EFB4A75DE218E69C7A5E5F3690949
 729.pygtex)
-Overfull \hbox (202.90488pt too wide) in paragraph at lines 589--589
-[]\T1/cmtt/m/n/12 damnvuln.c:44:17: warning: implicit declaration of function `
-memcpy' [-Wimplicit-function-declaration][] 
- []
+\openout4 = `thesis.pyg'.
 
 
-Overfull \hbox (58.44516pt too wide) in paragraph at lines 592--592
-[]\T1/cmtt/m/n/12 damnvuln.c:6:1: note: include `<string.h>' or provide a decla
-ration of `memcpy'[] 
- []
+(./_minted-thesis/67D1922A9AE767404F41D274F21E3AC829B6FA87C4F30D5FAED46F5FA3B47
+A41.pygtex) [48]
+\openout4 = `thesis.pyg'.
 
 
-Overfull \hbox (332.54822pt too wide) in paragraph at lines 596--596
-[]\T1/cmtt/m/n/12 damnvuln.c:44:17: warning: incompatible implicit declaration 
-of built-in function `memcpy' [-Wbuiltin-declaration-mismatch][] 
- []
-
-
-Overfull \hbox (70.79214pt too wide) in paragraph at lines 599--599
-[]\T1/cmtt/m/n/12 damnvuln.c:44:17: note: include `<string.h>' or provide a dec
-laration of `memcpy'[] 
- []
-
-[48]
+(./_minted-thesis/0C76C489CA9741C649042BEBF2476AFF29B6FA87C4F30D5FAED46F5FA3B47
+A41.pygtex
 
 ! LaTeX Error: Unicode character ï¿½ (U+FFFD)
                not set up for use with LaTeX.
@@ -6597,8 +6670,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.610 	ï¿½PNG
-             
+l.6 \PYG{+w}{	}ï¿½PNG
+                     
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
@@ -6610,271 +6683,274 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.611 ï¿½
-         
+l.6 \PYG{+w}{	}ï¿½PNG
+                     
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
+
+! LaTeX Error: Unicode character ï¿½ (U+FFFD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 ï¿½
+       
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Unicode character ï¿½ (U+FFFD)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 ï¿½
+       
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+)
 \openout4 = `thesis.pyg'.
 
 
 (./_minted-thesis/378A404212E7515065B3449F8838BA8FEFB4A75DE218E69C7A5E5F3690949
 729.pygtex) [49]
-Overfull \hbox (0.16031pt too wide) in paragraph at lines 641--642
+Overfull \hbox (0.16031pt too wide) in paragraph at lines 658--659
 \T1/qtm/m/n/12 (-20) zast¡piony komunikatem o bª¦dzie Integer Underflow, obserw
 ujemy, »e narz¦dzie \T1/cmtt/m/n/12 gptester
  []
 
 
-Overfull \hbox (14.78581pt too wide) in paragraph at lines 655--664
+Underfull \vbox (badness 3291) has occurred while \output is active []
+
+ [50]
+Overfull \hbox (14.78581pt too wide) in paragraph at lines 672--681
 [][]
  []
 
-[50]
+[51]
 Rozdzia\PlPrIeC {\l } 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 843--845
+Underfull \hbox (badness 10000) in paragraph at lines 860--862
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 848--850
+Underfull \hbox (badness 10000) in paragraph at lines 865--867
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 853--855
+Underfull \hbox (badness 10000) in paragraph at lines 870--872
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 858--859
+Underfull \hbox (badness 10000) in paragraph at lines 875--876
 
  []
 
-[51
+[52
 
 ]
-<img/func-test-goat-before.png, id=919, 2571.6075pt x 1506.62875pt>
+<img/func-test-goat-before.png, id=927, 2571.6075pt x 1506.62875pt>
 File: img/func-test-goat-before.png Graphic file (type png)
 <use img/func-test-goat-before.png>
-Package pdftex.def Info: img/func-test-goat-before.png  used on input line 872.
+Package pdftex.def Info: img/func-test-goat-before.png  used on input line 889.
 
 (pdftex.def)             Requested size: 426.79135pt x 250.03134pt.
- [52 <./img/func-test-goat-before.png>]
-Overfull \hbox (6.7807pt too wide) in paragraph at lines 887--903
+ [53 <./img/func-test-goat-before.png>]
+Overfull \hbox (6.7807pt too wide) in paragraph at lines 904--920
 [][]
  []
 
+\openout4 = `thesis.pyg'.
 
-Underfull \hbox (badness 10000) in paragraph at lines 954--957
+
+(./_minted-thesis/F6974F2C6A9559E0D5D2EC79C759B7C729B6FA87C4F30D5FAED46F5FA3B47
+A41.pygtex)
+Underfull \hbox (badness 10000) in paragraph at lines 971--1002
+
+ []
+
+[54]
+\openout4 = `thesis.pyg'.
+
+
+(./_minted-thesis/4B9834C0C7F1FFF5449A38123461321529B6FA87C4F30D5FAED46F5FA3B47
+A41.pygtex)
+Underfull \hbox (badness 10000) in paragraph at lines 1003--1016
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 954--957
+Underfull \hbox (badness 10000) in paragraph at lines 1003--1016
 
  []
 
-[53]
-Overfull \hbox (30.83574pt too wide) in paragraph at lines 973--973
- []\T1/cmtt/b/n/8 [2024-01-25 19:33:38] [build-stdout] Done extracting .../code
-ql/javascript/tools/data/externs/nodejs/vm.js (8 ms)[] 
- []
+\openout4 = `thesis.pyg'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 981--984
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 981--984
-
- []
-
-
-Overfull \hbox (31.47308pt too wide) in paragraph at lines 986--986
- []\T1/cmtt/b/n/8 > codeql database analyze GoatQL-db javascript-code-scanning.
-qls --format=csv --output=default-goat-QLresults.csv 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 992--995
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 992--995
-
- []
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1020 \vspace
-              *{1cm}
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-\enit@endenumerate ->\enit@after 
-                                 \endlist \ifx \enit@series \relax \else \if...
-l.1022     \end{enumerate}
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (21.22664pt too wide) in paragraph at lines 1021--1022
-\T1/qtm/m/n/12 (-20) Na apli-ka-cji zo-staª rów-nie» uru-cho-mio-ny pa-kiet kwe
--rend javascript-extended-security.qls 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1021--1022
-
- []
-
-! Undefined control sequence.
-\enit@endenumerate ...\else \ifnum \enit@resuming 
-                                                  =\@ne \enit@setresumekeys ...
-l.1022     \end{enumerate}
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   =
-l.1022     \end{enumerate}
-                          
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Undefined control sequence.
-\enit@setresumekeys ...xpandafter {\enit@savekeys 
-                                                  }\xdef \enit@afterlist {#2...
-l.1022     \end{enumerate}
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\enit@setresumekeys ...it@toks }\ifnum \enit@type 
-                                                  =\z@ #3\def \enit@noexcs {...
-l.1022     \end{enumerate}
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   =
-l.1022     \end{enumerate}
-                          
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Undefined control sequence.
-<argument> enit@resume@series@\enit@series 
-                                           
-l.1022     \end{enumerate}
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\enit@endenumerate ...t \fi \ifnum \enit@resuming 
-                                                  =\thr@@ \enit@setresumekey...
-l.1022     \end{enumerate}
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   =
-l.1022     \end{enumerate}
-                          
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Undefined control sequence.
-\enit@setresumekeys ...xpandafter {\enit@savekeys 
-                                                  }\xdef \enit@afterlist {#2...
-l.1022     \end{enumerate}
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\enit@setresumekeys ...it@toks }\ifnum \enit@type 
-                                                  =\z@ #3\def \enit@noexcs {...
-l.1022     \end{enumerate}
-                          
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   =
-l.1022     \end{enumerate}
-                          
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Undefined control sequence.
-\enit@endenumerate ->\enit@after 
-                                 \endlist \ifx \enit@series \relax \else \if...
-l.1026 \end{enumerate}
-                      
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
+(./_minted-thesis/A19ECBFF9D0DFE9D85499D0BD1F0264A29B6FA87C4F30D5FAED46F5FA3B47
+A41.pygtex)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [54]
+ [55]
+! Undefined control sequence.
+\enit@endenumerate ->\enit@after 
+                                 \endlist \ifx \enit@series \relax \else \if...
+l.1046     \end{enumerate}
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Overfull \hbox (21.22664pt too wide) in paragraph at lines 1045--1046
+[]\T1/qtm/m/n/12 (-20) Na apli-ka-cji zo-staª rów-nie» uru-cho-mio-ny pa-kiet k
+we-rend javascript-extended-security.qls 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1045--1046
+
+ []
+
 ! Undefined control sequence.
 \enit@endenumerate ...\else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.1026 \end{enumerate}
+l.1046     \end{enumerate}
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   =
+l.1046     \end{enumerate}
+                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.1046     \end{enumerate}
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.1046     \end{enumerate}
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   =
+l.1046     \end{enumerate}
+                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+<argument> enit@resume@series@\enit@series 
+                                           
+l.1046     \end{enumerate}
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\enit@endenumerate ...t \fi \ifnum \enit@resuming 
+                                                  =\thr@@ \enit@setresumekey...
+l.1046     \end{enumerate}
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   =
+l.1046     \end{enumerate}
+                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.1046     \end{enumerate}
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.1046     \end{enumerate}
+                          
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   =
+l.1046     \end{enumerate}
+                          
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\enit@endenumerate ->\enit@after 
+                                 \endlist \ifx \enit@series \relax \else \if...
+l.1050 \end{enumerate}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\enit@endenumerate ...\else \ifnum \enit@resuming 
+                                                  =\@ne \enit@setresumekeys ...
+l.1050 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6885,7 +6961,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1026 \end{enumerate}
+l.1050 \end{enumerate}
                       
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -6894,7 +6970,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.1026 \end{enumerate}
+l.1050 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6905,7 +6981,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.1026 \end{enumerate}
+l.1050 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6916,7 +6992,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1026 \end{enumerate}
+l.1050 \end{enumerate}
                       
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -6925,7 +7001,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.1026 \end{enumerate}
+l.1050 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6936,7 +7012,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@endenumerate ...t \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.1026 \end{enumerate}
+l.1050 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6947,7 +7023,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1026 \end{enumerate}
+l.1050 \end{enumerate}
                       
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -6956,7 +7032,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.1026 \end{enumerate}
+l.1050 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6967,7 +7043,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.1026 \end{enumerate}
+l.1050 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -6978,73 +7054,48 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1026 \end{enumerate}
+l.1050 \end{enumerate}
                       
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1077--1079
+[56]
+Underfull \hbox (badness 10000) in paragraph at lines 1101--1103
 
  []
 
-[55]
-Overfull \hbox (58.02126pt too wide) in paragraph at lines 1085--1086
-[]\T1/qtm/b/n/12 (-20) Insecure Di-rect Ob-ject Re-fe-ren-ces (IDOR)\T1/qtm/m/n
-/12 (-20) : The \T1/cmtt/m/n/12 allocations.js \T1/qtm/m/n/12 (-20) fi-le uses 
-\T1/cmtt/m/n/12 req.params.userId
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1088--1089
+[57]
+Underfull \hbox (badness 10000) in paragraph at lines 1112--1113
 
  []
 
 
-Overfull \hbox (3.14195pt too wide) in paragraph at lines 1092--1093
-[]\T1/qtm/m/n/12 (-20) NoSQL In-jec-tion - The me-thod \T1/cmtt/m/n/12 getByUse
-rIdAndThreshold \T1/qtm/m/n/12 (-20) in \T1/cmtt/m/n/12 allocations-dao.js
- []
-
-
-Underfull \vbox (badness 3260) has occurred while \output is active []
-
- [56]
-Overfull \hbox (9.35648pt too wide) in paragraph at lines 1093--1094
+Overfull \hbox (9.35648pt too wide) in paragraph at lines 1117--1118
 []\T1/qtm/m/n/12 (-20) Insufficient Pas-sword Strength Va-li-da-tion - The \T1/
 cmtt/m/n/12 validateSignup \T1/qtm/m/n/12 (-20) me-thod in \T1/cmtt/m/n/12 sess
 ion.js
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1094--1095
+Underfull \hbox (badness 10000) in paragraph at lines 1118--1119
 
  []
 
 
-Overfull \hbox (97.34044pt too wide) in paragraph at lines 1095--1096
-[]\T1/qtm/m/n/12 (-20) Insecure Da-ta-ba-se Con-nec-tion (\T1/cmtt/m/n/12 ../te
-sting-envs/NodeGoat/server.js\T1/qtm/m/n/12 (-20) ) - The \T1/cmtt/m/n/12 Mongo
-Client.connect
- []
-
-
-Overfull \hbox (3.82892pt too wide) in paragraph at lines 1096--1097
+Overfull \hbox (3.82892pt too wide) in paragraph at lines 1120--1121
 \T1/qtm/m/n/12 (-20) tem-pla-te en-gi-ne Swig is used wi-tho-ut au-to-esca-ping
  ena-bled, this co-uld le-ad to Server-Side
  []
 
 
-Overfull \hbox (12.62451pt too wide) in paragraph at lines 1101--1102
-[]\T1/qtm/m/n/12 (-20) Insecure Sta-tic Fi-le Per-mis-sions (\T1/cmtt/m/n/12 ..
-/testing-envs/NodeGoat/docker-compose.yml\T1/qtm/m/n/12 (-20) )
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [58]
 ! Undefined control sequence.
 \enit@endenumerate ->\enit@after 
                                  \endlist \ifx \enit@series \relax \else \if...
-l.1103 \end{enumerate}
+l.1127 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7055,7 +7106,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@endenumerate ...\else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.1103 \end{enumerate}
+l.1127 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7066,7 +7117,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1103 \end{enumerate}
+l.1127 \end{enumerate}
                       
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -7075,7 +7126,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.1103 \end{enumerate}
+l.1127 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7086,7 +7137,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.1103 \end{enumerate}
+l.1127 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7097,7 +7148,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1103 \end{enumerate}
+l.1127 \end{enumerate}
                       
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -7106,7 +7157,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.1103 \end{enumerate}
+l.1127 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7117,7 +7168,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@endenumerate ...t \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.1103 \end{enumerate}
+l.1127 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7128,7 +7179,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1103 \end{enumerate}
+l.1127 \end{enumerate}
                       
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -7137,7 +7188,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.1103 \end{enumerate}
+l.1127 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7148,7 +7199,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.1103 \end{enumerate}
+l.1127 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7159,113 +7210,118 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1103 \end{enumerate}
+l.1127 \end{enumerate}
                       
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-[57]
-<img/npm-start-error.png, id=960, 1892.06876pt x 729.72626pt>
+<img/npm-start-error.png, id=970, 1892.06876pt x 729.72626pt>
 File: img/npm-start-error.png Graphic file (type png)
 <use img/npm-start-error.png>
-Package pdftex.def Info: img/npm-start-error.png  used on input line 1113.
+Package pdftex.def Info: img/npm-start-error.png  used on input line 1137.
 (pdftex.def)             Requested size: 426.79135pt x 164.5933pt.
- [58 <./img/npm-start-error.png>]
-File: img/npm-start-error.png Graphic file (type png)
-<use img/npm-start-error.png>
-Package pdftex.def Info: img/npm-start-error.png  used on input line 1127.
-(pdftex.def)             Requested size: 426.79135pt x 164.5933pt.
-<img/mongod-cert.png, id=967, 1892.06876pt x 1667.22874pt>
-File: img/mongod-cert.png Graphic file (type png)
-<use img/mongod-cert.png>
-Package pdftex.def Info: img/mongod-cert.png  used on input line 1136.
-(pdftex.def)             Requested size: 426.79135pt x 376.05156pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [59]
-<img/npm-start-success.png, id=973, 2733.21124pt x 930.47626pt>
+File: img/npm-start-error.png Graphic file (type png)
+<use img/npm-start-error.png>
+Package pdftex.def Info: img/npm-start-error.png  used on input line 1151.
+(pdftex.def)             Requested size: 426.79135pt x 164.5933pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [60 <./img/npm-start-error.png>]
+<img/mongod-cert.png, id=981, 1892.06876pt x 1667.22874pt>
+File: img/mongod-cert.png Graphic file (type png)
+<use img/mongod-cert.png>
+Package pdftex.def Info: img/mongod-cert.png  used on input line 1160.
+(pdftex.def)             Requested size: 426.79135pt x 376.05156pt.
+<img/npm-start-success.png, id=982, 2733.21124pt x 930.47626pt>
 File: img/npm-start-success.png Graphic file (type png)
 <use img/npm-start-success.png>
-Package pdftex.def Info: img/npm-start-success.png  used on input line 1145.
+Package pdftex.def Info: img/npm-start-success.png  used on input line 1169.
 (pdftex.def)             Requested size: 426.79135pt x 145.28717pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1163) has occurred while \output is active []
 
- [60 <./img/mongod-cert.png> <./img/npm-start-success.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [61]
-Overfull \hbox (6.7807pt too wide) in paragraph at lines 1209--1225
+ [61 <./img/mongod-cert.png>] [62 <./img/npm-start-success.png>]
+Overfull \hbox (6.7807pt too wide) in paragraph at lines 1233--1249
 [][]
  []
 
 
-Overfull \hbox (11.91585pt too wide) in paragraph at lines 1235--1254
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [63]
+Overfull \hbox (11.91585pt too wide) in paragraph at lines 1259--1278
 [][] 
  []
 
-[62]
-Underfull \hbox (badness 2970) in paragraph at lines 1276--1276
+
+Underfull \hbox (badness 2970) in paragraph at lines 1300--1300
 []|\T1/qtm/m/n/12 (+20) Exposes sen-si-ti-ve da-ta li-ke pas-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1276--1276
+Underfull \hbox (badness 10000) in paragraph at lines 1300--1300
 []|\T1/qtm/m/n/12 (+20) Database qu-ery
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1276--1276
+Underfull \hbox (badness 10000) in paragraph at lines 1300--1300
 []|\T1/qtm/m/n/12 (+20) Missing CSRF
  []
 
 
-Underfull \hbox (badness 1418) in paragraph at lines 1276--1276
+Underfull \hbox (badness 1418) in paragraph at lines 1300--1300
 []|\T1/qtm/m/n/12 (+20) Server-side re-qu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1276--1276
+Underfull \hbox (badness 10000) in paragraph at lines 1300--1300
 []|\T1/qtm/m/n/12 (+20) DOM text as
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1276--1276
+Underfull \hbox (badness 10000) in paragraph at lines 1300--1300
 []|\T1/qtm/m/n/12 (+20) Unsafe jQu-ery
  []
-
-[63]
-Underfull \hbox (badness 10000) in paragraph at lines 1283--1284
-
- []
-
-[64]
-Overfull \hbox (51.01671pt too wide) in paragraph at lines 1301--1302
-[]\T1/qtm/b/n/12 (-20) NoSQL In-jec-tion in Al-lo-ca-tions (allocations-dao.js)
-\T1/qtm/m/n/12 (-20) : The me-thod \T1/cmtt/b/n/12 getByUserIdAndThreshold
- []
-
-! Undefined control sequence.
-\enit@endenumerate ->\enit@after 
-                                 \endlist \ifx \enit@series \relax \else \if...
-l.1312 \end{enumerate}
-                      
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [65]
+ [64]
+Underfull \hbox (badness 10000) in paragraph at lines 1307--1308
+
+ []
+
+[65]
+Overfull \hbox (51.01671pt too wide) in paragraph at lines 1325--1326
+[]\T1/qtm/b/n/12 (-20) NoSQL In-jec-tion in Al-lo-ca-tions (allocations-dao.js)
+\T1/qtm/m/n/12 (-20) : The me-thod \T1/cmtt/b/n/12 getByUserIdAndThreshold
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [66]
+! Undefined control sequence.
+\enit@endenumerate ->\enit@after 
+                                 \endlist \ifx \enit@series \relax \else \if...
+l.1336 \end{enumerate}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 ! Undefined control sequence.
 \enit@endenumerate ...\else \ifnum \enit@resuming 
                                                   =\@ne \enit@setresumekeys ...
-l.1312 \end{enumerate}
+l.1336 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7276,7 +7332,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1312 \end{enumerate}
+l.1336 \end{enumerate}
                       
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -7285,7 +7341,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.1312 \end{enumerate}
+l.1336 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7296,7 +7352,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.1312 \end{enumerate}
+l.1336 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7307,7 +7363,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1312 \end{enumerate}
+l.1336 \end{enumerate}
                       
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -7316,7 +7372,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 <argument> enit@resume@series@\enit@series 
                                            
-l.1312 \end{enumerate}
+l.1336 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7327,7 +7383,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@endenumerate ...t \fi \ifnum \enit@resuming 
                                                   =\thr@@ \enit@setresumekey...
-l.1312 \end{enumerate}
+l.1336 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7338,7 +7394,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1312 \end{enumerate}
+l.1336 \end{enumerate}
                       
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -7347,7 +7403,7 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@setresumekeys ...xpandafter {\enit@savekeys 
                                                   }\xdef \enit@afterlist {#2...
-l.1312 \end{enumerate}
+l.1336 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7358,7 +7414,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \enit@setresumekeys ...it@toks }\ifnum \enit@type 
                                                   =\z@ #3\def \enit@noexcs {...
-l.1312 \end{enumerate}
+l.1336 \end{enumerate}
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -7369,8 +7425,258 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    =
-l.1312 \end{enumerate}
+l.1336 \end{enumerate}
                       
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+[67]
+! Undefined control sequence.
+\enit@endenumerate ->\enit@after 
+                                 \endlist \ifx \enit@series \relax \else \if...
+l.1357 \end{enumerate}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\enit@endenumerate ...\else \ifnum \enit@resuming 
+                                                  =\@ne \enit@setresumekeys ...
+l.1357 \end{enumerate}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   =
+l.1357 \end{enumerate}
+                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.1357 \end{enumerate}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.1357 \end{enumerate}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   =
+l.1357 \end{enumerate}
+                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+<argument> enit@resume@series@\enit@series 
+                                           
+l.1357 \end{enumerate}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\enit@endenumerate ...t \fi \ifnum \enit@resuming 
+                                                  =\thr@@ \enit@setresumekey...
+l.1357 \end{enumerate}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   =
+l.1357 \end{enumerate}
+                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.1357 \end{enumerate}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.1357 \end{enumerate}
+                      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   =
+l.1357 \end{enumerate}
+                      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+) (./summary.tex [68]
+! Undefined control sequence.
+\enit@endenumerate ->\enit@after 
+                                 \endlist \ifx \enit@series \relax \else \if...
+l.15 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\enit@endenumerate ...\else \ifnum \enit@resuming 
+                                                  =\@ne \enit@setresumekeys ...
+l.15 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   =
+l.15 \end{enumerate}
+                    
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.15 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.15 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   =
+l.15 \end{enumerate}
+                    
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+<argument> enit@resume@series@\enit@series 
+                                           
+l.15 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\enit@endenumerate ...t \fi \ifnum \enit@resuming 
+                                                  =\thr@@ \enit@setresumekey...
+l.15 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   =
+l.15 \end{enumerate}
+                    
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.15 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.15 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   =
+l.15 \end{enumerate}
+                    
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
@@ -7378,255 +7684,6 @@ look up `weird error' in the index to The TeXbook.)
 ! Undefined control sequence.
 \enit@endenumerate ->\enit@after 
                                  \endlist \ifx \enit@series \relax \else \if...
-l.1333 \end{enumerate}
-                      
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\enit@endenumerate ...\else \ifnum \enit@resuming 
-                                                  =\@ne \enit@setresumekeys ...
-l.1333 \end{enumerate}
-                      
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   =
-l.1333 \end{enumerate}
-                      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Undefined control sequence.
-\enit@setresumekeys ...xpandafter {\enit@savekeys 
-                                                  }\xdef \enit@afterlist {#2...
-l.1333 \end{enumerate}
-                      
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\enit@setresumekeys ...it@toks }\ifnum \enit@type 
-                                                  =\z@ #3\def \enit@noexcs {...
-l.1333 \end{enumerate}
-                      
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   =
-l.1333 \end{enumerate}
-                      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Undefined control sequence.
-<argument> enit@resume@series@\enit@series 
-                                           
-l.1333 \end{enumerate}
-                      
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\enit@endenumerate ...t \fi \ifnum \enit@resuming 
-                                                  =\thr@@ \enit@setresumekey...
-l.1333 \end{enumerate}
-                      
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   =
-l.1333 \end{enumerate}
-                      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Undefined control sequence.
-\enit@setresumekeys ...xpandafter {\enit@savekeys 
-                                                  }\xdef \enit@afterlist {#2...
-l.1333 \end{enumerate}
-                      
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\enit@setresumekeys ...it@toks }\ifnum \enit@type 
-                                                  =\z@ #3\def \enit@noexcs {...
-l.1333 \end{enumerate}
-                      
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   =
-l.1333 \end{enumerate}
-                      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-) (./summary.tex [66]
-! Undefined control sequence.
-\enit@endenumerate ->\enit@after 
-                                 \endlist \ifx \enit@series \relax \else \if...
-l.15 \end{enumerate}
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\enit@endenumerate ...\else \ifnum \enit@resuming 
-                                                  =\@ne \enit@setresumekeys ...
-l.15 \end{enumerate}
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   =
-l.15 \end{enumerate}
-                    
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Undefined control sequence.
-\enit@setresumekeys ...xpandafter {\enit@savekeys 
-                                                  }\xdef \enit@afterlist {#2...
-l.15 \end{enumerate}
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\enit@setresumekeys ...it@toks }\ifnum \enit@type 
-                                                  =\z@ #3\def \enit@noexcs {...
-l.15 \end{enumerate}
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   =
-l.15 \end{enumerate}
-                    
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Undefined control sequence.
-<argument> enit@resume@series@\enit@series 
-                                           
-l.15 \end{enumerate}
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\enit@endenumerate ...t \fi \ifnum \enit@resuming 
-                                                  =\thr@@ \enit@setresumekey...
-l.15 \end{enumerate}
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   =
-l.15 \end{enumerate}
-                    
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Undefined control sequence.
-\enit@setresumekeys ...xpandafter {\enit@savekeys 
-                                                  }\xdef \enit@afterlist {#2...
-l.15 \end{enumerate}
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\enit@setresumekeys ...it@toks }\ifnum \enit@type 
-                                                  =\z@ #3\def \enit@noexcs {...
-l.15 \end{enumerate}
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   =
-l.15 \end{enumerate}
-                    
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Undefined control sequence.
-\enit@endenumerate ->\enit@after 
-                                 \endlist \ifx \enit@series \relax \else \if...
 l.21 \end{enumerate}
                     
 The control sequence at the end of the top line
@@ -7748,7 +7805,7 @@ A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-[67
+[69
 
 ]
 ! Undefined control sequence.
@@ -7875,27 +7932,24 @@ A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
-) (./thesis.bbl [68]) (./thesis.lof [69
+) (./thesis.bbl [70]) (./thesis.lof [71
 
 ])
 \tf@lof=\write10
 \openout10 = `thesis.lof'.
 
- [70] (./thesis.lop)
+ [72] (./thesis.lop)
 \tf@lop=\write11
 \openout11 = `thesis.lop'.
 
- (./thesis.lot)
+ (./thesis.lot
+[73
+
+])
 \tf@lot=\write12
 \openout12 = `thesis.lot'.
 
-
-Underfull \vbox (badness 2635) has occurred while \output is active []
-
- [71
-
-]
-[72] [73
+ [74] [75
 
 ] (./appendix1.tex
 Dodatek A.
@@ -8061,10 +8115,10 @@ or  <return>  to continue without it.
 
 Underfull \vbox (badness 1320) has occurred while \output is active []
 
- [74
+ [76
 
 ]
-[75] [76]
+[77] [78]
 Overfull \hbox (29.21849pt too wide) in paragraph at lines 198--198
  []\T1/cmtt/b/n/8 +                // The searchCriteria function should return
  the properly constructed query object[] 
@@ -8200,7 +8254,7 @@ Overfull \hbox (67.61688pt too wide) in paragraph at lines 217--218
 ions []\T1/qtm/m/n/12 (-20) Fi-le: NodeGoat/app/data/allocations-dao.js 
  []
 
-[77]
+[79]
 
 ! LaTeX Error: There's no line here to end.
 
@@ -8227,13 +8281,13 @@ Overfull \hbox (34.00862pt too wide) in paragraph at lines 287--287
  "https://anothertrustedsource.com/resources"];[] 
  []
 
-[78] [79] [80]
+[80] [81] [82]
 Overfull \hbox (7.34471pt too wide) in paragraph at lines 471--471
 []\T1/cmtt/b/n/8 +       const safeSymbol = encodeURIComponent(req.query.symbol
 ); // URI encode the symbol to avoid[] 
  []
 
-[81]) [82] (./thesis.aux)
+[83]) [84] (./thesis.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -8246,10 +8300,10 @@ runsystem(rm thesis.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 39417 strings out of 478287
- 793277 string characters out of 5849288
- 1259078 words of memory out of 5000000
- 56125 multiletter control sequences out of 15000+600000
+ 40123 strings out of 478287
+ 808055 string characters out of 5849288
+ 1272030 words of memory out of 5000000
+ 56791 multiletter control sequences out of 15000+600000
  558339 words of font info for 251 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,16n,120p,1156b,1050s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -8265,10 +8319,10 @@ super/sfit0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfit1095.pfb><
 /usr/share/texmf/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sftt1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on thesis.pdf (87 pages, 2703521 bytes).
+Output written on thesis.pdf (89 pages, 2709633 bytes).
 PDF statistics:
- 1370 PDF objects out of 1440 (max. 8388607)
- 1189 compressed objects within 12 object streams
- 374 named destinations out of 1000 (max. 500000)
+ 1393 PDF objects out of 1440 (max. 8388607)
+ 1209 compressed objects within 13 object streams
+ 382 named destinations out of 1000 (max. 500000)
  57320 words of extra memory for PDF output out of 61914 (max. 10000000)
 
