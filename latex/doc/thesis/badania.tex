@@ -543,7 +543,8 @@ Jest to aplikacja lokalna dlatego przygotowanie środowiska testowego dla tego p
 \label{subsec:przeprowadzenie_testow_funkcjonalnych}
 Przeprowadzono test funkcjonalny, który polegał na wykonaniu programu z wykorzystaniem przykładowego pliku wejściowego. Program zwrócił błąd Segmentation Fault, co oznacza, że wystąpił błąd podczas wykonywania programu. W tym przypadku błąd ten został spowodowany przez błędy typu "Out of Bounds", które zostały wykryte przez program.
 
-\begin{verbatim}
+\begin{listing}[H]
+  \begin{minted}{bash}
     > ./damnvuln ~/Pictures/egzamin_praktyka.png 
 
 	Header	width	height	data	
@@ -552,10 +553,14 @@ Przeprowadzono test funkcjonalny, który polegał na wykonaniu programu z wykorz
 �
 	169478669	218103808	IHDR
 Segmentation fault (core dumped)
-\end{verbatim}
+\end{minted}
+\caption{Krytyczny błąd segmentacji}
+\label{lst:seg_fault}
+\end{listing}
 
 Natomiast naprawiony program zwrócił:
-\begin{verbatim}
+\begin{listing}[H]
+  \begin{minted}{bash}
   > ./damnvuln_fixed ~/Pictures/egzamin_praktyka.png 
 
 	Header	width	height	data	
@@ -564,7 +569,10 @@ Natomiast naprawiony program zwrócił:
 �
 	169478669	218103808	IHDR
 Integer underflow detected
-\end{verbatim}
+\end{minted}
+\caption{Wiadomość obsługi błędu}
+\label{lst:code4}
+\end{listing}
 
 Oznacza to że program wykrył błąd typu "Out of Bounds" i zwrócił informację o tym błędzie. Niestety sugerowana poprawa tego błędu wprowadziła jedynie kontrolę tych błędów.
 Część odpowiadająca za wyświetloną informację to:
@@ -583,7 +591,8 @@ Część odpowiadająca za wyświetloną informację to:
 
 Aby zbadać jak różnorodne są wyniki programu \texttt{gptester} dla tego samego kodu bez zmiany parametrów wykonywania przeprowadzono analizę ponownie. Otrzymano wtedy znacznie inny wynik, który nadal wykrył błędy, ale zaimplementował inne rozwiązanie podatności. 
 
-\begin{verbatim}
+\begin{listing}[H]
+  \begin{minted}{bash}
  > gcc -c damnvuln.c -o damnvuln-fixed2
 damnvuln.c: In function ‘ProcessImage’:
 damnvuln.c:44:17: warning: implicit declaration of function ‘memcpy’ [-Wimplicit-function-declaration]
@@ -598,11 +607,16 @@ damnvuln.c:44:17: warning: incompatible implicit declaration of built-in functio
       |                 ^~~~~~
 damnvuln.c:44:17: note: include ‘<string.h>’ or provide a declaration of ‘memcpy’
 
-\end{verbatim}
+\end{minted}
+\caption{Wiadomość o błędzie kompilatora gcc}
+\label{lst:gcc_error}
+\end{listing}
+
 
 Tym razem agent zwrócił kod, który się nie kompilował, ponieważ nie był dołączony plik nagłówkowy \texttt{string.h}. Po dopisaniu odpowiedniej biblioteki, program wykonał się poprawnie i zwrócił następujący wynik:
 
-\begin{verbatim}
+\begin{listing}[H]
+  \begin{minted}{bash}
   > ./damnvuln3 ~/Pictures/egzamin_praktyka.png 
 
 	Header	width	height	data	
@@ -611,7 +625,10 @@ Tym razem agent zwrócił kod, który się nie kompilował, ponieważ nie był d
 �
 	169478669	218103808	IHDR
 Integer underflow detected in size2 calculation.
-\end{verbatim}
+\end{minted}
+\caption{Wynik programu dla zmodyfikowanego kodu}
+\label{lst:int_underflow}
+\end{listing}
 
 \begin{listing}
   \begin{minted}{c}
@@ -952,10 +969,12 @@ Skanowanie aplikacji NodeGoat przy użyciu OWASP ZAP wykazało obecność 20 pod
     \begin{enumerate}
         \item Zainstalować CodeQL CLI.
         \item Zainicjalizować i zbudować bazę danych CodeQL. \\\\
-        \scriptsize
-        \begin{adjustwidth}
-        {-2cm}{}
-        \begin{verbatim}
+        % \scriptsize
+        % \begin{adjustwidth}
+        % {-2cm}{}
+        % \begin{verbatim}
+          \begin{listing}
+            \begin{minted}[fontsize=\scriptsize]{bash}
 > codeql database create GoatQL-db --language=javascript  
 Initializing database at /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/GoatQL-db.
 Running build command: []
@@ -973,27 +992,31 @@ Running build command: []
 [2024-01-25 19:33:38] [build-stdout] Done extracting .../codeql/javascript/tools/data/externs/nodejs/vm.js (8 ms)
 Finalizing database at /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/GoatQL-db.
 Successfully created database at /home/paris/projekty/INZYNIERKA/testing-envs/NodeGoat/GoatQL-db.
-        \end{verbatim}
-      \end{adjustwidth}
-        \normalsize
-        \item Uruchomić wybrane zapytania na bazie danych wyszukujące podatności.
+        \end{minted}
+        \caption{Inicjalizacja bazy danych CodeQL}
+        \label{listing:codeql-db-init}
+        \end{listing}
+      % \end{adjustwidth}
+      %   \normalsize
+      %   \item Uruchomić wybrane zapytania na bazie danych wyszukujące podatności.
         
         W tym celu uruchomiłem domyślne pakiety zapytań dostępne w CodeQL CLI. W celu uruchomienia zapytania należy wykonać następującą komendę: \\\\
-        \scriptsize
-        \begin{adjustwidth}
-        {-2cm}{}
-        \begin{verbatim}
+        % \scriptsize
+        % \begin{adjustwidth}
+        % {-2cm}{}
+        % \begin{verbatim}
+        \begin{listing}[H]
+          \begin{minted}[fontsize=\scriptsize]{bash}
 > codeql database analyze GoatQL-db javascript-code-scanning.qls --format=csv --output=default-goat-QLresults.csv
 Running queries.
 [1/88] Loaded .../codeql/javascript-queries/0.8.2/AngularJS/InsecureUrlWhitelist.qlx.
-        \end{verbatim}
-      \end{adjustwidth}
-      \normalsize
-        Komenda zakończyła się sukcesem, a w katalogu pojawił się plik z wynikami analizy. \\\\
-        \scriptsize
-        \begin{adjustwidth}
-        {-2cm}{}
-        \begin{verbatim}
+        \end{minted}
+        \caption{Uruchomienie zapytań CodeQL}
+        \label{listing:codeql-queries}
+        \end{listing}
+        Komenda zakończyła się sukcesem, a w katalogu pojawił się plik z wynikami analizy. 
+        \begin{listing}[H]
+          \begin{minted}[fontsize=\scriptsize]{bash}
 PrototypePollutingFunction.ql            : [83/88 eval 25ms] Results written to codeql/javascript-queri
 PrototypePollutingMergeCall.ql           : [84/88 eval 260ms] Results written to codeql/javascript-quer
 InsufficientPasswordHash.ql              : [85/88 eval 5ms] Results written to codeql/javascript-querie
@@ -1014,9 +1037,10 @@ Analysis produced the following metric data:
 +----------------------------------------------------------------------------+-------+
 | Total lines of user written JavaScript and TypeScript code in the database |  2926 |
 | Total lines of JavaScript and TypeScript code in the database              |  2932 |
-\end{verbatim}
-\end{adjustwidth}
-\normalsize\\
+          \end{minted}
+          \caption{Wyniki analizy zapytań CodeQL}
+          \label{listing:codeql-results}
+          \end{listing}
 \vspace*{1cm}
 Na aplikacji został również uruchomiony pakiet kwerend javascript-extended-security.qls \\
     \end{enumerate}
@@ -1082,23 +1106,23 @@ W sumie GPTester znalazł 21 podatności, bez określania ich ryzyka. Wśród ni
   \item[1.] \textbf{Hardcoded Sensitive Information}: The \texttt{db-reset.js} file contains hardcoded sensitive information such as usernames and passwords that should not be stored in plain text. This is a security risk as it can be exploited if the code is exposed.
   \item[2.] \textbf{Insecure Randomness}: The \texttt{db-reset.js} file generates random allocation percentages using \texttt{Math.random()}, which is not cryptographically secure and thus not suitable for security-sensitive contexts.
   \item[3.] \textbf{Unvalidated Redirects and Forwards}: The \texttt{index.js} file uses query parameter \texttt{url} to redirect the user without validation in the \texttt{/learn} route. This can lead to phishing attacks or redirection to malicious sites.
-  \item[4.] \textbf{Insecure Direct Object References (IDOR)}: The \texttt{allocations.js} file uses \texttt{req.params.userId} directly from the URL, which allows users to access other users' allocation data without proper authorization.
+  \item[4.] \textbf{Insecure Direct Object References (IDOR)}: The \texttt{allocations.js} file uses \\\texttt{req.params.userId} directly from the URL, which allows users to access other users' allocation data without proper authorization.
   \item[5.] \textbf{Server-Side JavaScript Injection (SSJI)}: The \texttt{contributions.js} file uses an insecure \texttt{eval()} function to parse user inputs, which could allow an attacker to run arbitrary code on the server.
   \item[6.] \textbf{Cross-Site Scripting (XSS)}: The \texttt{profile.js} file attempts to encode user-supplied input with \texttt{ESAPI.encoder().encodeForHTML(doc.website)} which could lead to XSS attacks if not properly encoded for the context in which it is rendered.
   \item[7.] \textbf{Regular Expression Denial of Service (ReDoS)}: The \texttt{profile.js} file uses a vulnerable regular expression that may cause the application to freeze with specially crafted input. \\
   \item[1.] Log Injection Vulnerability - In the \texttt{handleLoginRequest} method in \texttt{session.js}, user input (\texttt{userName}) is being logged without proper sanitization, which can be exploited by an attacker to forge logs or execute code.
   \item[2.] Insecure Password Storage - In \texttt{user-dao.js}, the \texttt{addUser} method stores passwords as plain text, which is insecure as it can be easily read if the database is compromised.
   \item[3.] Session Fixation - In \texttt{session.js}, the method \texttt{handleLoginRequest} doesn't regenerate the session ID after a successful login, making the application vulnerable to session fixation attacks.
-  \item[4.] NoSQL Injection - The method \texttt{getByUserIdAndThreshold} in \texttt{allocations-dao.js} constructs a query using string concatenation without properly sanitizing the \texttt{threshold} parameter, making it susceptible to NoSQL injection attacks.
+  \item[4.] NoSQL Injection - The method \\\texttt{getByUserIdAndThreshold} in \texttt{allocations-dao.js} constructs a query using string concatenation without properly sanitizing the \texttt{threshold} parameter, making it susceptible to NoSQL injection attacks.
   \item[5.] Insufficient Password Strength Validation - The \texttt{validateSignup} method in \texttt{session.js} uses a regular expression for password validation, but the commented out regex suggests that a stronger password policy was considered and not implemented.
   \item[6.] Sensitive Data Exposure - In \texttt{profile-dao.js}, sensitive information like \texttt{ssn} and \texttt{dob} are stored without encryption, which makes them vulnerable to exposure if there is a data breach. \\
-  \item[1.] Insecure Database Connection (\texttt{../testing-envs/NodeGoat/server.js}) - The \texttt{MongoClient.connect} call uses a connection string that might not be secure. The code for setting up the database connection does not include SSL/TLS configuration options which are important for secure transmission of data over the network.
+  \item[1.] Insecure Database Connection (\texttt{../testing-envs/NodeGoat/server.js}) - The \\\texttt{MongoClient.connect} call uses a connection string that might not be secure. The code for setting up the database connection does not include SSL/TLS configuration options which are important for secure transmission of data over the network.
   \item[2.] Server-Side Template Injection (\texttt{../testing-envs/NodeGoat/server.js}) - The template engine Swig is used without autoescaping enabled, this could lead to Server-Side Template Injection (SSTI) if the template rendering includes user input.
   \item[3.] HTTP Connection (\texttt{../testing-envs/NodeGoat/server.js}) - The server is started with an insecure HTTP connection instead of HTTPS, which exposes the transmitted data to potential interception and tampering.
   \item[4.] Insufficient Session Management (\texttt{../testing-envs/NodeGoat/server.js}) - The session is created with \texttt{saveUninitialized: true}, which can lead to the generation of session identifiers even when the session is not actually started for the user.
   \item[5.] Lack of Cookie Security (\texttt{../testing-envs/NodeGoat/server.js}) - No secure flags for cookies are set like \texttt{httpOnly} and \texttt{secure}. This can make the session cookies vulnerable to XSS attacks and interception over insecure connections.
   \item[6.] Lack of Security Headers (\texttt{../testing-envs/NodeGoat/server.js}) - Security headers such as Content Security Policy (CSP), X-Frame-Options, X-XSS-Protection, and others are commented out. This could lead to various attacks such as clickjacking, XSS, etc.
-  \item[7.] Insecure Static File Permissions (\texttt{../testing-envs/NodeGoat/docker-compose.yml}) - The Dockerfile setup for the NodeGoat container runs commands as the root user, which can be a security risk if the container is compromised.
+  \item[7.] Insecure Static File Permissions \\(\texttt{../testing-envs/NodeGoat/docker-compose.yml}) - The Dockerfile setup for the NodeGoat container runs commands as the root user, which can be a security risk if the container is compromised.
   \item[8.] Incomplete Logging Configuration (\texttt{../testing-envs/NodeGoat/Gruntfile.js}) - The Grunt configuration does not include tasks for security logging or monitoring, which can leave the application without proper tracking of security-related events.
 \end{enumerate}
 Wyniki zostały przedstawione w częściach, tak jak były przetwarzane, bez modyfikacji ani tłumaczenia. Dla klarowności przedstawionych wyników została dodana funkcjonalność zapisu do pliku csv.

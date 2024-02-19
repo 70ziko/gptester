@@ -83,34 +83,7 @@ linenos              % line numbering
 \begin{document}
 \maketitle
 
-% \includepdf[pages={2-},nup=2x1,landscape,frame]{thesis.pdf}
-
-\input{abstract}
-
-\tableofcontents
-
-\input{introduction}
-
-\input{chapter1}
-
-\input{chapter2}
-\input{chapter3}
-\input{badania}
-
-\input{summary}
-
-% Bibliography
-\bibliographystyle{dyplom}
-\bibliography{bibliography}
-
-% Lists of figures, listings, tables
-\listoffigures
-\listoflistings
-\listoftables
-
-% Appendices - comment out if not applicable
-\appendixpage
-\appendix
-\input{appendix1}
+% Include thesis.pdf with 2 pages per sheet laid out horizontally
+\includepdf[pages={3,4,6-},nup=1x2,landscape]{thesis.pdf}
 
 \end{document}

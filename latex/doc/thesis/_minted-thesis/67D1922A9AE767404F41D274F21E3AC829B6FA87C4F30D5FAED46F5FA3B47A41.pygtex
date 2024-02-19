@@ -1,0 +1,16 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{ }\PYGZgt{}\PYG{+w}{ }gcc\PYG{+w}{ }\PYGZhy{}c\PYG{+w}{ }damnvuln.c\PYG{+w}{ }\PYGZhy{}o\PYG{+w}{ }damnvuln\PYGZhy{}fixed2
+damnvuln.c:\PYG{+w}{ }In\PYG{+w}{ }\PYG{k}{function}\PYG{+w}{ }‘ProcessImage’:
+damnvuln.c:44:17:\PYG{+w}{ }warning:\PYG{+w}{ }implicit\PYG{+w}{ }declaration\PYG{+w}{ }of\PYG{+w}{ }\PYG{k}{function}\PYG{+w}{ }‘memcpy’\PYG{+w}{ }\PYG{o}{[}\PYGZhy{}Wimplicit\PYGZhy{}function\PYGZhy{}declaration\PYG{o}{]}
+\PYG{+w}{   }\PYG{l+m}{44}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{                 }memcpy\PYG{o}{(}buff1,img.data,sizeof\PYG{o}{(}img.data\PYG{o}{))}\PYG{p}{;}
+\PYG{+w}{      }\PYG{p}{|}\PYG{+w}{                 }\PYGZca{}\PYGZti{}\PYGZti{}\PYGZti{}\PYGZti{}\PYGZti{}
+damnvuln.c:6:1:\PYG{+w}{ }note:\PYG{+w}{ }include\PYG{+w}{ }‘\PYGZlt{}string.h\PYGZgt{}’\PYG{+w}{ }or\PYG{+w}{ }provide\PYG{+w}{ }a\PYG{+w}{ }declaration\PYG{+w}{ }of\PYG{+w}{ }‘memcpy’
+\PYG{+w}{    }\PYG{l+m}{5}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }\PYG{c+c1}{\PYGZsh{}include\PYGZlt{}limits.h\PYGZgt{}}
+\PYG{+w}{  }+++\PYG{+w}{ }\PYG{p}{|}+\PYGZsh{}include\PYG{+w}{ }\PYGZlt{}string.h\PYGZgt{}
+\PYG{+w}{    }\PYG{l+m}{6}\PYG{+w}{ }\PYG{p}{|}
+damnvuln.c:44:17:\PYG{+w}{ }warning:\PYG{+w}{ }incompatible\PYG{+w}{ }implicit\PYG{+w}{ }declaration\PYG{+w}{ }of\PYG{+w}{ }built\PYGZhy{}in\PYG{+w}{ }\PYG{k}{function}\PYG{+w}{ }‘memcpy’\PYG{+w}{ }\PYG{o}{[}\PYGZhy{}Wbuiltin\PYGZhy{}declaration\PYGZhy{}mismatch\PYG{o}{]}
+\PYG{+w}{   }\PYG{l+m}{44}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{                 }memcpy\PYG{o}{(}buff1,img.data,sizeof\PYG{o}{(}img.data\PYG{o}{))}\PYG{p}{;}
+\PYG{+w}{      }\PYG{p}{|}\PYG{+w}{                 }\PYGZca{}\PYGZti{}\PYGZti{}\PYGZti{}\PYGZti{}\PYGZti{}
+damnvuln.c:44:17:\PYG{+w}{ }note:\PYG{+w}{ }include\PYG{+w}{ }‘\PYGZlt{}string.h\PYGZgt{}’\PYG{+w}{ }or\PYG{+w}{ }provide\PYG{+w}{ }a\PYG{+w}{ }declaration\PYG{+w}{ }of\PYG{+w}{ }‘memcpy’
+
+\end{Verbatim}

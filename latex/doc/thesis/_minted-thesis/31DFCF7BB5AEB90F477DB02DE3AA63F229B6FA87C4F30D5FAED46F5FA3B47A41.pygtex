@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{+w}{  }\PYGZgt{}\PYG{+w}{ }./damnvuln3\PYG{+w}{ }\PYGZti{}/Pictures/egzamin\PYGZus{}praktyka.png
+
+\PYG{+w}{	}Header\PYG{+w}{	}width\PYG{+w}{	}height\PYG{+w}{	}data\PYG{+w}{	}
+
+\PYG{+w}{	}�PNG
+�
+\PYG{+w}{	}\PYG{l+m}{169478669}\PYG{+w}{	}\PYG{l+m}{218103808}\PYG{+w}{	}IHDR
+Integer\PYG{+w}{ }underflow\PYG{+w}{ }detected\PYG{+w}{ }\PYG{k}{in}\PYG{+w}{ }size2\PYG{+w}{ }calculation.
+\PYG{l+s+se}{\PYGZbs{}e}nd\PYG{o}{\PYGZob{}}verbatim\PYG{o}{\PYGZcb{}}
+
+\PYG{l+s+se}{\PYGZbs{}b}egin\PYG{o}{\PYGZob{}}listing\PYG{o}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{l+s+se}{\PYGZbs{}b}egin\PYG{o}{\PYGZob{}}minted\PYG{o}{\PYGZcb{}\PYGZob{}}c\PYG{o}{\PYGZcb{}}
+\PYG{+w}{    }unsigned\PYG{+w}{ }int\PYG{+w}{ }size2\PYG{p}{;}
+\PYG{+w}{        }\PYG{k}{if}\PYG{o}{(}\PYGZus{}\PYGZus{}builtin\PYGZus{}sub\PYGZus{}overflow\PYG{o}{(}img.width,\PYG{+w}{ }img.height,\PYG{+w}{ }\PYG{p}{\PYGZam{}}size2\PYG{o}{))}
+\PYG{+w}{        }\PYG{o}{\PYGZob{}}
+\PYG{+w}{            }printf\PYG{o}{(}\PYG{l+s+s2}{\PYGZdq{}Integer underflow detected in size2 calculation.\PYGZdq{}}\PYG{o}{)}\PYG{p}{;}
+\PYG{+w}{            }fclose\PYG{o}{(}fp\PYG{o}{)}\PYG{p}{;}
+\PYG{+w}{            }exit\PYG{o}{(}EXIT\PYGZus{}FAILURE\PYG{o}{)}\PYG{p}{;}
+\PYG{+w}{        }\PYG{o}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{n+nv}{size2}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{l+m}{100}\PYG{p}{;}
+\PYG{+w}{        }char*\PYG{+w}{ }\PYG{n+nv}{buff2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{o}{(}char*\PYG{o}{)}malloc\PYG{o}{(}size2\PYG{o}{)}\PYG{p}{;}
+\end{Verbatim}

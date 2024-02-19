@@ -68,29 +68,29 @@
 \contentsline {subsection}{\numberline {5.5.3\relax .\enspace }Przygotowanie środowiska testowego}{47}{subsection.5.5.3}%
 \contentsline {subsection}{\numberline {5.5.4\relax .\enspace }Przeprowadzenie testów funkcjonalnych}{47}{subsection.5.5.4}%
 \contentsline {subsection}{\numberline {5.5.5\relax .\enspace }Interpretacja wyników}{49}{subsection.5.5.5}%
-\contentsline {chapter}{\numberline {6\relax .\enspace }Przeprowadzenie testów na aplikacji NodeGoat}{51}{chapter.6}%
-\contentsline {section}{\numberline {6.1\relax .\enspace }Wstęp}{51}{section.6.1}%
-\contentsline {section}{\numberline {6.2\relax .\enspace }Przygotowanie środowiska testowego}{52}{section.6.2}%
-\contentsline {section}{\numberline {6.3\relax .\enspace }Testy funkcjonalne przed zmianami}{52}{section.6.3}%
-\contentsline {section}{\numberline {6.4\relax .\enspace }Identyfikacja podatności za pomocą tradycyjnych skanerów}{52}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1\relax .\enspace }OWASP ZAP}{53}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2\relax .\enspace }Statyczny analizator CodeQL}{53}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3\relax .\enspace }Wyniki otrzymane z analizy CodeQL}{55}{subsection.6.4.3}%
-\contentsline {section}{\numberline {6.5\relax .\enspace }Analiza GPTester z wykorzystaniem RAG}{55}{section.6.5}%
-\contentsline {section}{\numberline {6.6\relax .\enspace }Analiza GPTester bez RAG}{56}{section.6.6}%
-\contentsline {section}{\numberline {6.7\relax .\enspace }Wprowadzanie zmian w kodzie}{58}{section.6.7}%
-\contentsline {subsection}{\numberline {6.7.1\relax .\enspace }Wprowadzenie zmian za pomocą skryptu}{58}{subsection.6.7.1}%
-\contentsline {subsection}{\numberline {6.7.2\relax .\enspace }Wprowadzenie zmian ręcznie}{58}{subsection.6.7.2}%
-\contentsline {subsection}{\numberline {6.7.3\relax .\enspace }Testy funkcjonalne po wprowadzeniu zmian}{61}{subsection.6.7.3}%
-\contentsline {subsection}{\numberline {6.7.4\relax .\enspace }Testy bezpieczeństwa po wpowadzeniu zmian}{62}{subsection.6.7.4}%
-\contentsline {section}{\numberline {6.8\relax .\enspace }Identyfikacja podatności bez podpowiedzi w kodzie}{64}{section.6.8}%
-\contentsline {section}{\numberline {6.9\relax .\enspace }Wnioski z analizy NodeGoat}{66}{section.6.9}%
-\contentsline {chapter}{Podsumowanie i wnioski}{67}{chapter*.44}%
-\contentsline {section}{Podsumowanie}{67}{section*.45}%
-\contentsline {section}{Odpowiedzi na pytania badawcze}{67}{section*.46}%
-\contentsline {section}{Weryfikacja hipotez}{67}{section*.47}%
-\contentsline {section}{Wnioski}{68}{section*.48}%
-\contentsline {chapter}{Bibliografia}{69}{chapter*.49}%
-\contentsline {chapter}{Spis listingów}{71}{chapter*.50}%
-\contentsline {chapter}{Dodatki}{73}{section*.51}%
-\contentsline {chapter}{\numberline {A\relax .\enspace }Surowe wyniki analizy kodu aplikacji NodeGoat bez podpowiedzi w kodzie w formacie Markdown przetłumaczonym na LaTex}{74}{appendix.A}%
+\contentsline {chapter}{\numberline {6\relax .\enspace }Przeprowadzenie testów na aplikacji NodeGoat}{52}{chapter.6}%
+\contentsline {section}{\numberline {6.1\relax .\enspace }Wstęp}{52}{section.6.1}%
+\contentsline {section}{\numberline {6.2\relax .\enspace }Przygotowanie środowiska testowego}{53}{section.6.2}%
+\contentsline {section}{\numberline {6.3\relax .\enspace }Testy funkcjonalne przed zmianami}{53}{section.6.3}%
+\contentsline {section}{\numberline {6.4\relax .\enspace }Identyfikacja podatności za pomocą tradycyjnych skanerów}{53}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1\relax .\enspace }OWASP ZAP}{54}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2\relax .\enspace }Statyczny analizator CodeQL}{54}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3\relax .\enspace }Wyniki otrzymane z analizy CodeQL}{56}{subsection.6.4.3}%
+\contentsline {section}{\numberline {6.5\relax .\enspace }Analiza GPTester z wykorzystaniem RAG}{57}{section.6.5}%
+\contentsline {section}{\numberline {6.6\relax .\enspace }Analiza GPTester bez RAG}{57}{section.6.6}%
+\contentsline {section}{\numberline {6.7\relax .\enspace }Wprowadzanie zmian w kodzie}{59}{section.6.7}%
+\contentsline {subsection}{\numberline {6.7.1\relax .\enspace }Wprowadzenie zmian za pomocą skryptu}{59}{subsection.6.7.1}%
+\contentsline {subsection}{\numberline {6.7.2\relax .\enspace }Wprowadzenie zmian ręcznie}{60}{subsection.6.7.2}%
+\contentsline {subsection}{\numberline {6.7.3\relax .\enspace }Testy funkcjonalne po wprowadzeniu zmian}{62}{subsection.6.7.3}%
+\contentsline {subsection}{\numberline {6.7.4\relax .\enspace }Testy bezpieczeństwa po wpowadzeniu zmian}{63}{subsection.6.7.4}%
+\contentsline {section}{\numberline {6.8\relax .\enspace }Identyfikacja podatności bez podpowiedzi w kodzie}{65}{section.6.8}%
+\contentsline {section}{\numberline {6.9\relax .\enspace }Wnioski z analizy NodeGoat}{67}{section.6.9}%
+\contentsline {chapter}{Podsumowanie i wnioski}{69}{chapter*.44}%
+\contentsline {section}{Podsumowanie}{69}{section*.45}%
+\contentsline {section}{Odpowiedzi na pytania badawcze}{69}{section*.46}%
+\contentsline {section}{Weryfikacja hipotez}{69}{section*.47}%
+\contentsline {section}{Wnioski}{70}{section*.48}%
+\contentsline {chapter}{Bibliografia}{71}{chapter*.49}%
+\contentsline {chapter}{Spis listingów}{73}{chapter*.50}%
+\contentsline {chapter}{Dodatki}{75}{section*.51}%
+\contentsline {chapter}{\numberline {A\relax .\enspace }Surowe wyniki analizy kodu aplikacji NodeGoat bez podpowiedzi w kodzie w formacie Markdown przetłumaczonym na LaTex}{76}{appendix.A}%
